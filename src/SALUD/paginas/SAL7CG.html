@@ -1,0 +1,315 @@
+<div class="col-md-12" id="SAL7CG">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <form class="form-horizontal">
+                <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Accion :</label>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                    <input v-model="form.accion_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Novedad :</label>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                    <input v-model="form.novedad_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-2 col-sm-2 col-xs-12">Identificación :</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-11" id="VALIDAR1_SAL7CG">
+                                    <input id="idmedico_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="13"
+                                    @Keyup.F8='_ventanaprofesionales_SAL7CG'>
+                                </div>
+                                <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1" @click='_ventanaprofesionales_SAL7CG'>
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                                <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                    <input v-model="form.idmedicod_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 no-padding CALENDARIO_SAL97CG">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <v-calendar
+                            ref="calendar"
+                            @update:from-page="pageChange"
+                            class="custom-calendar"
+                            :masks="masks"
+                            :attributes="attributes"
+                            is-expanded
+                            v-model="date"
+                            style="height: 100%;"
+                        >
+                            <template slot="day-content" class='h-100' scope='{day, dayEvents, attributes, attributesMap}'>
+                                <div class="flex flex-column h-100 overflow-hidden" v-bind:id="day.id" style="width: 90px; height: 90px; cursor: pointer;" @click="_fecha_SAL7CG(day)">
+                                    <span class="day-label text-sm text-gray-900">
+                                        {{day.day}}
+                                    </span>
+                                    <div class="flex-grow h-100 calendar-event">
+                                        <small
+                                            class="badge mb-2"
+                                        >
+                                            <p
+                                                v-for="attr in attributes" :key="attr.key"
+                                            >
+                                                {{ attr.customData.description }}
+                                            </p>
+                                        </small>
+                                    </div>
+                                </div>
+                            </template>
+                        </v-calendar>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 CALENDARIO_SAL97CG" style="padding-right: 0px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                            <h5 style="color: #476fad; font-weight: bold">Fechas seleccionadas</h5>
+                        </div>
+                        <span v-for="check in fechas" class="fecha_SAL7CG">{{ check.fecha }}<i class="icon-trash" @click="_eliminarfecha(check)"></i> </span>
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12" style="display: flex; justify-content: center;">
+                            <button type="button" id="boton_SAL7CG" class="btn f8-Btn col-md-3 col-sm-3 col-xs-3" @click='_evaluarsucursal_SAL7CG' style="display: flex; justify-content: center;">
+                                CONTINUAR
+                            </button>
+                            <button type="button" id="boton2_SAL7CG" class="btn f8-Btn col-md-3 col-sm-3 col-xs-3" @click='_evaluarmedico_SAL7CG' style="display: flex; justify-content: center;margin-left: 10px;">
+                                ATRAS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 CALENDARIO_SAL97CG" style="padding-left: 0px;"></div>
+                <div class="col-md-4 col-sm-4 col-xs-12 no-padding CALENDARIO_SAL97CG">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-4 col-xs-4">Sucursal :</label>
+                                <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                                    <input v-model="form.sucursal_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 CALENDARIO_SAL97CG" style="padding-right: 0px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-4 col-xs-4">Hora inicio 1:</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-2" id="VALIDAR2_SAL7CG">
+                                    <input v-model="form.horainicio1_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                                </div>
+                                <label class="col-md-4 col-sm-4 col-xs-4">Minuto inicio 1:</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-2" id="VALIDAR3_SAL7CG">
+                                    <input v-model="form.minutoinicio1_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 CALENDARIO_SAL97CG" style="padding-right: 0px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-4 col-xs-4">Hora inicio 1:</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-2" id="VALIDAR4_SAL7CG">
+                                    <input v-model="form.horafinal1_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                                </div>
+                                <label class="col-md-4 col-sm-4 col-xs-4">Minuto inicio 1:</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-2" id="VALIDAR5_SAL7CG">
+                                    <input v-model="form.minutofinal1_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 no-padding CALENDARIO_SAL97CG">
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 CALENDARIO_SAL97CG" style="padding-right: 0px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-4 col-xs-4">Hora inicio 2:</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-2" id="VALIDAR6_SAL7CG">
+                                    <input v-model="form.horainicio2_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                                </div>
+                                <label class="col-md-4 col-sm-4 col-xs-4">Minuto inicio 2:</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-2" id="VALIDAR7_SAL7CG">
+                                    <input v-model="form.minutoinicio2_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 CALENDARIO_SAL97CG" style="padding-right: 0px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-4 col-xs-4">Hora inicio 2:</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-2" id="VALIDAR8_SAL7CG">
+                                    <input v-model="form.horafinal2_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                                </div>
+                                <label class="col-md-4 col-sm-4 col-xs-4">Minuto inicio 2:</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-2" id="VALIDAR9_SAL7CG">
+                                    <input v-model="form.minutofinal2_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 no-padding CALENDARIO_SAL97CG">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-4 col-xs-4">Observaciones :</label>
+                                <div class="input-group col-md-8 col-sm-8 col-xs-8" id="VALIDAR10_SAL7CG">
+                                    <input v-model="form.observaciones_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 CALENDARIO_SAL97CG" style="padding-right: 0px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-4 col-xs-4">Oper crea :</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                                    <input v-model="form.opercrea_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <label class="col-md-4 col-sm-4 col-xs-4">Fecha elab :</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                                    <input v-model="form.fechaelab_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 CALENDARIO_SAL97CG" style="padding-right: 0px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-4 col-xs-4">Oper mod :</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                                    <input v-model="form.opermod_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <label class="col-md-4 col-sm-4 col-xs-4">Fecha mod :</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                                    <input v-model="form.fechamod_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 no-padding TURNOESPECIAL_SAL7CG" style="padding-right: 0px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <v-date-picker @dayclick="dayclick_SAL7CG" style="height: 100%;" v-model="range" is-range ></v-date-picker>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 TURNOESPECIAL_SAL7CG" style="padding-right: 0px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-4 col-xs-4">Fecha inicio :</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                                    <input v-model="form.fechainicioprof_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <label class="col-md-4 col-sm-4 col-xs-4">Fecha final :</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                                    <input v-model="form.fechafinalprof_SAL7CG" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="salto-linea"></div>
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12" style="display: flex; justify-content: center;">
+                            <button type="button" id="botonhorario_SAL7CG" class="btn f8-Btn col-md-3 col-sm-3 col-xs-3" @click='_validarhorarioprofesional_SAL7CG' style="display: flex; justify-content: center;">
+                                CONTINUAR
+                            </button>
+                            <button type="button" id="botonhorario2_SAL7CG" class="btn f8-Btn col-md-3 col-sm-3 col-xs-3" @click='_evaluarmedico_SAL7CG' style="display: flex; justify-content: center;margin-left: 10px;">
+                                ATRAS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../../node_modules/v-calendar/lib/v-calendar.umd.min.js"></script>
+<script src="../../SALUD/scripts/SAL7CG.js" type="text/javascript"></script>
+
+<style>
+.fecha_SAL7CG{
+    display: inline-flex;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    margin: 0.5%;
+    padding: 0.5%;
+}
+.fechaactiva_SAL7CG{
+    background-color: #ffff9a;
+}
+.botonactivo_SAL7CG{
+    background-color: #476fad;
+    color: white;
+}
+::-webkit-scrollbar {
+	 width: 0px;
+}
+ ::-webkit-scrollbar-track {
+	 display: none;
+}
+ .custom-calendar.vc-container {
+	 border-radius: 0;
+	 width: 100%;
+}
+ .custom-calendar.vc-container .vc-header {
+	 background-color: #f1f5f8;
+	 padding: 10px 0;
+}
+ .custom-calendar.vc-container .vc-weeks {
+	 padding: 0;
+}
+ .custom-calendar.vc-container .vc-weekday {
+	 background-color: #f8fafc;
+	 border-bottom: 1px solid #eaeaea;
+	 border-top: 1px solid #eaeaea;
+	 padding: 5px 0;
+}
+ .custom-calendar.vc-container .vc-day {
+	 padding: 0 5px 3px 5px;
+	 text-align: left;
+	 height: 90px;
+	 min-width: 90px;
+	 background-color: white;
+}
+ .custom-calendar.vc-container .vc-day.weekday-1, .custom-calendar.vc-container .vc-day.weekday-7 {
+	 background-color: #eff8ff;
+}
+ .custom-calendar.vc-container .vc-day:not(.on-bottom) {
+	 border-bottom: 1px solid #b8c2cc;
+}
+ .custom-calendar.vc-container .vc-day:not(.on-bottom).weekday-1 {
+	 border-bottom: 1px solid #b8c2cc;
+}
+ .custom-calendar.vc-container .vc-day:not(.on-right) {
+	 border-right: 1px solid #b8c2cc;
+}
+ .custom-calendar.vc-container .vc-day-dots {
+	 margin-bottom: 5px;
+}
+ 
+</style>

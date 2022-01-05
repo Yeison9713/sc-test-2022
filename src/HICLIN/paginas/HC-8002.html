@@ -1,0 +1,1108 @@
+<div class="col-md-12" id="HC-8002">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <!-- ENCABEZADO -->
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-1 col-sm-2 col-xs-6">
+              <label>Año</label>
+              <div class="inline-inputs">
+                <div class="input-group col-xs-12">
+                  <input
+                    v-model="reg_hc.fecha.slice(0,4)"
+                    type="number"
+                    maxlength="4"
+                    data-orden="1"
+                    required="true"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-1 col-sm-2 col-xs-3">
+              <label>Mes</label>
+              <div class="inline-inputs">
+                <div class="input-group col-xs-12">
+                  <input
+                    v-model="reg_hc.fecha.slice(4,6)"
+                    type="number"
+                    maxlength="2"
+                    required="true"
+                    data-orden="1"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-1 col-sm-2 col-xs-3">
+              <label>Día</label>
+              <div class="inline-inputs">
+                <div class="input-group col-xs-12">
+                  <input
+                    v-model="reg_hc.fecha.slice(6)"
+                    type="number"
+                    maxlength="2"
+                    required="true"
+                    data-orden="1"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-1 col-sm-2 col-xs-4">
+              <label>Hora</label>
+              <div class="inline-inputs">
+                <div class="input-group col-xs-12">
+                  <input
+                    v-model="reg_hc.hora.slice(0,2)"
+                    type="number"
+                    maxlength="2"
+                    required="true"
+                    data-orden="1"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-1 col-sm-2 col-xs-4">
+              <label>Min</label>
+              <div class="inline-inputs">
+                <div class="input-group col-xs-12">
+                  <input
+                    v-model="reg_hc.hora.slice(2)"
+                    type="number"
+                    maxlength="2"
+                    required="true"
+                    data-orden="1"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-1 col-sm-2 col-xs-4" id="validar_operador_HC003">
+              <label>Operador</label>
+              <div class="inline-inputs">
+                <div class="input-group col-xs-12">
+                  <input
+                    v-model="admiLnk"
+                    type="text"
+                    maxlength="4"
+                    data-orden="1"
+                    required="true"
+                    class="form-control"
+                    @keydown.f8="ventana_operadores"
+                    style="text-transform: uppercase"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-8 col-xs-8">
+              <label>Médico</label>
+              <div class="inline-inputs">
+                <div class="input-group col-xs-12">
+                  <input v-model="descripProf" type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-4">
+              <label>Unidad de servicio</label>
+              <div class="inline-inputs">
+                <div class="input-group col-xs-12">
+                  <input v-model="descripUnserv" type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="salto-linea"></div>
+            <div class="col-md-6 col-sm-5 col-xs-12 no-padding">
+              <div class="col-md-12 col-sm-12 col-xs-12 flex-wrap-input">
+                <label class="col-md-7 col-sm-6 col-xs-7 label-left">Esta embarazada?</label>
+                <div class="input-group col-md-5 col-sm-6 col-xs-5">
+                  <input v-model="descripEmbarazo" class="form-control" data-orden="1" type="text" />
+                </div>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 flex-wrap-input">
+                <label class="col-md-7 col-sm-6 col-xs-7 label-left">Fecha última menstruación</label>
+                <div class="input-group col-md-5 col-sm-6 col-xs-5 flex-date-group">
+                  <div id="datoAnioRegla" style="flex: 2">
+                    <input
+                      v-model="anioRegla"
+                      type="number"
+                      class="form-control"
+                      data-orden="1"
+                      maxlength="4"
+                      placeholder="AAAA"
+                    />
+                  </div>
+                  <div id="datoMesRegla" style="flex: 1">
+                    <input
+                      v-model="mesRegla"
+                      type="number"
+                      class="form-control"
+                      data-orden="1"
+                      maxlength="2"
+                      placeholder="MM"
+                    />
+                  </div>
+                  <div id="datoDiaRegla" style="flex: 1">
+                    <input
+                      v-model="diaRegla"
+                      type="number"
+                      class="form-control"
+                      data-orden="1"
+                      maxlength="2"
+                      placeholder="DD"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 flex-wrap-input">
+                <label class="col-md-7 col-sm-6 col-xs-7 label-left">Método planificación</label>
+                <div class="input-group col-md-5 col-sm-6 col-xs-5">
+                  <input v-model="descripMetPlanFam" type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-7 col-xs-12 no-padding">
+              <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div id="datoGestaciones" class="col-md-4 col-sm-4 col-xs-4 flex-wrap-input">
+                  <label class="col-md-6 col-sm-6 col-xs-8 label-left">Gestaciones</label>
+                  <div class="input-group col md-4 col-sm-4 col-xs-4">
+                    <input
+                      v-model="ws8002.gestaciones"
+                      class="form-control"
+                      type="number"
+                      maxlength="2"
+                      data-orden="1"
+                      required
+                    />
+                  </div>
+                </div>
+                <div id="datoPartos" class="col-md-4 col-sm-4 col-xs-4 flex-wrap-input">
+                  <label class="col-md-6 col-sm-6 col-xs-8 label-left">Partos</label>
+                  <div class="input-group col md-4 col-sm-4 col-xs-4">
+                    <input
+                      v-model="ws8002.partos"
+                      class="form-control"
+                      type="number"
+                      maxlength="2"
+                      data-orden="1"
+                      required
+                    />
+                  </div>
+                </div>
+                <div id="datoCesareas" class="col-md-4 col-sm-4 col-xs-4 flex-wrap-input">
+                  <label class="col-md-6 col-sm-6 col-xs-8 label-left">Cesareas</label>
+                  <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                    <input
+                      v-model="ws8002.cesareas"
+                      class="form-control"
+                      type="number"
+                      maxlength="2"
+                      data-orden="1"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="col-md-4 col-sm-4 col-xs-4 flex-wrap-input">
+                  <label class="col-md-6 col-sm-6 col-xs-8 label-left">Abortos</label>
+                  <div class="input-group col md-4 col-sm-4 col-xs-4">
+                    <input
+                      v-model="ws8002.abortos"
+                      class="form-control"
+                      type="number"
+                      maxlength="2"
+                      data-orden="1"
+                      required
+                    />
+                  </div>
+                </div>
+                <div id="datoNaciMuertos" class="col-md-4 col-sm-4 col-xs-4 flex-wrap-input">
+                  <label class="col-md-6 col-sm-6 col-xs-8 label-left">Nacidos muertos</label>
+                  <div class="input-group col md-4 col-sm-4 col-xs-4">
+                    <input
+                      v-model="ws8002.nacidos_muertos"
+                      class="form-control"
+                      type="number"
+                      maxlength="2"
+                      data-orden="1"
+                      required
+                    />
+                  </div>
+                </div>
+                <div id="datoNaciVivos" class="col-md-4 col-sm-4 col-xs-4 flex-wrap-input">
+                  <label class="col-md-8 col-sm-6 col-xs-8 label-left">Nacidos vivos</label>
+                  <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                    <input
+                      v-model="ws8002.nacidos_vivos"
+                      class="form-control"
+                      type="number"
+                      maxlength="2"
+                      data-orden="1"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 col-xs-4 flex-wrap-input">
+                <label class="col-md-4 col-sm-6 col-xs-7 label-left">I.T.S</label>
+                <div class="input-group col-md-8 col-sm-2 col-xs-4">
+                  <input v-model="descripEts" class="form-control" type="text" data-orden="1" />
+                </div>
+              </div>
+              <div id="datoCualEts" class="col-md-8 col-sm-12 col-xs-8 flex-wrap-input">
+                <label class="col-md-2 col-sm-2 col-xs-2 label-left">Cual?</label>
+                <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                  <input
+                    v-model="ws8002.ets_cual"
+                    class="form-control"
+                    type="text"
+                    maxlength="20"
+                    data-orden="1"
+                    style="text-align: left !important"
+                  />
+                </div>
+              </div>
+              <transition v-if="modal_victimaConf">
+                <div class="modal-mask">
+                  <div class="modal-wrapper">
+                    <div class="col-md-4 col-sm-8 col-xs-10 no-padding">
+                      <div class="form-group box-center" style="text-align: left">
+                        <div
+                          class="col-md-12 no-padding"
+                          style="display: flex; justify-content: center; flex-direction: column"
+                        >
+                          <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: center; padding: 1rem 0 1rem 0">
+                            <label style="font-size: 1.5em">Víctima conflicto</label>
+                          </div>
+                          <div class="col-md-10" style="align-self: center">
+                            <div
+                              class="col-md-12 col-sm-12 col-xs-12"
+                              style="
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-around;
+                                padding-bottom: 1rem;
+                              "
+                            >
+                              <label class="col-md-6 col-sm-6 col-xs-6 font-small" style="text-align: left"
+                                >Víctima de conflicto:</label
+                              >
+                              <div class="col-md-4 col-sm-4 col-xs-4" id="datoPaciVictConflicto">
+                                <input
+                                  type="text"
+                                  class="form-control text-center"
+                                  disabled="disabled"
+                                  maxlength="1"
+                                  v-model="reg_hc.victi_conflicto_paci"
+                                  data-orden="1"
+                                  required
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </transition>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="salto-linea"></div>
+            <div class="col-md-8 col-sm-12 col-xs-12">
+              <div id="datoPrimerCitologia" class="col-md-4 col-sm-5 col-xs-5 flex-wrap-input">
+                <label class="col-md-8 col-sm-7 col-xs-6 label-left">Citología primera vez</label>
+                <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                  <input
+                    v-model="ws8002.primer_cito"
+                    class="form-control"
+                    data-orden="1"
+                    type="text"
+                    maxlength="1"
+                    placeholder="S/N"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-8 col-sm-7 col-xs-7 flex-wrap-input">
+                <label class="col-md-6 col-sm-6 col-xs-7 label-left">Fecha última citología</label>
+                <div class="input-group col-md-6 col-sm-6 col-xs-5 flex-date-group">
+                  <div id="datoAnioUltCitologia" style="flex: 2">
+                    <input
+                      v-model="anioUltCitologia"
+                      class="form-control"
+                      type="number"
+                      data-orden="1"
+                      maxlength="4"
+                      placeholder="AAAA"
+                    />
+                  </div>
+                  <div id="datoMesUltCitologia" style="flex: 1">
+                    <input
+                      v-model="mesUltCitologia"
+                      type="number"
+                      class="form-control"
+                      data-orden="1"
+                      maxlength="2"
+                      placeholder="MM"
+                    />
+                  </div>
+                  <div id="datoDiaUltCitologia" style="flex: 1">
+                    <input
+                      v-model="diaUltCitologia"
+                      type="number"
+                      class="form-control"
+                      data-orden="1"
+                      maxlength="2"
+                      placeholder="DD"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div id="datoInstitucionCito" class="col-md-7 col-sm-12 col-xs-12 flex-wrap-input">
+                <label class="col-md-4 col-sm-3 col-xs-3 label-left">Institución última citología</label>
+                <div class="input-group col-md-8 col-sm-9 col-xs-9">
+                  <input
+                    v-model="ws8002.institucion_ult_cito"
+                    class="form-control"
+                    type="text"
+                    maxlength="30"
+                    data-orden="1"
+                    style="text-align: left !important"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-5 col-sm-12 col-xs-12 flex-wrap-input">
+                <label class="col-md-6 col-sm-3 col-xs-3 label-left">Restultado citología</label>
+                <div class="input-group col-md-6 col-sm-9 col-xs-9">
+                  <input v-model="descripResultUltCito" class="form-control" type="text" />
+                </div>
+              </div>
+              <div id="datoCualCancer" class="col-md-12 col-sm-12 col-xs-12 flex-wrap-input">
+                <label class="col-md-12 col-sm-12 col-xs-12 label-left">Antecedentes familiares de cancer</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="ws2005.tabla_organo[0]"
+                    class="form-control"
+                    type="text"
+                    maxlength="95"
+                    data-orden="1"
+                    style="text-align: left !important"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12 flex-wrap-input">
+                <label class="col-md-5 col-sm-6 col-xs-6 label-left">Proced. cuello uterino</label>
+                <div class="input-group col-md-7 col-sm-6 col-xs-6">
+                  <input v-model="descripProcedCuello" class="form-control" type="text" />
+                </div>
+              </div>
+              <div class="col-md-12 col-sm-12 col-xs-12 flex-wrap-input">
+                <label class="col-md-5 col-sm-6 col-xs-7 label-left">Fecha proced. cuello uterino</label>
+                <div class="input-group col-md-7 col-sm-6 col-xs-5 flex-date-group">
+                  <div id="datoAnioProcedCuelloUter" style="flex: 2">
+                    <input
+                      v-model="anioProcedCuello"
+                      class="form-control"
+                      type="number"
+                      data-orden="1"
+                      maxlength="4"
+                      placeholder="AAAA"
+                    />
+                  </div>
+                  <div id="datoMesProcedCuelloUter" style="flex: 1">
+                    <input
+                      v-model="mesProcedCuello"
+                      class="form-control"
+                      type="number"
+                      data-orden="1"
+                      maxlength="2"
+                      placeholder="MM"
+                    />
+                  </div>
+                  <div id="datoDiaProcedCuelloUter" style="flex: 1">
+                    <input
+                      v-model="diaProcedCuello"
+                      class="form-control"
+                      type="number"
+                      data-orden="1"
+                      maxlength="2"
+                      placeholder="DD"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-sm-12 col-xs-12 flex-wrap-input">
+                <label class="col-md-5 col-sm-6 col-xs-4 label-left">Aspecto cuello uterino</label>
+                <div class="input-group col-md-7 col-sm-6 col-xs-8">
+                  <input v-model="descripAspectoCuelloUter" class="form-control" type="text" />
+                </div>
+              </div>
+              <div id="datoVPH" class="col-md-6 col-sm-6 col-xs-6 flex-wrap-input">
+                <label class="col-md-8 col-sm-6 col-xs-4 label-left">Vacuna VPH</label>
+                <div class="input-group col-md-4 col-sm-6 col-xs-8">
+                  <input
+                    v-model="ws8002.vacunas_vph"
+                    class="form-control"
+                    type="text"
+                    maxlength="1"
+                    placeholder="S/N"
+                    data-orden="1"
+                  />
+                </div>
+              </div>
+              <div id="datoDispareunia" class="col-md-6 col-sm-6 col-xs-6 flex-wrap-input">
+                <label class="col-md-8 col-sm-6 col-xs-4 label-left">Dispareunia</label>
+                <div class="input-group col-md-4 col-sm-6 col-xs-8">
+                  <input
+                    v-model="ws8002.dispareunia"
+                    class="form-control"
+                    type="text"
+                    maxlength="1"
+                    placeholder="S/N"
+                    data-orden="1"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div id="datoObservaciones" class="col-md-12 col-sm-12 col-xs-12 flex-wrap-input">
+                <label>Observaciones</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <textarea
+                    v-model="ws8002.observaciones_cit"
+                    class="form-control"
+                    data-orden="1"
+                    cols="30"
+                    rows="3"
+                    maxlength="190"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-4 col-sm-6 col-xs-12 flex-wrap-input">
+                <label class="col-md-5 col-sm-6 col-xs-7 label-left">Fecha próxima citología</label>
+                <div class="input-group col-md-7 col-sm-6 col-xs-5 flex-date-group">
+                  <div id="datoAnioProxCito" style="flex: 2">
+                    <input
+                      v-model="anioProxCitologia"
+                      type="number"
+                      class="form-control"
+                      data-orden="1"
+                      maxlength="4"
+                      placeholder="AAAA"
+                    />
+                  </div>
+                  <div id="datoMesProxCito" style="flex: 1">
+                    <input
+                      v-model="mesProxCitologia"
+                      type="number"
+                      class="form-control"
+                      data-orden="1"
+                      maxlength="2"
+                      placeholder="MM"
+                    />
+                  </div>
+                  <div id="datoDiaProxCito" style="flex: 1">
+                    <input
+                      v-model="diaProxCitologia"
+                      type="number"
+                      class="form-control"
+                      data-orden="1"
+                      maxlength="2"
+                      placeholder="DD"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="col-md-12 col-sm-12 col-xs-12 portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Covid19</span>
+              </div>
+            </div>
+          </div>
+          <covid19
+            :params="paramsCovid"
+            :data="reg_hc.covid19"
+            @callback_esc="validarEsc_covid"
+            @callback="validarCallback_covid"
+          ></covid19>
+        </div>
+        <div
+          class="col-md-12 col-sm-12 col-xs-12 no-padding"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); grid-column-gap: 1.5rem"
+        >
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div class="no-padding">
+              <div class="col-md-12 no-padding">
+                <div class="portlet light box-center box-title">
+                  <div class="portlet-title">
+                    <div class="caption">
+                      <span class="caption-subject bold">Codificación diagnósticos</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+                  <div class="col-md-12 no-padding" v-for="(item,index) in reg_hc.rips.tabla_diagn" :key="index">
+                    <div class="col-md-3 col-sm-6 col-xs-12" style="padding-left: 0">
+                      <div class="inline-inputs">
+                        <label class="col-md-3 col-sm-3 col-xs-3">{{ index + 1}}</label>
+                        <div class="input-group col-md-7 col-sm-7 col-xs-7" :id="`validarCodDiagn${index}`">
+                          <input
+                            @keydown.119="ventanaCodDiagn(index)"
+                            v-model="item.cod_diagn"
+                            maxlength="4"
+                            data-orden="1"
+                            :id="`cod_diagn${index}`"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            disabled="disabled"
+                          />
+                        </div>
+                        <button
+                          @click="ventanaCodDiagn(index)"
+                          type="button"
+                          class="btn f8-Btn col-md-2 col-sm-2 col-xs-2"
+                        >
+                          <i class="icon-magnifier"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="col-md-9 no-padding">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="item.descrip_diagn"
+                          style="text-align: left"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+
+                    <div v-if="index != 9" class="salto-linea"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Sintomatico</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <sintomaticos
+              :data="datosSintomatico"
+              :params="paramsSintomatico"
+              @callback_esc="validarEsc_sintomatico"
+              @callback="validarCallback_sintomatico"
+            >
+            </sintomaticos>
+          </div>
+        </div>
+
+        <div
+          class="col-md-12 col-sm-12 col-xs-12 no-padding"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); grid-column-gap: 1.5rem"
+        >
+          <div class="col-md-12 no-padding">
+            <div class="col-md-12 col-sm-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Análisis</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="datoAnalisis">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 head-box"
+                    style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                  >
+                    <label>Contenido</label>
+                    <label>(19,000 caracteres máximo)</label>
+                  </div>
+                  <textarea
+                    v-model="detalleAnalisisHc"
+                    data-orden="1"
+                    class="form-control"
+                    disabled="disabled"
+                    rows="21"
+                    maxlength="19000"
+                    required="true"
+                    style="resize: none; text-align: justify"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 no-padding">
+            <div class="col-md-12 col-sm-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Plan</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="datoPlan">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 head-box"
+                    style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                  >
+                    <label>Contenido</label>
+                    <label>(19,000 caracteres máximo)</label>
+                  </div>
+                  <textarea
+                    v-model="detallePlanHc"
+                    data-orden="1"
+                    class="form-control"
+                    disabled="disabled"
+                    rows="21"
+                    maxlength="19000"
+                    required="true"
+                    style="resize: none; text-align: justify"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div class="portlet light box-center box-title" style="display: flex; justify-content: space-between">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Actualización de RIPS</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-4 no-padding">
+                  <div class="inline-inputs col-md-5" style="padding-right: 0">
+                    <label class="col-md-8" style="background: 0; text-align: left">Estado Gravidez</label>
+                  </div>
+
+                  <div class="inline-inputs col-md-7">
+                    <div class="input-group col-md-12">
+                      <input v-model="descripEmbarazo" type="text" class="form-control col-md-12" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 no-padding">
+                  <div class="inline-inputs col-md-12" style="padding-right: 0">
+                    <label class="col-md-4" style="background: 0; text-align: left">Causa Externa</label>
+                    <div class="input-group col-md-8">
+                      <input v-model="descripCausaExterna" type="text" class="form-control col-md-12" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 no-padding">
+                  <div class="inline-inputs col-md-12" style="padding-right: 0">
+                    <label class="col-md-4" style="background: 0; text-align: left">Tipo Diagnóstico</label>
+                    <div class="input-group col-md-8">
+                      <input v-model="descripTipoDiag" type="text" class="form-control col-md-12 text-center" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-3 no-padding">
+                  <div class="inline-inputs col-md-12" style="padding-right: 0">
+                    <label class="col-md-5" style="background: 0; text-align: left">Finalidad Consulta</label>
+                    <div class="input-group col-md-7" id="finalid">
+                      <input
+                        v-model="descripFinalid"
+                        type="text"
+                        class="form-control col-md-12 text-centerfinalid"
+                        data-orden="1"
+                        maxlength="3"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-2 no-padding">
+                  <div class="inline-inputs col-md-12" style="padding-right: 0">
+                    <label class="col-md-5" style="background: 0; text-align: left">Primera vez</label>
+                    <div class="input-group col-md-6" id="datoPrimerVez">
+                      <input
+                        v-model="reg_hc.rips.primera_vez"
+                        class="form-control col-md-12 text-center"
+                        data-orden="1"
+                        type="text"
+                        maxlength="1"
+                        placeholder="S/N"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="col-md-12 flex-wrap-input">
+                    <label class="col-md-5 col-sm-6 col-xs-7 label-left">Fecha primera vez</label>
+                    <div class="input-group col-md-7 col-sm-6 col-xs-5 flex-date-group">
+                      <div id="datoDiaPrimerVez" style="flex: 1">
+                        <input
+                          v-model="diaPrimerVez"
+                          type="number"
+                          class="form-control"
+                          data-orden="1"
+                          maxlength="2"
+                          placeholder="DD"
+                        />
+                      </div>
+                      <div id="datoMesPrimerVez" style="flex: 1">
+                        <input
+                          v-model="mesPrimerVez"
+                          type="number"
+                          class="form-control"
+                          data-orden="1"
+                          maxlength="2"
+                          placeholder="MM"
+                        />
+                      </div>
+                      <div id="datoAnioPrimerVez" style="flex: 2">
+                        <input
+                          v-model="anioPrimerVez"
+                          type="number"
+                          class="form-control"
+                          data-orden="1"
+                          maxlength="4"
+                          placeholder="AAAA"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 no-padding">
+                  <div id="datoNroControl" class="inline-inputs col-md-12" style="padding-right: 0">
+                    <label class="col-md-7" style="background: 0; text-align: left">Controles Prenatales</label>
+                    <div class="input-group col-md-5">
+                      <input
+                        v-model="reg_hc.rips.nro_contr"
+                        type="text"
+                        class="form-control col-md-12 text-center"
+                        data-orden="1"
+                        maxlength="3"
+                      />
+                    </div>
+                    <div>
+                      <div class="tooltip-proft bottom-text" style="margin-left: 5px">
+                        <span class="icon-proft icon-info"></span>
+                        <span class="tiptext">
+                          <div>Nro controles que ha asistido (Incluyendo este)</div>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-2 no-padding">
+                  <div id="datoTannerPubico" class="inline-inputs col-md-12" style="padding-right: 0">
+                    <label class="col-md-7" style="background: 0; text-align: left">Tanner Pubiano</label>
+                    <div class="input-group col-md-4">
+                      <input
+                        v-model="reg_hc.signos.tanner_pubico"
+                        type="text"
+                        class="form-control col-md-12 text-center"
+                        data-orden="1"
+                        maxlength="1"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-2 no-padding">
+                  <div id="datoTannerGenital" class="inline-inputs col-md-12" style="padding-right: 0">
+                    <label class="col-md-7" style="background: 0; text-align: left">{{ descripEstadioTanner }}</label>
+                    <div class="input-group col-md-4">
+                      <input
+                        v-model="reg_hc.signos.tanner_genit"
+                        type="text"
+                        class="form-control col-md-12 text-center"
+                        data-orden="1"
+                        maxlength="1"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="col-md-12 flex-wrap-input">
+                    <label class="col-md-5 col-sm-6 col-xs-7 label-left">Fecha próxima cita</label>
+                    <div class="input-group col-md-7 col-sm-6 col-xs-5 flex-date-group">
+                      <div id="datoDiaProxCita" style="flex: 1">
+                        <input
+                          v-model="diaProxCita"
+                          type="number"
+                          class="form-control"
+                          data-orden="1"
+                          maxlength="2"
+                          placeholder="DD"
+                        />
+                      </div>
+                      <div id="datoMesProxCita" style="flex: 1">
+                        <input
+                          v-model="mesProxCita"
+                          type="number"
+                          class="form-control"
+                          data-orden="1"
+                          maxlength="2"
+                          placeholder="MM"
+                        />
+                      </div>
+                      <div id="datoAnioProxCita" style="flex: 2">
+                        <input
+                          v-model="anioProxCita"
+                          type="number"
+                          class="form-control"
+                          data-orden="1"
+                          maxlength="4"
+                          placeholder="AAAA"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 no-padding">
+                  <div class="inline-inputs col-md-5" style="padding-right: 0">
+                    <label class="col-md-8" style="background: 0; text-align: left">Estado Salida</label>
+                    <div class="input-group col-md-4" id="estado_sal">
+                      <input
+                        v-model="reg_hc.rips.estado_sal"
+                        type="text"
+                        class="form-control col-md-12 text-center"
+                        data-orden="1"
+                        maxlength="3"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="inline-inputs col-md-7">
+                    <div class="input-group col-md-12">
+                      <input v-model="descripSalida" type="text" class="form-control col-md-12" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 no-padding">
+                <div class="col-md-12 no-padding">
+                  <div class="form-group col-md-12 box-center">
+                    <div class="col-md-12 no-padding">
+                      <div class="inline-inputs col-md-12">
+                        <label class="col-md-3" style="background: 0; text-align: left">Remitido a</label>
+                        <div class="input-group col-md-9" id="datoRemitido">
+                          <input
+                            v-model="reg_hc.rips.remitido"
+                            type="text"
+                            class="form-control col-md-12 text-center"
+                            data-orden="1"
+                            maxlength="20"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 no-padding">
+                  <div class="form-group col-md-12 box-center">
+                    <div class="inline-inputs col-md-6">
+                      <label class="col-md-6" style="background: 0; text-align: left">Diagnóstico Muerte</label>
+                      <div class="input-group col-md-4" id="datoDiagnMuerte">
+                        <input
+                          v-model="reg_hc.cierre.diag_muer"
+                          type="text"
+                          @keydown.f8="ventanaDiagnMuerte"
+                          class="form-control col-md-12 text-center diag_muer"
+                          data-orden="1"
+                          maxlength="4"
+                        />
+                      </div>
+                      <button @click="ventanaDiagnMuerte" type="button" class="btn f8-Btn col-md-2">
+                        <i class="icon-magnifier"></i>
+                      </button>
+                    </div>
+
+                    <div class="inline-inputs col-md-6 no-padding">
+                      <div class="input-group col-md-12">
+                        <input v-model="descripDiagnMuerte" type="text" class="form-control col-md-12" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div v-if="reg_hc.rips.finalid==5" class="col-md-6" style="padding-right: 0">
+                <div class="form-group col-md-12 box-center">
+                  <div class="col-md-6">
+                    <div class="col-md-12" style="text-align: center; padding: 1rem 0 1rem 0">
+                      <label>Vello pubiano</label>
+                    </div>
+                    <img
+                      v-if="reg_paci.SEXO=='F'"
+                      src="../../frameworks/imagenes/hiclin/tanner_pubico_fem.png"
+                      alt="Tanner mamario"
+                    />
+                    <img
+                      v-else-if="reg_paci.SEXO=='M'"
+                      src="../../frameworks/imagenes/hiclin/tanner_pubico_mas.png"
+                      alt="Tanner genital"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <div class="col-md-12" style="text-align: center; padding: 1rem 0 1rem 0">
+                      <label>Estadio</label>
+                    </div>
+                    <img
+                      v-if="reg_paci.SEXO=='F'"
+                      src="../../frameworks/imagenes/hiclin/tanner_mamario.png"
+                      alt="Tanner mamario"
+                    />
+                    <img
+                      v-else-if="reg_paci.SEXO=='M'"
+                      src="../../frameworks/imagenes/hiclin/tanner_genital.png"
+                      alt="Tanner mamario"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../../HICLIN/scripts/hc890h.vue.js"></script>
+<script src="../../HICLIN/scripts/hc890d.vue.js"></script>
+<script src="../../HICLIN/scripts/HC-8002.js"></script>
+
+<style>
+  input {
+    text-align: center;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .no-padding-left {
+    padding-left: 0px !important;
+  }
+
+  .flex-wrap-input {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+
+  .label-left {
+    text-align: left;
+  }
+
+  .flex-date-group {
+    display: flex;
+  }
+
+  .descrip_hc890d {
+    position: relative;
+    top: 7px;
+    margin-left: 10px !important;
+  }
+
+  .input-group.text-descrip {
+    display: flex;
+    margin-bottom: 5px;
+  }
+
+  .text-descrip input:nth-child(1) {
+    margin-right: 2px;
+    width: 30%;
+  }
+
+  .text-descrip input:nth-child(2) {
+    margin-right: 2px;
+    background: #d0cece21 !important;
+  }
+
+  .label-center {
+    position: relative;
+    top: 7px;
+  }
+
+  .float-right {
+    float: right;
+  }
+
+  textarea {
+    resize: none;
+    text-align: justify;
+  }
+</style>

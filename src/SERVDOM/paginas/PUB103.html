@@ -1,0 +1,602 @@
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<div class="col-md-12" id="PUB103">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="col-md-12 no-padding">
+          <div class="col-md-12 no-padding">
+
+            <div class="col-md-1" style="padding-left: 0">
+              <div class="col-md-12 form-group box-center">
+                <div class="col-md-12 head-box no-padding">
+                  <label style="background: 0; padding: 0">Novedad</label>
+                </div>
+                <div class="col-md-12 no-padding" style="padding-top: 7px !important; padding-bottom: 8px !important">
+                  <label> {{ novedad }} </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-8 no-padding">
+              <div class="col-md-12 no-padding">
+                <div class="col-md-5" style="padding-left: 0">
+                  <div class="col-md-12 form-group box-center">
+                    <div class="col-md-12 head-box no-padding" style="padding-bottom: 0 !important">
+                      <label style="background: 0; padding: 0">Código Usuario</label>
+                    </div>
+                    <div class="col-md-12 inline-inputs no-padding">
+                      <div class="input-group col-md-11" id="nro_cat">
+                        <input
+                          v-model="reg_pub.nro_cat"
+                          type="number"
+                          class="form-control nro_cat text-center"
+                          data-orden="1"
+                          maxlength="15"
+                          required="true"
+                          @keydown.f8="_ventanaUsuarSer"
+                        />
+                      </div>
+                      <button @click="_ventanaUsuarSer" type="button" class="btn col-md-1 f8-Btn" style="width: 13%">
+                        <i class="icon-magnifier"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-7" style="padding-left: 0">
+                  <div class="col-md-12 form-group box-center">
+                    <div class="col-md-12 head-box no-padding" style="padding-bottom: 0 !important">
+                      <label style="background: 0; padding: 0">Nombre</label>
+                    </div>
+                    <div class="input-group col-md-12" id="nombre">
+                      <input
+                        v-model="reg_pub.nombre"
+                        type="text"
+                        class="form-control nombre text-center"
+                        data-orden="1"
+                        maxlength="60"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 no-padding" style="margin-top: -5px">
+                <div class="col-md-5" style="padding-left: 0">
+                  <div class="col-md-12 form-group box-center">
+                    <div class="col-md-12 head-box no-padding" style="padding-bottom: 0 !important">
+                      <label style="background: 0; padding: 0">Dirección</label>
+                    </div>
+                    <div class="input-group col-md-12" id="direcc">
+                      <input
+                        v-model="reg_pub.direcc"
+                        type="text"
+                        class="form-control nombre text-center"
+                        data-orden="1"
+                        maxlength="40"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3" style="padding-left: 0">
+                  <div class="col-md-12 form-group box-center">
+                    <div class="col-md-12 head-box no-padding" style="padding-bottom: 0 !important">
+                      <label style="background: 0; padding: 0">Identificación</label>
+                    </div>
+                    <div class="input-group col-md-12" id="doc_id">
+                      <input
+                        v-model="reg_pub.doc_id"
+                        type="number"
+                        class="form-control text-center"
+                        data-orden="1"
+                        maxlength="10"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-1" style="padding-left: 0">
+                  <div class="col-md-12 form-group box-center">
+                    <div class="col-md-12 head-box no-padding" style="padding-bottom: 0 !important">
+                      <label style="background: 0; padding: 0">Estrato</label>
+                    </div>
+                    <div class="input-group col-md-12" id="estrato">
+                      <input
+                        v-model="reg_pub.estrato"
+                        type="text"
+                        class="form-control text-center"
+                        data-orden="1"
+                        maxlength="1"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3" style="padding-left: 0">
+                  <div class="col-md-12 form-group box-center">
+                    <div class="col-md-12 head-box no-padding" style="padding-bottom: 0 !important">
+                      <label style="background: 0; padding: 0">Código IGAC</label>
+                    </div>
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="cod_igac_w"
+                        type="text"
+                        class="form-control text-center"
+                        data-orden="1"
+                        maxlength="15"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 no-padding" style="margin-top: -5px">
+                <div class="col-md-3" style="padding-left: 0">
+                  <div class="col-md-12 inline-inputs form-group box-center" style="padding-left: 0">
+                    <label class="col-md-9" id="lbl">Hogar comunitario?</label>
+                    <div class="input-group col-md-3" id="hog_comun">
+                      <input
+                        v-model="reg_pub.hog_comun"
+                        type="text"
+                        class="form-control text-center"
+                        data-orden="1"
+                        maxlength="1"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3" style="padding-left: 0">
+                  <div class="col-md-12 inline-inputs form-group box-center" style="padding-left: 0">
+                    <label class="col-md-9" id="lbl">Vivienda Int Prio?</label>
+                    <div class="input-group col-md-3" id="viv_interes">
+                      <input
+                        v-model="reg_pub.viv_interes"
+                        type="text"
+                        class="form-control text-center"
+                        data-orden="1"
+                        maxlength="1"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3" style="padding-left: 0">
+                  <div class="col-md-12 inline-inputs form-group box-center" style="padding-left: 0">
+                    <label class="col-md-9" id="lbl">Fuente alterna?</label>
+                    <div class="input-group col-md-3" id="fuente_alt">
+                      <input
+                        v-model="reg_pub.fuente_alt"
+                        type="text"
+                        class="form-control text-center"
+                        data-orden="1"
+                        maxlength="1"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3" style="padding-left: 0">
+                  <div class="col-md-12 inline-inputs form-group box-center" style="padding-left: 0">
+                    <label class="col-md-9" id="lbl">Reten. Fuente?</label>
+                    <div class="input-group col-md-3" id="retenedor">
+                      <input
+                        v-model="reg_pub.retenedor"
+                        type="text"
+                        class="form-control retenedor text-center"
+                        data-orden="1"
+                        maxlength="1"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 no-padding">
+              <div class="col-md-12 no-padding">
+                <div class="col-md-12 form-group box-center">
+                  <div class="col-md-4" style="padding-right: 5px">
+                    <div class="col-md-12 head-box no-padding" style="padding-bottom: 0 !important">
+                      <label style="background: 0; padding: 0">Ruta</label>
+                    </div>
+                    <div class="inline-inputs col-md-12 no-padding">
+                        <div class="input-group col-md-8" id="ruta">
+                          <input
+                            v-model="reg_pub.ruteo.ruta"
+                            type="text"
+                            class="form-control ruta text-center"
+                            data-orden="1"
+                            maxlength="2"
+                            @keydown.f8="_ventanaRutas"
+                          />
+                        </div>
+                        <button @click="_ventanaRutas" type="button" class="btn col-md-4 f8-Btn">
+                          <i class="icon-magnifier"></i>
+                        </button>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4" style="padding-right: 5px">
+                    <div class="col-md-12 head-box no-padding" style="padding-bottom: 0 !important">
+                      <label style="background: 0; padding: 0">Cuadra</label>
+                    </div>
+                    <div class="input-group col-md-12" id="mnz_rut">
+                      <input
+                        v-model="reg_pub.ruteo.mnz_rut"
+                        type="text"
+                        class="form-control text-center"
+                        data-orden="1"
+                        maxlength="4"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-4" style="padding-right: 0">
+                    <div class="col-md-12 head-box no-padding" style="padding-bottom: 0 !important">
+                      <label style="background: 0; padding: 0">Casa</label>
+                    </div>
+                    <div class="input-group col-md-12" id="cas_rut">
+                      <input
+                        v-model="reg_pub.ruteo.cas_rut"
+                        type="text"
+                        class="form-control text-center"
+                        data-orden="1"
+                        maxlength="4"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 no-padding" style="margin-top: -5px">
+                <div class="col-md-12 inline-inputs form-group box-center" style="padding-left: 0">
+                  <label class="col-md-12" id="lbl">{{ descrip_ruta }}</label>
+                </div>
+              </div>
+
+              <div class="col-md-12 no-padding" style="margin-top: -5px">
+                <div class="col-md-7 no-padding">
+                  <div class="col-md-12 form-group box-center">
+                    <div class="col-md-12 head-box no-padding" style="padding-bottom: 0 !important">
+                      <label style="background: 0; padding: 0">Zona</label>
+                    </div>
+                    <div class="input-group col-md-12">
+                      <input v-model="descrip_zona" type="text" class="form-control text-left" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-5 no-padding">
+                  <div class="col-md-12 form-group box-center">
+                    <div class="col-md-12 head-box no-padding" style="padding-bottom: 0 !important">
+                      <label style="background: 0; padding: 0">Cod conex</label>
+                    </div>
+                    <div class="input-group col-md-12" id="cod_conex">
+                      <input
+                        v-model="reg_pub.cod_conex"
+                        type="number"
+                        class="form-control text-center"
+                        data-orden="1"
+                        maxlength="3"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 no-padding" style="margin-top: -5px">
+            <div class="col-md-12 form-group box-center no-padding">
+              <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%">
+                <thead>
+                  <tr>
+                    <th class="text-center" style="width: 5%">Item</th>
+                    <th class="text-center" style="width: 5%">Servicio</th>
+                    <th class="text-center" style="width: 5%">Estrato</th>
+                    <th class="text-center" style="width: 5%">Tarifa</th>
+                    <th class="text-center" style="width: 30%">Descripción</th>
+                    <th class="text-center" style="width: 15%">Nr medidor</th>
+                    <th colspan="2" class="text-center" style="width: 15%">
+                      Iniciar
+                      <div style="display: flex; justify-content: space-evenly">
+                        <label>Año</label>
+                        <label>Mes</label>
+                      </div>
+                    </th>
+
+                    <th class="text-center" style="width: 10%">Valor</th>
+                    <th class="text-center" style="width: 10%">Cuotas</th>
+                  </tr>
+                  <tr>
+                    <td style="width: 5%">
+                      <div class="input-group col-md-12" id="item">
+                        <input
+                          v-model="reg_tabla.item"
+                          type="number"
+                          class="form-control text-center"
+                          maxlength="3"
+                          min="001"
+                          max="010"
+                          data-orden="1"
+                          required="true"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 5%">
+                      <div class="input-group col-md-12" id="serv">
+                        <input
+                          v-model="reg_tabla.serv"
+                          type="number"
+                          class="form-control serv text-center"
+                          maxlength="1"
+                          data-orden="1"
+                          @keydown.f8="_ventanaServicios"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 5%">
+                      <div class="input-group col-md-12" id="estr">
+                        <input
+                          v-model="reg_tabla.estr"
+                          type="number"
+                          class="form-control text-center"
+                          maxlength="1"
+                          data-orden="1"
+                          required="true"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 5%">
+                      <div class="input-group col-md-12" id="tari">
+                        <input
+                          v-model="reg_tabla.tari"
+                          type="text"
+                          class="form-control tari text-center"
+                          maxlength="1"
+                          data-orden="1"
+                          required="true"
+                          @keydown.f8="_ventanaTarifas"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 30%">
+                      <div class="input-group col-md-12">
+                        <input
+                          v-model="reg_tabla.descrip"
+                          type="text"
+                          class="form-control tari text-center"
+                          maxlength="1"
+                          data-orden="1"
+                          required="true"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 15%">
+                      <div class="input-group col-md-12" id="med">
+                        <input
+                          v-model="reg_tabla.med"
+                          type="text"
+                          class="form-control text-center"
+                          maxlength="10"
+                          data-orden="1"
+                          required="true"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 7.5%">
+                      <div class="input-group col-md-12" id="ano">
+                        <input
+                          v-model="reg_tabla.ano"
+                          type="number"
+                          class="form-control text-center"
+                          maxlength="4"
+                          data-orden="1"
+                          required="true"
+                          placeholder="YYYY"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 7.5%">
+                      <div class="input-group col-md-12" id="mes">
+                        <input
+                          v-model="reg_tabla.mes"
+                          type="number"
+                          class="form-control text-center"
+                          maxlength="2"
+                          data-orden="1"
+                          required="true"
+                          placeholder="MM"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 10%">
+                      <div class="input-group col-md-12" id="valor">
+                        <input
+                          v-model="reg_tabla.valor"
+                          type="number"
+                          class="form-control text-center"
+                          maxlength="10"
+                          data-orden="1"
+                          required="true"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 10%">
+                      <div class="input-group col-md-12" id="cuotas">
+                        <input
+                          v-model="reg_tabla.cuotas"
+                          type="number"
+                          class="form-control text-center"
+                          maxlength="2"
+                          data-orden="1"
+                          required="true"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                </thead>
+              </table>
+              <div style="display: inline-block; width: 100%">
+                <table id="tabla_serv" class="table table-light table-striped" style="margin-bottom: 0px">
+                  <tbody>
+                    <tr v-for="(registro, index) in reg_pub.tabla_serv">
+                      <td class="text-center" style="width: 5%; padding: 3px;">{{ registro.item }}</td>
+                      <td class="text-center" style="width: 5%; padding: 3px;">{{ parseInt(registro.serv) || "" }}</td>
+                      <td class="text-center" style="width: 5%; padding: 3px;">{{ parseInt(registro.estr) || "" }}</td>
+                      <td class="text-center" style="width: 5%; padding: 3px;">{{ registro.tari }}</td>
+                      <td class="text-center" style="width: 30%; padding: 3px">{{ registro.descrip }}</td>
+                      <td class="text-center" style="width: 15%; padding: 3px">{{ registro.med }}</td>
+                      <td class="text-center" style="width: 7.5%; padding: 3px">{{ parseInt(registro.ano) || "" }}</td>
+                      <td class="text-center" style="width: 7.5%; padding: 3px">{{ parseInt(registro.mes) || "" }}</td>
+                      <td class="text-center" style="width: 10%; padding: 3px">{{ parseFloat(registro.valor) || "" }}</td>
+                      <td class="text-center" style="width: 10%; padding: 3px">{{ parseInt(registro.cuotas) || "" }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding" style="margin-top: -7px">
+          <div class="form-group box-center inline-inputs col-md-13">
+            <label class="col-md-12" id="lbl" style="color: #476fad; text-align: center"
+              >F3 graba, F5 salir sin grabar, F9 duplica renglon</label
+            >
+          </div>
+        </div>
+
+        <div class="col-md-8 no-padding" style="margin-top: -5px">
+          <div class="form-group box-center inline-inputs col-md-13">
+            <label class="col-md-2" id="lbl">Observaciones</label>
+            <div class="input-group col-md-10" id="observ">
+              <input
+                v-model="reg_pub.observ"
+                type="text"
+                class="form-control text-left"
+                data-orden="1"
+                maxlength="70"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div v-if="mostrar_igac">
+    <transition>
+      <div class="modal-mask">
+        <div class="modal-wrapper">
+          <div
+            class="col-md-2 no-padding form-group box-center"
+            style="padding: 15px !important; padding-bottom: 4px !important; padding-top: 4px !important"
+          >
+            <h4 style="font-weight: 600">CÓDIGO IGAC</h4>
+
+            <div class="col-md-12 inline-inputs" style="padding: 4px">
+              <label class="col-md-7" id="lbl">Zona</label>
+              <div class="input-group col-md-5" id="zona_igac">
+                <input
+                  v-model="reg_pub.cod_igac.zona_igac"
+                  type="number"
+                  class="form-control text-center"
+                  data-orden="1"
+                  maxlength="2"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-12 inline-inputs" style="padding: 4px">
+              <label class="col-md-7" id="lbl">Sector</label>
+              <div class="input-group col-md-5" id="sector_igac">
+                <input
+                  v-model="reg_pub.cod_igac.sector_igac"
+                  type="number"
+                  class="form-control text-center"
+                  data-orden="1"
+                  maxlength="2"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-12 inline-inputs" style="padding: 4px">
+              <label class="col-md-7" id="lbl">Manzana</label>
+              <div class="input-group col-md-5" id="manzana_igac">
+                <input
+                  v-model="reg_pub.cod_igac.manzana_igac"
+                  type="number"
+                  class="form-control text-center"
+                  data-orden="1"
+                  maxlength="4"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-12 inline-inputs" style="padding: 4px">
+              <label class="col-md-7" id="lbl">Predio</label>
+              <div class="input-group col-md-5" id="predio_igac">
+                <input
+                  v-model="reg_pub.cod_igac.predio_igac"
+                  type="number"
+                  class="form-control text-center"
+                  data-orden="1"
+                  maxlength="4"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-12 inline-inputs" style="padding: 4px">
+              <label class="col-md-7" id="lbl">Condic</label>
+              <div class="input-group col-md-5" id="condic_igac">
+                <input
+                  v-model="reg_pub.cod_igac.condic_igac"
+                  type="number"
+                  class="form-control text-center"
+                  data-orden="1"
+                  maxlength="3"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </div>
+  
+  <div class="col-md-12 no-padding" v-if="mostrar_CLAVE">
+    <clave :params="params_CLAVE" @callback="callback_clave" @callback_esc="esc_clave"> </clave>
+  </div>
+</div>
+
+<script src="../../SERVDOM/scripts/PUB103.js" type="text/javascript"></script>
+
+<style>
+  #lbl {
+    background: 0;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  #tabla_tarifas tbody tr td {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+</style>

@@ -1,0 +1,1366 @@
+<style>
+    #TABLADIRECCION_CON110C th {
+        text-align: center;
+    }
+</style>
+
+<div class="col-md-12">
+    <div class="portlet light no-padding">
+        <div class="portlet-body" style="padding-top: 0px">
+            <div class="tabbable-line">
+                <ul class="nav nav-tabs" style="background:#476fad!important; ">
+                    <li class="active">
+                        <a href="#terce_15_1" id="tabla1" data-toggle="tab" style="color: #FFFFFF"> GENERAL </a>
+                    </li>
+                    <li>
+                        <a href="#terce_15_2" id="tabla2" data-toggle="tab" style="color: #FFFFFF"> FACTURACION </a>
+                    </li>
+                    <li>
+                        <a href="#terce_15_3" id="tabla3" data-toggle="tab" style="color: #FFFFFF"> REFERENCIAS </a>
+                    </li>
+                    <li>
+                        <a href="#terce_15_4" id="tabla4" data-toggle="tab" style="color: #FFFFFF"> DIRECCIONES </a>
+                    </li>
+                </ul>
+                <div class="tab-content no-padding">
+                    <div class="tab-pane active" id="terce_15_1">
+                        <form class="form-horizontal">
+                            <div class="col-md-4 col-sm-3 col-xs-12 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-12 col-sm-12 col-xs-12">Novedad:</label>
+                                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                                <input id="novedad_CON110C" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8 col-sm-9 col-xs-12" style="padding-right: 0; padding-left: 10px;">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-8 col-sm-6 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-3 col-xs-12">Cod. Cliente</label>
+                                            <div class="input-group col-md-10 col-sm-9 col-xs-12" id="CODCLIEN_CON110C">
+                                                <input id="codclien_con110c"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1" type="number">
+                                            </div>
+                                            <button type="button" id="codclienBtn_con110c"
+                                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-2 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-4 col-xs-12">Tipo Ident</label>
+                                            <div class="input-group col-md-9 col-sm-9 col-xs-12" id="TIPOIDENT_CON110C">
+                                                <input id="tipoident_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                                    <div class="col-md-12 col-sm-8 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-6 col-xs-12">Nombre</label>
+                                            <div class="input-group col-md-10 col-sm-8 col-xs-12"
+                                                id="NOMBRESCOMPL_CON110C">
+                                                <input id="nombres_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength=50
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+
+                                    <div class="col-md-6 col-sm-4 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-3 col-sm-6 col-xs-12">Direccion</label>
+                                            <div class="input-group col-md-9 col-sm-9 col-xs-12" id="DIRECC_CON110C">
+                                                <input id="direcc_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="45"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-4 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-6 col-xs-12">Ciudad</label>
+                                            <div class="input-group col-md-4 col-sm-8 col-xs-12" id="CIUDAD_CON110C">
+                                                <input id="ciudad_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5"
+                                                    data-orden="1">
+                                            </div>
+                                            <button type="button" id="ciudadBtn_con110c"
+                                                class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                                                <input id="ciudadd_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-2 col-sm-2 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-7 col-sm-7 col-xs-12">Telefono Ind</label>
+                                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="IND_CON110C">
+                                                <input id="ind_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-3 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-12">Numero</label>
+                                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="TEL_CON110C">
+                                                <input id="tel_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="12"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-5 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-6 col-sm-6 col-xs-12">Fecha Nac.</label>
+                                            <div class="input-group col-md-3 col-sm-9 col-xs-12" id="ANO_CON110C">
+                                                <input id="anocumpl_con110" type="number"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12 no-spin-button" maxlength="4"
+                                                    data-orden="1" placeholder="AAAA">
+                                            </div>
+                                            <div class="input-group col-md-3 col-sm-9 col-xs-12" id="MES_CON110C">
+                                                <input id="mescumpl_con110" type="number"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12 no-spin-button" maxlength="2"
+                                                    data-orden="1" placeholder="MM">
+                                            </div>
+                                            <div class="input-group col-md-3 col-sm-9 col-xs-12" id="DIA_CON110C">
+                                                <input id="diacumpl_con110" type="number"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12 no-spin-button" maxlength="2"
+                                                    data-orden="1" placeholder="DD">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-5 col-xs-12">CC o Nit</label>
+                                            <div class="input-group col-md-8 col-sm-7 col-xs-12" id="CC_CON110C">
+                                                <input id="cc_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-12">D.V</label>
+                                            <div class="input-group col-md-9 col-sm-9 col-xs-9" id="DV_CON110C">
+                                                <input id="dv_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-4 col-xs-12">Actividad</label>
+                                            <div class="input-group col-md-3 col-sm-3 col-xs-12" id="ACTIVI_CON110C">
+                                                <input id="actividad_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                                    data-orden="1">
+                                            </div>
+                                            <button type="button" id="actividadBtn_con110c"
+                                                class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                            <div class="input-group col-md-7 col-sm-7 col-xs-8">
+                                                <input id="actividadd_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-4 col-xs-4">Codigo Entidad</label>
+                                            <div class="input-group col-md-3 col-sm-3 col-xs-3" id="ENTIDAD_CON110C">
+                                                <input id="entidad_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                            <button type="button" id="entidadBtn_con110c"
+                                                class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                            <div class="input-group col-md-7 col-sm-7 col-xs-8">
+                                                <input id="entidadd_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                                    <div class="col-md-5 col-sm-5 col-xs-12" id="CONVENIO_CON110C">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-6 col-xs-4">Convenio</label>
+                                            <div class="input-group col-md-3 col-sm-5 col-xs-12" >
+                                                <input id="convenio_con110c" type="text" onkeyup="this.value = this.value.toUpperCase();"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1">
+                                            </div>
+                                            <button type="button" id="convenioBtn_con110c"
+                                                class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                            <div class="input-group col-md-7 col-sm-7 col-xs-8">
+                                                <input id="conveniod_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-5 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-7 col-sm-5 col-xs-12">Presento RUT</label>
+                                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="RUT_110C">
+                                                <input id="rut_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1" placeholder="N/S"
+                                                    onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-12">Nombre comercial</label>
+                                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="NOMCOM_CON110C">
+                                                <input id="nomcom_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="25"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-6 col-sm-4 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-3 col-sm-6 col-xs-12">Otros datos</label>
+                                            <div class="input-group col-md-9 col-sm-9 col-xs-12" id="DATOS_CON110C">
+                                                <input id="datos_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="45"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-4 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-3 col-sm-6 col-xs-12">Contacto</label>
+                                            <div class="input-group col-md-9 col-sm-9 col-xs-12" id="CONTACT_CON110C">
+                                                <input id="contact_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="25"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-6 col-sm-4 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-3 col-sm-6 col-xs-12">Contrato XML</label>
+                                            <div class="input-group col-md-9 col-sm-9 col-xs-12" id="CONTRATO_CON110C">
+                                                <input id="contrato_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="30"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-4 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-3 col-sm-6 col-xs-12">Web</label>
+                                            <div class="input-group col-md-9 col-sm-9 col-xs-12" id="WEB_CON110C">
+                                                <input id="web_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="25"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-horizontal">
+                            <div class="col-md-7 col-sm-6 col-xs-12 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-6 col-sm-3 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-6 col-xs-12">Cargo contacto</label>
+                                            <div class="input-group col-md-9 col-sm-9 col-xs-12" id="CARGO_CON110C">
+                                                <input id="cargo_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="25"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-4 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-6 col-xs-12">Ult. fact</label>
+                                            <div class="input-group col-md-9 col-sm-9 col-xs-12" id="ULTFACT_CON110C">
+                                                <input id="ultfact_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="25"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-6 col-sm-4 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-6 col-xs-12">Asesor</label>
+                                            <div class="input-group col-md-9 col-sm-9 col-xs-12" id="ASESOR_CON110C">
+                                                <input id="asesor_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-4 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-6 col-sm-6 col-xs-12">Tipo cupo</label>
+                                            <div class="input-group col-md-10 col-sm-10 col-xs-12" id="CUPO_CON110C">
+                                                <input id="cupo_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-sm-6 col-xs-6" style="padding-right: 0; padding-left: 10px;">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-12 col-sm-4 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-2 col-sm-6 col-xs-12">Email</label>
+                                            <div class="input-group col-md-10 col-sm-10 col-xs-12" id="EMAIL_CON110C">
+                                                <input id="email_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="50"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-4 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-6 col-xs-12">Email factura electronica</label>
+                                            <div class="input-group col-md-9 col-sm-9 col-xs-12" id="EMAILELECT_CON110C">
+                                                <input id="emailelect_con110c" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" 
+                                                maxlength="60" data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </form>
+
+                        <form class="form-horizontal">
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-4 col-xs-12">CREADO</label>
+                                            <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                                <input id="creado_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                            </div>
+                                            <div class="input-group col-md-5 col-sm-4 col-xs-12">
+                                                <input id="creadod_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-4 col-xs-12">MODIFICADO</label>
+                                            <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                                <input id="modificado_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                            </div>
+                                            <div class="input-group col-md-5 col-sm-5 col-xs-12">
+                                                <input id="modificadod_103" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <div class="inline-inputs">
+                                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                                <input id="linkter1_103" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="terce_15_2">
+
+                        <form class="form-horizontal">
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-3 col-sm-3 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-6 col-sm-6 col-xs-12">Factor ventas</label>
+                                            <div class="input-group col-md-5 col-sm-2 col-xs-12"
+                                                id="FACTVENTAS_CON110C">
+                                                <input id="factventas_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-6 col-xs-12">Cupos SMVM</label>
+                                            <div class="input-group col-md-5 col-sm-9 col-xs-12" id="SMVM_CON110C">
+                                                <input id="smvm_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1">
+                                            </div>
+                                            <div class="input-group col-md-5 col-sm-2 col-xs-12">
+                                                <input id="smvmd_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-5 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-6 col-xs-12">Vendedor</label>
+                                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="VENDEDOR_CON110C">
+                                                <input id="vendedor_con110" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                                    maxlength="5">
+                                            </div>
+                                            <button type="button" id="vendedorBtn_103"
+                                                class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                            <div class="input-group col-md-10 col-sm-10 col-xs-8">
+                                                <input id="descripvendedor_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-horizontal">
+                            <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-6 col-sm-4 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Forma de Pago</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="FORMAPAGO_CON110C">
+                                                <input id="formapago_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-2 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Plazo</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="PLAZO_CON110C">
+                                                <input id="plazo_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-6 col-sm-6 col-xs-5">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-3 col-sm-3 col-xs-12">Zona</label>
+                                            <div class="input-group col-md-3 col-sm-3 col-xs-12" id="ZONA_CON110C">
+                                                <input id="zona_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                                    data-orden="1">
+                                            </div>
+                                            <button type="button" id="zonaBtn_110c"
+                                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                            <div class="input-group col-md-11 col-sm-11 col-xs-9">
+                                                <input id="zonad_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-3 col-sm-3 col-xs-5">Ruta</label>
+                                            <div class="input-group col-md-3 col-sm-3 col-xs-4" id="RUTA_110C">
+                                                <input id="ruta_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                                    data-orden="1">
+                                            </div>
+                                            <button type="button" id="rutaBtn_110c"
+                                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                            <div class="input-group col-md-11 col-sm-11 col-xs-9">
+                                                <input id="rutad_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0; padding-left: 10px;">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-3 col-sm-3 col-xs-5">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-12">Orden</label>
+                                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="ORDEN_110C">
+                                                <input id="orden_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-5">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-12">Act. Ica</label>
+                                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="ACTICA_110C">
+                                                <input id="actica_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-5">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-12">% Ica</label>
+                                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="PORCENTICA_110C">
+                                                <input id="porcetica_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-5">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-12">% Reten</label>
+                                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="PORCETRETEN_110C">
+                                                <input id="porcentreten_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-12 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-12">Grd. negocio</label>
+                                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="GRDNEGOCIO_110C">
+                                                <input id="grdnegocio_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1">
+                                            </div>
+                                            <button type="button" id="grdnegocioBtn_110c"
+                                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                            <div class="input-group col-md-11 col-sm-11 col-xs-9">
+                                                <input id="grdnegociod_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-horizontal">
+                            <div class="col-md-6 col-sm-6 col-xs-12 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-8 col-sm-6 col-xs-6">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-12">Clasif Cliente</label>
+                                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="CLASIFCLIEN_110C">
+                                                <input id="clasifclien_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1">
+                                            </div>
+                                            <button type="button" id="clasifclienBtn_110c"
+                                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                            <div class="input-group col-md-11 col-sm-11 col-xs-9">
+                                                <input id="clasifcliend_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-2 col-xs-5">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-3 col-sm-3 col-xs-12">I.V.A</label>
+                                            <div class="input-group col-md-10 col-sm-7 col-xs-12" id="IVA_110C">
+                                                <input id="iva_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0; padding-left: 10px;">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-5 col-sm-2 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-4 col-xs-12">Calif</label>
+                                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="CALIF_110C">
+                                                <input id="calif_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-2 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-7 col-sm-4 col-xs-12">Gran contribuyente</label>
+                                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="CONTRIBUYENTE_103">
+                                                <input id="contribuyente_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-2 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-4 col-xs-5">BaseRet</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="BASERET_110C">
+                                                <input id="baseret_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <form class="form-horizontal">
+                            <div class="col-md-3 col-sm-6 col-xs-5 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-12 col-sm-2 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-7 col-sm-4 col-xs-5">Es agente retenedor</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="RETENEDOR_110C">
+                                                <input id="retenedor_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-2 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-7 col-sm-4 col-xs-5">Reteiva en compras</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="RETCOMP_110C">
+                                                <input id="reteivacompra_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-2 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-7 col-sm-4 col-xs-5">Causa reteiva venta</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="RETVENTA_110C">
+                                                <input id="causareteiva_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-7" style="padding-right: 0; padding-left: 10px;">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-12 col-sm-2 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-7 col-sm-4 col-xs-5">Es exento de retenc</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="EXENTO_110C">
+                                                <input id="exento_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-2 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-7 col-sm-4 col-xs-5">Cobro seguro?</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="COBROSEG_110C">
+                                                <input id="cobroseg_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-2 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-7 col-sm-4 col-xs-5">Datacredito/cifin</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="DATACREDIT_110C">
+                                                <input id="datacredito_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-7" style="padding-right: 0; padding-left: 10px;">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-12 col-sm-2 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-7 col-sm-4 col-xs-5">Acuerdo pago</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="ACUERDO_110C">
+                                                <input id="acuerdopago_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-2 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-7 col-sm-4 col-xs-5">Capitado</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="CAPITADO_110C">
+                                                <input id="capitado_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-2 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-7 col-sm-4 col-xs-5">Nit cliente</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="NITCLIEN_110C">
+                                                <input id="nitcliente_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 col-xs-7" style="padding-right: 0; padding-left: 10px;">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-12 col-sm-2 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-7 col-sm-4 col-xs-5">Causa rete ICAV?</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="RETIVA_110C">
+                                                <input id="icav_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-2 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-7 col-sm-4 col-xs-5">Bloquear vendedor</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="BLOQVEN_110C">
+                                                <input id="bloquearvend_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-2 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-7 col-sm-4 col-xs-5">Excluido de Iva?</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="EXCLUIRIVA_110C">
+                                                <input id="excluiriva_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                    data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <form class="form-horizontal">
+                            <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-6 col-sm-4 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Hectarea</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="HECTARIA_CON110C">
+                                                <input id="hectaria_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-2 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Marca</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="MARCA_CON110C">
+                                                <input id="marca_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-6 col-sm-4 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Empresa</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="EMPRESA_CON110C">
+                                                <input id="empresa_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="20"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-2 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Numero</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="NUMERO_CON110C">
+                                                <input id="numero_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-6 col-sm-4 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Placa</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="PLACA_CON110C">
+                                                <input id="placa_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-2 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Cod Ventas</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="MARCA_CON110C">
+                                                <input id="codventas_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0; padding-left: 10px;">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-6 col-sm-4 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Re´.Legal</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="REPRELEGAL_CON110C">
+                                                <input id="replegal_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-2 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Nombre</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4"
+                                                id="NOMBRELEGAL_CON110C">
+                                                <input id="nombrelegal_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-6 col-sm-4 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Email</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="EMAILEMP_CON110C">
+                                                <input id="emailemp_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-4 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Tesorero ID</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="TESORERO_CON110C">
+                                                <input id="tesorero_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-6 col-sm-4 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Nombre</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="NOMBRETESO_CON110C">
+                                                <input id="nombreteso_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="30"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-2 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Email</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="EMAILTESO_CON110C">
+                                                <input id="emailteso_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="35"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div class="tab-pane" id="terce_15_3">
+                        <form class="form-horizontal">
+                            <div class="col-md-12 col-sm-12 col-xs-6 no-padding" style="margin-top: 9px;">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-12 col-sm-12 col-xs-12"></div>
+                                    <label>
+                                        <h4> REFERENCIAS</h4>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-horizontal">
+                            <div class="col-md-4 col-sm-6 col-xs-6 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Nombre</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="NOMBRE1REF_CON110C">
+                                                <input id="nombreref1_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="20"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Direccion</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="DIRREF1_CON110C">
+                                                <input id="dirref1_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="35"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Telefono</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="TELREF1_CON110C">
+                                                <input id="telref1_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Relacion</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4"
+                                                id="RELACIONREF1_CON110C">
+                                                <input id="relacionref1_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-6" style="padding-right: 0; padding-left: 10px;">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Nombre</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="NOMBRE2REF_CON110C">
+                                                <input id="nombreref2_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="20"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Direccion</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="DIRREF2_CON110C">
+                                                <input id="dirref2_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="35"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Telefono</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="TELREF2_CON110C">
+                                                <input id="telref2_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Relacion</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4"
+                                                id="RELACIONREF2_CON110C">
+                                                <input id="relacionref2_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-6" style="padding-right: 0; padding-left: 10px;">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Nombre</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="NOMBRE3REF_CON110C">
+                                                <input id="nombreref3_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="20"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Direccion</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="DIRREF3_CON110C">
+                                                <input id="dirref3_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="35"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Telefono</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4" id="TELREF3_CON110C">
+                                                <input id="telref3_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Relacion</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-4"
+                                                id="RELACIONREF3_CON110C">
+                                                <input id="relacionref3_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-horizontal">
+                            <div class="col-md-12 col-sm-12 col-xs-6 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-12 col-sm-12 col-xs-12"></div>
+                                    <label>
+                                        <h4> DATOS EMPLEADOR</h4>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-horizontal">
+                            <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-12 col-sm-8 col-xs-5">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-3 col-sm-3 col-xs-12">Empleador</label>
+                                            <div class="input-group col-md-10 col-sm-10 col-xs-12" id="EMPLEADOR_110C">
+                                                <input id="empleador_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-6 col-sm-8 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-4 col-xs-12">Direccion</label>
+                                            <div class="input-group col-md-10 col-sm-10 col-xs-12"
+                                                id="DIRECEMPLEADOR_110C">
+                                                <input id="direc_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-8 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-4 col-xs-5">Telefono</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="TELEMPLEADOR_110C">
+                                                <input id="telempleador_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-6 col-sm-8 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-4 col-xs-5">Cargo</label>
+                                            <div class="input-group col-md-10 col-sm-10 col-xs-12"
+                                                id="CARGOEMPLEADOR_110C">
+                                                <input id="cargoempleador_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-8 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-4 col-xs-5">Sueldo</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12"
+                                                id="SUELDOEMPLEADOR_110C">
+                                                <input id="sueldoempleador_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0; padding-left: 10px;">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-6 col-sm-8 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-4 col-xs-5">Antiguedad</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12"
+                                                id="ANTIGEMPLEADOR_110C">
+                                                <input id="antigempleador_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6"
+                                                    data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-8 col-xs-5">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-8 col-sm-4 col-xs-12">Fecha Nacimiento</label>
+                                            <div class="input-group col-md-6 col-sm-8 col-xs-12" id="ANONACIM_CON110C">
+                                                <input id="anonac_con110c" type="number"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                                    placeholder="AAAA">
+                                            </div>
+                                            <div class="input-group col-md-3 col-sm-8 col-xs-12" id="MESNACIM_CON110C">
+                                                <input id="mesnac_con110c" type="number"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                                    placeholder="MM">
+                                            </div>
+                                            <div class="input-group col-md-3 col-sm-8 col-xs-12" id="DIANACIM_CON110C">
+                                                <input id="dianac_con110c" type="number"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                                    placeholder="DD">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-6 col-sm-8 col-xs-12">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-4 col-xs-12">Embargos</label>
+                                            <div class="input-group col-md-9 col-sm-9 col-xs-12" id="EMBARGOS_CON110C">
+                                                <input id="embargos_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-8 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-4 col-sm-4 col-xs-5">Cedula</label>
+                                            <div class="input-group col-md-8 col-sm-8 col-xs-12"
+                                                id="CELMPLEADOR_CON110C">
+                                                <input id="celempleador_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                    <div class="col-md-8 col-sm-8 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-6 col-sm-6 col-xs-5">Entidad Afil</label>
+                                            <div class="input-group col-md-6 col-sm-6 col-xs-12"
+                                                id="ENTIDADAFIL_CON110C">
+                                                <input id="entidadafil_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1">
+                                            </div>
+                                            <button type="button" id="entidadafilBtn_con110c"
+                                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                            <div class="input-group col-md-11 col-sm-11 col-xs-9">
+                                                <input id="entidadfild_110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-8 col-xs-8">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-8 col-sm-7 col-xs-5">Fecha Afil</label>
+                                            <div class="input-group col-md-10 col-sm-10 col-xs-12"
+                                                id="FECHAAFIL_CON110C">
+                                                <input id="fechaafil_con110c" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                                    data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="salto-linea"></div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                    <div class="tab-pane" id="terce_15_4">
+                        <form class="form-horizontal">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                                    <div class="col-md-2 col-sm-3 col-xs-6" id="ITEM_CON110C">
+                                        <label>Item</label>
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="item_con110c" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                                data-orden="1" required="true">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6 col-xs-9" id="DIRESUCU_CON103">
+                                        <label>Direccion:</label>
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="diresucu_con110c" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="40"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-9" id="TELSUCU_CON110C">
+                                        <label>Telefono:</label>
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="telsucu_con110c" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="12"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-9" id="CIUDADSUCU_CON110C">
+                                        <label>Ciudad:</label>
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="ciudadsucu_con110c" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5"
+                                                data-orden="1" required="true">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-9" id="BARRIOSUCU_CON110C">
+                                        <label>Barrio:</label>
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="barriosucu_110c" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="8"
+                                                data-orden="1" required="true">
+                                        </div>
+                                    </div>
+                                    <div style="clear:both;"></div>
+                                    <hr>
+                                    <div class="salto-linea"></div>
+                                    <table id="TABLADIRECCION_CON110C" class="table table-light table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Item</th>
+                                                <th>Direccion</th>
+                                                <th>Telefono</th>
+                                                <th>Ciudad</th>
+                                                <th>Barrio</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../CONTAB/scripts/CON110C.js" type="text/javascript"></script>
+<!-- <script src="../../frameworks/scripts/ventanas.js"></script> -->

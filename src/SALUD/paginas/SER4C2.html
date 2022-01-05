@@ -1,0 +1,953 @@
+<div class="col-md-12">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <div class="form-horizontal">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Prefijo:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR1_SER4C2">
+                                <input id="prefijo_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Factura:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR2_SER4C2">
+                                <input id="factura_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1">
+                            </div>
+                            <button type="button" id="facturaBtn_SER4C2"
+                                class="btn f8-Btn btn-default col-md-2 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-7 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-2 col-sm-2 col-xs-12">Víctima:</label>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-12">
+                                <input id="victima_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                <input id="descripVictima_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-5 col-sm-5 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Naturaleza evento:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                <input id="naturaleza_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Condicion:</label>
+                            <div class="input-group col-md6 col-sm-6 col-xs-12">
+                                <input id="condicion_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12" style="display: flex">
+                        <div class="col-md-8 inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-6">Fecha:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-6" id="VALIDAR6_SER4C2">
+                                <input id="fecha_SER4C2" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    style="text-align: center" maxlength="16" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 hidden" id="OTROEVENTO_SER4C2">
+                        <div class="salto-linea"></div>
+                        <div class="col-md-12 inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-6">Otro evento:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-6" id="OTRO_SER4C2">
+                                <input id="otroevent_SER4C2" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                 maxlength="25" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Zona:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR4_SER4C2">
+                                <input id="zona_SER4C2" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="1" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-4">Ciudad:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-7" id="VALIDAR5_SER4C2">
+                                <input id="ciudad_SER4C2" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="6" data-orden="1">
+                            </div>
+                            <button type="button" id="ciudadBtn_SER4C2"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-6">Direccion ocurrencia:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-6" id="VALIDAR3_SER4C2">
+                                <input id="direcc_SER4C2" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="30" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex; justify-content: space-around">
+                        <div class="col-md-2" style="display: flex; justify-content: center;   align-items: center;">
+                            <label>Descripción evento:</label>
+                        </div>
+
+
+                        <div class="col-md-9 col-sm-12 col-xs-12" style="display: flex; justify-content: center" id="VALIDAR7_SER4C2">
+                            <div class="col-md-12">
+                                 <textarea id="descripcionevento_SER4C2" class="form-control" rows="3" data-orden="1" maxlength="270" style="resize: none;"
+                                ></textarea>
+
+<!--                              <div class="col-md-12 col-sm-12 col-xs-12"
+                                    style="display: flex; justify-content: center">
+                                    <div class="col-md-12 inline-inputs">
+                                        <input id="descripEven1_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            style="text-align: center" maxlength="90" disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12"
+                                    style="display: flex; justify-content: center">
+                                    <div class="col-md-12 inline-inputs">
+                                        <input id="descripEven2_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            style="text-align: center" maxlength="90" disabled="disabled" data-orden="2">
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12"
+                                    style="display: flex; justify-content: center">
+                                    <div class="col-md-12 inline-inputs">
+                                        <input id="descripEven3_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            style="text-align: center" maxlength="90" disabled="disabled" data-orden="3">
+                                    </div>
+                                </div>  -->
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Accidentes de tránsito:</label>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Estado Aseguramiento:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input id="estadoAseg_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Placa:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" id="VALIDAR8_SER4C2">
+                                <input id="placa_SER4C2" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="6" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Marca:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input id="marca_SER4C2" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Tipo de servicio:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input id="tipoServ_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Poliza:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="VALIDAR9_SER4C2">
+                                <input id="poliza_SER4C2" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="20" data-orden="1">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id="VALIDAR9_SER4C2">
+                                <input id="poliza2_SER4C2" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="20" data-orden="2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Entidad Aseguradora:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" id="VALIDAR10_SER4C2">
+                                <input id="entidad_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Vigencia Desde:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" id="VALIDAR11_SER4C2">
+                                <input id="vigenDesde_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" placeholder="Año/Mes/Dia Hora:Minuto">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-3 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Intervino autoridad?</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="VALIDAR12_SER4C2">
+                                <input id="autorid_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Cobro excedente poliza?</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="VALIDAR13_SER4C2">
+                                <input id="cobro_SER4C2" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" 
+                                data-orden="1" maxlength="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-4 col-xs-12">
+                        <div class="inline-inputs hidden">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Vigencia Hasta:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" id="VALIDAR14_SER4C2">
+                                <input id="vigenHasta_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" placeholder="Año/Mes/Dia Hora:Minuto">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Propietario vehiculo:</label>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-12" id="VALIDAR15_SER4C2">
+                                <input id="propietario_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                            <button type="button" id="propietarioBtn_SER4C2"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12">
+                                <input id="propietariod_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Conductor vehiculo:</label>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-12" id="VALIDAR16_SER4C2">
+                                <input id="conductor_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                            <button type="button" id="conductorBtn_SER4C2"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12">
+                                <input id="conductord_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Otros vehiculos que intervienen en el accidente:</label>
+                    </div>
+
+                    <div class="col-md-12" style="display:flex; justify-content: center">
+                        <div class="col-md-9">
+
+                            <div class="col-md-3 col-sm-3 col-xs-12" id="VALIDAR17_SER4C2">
+                                <div class="inline-inputs">
+                                    <label class="col-md-6 col-sm-6 col-xs-12">Placa:</label>
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                        <input id="placa1_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                    </div>
+                                    <button type="button" id="placa1Btn_SER4C2"
+                                        class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-2 col-sm-2 col-xs-12">Propietario:</label>
+                                    <div class="input-group col-md-2 col-sm-2 col-xs-12" id="VALIDAR18_SER4C2">
+                                        <input id="codProp1_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                    </div>
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                        <input id="descripProp1_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-6 col-sm-6 col-xs-12">Placa:</label>
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-12" id="VALIDAR19_SER4C2">
+                                        <input id="placa2_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                    </div>
+                                    <button type="button" id="placa2Btn_SER4C2"
+                                        class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-2 col-sm-2 col-xs-12">Propietario:</label>
+                                    <div class="input-group col-md-2 col-sm-2 col-xs-12" id="VALIDAR20_SER4C2">
+                                        <input id="codProp2_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                    </div>
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                        <input id="descripProp2_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Datos de remision:</label>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-6">Fecha de remision:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-6" id="VALIDAR21_SER4C2">
+                                <input id="fechaRemision_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">IPS de origen:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="VALIDAR22_SER4C2">
+                                <input id="ipsOrg_SER4C2" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="12" data-orden="1">
+                            </div>
+                            <button type="button" id="ipsOrgBtn_SER4C2"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-12">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Ciudad:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                <input id="ciudadRemi_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Persona que remite:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="VALIDAR23_SER4C2">
+                                <input id="Remite_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Cargo:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="VALIDAR24_SER4C2">
+                                <input id="cargo1_SER4C2" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="30" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-6">Fecha aceptacion:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-6" id="VALIDAR25_SER4C2">
+                                <input id="fechaAceptacion_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">IPS de destino:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="VALIDAR26_SER4C2">
+                                <input id="ipsDest_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                            <button type="button" id="ipsDestBtn_SER4C2"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-12">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Telefono:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                <input id="telefono_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Direccion destino:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                <input id="direccDestino_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Ciudad:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                <input id="ciudadRemi2_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Persona recibe:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="VALIDAR27_SER4C2">
+                                <input id="persRecibe_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Cargo:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="VALIDAR28_SER4C2">
+                                <input id="cargo2_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Datos de Ambulancia:</label>
+                    </div>
+
+                    <div class="col-md-12" style="display:flex; justify-content: space-around ">
+
+
+                        <div class="col-md-6">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex; justify-content: center">
+                                <div class="col-md-8 inline-inputs">
+                                    <label class="col-md-6 col-sm-6 col-xs-12">Placa ambulancia:</label>
+                                    <div class="input-group col-md-5 col-sm-5 col-xs-12" id="VALIDAR29_SER4C2">
+                                        <input id="placaAmb_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                    </div>
+                                    <button type="button" id="placaAmbBtn_SER4C2"
+                                        class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex; justify-content: center">
+                                <div class="col-md-8 inline-inputs">
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Tipo transporte:</label>
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                        <input id="tipoTransp_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <!-- <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-2 col-sm-2 col-xs-2">Conductor:</label>
+                                    <div class="input-group col-md-3 col-sm-3 col-xs-3" id="VALIDAR30_SER4C2">
+                                        <input id="codConductorAmb_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                    </div>
+                                    <button type="button" id="codConductorAmbBtn_SER4C2"
+                                        class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                        <input id="descripConducAmb_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex; justify-content: center">
+                                <div class="col-md-11 inline-inputs">
+                                    <label class="col-md-8 col-sm-8 col-xs-8">Lugar donde recoge a la victima,
+                                        ZONA:</label>
+                                    <div class="input-group col-md-4 col-sm-4 col-xs-4" id="VALIDAR31_SER4C2">
+                                        <input id="Envios_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex; justify-content: center">
+                                <div class="col-md-9 inline-inputs">
+                                    <label class="col-md-5 col-sm-5 col-xs-5">Transporte desde:</label>
+                                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="VALIDAR32_SER4C2">
+                                        <input id="transpDesde_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex; justify-content: center">
+                                <div class="col-md-9 inline-inputs">
+                                    <label class="col-md-5 col-sm-5 col-xs-5">Transporte hasta:</label>
+                                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="VALIDAR33_SER4C2">
+                                        <input id="transpHasta_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Datos de la atencion medica de la victima:</label>
+                    </div>
+
+
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-5">Fecha Ingreso:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-7" id="VALIDAR34_SER4C2">
+                                <input id="fechaIngVic_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="16" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-3">Diagn. principal de ingreso:</label>
+                            <div class="input-group col-md-1 col-sm-3 col-xs-3" id="VALIDAR35_SER4C2">
+                                <input id="DiagPrinIng_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1">
+                            </div>
+                            <button type="button" id="DiagPrinIngBtn_SER4C2"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-7 col-sm-5 col-xs-5">
+                                <input id="descriPrinDiagIng_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-3">Otro diagnostico ingreso:</label>
+                            <div class="input-group col-md-1 col-sm-3 col-xs-3" id="VALIDAR36_SER4C2">
+                                <input id="otrDiagIng1_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1">
+                            </div>
+                            <button type="button" id="otrDiagIng1Btn_SER4C2"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-7 col-sm-5 col-xs-5">
+                                <input id="descripotrDiagIng1_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-3">Otro diagnostico ingreso:</label>
+                            <div class="input-group col-md-1 col-sm-3 col-xs-3" id="VALIDAR37_SER4C2">
+                                <input id="otrDiagIng2_SER4C2" type="text" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4">
+                            </div>
+                            <button type="button" id="otrDiagIng2Btn_SER4C2"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-7 col-sm-5 col-xs-5">
+                                <input id="descripotrDiagIng2S_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-5">Fecha Egreso:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-7" id="VALIDAR38_SER4C2">
+                                <input id="fechaEgrVic_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="16" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-3">Diagn. principal de egreso:</label>
+                            <div class="input-group col-md-1 col-sm-3 col-xs-3" id="VALIDAR39_SER4C2">
+                                <input id="DiagPrinEgr_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1">
+                            </div>
+                            <button type="button" id="DiagPrinEgrBtn_SER4C2"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-7 col-sm-5 col-xs-5">
+                                <input id="descriPrinDiagEgr_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-3">Otro diagnostico egreso:</label>
+                            <div class="input-group col-md-1 col-sm-3 col-xs-3" id="VALIDAR40_SER4C2">
+                                <input id="otrDiagEgr1_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1">
+                            </div>
+                            <button type="button" id="otrDiagEgr1Btn_SER4C2"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-7 col-sm-5 col-xs-5">
+                                <input id="descripotrDiagEgr1_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-3">Otro diagnostico egreso:</label>
+                            <div class="input-group col-md-1 col-sm-3 col-xs-3" id="VALIDAR41_SER4C2">
+                                <input id="otrDiagEgr2_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1">
+                            </div>
+                            <button type="button" id="otrDiagEgr2Btn_SER4C2"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-7 col-sm-5 col-xs-5">
+                                <input id="descripotrDiagEgr2S_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex; justify-content: center">
+                        <div class="col-md-8 inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-3">Identif. medico tratante:</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-2" id="VALIDAR42_SER4C2">
+                                <input id="medicoTratante_SER4C2" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                            <button type="button" id="medicoTratanteBtn_SER4C2"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="descripMedicoTratante_SER4C2" type="text" style="text-align: center"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Amparos que reclama:</label>
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="col-md-12" style="display: flex; justify-content: center; align-items: center">
+                            <div class="col-md-5">
+                                <label>Gastos medico quirurgicos:</label>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-12">
+
+                            <div class="col-md-6 col-sm-6 col-xs-12"
+                                style="display: flex; justify-content: center; align-items: center">
+                                <div class="col-md-11 inline-inputs">
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Vlr facturado:</label>
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR43_SER4C2">
+                                        <input id="quirurVlrFact_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-4 col-xs-12"
+                                style="display: flex; justify-content: center; align-items: center">
+                                <div class="col-md-11 inline-inputs">
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Vlr reclamado:</label>
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR44_SER4C2">
+                                        <input id="quirurVlrRecl_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="col-md-12" style="display: flex; justify-content: center; align-items: center">
+                            <div class="col-md-6">
+                                <label>Gastos transporte y movil:</label>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-12">
+
+                            <div class="col-md-6 col-sm-6 col-xs-12"
+                                style="display: flex; justify-content: center; align-items: center">
+                                <div class="col-md-11 inline-inputs">
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Vlr facturado:</label>
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR45_SER4C2">
+                                        <input id="transVlrFact_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-4 col-xs-12"
+                                style="display: flex; justify-content: center; align-items: center">
+                                <div class="col-md-11 inline-inputs">
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Vlr reclamado:</label>
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR46_SER4C2">
+                                        <input id="transVlrRecl_SER4C2" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Nro radicado:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR47_SER4C2">
+                                <input id="nroRadic_SER4C2"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Fecha:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR48_SER4C2">
+                                <input id="fechaRadic_SER4C2"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Radicado anterior:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR49_SER4C2">
+                                <input id="radicAnt_SER4C2"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Nro folios:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR49_SER4C2">
+                                <input id="folios_SER4C2" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-3 col-sm-3 col-xs-3 hidden" id="IMPRESION_SER4C2">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-10 col-xs-12">Impresión :</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id="VALIDAR50_SER4C2">
+                                <input id="impresion_SER4C2" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="1" placeholder="S">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../SALUD/scripts/SER4C2.js" type="text/javascript"></script>

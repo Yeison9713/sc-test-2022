@@ -1,0 +1,100 @@
+{
+  "name": "Eds",
+  "version": "2.7.2",
+  "description": "Sc Prosoft S.A.S",
+  "main": "./main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "deploy": "electron-builder build --win --publish always"
+  },
+  "keywords": [],
+  "author": "Sc Prosoft <administracion@prosoft.com.co>",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^6.0.10",
+    "electron-builder": "^21.2.0"
+  },
+  "build": {
+    "appId": "Bom",
+    "asar": true,
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/gas.ico",
+      "files": [
+        "!**/node_modules/*",
+        "!**/app/*",
+        "!**/nbproject/*",
+        "!**/MIGRADOR/*",
+        "!**/BAR-REST/*",
+        "!**/CEREALES/*",
+        "!**/HICLIN/*",
+        "!**/SALUD/*",
+        "!**/TAX/*"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "runAfterFinish": false,
+      "include": "build/installer.nsh"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "SC-PROSOFT",
+      "repo": "SETUP-EDS"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "chart.js": "^2.9.3",
+    "clarinet": "^0.12.4",
+    "crypto-js": "^4.0.0",
+    "electron-is-dev": "^1.2.0",
+    "electron-pdf-window": "^1.0.12",
+    "electron-updater": "4.3.9",
+    "exceljs": "^4.1.1",
+    "i": "^0.3.7",
+    "imask": "^6.0.5",
+    "jquery": "^3.6.0",
+    "jsbarcode": "^3.11.3",
+    "json2csv": "^5.0.6",
+    "moment": "^2.24.0",
+    "mysql": "^2.17.1",
+    "pdf-lib": "^1.16.0",
+    "pdf-merger-js": "^3.0.5",
+    "pdfmake": "^0.1.67",
+    "qs": "^6.9.4",
+    "rimraf": "^3.0.2",
+    "username": "^5.1.0",
+    "v-calendar": "^2.3.0",
+    "v-money": "^0.8.1",
+    "vue": "^2.6.14",
+    "vue-select": "^3.10.7",
+    "xml-js": "^1.6.11",
+    "xml2js": "^0.4.23"
+  }
+}

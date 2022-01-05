@@ -1,0 +1,1756 @@
+<style>
+  .controles > thead > tr > th {
+    font-size: 12px !important;
+    text-align: center;
+    padding-left: 2px !important;
+  }
+
+  .controles > thead input {
+    font-size: 11.5px !important;
+  }
+  .controles > thead td {
+    font-size: 11.5px !important;
+  }
+  input {
+    padding-right: 0px !important;
+    height: 29px !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    padding-left: 0px !important;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Para pantallas pequeñas */
+  @media only screen and (max-width: 1028px) and (min-width: 800px) {
+    .sub-encabezado label {
+      font-size: 11px !important;
+    }
+
+    .datos-encabezado label {
+      font-size: 13px !important;
+    }
+
+    .datos-encabezado input {
+      font-size: 11.3px !important;
+    }
+    .controles > thead > tr > th {
+      font-size: 10px !important;
+    }
+    .inputs-tabla {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+    .controles > thead input {
+      font-size: 10px !important;
+      width: auto !important;
+      text-align: center !important;
+      max-width: 48px !important;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+    .controles > tbody td {
+      font-size: 10px !important;
+      text-align: center !important;
+    }
+  }
+  .float_salir {
+    z-index: 2;
+    position: fixed;
+    width: 65px;
+    height: 60px;
+    bottom: 16px;
+    background-color: #476fad;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 1px 1px 1px #999;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .float_salir:hover {
+    box-shadow: 2px 2px 2px #999;
+    transition: padding 0.5s ease, background-position 0.5s ease,
+      transform 0.8s ease;
+    text-decoration: none;
+    color: #fff;
+  }
+  .float_imprimir {
+    z-index: 2;
+    position: fixed;
+    width: 65px;
+    height: 60px;
+    bottom: 16px;
+    background-color: #476fad;
+    color: #fff;
+    border-radius: 70px;
+    text-align: center;
+    box-shadow: 1px 1px 1px #999;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .float_imprimir:hover {
+    box-shadow: 2px 2px 2px #999;
+    transition: padding 0.5s ease, background-position 0.5s ease,
+      transform 0.8s ease;
+    text-decoration: none;
+    color: #fff;
+  }
+</style>
+<div class="col-md-12" id="HC52A">
+  <div
+    class="portlet light no-padding"
+    style="
+      background-color: transparent !important;
+      box-shadow: none !important;
+    "
+  >
+    <div class="portlet-body">
+      <form class="form-horizontal" onsubmit="return false;">
+        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+          <div
+            class="col-md-2 no-padding sub-encabezado"
+            style="padding-right: 5px !important; padding-left: 5px !important"
+          >
+            <label
+              class="col-md-12 head-box"
+              style="margin-top: 3px; text-align: center"
+              >PROCESOS DE ENFERMERÍA</label
+            >
+            <label class="col-md-12" style="margin-top: 6px; text-align: center"
+              >CONTROL DE TRANSFUSIÓN</label
+            >
+          </div>
+          <div class="no-padding datos-encabezado">
+            <div class="col-md-6">
+              <label class="col-md-3" style="text-align: center">Médico</label>
+              <div
+                class="input-group inline-inputs col-md-12 col-sm-12 col-xs-12"
+                id="dato_codmedico"
+              >
+                <input
+                  v-model="medico.cod"
+                  type="text"
+                  class="form-control col-md-4 col-sm-12 col-xs-12 uppercase"
+                  maxlength="10"
+                  data-orden="1"
+                  style="
+                    text-align: center;
+                    width: 60%;
+                    border-radius: 0px !important;
+                  "
+                  disabled="disabled"
+                />
+                <input
+                  v-model="medico.descripcion"
+                  type="text"
+                  class="form-control col-md-6 col-sm-12 col-xs-12 uppercase"
+                  maxlength="50"
+                  data-orden=""
+                  style="
+                    text-align: center;
+                    margin-left: 0px !important;
+                    border-radius: 0px !important;
+                  "
+                  disabled="disabled"
+                />
+                <input
+                  v-model="medico.especialidad"
+                  type="text"
+                  class="form-control col-md-8 col-sm-12 col-xs-12 uppercase"
+                  maxlength="50"
+                  data-orden=""
+                  style="text-align: center; border-radius: 0px !important"
+                  disabled="disabled"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label class="col-md-12">Consultando</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input
+                  v-model="evolucion.unserv"
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                  style="text-align: center; border-radius: 0px !important"
+                  disabled="disabled"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-1" style="padding-right: 4px">
+              <label class="col-md-12">Folio</label>
+              <div
+                class="input-group col-md-12 col-sm-12 col-xs-12"
+                style="border-radius: 0px !important"
+              >
+                <input
+                  v-model="evolucion.folio"
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                  maxlength="10"
+                  data-orden="1"
+                  style="text-align: center"
+                  disabled="disabled"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding datos-encabezado">
+          <div
+            class="col-md-12 col-sm-12 col-xs-12 form-group box-center"
+            style="padding-right: 0px"
+          >
+            <div
+              class="col-md-2 col-sm-3 col-xs-12 no-padding"
+              style="
+                padding-left: 3px !important;
+                margin-right: -25px !important;
+              "
+            >
+              <label style="margin-left: -17px !important">Fecha</label>
+              <div class="inline-inputs">
+                <div
+                  id="dato_anio_control"
+                  class="input-group col-md-4 col-sm-4 col-xs-4"
+                >
+                  <input
+                    v-model="control.anio"
+                    type="number"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="padding-right: 0px"
+                  />
+                </div>
+                <div
+                  id="dato_mes_control"
+                  class="input-group col-md-3 col-sm-4 col-xs-4"
+                >
+                  <input
+                    v-model="control.mes"
+                    type="number"
+                    data-orden="1"
+                    maxlength="2"
+                    required="required"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="padding-right: 0px"
+                  />
+                </div>
+                <div
+                  id="dato_dia_control"
+                  class="input-group col-md-3 col-sm-4 col-xs-4"
+                >
+                  <input
+                    v-model="control.dia"
+                    type="number"
+                    data-orden="1"
+                    maxlength="2"
+                    required="required"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="padding-right: 0px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-12 no-padding">
+              <label>Hora</label>
+              <div class="inline-inputs no-padding">
+                <div
+                  id="dato_hora_control"
+                  class="input-group col-md-6 col-sm-6 col-xs-6"
+                >
+                  <input
+                    v-model="control.hora"
+                    type="text"
+                    data-orden="1"
+                    maxlength="2"
+                    required="required"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+                <div
+                  id="dato_minutos_control"
+                  class="input-group col-md-6 col-sm-6 col-xs-6"
+                >
+                  <input
+                    v-model="control.min"
+                    type="text"
+                    data-orden="1"
+                    maxlength="2"
+                    required="required"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="no-padding col-md-3 col-sm-2 col-xs-12"
+              style="
+                text-align: left;
+                padding-right: 0px;
+                padding-left: 14px !important;
+              "
+            >
+              <label>Paciente</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="paciente.descrip"
+                    type="text"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="no-padding col-md-2 col-sm-2 col-xs-12"
+              style="text-align: left"
+            >
+              <label style="padding-left: 5px !important">Documento</label>
+              <div class="inline-inputs">
+                <div
+                  class="input-group col-md-3 col-sm-3 col-xs-3 no-padding"
+                  style="padding-left: 1px !important"
+                >
+                  <input
+                    v-model="paciente.tipo_id"
+                    type="text"
+                    disabled="disabled"
+                    placeholder="DI"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: center"
+                  />
+                </div>
+                <div class="input-group col-md-8 col-sm-10 col-xs-10">
+                  <input
+                    v-model="paciente.cod"
+                    type="number"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-md-2 no-padding"
+              style="text-align: left; justify-content: center"
+            >
+              <div
+                class="col-md-5 no-padding"
+                style="text-align: left; align-items: center"
+              >
+                <label style="text-align: center">Grupo (RH)</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="paciente.grp_sang"
+                    type="text"
+                    disabled="disabled"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+              <div
+                class="col-md-7 no-padding"
+                style="
+                  text-align: left;
+                  align-items: center;
+                  padding-left: 23px !important;
+                "
+              >
+                <label style="text-align: center">Factor (RH) </label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="paciente.rh"
+                    type="text"
+                    disabled="disabled"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-md-2 col-sm-1 col-xs-12 no-padding"
+              style="
+                width: 10%;
+                text-align: left;
+                padding-right: 0px !important;
+                padding-left: 20px !important;
+              "
+            >
+              <label>Cama</label>
+              <div class="inline-inputs no-padding">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="evolucion.hab"
+                    type="text"
+                    disabled="disabled"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="salto-linea"></div>
+          </div>
+        </div>
+
+        <div
+          class="col-md-12 col-sm-8 col-xs-8 no-padding"
+          style="padding-right: 0px"
+        >
+          <div class="col-md-12 form-group no-padding">
+            <div class="col-md-9 col-sm-9 col-xs-9 no-padding">
+              <div
+                class="portlet light box-center box-title"
+                style="height: 35px !important"
+              >
+                <div class="portlet-title col-md-9 col-sm-9 col-xs-9">
+                  <div
+                    class="caption"
+                    style="display: flex; padding-top: 4px !important"
+                  >
+                    <span
+                      class="caption-subject bold"
+                      style="align-items: center"
+                      >Control unidades de transfusión</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-3 col-sm-3 col-xs-3 no-padding"
+              style="padding-left: 10px !important"
+            >
+              <div
+                class="portlet light box-center box-title"
+                style="height: 35px !important"
+              >
+                <div class="portlet-title col-md-3 col-sm-3 col-xs-3">
+                  <div
+                    class="caption"
+                    style="display: flex; padding-top: 4px !important"
+                  >
+                    <span
+                      class="caption-subject bold"
+                      style="align-items: center"
+                      >Diagnóstico</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="
+                form-group
+                col-md-9 col-sm-12 col-xs-12
+                box-center
+                no-padding
+              "
+              style="padding-bottom: 3px; float: inherit"
+            >
+              <div class="salto-linea"></div>
+              <div
+                class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                style="display: flex; padding-bottom: 5px !important"
+              >
+                <div
+                  class="col-md-12"
+                  style="padding-right: 0px !important; padding-left: 10px"
+                >
+                  <div
+                    id="dato_nro_unidad"
+                    class="col-md-8 col-sm-8 col-xs-8"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: flex-start;
+                      padding-right: 0px !important;
+                      padding-left: 0px !important;
+                    "
+                  >
+                    <label
+                      class="col-md-2 col-sm-2 col-xs-2"
+                      style="text-align: left"
+                      >No. Unidad</label
+                    >
+                    <div class="no-padding" style="float: right">
+                      <input
+                        type="text"
+                        min="1"
+                        maxlength="15"
+                        data-orden="1"
+                        disabled="disabled"
+                        value="2222"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center; height: 29px"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    id="dato_fecha_vencimiento"
+                    class="col-md-4 col-sm-4 col-xs-4"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: flex-start;
+                      padding-right: 0px !important;
+                      padding-left: 0px !important;
+                    "
+                  >
+                    <label
+                      class="col-md-6 col-sm-6 col-xs-6"
+                      style="text-align: left"
+                      >Fecha vencimiento</label
+                    >
+                    <div
+                      class="col-md-6 col-sm-6 col-xs-6 no-padding"
+                      style="display: flex; padding-right: 6px !important"
+                    >
+                      <div
+                        id="dato_anio_vencimiento"
+                        class="input-group col-md-6 col-sm-6 col-xs-6"
+                      >
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="4"
+                          required="required"
+                          disabled="disabled"
+                          placeholder="YYYY"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="
+                            padding-right: 0px;
+                            height: 29px;
+                            font-size: 14px;
+                            text-align: center;
+                            padding-left: 0px;
+                          "
+                        />
+                      </div>
+                      <div
+                        id="dato_mes_vencimiento"
+                        class="input-group col-md-6 col-sm-6 col-xs-6"
+                      >
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="2"
+                          required="required"
+                          disabled="disabled"
+                          placeholder="05"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="
+                            padding-right: 0px;
+                            height: 29px;
+                            font-size: 14px;
+                            text-align: center;
+                            padding-left: 0px;
+                          "
+                        />
+                      </div>
+                      <div
+                        id="dato_mes_inscrito_cyd"
+                        class="input-group col-md-6 col-sm-6 col-xs-6"
+                      >
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="4"
+                          required="required"
+                          disabled="disabled"
+                          placeholder="02"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="
+                            padding-right: 0px;
+                            height: 29px;
+                            font-size: 14px;
+                            text-align: center;
+                            padding-left: 0px;
+                          "
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+              <div
+                class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                style="display: flex; padding-bottom: 5px !important"
+              >
+                <div
+                  class="col-md-6"
+                  style="padding-right: 0px !important; padding-left: 10px"
+                >
+                  <div
+                    id="dato_nro_controles"
+                    class="col-md-7 col-sm-7 col-xs-7"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: flex-start;
+                      padding-right: 0px !important;
+                      padding-left: 0px !important;
+                    "
+                  >
+                    <label
+                      class="col-md-7 col-sm-7 col-xs-7"
+                      style="text-align: left; max-width: 107px"
+                      >Fecha inicio</label
+                    >
+                    <div
+                      class="col-md-7 col-sm-7 col-xs-7 no-padding"
+                      style="display: flex; padding-right: 6px !important"
+                    >
+                      <div
+                        id="dato_anio_inicio"
+                        class="input-group col-md-6 col-sm-6 col-xs-6"
+                      >
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="4"
+                          required="required"
+                          disabled="disabled"
+                          placeholder="YYYY"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="
+                            padding-right: 0px;
+                            height: 29px;
+                            font-size: 14px;
+                            text-align: center;
+                            padding-left: 0px;
+                          "
+                        />
+                      </div>
+                      <div
+                        id="dato_mes_inicio"
+                        class="input-group col-md-6 col-sm-6 col-xs-6"
+                      >
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="2"
+                          required="required"
+                          disabled="disabled"
+                          placeholder="05"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="
+                            padding-right: 0px;
+                            height: 29px;
+                            font-size: 14px;
+                            text-align: center;
+                            padding-left: 0px;
+                          "
+                        />
+                      </div>
+                      <div
+                        id="dato_dia_inicio"
+                        class="input-group col-md-7 col-sm-7 col-xs-7"
+                      >
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="4"
+                          required="required"
+                          disabled="disabled"
+                          placeholder="02"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="
+                            padding-right: 0px;
+                            height: 29px;
+                            font-size: 14px;
+                            text-align: center;
+                            padding-left: 0px;
+                          "
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="dato_hora_inicio"
+                    class="col-md-5 col-sm-5 col-xs-5"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: flex-start;
+                      padding-right: 0px !important;
+                      padding-left: 20px !important;
+                    "
+                  >
+                    <label
+                      class="col-md-6 col-sm-7 col-xs-7"
+                      style="text-align: left"
+                      >Hora inicio</label
+                    >
+                    <div
+                      class="col-md-6 col-sm-6 col-xs-6 no-padding"
+                      style="display: flex; padding-right: 6px !important"
+                    >
+                      <div
+                        id="dato_hra_inicio"
+                        class="input-group col-md-6 col-sm-6 col-xs-6"
+                      >
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="2"
+                          required="required"
+                          disabled="disabled"
+                          placeholder="HH"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="
+                            padding-right: 0px;
+                            height: 29px;
+                            font-size: 14px;
+                            text-align: center;
+                            padding-left: 0px;
+                          "
+                        />
+                      </div>
+                      <div
+                        id="dato_min_inicio"
+                        class="input-group col-md-6 col-sm-6 col-xs-6"
+                      >
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="2"
+                          required="required"
+                          disabled="disabled"
+                          placeholder="mm"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="
+                            padding-right: 0px;
+                            height: 29px;
+                            font-size: 14px;
+                            text-align: center;
+                            padding-left: 0px;
+                          "
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-md-6"
+                  style="padding-right: 0px !important; padding-left: 10px"
+                >
+                  <div
+                    id="dato_fin"
+                    class="col-md-7 col-sm-7 col-xs-7"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: flex-start;
+                      padding-right: 0px !important;
+                      padding-left: 0px !important;
+                    "
+                  >
+                    <label
+                      class="col-md-7 col-sm-7 col-xs-7"
+                      style="text-align: left; max-width: 107px"
+                      >Fecha inicio</label
+                    >
+                    <div
+                      class="col-md-7 col-sm-7 col-xs-7 no-padding"
+                      style="display: flex; padding-right: 6px !important"
+                    >
+                      <div
+                        id="dato_anio_fin"
+                        class="input-group col-md-6 col-sm-6 col-xs-6"
+                      >
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="4"
+                          required="required"
+                          disabled="disabled"
+                          placeholder="YYYY"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="
+                            padding-right: 0px;
+                            height: 29px;
+                            font-size: 14px;
+                            text-align: center;
+                            padding-left: 0px;
+                          "
+                        />
+                      </div>
+                      <div
+                        id="dato_mes_fin"
+                        class="input-group col-md-6 col-sm-6 col-xs-6"
+                      >
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="2"
+                          required="required"
+                          disabled="disabled"
+                          placeholder="05"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="
+                            padding-right: 0px;
+                            height: 29px;
+                            font-size: 14px;
+                            text-align: center;
+                            padding-left: 0px;
+                          "
+                        />
+                      </div>
+                      <div
+                        id="dato_dia_fin"
+                        class="input-group col-md-7 col-sm-7 col-xs-7"
+                      >
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="4"
+                          required="required"
+                          disabled="disabled"
+                          placeholder="02"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="
+                            padding-right: 0px;
+                            height: 29px;
+                            font-size: 14px;
+                            text-align: center;
+                            padding-left: 0px;
+                          "
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="dato_hora_fin"
+                    class="col-md-5 col-sm-5 col-xs-5"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: flex-start;
+                      padding-right: 0px !important;
+                      padding-left: 20px !important;
+                    "
+                  >
+                    <label
+                      class="col-md-6 col-sm-7 col-xs-7"
+                      style="text-align: left"
+                      >Hora inicio</label
+                    >
+                    <div
+                      class="col-md-6 col-sm-6 col-xs-6 no-padding"
+                      style="display: flex; padding-right: 6px !important"
+                    >
+                      <div
+                        id="dato_hra_fin"
+                        class="input-group col-md-6 col-sm-6 col-xs-6"
+                      >
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="2"
+                          required="required"
+                          disabled="disabled"
+                          placeholder="HH"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="
+                            padding-right: 0px;
+                            height: 29px;
+                            font-size: 14px;
+                            text-align: center;
+                            padding-left: 0px;
+                          "
+                        />
+                      </div>
+                      <div
+                        id="dato_min_fin"
+                        class="input-group col-md-6 col-sm-6 col-xs-6"
+                      >
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="2"
+                          required="required"
+                          disabled="disabled"
+                          placeholder="mm"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="
+                            padding-right: 0px;
+                            height: 29px;
+                            font-size: 14px;
+                            text-align: center;
+                            padding-left: 0px;
+                          "
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="salto-linea"></div>
+              <div
+                class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                style="
+                  padding-bottom: 5px !important;
+                  padding-right: 6px !important;
+                "
+              >
+                <div class="salto-linea"></div>
+                <div class="salto-linea"></div>
+                <div
+                  class="col-md-12"
+                  style="
+                    text-align: left;
+                    padding-right: 0px;
+                    padding-left: 8px !important;
+                  "
+                >
+                  <div
+                    class="col-md-10 col-sm-12 col-xs-12 no-padding"
+                    style="
+                      text-align: left;
+                      align-items: center;
+                      padding-left: 4px !important;
+                      padding-right: 7px !important;
+                    "
+                  >
+                    <label style="text-align: center"
+                      >Producto a transfundir</label
+                    >
+                    <div
+                      id="dato_producto_transfusion"
+                      class="input-group col-md-12 col-sm-12 col-xs-12"
+                    >
+                      <input
+                        v-model="control.producto_sanguineo"
+                        type="text"
+                        maxlength="190"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="
+                          form-control
+                          col-md-12 col-sm-12 col-xs-12
+                          transfusion-txt
+                        "
+                        style="text-align: left !important; font-size: 12.2px"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="col-md-1 no-padding"
+                    style="
+                      text-align: left;
+                      align-items: center;
+                      padding-right: 7px !important;
+                    "
+                  >
+                    <label style="text-align: center">Grupo (RH)</label>
+                    <div
+                      id="dato_grupo_transfusion"
+                      class="input-group col-md-12 col-sm-12 col-xs-12"
+                    >
+                      <input
+                        v-model="control.grp_sanguineo"
+                        type="text"
+                        data-orden="1"
+                        maxlength="2"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="col-md-1 no-padding"
+                    style="text-align: left; align-items: center"
+                  >
+                    <label style="text-align: center">Factor (RH)</label>
+                    <div
+                      id="dato_rh_transfusion"
+                      class="input-group col-md-12 col-sm-12 col-xs-12"
+                    >
+                      <input
+                        v-model="rh_sanguineo"
+                        type="text"
+                        data-orden="1"
+                        maxlength="1"
+                        required="required"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12 no-padding">
+                <div class="col-md-12" style="padding-right: 7px !important">
+                  <label class="col-md-12" style="text-align: center"
+                    >Carácteristicas orina antes de transfusión</label
+                  >
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: flex-start;
+                    "
+                  >
+                    <div
+                      class="col-md-12 col-sm-3 col-xs-12 no-padding"
+                      style="display: flex; padding-right: 6px !important"
+                    >
+                      <div
+                        id="dato_carac_orina_ant"
+                        class="input-group col-md-12 col-sm-12 col-xs-12"
+                      >
+                        <input
+                          v-model="control.carac_orina"
+                          type="text"
+                          data-orden="1"
+                          maxlength="180"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="padding-right: 0px"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-6 col-sm-12 col-xs-12 no-padding"
+                style="
+                  padding-left: 10px !important;
+                  padding-right: 6px !important;
+                "
+              >
+                <label class="col-md-12" style="text-align: center"
+                  >Quien realiza la transfusión?</label
+                >
+                <div class="col-md-12 no-padding">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      justify-content: flex-start;
+                    "
+                  >
+                    <div
+                      class="col-md-12 col-sm-3 col-xs-12 no-padding"
+                      style="display: flex"
+                    >
+                      <div
+                        id="dato_realiza_transf"
+                        class="input-group col-md-12 col-sm-12 col-xs-12"
+                      >
+                        <input
+                          v-model="control.realiza_transf"
+                          type="text"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="padding-right: 0px"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="salto-linea"></div>
+            </div>
+            <div
+              class="col-md-3 col-sm-12 col-xs-12 no-padding"
+              style="
+                padding-bottom: 7px !important;
+                float: inherit;
+                padding-left: 10px !important;
+              "
+            >
+              <div
+                class="
+                  col-md-12 col-sm-12 col-xs-12
+                  form-group
+                  no-padding
+                  box-center
+                "
+              >
+                <div
+                  class="col-md-12"
+                  style="
+                    max-height: 256px;
+                    display: inline-block;
+                    overflow: auto;
+                  "
+                >
+                  <table
+                    data-orden="1"
+                    class="table table-light table-striped controles"
+                    style="
+                      padding-right: 0px;
+                      margin-bottom: 0px !important;
+                      padding-left: 1px;
+                      overflow: auto;
+                    "
+                  >
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Diagnostico</th>
+                        <th>Enfermedad</th>
+                      </tr>
+                    </thead>
+                    <tbody
+                      class="inputs-tabla"
+                      style="height: 200px; width: 100%; overflow: auto"
+                      v-for="dx in control.tabla_diagnosticos"
+                    >
+                      <tr>
+                        <td>{{dx.id}}</td>
+                        <td>{{dx.cod}}</td>
+                        <td>{{dx.descrip}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="salto-linea"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 form-group" style="padding-left: 0px !important">
+            <div
+              class="col-md-12 no-padding box-center"
+              style="max-height: 300px"
+            >
+              <div class="col-md-12 col-sm-12 no-padding">
+                <div
+                  class="portlet light box-center box-title"
+                  style="height: 35px !important"
+                >
+                  <div class="portlet-title">
+                    <div
+                      class="caption"
+                      style="display: flex; padding-top: 4px !important"
+                    >
+                      <span
+                        class="caption-subject bold"
+                        style="align-items: center"
+                        >Registro unidades transfusión</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <table
+                data-orden="1"
+                class="table table-light table-striped controles"
+                style="padding-right: 0px; padding-left: 1px"
+              >
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Unidad</th>
+                    <th>Fecha inicio</th>
+                    <th>Fecha vencimiento</th>
+                    <th>Fecha inicio</th>
+                    <th>Hora inicio</th>
+                    <th>Fecha fin</th>
+                    <th>Hora fin</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    class="inputs-tabla"
+                    v-for="unidad in control.tabla_undtransferencia"
+                  >
+                    <td>{{unidad.item}}</td>
+                    <td>{{unidad.unidad}}</td>
+                    <td>{{unidad.fechaInicio}}</td>
+                    <td>{{unidad.fechaFin}}</td>
+                    <td>{{unidad.horaFin}}</td>
+                    <td>{{unidad.horaInicio}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div
+            class="col-md-4 col-sm-5 col-xs-5 no-padding"
+            style="padding-right: 0px"
+          >
+            <div
+              class="
+                form-group
+                col-md-12 col-sm-12 col-xs-12
+                box-center
+                no-padding
+              "
+              style="padding-top: 0px !important"
+            >
+              <div class="col-md-12 col-sm-12 no-padding">
+                <div
+                  class="portlet light box-center box-title"
+                  style="height: 35px !important"
+                >
+                  <div class="portlet-title">
+                    <div
+                      class="caption"
+                      style="display: flex; padding-top: 4px !important"
+                    >
+                      <span
+                        class="caption-subject bold"
+                        style="align-items: center"
+                        >Registro signos x Unidad {{control.nro}}</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-12 no-padding"
+                style="max-height: 256px; display: inline-block; overflow: auto"
+              >
+                <table
+                  data-orden="1"
+                  class="table table-light table-striped controles"
+                  style="
+                    padding-right: 0px;
+                    margin-bottom: 0px !important;
+                    padding-left: 1px;
+                    overflow: auto;
+                  "
+                >
+                  <thead>
+                    <tr>
+                      <th>Temp</th>
+                      <th>Tens</th>
+                      <th>Fcard</th>
+                      <th>Diuresis</th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    style="max-height: 200px; width: 100%; overflow: auto"
+                    v-for="signos in control.signos_transf"
+                  >
+                    <tr class="inputs-tabla">
+                      <td>{{item.temp}}</td>
+                      <td>{{item.tens}}</td>
+                      <td>{{item.fcard}}</td>
+                      <td>{{item.diuresis}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold"
+                  >Cierre control transfusión</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12 no-padding">
+          <div
+            id="cierre_control"
+            class="form-group col-md-12 col-sm-12 col-xs-12 no-padding"
+            style=""
+          >
+            <div
+              class="col-md-12 col-sm-12 col-xs-12 form-group box-center"
+              style="
+                display: inline-block;
+                overflow: auto;
+                float: inherit;
+                padding-top: 10px;
+              "
+            >
+              <div
+                id="dato_fecha_cierre"
+                class="col-md-3 col-sm-3 col-xs-3"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  padding-right: 0px !important;
+                  padding-left: 0px !important;
+                "
+              >
+                <label
+                  class="col-md-7 col-sm-7 col-xs-7"
+                  style="text-align: left; max-width: 163px"
+                  >Fecha Cierre unidad</label
+                >
+                <div
+                  class="col-md-6 col-sm-6 col-xs-6 no-padding"
+                  style="display: flex; padding-right: 6px !important"
+                >
+                  <div
+                    id="dato_anio_cierre"
+                    class="input-group col-md-6 col-sm-6 col-xs-6"
+                  >
+                    <input
+                      type="number"
+                      data-orden="1"
+                      maxlength="4"
+                      required="required"
+                      disabled="disabled"
+                      placeholder="YYYY"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="
+                        padding-right: 0px;
+                        height: 29px;
+                        font-size: 14px;
+                        text-align: center;
+                        padding-left: 0px;
+                      "
+                    />
+                  </div>
+                  <div
+                    id="dato_mes_cierre"
+                    class="input-group col-md-6 col-sm-6 col-xs-6"
+                  >
+                    <input
+                      type="number"
+                      data-orden="1"
+                      maxlength="2"
+                      required="required"
+                      disabled="disabled"
+                      placeholder="05"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="
+                        padding-right: 0px;
+                        height: 29px;
+                        font-size: 14px;
+                        text-align: center;
+                        padding-left: 0px;
+                      "
+                    />
+                  </div>
+                  <div
+                    id="dato_dia_cierre"
+                    class="input-group col-md-6 col-sm-6 col-xs-6"
+                  >
+                    <input
+                      type="number"
+                      data-orden="1"
+                      maxlength="4"
+                      required="required"
+                      disabled="disabled"
+                      placeholder="02"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="
+                        padding-right: 0px;
+                        height: 29px;
+                        font-size: 14px;
+                        text-align: center;
+                        padding-left: 0px;
+                      "
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                id="dato_hora_cierre"
+                class="col-md-3 col-sm-3 col-xs-3"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  padding-right: 0px !important;
+                  padding-left: 20px !important;
+                "
+              >
+                <label
+                  class="col-md-8 col-sm-8 col-xs-8"
+                  style="text-align: left"
+                  >Hora cierre unidad</label
+                >
+                <div
+                  class="col-md-6 col-sm-6 col-xs-6 no-padding"
+                  style="display: flex; padding-right: 6px !important"
+                >
+                  <div
+                    id="dato_anio_cierre"
+                    class="input-group col-md-6 col-sm-6 col-xs-6"
+                  >
+                    <input
+                      type="number"
+                      data-orden="1"
+                      maxlength="2"
+                      required="required"
+                      disabled="disabled"
+                      placeholder="HH"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="
+                        padding-right: 0px;
+                        height: 29px;
+                        font-size: 14px;
+                        text-align: center;
+                        padding-left: 0px;
+                      "
+                    />
+                  </div>
+                  <div
+                    id="dato_mes_cierre"
+                    class="input-group col-md-6 col-sm-6 col-xs-6"
+                  >
+                    <input
+                      type="number"
+                      data-orden="1"
+                      maxlength="2"
+                      required="required"
+                      disabled="disabled"
+                      placeholder="mm"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="
+                        padding-right: 0px;
+                        height: 29px;
+                        font-size: 14px;
+                        text-align: center;
+                        padding-left: 0px;
+                      "
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                id="dato_reaccion"
+                class="col-md-2 col-sm-2 col-xs-2"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  padding-right: 0px !important;
+                  padding-left: 29px !important;
+                "
+              >
+                <label
+                  class="col-md-6 col-sm-6 col-xs-6"
+                  style="text-align: left"
+                  >Reaccion</label
+                >
+                <div
+                  class="no-padding col-md-3 col-sm-3 col-xs-3"
+                  style="float: right"
+                  id="dato-reaccion"
+                >
+                  <input
+                    type="text"
+                    maxlength="1"
+                    data-orden="1"
+                    disabled="disabled"
+                    value="N"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: center; height: 29px"
+                  />
+                </div>
+              </div>
+              <div
+                id="dato_devolucion"
+                class="col-md-2 col-sm-2 col-xs-2"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  padding-right: 0px !important;
+                  padding-left: 0px !important;
+                "
+              >
+                <label
+                  class="col-md-6 col-sm-6 col-xs-6"
+                  style="text-align: left"
+                  >Devolución</label
+                >
+                <div
+                  class="no-padding col-md-3 col-sm-3 col-xs-3"
+                  style="float: right"
+                >
+                  <input
+                    type="text"
+                    maxlength="1"
+                    data-orden="1"
+                    disabled="disabled"
+                    value="N"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: center; height: 29px"
+                  />
+                </div>
+              </div>
+              <div
+                id="dato_volumen"
+                class="col-md-2 col-sm-2 col-xs-2"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  padding-right: 0px !important;
+                  padding-left: 0px !important;
+                "
+              >
+                <label
+                  class="col-md-5 col-sm-5 col-xs-5"
+                  style="text-align: left"
+                  >Volumén ML</label
+                >
+                <div
+                  class="no-padding col-md-7 col-sm-7 col-xs-7"
+                  style="float: right"
+                >
+                  <input
+                    type="text"
+                    maxlength="6"
+                    data-orden="1"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: center; height: 29px"
+                  />
+                </div>
+              </div>
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+
+              <div
+                id="dato_carac_cierre"
+                class="col-md-12 col-sm-12 col-xs-12"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding-right: 0px !important;
+                  padding-left: 0px !important;
+                "
+              >
+                <label
+                  class="col-md-4 col-sm-4 col-xs-4"
+                  style="text-align: left; max-width: 161px"
+                  >Carácteristicas cierre</label
+                >
+                <div
+                  class="no-padding col-md-9 col-sm-9 col-xs-9"
+                  style="float: right"
+                >
+                  <input
+                    type="text"
+                    maxlength="6"
+                    data-orden="1"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: center; height: 29px"
+                  />
+                </div>
+              </div>
+              <div class="salto-linea"></div>
+              <div
+                id="dato_orina_pos"
+                class="col-md-6 col-sm-6 col-xs-6"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  padding-right: 0px !important;
+                  padding-left: 0px !important;
+                "
+              >
+                <label
+                  class="col-md-3 col-sm-3 col-xs-3"
+                  style="text-align: left"
+                  >Orina pos transfusión</label
+                >
+                <div
+                  class="no-padding col-md-9 col-sm-9 col-xs-9"
+                  style="float: right"
+                >
+                  <input
+                    type="text"
+                    maxlength="6"
+                    data-orden="1"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: center; height: 29px"
+                  />
+                </div>
+              </div>
+
+              <div
+                id="dato_estado"
+                class="col-md-6 col-sm-6 col-xs-6"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  padding-right: 0px !important;
+                  padding-left: 28px !important;
+                "
+              >
+                <label
+                  class="col-md-4 col-sm-4 col-xs-4"
+                  style="text-align: left; max-width: 171px"
+                  >Estado componente</label
+                >
+                <div
+                  class="no-padding col-md-9 col-sm-9 col-xs-9"
+                  style="float: right"
+                >
+                  <input
+                    type="text"
+                    maxlength="6"
+                    data-orden="1"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style=""
+                  />
+                </div>
+              </div>
+              <div class="salto-linea"></div>
+
+              <div
+                id="dato_moti_devol"
+                class="col-md-6 col-sm-6 col-xs-6"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  padding-right: 0px !important;
+                "
+              >
+                <label
+                  class="col-md-5 col-sm-5 col-xs-5"
+                  style="text-align: left; max-width: 163px"
+                  >Motivo devolución</label
+                >
+                <div
+                  class="no-padding col-md-9 col-sm-9 col-xs-9"
+                  style="float: right"
+                >
+                  <input
+                    type="text"
+                    maxlength="6"
+                    data-orden="1"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: center; height: 29px"
+                  />
+                </div>
+              </div>
+              <div
+                id="dato_tratamiento"
+                class="col-md-6 col-sm-6 col-xs-6"
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  padding-right: 2px !important;
+                  padding-left: 27px;
+                "
+              >
+                <label
+                  class="col-md-5 col-sm-5 col-xs-5"
+                  style="text-align: left; max-width: 171px"
+                  >Tratamiento</label
+                >
+                <div
+                  class="no-padding col-md-11 col-sm-11 col-xs-11"
+                  style="float: right"
+                >
+                  <input
+                    type="text"
+                    maxlength="6"
+                    data-orden="1"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style=""
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+            </div>
+            <div class="salto-linea"></div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div
+              class="col-md-12 col-sm-12 col-xs-12 box-center form-group"
+              id="validarMotivoConsulta"
+            >
+              <div
+                class="col-md-12 col-sm-12 col-xs-12 head-box"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding-right: 0;
+                  padding-left: 0;
+                "
+                id="dato_observaciones"
+              >
+                <label>Observaciones</label>
+                <label>(285 caracteres máximo)</label>
+              </div>
+              <textarea
+                v-model="control.observaciones"
+                class="form-control"
+                disabled="disabled"
+                rows="2"
+                maxlength="285"
+                data-orden="1"
+                required="true"
+                style="resize: none; text-align: justify; padding-bottom: 16px"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <label class="col-md-12 col-sm-12 col-xs-12"
+          >F5 - Salir &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F11 - Imprimir</label
+        >
+      </form>
+    </div>
+  </div>
+  <a
+    class="float_salir"
+    style="left: 21px; background-color: #da2c2c; border-color: #da2c2c"
+    @click="terminarEjecucion"
+  >
+    <span>Salir </span>
+  </a>
+  <a
+    v-if="sw.mostrar"
+    class="float_imprimir"
+    style="right: 21px; background-color: #1b489b; border-color: #1b489b"
+    @click="ventanaOpcionesImp"
+  >
+    <span>Imprimir </span>
+  </a>
+</div>
+<script src="../../HICLIN/scripts/HC52A.js" type="text/javascript"></script>
+<!-- <script
+  src="../../frameworks/pdf/hiclin/HCI52A.formato.js"
+  type="text/javascript"
+></script> -->

@@ -1,0 +1,513 @@
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+  
+  <div class="col-md-12" id="PUB604">
+    <div class="portlet light no-padding">
+      <div class="portlet-body no-padding">
+        <div class="form-horizontal">
+          <div class="col-md-12 no-padding">
+            <div class="col-md-2" style="padding-left: 0">
+              <div class="form-group col-md-12 box-center" style="margin-bottom: 13px !important">
+                <div class="col-md-12 head-box no-padding">
+                  <label>Fecha Generación</label>
+                </div>
+                <div class="col-md-12 no-padding" id="fecha_gen">
+                  <div class="col-md-6">
+                    <label class="col-md-12">Año</label>
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="reg_pago.ano_gen"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="4"
+                        data-orden="1"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="col-md-12">Mes</label>
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="reg_pago.mes_gen"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="2"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-md-3" style="padding-left: 0">
+              <div class="form-group col-md-12 box-center" style="margin-bottom: 13px !important">
+                <div class="col-md-12 head-box no-padding">
+                  <label>Fecha Pago</label>
+                </div>
+                <div class="col-md-12 no-padding" id="fecha_pago">
+                  <div class="col-md-4">
+                    <label class="col-md-12">Año</label>
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="reg_pago.ano"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="4"
+                        data-orden="1"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="col-md-12">Mes</label>
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="reg_pago.mes"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="2"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="col-md-12">Dia</label>
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="reg_pago.dia"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="3"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-md-2" style="padding-left: 0">
+              <div class="form-group col-md-12 box-center" style="margin-bottom: 13px !important">
+                <div class="col-md-12 head-box no-padding">
+                  <label>Oficina Recaudo</label>
+                </div>
+                <div class="col-md-12 no-padding">
+                  <div class="col-md-6">
+                    <label class="col-md-12">Código</label>
+                    <div class="input-group col-md-12" id="cod_punto">
+                      <input
+                        v-model="reg_pago.cod"
+                        type="text"
+                        class="form-control cod_punto text-center"
+                        maxlength="3"
+                        data-orden="1"
+                        required="true"
+                        @keydown.f8="_ventanaPuntosPago"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="col-md-12">Item</label>
+                    <div class="input-group col-md-12" id="secu">
+                      <input
+                        v-model="reg_pago.secu"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="2"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-md-3" style="padding-left: 0">
+              <div class="col-md-12 box-center form-group">
+                <div class="inline-inputs col-md-12 no-padding">
+                  <label class="col-md-6 lbl_left">Referencia</label>
+                  <div class="input-group col-md-6" id="refer">
+                    <input
+                      v-model="reg_pago.refer"
+                      type="text"
+                      class="form-control"
+                      style="text-align: center"
+                      data-orden="1"
+                      maxlength="6"
+                    />
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-md-12 box-center form-group" style="margin-top: -8px !important">
+                <div class="inline-inputs col-md-12 no-padding">
+                  <label class="col-md-6 lbl_left">Total Recaudo</label>
+                  <div class="input-group col-md-6">
+                    <input
+                      v-model="tot_gen.gran_tot"
+                      type="text"
+                      class="form-control"
+                      style="text-align: center"
+                      data-orden="1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-md-2 no-padding">
+              <div class="col-md-12 box-center form-group" style="min-height: 43px !important; display: grid">
+                <label class="col-md-12 text-center">{{ descrip_punto }}</label>
+              </div>
+              <div
+                class="col-md-12 box-center form-group"
+                style="min-height: 43px !important; display: grid; margin-top: -8px !important"
+              >
+                <label class="col-md-12 text-center">VENCE: {{ fecha_vence_edit }}</label>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-12 no-padding" style="margin-top: -10px !important">
+            <div class="col-md-12 no-padding" style="margin-top: 3px">
+              <div class="col-md-12 form-group box-center no-padding">
+                <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%">
+                  <thead>
+                    <tr>
+                      <th class="text-center" style="width: 6%">Item</th>
+                      <th class="text-center" style="width: 10%">Factura</th>
+                      <th class="text-center" style="width: 12%">Vlr Recaudo</th>
+                      <th class="text-center" style="width: 12%">{{ descripciones.serv1 }}</th>
+                      <th class="text-center" style="width: 12%">{{ descripciones.serv2 }}</th>
+                      <th class="text-center" style="width: 12%">{{ descripciones.serv3 }}</th>
+                      <th class="text-center" style="width: 12%">{{ descripciones.serv4 }}</th>
+                      <th class="text-center" style="width: 12%">{{ descripciones.serv5 }}</th>
+                      <th class="text-center" style="width: 12%">{{ descripciones.serv6 }}</th>
+                    </tr>
+                    <tr>
+                      <td style="width: 6%">
+                        <div class="input-group col-md-12" id="item">
+                          <input
+                            v-model="item"
+                            type="number"
+                            class="form-control text-center"
+                            maxlength="3"
+                            min="1"
+                            max="250"
+                            data-orden="1"
+                            required="true"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 10%">
+                        <div class="input-group col-md-12" id="fact">
+                          <input
+                            v-model="reg_act.nro_fac"
+                            type="text"
+                            class="form-control text-left"
+                            maxlength="8"
+                            data-orden="1"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 12%">
+                        <div class="input-group col-md-12" id="vlr_fac">
+                          <input
+                            v-model="reg_act.vlr_fac"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="10"
+                            data-orden="1"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 12%">
+                        <div class="input-group col-md-12" id="serv0">
+                          <input
+                            v-model="reg_act.vlr_ser[0].vlr"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="10"
+                            data-orden="1"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 12%">
+                        <div class="input-group col-md-12" id="serv1">
+                          <input
+                            v-model="reg_act.vlr_ser[1].vlr"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="10"
+                            data-orden="1"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 12%">
+                        <div class="input-group col-md-12" id="serv2">
+                          <input
+                            v-model="reg_act.vlr_ser[2].vlr"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="10"
+                            data-orden="1"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 12%">
+                        <div class="input-group col-md-12" id="serv3">
+                          <input
+                            v-model="reg_act.vlr_ser[3].vlr"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="10"
+                            data-orden="1"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 12%">
+                        <div class="input-group col-md-12" id="serv4">
+                          <input
+                            v-model="reg_act.vlr_ser[4].vlr"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="10"
+                            data-orden="1"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 12%">
+                        <div class="input-group col-md-12" id="serv5">
+                          <input
+                            v-model="reg_act.vlr_ser[5].vlr"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="10"
+                            data-orden="1"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </thead>
+                </table>
+                <div style="display: inline-block; width: 100%; max-height: 340px; overflow-y: scroll">
+                  <table id="tabla" class="table table-light table-striped" style="margin-bottom: 0px">
+                    <tbody>
+                      <tr v-for="(registro, index) in reg_pago.datos_tab">
+                        <td class="text-center" style="width: 6%">
+                          <label>{{ parseInt(index) + 1 }}</label>
+                        </td>
+                        <td class="text-right" style="width: 10%">
+                          <label
+                            >{{ parseInt(reg_pago.datos_tab[index].nro_fac) != 0 ? reg_pago.datos_tab[index].nro_fac : ""
+                            }}</label
+                          >
+                        </td>
+                        <td class="text-right" style="width: 12%">
+                          <label
+                            >{{ reg_pago.datos_tab[index].nro_fac != 0 ? reg_pago.datos_tab[index].vlr_fac : "" }}</label
+                          >
+                        </td>
+                        <td class="text-right" style="width: 12%">
+                          <label
+                            >{{ reg_pago.datos_tab[index].nro_fac != 0 ? reg_pago.datos_tab[index].vlr_ser[0].vlr : ""
+                            }}</label
+                          >
+                        </td>
+                        <td class="text-right" style="width: 12%">
+                          <label
+                            >{{ reg_pago.datos_tab[index].nro_fac != 0 ? reg_pago.datos_tab[index].vlr_ser[1].vlr : ""
+                            }}</label
+                          >
+                        </td>
+                        <td class="text-right" style="width: 12%">
+                          <label
+                            >{{ reg_pago.datos_tab[index].nro_fac != 0 ? reg_pago.datos_tab[index].vlr_ser[2].vlr : ""
+                            }}</label
+                          >
+                        </td>
+                        <td class="text-right" style="width: 12%">
+                          <label
+                            >{{ reg_pago.datos_tab[index].nro_fac != 0 ? reg_pago.datos_tab[index].vlr_ser[3].vlr : ""
+                            }}</label
+                          >
+                        </td>
+                        <td class="text-right" style="width: 12%">
+                          <label
+                            >{{ reg_pago.datos_tab[index].nro_fac != 0 ? reg_pago.datos_tab[index].vlr_ser[4].vlr : ""
+                            }}</label
+                          >
+                        </td>
+                        <td class="text-right" style="width: 12%">
+                          <label
+                            >{{ reg_pago.datos_tab[index].nro_fac != 0 ? reg_pago.datos_tab[index].vlr_ser[5].vlr : ""
+                            }}</label
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div style="display: inline-block; width: 98%">
+                  <table class="table table-light table-striped" style="margin-bottom: 0px">
+                    <tbody>
+                      <tr>
+                        <td class="text-center" style="width: 5%">
+                          <label style="color: #476fad">Totales</label>
+                        </td>
+                        <td class="text-right" style="width: 10%">
+                          <label>{{ tot_gen.tot_nro }}</label>
+                        </td>
+                        <td class="text-right" style="width: 12%">
+                          <label>{{ tot_gen.tot_fac_t }}</label>
+                        </td>
+                        <td class="text-right" style="width: 12%">
+                          <label>{{ tot_gen.vlr_ser_t[0].vlr }}</label>
+                        </td>
+                        <td class="text-right" style="width: 12%">
+                          <label>{{ tot_gen.vlr_ser_t[1].vlr }}</label>
+                        </td>
+                        <td class="text-right" style="width: 12%">
+                          <label>{{ tot_gen.vlr_ser_t[2].vlr }}</label>
+                        </td>
+                        <td class="text-right" style="width: 12%">
+                          <label>{{ tot_gen.vlr_ser_t[3].vlr }}</label>
+                        </td>
+                        <td class="text-right" style="width: 12%">
+                          <label>{{ tot_gen.vlr_ser_t[4].vlr }}</label>
+                        </td>
+                        <td class="text-right" style="width: 12%">
+                          <label>{{ tot_gen.vlr_ser_t[5].vlr }}</label>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-md-12 no-padding" style="margin-top: -7px">
+            <div class="form-group box-center inline-inputs col-md-13">
+              <label class="col-md-12" style="color: #476fad; text-align: center"
+                >F3 graba --- F5 salir sin grabar --- F1 Aceptar Abono</label
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-12 no-padding" v-if="mostrar_CLAVE">
+      <clave :params="params_CLAVE" @callback="callback_clave" @callback_esc="esc_clave"> </clave>
+    </div>
+  
+    <div v-if="mostrar_abo">
+      <transition>
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="col-md-12 no-padding">
+              <div class="portlet light no-padding">
+                <div class="portlet-body">
+                  <div class="form-horizontal">
+                    <div class="col-md-2 box-center">
+                      <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: center; padding: 2px">
+                        <label style="font-size: 13pt">ABONO:</label>
+                      </div>
+  
+                      <div class="salto-linea"></div>
+  
+                      <div class="col-md-12 box-center" style="display: flex">
+                        <div class="inline-inputs col-md-12" style="padding-right: 5px" id="abono_w">
+                          <div class="input-group col-md-12">
+                            <input
+                              v-model="abono_w"
+                              type="text"
+                              class="form-control text-center"
+                              data-orden="1"
+                              disabled="disabled"
+                              maxlength="1"
+                              placeholder="N"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+  
+    <div v-if="mostrar_cod_barras">
+      <transition>
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div class="col-md-12 no-padding">
+              <div class="portlet light no-padding">
+                <div class="portlet-body">
+                  <div class="form-horizontal">
+                    <div class="col-md-5 box-center">
+                      <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: center; padding: 2px">
+                        <label style="font-size: 13pt">CÓDIGO DE BARRAS - RENGLÓN: {{ item }}</label>
+                      </div>
+  
+                      <div class="salto-linea"></div>
+  
+                      <div class="col-md-12 box-center" style="display: flex">
+                        <div class="inline-inputs col-md-12" style="padding-right: 5px" id="cod_barras">
+                          <div class="input-group col-md-12">
+                            <input
+                              v-model="cod_barras"
+                              type="text"
+                              class="form-control text-center"
+                              data-orden="1"
+                              disabled="disabled"
+                              maxlength="50"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+  </div>
+  
+  <script src="../../SERVDOM/scripts/PUB604.js" type="text/javascript"></script>
+  
+  <style>
+    label {
+      background: 0 !important;
+    }
+  
+    .lbl_left {
+      text-align: left !important;
+      padding-left: 5px !important;
+    }
+  
+    #tabla_tarifas tbody tr td {
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+  </style>
+  

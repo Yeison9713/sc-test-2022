@@ -1,0 +1,45 @@
+<div class="col-md-12" id="SER166">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <div class="form-horizontal" onsubmit="return false;">
+                <div>
+
+                    <div class="form-group col-md-7 col-sm-7 col-xs-7 box-center">
+
+                        <div class="inline-inputs col-md-5 col-sm-5 col-xs-5">
+                            <label class="col-md-6 col-sm-6 col-xs-6" style="background: 0; text-align: center;">Periodo a listar:</label>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-3" id="anoListar">
+                                <input v-model="form.ano_listar" type="number" disabled="disabled"
+                                    class="form-control col-md-12 text-center" required="true" data-orden="1"
+                                    maxlength="2" />
+                            </div>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-3" id="mesListar">
+                                <input v-model="form.mes_listar" type="number" disabled="disabled"
+                                    class="form-control col-md-12 text-center" required="true" data-orden="1"
+                                    maxlength="2" />
+                            </div>
+                        </div>
+
+                        <div class="inline-inputs col-md-7 col-sm-7 col-xs-7">
+                            <label class="col-md-6 col-sm-6 col-xs-6" style="background: 0; text-align: center;">Digite el prefijo a listar:</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-2" id="prefijo"> 
+                                <input v-model="form.prefijo" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 text-center uppercase" data-orden="1"
+                                    maxlength="1" disabled="disabled" />
+                            </div>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                                <input v-model="form.descripPrefijo" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 text-left" data-orden="1"
+                                    maxlength="20" disabled="disabled" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <loader_modal :estado="estado_loader" :progreso="progreso" :loader="loader" :label="label_loader"></loader_modal>
+</div>
+
+<script src="../../SALUD/scripts/SER166.js" disabled='disabled' type="text/javascript"></script>

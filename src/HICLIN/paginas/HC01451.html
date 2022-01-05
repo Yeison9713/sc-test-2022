@@ -1,0 +1,3744 @@
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group" id="HC01451">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 no-padding">
+                  <div class="sc-flex-inputs">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 0">
+                      <label> Fecha </label>
+                      <div class="tooltip-proft right-text">
+                        <span class="icon-proft icon-info"></span>
+                        <span class="tiptext">
+                          <div>Formato (AAAA/MM/DD)</div>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex no-padding">
+                      <div class="input-group" style="flex: 1 1 40%">
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="4"
+                          v-model="datos_ext.ANO"
+                          placeholder="AAAA"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                      <div class="input-group" id="validarMes_HC01451" style="flex: 1 1 30%">
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="2"
+                          placeholder="MM"
+                          v-model="datos_ext.MES"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                      <div class="input-group" id="validarDia_HC01451" style="flex: 1 1 30%">
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="2"
+                          placeholder="DD"
+                          v-model="datos_ext.DIA"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-4 col-md-1 col-lg-1 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> Hora </label>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex no-padding">
+                      <div class="input-group" id="validarHora_HC01451" style="flex: 1 1 50%">
+                        <input
+                          type="number"
+                          data-orden="1"
+                          maxlength="2"
+                          placeholder="HH"
+                          v-model="datos_ext.HORA"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                      <div class="input-group" id="validarMinuto_HC01451" style="flex: 1 1 50%">
+                        <input
+                          type="number"
+                          data-orden="1"
+                          v-model="datos_ext.MINUTO"
+                          maxlength="2"
+                          placeholder="mm"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 100%"> Folio </label>
+                    <div class="input-group" style="flex: 1 1 100%">
+                      <input
+                        type="text"
+                        v-model="datos_ext.FOLIO"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 100%"> Médico </label>
+                    <div style="flex: 1 1 100%" class="inline-inputs" id="validarMedico_HC01451">
+                      <div class="input-group" style="flex: 1 1 35%">
+                        <input
+                          type="text"
+                          id="inputMedico_HC01451"
+                          @keydown.119="ventanaMedico"
+                          v-model="global_HC01451.med"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control"
+                        />
+                      </div>
+                      <button type="button" @click="ventanaMedico" class="btn f8-Btn btn-hc01451">
+                        <i class="icon-magnifier"></i>
+                      </button>
+                      <div class="input-group" style="flex: 1 1 65%">
+                        <input type="text" v-model="datos_ext.NOM_MEDICO" disabled="disabled" class="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 100%"> Unidad servicio </label>
+                    <div class="input-group" style="flex: 1 1 100%">
+                      <input
+                        type="text"
+                        v-model="datos_ext.UNID_SERV"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Inicio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Procedencia </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarProcedencia">
+                    <input
+                      type="text"
+                      v-model="global_HC01451.proceden"
+                      data-orden="1"
+                      maxlength="50"
+                      required="true"
+                      disabled="disabled"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container" style="justify-content: space-around">
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Nivel educativo </label>
+                  <div style="flex: 1 1 100%" id="validarNivelEducativo">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.ocup_9520.nivel_educ.det_educ"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control text-center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Estado civil </label>
+                  <div style="flex: 1 1 100%">
+                    <input
+                      type="text"
+                      v-model="textos.estado_civil"
+                      disabled="disabled"
+                      class="form-control text-center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> # Hij@s </label>
+                  <div style="flex: 1 1 100%" id="validarNroHijos">
+                    <input
+                      type="number"
+                      data-orden="1"
+                      min="0"
+                      v-model="DETALLE_HISTORIA.ocup_9520.hijos.nro_hijos"
+                      maxlength="2"
+                      disabled="disabled"
+                      class="form-control text-center"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="sc-flex-inputs">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 head-box"
+                    style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                  >
+                    <label>Motivo consulta</label>
+                    <label>(350 caracteres máximo)</label>
+                  </div>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarMotivoConsulta">
+                    <textarea
+                      type="text"
+                      data-orden="1"
+                      rows="4"
+                      v-model="global_HC01451.motiv"
+                      required="true"
+                      maxlength="350"
+                      disabled="disabled"
+                      class="form-control"
+                      style="resize: none; text-align: justify; padding-bottom: 19px"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Datos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Sede de trabajo </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarSedeTrabajo">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_sede"
+                      data-orden="1"
+                      disabled="disabled"
+                      maxlength="30"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Actividad económica </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarActividadEconomica">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.activ_empresa"
+                      data-orden="1"
+                      disabled="disabled"
+                      maxlength="30"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Empresa en misión </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarEmpresaMision">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_empresa"
+                      data-orden="1"
+                      disabled="disabled"
+                      maxlength="35"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Área de trabajo </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarAreaTrabajo">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_area_trab"
+                      data-orden="1"
+                      disabled="disabled"
+                      maxlength="30"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> ARL </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarARL">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_arp"
+                      data-orden="1"
+                      maxlength="15"
+                      disabled="disabled"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Fondo pensiones </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarFondoPensiones">
+                    <input
+                      type="text"
+                      data-orden="1"
+                      v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_pens"
+                      maxlength="15"
+                      disabled="disabled"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="sc-flex-inputs">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 0">
+                    <label> Fecha ingreso </label>
+                    <div class="tooltip-proft left-text">
+                      <span class="icon-proft icon-info"></span>
+                      <span class="tiptext">
+                        <div>Formato (AAAA/MM/DD)</div>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex no-padding">
+                    <div class="input-group" id="validarAnoIngreso_HC01451" style="flex: 1 1 40%">
+                      <input
+                        type="number"
+                        data-orden="1"
+                        maxlength="4"
+                        v-model="fechas.ingreso.ano"
+                        placeholder="AAAA"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                    <div class="input-group" id="validarMesIngreso_HC01451" style="flex: 1 1 30%">
+                      <input
+                        type="number"
+                        data-orden="1"
+                        maxlength="2"
+                        placeholder="MM"
+                        v-model="fechas.ingreso.mes"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                    <div class="input-group" id="validarDiaIngreso_HC01451" style="flex: 1 1 30%">
+                      <input
+                        type="number"
+                        data-orden="1"
+                        maxlength="2"
+                        placeholder="DD"
+                        v-model="fechas.ingreso.dia"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Jornada </label>
+                  <div style="flex: 1 1 100%" id="validarJornada">
+                    <input
+                      type="text"
+                      data-orden="1"
+                      v-model="textos.jornada"
+                      disabled="disabled"
+                      class="form-control text-center"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Cargo </label>
+                  <div style="flex: 1 1 100%" id="validarCargo">
+                    <input
+                      type="text"
+                      data-orden="1"
+                      v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_cargo"
+                      maxlength="25"
+                      disabled="disabled"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> NIT empresa </label>
+                  <div style="flex: 1 1 100%" id="validarNit">
+                    <input
+                      type="number"
+                      min="0"
+                      v-model="DETALLE_HISTORIA.ocup_9520.nit_empre"
+                      maxlength="10"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control text-center"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Funciones </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarFunciones">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_funci"
+                      maxlength="60"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Máquina y equipos utlizados </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarMaquina">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_maqui"
+                      data-orden="1"
+                      maxlength="60"
+                      disabled="disabled"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Herramientas utilizadas </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarHerramientas">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_herra"
+                      data-orden="1"
+                      maxlength="60"
+                      disabled="disabled"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Materia prima utilizada </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarMateriaPrima">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_mater"
+                      data-orden="1"
+                      maxlength="60"
+                      disabled="disabled"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold"
+                  >Uso de elementos de protección personal en el cargo actual o en el último</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Gafas ? </label>
+                    <div style="flex: 1 1 30%" id="validarGafas">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_protec.lab_gafa"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Casco ? </label>
+                    <div style="flex: 1 1 30%" id="validarCasco">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_protec.lab_casc"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Tapabocas ? </label>
+                    <div style="flex: 1 1 30%" id="validarTapabocas">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_protec.lab_tapa"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Overol ? </label>
+                    <div style="flex: 1 1 30%" id="validarOverol">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_protec.lab_over"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Botas ? </label>
+                    <div style="flex: 1 1 30%" id="validarBotas">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_protec.lab_bota"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Protector ? </label>
+                    <div style="flex: 1 1 30%" id="validarProtector">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_protec.lab_prot"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Respirador ? </label>
+                    <div style="flex: 1 1 30%" id="validarRespirador">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_protec.lab_resp"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Guantes ? </label>
+                    <div style="flex: 1 1 30%" id="validarGuantes">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_protec.lab_guan"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Riesgos Ocupacionales</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="display: flex; justify-content: center">
+                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-6">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 85%"> Riesgos ocupacionales en la empresa actual o anteriores ? </label>
+                    <div style="flex: 1 1 15%" id="validarRiesgosOcupacionales">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_riesg"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="permitirCambioRiesgos">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding" style="text-align: left">
+              <div class="pagination_HC01451">
+                <a :class="index_riesgos == 0 ? 'active_HC01451' : ''" @click="mostrarTablaRiesgos(0)">1</a>
+                <a :class="index_riesgos == 1 ? 'active_HC01451' : ''" @click="mostrarTablaRiesgos(1)">2</a>
+                <a :class="index_riesgos == 2 ? 'active_HC01451' : ''" @click="mostrarTablaRiesgos(2)">3</a>
+                <a :class="index_riesgos == 3 ? 'active_HC01451' : ''" @click="mostrarTablaRiesgos(3)">4</a>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sc-flex-container">
+                  <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+                    <div class="sc-flex-inputs">
+                      <div style="flex: 1 1 100%" style="padding-left: 0">
+                        <label> Empresa donde laboró </label>
+                        <div class="tooltip-proft right-text">
+                          <span class="icon-proft icon-info"></span>
+                          <span class="tiptext">
+                            <div>
+                              Si deja el campo en blanco inicializa la posición completa de la tabla, para terminar la
+                              tabla oprima F3
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="input-group" style="flex: 1 1 100%" id="empresaLaboro_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_empr_ant"
+                          data-orden="1"
+                          maxlength="30"
+                          disabled="disabled"
+                          class="form-control text-left"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 100%"> Actividad económica </label>
+                      <div class="input-group" style="flex: 1 1 100%" id="actividadEconomica_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_activ_ant"
+                          data-orden="1"
+                          maxlength="20"
+                          disabled="disabled"
+                          class="form-control text-left"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 100%"> Sección de la empresa </label>
+                      <div class="input-group" style="flex: 1 1 100%" id="seccionEmpresa_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_secc_ant"
+                          data-orden="1"
+                          maxlength="20"
+                          disabled="disabled"
+                          class="form-control text-left"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 100%"> Cargo que desempeñó </label>
+                      <div class="input-group" style="flex: 1 1 100%" id="cargoDesempeño_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_carg_ant"
+                          data-orden="1"
+                          maxlength="15"
+                          disabled="disabled"
+                          class="form-control text-left"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 100%"> Funciones desempañadas </label>
+                      <div class="input-group" style="flex: 1 1 100%" id="funcionesDesempeñadas_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_func_ant"
+                          data-orden="1"
+                          maxlength="20"
+                          disabled="disabled"
+                          class="form-control text-left"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 100%"> Medidas de control </label>
+                      <div class="input-group" style="flex: 1 1 100%" id="medidasControl_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_med_ant"
+                          data-orden="1"
+                          maxlength="20"
+                          disabled="disabled"
+                          class="form-control text-left"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sc-flex-container no-padding"
+                    style="justify-content: space-around"
+                  >
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                      <div class="sc-flex-inputs" style="align-items: center">
+                        <label style="flex: 1 1 70%"> Empresa actual ? </label>
+                        <div style="flex: 1 1 30%" id="empresaActual_HC01451">
+                          <input
+                            type="text"
+                            v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_emp_act"
+                            maxlength="1"
+                            data-orden="1"
+                            placeholder="N"
+                            disabled="disabled"
+                            class="form-control text-center"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                      <div class="sc-flex-inputs">
+                        <label style="flex: 1 1 70%"> Tiempo en el cargo ? </label>
+                        <div style="flex: 1 1 30%" id="tiempoCargo_HC01451">
+                          <input
+                            type="number"
+                            v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_tiemp_ant"
+                            maxlength="5"
+                            data-orden="1"
+                            disabled="disabled"
+                            class="form-control text-center"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                      <div class="sc-flex-inputs">
+                        <label style="flex: 1 1 70%"> Entrega soportes laborales ? </label>
+                        <div style="flex: 1 1 30%" id="entregaSoportes_HC01451">
+                          <input
+                            type="text"
+                            v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_sop_ant"
+                            maxlength="1"
+                            data-orden="1"
+                            placeholder="N"
+                            disabled="disabled"
+                            class="form-control text-center"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      v-if="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_sop_ant == 'S'"
+                      class="col-xs-12 col-sm-6 col-md-3 col-lg-3"
+                    >
+                      <div class="sc-flex-inputs">
+                        <label style="flex: 1 1 100%"> Cuáles </label>
+                        <div class="input-group" style="flex: 1 1 100%" id="cualesSoportes_HC01451">
+                          <input
+                            type="text"
+                            v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_cualsop_ant"
+                            data-orden="1"
+                            maxlength="20"
+                            disabled="disabled"
+                            class="form-control text-left"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div
+                  class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                  style="display: flex; justify-content: center; margin-bottom: 5px"
+                >
+                  <label>Factores de riesgo físicos</label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Iluminación ? </label>
+                    <div style="flex: 1 1 30%" id="iluminacion_HC01451">
+                      <input
+                        type="text"
+                        v-model="textoIluminacion(index_riesgos)"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Rad. ionizantes ? </label>
+                    <div style="flex: 1 1 30%" id="ionizantes_HC01451">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_radio"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Rad. NO ionizantes ? </label>
+                    <div style="flex: 1 1 30%" id="NOionizantes_HC01451">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_radno"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Ruido ? </label>
+                    <div style="flex: 1 1 30%" id="ruido_HC01451">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_ruido"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Temp alta ? </label>
+                    <div style="flex: 1 1 30%" id="tempAlta_HC01451">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_tmalt"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Temp baja ? </label>
+                    <div style="flex: 1 1 30%" id="tempBaja_HC01451">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_tmbaj"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Vibraciones ? </label>
+                    <div style="flex: 1 1 30%" id="vibraciones_HC01451">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_vibra"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Presión ? </label>
+                    <div style="flex: 1 1 30%" id="presion_HC01451">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_presi"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="no-padding box-center sc-flex-container">
+                  <div
+                    class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                    style="display: flex; justify-content: center; margin-bottom: 5px"
+                  >
+                    <label>Factores de riesgo químicos</label>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Gases ? </label>
+                      <div style="flex: 1 1 30%" id="gases_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_gases"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Humos ? </label>
+                      <div style="flex: 1 1 30%" id="humos_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_humos"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Polvos ? </label>
+                      <div style="flex: 1 1 30%" id="polvos_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_polvo"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Líquido ? </label>
+                      <div style="flex: 1 1 30%" id="liquido_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_liqui"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Vapores ? </label>
+                      <div style="flex: 1 1 30%" id="vapores_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_vapor"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Fibras ? </label>
+                      <div style="flex: 1 1 30%" id="fibras_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_fibra"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="no-padding box-center sc-flex-container">
+                  <div
+                    class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                    style="display: flex; justify-content: center; margin-bottom: 5px"
+                  >
+                    <label>Factores de riesgo ergonómicos</label>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Carga dinámica ? </label>
+                      <div style="flex: 1 1 30%" id="cargaDina_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_cardi"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Carga estática ? </label>
+                      <div style="flex: 1 1 30%" id="cargaEsta_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_cares"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Diseño puesto ? </label>
+                      <div style="flex: 1 1 30%" id="diseñoPuesto_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_disen"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Manejo carga ? </label>
+                      <div style="flex: 1 1 30%" id="manejoCarga_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_manej"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Movimiento repetitivo ? </label>
+                      <div style="flex: 1 1 30%" id="movimRepe_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_movim"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Video terminal ? </label>
+                      <div style="flex: 1 1 30%" id="videoTerminal_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_video"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="no-padding box-center sc-flex-container">
+                  <div
+                    class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                    style="display: flex; justify-content: center; margin-bottom: 14px"
+                  >
+                    <label>Factores de riesgo biológicos</label>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Microorgan. ? </label>
+                      <div style="flex: 1 1 30%" id="microorganismos_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_micro"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Animales ? </label>
+                      <div style="flex: 1 1 30%" id="animales_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_anima"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Vegetales ? </label>
+                      <div style="flex: 1 1 30%" id="vegetales_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_veget"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div
+                  class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                  style="display: flex; justify-content: center; margin-bottom: 5px"
+                >
+                  <label>Factores de riesgo seguridad</label>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Eléctricos ? </label>
+                    <div style="flex: 1 1 30%" id="electricos_HC01451">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_elect"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Incendio ? </label>
+                    <div style="flex: 1 1 30%" id="indendio_HC01451">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_incen"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Explosión ? </label>
+                    <div style="flex: 1 1 30%" id="explosion_HC01451">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_explo"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Mecánico ? </label>
+                    <div style="flex: 1 1 30%" id="mecanico_HC01451">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_mecan"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Locativos ? </label>
+                    <div style="flex: 1 1 30%" id="locativos_HC01451">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_locat"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Desplazamiento ? </label>
+                    <div style="flex: 1 1 30%" id="desplazamiento_HC01451">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_despl"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Orden público ? </label>
+                    <div style="flex: 1 1 30%" id="ordenPublico_HC01451">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_ordpu"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Natural ? </label>
+                    <div style="flex: 1 1 30%" id="natural_HC01451">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_natur"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div
+                  class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                  style="display: flex; justify-content: center; margin-bottom: 5px"
+                >
+                  <label>Factores de riesgo psicolaborales</label>
+                </div>
+                <div class="col-lg-12 no-padding sc-flex-container" style="justify-content: space-around">
+                  <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Contenido t ? </label>
+                      <div style="flex: 1 1 30%" id="contenido_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_conte"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Org. de tiempo ? </label>
+                      <div style="flex: 1 1 30%" id="orgTiempo_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_organ"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Relac. humanas ? </label>
+                      <div style="flex: 1 1 30%" id="relacHumanas_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_relac"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Gestión ? </label>
+                      <div style="flex: 1 1 30%" id="gestion_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_gesti"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Amb. físico tra ? </label>
+                      <div style="flex: 1 1 30%" id="ambFisico_HC01451">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.lab_tab_anter[index_riesgos].lab_fisic"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding" style="text-align: left">
+            <div class="pagination_HC01451">
+              <a :class="index_riesgos == 0 ? 'active_HC01451' : ''" @click="mostrarTablaRiesgos(0)">1</a>
+              <a :class="index_riesgos == 1 ? 'active_HC01451' : ''" @click="mostrarTablaRiesgos(1)">2</a>
+              <a :class="index_riesgos == 2 ? 'active_HC01451' : ''" @click="mostrarTablaRiesgos(2)">3</a>
+              <a :class="index_riesgos == 3 ? 'active_HC01451' : ''" @click="mostrarTablaRiesgos(3)">4</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Accidentes de trabajo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="display: flex; justify-content: center">
+                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-6">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 85%"> Accidentes de trabajo en la empresa actual o anteriores ? </label>
+                    <div style="flex: 1 1 15%" id="validarAccidenteTrabajo">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.ant_accid_trab.hay_accid_trab"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" v-if="accidentesTrabajo">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Tiempo incapacitado : </label>
+                    <div style="flex: 1 1 30%" id="validarTiempoIncapacitado">
+                      <input
+                        type="number"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.ant_accid_trab.dias_accid_trab"
+                        maxlength="3"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" v-if="accidentesTrabajo">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Arp ? </label>
+                    <div style="flex: 1 1 30%" id="validarArp">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.ant_accid_trab.report_accid_trab"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container" v-if="accidentesTrabajo">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                <div class="sc-flex-inputs">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-left: 0">
+                    <label> Fecha </label>
+                    <div class="tooltip-proft right-text">
+                      <span class="icon-proft icon-info"></span>
+                      <span class="tiptext">
+                        <div>Formato (AAAA/MM)</div>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex no-padding">
+                    <div class="input-group" id="validarAnoAccidente_HC01451" style="flex: 1 1 50%">
+                      <input
+                        type="number"
+                        data-orden="1"
+                        maxlength="4"
+                        required="true"
+                        v-model="fechas.accidente.ano"
+                        placeholder="AAAA"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                    <div class="input-group" id="validarMesAccidente_HC01451" style="flex: 1 1 50%">
+                      <input
+                        type="number"
+                        data-orden="1"
+                        maxlength="2"
+                        required="true"
+                        placeholder="MM"
+                        v-model="fechas.accidente.mes"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Empresa </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarAccidenteEmpresa">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.ant_accid_trab.empresa_accid_trab"
+                      data-orden="1"
+                      required="true"
+                      disabled="disabled"
+                      maxlength="16"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Tipo lesión </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarTipoLesion">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.ant_accid_trab.lesion_accid_trab"
+                      data-orden="1"
+                      required="true"
+                      disabled="disabled"
+                      maxlength="15"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Parte cuerpo </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarParteCuerpo">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.ant_accid_trab.parte_accid_trab"
+                      data-orden="1"
+                      required="true"
+                      disabled="disabled"
+                      maxlength="15"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Secuelas </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarSecuelas">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.ant_accid_trab.secuel_accid_trab"
+                      data-orden="1"
+                      required="true"
+                      disabled="disabled"
+                      maxlength="15"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Atención recibida </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarAtencionRecibida">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.ant_accid_trab.atenc_accid_trab"
+                      data-orden="1"
+                      required="true"
+                      disabled="disabled"
+                      maxlength="17"
+                      class="form-control text-left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Enfermedad Profesional</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="display: flex; justify-content: center">
+                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-6">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 85%"> Enfermedad profesional ? </label>
+                    <div style="flex: 1 1 15%" id="validarEnfermedadProfesional">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.hay_enf_prof"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+            v-if="DETALLE_HISTORIA.ocup_9520.ante_labor.hay_enf_prof == 'S'"
+          >
+            <div class="no-padding box-center sc-flex-container">
+              <div
+                class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding"
+                style="display: flex; justify-content: center"
+              >
+                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 sc-flex-container">
+                  <div
+                    class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container"
+                    style="border-bottom: 1.4px solid #476fad"
+                  >
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 no-padding">
+                      <label></label>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8 no-padding" style="text-align: center">
+                      <label>Enfermedades</label>
+                    </div>
+                    <div class="col-xs-5 col-sm-5 col-md-3 col-lg-3 no-padding" style="text-align: center">
+                      <label>Fecha diagnóstico</label>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                    <label>1</label>
+                  </div>
+
+                  <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarEnfermedadProfesional_1">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.enf1_prof.det_enf1_prof"
+                          data-orden="1"
+                          required="true"
+                          disabled="disabled"
+                          maxlength="60"
+                          class="form-control text-left"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-5 col-sm-5 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex no-padding">
+                        <div class="input-group" id="validarAnoDiagnostico_1_HC01451" style="flex: 1 1 40%">
+                          <input
+                            type="number"
+                            data-orden="1"
+                            maxlength="4"
+                            v-model="fechas.diagn_1.ano"
+                            placeholder="AAAA"
+                            disabled="disabled"
+                            class="form-control text-center"
+                          />
+                        </div>
+                        <div class="input-group" id="validarMesDiagnostico_1_HC01451" style="flex: 1 1 30%">
+                          <input
+                            type="number"
+                            data-orden="1"
+                            maxlength="2"
+                            placeholder="MM"
+                            v-model="fechas.diagn_1.mes"
+                            disabled="disabled"
+                            class="form-control text-center"
+                          />
+                        </div>
+                        <div class="input-group" id="validarDiaDiagnostico_1_HC01451" style="flex: 1 1 30%">
+                          <input
+                            type="number"
+                            data-orden="1"
+                            maxlength="2"
+                            placeholder="DD"
+                            v-model="fechas.diagn_1.dia"
+                            disabled="disabled"
+                            class="form-control text-center"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                    <label>2</label>
+                  </div>
+
+                  <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarEnfermedadProfesional_2">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.ante_labor.enf2_prof.det_enf2_prof"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="60"
+                          class="form-control text-left"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-5 col-sm-5 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex no-padding">
+                        <div class="input-group" id="validarAnoDiagnostico_2_HC01451" style="flex: 1 1 40%">
+                          <input
+                            type="number"
+                            data-orden="1"
+                            maxlength="4"
+                            v-model="fechas.diagn_2.ano"
+                            placeholder="AAAA"
+                            disabled="disabled"
+                            class="form-control text-center"
+                          />
+                        </div>
+                        <div class="input-group" id="validarMesDiagnostico_2_HC01451" style="flex: 1 1 30%">
+                          <input
+                            type="number"
+                            data-orden="1"
+                            maxlength="2"
+                            placeholder="MM"
+                            v-model="fechas.diagn_2.mes"
+                            disabled="disabled"
+                            class="form-control text-center"
+                          />
+                        </div>
+                        <div class="input-group" id="validarDiaDiagnostico_2_HC01451" style="flex: 1 1 30%">
+                          <input
+                            type="number"
+                            data-orden="1"
+                            maxlength="2"
+                            placeholder="DD"
+                            v-model="fechas.diagn_2.dia"
+                            disabled="disabled"
+                            class="form-control text-center"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Antecedentes Quirúrgicos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <div
+                      class="col-md-12 col-sm-12 col-xs-12 head-box"
+                      style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                    >
+                      <label>Digite</label>
+                      <label>(1,000 caracteres máximo)</label>
+                    </div>
+                    <div class="input-group" style="flex: 1 1 100%" id="validarAntecedentesQuirur">
+                      <textarea
+                        type="text"
+                        data-orden="1"
+                        rows="5"
+                        v-model="DETALLE_HISTORIA.Antecedentes_Quirurgicos"
+                        required="true"
+                        maxlength="1000"
+                        disabled="disabled"
+                        class="form-control"
+                        style="resize: none; text-align: justify; padding-bottom: 19px"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Antecedentes Farmacológicos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <div
+                      class="col-md-12 col-sm-12 col-xs-12 head-box"
+                      style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                    >
+                      <label>Digite</label>
+                      <label>(1,000 caracteres máximo)</label>
+                    </div>
+                    <div class="input-group" style="flex: 1 1 100%" id="validarAntecedentesFarma">
+                      <textarea
+                        type="text"
+                        data-orden="1"
+                        rows="5"
+                        v-model="DETALLE_HISTORIA.Antecedentes_Farmacologicos"
+                        required="true"
+                        maxlength="1000"
+                        disabled="disabled"
+                        class="form-control"
+                        style="resize: none; text-align: justify; padding-bottom: 19px"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Antecedentes Tóxico-Alérgicos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <div
+                      class="col-md-12 col-sm-12 col-xs-12 head-box"
+                      style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                    >
+                      <label>Digite</label>
+                      <label>(1,000 caracteres máximo)</label>
+                    </div>
+                    <div class="input-group" style="flex: 1 1 100%" id="validarAntecedentesToxico">
+                      <textarea
+                        type="text"
+                        data-orden="1"
+                        rows="5"
+                        v-model="DETALLE_HISTORIA.Antecedentes_Toxico"
+                        required="true"
+                        maxlength="1000"
+                        disabled="disabled"
+                        class="form-control"
+                        style="resize: none; text-align: justify; padding-bottom: 19px"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Antecedentes Traumatológicos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <div
+                      class="col-md-12 col-sm-12 col-xs-12 head-box"
+                      style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                    >
+                      <label>Digite</label>
+                      <label>(1,000 caracteres máximo)</label>
+                    </div>
+                    <div class="input-group" style="flex: 1 1 100%" id="validarAntecedentesTrauma">
+                      <textarea
+                        type="text"
+                        data-orden="1"
+                        rows="5"
+                        v-model="DETALLE_HISTORIA.Antecedentes_Traumatologicos"
+                        required="true"
+                        maxlength="1000"
+                        disabled="disabled"
+                        class="form-control"
+                        style="resize: none; text-align: justify; padding-bottom: 19px"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Actividad Física</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div
+                  class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding"
+                  style="display: flex; justify-content: center"
+                >
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sc-flex-container">
+                    <div
+                      class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container"
+                      style="border-bottom: 1.4px solid #476fad"
+                    >
+                      <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 no-padding">
+                        <label></label>
+                      </div>
+                      <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8 no-padding" style="text-align: center">
+                        <label>Cuales</label>
+                      </div>
+                      <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 no-padding" style="text-align: center">
+                        <label>Horas semanales</label>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+                      <label>Ejercicio</label>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
+                      <div class="sc-flex-inputs">
+                        <div class="input-group" style="flex: 1 1 100%" id="validarEjercicioDep">
+                          <input
+                            type="text"
+                            v-model="DETALLE_HISTORIA.ocup_9520.habitos.deporte"
+                            data-orden="1"
+                            disabled="disabled"
+                            maxlength="20"
+                            class="form-control text-left"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2" style="display: flex; justify-content: center">
+                      <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10 no-padding">
+                        <div class="sc-flex-inputs">
+                          <div class="input-group" style="flex: 1 1 100%" id="validarHorasEjercicioDep">
+                            <input
+                              type="number"
+                              v-model="DETALLE_HISTORIA.ocup_9520.habitos.hr_deporte"
+                              data-orden="1"
+                              disabled="disabled"
+                              maxlength="2"
+                              class="form-control text-center"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+                      <label>Deportes de choque</label>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
+                      <div class="sc-flex-inputs">
+                        <div class="input-group" style="flex: 1 1 100%" id="validarEjercicioChoque">
+                          <input
+                            type="text"
+                            v-model="DETALLE_HISTORIA.ocup_9520.habitos.dep_choque"
+                            data-orden="1"
+                            disabled="disabled"
+                            maxlength="20"
+                            class="form-control text-left"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2" style="display: flex; justify-content: center">
+                      <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10 no-padding">
+                        <div class="sc-flex-inputs">
+                          <div class="input-group" style="flex: 1 1 100%" id="validarHorasEjercicioChoque">
+                            <input
+                              type="number"
+                              v-model="DETALLE_HISTORIA.ocup_9520.habitos.hr_dep_choque"
+                              data-orden="1"
+                              disabled="disabled"
+                              maxlength="2"
+                              class="form-control text-center"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+                      <label>Act manuales</label>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
+                      <div class="sc-flex-inputs">
+                        <div class="input-group" style="flex: 1 1 100%" id="validarActManuales">
+                          <input
+                            type="text"
+                            v-model="DETALLE_HISTORIA.ocup_9520.habitos.act_manual"
+                            data-orden="1"
+                            disabled="disabled"
+                            maxlength="20"
+                            class="form-control text-left"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2" style="display: flex; justify-content: center">
+                      <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10 no-padding">
+                        <div class="sc-flex-inputs">
+                          <div class="input-group" style="flex: 1 1 100%" id="validarHorasActManuales">
+                            <input
+                              type="number"
+                              v-model="DETALLE_HISTORIA.ocup_9520.habitos.hr_act_manual"
+                              data-orden="1"
+                              disabled="disabled"
+                              maxlength="2"
+                              class="form-control text-center"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+                      <label>Oficios domésticos</label>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
+                      <div class="sc-flex-inputs">
+                        <div class="input-group" style="flex: 1 1 100%" id="validarOficiosDomesticos">
+                          <input
+                            type="text"
+                            v-model="DETALLE_HISTORIA.ocup_9520.habitos.of_domes"
+                            data-orden="1"
+                            disabled="disabled"
+                            maxlength="20"
+                            class="form-control text-left"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2" style="display: flex; justify-content: center">
+                      <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10 no-padding">
+                        <div class="sc-flex-inputs">
+                          <div class="input-group" style="flex: 1 1 100%" id="validarHorasOficiosDomesticos">
+                            <input
+                              type="number"
+                              v-model="DETALLE_HISTORIA.ocup_9520.habitos.hr_of_domes"
+                              data-orden="1"
+                              disabled="disabled"
+                              maxlength="2"
+                              class="form-control text-center"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Hábitos Tóxicos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div
+                  class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding"
+                  style="display: flex; justify-content: center"
+                >
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sc-flex-container">
+                    <div
+                      class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container"
+                      style="border-bottom: 1.4px solid #476fad"
+                    >
+                      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 no-padding">
+                        <label>Hábito</label>
+                      </div>
+                      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 no-padding">
+                        <label>Consumo</label>
+                      </div>
+                      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 no-padding">
+                        <label>Frecuencia</label>
+                      </div>
+                      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 no-padding">
+                        <label>Años de consumo</label>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                      <label>Alcohol</label>
+                    </div>
+
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                      <div class="sc-flex-inputs">
+                        <div class="input-group" style="flex: 1 1 100%" id="validarConsumoAlcohol">
+                          <input
+                            type="text"
+                            v-model="textos.alcohol.consumo"
+                            data-orden="1"
+                            disabled="disabled"
+                            class="form-control text-center"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                      <div class="sc-flex-inputs">
+                        <div class="input-group" style="flex: 1 1 100%" id="validarFrecuenciaAlcohol">
+                          <input
+                            type="text"
+                            v-model="textos.alcohol.frecuencia"
+                            data-orden="1"
+                            disabled="disabled"
+                            class="form-control text-center"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="display: flex; justify-content: center">
+                      <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10 no-padding">
+                        <div class="sc-flex-inputs">
+                          <div class="input-group" style="flex: 1 1 100%" id="validarAnosAlcohol">
+                            <input
+                              type="number"
+                              v-model="DETALLE_HISTORIA.ocup_9520.hab_ant.anos_alcoh_ant"
+                              data-orden="1"
+                              disabled="disabled"
+                              maxlength="2"
+                              class="form-control text-center"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                      <label>Tabaco, cigarrillo</label>
+                    </div>
+
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                      <div class="sc-flex-inputs">
+                        <div class="input-group" style="flex: 1 1 100%" id="validarConsumoCigar">
+                          <input
+                            type="text"
+                            v-model="textos.tabaco.consumo"
+                            data-orden="1"
+                            disabled="disabled"
+                            class="form-control text-center"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                      <div class="sc-flex-inputs">
+                        <div class="input-group" style="flex: 1 1 100%" id="validarFrecuenciaCigar">
+                          <input
+                            type="text"
+                            v-model="textos.tabaco.frecuencia"
+                            data-orden="1"
+                            disabled="disabled"
+                            class="form-control text-center"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="display: flex; justify-content: center">
+                      <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10 no-padding">
+                        <div class="sc-flex-inputs">
+                          <div class="input-group" style="flex: 1 1 100%" id="validarAnosCigar">
+                            <input
+                              type="number"
+                              v-model="DETALLE_HISTORIA.ocup_9520.hab_ant.anos_tabac_ant"
+                              data-orden="1"
+                              disabled="disabled"
+                              maxlength="2"
+                              class="form-control text-center"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                      <label>Sustancias psicoactivas</label>
+                    </div>
+
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                      <div class="sc-flex-inputs">
+                        <div class="input-group" style="flex: 1 1 100%" id="validarConsumoSustancias">
+                          <input
+                            type="text"
+                            v-model="textos.sustancias.consumo"
+                            data-orden="1"
+                            disabled="disabled"
+                            class="form-control text-center"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                      <div class="sc-flex-inputs">
+                        <div class="input-group" style="flex: 1 1 100%" id="validarFrecuenciaSustancias">
+                          <input
+                            type="text"
+                            v-model="textos.sustancias.frecuencia"
+                            data-orden="1"
+                            disabled="disabled"
+                            class="form-control text-center"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="display: flex; justify-content: center">
+                      <div class="col-xs-12 col-sm-12 col-md-11 col-lg-10 no-padding">
+                        <div class="sc-flex-inputs">
+                          <div class="input-group" style="flex: 1 1 100%" id="validarAnosSustancias">
+                            <input
+                              type="number"
+                              v-model="DETALLE_HISTORIA.ocup_9520.hab_ant.anos_psico_ant"
+                              data-orden="1"
+                              disabled="disabled"
+                              maxlength="2"
+                              class="form-control text-center"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Inmunización</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div
+                class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding"
+                style="display: flex; justify-content: center"
+              >
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-11 sc-flex-container">
+                  <div
+                    class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container"
+                    style="border-bottom: 1.4px solid #476fad"
+                  >
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 no-padding">
+                      <label></label>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 no-padding" style="text-align: center">
+                      <label>Dosis</label>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 no-padding" style="text-align: center">
+                      <label>Año</label>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 no-padding" style="text-align: center">
+                      <label>Mes</label>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <label>Tetanos</label>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarDosisTetanos">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_tetan_dosis"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="1"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarAnoTetanos">
+                        <input
+                          type="number"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_tetan_ano"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="4"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarMesTetanos">
+                        <input
+                          type="number"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_tetan_mes"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="2"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <label>Fiebre amarilla</label>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarDosisFiebre">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_famar_dosis"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="1"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarAnoFiebre">
+                        <input
+                          type="number"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_famar_ano"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="4"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarMesFiebre">
+                        <input
+                          type="number"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_famar_mes"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="2"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <label>Hepatitis A</label>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarDosisHepa_A">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_hepaa_dosis"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="1"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarAnoHepa_A">
+                        <input
+                          type="number"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_hepaa_ano"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="4"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarMesHepa_A">
+                        <input
+                          type="number"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_hepaa_mes"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="2"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <label>Influenza</label>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarDosisInfluenza">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_influ_dosis"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="1"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarAnoInfluenza">
+                        <input
+                          type="number"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_influ_ano"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="4"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarMesInfluenza">
+                        <input
+                          type="number"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_influ_mes"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="2"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <label>Hepatitis B</label>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarDosisHepa_B">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_hepab_dosis"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="1"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarAnoHepa_B">
+                        <input
+                          type="number"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_hepab_ano"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="4"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarMesHepa_B">
+                        <input
+                          type="number"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_hepab_mes"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="2"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <label>Otra 1</label>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarDosisOtra_1">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_otra1_dosis"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="5"
+                          class="form-control text-left"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarAnoOtra_1">
+                        <input
+                          type="number"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_otra1_ano"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="4"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarMesOtra_1">
+                        <input
+                          type="number"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_otra1_mes"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="2"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <label>Otra 2</label>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarDosisOtra_2">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_otra2_dosis"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="5"
+                          class="form-control text-left"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarAnoOtra_2">
+                        <input
+                          type="number"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_otra2_ano"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="4"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="sc-flex-inputs">
+                      <div class="input-group" style="flex: 1 1 100%" id="validarMesOtra_2">
+                        <input
+                          type="number"
+                          v-model="DETALLE_HISTORIA.ocup_9520.vacun_ant.vac_otra2_mes"
+                          data-orden="1"
+                          disabled="disabled"
+                          maxlength="2"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Exámenes a practicar/practicados</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="display: flex; justify-content: center">
+                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-6">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 85%">
+                      Trae resultados de exámenes practicados en otra institución o entidad ?
+                    </label>
+                    <div style="flex: 1 1 15%" id="validarExamenesRealizados">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.resultados_ext"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.resultados_ext == 'S'">
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Optometría ? </label>
+                    <div style="flex: 1 1 30%" id="validarOptometria">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.optometria_ing"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Audiometría ? </label>
+                    <div style="flex: 1 1 30%" id="validarAudiometria">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.audiometria_ing"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Espirometría ? </label>
+                    <div style="flex: 1 1 30%" id="validarEspirometria">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.espirometria_ing"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Osteomuscular ? </label>
+                    <div style="flex: 1 1 30%" id="validarOsteomuscular">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.anex_osteo_ing"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Cardiovascular ? </label>
+                    <div style="flex: 1 1 30%" id="validarCardiovascular">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.anex_cardio_ing"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Alturas ? </label>
+                    <div style="flex: 1 1 30%" id="validarAlturas">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.anex_altu_ing"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Psicología ? </label>
+                    <div style="flex: 1 1 30%" id="validarPsicologia">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.psicologia_ing"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="display: flex; justify-content: center">
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Laboratorios ? </label>
+                      <div style="flex: 1 1 30%" id="validarLaboratorios">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.laboratorios_ing"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding sc-flex-container"
+                  v-if="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.laboratorios_ing == 'S'"
+                >
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Cuadro hemático ? </label>
+                      <div style="flex: 1 1 30%" id="validarCuadroHematico">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.cuadro_hematico"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Glicemia ? </label>
+                      <div style="flex: 1 1 30%" id="validarGlicemia">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.glicemia"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Parcial de orina ? </label>
+                      <div style="flex: 1 1 30%" id="validarParcialOrina">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.parcial_orina"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Perfil lipídico ? </label>
+                      <div style="flex: 1 1 30%" id="validarPerfilLipidico">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.perfil_lipidico"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Alcohol en saliva ? </label>
+                      <div style="flex: 1 1 30%" id="validarAlcoholSaliva">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.alcohol_saliva"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Marihuana en orina ? </label>
+                      <div style="flex: 1 1 30%" id="validarMarihuanaOrina">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.marihuana_orina"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding sc-flex-container"
+                  v-if="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.laboratorios_ing == 'S'"
+                >
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Cocaina en orina ? </label>
+                      <div style="flex: 1 1 30%" id="validarCocainaOrina">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.cocaina_orina"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Creatinina ? </label>
+                      <div style="flex: 1 1 30%" id="validarCreatinina">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.creatinina"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container"
+                    style="border-bottom: 1.4px solid #476fad"
+                  >
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+                      <label>Otros exámenes</label>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 20%"> 1. </label>
+                      <div style="flex: 1 1 80%" id="validarOtroExam_1">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.paraclin.otros_1"
+                          maxlength="20"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control text-left"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 20%"> 2. </label>
+                      <div style="flex: 1 1 80%" id="validarOtroExam_2">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.paraclin.otros_2"
+                          maxlength="20"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control text-left"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 20%"> 3. </label>
+                      <div style="flex: 1 1 80%" id="validarOtroExam_3">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.paraclin.otros_3"
+                          maxlength="20"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control text-left"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 no-padding sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 70%"> Manipulación de alimentos ? </label>
+                    <div style="flex: 1 1 30%" id="validarManipulacionAlim">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.manipu_alimen_ing"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding sc-flex-container"
+                  v-if="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.manipu_alimen_ing == 'S'"
+                >
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> KOH ? </label>
+                      <div style="flex: 1 1 30%" id="validarKOH">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.koh"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Coprológico ? </label>
+                      <div style="flex: 1 1 30%" id="validarCoprologico">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.coprologico"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Serología ? </label>
+                      <div style="flex: 1 1 30%" id="validarSerologia">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.serologia"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="sc-flex-inputs">
+                      <label style="flex: 1 1 70%"> Frotis de garganta ? </label>
+                      <div style="flex: 1 1 30%" id="validarFrotisGarganta">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.ocup_9520.examenes_ingreso.frotis_garganta"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Signos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Peso (kg) </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarPeso">
+                    <input
+                      type="number"
+                      min="0"
+                      v-model="global_HC01451.signos.peso"
+                      maxlength="7"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Talla (cm) </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarTalla">
+                    <input
+                      type="number"
+                      min="0"
+                      v-model="global_HC01451.signos.talla"
+                      maxlength="3"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> I.M.C </label>
+                  <div class="input-group" style="flex: 1 1 100%">
+                    <input
+                      type="number"
+                      v-model="CALCULO.imc"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Sup C </label>
+                  <div class="input-group" style="flex: 1 1 100%">
+                    <input type="text" v-model="CALCULO.sup" data-orden="1" disabled="disabled" class="form-control" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div
+                class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sc-flex-container no-padding"
+                style="justify-content: center"
+              >
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 100%"> Temperatura </label>
+                    <div class="input-group" style="flex: 1 1 100%" id="validarTemperatura">
+                      <input
+                        type="number"
+                        min="0"
+                        v-model="global_HC01451.signos.temp"
+                        maxlength="5"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> FC </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarFC">
+                    <input
+                      type="number"
+                      min="0"
+                      v-model="global_HC01451.signos.fcard"
+                      maxlength="3"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> FR </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarFR">
+                    <input
+                      type="number"
+                      min="0"
+                      v-model="global_HC01451.signos.fresp"
+                      maxlength="3"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 no-padding sc-flex-container">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="no-padding box-center sc-flex-container">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Tensión arterial </label>
+                  <div class="input-group" style="flex: 1 1 50%" id="validarSistole">
+                    <input
+                      type="number"
+                      min="0"
+                      v-model="global_HC01451.signos.tens1"
+                      maxlength="3"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="input-group" style="flex: 1 1 50%" id="validarDiastole">
+                    <input
+                      type="number"
+                      min="0"
+                      v-model="global_HC01451.signos.tens2"
+                      maxlength="3"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> TA Media </label>
+                  <div class="input-group" style="flex: 1 1 100%">
+                    <input
+                      type="number"
+                      v-model="global_HC01451.signos.tens_media"
+                      disabled="disabled"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Per abdom </label>
+                  <div class="input-group" style="flex: 1 1 100%" id="validarPerAbdom">
+                    <input
+                      type="number"
+                      min="0"
+                      v-model="global_HC01451.signos.per_abdo"
+                      maxlength="5"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="sc-flex-inputs">
+                  <label style="flex: 1 1 100%"> Lateralidad domi </label>
+                  <div class="input-group" style="flex: 1 1 100%">
+                    <input
+                      type="text"
+                      v-model="textos.lateralidad"
+                      maxlength="5"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div v-if="ventanaProfesionales">
+    <ser819
+      :filtro_atiende="paramsAtiende"
+      :filtro_espec="paramsEspec"
+      @callback="successVentanaProfe"
+      @callback_esc="escVentanaProfe"
+    ></ser819>
+  </div>
+</div>
+
+<style>
+  input {
+    text-align: center;
+  }
+
+  #HC01451 .box-center {
+    margin-bottom: 0 !important;
+  }
+
+  .btn-hc01451 {
+    max-width: 34px;
+    min-width: 34px;
+  }
+
+  .pagination_HC01451 {
+    display: inline-block;
+  }
+
+  .pagination_HC01451 a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    margin: 0 4px;
+  }
+
+  .pagination_HC01451 a:hover {
+    background-color: #719bdc;
+    color: white;
+    border: 1px solid #719bdc;
+  }
+
+  .pagination_HC01451 a.active_HC01451 {
+    background-color: #476fad;
+    color: white;
+    border: 1px solid #476fad;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<script src="../../HICLIN/scripts/hc890h.vue.js"></script>
+<script src="../../HICLIN/scripts/hc890d.vue.js"></script>
+<script src="../../HICLIN/scripts/HC002B.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HC002B.formato.js"></script>
+<script src="../../HICLIN/scripts/HC01451.js" type="text/javascript"></script>

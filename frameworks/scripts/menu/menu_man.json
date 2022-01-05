@@ -1,0 +1,246 @@
+{
+    "Menu": [
+        {
+            "Id": "01",
+            "Descripcion": "Archivos maestros",
+            "Sub": [
+                {
+                    "Id": "011",
+                    "Descripcion": "Hoja de vida de equipos",
+                    "Opc-segu": "M11",
+                    "Tipo": "HTML",
+                    "Href": "../../MANT/paginas/MANT101.html"
+                },
+                {
+                    "Id": "012",
+                    "Descripcion": "Protocolos de mantenimiento",
+                    "Opc-segu": "M12",
+                    "Tipo": "HTML",
+                    "Href": "../../MANT/paginas/MANT102.html"
+                },
+                {
+                    "Id": "013",
+                    "Descripcion": "Impresion hoja de vida equipo",
+                    "Opc-segu": "M13",
+                    "Tipo": "HTML",
+                    "Href": "../../MANT/paginas/MANT103.html"
+                },
+                {
+                    "Id": "014",
+                    "Descripcion": "Impresion masiva hoja de vida",
+                    "Opc-segu": "M14",
+                    "Tipo": "HTML",
+                    "Href": "../../MANT/paginas/MANT104.html"
+                }
+            ]
+        },
+        {
+            "Id": "02",
+            "Descripcion": "Mantenimientos",
+            "Sub": [
+                {
+                    "Id": "021",
+                    "Descripcion": "Solicitar mantenimiento",
+                    "Opc-segu": "M21",
+                    "Tipo": "HTML",
+                    "Href": "../../MANT/paginas/MANT201.html"
+                },
+                {
+                    "Id": "022",
+                    "Descripcion": "Reimprimir solicitud mant",
+                    "Opc-segu": "M22",
+                    "Tipo": "HTML",
+                    "Href": "../../MANT/paginas/MANT202.html"
+                },
+                {
+                    "Id": "023",
+                    "Descripcion": "Actividades realizadas",
+                    "Opc-segu": "M23",
+                    "Tipo": "HTML",
+                    "Href": "../../MANT/paginas/MANT203.html"
+                },
+                {
+                    "Id": "024",
+                    "Descripcion": "Informe de activ. realizada",
+                    "Opc-segu": "M24",
+                    "Tipo": "HTML",
+                    "Href": "../../MANT/paginas/MANT204.html"
+                },
+                {
+                    "Id": "025",
+                    "Descripcion": "Informe por periodo activ.",
+                    "Opc-segu": "M25",
+                    "Tipo": "HTML",
+                    "Href": "../../MANT/paginas/MANT205.html"
+                }
+            ]
+        },
+        {
+            "Id": "03",
+            "Descripcion": "Informes",
+            "Sub": [
+                {
+                    "Id": "031",
+                    "Descripcion": "Informe de programacion",
+                    "Opc-segu": "M31",
+                    "Tipo": "HTML",
+                    "Href": "../../MANT/paginas/MANT301.html"
+                },
+                {
+                    "Id": "032",
+                    "Descripcion": "Informe de solicitudes",
+                    "Opc-segu": "M32",
+                    "Tipo": "HTML",
+                    "Href": "../../MANT/paginas/MANT302.html"
+                },
+                {
+                    "Id": "033",
+                    "Descripcion": "Informe de mantenimientos",
+                    "Opc-segu": "M33",
+                    "Tipo": "HTML",
+                    "Href": "../../MANT/paginas/MANT303.html"
+                },
+                {
+                    "Id": "034",
+                    "Descripcion": "Plan de mantenimiento",
+                    "Opc-segu": "M34",
+                    "Tipo": "HTML",
+                    "Href": "../../MANT/paginas/MANT304.html"
+                }
+            ]
+        },
+        {
+            "Id": "04",
+            "Descripcion": "Opciones avanzadas",
+            "Sub": [
+                {
+                    "Id": "041",
+                    "Descripcion": "Consulta manuales de equipo",
+                    "Opc-segu": "M41",
+                    "Tipo": "HTML",
+                    "Href": "../../MANT/paginas/MANT401.html"
+                },
+                {
+                    "Id": "042",
+                    "Descripcion": "Actualiza codigo de barras",
+                    "Opc-segu": "M42",
+                    "Tipo": "HTML",
+                    "Href": "../../MANT/paginas/MANT402.html"
+                }
+            ]
+        },
+        {
+            "Id": "05",
+            "Descripcion": "Produccion",
+            "Sub": [
+                {
+                    "Id": "051",
+                    "Descripcion": "Actualizar destinos",
+                    "Opc-segu": "M51",
+                    "Tipo": "HTML",
+                    "Href": "../../MANT/paginas/MANT501.html"
+                },
+                {
+                    "Id": "052",
+                    "Descripcion": "Produccion",
+                    "Opc-segu": "M52",
+                    "Sub": [
+                        {
+                            "Id": "0521",
+                            "Descripcion": "Planilla de produccion",
+                            "Tipo": "HTML",
+                            "Href": "../../MANT/paginas/MANT502.html"
+                        },
+                        {
+                            "Id": "0522",
+                            "Descripcion": "Reconsolidar produccion",
+                            "Tipo": "HTML",
+                            "Href": "../../MANT/paginas/MANT502I.html"
+                        }
+                    ]
+                },
+                {
+                    "Id": "053",
+                    "Descripcion": "Consumibles",
+                    "Opc-segu": "M53",
+                    "Sub": [
+                        {
+                            "Id": "0531",
+                            "Descripcion": "Descargar consumibles",
+                            "Tipo": "HTML",
+                            "Href": "../../MANT/paginas/MANT503.html"
+                        },
+                        {
+                            "Id": "0532",
+                            "Descripcion": "Reconsolidar produccion",
+                            "Tipo": "HTML",
+                            "Href": "../../MANT/paginas/MANT503I.html"
+                        }
+                    ]
+                },
+                {
+                    "Id": "054",
+                    "Descripcion": "Informes de produccion",
+                    "Opc-segu": "M54",
+                    "Sub": [
+                        {
+                            "Id": "0541",
+                            "Descripcion": "Produccion por equipo",
+                            "Tipo": "HTML",
+                            "Href": "../../MANT/paginas/MANT504.html"
+                        },
+                        {
+                            "Id": "0542",
+                            "Descripcion": "Produccion por operario",
+                            "Tipo": "HTML",
+                            "Href": "../../MANT/paginas/MANT504.html"
+                        },
+                        {
+                            "Id": "0543",
+                            "Descripcion": "Informe equipo    /consumo",
+                            "Tipo": "HTML",
+                            "Href": "../../MANT/paginas/MANT504.html"
+                        },
+                        {
+                            "Id": "0544",
+                            "Descripcion": "Informe consumo   /equipo",
+                            "Tipo": "HTML",
+                            "Href": "../../MANT/paginas/MANT504.html"
+                        },
+                        {
+                            "Id": "0545",
+                            "Descripcion": "Informe produccion/consumo",
+                            "Tipo": "HTML",
+                            "Href": "../../MANT/paginas/MANT504.html"
+                        }
+                    ]
+                },
+                {
+                    "Id": "055",
+                    "Descripcion": "Informes de produccion",
+                    "Opc-segu": "M54",
+                    "Sub": [
+                        {
+                            "Id": "0551",
+                            "Descripcion": "Elaborar despachos",
+                            "Tipo": "HTML",
+                            "Href": "../../MANT/paginas/MANT551.html"
+                        },
+                        {
+                            "Id": "0552",
+                            "Descripcion": "Reimprimir",
+                            "Tipo": "HTML",
+                            "Href": "../../MANT/paginas/MANT552.html"
+                        },
+                        {
+                            "Id": "0553",
+                            "Descripcion": "Listado de despachos",
+                            "Tipo": "HTML",
+                            "Href": "../../MANT/paginas/MANT553.html"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

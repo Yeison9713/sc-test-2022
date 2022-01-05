@@ -1,0 +1,387 @@
+<script src="../../HICLIN/scripts/HCI-8031.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI-8001.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI-8002.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI01.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/BARTHELI.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/KARNOFI.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/DEPENDE.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HERIDAI.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI-5414A.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/ACO-COVIDI.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI01C.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI02.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/PATOL.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI01I.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/AIEPI010.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI-9010.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI-9011.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/AIEPI020.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI9007.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI-9012.js" disabled='disabled' type="text/javascript"></script>
+
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
+
+<div class="col-md-12" id="HC701">
+    <div class="portlet light no-padding" style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <div class="form-horizontal">
+                <div class="col-md-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-3">
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="fechaEnc_701">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="datosIni.añoEnc_701" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 añoEnc_701" maxlength="4" data-orden="1" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="datosIni.mesEnc_701" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 mesEnc_701" maxlength="2" data-orden="2" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-12 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="datosIni.diaEnc_701" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 diaEnc_701" maxlength="2" data-orden="3" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="time_701">
+                                <div class="col-md-6 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">hr:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="datosIni.hr_701" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 hr_701" maxlength="4" data-orden="1" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">mn:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="datosIni.mn_701" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 mn_701" maxlength="2" data-orden="2" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="col-md-12" style="text-align: center;">Medico:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarMedico_701">
+                                <div class="inline-inputs">
+                                    <input v-model="datosIni.medico_HC701" type="text" class="form-control col-md-4 col-sm-12 col-xs-12 uppercase medico_HC701" maxlength="10" data-orden="1" style="text-align: center;">
+                                    <input v-model="datosIni.descripMedico_HC701" type="text" class="form-control col-md-8 col-sm-12 col-xs-12 uppercase descripMedico_HC701" maxlength="10" data-orden="" style="text-align: center;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="col-md-12">Consultando:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="datosIni.consultando_HC701" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase consultando_HC701" maxlength="10" data-orden="1" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4 no-padding">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left; padding-bottom: 7px;">
+
+                        <div class="form-group">
+                            <label class="col-md-12">Procedencia:</label>
+                            <textarea class="form-control proceder_701" disabled="disabled" rows="1" style="resize: none; text-align: justify"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-12">Motivo:</label>
+                            <textarea class="form-control motivo1_701" disabled="disabled" rows="3" style="resize: none; text-align: justify"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-12">Enfermedad Actual:</label>
+                            <textarea class="form-control enferAct_701" disabled="disabled" rows="6" style="resize: none; text-align: justify"></textarea>
+                        </div>
+
+                        <br>
+
+                        <div class="table-scrollable">
+                            <table id="table_diagnosticos" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Codigo</th>
+                                        <th>Descripcion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in form.tabla_diag" v-if="item.diagn.trim() != ''">
+                                        <td>{{ item.diagn }}</td>
+                                        <td>{{ item.descrip }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <br>
+                        <label style="width: 11%;">Clase?</label>
+                        <label style="width: 45%; font-weight: 300;" class='clase_701'></label>
+
+                        <label>Folio:</label>
+                        <label style="width: 30%; font-weight: 300;" class='folio_701'></label>
+
+                        <br>
+
+                    </div>
+                </div>
+
+                <div class="col-md-8" style="padding-right: 0;">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left;">
+
+                        <div class="col-md-4">
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <label class="col-md-10 col-sm-10 col-xs-12" style="padding-top: 6px;">Imprimir Apertura
+                                    histor.?</label>
+                                <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarAper_701">
+                                    <input v-model="form.aper_HC701" type="text" placeholder="N" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir Evolución
+                                    medica?</label>
+                                <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarEvo_701">
+                                    <input v-model="form.evo_HC701" type="text" placeholder="N" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir Notas
+                                    enfermeria?</label>
+                                <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarNotasEnf_701">
+                                    <input v-model="form.notasEnf_HC701" type="text" placeholder="N" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-4">
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <label class="col-md-10 col-sm-10 col-xs-12" style="padding-top: 6px;">Imprimir Notas
+                                    terapias?</label>
+                                <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarNotasTer_701">
+                                    <input v-model="form.notasTer_HC701" type="text" placeholder="N" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir
+                                    Formulacion MED?</label>
+                                <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarFormuMed_701">
+                                    <input v-model="form.formuMed_HC701" type="text" placeholder="N" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir Solicitud
+                                    labor.?</label>
+                                <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarSolicLab_701">
+                                    <input v-model="form.solicLab_HC701" type="text" placeholder="N" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-4">
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <label class="col-md-10 col-sm-10 col-xs-12" style="padding-top: 6px;">Imprimir
+                                    Solicitud imag.?</label>
+                                <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarSolicImag_701">
+                                    <input v-model="form.solicImag_HC701" type="text" placeholder="N" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir Solicitud
+                                    Ord md?</label>
+                                <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarSolicOrdMd_701">
+                                    <input v-model="form.solicOrdMd_HC701" type="text" placeholder="N" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir Solicitud
+                                    consul.?</label>
+                                <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarSolicConsul_701">
+                                    <input v-model="form.solicConsul_HC701" type="text" placeholder="N" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-4">
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <label class="col-md-10 col-sm-10 col-xs-12" style="padding-top: 6px;">Imprimir
+                                    Incapacidad Med?</label>
+                                <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarIncapMed_701">
+                                    <input v-model="form.incapMed_HC701" type="text" placeholder="N" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Agrupa todo en un
+                                    listado?</label>
+                                <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarAgrupar_701">
+                                    <input v-model="form.agrupar_HC701" type="text" placeholder="N" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-1"></div>
+
+
+                        <div class="col-md-5" style="text-align: center;">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>Fecha Inicial:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="fechaInicial_701">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="form.añoInicial_701" type="number" class="form-control text-center" maxlength="4" data-orden="1" required="true">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="form.mesInicial_701" type="number" class="form-control text-center" maxlength="2" data-orden="2" required="true">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-12 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="form.diaInicial_701" type="number" class="form-control text-center" maxlength="2" data-orden="3" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5" style="text-align: center;">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>Fecha Final:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="fechaFinal_701">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="form.añoFinal_701" type="number" class="form-control text-center" maxlength="4" data-orden="1" required="true">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="form.mesFinal_701" type="number" class="form-control text-center" maxlength="2" data-orden="2" required="true">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-12 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="form.diaFinal_701" type="number" class="form-control text-center" maxlength="2" data-orden="3" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-6" style="padding-right: 0;">
+
+                            <div class="col-md-12 col-sm-6 col-xs-6">
+                                <label style="text-align: center;">Tipo Macro:</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-4 col-sm-12 col-xs-6" id="validarMacro_701">
+                                        <input @keyup.f8="_ventanaTipoMacroHC701" v-model="form.macro_HC701" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase macro_HC701" maxlength="10" data-orden="1">
+                                    </div>
+                                    <button @click="_ventanaTipoMacroHC701" type="button" class="btn col-md-1 col-sm-2 col-xs-2 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                    <div class="input-group col-md-6 col-sm-12 col-xs-12">
+                                        <input v-model="form.descripMacro_HC701" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="20" data-orden="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" style="padding-right: 0;">
+
+                            <div class="col-md-12 col-sm-6 col-xs-6">
+                                <label style="text-align: center;">Codigo:</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-4 col-sm-12 col-xs-6" id="validarCodigo_701">
+                                        <input @keyup.f8="_ventanaCodigosHC701" v-model="form.codigo_HC701" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase codigo_HC701" maxlength="10" data-orden="1">
+                                    </div>
+                                    <button @click="_ventanaCodigosHC701" type="button" class="btn col-md-1 col-sm-2 col-xs-2 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                    <div class="input-group col-md-7 col-sm-12 col-xs-12">
+                                        <input v-model="form.descripCodigo_HC701" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="20" data-orden="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../frameworks/pdf/hiclin/HCI02.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI01.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/AcoCovid.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Barthel.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Depende.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI5414A.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Herida.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Karnof.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Patol.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI01I.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/AIEPI010.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI-9010.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI-9011.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/AIEPI020.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI-8031.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI-8001.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI-8002.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI9007.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI-9012.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HC701.js" type="text/javascript"></script>

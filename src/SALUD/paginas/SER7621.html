@@ -1,0 +1,64 @@
+<div class="col-md-12" id="ser7621">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <div class="form-horizontal">
+                <div class="form-group col-md-7 col-sm-7 col-xs-7 box-center">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <label class="float-left">Paciente origen.</label>
+
+                        <div class="col-md-12 col-sm-12 inline-inputs no-padding">
+                            <label></label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="_faseOrigen">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15"
+                                    data-orden="1" ref="cod_paci_ori" v-on:keyup.119="_ventanaPacienteOrigen"
+                                    v-model="form.origen.paciente" required>
+                            </div>
+                            <button type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn"
+                                @click="_ventanaPacienteOrigen">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                        <label class="float-left">Descripcion.</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                v-model="descripcion.origen">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-7 col-sm-7 col-xs-7 box-center">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <label class="float-left">Paciente destino.</label>
+
+                        <div class="col-md-12 col-sm-12 inline-inputs no-padding">
+                            <label></label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="_faseDestino">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15"
+                                    data-orden="1" ref="cod_paci_des" v-on:keyup.119="_ventanaPacienteDestino"
+                                    v-model="form.destino.paciente" required>
+                            </div>
+                            <button type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn"
+                                @click="_ventanaPacienteDestino">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                        <label class="float-left">Descripcion.</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                v-model="descripcion.destino">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ser7621h v-if="modal_hc" :params="params_ser7621h" @callback="activeModalOdo" @callback_esc="salirModalHc"> </ser7621h>
+    <ser7621o v-if="modal_od" :params="params_ser7621o" @callback="terminarProceso" @callback_esc="salirModalOd"> </ser7621o>
+</div>
+
+<script src="../../SALUD/scripts/SER7621.js" type="text/javascript"></script>

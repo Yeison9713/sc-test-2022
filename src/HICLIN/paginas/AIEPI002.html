@@ -1,0 +1,3126 @@
+<div class="col-md-12" id="AIEPI002">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-2 col-sm-3 col-xs-12">
+              <label>Fecha</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-6 col-sm-4 col-xs-4">
+                  <input
+                    type="number"
+                    v-model="datos_ext.ANO"
+                    style="padding-right: 0"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+                <div class="input-group col-md-3 col-sm-4 col-xs-4" id="validarMes_AIEPI002">
+                  <input
+                    type="number"
+                    v-model="datos_ext.MES"
+                    data-orden="1"
+                    maxlength="2"
+                    required="true"
+                    style="padding-right: 0"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+                <div class="input-group col-md-3 col-sm-4 col-xs-4" id="validarDia_AIEPI002">
+                  <input
+                    type="number"
+                    v-model="datos_ext.DIA"
+                    data-orden="1"
+                    maxlength="2"
+                    required="true"
+                    style="padding-right: 0"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-1 col-sm-2 col-xs-12">
+              <label>Hora</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-6 col-sm-6 col-xs-6" id="validarHora_AIEPI002">
+                  <input
+                    type="text"
+                    v-model="datos_ext.HORA"
+                    data-orden="1"
+                    maxlength="2"
+                    required="true"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+                <div class="input-group col-md-6 col-sm-6 col-xs-6" id="validarMinuto_AIEPI002">
+                  <input
+                    type="text"
+                    v-model="datos_ext.MINUTO"
+                    data-orden="1"
+                    maxlength="2"
+                    required="true"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12" style="text-align: left">
+              <label>Médico</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="datos_ext.NOM_MEDICO"
+                    type="text"
+                    style="text-align: left"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-12" style="text-align: left">
+              <label>Folio</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="datos_ext.FOLIO" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-4 col-xs-12 no-padding" style="text-align: left">
+              <label>Unidad servicio</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="datos_ext.UNID_SERV" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Inicio</span>
+              </div>
+              <button
+                v-show="flujo_bloques.inicio"
+                id="btnFlujo_inicio"
+                type="button"
+                style="left: 602px"
+                @click="botonFlujo(1)"
+                class="boton-flujo-aiepi002 btn f8-Btn btn-default"
+              >
+                <i class="glyphicon glyphicon-pencil"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarProcedencia" style="text-align: left">
+              <label>Procedencia</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    data-orden="1"
+                    maxlength="50"
+                    type="text"
+                    style="text-align: left"
+                    v-model="global_AIEPI002.proceden"
+                    required="true"
+                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="salto-linea"></div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarAcompañante" style="text-align: left">
+              <label>Acompañante</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    data-orden="1"
+                    maxlength="30"
+                    type="text"
+                    style="text-align: left"
+                    v-model="global_AIEPI002.acompa"
+                    required="true"
+                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="salto-linea"></div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarParentesco" style="text-align: left">
+              <label>Parentesco</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    data-orden="1"
+                    maxlength="50"
+                    type="text"
+                    style="text-align: left"
+                    v-model="global_AIEPI002.parent_acompa"
+                    required="true"
+                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarMotivoConsulta">
+              <div
+                class="col-md-12 col-sm-12 col-xs-12 head-box"
+                style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+              >
+                <label>Motivo consulta</label>
+                <label>(350 caracteres máximo)</label>
+              </div>
+              <textarea
+                v-model="global_AIEPI002.motivo"
+                class="form-control"
+                disabled="disabled"
+                rows="5"
+                maxlength="350"
+                data-orden="1"
+                required="true"
+                style="resize: none; text-align: justify; padding-bottom: 16px"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-7 col-sm-12 col-xs-12" style="padding-right: 0">
+          <div
+            class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+            style="text-align: left"
+            id="validarEnfermedadActual"
+          >
+            <div
+              class="col-md-12 col-sm-12 col-xs-12 head-box"
+              style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+            >
+              <label>Enfermedad actual:</label>
+              <label>(15,000 caracteres máximo)</label>
+            </div>
+            <textarea
+              class="form-control"
+              v-model="DETALLE_HISTORIA.Enfermedad_Actual"
+              disabled="disabled"
+              rows="15"
+              maxlength="15000"
+              data-orden="1"
+              required="true"
+              style="resize: none; text-align: justify; padding-bottom: 13px"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Antecedentes</span>
+              </div>
+              <button
+                v-show="flujo_bloques.antec_perinatales"
+                id="btnFlujo_antec_perinata"
+                type="button"
+                style="left: 539px"
+                @click="botonFlujo(3)"
+                class="boton-flujo-aiepi002 btn f8-Btn btn-default"
+              >
+                <i class="glyphicon glyphicon-pencil"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <aiepi845a
+            @callback_esc="validarEnfermedadActual"
+            @callback="salirAiepi845a"
+            v-bind:estado="params_aiepi845a.estado"
+            v-bind:unidad_serv="global_AIEPI002.serv"
+            v-bind:detalle_historia="DETALLE_HISTORIA"
+          >
+          </aiepi845a>
+        </div>
+
+        <div v-if="mostrarCovid">
+          <div class="col-md-12 col-sm-12 no-padding">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Preguntas COVID 19</span>
+                </div>
+                <button
+                  v-show="flujo_bloques.antec_perinatales"
+                  id="btnFlujo_antec_perinata"
+                  type="button"
+                  style="left: 539px"
+                  @click="botonFlujo(4)"
+                  class="boton-flujo-aiepi002 btn f8-Btn btn-default"
+                >
+                  <i class="glyphicon glyphicon-pencil"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <covid19
+            v-bind:params="params_hc890h"
+            @callback="recibirPreguntasCovid"
+            @callback_esc="EscpreguntasCovid"
+            v-bind:data="global_AIEPI002.covid19"
+          ></covid19>
+        </div>
+
+        <div class="col-md-12 col-sm-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Signos</span>
+              </div>
+              <button
+                v-show="flujo_bloques.antec_perinatales"
+                id="btnFlujo_Signos"
+                type="button"
+                style="left: 539px"
+                @click="botonFlujo(5)"
+                class="boton-flujo-aiepi002 btn f8-Btn btn-default"
+              >
+                <i class="glyphicon glyphicon-pencil"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 no-padding" style="display: flex; justify-content: space-between">
+              <div class="col-md-4 no-padding">
+                <div class="col-md-6 col-sm-4 col-xs-12" id="validarPesoNacer" style="text-align: left">
+                  <label>Peso aL nacer (Gr)</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        data-orden="1"
+                        maxlength="5"
+                        type="number"
+                        min="0"
+                        v-model="global_AIEPI002.signos.peso_nacer"
+                        required="true"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-sm-4 col-xs-12" id="validarTalla_nace" style="text-align: left">
+                  <label>Talla al nacer (Cm)</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        data-orden="1"
+                        maxlength="3"
+                        type="number"
+                        v-model="global_AIEPI002.signos.talla_nacer"
+                        min="0"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12" id="validarEdad_Gesta" style="text-align: left">
+                  <label>Edad gestacional</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        data-orden="1"
+                        maxlength="2"
+                        type="number"
+                        v-model="global_AIEPI002.signos.edad_gestacional"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4 col-xs-12" id="validarGrupoSang" style="text-align: left">
+                  <label>Grupo sang</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        data-orden="1"
+                        maxlength="2"
+                        type="text"
+                        v-model="datos_ext.grupo_sang"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4 col-xs-12" id="validarRH" style="text-align: left">
+                  <label>RH</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        data-orden="1"
+                        maxlength="1"
+                        type="text"
+                        v-model="datos_ext.RH"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4" style="padding-right: 0; border-left: 1.5px solid #ececec">
+                <div class="col-md-12 no-padding" style="display: flex; justify-content: space-between">
+                  <div class="col-md-6 col-sm-4 col-xs-12" style="text-align: left">
+                    <label>TSH</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          type="text"
+                          v-model="textos.resultado_examen"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3 col-sm-12 col-xs-12" style="text-align: left" id="validar_PeCef">
+                    <label>Per cef</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          maxlength="5"
+                          data-orden="1"
+                          type="text"
+                          required="true"
+                          v-model="global_AIEPI002.signos.per_cef"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-3 col-sm-12 col-xs-12" style="text-align: left">
+                    <label>IMC</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          type="text"
+                          v-model="global_AIEPI002.signos.imc"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12 no-padding" style="display: flex; justify-content: space-around">
+                  <div class="col-md-6 col-sm-12 col-xs-12" style="text-align: left" id="validarPeso">
+                    <label>Peso actual (Gr)</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          @input="calcularIMCySUP"
+                          v-model="global_AIEPI002.signos.peso"
+                          maxlength="7"
+                          data-orden="1"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 col-sm-12 col-xs-12" style="text-align: left" id="validartalla">
+                    <label>Talla actual (Cm)</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          @input="calcularIMCySUP"
+                          v-model="global_AIEPI002.signos.talla"
+                          maxlength="3"
+                          data-orden="1"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          required="true"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4" style="padding-right: 0; border-left: 1.5px solid #ececec">
+                <div class="col-md-6 col-sm-12 col-xs-12" style="text-align: left" id="validar_FC">
+                  <label>FC</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        maxlength="3"
+                        data-orden="1"
+                        required="true"
+                        type="number"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        v-model="global_AIEPI002.signos.fcard"
+                        style="text-align: center"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12" style="text-align: left" id="validar_FR">
+                  <label>FR</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        maxlength="3"
+                        data-orden="1"
+                        required="true"
+                        type="number"
+                        v-model="global_AIEPI002.signos.fresp"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12" style="text-align: left" id="validar_PerBraqueal">
+                  <label>Per braqueal</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        maxlength="4"
+                        data-orden="1"
+                        type="text"
+                        required="true"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        v-model="global_AIEPI002.signos.per_braq"
+                        style="text-align: center"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12" style="text-align: left" id="validarTemperatura">
+                  <label>Temperatura</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        maxlength="5"
+                        data-orden="1"
+                        required="true"
+                        type="text"
+                        v-model="global_AIEPI002.signos.temp"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="salto-linea"></div>
+          </div>
+
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div v-if="mostrarBotonPdf">
+              <div class="col-md-12 no-padding" style="display: flex; justify-content: center">
+                <div class="col-md-6">
+                  <button
+                    @click="generarPDFgraficas"
+                    class="col-md-12 btn"
+                    style="background-color: #0c5da2; border-color: #0c5da2; color: white"
+                    type="button"
+                  >
+                    Generar gráficas en PDF
+                  </button>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+            </div>
+            
+            <div
+              class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+              style="
+                overflow-y: hidden;
+                overflow-x: scroll;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+                display: flex;
+              "
+            >
+              <div class="contenedor_graficas">
+                <label>Talla para la edad</label>
+                <canvas id="grafica_talla_AIEPI002"></canvas>
+              </div>
+
+              <div class="contenedor_graficas">
+                <label>Peso para la edad</label>
+                <canvas id="grafica_peso_edad_AIEPI002"></canvas>
+              </div>
+
+              <div class="contenedor_graficas">
+                <label>Peso para la talla</label>
+                <canvas id="grafica_peso_talla_AIEPI002"></canvas>
+              </div>
+
+              <div class="contenedor_graficas">
+                <label>IMC para la edad</label>
+                <canvas id="grafica_IMC_AIEPI002"></canvas>
+              </div>
+
+              <div class="contenedor_graficas">
+                <label>Perímetro cefálico para la edad</label>
+                <canvas id="grafica_PerCef_AIEPI002"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Signos extendidos</span>
+              </div>
+              <button
+                v-show="flujo_bloques.antec_perinatales"
+                id="btnFlujo_Signos"
+                type="button"
+                style="left: 539px"
+                @click="botonFlujo(5)"
+                class="boton-flujo-aiepi002 btn f8-Btn btn-default"
+              >
+                <i class="glyphicon glyphicon-pencil"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="col-md-6 col-sm-12 col-xs-12 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+              <div class="col-md-12 no-padding">
+                <div
+                  class="col-md-12"
+                  style="
+                    text-align: center;
+                    padding-bottom: 13px;
+                    padding-top: 13px;
+                    border-bottom: 1.5px solid #ececec;
+                  "
+                >
+                  <label>Evaluar enfermedad grave o posible infección local</label>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarBebeTomaPecho">
+                    <label class="labelPreguntas">No puede beber o tomar del pecho ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.tpecho"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarDiuresis24H">
+                    <label class="labelPreguntas">Menos de 4 diuresis en 24 horas ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_fiebr.fiediure"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarConvulsiones">
+                    <label class="labelPreguntas">Ha tenido convulsiones ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.convul"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarFiebreHipotermia">
+                    <label class="labelPreguntas">Fiebre o hipotermia ?</label>
+                    <div class="tooltip-proft right-text">
+                      <span class="icon-proft icon-info" style="position: relative; top: 5px"></span>
+                      <span class="tiptext">
+                        <div>Si temperatura es mayor a 38 campo no es modificable !</div>
+                      </span>
+                    </div>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enffie"
+                        maxlength="1"
+                        data-orden="1"
+                        disabled="disabled"
+                        placeholder="N"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarVomitaTodo">
+                    <label class="labelPreguntas">Vomita todo ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.vomito"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div
+                    v-if="DETALLE_HISTORIA.aiepi9501.signo_peligro.vomito == 'S'"
+                    class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                    id="validarVomitoUlt4H"
+                  >
+                    <label class="labelPreguntas"># vomitos ult 4 Horas ?</label>
+                    <div class="col-md-3 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="number"
+                        min="1"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_diare.diavom_cant"
+                        maxlength="2"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarTirajeSubcostal">
+                    <label class="labelPreguntas">Tiraje subcostal grave ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_tos.tostri"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarQuejidos">
+                    <label class="labelPreguntas">Quejidos ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enfque"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarSeVeMal">
+                    <label class="labelPreguntas">Se ve mal ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enfmal"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarEstridorReposo">
+                    <label class="labelPreguntas">Estridor en reposo ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_tos.tosest"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarSibilancia">
+                    <label class="labelPreguntas">Sibilancia ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_tos.tosibi"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarAleteoNasal">
+                    <label class="labelPreguntas">Aleteo nasal ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enfale"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarApenas">
+                    <label class="labelPreguntas">Apneas ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enfapn"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarIctericia">
+                    <label class="labelPreguntas">Ictericia ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enfict"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarCianosis">
+                    <label class="labelPreguntas">Cianosis ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enfcia"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes">
+                    <label class="labelPreguntas">Palidez :</label>
+                    <div class="col-md-6 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="textos.palidez"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarOmbligo">
+                    <label class="labelPreguntas">Ombligo con secreción purulenta ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enfomb"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarEritema">
+                    <label class="labelPreguntas">Eritema periumbilical ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enferi"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarDistencionAbdo">
+                    <label class="labelPreguntas">Distención abdominal ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enfdis"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarPlacaBlanquecina">
+                    <label class="labelPreguntas">Placas blanquecinas en la boca ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enfpla"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                    id="validarSecrecionConjuntiva"
+                  >
+                    <label class="labelPreguntas">Secreción purulenta conjuntiva ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enfsec"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarSupuracionOido">
+                    <label class="labelPreguntas">Supuración del oido ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_oido.oidsup"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                    id="validarFontanelaObombada"
+                  >
+                    <label class="labelPreguntas">Fontanela obombada ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enffon"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarPetequias">
+                    <label class="labelPreguntas">Petequias ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enfpet"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarHemorragea">
+                    <label class="labelPreguntas">Hemorragia ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enfhem"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarEquimosis">
+                    <label class="labelPreguntas">Equimosis ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enfequ"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes">
+                    <label class="labelPreguntas">Pustulas o vesículas :</label>
+                    <div class="col-md-6 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="textos.pustulas"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarEdemaPalpebral">
+                    <label class="labelPreguntas">Edema palpebral ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.edepalp"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarLlenadoCapilar">
+                    <label class="labelPreguntas">Llenado capilar > 2 segundos ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_fiebr.fiecapi"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarVIH">
+                    <label class="labelPreguntas">VIH positivo (materna o neonato) ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enfvih"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left" id="validarMalformaciones">
+                    <label>Malformaciones congenitas</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="DETALLE_HISTORIA.aiepi9501.signo_peligro.enfmfo"
+                          maxlength="46"
+                          data-orden="1"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: left"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left">
+                    <label>Estado general del niño</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="textos.estado_general"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12 col-xs-12" style="padding-right: 0">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+              <div
+                class="col-md-12"
+                style="display: flex; justify-content: center; padding-bottom: 6px; padding-right: 0"
+              >
+                <div class="col-md-7 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarDiarrea">
+                  <label style="position: relative; top: 6px">Tiene el niño diarrea ?</label>
+                  <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.aiepi9501.signo_diare.diarre"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 no-padding" style="border-top: 1.5px solid #ececec">
+                <div class="salto-linea"></div>
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarDiarreaDias">
+                    <label class="labelPreguntas">Hace cuantos días ?</label>
+                    <div class="col-md-3 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="number"
+                        min="1"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_diare.diadia"
+                        maxlength="2"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarSangreHeces">
+                    <label class="labelPreguntas">Sangre en heces ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_diare.diasan"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarOjosHundidos">
+                    <label class="labelPreguntas">Ojos hundidos ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_diare.diaojo"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes">
+                    <label class="labelPreguntas">Pliegue cutiano :</label>
+                    <div class="col-md-6 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="textos.pliegue_cutiano"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+              <div class="col-md-12 no-padding">
+                <div class="col-md-12 no-padding" style="display: flex; justify-content: center">
+                  <div class="col-md-7 no-padding">
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarDificultadAlim">
+                      <label class="labelPreguntas">Tiene alguna dificultad para alimentarse ?</label>
+                      <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_dific"
+                          maxlength="1"
+                          placeholder="N"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarDejadoComer">
+                    <label class="labelPreguntas">Ha dejado de comer ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_dejad"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div v-if="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_dejad == 'S'" class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarDejadoComerDias">
+                    <label class="labelPreguntas">Hace cuantos días ?</label>
+                    <div class="col-md-3 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="number"
+                        min="1"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_dias"
+                        maxlength="2"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarLecheMaterna">
+                    <label class="labelPreguntas">Se alimenta leche materna ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.aneleche"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div v-if="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.aneleche == 'S'" class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarLecheMaterna24h">
+                    <label class="labelPreguntas">Cuantas veces en 24 horas ?</label>
+                    <div class="col-md-3 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="number"
+                        min="1"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.aneveces"
+                        maxlength="2"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-6 no-padding" style="border-right: 1.5px solid rgb(236, 236, 236)">
+                  <div class="col-md-12 no-padding">
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarLecheOtra">
+                      <label class="labelPreguntas">Recibe otra leche ?</label>
+                      <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_otrleche"
+                          maxlength="1"
+                          placeholder="N"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div v-if="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_otrleche == 'S'">
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 no-padding">
+                      <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left" id="validarCualOtraLeche">
+                        <label>Cuál ?</label>
+                        <div class="inline-inputs">
+                          <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input
+                              v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_cualleche"
+                              maxlength="30"
+                              data-orden="1"
+                              type="text"
+                              class="form-control col-md-12 col-sm-12 col-xs-12"
+                              style="text-align: left"
+                              disabled="disabled"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 no-padding">
+                      <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left" id="validarPreparaLeche">
+                        <label>Cómo la prepara ?</label>
+                        <div class="inline-inputs">
+                          <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input
+                              v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_como"
+                              maxlength="30"
+                              data-orden="1"
+                              type="text"
+                              class="form-control col-md-12 col-sm-12 col-xs-12"
+                              style="text-align: left"
+                              disabled="disabled"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 no-padding">
+                      <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarLecheOtra24h">
+                        <label class="labelPreguntas">Cuantas veces en 24 horas ?</label>
+                        <div class="col-md-3 no-padding inline-inputs" style="float: right">
+                          <input
+                            type="number"
+                            min="1"
+                            v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.anelevec"
+                            maxlength="2"
+                            data-orden="1"
+                            disabled="disabled"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 no-padding">
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarOtroAlimento">
+                      <label class="labelPreguntas">Recibe otros alimentos ?</label>
+                      <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_otr_alim"
+                          maxlength="1"
+                          placeholder="N"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div v-if="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_otr_alim == 'S'">
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 no-padding">
+                      <div
+                        class="col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: left"
+                        id="validarCualesOtroAlimentos"
+                      >
+                        <label>Cuáles ?</label>
+                        <div class="inline-inputs">
+                          <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input
+                              v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_cualalim"
+                              maxlength="30"
+                              data-orden="1"
+                              type="text"
+                              class="form-control col-md-12 col-sm-12 col-xs-12"
+                              style="text-align: left"
+                              disabled="disabled"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+              <div
+                class="col-md-12"
+                style="display: flex; justify-content: center; padding-bottom: 6px; padding-right: 0"
+              >
+                <div class="col-md-7 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarAmamantamiento">
+                  <label style="position: relative; top: 6px">Evaluar amamantamiento ?</label>
+                  <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_amamantamiento"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="col-md-12 no-padding"
+                v-if="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_amamantamiento == 'S'"
+                style="border-top: 1.5px solid #ececec"
+              >
+                <div class="salto-linea"></div>
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarTocaSeno">
+                    <label class="labelPreguntas">Niño toca seno con el mentón ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_tocaseno"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarBocaAbierta">
+                    <label class="labelPreguntas">Tiene boca bien abierta ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_bocaabi"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarLabioInferior">
+                    <label class="labelPreguntas">Labio inferior volteado afuera ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_lab_inf"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarAureola">
+                    <label class="labelPreguntas">Aureola más visible por encima ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_aerola"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left">
+                    <label>Agarre</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="textos.agarre"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left">
+                    <label>Succión</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="textos.succion"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+              <div class="col-md-12 no-padding" style="display: flex; justify-content: center">
+                <div class="col-md-7 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left">
+                    <label>Tendencia peso</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="textos.tendencia_peso"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding" v-if="global_AIEPI002.serv == '08'">
+          <div class="col-md-12 no-padding">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Alimentos</span>
+                </div>
+                <button
+                  v-show="flujo_bloques.antec_perinatales"
+                  id="btnFlujo_Signos"
+                  type="button"
+                  style="left: 539px"
+                  @click="botonFlujo(5)"
+                  class="boton-flujo-aiepi002 btn f8-Btn btn-default"
+                >
+                  <i class="glyphicon glyphicon-pencil"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+              <div
+                class="col-md-12"
+                style="display: flex; justify-content: center; padding-bottom: 6px; padding-right: 0"
+              >
+                <div class="col-md-6 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarEdadPrimerAlimento">
+                  <label class="labelPreguntas"
+                    >Edad del primer alimento diferente a la leche materna ? (edad en meses)</label
+                  >
+                  <div class="tooltip-proft right-text">
+                    <span class="icon-proft icon-info" style="position: relative; top: 5px"></span>
+                    <span class="tiptext">
+                      <div>Alimento o bebida</div>
+                    </span>
+                  </div>
+                  <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                    <input
+                      type="number"
+                      v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.ali_edad"
+                      maxlength="2"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="col-md-12 col-sm-12 col-xs-12 head-box"
+                style="text-align: center; padding-right: 0; padding-left: 0"
+              >
+                <label>Durante el día de ayer o anoche</label>
+              </div>
+
+              <div class="col-md-6 no-padding">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                  id="validarRecibioLiquidos_alimentos"
+                >
+                  <label style="position: relative; top: 7px"
+                    >Recibió alguno de los siguientes liquidos ? (agua, agua aromática, jugo, té)</label
+                  >
+                  <div class="col-md-1 no-padding inline-inputs" style="float: right">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.aiepi9501.nino_6meses.rec_liqui"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 no-padding">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                  id="validarRecibioLecheFormul_alimentos"
+                >
+                  <label style="position: relative; top: 7px">Recibió leche de fórmula ?</label>
+                  <div class="col-md-1 no-padding inline-inputs" style="float: right">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.aiepi9501.nino_6meses.rec_leche_for"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-6 no-padding">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                  id="validarRecibioLecheOtr_alimentos"
+                >
+                  <label style="position: relative; top: 7px"
+                    >Recibió leche (vaca, cabra, ...) líquida, en polvo, fresca o en bolsa ?</label
+                  >
+                  <div class="col-md-1 no-padding inline-inputs" style="float: right">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.aiepi9501.nino_6meses.rec_leche_otr"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 no-padding">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                  id="validarRecibioSopa_alimentos"
+                >
+                  <label style="position: relative; top: 7px"
+                    >Recibió algún alimento como sopa espesa, pure, papilla o seco ?</label
+                  >
+                  <div class="col-md-1 no-padding inline-inputs" style="float: right">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.aiepi9501.nino_6meses.rec_espeso"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-12 no-padding" style="display: flex; justify-content: space-around">
+                <div class="col-md-3 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left">
+                    <label>Lactancia materna exclusiva</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="textos.lactancia_materna_exclusiva"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left">
+                    <label>Alimentación complementaria</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="textos.alimentacion_complementaria"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 no-padding">
+          <div class="col-md-12 no-padding">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Desarrollo</span>
+                </div>
+                <button
+                  v-show="flujo_bloques.antec_perinatales"
+                  id="btnFlujo_Signos"
+                  type="button"
+                  style="left: 539px"
+                  @click="botonFlujo(5)"
+                  class="boton-flujo-aiepi002 btn f8-Btn btn-default"
+                >
+                  <i class="glyphicon glyphicon-pencil"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div class="col-md-12 no-padding">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left" id="validarFactorRiesgo">
+                  <label>Factores de riesgo</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_desarr.desobs"
+                        maxlength="30"
+                        data-orden="1"
+                        type="text"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: left"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding" v-if="mostrarAiepi826">
+              <aiepi826 :params="params_aiepi826" @callback="finAIEPI826" @callback_esc="escAIEPI826"> </aiepi826>
+            </div>
+
+            <div class="col-md-12 no-padding" v-if="mostrarAiepi845b">
+              <aiepi845b
+                :params="params_aiepi845b"
+                :data="DETALLE_HISTORIA.aiepi9501.signo_desarr"
+                @callback="finAIEPI845B"
+                @callback_esc="escAIEPI845B"
+              >
+              </aiepi845b>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6" style="padding-right: 0">
+          <div class="col-md-12 no-padding">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Antecedentes vacunación</span>
+                </div>
+                <button
+                  v-show="flujo_bloques.antec_perinatales"
+                  id="btnFlujo_Signos"
+                  type="button"
+                  style="left: 539px"
+                  @click="botonFlujo(5)"
+                  class="boton-flujo-aiepi002 btn f8-Btn btn-default"
+                >
+                  <i class="glyphicon glyphicon-pencil"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+              <div
+                class="col-md-12 col-sm-12 col-xs-12 head-box"
+                style="text-align: center; padding-right: 0; padding-left: 0; margin-bottom: 19px"
+              >
+                <label>Madre</label>
+              </div>
+
+              <div class="col-md-12 no-padding">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarAntitetanica_1">
+                  <label class="labelPreguntas">Antitetánica-1</label>
+                  <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.aiepi9501.sig_vacunacion.vac_tetanica1"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+
+              <div class="col-md-12 no-padding">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarAntitetanica_2">
+                  <label class="labelPreguntas">Antitetánica-2</label>
+                  <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.aiepi9501.sig_vacunacion.vac_tetanica2"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+            </div>
+          </div>
+          <div class="col-md-6" style="padding-right: 0">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+              <div
+                class="col-md-12 col-sm-12 col-xs-12 head-box"
+                style="text-align: center; padding-right: 0; padding-left: 0"
+              >
+                <label>Niño/Niña</label>
+              </div>
+
+              <div class="col-md-12 no-padding">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarBcg">
+                  <label class="labelPreguntas">BCG</label>
+                  <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.aiepi9501.sig_vacunacion.vac_bcg"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-12 no-padding">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarVop">
+                  <label class="labelPreguntas">VOP 0</label>
+                  <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.aiepi9501.sig_vacunacion.vavop1"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-12 no-padding">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarHepb">
+                  <label class="labelPreguntas">HepB 1</label>
+                  <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                    <input
+                      type="text"
+                      v-model="DETALLE_HISTORIA.aiepi9501.sig_vacunacion.vac_hepb1"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+              <div
+                class="col-md-12 col-sm-12 col-xs-12 head-box"
+                style="text-align: center; padding-right: 0; padding-left: 0"
+              >
+                <label>Volver para la próxima vacuna</label>
+              </div>
+
+              <div class="col-md-12 no-padding" style="display: flex; justify-content: center">
+                <div class="col-md-5 col-sm-3 col-xs-12">
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-6 col-sm-4 col-xs-4" id="validarAnoProxVac">
+                      <input
+                        type="number"
+                        v-model="DETALLE_HISTORIA.aiepi9501.sig_vacunacion.proxvac_ano"
+                        data-orden="1"
+                        maxlength="4"
+                        style="padding-right: 0"
+                        placeholder="AAAA"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                      />
+                    </div>
+                    <div class="input-group col-md-3 col-sm-4 col-xs-4" id="validarMesProxVac">
+                      <input
+                        type="number"
+                        v-model="DETALLE_HISTORIA.aiepi9501.sig_vacunacion.proxvac_mes"
+                        data-orden="1"
+                        maxlength="2"
+                        required="true"
+                        style="padding-right: 0"
+                        placeholder="MM"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                      />
+                    </div>
+                    <div class="input-group col-md-3 col-sm-4 col-xs-4" id="validarDiaProxVac">
+                      <input
+                        type="number"
+                        v-model="DETALLE_HISTORIA.aiepi9501.sig_vacunacion.proxvac_dia"
+                        data-orden="1"
+                        maxlength="2"
+                        required="true"
+                        style="padding-right: 0"
+                        placeholder="DD"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 no-padding">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Examen físico</span>
+                </div>
+                <button
+                  v-show="flujo_bloques.antec_perinatales"
+                  id="btnFlujo_Signos"
+                  type="button"
+                  style="left: 539px"
+                  @click="botonFlujo(5)"
+                  class="boton-flujo-aiepi002 btn f8-Btn btn-default"
+                >
+                  <i class="glyphicon glyphicon-pencil"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div
+              class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+              style="text-align: left"
+              id="validarExamenFisico"
+            >
+              <div
+                class="col-md-12 col-sm-12 col-xs-12 head-box"
+                style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+              >
+                <label>Digite:</label>
+                <label>(15,000 caracteres máximo)</label>
+              </div>
+              <textarea
+                class="form-control"
+                v-model="DETALLE_HISTORIA.Examen_fisico"
+                disabled="disabled"
+                rows="12"
+                maxlength="15000"
+                data-orden="1"
+                required="true"
+                style="resize: none; text-align: justify; padding-bottom: 17px"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding" v-if="mostrarPYP2">
+          <pyp2 :params="paramsPYP2" @callback="salirPYP2" @callback_esc="escPYP2"></pyp2>
+        </div>
+
+        <div class="col-md-12 no-padding" v-if="mostrarHC9010">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Formulario Vale</span>
+              </div>
+              <button
+                v-show="flujo_bloques.antec_perinatales"
+                id="btnFlujo_Signos"
+                type="button"
+                style="left: 539px"
+                @click="botonFlujo(5)"
+                class="boton-flujo-aiepi002 btn f8-Btn btn-default"
+              >
+                <i class="glyphicon glyphicon-pencil"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-md-12 no-padding">
+            <vales @callback="finHC_9010" @callback_esc="escHC_9010" :params="params_hc9010"></vales>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding" v-if="mostrarHC9011">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Formulario Apgar Familiar</span>
+              </div>
+              <button
+                v-show="flujo_bloques.antec_perinatales"
+                id="btnFlujo_Signos"
+                type="button"
+                style="left: 539px"
+                @click="botonFlujo(5)"
+                class="boton-flujo-aiepi002 btn f8-Btn btn-default"
+              >
+                <i class="glyphicon glyphicon-pencil"></i>
+              </button>
+            </div>
+          </div>
+
+          <apgar @callback="finHC_9011" @callback_esc="escHC_9011" :params="params_hc9011"></apgar>
+        </div>
+        <div class="col-md-12 no-padding">
+          <div class="col-md-7 no-padding">
+            <div class="col-md-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Codificación diagnósticos</span>
+                  </div>
+                  <button
+                    v-show="flujo_bloques.antec_perinatales"
+                    id="btnFlujo_Signos"
+                    type="button"
+                    style="left: 539px"
+                    @click="botonFlujo(5)"
+                    class="boton-flujo-aiepi002 btn f8-Btn btn-default"
+                  >
+                    <i class="glyphicon glyphicon-pencil"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+                <div class="col-md-12 no-padding" v-for="(fila,index) in global_AIEPI002.rips.tabla_diag" :key="index">
+                  <div class="col-md-3 col-sm-6 col-xs-12" style="padding-left: 0">
+                    <div class="inline-inputs">
+                      <label class="col-md-3 col-sm-3 col-xs-3">{{ parseInt(index) + 1 }}</label>
+                      <div class="input-group col-md-7 col-sm-7 col-xs-7" :id="`validarCod_diag_${index}_AIEPI002`">
+                        <input
+                        @keydown.119="ventanaCod_diag(index, 1)"
+                          v-model="fila.diagn"
+                          maxlength="4"
+                          data-orden="1"
+                          :id="`CodDiag_${index}_AIEPI002`"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                        />
+                      </div>
+                      <button
+                      @click="ventanaCod_diag(index, 1)"
+                        type="button"
+                        class="btn f8-Btn col-md-2 col-sm-2 col-xs-2"
+                      >
+                        <i class="icon-magnifier"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="col-md-9 no-padding">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        v-model="fila.descrip"
+                        style="text-align: left"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+
+                  <div v-if="index != 9" class="salto-linea"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5" style="padding-right: 0">
+            <div class="col-md-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Sintomático</span>
+                  </div>
+                  <button
+                    v-show="flujo_bloques.antec_perinatales"
+                    id="btnFlujo_Signos"
+                    type="button"
+                    style="left: 539px"
+                    @click="botonFlujo(5)"
+                    class="boton-flujo-aiepi002 btn f8-Btn btn-default"
+                  >
+                    <i class="glyphicon glyphicon-pencil"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <sintomaticos
+              v-bind:params="params_hc890d"
+              v-bind:data="sintomaticos"
+              @callback_esc="validarEsc_sintomatico"
+              @callback="validarCallback_sintomatico"
+            >
+            </sintomaticos>
+          </div>
+        </div>
+
+        <div class="col-md-6 no-padding" v-if="mostrarBajoPeso">
+          <bajopeso
+            :params="paramsBajoPesoNacer"
+            :data="DETALLE_HISTORIA.aiepi9501.dato_bajo_peso"
+            @callback="finBajoPesoNacer"
+            @callback_esc="escBajoPesoNacer"
+          >
+          </bajopeso>
+        </div>
+
+        <div
+          class="col-md-6"
+          :style="[mostrarBajoPeso ? {'padding-right': '0'} : {'padding': '0 !important'}]"
+          v-if="mostrarAnomaliasCong"
+        >
+          <anomalias
+            :params="paramsHC832A"
+            :data="global_AIEPI002.anomalias_congenitas"
+            @callback="finAnomaliasCongenitas"
+            @callback_esc="escAnomaliasCongenitas"
+          >
+          </anomalias>
+        </div>
+
+        <div class="col-md-12 no-padding" v-if="mostrarSifilis">
+          <sifilis
+            :params="params_sifilis"
+            :data="tratamiento_sifilis"
+            @callback="finSifilis"
+            @callback_esc="escSifilis"
+          >
+          </sifilis>
+        </div>
+
+        <div class="col-md-12 no-padding" v-if="mostrarEvaluacionDNT">
+          <evaluaciondnt
+            :params="paramsEvaluacionDNT"
+            :data="DETALLE_HISTORIA.aiepi9501.control_desarrollo"
+            @callback="finEvaluacionDNT"
+            @callback_esc="escEvaluacionDNT"
+          >
+          </evaluaciondnt>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Recomendaciones</span>
+              </div>
+              <button
+                v-show="flujo_bloques.antec_perinatales"
+                id="btnFlujo_Signos"
+                type="button"
+                style="left: 539px"
+                @click="botonFlujo(5)"
+                class="boton-flujo-aiepi002 btn f8-Btn btn-default"
+              >
+                <i class="glyphicon glyphicon-pencil"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="col-md-6 no-padding">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarRecomendacionesAlarma">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 head-box"
+                    style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                  >
+                    <label>Cuando volver de inmediato al servicio (signos alarma):</label>
+                    <label>(500 caracteres máximo)</label>
+                  </div>
+                  <textarea
+                    class="form-control"
+                    disabled="disabled"
+                    rows="13"
+                    maxlength="500"
+                    data-orden="1"
+                    required="true"
+                    v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.volinme"
+                    style="resize: none; text-align: justify; padding-bottom: 8px"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+                <div class="col-md-6 no-padding">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                    id="validarVolverConsultaControl"
+                  >
+                    <label>Cuando volver a consulta de control ?</label>
+                    <div class="col-md-12 inline-inputs no-padding">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.volcontr"
+                        required="true"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        data-orden="1"
+                        maxlength="20"
+                        style="text-align: left"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                    id="validarVolverConsultaSano"
+                  >
+                    <label>Cuando volver a consulta niño sano ?</label>
+                    <div class="col-md-12 inline-inputs no-padding">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.volsano"
+                        required="true"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        data-orden="1"
+                        maxlength="20"
+                        style="text-align: left"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12 no-padding" style="display: flex; justify-content: center">
+                  <div class="col-md-6 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarReferidoConsulta">
+                    <label>Referido a consulta de</label>
+                    <div class="col-md-12 inline-inputs no-padding">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.refconsul"
+                        required="true"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        data-orden="1"
+                        maxlength="20"
+                        style="text-align: left"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" style="padding-right: 0">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarMedidasPreventivas">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 head-box"
+                    style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                  >
+                    <label>Medidas preventivas específicas:</label>
+                    <label>(250 caracteres máximo)</label>
+                  </div>
+                  <textarea
+                    class="form-control"
+                    disabled="disabled"
+                    rows="6"
+                    maxlength="250"
+                    data-orden="1"
+                    required="true"
+                    v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.medprev"
+                    style="resize: none; text-align: justify; padding-bottom: 4px"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarRecomendacionesBuenTrato">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 head-box"
+                    style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                  >
+                    <label>Recomendaciones de buen trato:</label>
+                    <label>(250 caracteres máximo)</label>
+                  </div>
+                  <textarea
+                    class="form-control"
+                    disabled="disabled"
+                    rows="6"
+                    maxlength="250"
+                    data-orden="1"
+                    required="true"
+                    v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.recomtrato"
+                    style="resize: none; text-align: justify; padding-bottom: 4px"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+                <div class="col-md-12 no-padding" style="display: flex; justify-content: center">
+                  <div class="col-md-8 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarVitamina_A">
+                    <label style="position: relative; top: 7px">Recibió vitamina A en los últimos 6 meses ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.vitaminaA"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 no-padding">
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-12 no-padding" style="display: flex; justify-content: center">
+                    <div
+                      class="col-md-8 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                      id="validarProximaVitamina_A"
+                    >
+                      <label style="position: relative; top: 7px">Próxima dosis ?</label>
+                      <div class="col-md-4 no-padding inline-inputs" style="float: right">
+                        <input
+                          type="text"
+                          v-model="DETALLE_HISTORIA.aiepi9501.signo_alimentacion.prox_vit_A"
+                          maxlength="8"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="col-md-6 no-padding">
+            <div class="col-md-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Tratar</span>
+                  </div>
+                  <button
+                    v-show="flujo_bloques.antec_perinatales"
+                    id="btnFlujo_Signos"
+                    type="button"
+                    style="left: 539px"
+                    @click="botonFlujo(5)"
+                    class="boton-flujo-aiepi002 btn f8-Btn btn-default"
+                  >
+                    <i class="glyphicon glyphicon-pencil"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validar_tratar">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 head-box"
+                    style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                  >
+                    <label>Digite:</label>
+                    <label>(15,000 caracteres máximo)</label>
+                  </div>
+                  <textarea
+                    class="form-control"
+                    disabled="disabled"
+                    rows="18"
+                    maxlength="15000"
+                    data-orden="1"
+                    required="true"
+                    v-model="DETALLE_HISTORIA.Tratar"
+                    style="resize: none; text-align: justify; padding-bottom: 4px"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" style="padding-right: 0">
+            <div class="col-md-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Actualización de RIPS</span>
+                  </div>
+                  <button
+                    v-show="flujo_bloques.antec_perinatales"
+                    id="btnFlujo_Signos"
+                    type="button"
+                    style="left: 539px"
+                    @click="botonFlujo(5)"
+                    class="boton-flujo-aiepi002 btn f8-Btn btn-default"
+                  >
+                    <i class="glyphicon glyphicon-pencil"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-4 col-sm-4 col-xs-12" style="text-align: left">
+                  <label>Personal que atiende</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        v-model="textos.personal_atiende"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12" style="text-align: left">
+                  <label>Finalidad</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        v-model="textos.finalidad"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12 no-padding" style="text-align: left">
+                  <label>Tipo diagnóstico</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        v-model="textos.tipo_diagnostico"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+                <div class="salto-linea"></div>
+
+                <div v-if="global_AIEPI002.rips.finalidad == '11'" class="col-md-12 no-padding">
+                  <div
+                    class="col-md-3 col-sm-6 col-xs-12"
+                    style="text-align: left; padding-left: 0"
+                    id="validarPatologiaCronica"
+                  >
+                    <label>Patología crónica</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                        <input
+                          @keydown.119="ventanaPatologias"
+                          id="codPatologia_AIEPI002"
+                          v-model="global_AIEPI002.rips.cronico"
+                          maxlength="3"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                          data-orden="1"
+                        />
+                      </div>
+                      <button @click="ventanaPatologias" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                        <i class="icon-magnifier"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="col-md-9 col-sm-6 col-xs-12" style="text-align: left; padding-left: 0">
+                    <label></label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="textos.descrip_pato_cronica"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: left"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+                  <div class="salto-linea"></div>
+                </div>
+
+                <div v-if="global_AIEPI002.rips.finalid != '08'">
+                  <div
+                    class="col-md-2 col-sm-4 col-xs-12"
+                    style="text-align: left; padding-left: 0"
+                    id="validarPrimeraVez"
+                  >
+                    <label>Primera vez ?</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="global_AIEPI002.rips.primera_vez"
+                          maxlength="1"
+                          placeholder="N"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                          data-orden="1"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div v-if="global_AIEPI002.rips.primera_vez == 'N'">
+                    <div
+                      class="col-md-2 col-sm-4 col-xs-12"
+                      style="text-align: left; padding-left: 0"
+                      id="validarDiaPrimeraVez"
+                    >
+                      <label>Dia</label>
+                      <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                          <input
+                            v-model="global_AIEPI002.rips.dia_primera_vez"
+                            maxlength="2"
+                            placeholder="DD"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                            data-orden="1"
+                            type="number"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="col-md-2 col-sm-4 col-xs-12"
+                      style="text-align: left; padding-left: 0"
+                      id="validarMesPrimeraVez"
+                    >
+                      <label>Mes</label>
+                      <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                          <input
+                            v-model="global_AIEPI002.rips.mes_primera_vez"
+                            maxlength="2"
+                            placeholder="MM"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                            data-orden="1"
+                            type="number"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="col-md-2 col-sm-4 col-xs-12"
+                      style="text-align: left; padding-left: 0"
+                      id="validarAnoPrimeraVez"
+                    >
+                      <label>Año</label>
+                      <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                          <input
+                            type="number"
+                            v-model="global_AIEPI002.rips.ano_primera_vez"
+                            maxlength="4"
+                            placeholder="AAAA"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                            data-orden="1"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12" style="text-align: left">
+                  <label>Estado salida</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        v-model="textos.estado_salida"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+                <div class="salto-linea"></div>
+
+                <div v-if="global_AIEPI002.rips.estado_sal == '2'">
+                  <div
+                    class="col-md-3 col-sm-6 col-xs-12"
+                    style="text-align: left; padding-left: 0"
+                    id="validarDiagMuerte"
+                  >
+                    <label>Diagnóstico muerte</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                        <input
+                          @keydown.119="ventanaCod_diag(0, 2)"
+                          v-model="global_AIEPI002.cierre.diag_muer"
+                          id="diagnosMuerte_AIEPI002"
+                          maxlength="4"
+                          data-orden="1"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                      <button type="button" @click="ventanaCod_diag(0, 2)" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                        <i class="icon-magnifier"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="col-md-9 col-sm-6 col-xs-12 no-padding" style="text-align: left">
+                    <label></label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="textos.diagnostico_muerte"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: left"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  v-else-if="global_AIEPI002.rips.estado_sal == '3'"
+                  class="col-md-3 col-sm-6 col-xs-12"
+                  style="text-align: left"
+                  id="validarRemitido"
+                >
+                  <label>Remitido a</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        v-model="global_AIEPI002.rips.remitido"
+                        maxlength="20"
+                        data-orden="1"
+                        required="true"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        type="text"
+                        style="text-align: left"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div v-if="global_AIEPI002.serv == '01'">
+                  <div class="salto-linea"></div>
+                  <div class="salto-linea"></div>
+
+                  <div
+                    class="col-md-2 col-sm-4 col-xs-12"
+                    style="text-align: left; padding-left: 0"
+                    id="validarObservacionRips"
+                  >
+                    <label>Observación</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="global_AIEPI002.rips.observ"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-1 col-sm-4 col-xs-12" style="text-align: left; padding-left: 0" id="validarTriage">
+                    <label>Triage</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="global_AIEPI002.rips.triage"
+                          maxlength="1"
+                          data-orden="1"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: left"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div v-if="mostrarEnfermedades">
+    <ser851 @callback="successVentanaEnfermedades" @callback_esc="escVentanaEnfermedades"></ser851>
+  </div>
+  <transition name="modal_prosoft" v-if="modal_victimaConf">
+    <div class="overlay_prosoft">
+        <div class="modal_prosoft" style="width: 30%;">
+            <div class="container_prosoft">
+                <div class="header_prosoft">
+                    <p style="padding: 9px 25px; margin: 0 auto">Victima de conflicto</p>
+                </div>
+                <div class="body_prosoft">
+                    <div class="col-md-12">
+                        <div class="portlet light no-padding">
+                            <div class="portlet-body">
+                                <div class="form-horizontal">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                        <div class="form-group col-md-12 col-sm-12 col-xs-12"
+                                            style="padding-bottom: 15px">
+                                            <label class="col-md-8 col-sm-6 col-xs-6 font-small"
+                                                style="text-align: left; margin-top: 7px;">Victima de conflicto ?</label>
+                                            <div class="col-md-4 col-sm-4 col-xs-4"
+                                                id="victConflicto_aiepi002">
+                                                <input type="text" class="form-control text-center"
+                                                    disabled="disabled" maxlength="1" 
+                                                    v-model="global_AIEPI002.victi_conflicto_paci" data-orden="1"
+                                                    required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear: both"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </transition>
+</div>
+
+<style>
+  input {
+    text-align: center;
+  }
+
+  /* .label-center {
+    position: relative;
+    top: 7px;
+  } */
+
+  .float-right {
+    float: right;
+  }
+
+  .input-group.text-descrip {
+    display: flex;
+    margin-bottom: 5px;
+  }
+
+  .text-descrip input:nth-child(1) {
+    margin-right: 2px;
+    width: 30%;
+  }
+
+  .text-descrip input:nth-child(2) {
+    margin-right: 2px;
+    background: #d0cece21 !important;
+  }
+
+  .boton-flujo-aiepi002 {
+    background-color: #476fad;
+    color: #fff;
+    position: relative;
+    top: 2px;
+  }
+
+  .descrip_hc890d {
+    position: relative;
+    top: 7px;
+    margin-left: 10px !important;
+  }
+
+  .contenedor_graficas {
+    position: relative;
+    margin: auto;
+    height: 400px;
+    width: 800px;
+  }
+
+  canvas {
+    width: 648px !important;
+    height: 386px !important;
+  }
+
+  .labelPreguntas {
+    position: relative;
+    top: 7px;
+  }
+</style>
+<script src="../../HICLIN/scripts/hc890h.vue.js"></script>
+<script src="../../HICLIN/scripts/hc890d.vue.js"></script>
+<script src="../../HICLIN/scripts/AIEPI826.vue.js"></script>
+<script src="../../HICLIN/scripts/AIEPI845A.vue.js"></script>
+<script src="../../HICLIN/scripts/AIEPI845B.vue.js"></script>
+<script src="../../HICLIN/scripts/AIEPI002.js" type="text/javascript"></script>

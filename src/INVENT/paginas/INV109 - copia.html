@@ -1,0 +1,291 @@
+<style>
+    #tablaPrefijos_109 th {
+        text-align: center;
+    }
+</style>
+
+<div class="col-md-12">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <form class="form-horizontal">
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                    <div class="col-md-1 col-sm-2 col-xs-4">
+                        <label>Nro:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validar_NRO_prefijo109">
+                            <input id="nroPrefijo_109" required="true" type="number"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" min="1" data-orden="1">
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-1 col-sm-2 col-xs-4" id="validarPrefijo_109">
+                        <label></label>
+                        <label>Prefijo:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="prefijo_109" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                data-orden="1">
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-4" id="validarDescripPref_109">
+                        <label>Descripcion:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="descripPref_109" required="true"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15" data-orden="1"
+                                disabled="disabled">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-4" id="validarAutDian_109">
+                        <label>Autorizacion Dian:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="autDian_109" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15"
+                                data-orden="1" disabled="disabled">
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-4" id="validarFecha_109">
+                        <label></label>
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Fecha:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="fechaPrefijo_109" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="10" data-orden="1" disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-4" id="validarDesde_109">
+                        <label>Desde el Nro:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="nroDesde_109" type="number" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="9" data-orden="1" disabled="disabled">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-4" id="validarHasta_109">
+                        <label>Hasta el Nro:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="nroHasta_109" type="number" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="9" data-orden="1" disabled="disabled">
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+
+
+                    <div class="col-md-1 col-sm-2 col-xs-10 form-group form-md-checkboxes">
+                        <div class="md-checkbox-list">
+                            <label>POS? :</label>
+                            <div class="md-checkbox" style="float:right">
+                                <input type="checkbox" id="POS_109" class="md-check">
+                                <label for="POS_109">
+                                    <span></span>
+                                    <span class="check"></span>
+                                    <span class="box"></span> </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-2 col-xs-4" id="validarVigencia_109">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-8">Meses vigencia:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                                <input id="vigencia_109" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="3" data-orden="1" disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-2 col-xs-4" id="validarSuc_109">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Suc:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="suc_109" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="2" data-orden="1" disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-2 col-xs-4" id="validarCC_109">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-4">C.C:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="centroCosto_109" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                    disabled="disabled">
+                            </div>
+                            <button type="button" id="centroCostoBtn_109"
+                                class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-4" id="validarAlmacen_109">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-5">Almacen:</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                <input id="almacen_109" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="5" data-orden="1" required="true" disabled="disabled">
+                            </div>
+                            <button type="button" id="almacenBtn_109"
+                                class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-4" id="validarLista_Env_109">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-8">Lista Precios:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                                <input id="listaEnvio_109" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    required="true" disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <table id="tablaPrefijos_109" class="table table-light table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nro</th>
+                                <th>Pref</th>
+                                <th>Descripcion</th>
+                                <th>Autorizacion Dian</th>
+                                <th>Fecha</th>
+                                <th>Desde el Nro</th>
+                                <th>Hasta el Nro</th>
+                                <th>Vigencia</th>
+                                <th>Suc</th>
+                                <th>C.C</th>
+                                <th>Almacen</th>
+                                <th>Precios</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="validarPopup">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="descrip_global_109" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 inline-inputs" id="validarSucPrefNro_109">
+                        <label class="col-md-10 col-sm-10 col-xs-10">Esta sucursal factura desde el Prefijo
+                            numero:</label>
+                        <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                            <input id="sucPrefNro_109" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                data-orden="1" disabled="disabled">
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-3 col-sm-4 col-xs-8" id="validaFactElect_109">
+                        <div class="inline-inputs">
+                            <label class="col-md-9 col-sm-9 col-xs-9">Proveedor Factura Electronica:</label>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                                <input id="factElect_109" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="1" data-orden="1" required="true" disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-2 col-xs-4">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="descripFactElect_109" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="popUp_TokenFactElect_109" class="hidden">
+    <div class="col-md-12">
+        <div class="portlet light no-padding">
+            <div class="portlet-body no-padding">
+                <form class="form-horizontal">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 no-padding" style="margin: 0 auto;">
+
+                        <div class="col-md-4 col-sm-6 col-xs-12 form-group form-md-checkboxes">
+                            <!-- <div class="md-checkbox-list"> -->
+                                <label>Esta en modo prueba? :</label>
+                                <input type="checkbox" class="token_prueba_109">
+                                <!-- <div class="md-checkbox" style="float:right"> -->
+                                    <!-- <label for="token_prueba_109">
+                                        <span></span>
+                                        <span class="check"></span>
+                                        <span class="box"></span> </label> -->
+                                <!-- </div> -->
+                            <!-- </div> -->
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12" id="validarClienteToken_109">
+                            <div class="inline-inputs">
+                                <label class="col-md-2 col-sm-2 col-xs-2">
+                                    Token cliente:
+                                </label>
+                                <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                    <input type="text"
+                                        class="cliente_token_109 form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="80" data-orden="1" required="true" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12" id="validarAccesoToken_109">
+                            <div class="inline-inputs">
+                                <label class="col-md-2 col-sm-2 col-xs-2">
+                                    Acceso:
+                                </label>
+                                <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                    <input type="text"
+                                        class="acceso_token_109 form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="80" data-orden="1" required="true" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+
+<script src="../../INVENT/scripts/INV109.js" type="text/javascript"></script>

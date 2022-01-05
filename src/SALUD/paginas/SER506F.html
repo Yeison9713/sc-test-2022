@@ -1,0 +1,148 @@
+<style>
+    .grid-2 {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .grid-field {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr))
+    }
+</style>
+
+<div class="col-md-12" id="SER506F">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <div class="form-horizontal" onsubmit="return false;">
+
+                <div class="form-group col-md-7 col-sm-7 col-xs-7 box-center">
+
+                    <div class="grid-2">
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <label>Fecha inicial</label>
+                            <div class="grid-field">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="añoInicial">
+                                    <input v-model="form.añoInicial" type="number" required="true"
+                                        placeholder="AAAA" class="form-control" maxlength="4" disabled="disabled"
+                                        data-orden="1">
+                                </div>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="mesInicial">
+                                    <input v-model="form.mesInicial" type="number" required="true"
+                                        placeholder="MM" class="form-control" maxlength="2" disabled="disabled" data-orden="1">
+                                </div>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="diaInicial">
+                                    <input v-model="form.diaInicial" type="number" required="true"
+                                        placeholder="DD" class="form-control" maxlength="2" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <label>Fecha final</label>
+                            <div class="grid-field">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="añoFinal">
+                                    <input v-model="form.añoFinal" type="number" required="true"
+                                        placeholder="AAAA" class="form-control" maxlength="4" disabled="disabled"
+                                        data-orden="1">
+                                </div>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="mesFinal">
+                                    <input v-model="form.mesFinal" type="number" required="true"
+                                        placeholder="MM" class="form-control" maxlength="2" disabled="disabled" data-orden="1">
+                                </div>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="diaFinal">
+                                    <input v-model="form.diaFinal" type="number" required="true"
+                                        placeholder="DD" class="form-control" maxlength="2" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="inline-inputs col-md-6 col-sm-6 col-xs-6">
+                        <label class="col-md-6 col-sm-6 col-xs-6" style="background: 0; text-align: left;">Digite el prefijo a listar:</label>
+                        <div class="input-group col-md-2 col-sm-2 col-xs-2" id="prefijo"> 
+                            <input v-model="form.prefijo" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 text-center uppercase" data-orden="1"
+                                maxlength="1" disabled="disabled" />
+                        </div>
+                    </div>
+
+
+                    <div class="inline-inputs col-md-6 col-sm-6 col-xs-6">
+                        <label class="col-md-6 col-sm-6 col-xs-6" style="text-align: center">Entidad</label>
+                        <div class="input-group col-md-8 col-sm-8 col-xs-8" id="entidad">
+                            <input v-model="form.entidad" type="number" @keydown.f8="_ventanaEntidad" disabled="disabled"
+                                class="form-control col-md-12 col-sm-12 col-xs-12 text-left entidad" data-orden="1"
+                                maxlength="10" />
+                        </div>
+                        <button @click="_ventanaEntidad" type="button"
+                            class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.descripEntidad" type="text" disabled="disabled"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" />
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="inline-inputs col-md-6 col-sm-6 col-xs-6">
+                        <label class="col-md-6 col-sm-6 col-xs-6" style="background: 0; text-align: left;">Ambulatorio o Pensionado</label>
+                    </div>
+
+                    <div class="inline-inputs col-md-6 col-sm-6 col-xs-6">
+                        <label class="col-md-6 col-sm-6 col-xs-6" style="text-align: center">Actividad</label>
+                        <div class="input-group col-md-8 col-sm-8 col-xs-8" id="actividad">
+                            <input v-model="form.actividad" type="text" @keydown.f8="_ventanaActividad" disabled="disabled"
+                                class="form-control col-md-12 col-sm-12 col-xs-12 text-left actividad" data-orden="1"
+                                maxlength="2" />
+                        </div>
+                        <button @click="_ventanaActividad" type="button"
+                            class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.descripActividad" type="text" disabled="disabled"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" />
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="inline-inputs col-md-6 col-sm-6 col-xs-6">
+                        <label class="col-md-10 col-sm-10 col-xs-10" style="background: 0; text-align: left;">1. Basado en fecha de prestación del servicio</label>
+                    </div>
+
+                    <div class="inline-inputs col-md-6 col-sm-6 col-xs-6">
+                        <label class="col-md-6 col-sm-6 col-xs-6" style="background: 0; text-align: left;">Seleccione fecha base:</label>
+                        <div class="input-group col-md-2 col-sm-2 col-xs-2" id="fechaBase"> 
+                            <input v-model="form.fechaBase" type="number" class="form-control col-md-12 col-sm-12 col-xs-12 text-center" data-orden="1"
+                                maxlength="1" disabled="disabled" />
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="inline-inputs col-md-6 col-sm-6 col-xs-6">
+                        <label class="col-md-10 col-sm-10 col-xs-10" style="background: 0; text-align: left;">2. Basado en fecha de cierre de la factura</label>
+                    </div>
+
+                                   
+                    <div class="inline-inputs col-md-6 col-sm-6 col-xs-6">
+                        <label class="col-md-10 col-sm-10 col-xs-10" style="background: 0; text-align: left;">No incluye serv prestados por capacitación</label>
+                    </div> 
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <loader_modal :estado="estado_loader" :progreso="progreso" :loader="loader" :label="label_loader"></loader_modal>
+</div>
+
+<script src="../../SALUD/scripts/SER506F.js" disabled='disabled' type="text/javascript"></script>

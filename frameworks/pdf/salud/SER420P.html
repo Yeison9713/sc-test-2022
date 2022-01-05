@@ -1,0 +1,239 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="page-header" style="float: left; width: 100%; font-size: 14px;">
+        <div class="encabezado_SER420P">
+            <div class="imageusu_SER420P">
+            </div>
+            <div class="informacionusu_SER420P">
+                <a class="nombreusu_SER420P">FORMATO CONSTANCIA DE SERVICIOS RECIBIDOS</a>
+                <a class="iba_SER420P">GF-P5-PR2-F6</a>
+                <a class="version_SER420P">Version 2</a>
+                <a class="pagina_SER420P">Página 1 de 1</a>
+            </div>
+        </div>
+
+        <div class="salto-linea"></div>
+        <div class="salto-linea"></div>
+        <div class="salto-linea"></div>
+        <div class="salto-linea"></div>
+        <div class="Tit_SER420P">
+            <a class="titulo_SER420P" style="font-size: 14px;"> CONSTANCIA DE SERVICIOS RECIBIDOS</a>
+        </div>
+        <div class="salto-linea"></div>
+        <div class="salto-linea"></div>
+        <div class="parrafo1_SER420P">
+            <a class="descripcion_SER420P">Yo, ABELLO PUERTAS MARTHA LUCIA</a>
+            <a class="descripcion1_SER420P">, identificado con la CC No. 1,121,456,123</a>
+            <a class="descripcion2_SER420P">, expedida en VILLAVICENCIO</a>
+            <a class="descripcion3_SER420P"> manifiesto bajo la gravedad de juramento que recibi los servicios que consta en la </a>
+            <a class="descripcion4_SER420P"> factura No. 3491</a>    
+            <a class="descripcion5_SER420P"> de 2019/11/10</a>
+            <a class="descripcion6_SER420P">por parte de HOSPITAL LOCAL SAN MARTIN ESE. </a>
+        </div>
+        <div class="salto-linea"></div>
+        <div class="parrafo2_SER420P">
+            <a class="descripcion7_SER420P">Lo anterior para dar cumplimiento al numeral 8 del literal A del Anexo Tecnico 
+                No. 05 de la resolucion No. 3047 de 14 de agosto de 2008, expedida por el Ministerio de la Proteccion social.</a>
+        </div>
+        <div class="salto-linea"></div>
+        <div class="parrafo3_SER420P">
+            <a class="descripcion8_SER420P">Dado en SAN MARTIN</a>
+            <a class="descripcion9_SER420P">, a los Diez</a>
+            <a class="descripcion10_SER420P">Dias del mes de Noviembre</a>
+            <a class="descripcion11_SER420P">del Año 2019</a>
+        </div>
+        <div class="salto-linea"></div>
+        <div class="salto-linea"></div>
+        <div class="salto-linea"></div>
+        <div class="salto-linea"></div>
+        <div class="cajas_SER420P">
+            <div class="parrafo5_SER420P">
+                <a class="firma_SER420P"></a>
+            </div>
+            <div class="parrafo6_SER420P">
+                <a class="huella_SER420P"></a>
+            </div>
+        </div>
+        
+        <div class="ultimos_SER420P">
+            <div class="firma2_SER420P">
+                <a class="firmausu_SER420P">Firma del Usuario</a>
+            </div>
+            <div class="huella2_SER420P">
+                <a class="huellausu_SER420P">Huella</a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+<style>
+    .page-header{
+        height: 160px;
+        position: fixed;
+        top: 0mm;
+        width: 100%;
+    }
+
+    .encabezado_SER420P {
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-top: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+        display: flex;
+        width: 98%;
+        height: 75%;
+    }
+
+    .imageusu_SER420P {
+        padding: 2%;
+        width: 10%;
+    }
+    
+    .informacionusu_SER420P {
+        width: 80%;
+        height: 100%;
+        display: flex;
+    }
+
+    .nombreusu_SER420P {
+        width: 60%;
+        height: 100%;
+        display: inline-flex;
+        border-left: black solid 0.1px;
+        font-size: 16px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .version_SER420P {
+        font-size: 10px;
+        width: 12%;
+        height: 100%;
+        display: inline-flex;
+        border-left: black solid 0.1px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .iba_SER420P {
+        font-size: 10px;
+        width: 15%;
+        height: 100%;
+        display: inline-flex;
+        border-left: black solid 0.1px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pagina_SER420P {
+        font-size: 10px;
+        width: 12%;
+        height: 100%;
+        display: inline-flex;
+        border-left: black solid 0.1px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Tit_SER420P {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        width: 41%;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .parrafo1_SER420P,
+    .parrafo2_SER420P,
+    .parrafo3_SER420P{
+        text-align: justify;
+        width: 98%;
+        margin: 0 auto;
+        font-size: 14px;
+    }
+
+    .ultimos_SER420P{
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        width: 98%;
+        font-size: 14px;
+    }
+    .cajas_SER420P{
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        width: 98%;
+        font-size: 14px;
+    }
+
+
+    .parrafo5_SER420P{
+        display: inline-flex;
+        width: 20%;
+        border-bottom: black solid 0.5px;
+    }
+
+    .parrafo6_SER420P{
+
+        display: inline-flex;
+        width: 12%;
+        height: 120px;
+        border-left: black solid 0.5px;
+        border-right: black solid 0.5px;
+        border-top: black solid 0.5px;
+        border-bottom: black solid 0.5px;
+    }
+
+    .salto-linea {
+        padding-top: 20px;
+    }
+</style>
+
+<script>
+    var SER420P = [];
+    ipcRenderer.on('ping', (e, data) => {
+        console.log(data);
+
+        SER420P = data.datos;
+        SER420P.IDPACNUM = SER420P.IDPACNUM.replace(/^0+/, ''); 
+        // SER420P.LLAVEW = SER420P.LLAVEW.replace(/^0+/, '');
+
+        $('.descripcion_SER420P').text('Yo, ' + SER420P.DESCRIPPACINUM);
+        $('.descripcion1_SER420P').text(', identificado con la CC No.' + SER420P.IDPACNUM);
+        $('.descripcion2_SER420P').text(', expedida en '+ SER420P.EXPEDICION +';');
+        $('.descripcion4_SER420P').text('factura No. ' + SER420P.LLAVEW);
+        $('.descripcion5_SER420P').text('de ' + SER420P.ANOIMPR + '/'+ SER420P.MESIMPR + '/' + SER420P.DIAIMPR + ', ');
+        $('.descripcion6_SER420P').text('por parte de ' + SER420P.NOMBREUSU +'.');
+        $('.descripcion8_SER420P').text('Dado en ' + SER420P.CIUDADUSU);
+        $('.descripcion9_SER420P').text(', a los ' + SER420P.DIALETRAW);
+        $('.descripcion10_SER420P').text('Dias del mes de ' + SER420P.MESLETRAW);
+        $('.descripcion11_SER420P').text('del Año ' + SER420P.ANOIMPR +'.');
+
+        var nit = SER420P.NITUSU;
+        var url = path.join(`P:\\PROG\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('.imageusu_SER420P')
+        });
+    })
+</script>

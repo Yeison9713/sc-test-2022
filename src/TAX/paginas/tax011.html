@@ -1,0 +1,121 @@
+<div class="col-md-9 col-sm-12" style="float: none; margin: 0 auto;">
+    <div class="portlet light box-center box-title" style="margin: 0 auto;">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject bold">1 - Modalidades de transporte</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="portlet light">
+        <div class="portlet-body">
+            <form class="form-horizontal">
+
+                <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center" >
+                    <div class="col-md-3 col-sm-3 col-xs-6" >
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Novedad:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="novedad_tax011" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6" id="faseModalidad">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-6 col-xs-12">Codigo:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="modalidad_011" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                                    maxlength="1" data-orden="1">
+                            </div>
+                            <button id="modalidadBtn_011" type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6" id="faseDescripcion">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="modalidadDescrip_011" type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="25" data-orden="1" required="true">
+                        </div>
+                    </div>
+                </div>
+
+                <div >
+                    <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center" style="display:flex;" id="validarCuota">
+                        <div class="col-md-10 col-sm-10 col-xs-12" style="margin: 0 auto;">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">Cuota de sostenimiento urbano
+                                    mensual:</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                    <input id="sostenimiento_011" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="13"
+                                        data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center" id="validarArticulo">
+                    <div class="col-md-5 col-sm-5 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Art. facturacion:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="codArticulo_011" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="18" data-orden="1">
+                            </div>
+                            <button id="codArticuloBtn_011" type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-7 col-xs-6">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="descripArticulo_011" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-9 col-sm-12 col-xs-12 no-padding" style="margin: 0 auto; float: none;">
+                    <div id="faseDebito_011" class="col-md-6 col-sm-6 col-xs-4 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-4 col-sm-4 col-xs-12">Cuenta debito:</label>
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                        <input id="cuentaDebito_011" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            maxlength="20" data-orden="1">
+                                    </div>
+                                    <button id="cuentaDebitoBtn_011" type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="faseCredito_011" class="col-md-6 col-sm-6 col-xs-4" style="padding-right: 0;">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-4 col-sm-4 col-xs-12">Cuenta credito:</label>
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                        <input id="cuentaCredito_011" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            maxlength="20" data-orden="1">
+                                    </div>
+                                    <button id="cuentaCreditoBtn_011" type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../../TAX/scripts/tax011.js" type="text/javascript"></script>

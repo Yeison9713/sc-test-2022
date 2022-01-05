@@ -1,0 +1,144 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER548A">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center" style="float: none; margin: 0 auto;">
+                <div class="col-md-12 col-sm-4 col-xs-12" id="VALIDAR1_SER548A">
+                    <div class="inline-inputs">
+                        <label class="col-md-3 col-sm-5 col-xs-12">Entidad:</label>
+                        <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                            <input v-model="form.codentidad_SER548A" @Keyup.F8='_f8entidad_SER548A' data-orden="1" maxlength="10"
+                                class="form-control col-md-12 col-sm-12 col-xs-12 entidad_SER548A">
+                        </div>
+                        <button type="button" @click='_f8entidad_SER548A'
+                            class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-8 col-sm-7 col-xs-12">
+                            <input v-model="form.descripentidad_SER548A"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                    <label>Fecha inicio</label>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                    <label>Fecha Final</label>
+                </div>
+                <div id="fechaInicial_SER548A">
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                            <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.anoini_SER548A'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                            <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.mesini_SER548A'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                            <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.diaini_SER548A'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="fechaFinal_SER548A">
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                            <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.anofin_SER548A'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                            <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.mesfin_SER548A'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                            <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.diafin_SER548A'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center" style="float: none; margin: 0 auto;">
+                <div class="col-md-12 col-sm-4 col-xs-12" id="VALIDAR2SER548A">
+                    <div class="inline-inputs">
+                        <label class="col-md-3 col-sm-5 col-xs-12">Grupo:</label>
+                        <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                            <input v-model="form.codgrupo_SER548A" @Keyup.F8='_f8grupo_SER548A' data-orden="1" maxlength="2"
+                                class="form-control col-md-12 col-sm-12 col-xs-12 grupo_SER548A">
+                        </div>
+                        <button type="button" @click='_f8grupo_SER548A'
+                            class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-8 col-sm-7 col-xs-12">
+                            <input v-model="form.descripgrupo_SER548A"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>    
+                <div class="salto-linea"></div>
+                <div class="col-md-6 col-sm-4 col-xs-12" id="VALIDAR3_SER548A">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-5 col-xs-12">Discriminar codigo:</label>
+                        <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                            <input v-model="form.discriminar_SER548A" data-orden="1" maxlength="1" placeholder="S/N"
+                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-4 col-xs-12" id="VALIDAR4_SER548A">
+                    <div class="inline-inputs">
+                        <label class="col-md-3 col-sm-5 col-xs-12">Sucursal:</label>
+                        <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                            <input v-model="form.sucursal_SER548A" data-orden="1" maxlength="2" @Keyup.F8='_f8suc_SER548A'
+                            class="form-control col-md-12 col-sm-12 col-xs-12 Sucursal_SER548A">
+                        </div>
+                        <button type="button" @click='_f8suc_SER548A'
+                            class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-8 col-sm-7 col-xs-12">
+                            <input v-model="form.descripsuc_SER548A"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SER548A.js" type="text/javascript"></script>

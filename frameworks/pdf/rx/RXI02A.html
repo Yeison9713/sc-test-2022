@@ -1,0 +1,331 @@
+<script>
+    const {
+        ipcRenderer
+    } = require("electron"),
+        fs = require("fs"),
+        exec = require("child_process").exec,
+        path = require("path"),
+        remote = require("electron").remote;
+    window.$ = window.jQuery = require("jquery");
+</script>
+<style>
+    .page-header,
+    .page-header-space {
+        height: 280px;
+    }
+
+    .page-header {
+        position: fixed;
+        top: 0mm;
+        width: 99%;
+    }
+
+    .page {
+        page-break-after: always;
+        width: 100%;
+    }
+
+    .footer {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+
+    @page {
+        margin: 5mm
+    }
+
+    @media print {
+        thead {
+            display: table-header-group;
+        }
+
+        tfoot {
+            display: table-footer-group;
+        }
+
+        button {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+        }
+        div {
+            page-break-inside: avoid;
+        }
+    }
+
+    .encabezado {
+        width: 100%;
+        display: relative;
+        padding-top: 60px;
+    }
+
+    .logo {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        padding-left: 40px;
+    }
+
+    .logo img {
+        width: 10%;
+    }
+
+    .nombreusu_RXI02A {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: bolder;
+    }
+
+    .comprobante_RXI02A {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .fechafact_RXI02A {
+        width: 85%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .diagn_RXI02A,
+    .paciente_RXI02A,
+    .id_RXI02A,
+    .edad_RXI02A,
+    .sexo_RXI02A,
+    .entidad_RXI02A,
+    .estdudio_RXI02A {
+        font-size: 14px;
+        display: inline-flex;
+        margin-left: 15px;
+    }
+
+    .datos_rx {
+        width: 85%;
+        margin: auto;
+    }
+
+    .primera_linea {
+        display: flex;
+    }
+
+    .segunda_linea {
+        padding-top: 5px;
+        display: flex;
+    }
+
+    .tercera_linea {
+        padding-top: 5px;
+        display: flex;
+        border-bottom: 1px solid black;
+    }
+
+    .cuarta_linea {
+        padding-top: 5px;
+        display: flex;
+        font-size: 13px;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+
+    .contenido_rx {
+        padding-bottom: 50px;
+        width: 88%;
+        margin: 0 auto;
+        text-align: justify;
+        font-size: 16px;
+    }
+
+    .firmamedico_rx {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .firmaprofe{
+        width: 100%;
+        height: 100%;
+    }
+
+    .firmaprofe img {
+        width: 20%;
+    }
+</style>
+
+<body>
+
+    <div class="page-header">
+        <div class="encabezado">
+            <div class="logo"></div>
+            <a class="nombreusu_RXI02A">NOMBRE DEL USUARIO</a>
+            <a class="comprobante_RXI02A" style="font-weight: bolder;">COMPROBANTE XXXXXX</a>
+            <a class="fechafact_RXI02A">20 DE ABRIL DEL 2020</a>
+        </div>
+        <div class="datos_rx">
+            <div class="primera_linea">
+                <div style="width: 70%;">
+                    <a style="font-weight: bolder;display: inline-flex;">Paciente:</a>
+                    <a class="paciente_RXI02A"></a>
+                </div>
+                <div style="width: 30%;">
+                    <a style="font-weight: bolder;display: inline-flex;">ID:</a>
+                    <a class="id_RXI02A"></a>
+                </div>
+            </div>
+            <div class="segunda_linea">
+                <div style="width: 20%;">
+                    <a style="font-weight: bolder;display: inline-flex;">Edad:</a>
+                    <a class="edad_RXI02A"></a>
+                </div>
+                <div style="width: 20%;">
+                    <a style="font-weight: bolder;display: inline-flex;">Sexo:</a>
+                    <a class="sexo_RXI02A"></a>
+                </div>
+                <div style="width: 60%;">
+                    <a style="font-weight: bolder;display: inline-flex;">Entidad:</a>
+                    <a class="entidad_RXI02A"></a>
+                </div>
+            </div>
+            <div class="tercera_linea">
+                <a style="font-weight: bolder;display: inline-flex;">Estudio:</a>
+                <a class="estudio_RXI02A"></a>
+            </div>
+            <div class="cuarta_linea">
+                <a style="display: flex; text-align: justify;">Este estudio de imágenes diagnósticas se realizó teniendo en cuenta los protocolos de 
+                    bioseguridad institucionales que garantizan una atención segura y se guían por las normas recomendadas por la OMS, con el objetivo 
+                    de limitar el riesgo de expansión del virus SARS-CoV-2 (COVID 19) y ofrecer niveles óptimos de protección a los pacientes, a 
+                    nuestros colaboradores altamente entrenados y al público en general.
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <table style="width: 100%;">
+
+        <thead>
+            <tr>
+                <td>
+                    <!--place holder for the fixed-position header-->
+                    <div class="page-header-space"></div>
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <!--*** CONTENT GOES HERE ***-->
+                    <div class="page">
+                        <div class="contenido_rx">
+                            <div class="detalle1_rx">
+                                <a style="margin: 0 auto; white-space: normal;"
+                                    id="detalle1txt_rxi02a">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="firmamedico_rx">
+                            <div class="firmaprofe"></div>
+                            <div class="interpretado">
+                                <a style="font-size: 16px; margin: 0 auto;" style="font-weight: bolder;">
+                                    Estudio Interpretado por:
+                                </a>
+                            </div>
+                            <div class="profesional_rx">
+                                <a style="font-size: 16px; margin: 0 auto;" class="profetxt_rxi02a"> </a>
+                            </div>
+                            <div class="detalleprof_rx">
+                                <a style="font-size: 16px; margin: 0 auto;" class="detalletxt_rxi02a">
+                                </a>
+                            </div>
+                            <div class="registromed_rx">
+                                <a style="font-size: 16px; margin: 0 auto;" class="registrotxt_rxi02a">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>
+                    <div class="footer">
+                        <table class="tablafooter">
+                        </table>
+                    </div>
+                    <table>
+
+                    </table>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+<script>
+    var RXI02A = [];
+    ipcRenderer.on("ping", (e, data) => {
+        RXI02A = data.datos;
+        RXI02A.DESCRIP_PACIRX = RXI02A.DESCRIP_PACIRX;
+        RXI02A.COMPROBANTE =
+            "COMPROBANTE DE PRESTACION DE SERVICIOS: " + RXI02A.COMPROBANTE;
+        RXI02A.EDAD_RX = RXI02A.EDAD_RX;
+        RXI02A.REGMED_RX = "REG. " + RXI02A.REGMED_RX;
+        RXI02A.DESCRIP1_CUPRX = RXI02A.DESCRIP1_CUPRX;
+        switch (RXI02A.SEXO_RX) {
+            case "M":
+                RXI02A.SEXO_RX = "Masc";
+                break;
+            case "F":
+                RXI02A.SEXO_RX = "Fem.";
+                break;
+        }
+        RXI02A.DESCRIP_TER = RXI02A.DESCRIP_TER;
+        $(".nombreusu_RXI02A").text(RXI02A.USU);
+        $(".comprobante_RXI02A").text(RXI02A.COMPROBANTE);
+        $(".fechafact_RXI02A").text(RXI02A.FECHA_FACTRX);
+        $(".paciente_RXI02A").text(RXI02A.DESCRIP_PACIRX);
+        $(".id_RXI02A").text(RXI02A.IDHIS_FACTRX);
+        $(".edad_RXI02A").text(RXI02A.EDAD_RX);
+        $(".sexo_RXI02A").text(RXI02A.SEXO_RX);
+        $(".entidad_RXI02A").text(RXI02A.DESCRIP_TER);
+        $(".estudio_RXI02A").text(RXI02A.DESCRIP1_CUPRX);
+        $(".profe1txt_rxi02a").text(RXI02A.NOMMEDICO_RX);
+        $(".diagn_rx").hide();
+        if (parseInt(RXI02A.IDRADIOLOGO_RX) > 0) {
+            $(".profetxt_rxi02a").text(parseInt(RXI02A.IDRADIOLOGO_RX));
+            $(".detalletxt_rxi02a").text(RXI02A.NOMMEDICO_RX);
+            $(".registrotxt_rxi02a").text(RXI02A.REGMED_RX);
+        } else if (parseInt(RXI02A.IDRADIOLOGO_RX) == 0) {
+            $(".profe1xt_rxi02a").text("");
+            $(".detalletxt_rxi02a").text("");
+            $(".registrotxt_rxi02a").text("");
+        }
+
+        $("#detalle1txt_rxi02a").html(RXI02A.HTMLRESULTADOPPAL.replace(/&/g, "<br>"));
+
+        var nit = parseInt(RXI02A.NIT);
+        var url = path.join(`D:\\SC\\newcobol\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString("base64");
+            $("<img/>")
+                .attr("src", `data:image/jpeg;base64,${dataImg1}`)
+                .appendTo(".logo");
+        });
+
+        var nitprofe = parseInt(RXI02A.IDRADIOLOGO_RX);
+        var urlprofe = path.join(`D:\\SC\\newcobol\\HC\\DATOS\\${nitprofe}.bmp`);
+        fs.readFile(urlprofe, function (err, data) {
+            if (err) throw err;
+            var dataImg2 = Buffer.from(data).toString("base64");
+            $("<img/>")
+                .attr("src", `data:image/jpeg;base64,${dataImg2}`)
+                .appendTo(".firmaprofe");
+        });
+    });
+</script>

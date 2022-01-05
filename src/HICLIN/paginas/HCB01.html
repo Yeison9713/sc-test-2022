@@ -1,0 +1,387 @@
+<div class="col-md-12" id="HCB01">
+  <div class="portlet light no-padding" style="background-color: transparent !important; box-shadow: none !important">
+    <div class="portlet-body">
+      <div class="form-horizontal">
+        <div class="col-md-12 no-padding">
+          <div class="form-group col-md-12 box-center">
+            <div class="col-md-3 no-padding">
+              <div class="col-md-12 no-padding" id="fecha_refer">
+                <div class="col-md-4" style="padding-left: 0">
+                  <label class="col-md-12">Año</label>
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="fecha_ref_w.ano_w"
+                      type="text"
+                      class="form-control col-md-12"
+                      maxlength="4"
+                      data-orden="1"
+                      required="true"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4" style="padding-left: 0">
+                  <label class="col-md-12">Mes</label>
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="fecha_ref_w.mes_w"
+                      type="text"
+                      class="form-control col-md-12"
+                      maxlength="2"
+                      data-orden="2"
+                      required="true"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4" style="padding-left: 0">
+                  <label class="col-md-12">Dia</label>
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="fecha_ref_w.dia_w"
+                      type="text"
+                      class="form-control col-md-12"
+                      maxlength="2"
+                      data-orden="3"
+                      required="true"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 no-padding">
+              <div class="col-md-12 no-padding" id="hora_refer">
+                <div class="col-md-6" style="padding-left: 0">
+                  <label class="col-md-12">Hora</label>
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="hora_ref_w.hora_w"
+                      type="text"
+                      class="form-control col-md-12"
+                      maxlength="4"
+                      data-orden="1"
+                      required="true"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6" style="padding-left: 0">
+                  <label class="col-md-12">Min</label>
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="hora_ref_w.min_w"
+                      type="text"
+                      class="form-control col-md-12"
+                      maxlength="2"
+                      data-orden="2"
+                      required="true"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label class="col-md-12" style="text-align: center">Operador</label>
+              <div class="input-group col-md-12">
+                <div class="inline-inputs">
+                  <div class="input-group col-md-3">
+                    <input v-model="operador" type="text" class="form-control" style="text-align: center" />
+                  </div>
+                  <button type="button" class="btn col-md-1 f8-Btn">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                  <div class="input-group col-md-8">
+                    <input v-model="descrip_operador" type="text" class="form-control" style="text-align: center" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 no-padding">
+              <label class="col-md-12">Unidad de servicio</label>
+              <div class="input-group col-md-12">
+                <input
+                  v-model="refer.DESCRIP_UNSERV"
+                  type="text"
+                  class="form-control col-md-12 uppercase"
+                  maxlength="10"
+                  data-orden="1"
+                  style="text-align: center"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold"
+                  >{{ refer.NOVEDAD_W == 8 ? "ACTUALIZANDO REFERENCIACIÓN" : "CREANDO REFERENCIACIÓN" }}</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="col-md-8 no-padding">
+            <div class="form-group col-md-12 box-center" style="padding-bottom: 7px">
+              <div class="col-md-6">
+                <label class="col-md-12" style="text-align: center">Médico que ordena</label>
+                <div class="inline-inputs col-md-12 no-padding" id="MED_REF">
+                  <div class="input-group col-md-3">
+                    <input
+                      v-model="refer.MED_REF"
+                      type="text"
+                      class="form-control MED_REF"
+                      style="text-align: center"
+                      data-orden="1"
+                      @keydown.f8="_ventanaMedico"
+                      maxlength="10"
+                      required="true"
+                    />
+                  </div>
+                  <button @click="_ventanaMedico" type="button" class="btn col-md-1 f8-Btn">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                  <div class="input-group col-md-8">
+                    <input
+                      v-model="descrip_medico_ordena"
+                      type="text"
+                      class="form-control"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 no-padding">
+                <label class="col-md-12" style="text-align: center">Diagnostico</label>
+                <div class="inline-inputs col-md-12 no-padding" id="DIAG_PRIN_REF">
+                  <div class="input-group col-md-2">
+                    <input
+                      v-model="refer.DIAG_PRIN_REF"
+                      type="text"
+                      class="form-control DIAG_PRIN_REF"
+                      style="text-align: center"
+                      data-orden="1"
+                      @keydown.f8="_ventanaEnfermedades"
+                      maxlength="4"
+                      required="true"
+                    />
+                  </div>
+                  <button @click="_ventanaEnfermedades" type="button" class="btn col-md-1 f8-Btn">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                  <div class="input-group col-md-9">
+                    <input
+                      v-model="descrip_diag_prin_ref"
+                      type="text"
+                      class="form-control"
+                      style="text-align: center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+
+              <div class="col-md-6">
+                <label class="col-md-12" style="text-align: center">Codigo IPS</label>
+                <div class="inline-inputs col-md-12 no-padding" id="IPS_REF">
+                  <div class="input-group col-md-4">
+                    <input
+                      v-model="refer.IPS_REF"
+                      type="text"
+                      class="form-control IPS_REF"
+                      style="text-align: center"
+                      data-orden="1"
+                      @keydown.f8="_ventanaIps"
+                      maxlength="12"
+                      required="true"
+                    />
+                  </div>
+                  <button @click="_ventanaIps" type="button" class="btn col-md-1 f8-Btn">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                  <div class="input-group col-md-7">
+                    <input v-model="descrip_ips" type="text" class="form-control" style="text-align: center" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 no-padding">
+                <label class="col-md-12" style="text-align: center">Funcionario que responde</label>
+                <div class="input-group col-md-12" id="FUNCIONARIO_IPS_REF">
+                  <input
+                    v-model="refer.FUNCIONARIO_IPS_REF"
+                    type="text"
+                    class="form-control"
+                    style="text-align: left"
+                    data-orden="1"
+                    maxlength="30"
+                    required="true"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" style="padding-right: 0">
+            <div class="form-group col-md-12 box-center">
+              <label class="col-md-12" style="text-align: center">Especialidades</label>
+              <div class="col-md-12 no-padding" v-for="(fila,index) in especialidades" :key="index">
+                <div class="inline-inputs col-md-12 no-padding">
+                  <label class="col-md-1">{{ parseInt(fila.nro) }}</label>
+                  <div class="input-group col-md-2" :id="`validarEspec_${index}`">
+                    <input
+                      @keydown.f8="_ventanaEspecialidades(index)"
+                      v-model="fila.cod"
+                      maxlength="3"
+                      :class="`espec_${index}`"
+                      class="form-control text-center"
+                      data-orden="1"
+                    />
+                  </div>
+                  <button @click="_ventanaEspecialidades(index)" type="button" class="btn f8-Btn col-md-1">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                  <div class="input-group col-md-8">
+                    <input
+                      v-model="especialidades[index].descrip"
+                      style="text-align: left"
+                      class="form-control"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+
+                <div v-if="index != 2" class="salto-linea"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="col-md-6 no-padding">
+            <div class="form-group col-md-12 box-center" style="text-align: left; padding-bottom: 11px">
+              <div class="col-md-12 no-padding" id="TABLA_REF">
+                <div
+                  class="col-md-12 head-box"
+                  style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                >
+                  <label>Nota referenciación:</label>
+                  <label>(5,000 caracteres máximo)</label>
+                </div>
+                <textarea
+                  v-model="refer.TABLA_REF"
+                  class="form-control"
+                  disabled="disabled"
+                  rows="10"
+                  style="resize: none; text-align: justify"
+                  data-orden="1"
+                  maxlength="5000"
+                  required="true"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" style="padding-right: 0">
+            <div class="form-group col-md-12 box-center">
+              <div class="inline-inputs col-md-4 no-padding">
+                <label class="col-md-8" style="text-align: left; background: 0">Remisión aceptada</label>
+                <div class="input-group col-md-4" id="ACEPTADA_REF">
+                  <input
+                    v-model="refer.ACEPTADA_REF"
+                    type="text"
+                    class="form-control"
+                    style="text-align: center"
+                    data-orden="1"
+                    maxlength="1"
+                    required="true"
+                  />
+                </div>
+              </div>
+              <div class="inline-inputs col-md-8" style="padding-right: 0">
+                <label class="col-md-4" style="text-align: left; background: 0">Médico que acepta</label>
+                <div class="input-group col-md-8" id="MEDICO_ACEPTA_REF">
+                  <input
+                    v-model="refer.MEDICO_ACEPTA_REF"
+                    type="text"
+                    class="form-control"
+                    style="text-align: left"
+                    data-orden="1"
+                    maxlength="30"
+                    required="true"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="salto-linea"></div>
+
+            <div class="form-group col-md-12 box-center">
+              <div class="inline-inputs col-md-12 no-padding">
+                <label class="col-md-5" style="text-align: left; background: 0"
+                  >Personal admin. que acepta remisión</label
+                >
+                <div class="input-group col-md-7" id="PERS_ADMIN_REF">
+                  <input
+                    v-model="refer.PERS_ADMIN_REF"
+                    type="text"
+                    class="form-control"
+                    style="text-align: left"
+                    data-orden="1"
+                    maxlength="30"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-md-12 box-center" style="text-align: left">
+              <div class="col-md-12 no-padding" id="SOPORTES_REF">
+                <div
+                  class="col-md-12 head-box"
+                  style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                >
+                  <label>Soportes:</label>
+                  <label>(170 caracteres máximo)</label>
+                </div>
+                <textarea
+                  v-model="refer.SOPORTES_REF"
+                  class="form-control"
+                  disabled="disabled"
+                  rows="2"
+                  style="resize: none; text-align: justify"
+                  data-orden="1"
+                  maxlength="170"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="form-group col-md-12 box-center">
+              <div class="inline-inputs col-md-12 no-padding" style="float: right">
+                <label class="col-md-2" style="text-align: left; background: 0">Operador</label>
+                <div class="input-group col-md-10">
+                  <input v-model="nom_oper_w" type="text" class="form-control" style="text-align: left" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../../HICLIN/scripts/HCB01.js" type="text/javascript"></script>

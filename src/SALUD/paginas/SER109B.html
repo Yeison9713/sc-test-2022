@@ -1,0 +1,211 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER109B">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="float: none; margin: 0 auto;">
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">Prefijo:</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="VALIDAR1_SER109B">
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1"
+                                    placeholder="Ambulatorio o Pensionado" id='prefijo_SER109B'>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">Numero:</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="VALIDAR2_SER109B">
+                                <input v-model="form.numeroprefijo_SER109B"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="6">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Entidad:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                <input v-model="form.entidad_SER109B"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Nombre paciente:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                <input v-model="form.nombrepaciente_SER109B"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Estado de la factura:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input v-model="form.estadofactura_SER109B"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12 hidden" id='FECHARET_SER109B'>
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Fecha ret:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input v-model="form.fechafactura_SER109B"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12 hidden" id='OPERBLOQ_SER109B'>
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">oper bloq:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input v-model="form.operbloq_SER109B"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-12" id="VALIDAR3_SER109B">
+                        <label class="col-md-12 col-sm-12 col-xs-12">Observación</label>
+                        <textarea v-model="form.observacion_SER109B" class="form-control" rows="3" data-orden="1"
+                            maxlength="180" style="resize: none;"></textarea>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 col-xs-12" id="VALIDAR3_SER109B">
+                        <label class="col-md-12 col-sm-12 col-xs-12">Anexos</label>
+                        <textarea v-model="form.anexos_SER109B" class="form-control" rows="3" data-orden="2"
+                            maxlength="180" style="resize: none;"></textarea>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="float: none; margin: 0 auto;"
+                    id="ADICIONALES_SER109B">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-10 col-xs-12">Desea bloquear la factura?:</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id="VALIDAR4_SER109B">
+                                <input id="bloquearfactura_SER109B" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="1" data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="VALIDAR5_SER109B">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-10 col-xs-12">Desea separar X CUPS? :</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12">
+                                <input id="separarcups_SER109B" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="VALIDAR6_SER109B">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-10 col-xs-12">Desea discriminar especialidad? :</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12">
+                                <input id="discriminarespec_SER109B" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="VALIDAR7_SER109B">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-10 col-xs-12">Desea imprimir CIS? :</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" >
+                                <input id="imprimircis_SER109B" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="VALIDAR8_SER109B">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-10 col-xs-12">Desea Resumido  x Clase? :</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" >
+                                <input id="resumidoclase_SER109B" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Fecha de Factura:</label>
+                            <div class="input-group col-md-3 col-sm-2 col-xs-12" id="VALIDAR9_SER109B">
+                                <input v-model="form.fechafacturaano_SER109B"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                    placeholder="AAAA">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id="VALIDAR9_SER109B">
+                                <input v-model="form.fechafacturames_SER109B"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                    placeholder="MM">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id="VALIDAR9_SER109B">
+                                <input v-model="form.fechafacturadia_SER109B"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                    placeholder="DD">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-10 col-xs-12">Desea Resumido  x Comprobante?:</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id="VALIDAR10_SER109B">
+                                <input id="resumidocomprob_SER109B" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 hidden" id= "IMPRESION_SER109B">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-10 col-xs-12">Imprimir Factura Original?:</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id="VALIDAR11_SER109B">
+                                <input id="facturaoriginal_SER109B" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 hidden" id="VACIA_SER109B">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-10 col-xs-12">Desea imprimir factura en blanco?:</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id="VALIDAR12_SER109B">
+                                <input id="facturavacia_SER109B" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center hidden" style="float: none; margin: 0 auto;" 
+                id= 'VALORESCARTERA_109B'>
+                    <div class="col-md-4 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-10 col-xs-12">Vlr dia Salmin:</label>
+                            <div class="input-group col-md-6 col-sm-2 col-xs-12">
+                                <input v-model="form.valorsalmin_SER109B" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-10 col-xs-12">Tope max poliza:</label>
+                            <div class="input-group col-md-6 col-sm-2 col-xs-12">
+                                <input v-model="form.topepoliza_SER109B" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-10 col-xs-12">Total fact + IPS ant:</label>
+                            <div class="input-group col-md-6 col-sm-2 col-xs-12">
+                                <input v-model="form.totalfact_SER109B" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SER109B.js" type="text/javascript"></script>

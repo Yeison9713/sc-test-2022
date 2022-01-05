@@ -1,0 +1,166 @@
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<div class="col-md-12" id="PUB515">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="col-md-12 no-padding">
+          <div class="col-md-4" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center inline-inputs" id="fecha_gen">
+              <label class="col-md-4 lbl_left">Fecha Generación</label>
+              <label class="col-md-2">Año</label>
+              <div class="input-group col-md-2">
+                <input
+                  v-model="ano_gen"
+                  type="number"
+                  class="form-control text-center"
+                  maxlength="4"
+                  data-orden="1"
+                  required="true"
+                />
+              </div>
+              <label class="col-md-2">Mes</label>
+              <div class="input-group col-md-2">
+                <input
+                  v-model="mes_gen"
+                  type="number"
+                  class="form-control text-center"
+                  maxlength="2"
+                  data-orden="2"
+                  required="true"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center inline-inputs">
+              <label class="col-md-4 lbl_left">Servicio a procesar</label>
+              <div class="input-group col-md-2" id="serv">
+                <input
+                  v-model="serv"
+                  type="text"
+                  class="form-control serv"
+                  style="text-align: center"
+                  data-orden="1"
+                  @keydown.f8="_ventanaServicios"
+                  maxlength="1"
+                  required="true"
+                />
+              </div>
+              <button @click="_ventanaServicios" type="button" class="btn col-md-1 f8-Btn">
+                <i class="icon-magnifier"></i>
+              </button>
+              <div class="input-group col-md-5">
+                <input v-model="descrip_serv" type="text" class="form-control" style="text-align: center" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 no-padding">
+            <div class="col-md-12 box-center form-group">
+              <div class="inline-inputs col-md-12 no-padding">
+                <label class="col-md-10 lbl_left">Listar unicamente con medición?</label>
+                <div class="input-group col-md-2" id="medicion">
+                  <input
+                    v-model="medicion"
+                    type="text"
+                    class="form-control"
+                    style="text-align: center"
+                    data-orden="1"
+                    maxlength="1"
+                    placeholder="N"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="col-md-3" style="padding-left: 0">
+            <div class="col-md-12 box-center form-group">
+              <div class="inline-inputs col-md-12 no-padding">
+                <label class="col-md-10 lbl_left">Listar unicamente críticos?</label>
+                <div class="input-group col-md-2" id="criticos">
+                  <input
+                    v-model="criticos"
+                    type="text"
+                    class="form-control"
+                    style="text-align: center"
+                    data-orden="1"
+                    maxlength="1"
+                    placeholder="N"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3" style="padding-left: 0">
+            <div class="col-md-12 box-center form-group">
+              <div class="inline-inputs col-md-12 no-padding">
+                <label class="col-md-10 lbl_left">Ordenar por código?</label>
+                <div class="input-group col-md-2" id="ordenar">
+                  <input
+                    v-model="ordenar"
+                    type="text"
+                    class="form-control"
+                    style="text-align: center"
+                    data-orden="1"
+                    maxlength="1"
+                    placeholder="N"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3" style="padding-left: 0">
+            <div class="col-md-12 box-center form-group">
+              <div class="inline-inputs col-md-12 no-padding">
+                <label class="col-md-10 lbl_left">Listar resumido?</label>
+                <div class="input-group col-md-2" id="resumido">
+                  <input
+                    v-model="resumido"
+                    type="text"
+                    class="form-control"
+                    style="text-align: center"
+                    data-orden="1"
+                    maxlength="1"
+                    placeholder="N"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <loader_modal :estado="estado_loader" :progreso="progreso" :loader="loader" :label="label_loader"></loader_modal>
+    </div>
+  </div>
+</div>
+
+<script src="../../SERVDOM/scripts/PUB515.js" type="text/javascript"></script>
+
+<style>
+  label {
+    background: 0 !important;
+  }
+
+  .lbl_left {
+    text-align: left !important;
+    padding-left: 5px !important;
+  }
+
+  .lbl_right {
+    text-align: right !important;
+  }
+</style>

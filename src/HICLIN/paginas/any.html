@@ -1,0 +1,252 @@
+<div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+  <div class="col-md-12 col-sm-12 col-xs-12 form-group box-center">
+    <div
+      class="col-md-12 col-sm-12 col-xs-12 form-group"
+      style="padding-right: 0px"
+    >
+      <div
+        class="col-md-2 col-sm-3 col-xs-12 no-padding"
+        style="padding-left: 3px !important; margin-right: -25px !important"
+      >
+        <label>Fecha</label>
+        <div class="inline-inputs">
+          <div
+            id="dato_anio_control"
+            class="input-group col-md-4 col-sm-4 col-xs-4"
+          >
+            <input
+              v-model="datos_control.anio"
+              type="number"
+              disabled="disabled"
+              class="form-control col-md-12 col-sm-12 col-xs-12"
+              style="padding-right: 0px"
+            />
+          </div>
+          <div
+            id="dato_mes_control"
+            class="input-group col-md-3 col-sm-4 col-xs-4"
+          >
+            <input
+              v-model="datos_control.mes"
+              type="number"
+              data-orden="1"
+              maxlength="2"
+              required="required"
+              class="form-control col-md-12 col-sm-12 col-xs-12"
+              style="padding-right: 0px"
+            />
+          </div>
+          <div
+            id="dato_dia_control"
+            class="input-group col-md-3 col-sm-4 col-xs-4"
+          >
+            <input
+              v-model="datos_control.dia"
+              type="number"
+              data-orden="1"
+              maxlength="2"
+              required="required"
+              class="form-control col-md-12 col-sm-12 col-xs-12"
+              style="padding-right: 0px"
+              disabled="disabled"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1 col-sm-2 col-xs-12 no-padding">
+        <label>Hora</label>
+        <div class="inline-inputs no-padding">
+          <div
+            id="dato_hora_control"
+            class="input-group col-md-6 col-sm-6 col-xs-6"
+          >
+            <input
+              v-model="datos_control.hora"
+              type="text"
+              data-orden="1"
+              maxlength="2"
+              required="required"
+              class="form-control col-md-12 col-sm-12 col-xs-12"
+              disabled="disabled"
+            />
+          </div>
+          <div
+            id="dato_minutos_control"
+            class="input-group col-md-6 col-sm-6 col-xs-6"
+          >
+            <input
+              v-model="datos_control.min"
+              type="text"
+              data-orden="1"
+              maxlength="2"
+              required="required"
+              class="form-control col-md-12 col-sm-12 col-xs-12"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="no-padding col-md-3 col-sm-2 col-xs-12"
+        style="
+          text-align: left;
+          padding-right: 0px;
+          padding-left: 14px !important;
+        "
+      >
+        <label>Paciente</label>
+        <div class="inline-inputs">
+          <div class="input-group col-md-12 col-sm-12 col-xs-12">
+            <input
+              v-model="datos_paciente.DESCRIP"
+              type="text"
+              disabled="disabled"
+              class="form-control col-md-12 col-sm-12 col-xs-12"
+              style="text-align: left"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="no-padding col-md-2 col-sm-2 col-xs-12"
+        style="text-align: left"
+      >
+        <label style="padding-left: 5px !important">Documento</label>
+        <div class="inline-inputs">
+          <div
+            class="input-group col-md-3 col-sm-3 col-xs-3 no-padding"
+            style="padding-left: 1px !important"
+          >
+            <input
+              v-model="datos_paciente['TIPO-ID']"
+              type="text"
+              disabled="disabled"
+              placeholder="DI"
+              class="form-control col-md-12 col-sm-12 col-xs-12"
+              style="text-align: center"
+            />
+          </div>
+          <div class="input-group col-md-8 col-sm-10 col-xs-10">
+            <input
+              v-model="datos_paciente.COD"
+              type="number"
+              disabled="disabled"
+              class="form-control col-md-12 col-sm-12 col-xs-12"
+              style="text-align: left"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-3 col-sm-2 col-xs-12"
+        style="text-align: left; padding-left: 10px"
+      >
+        <label style="text-overflow: ellipsis">Unidad servicio</label>
+        <div class="inline-inputs">
+          <div class="input-group col-md-12 col-sm-12 col-xs-12">
+            <input
+              v-model="datos_hc.consulta"
+              type="text"
+              disabled="disabled"
+              class="form-control col-md-12 col-sm-12 col-xs-12"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-2 col-sm-1 col-xs-12 no-padding"
+        style="width: 10%; text-align: left; padding-right: 0px !important"
+      >
+        <label>Cama</label>
+        <div class="inline-inputs no-padding">
+          <div class="input-group col-md-12 col-sm-12 col-xs-12">
+            <input
+              type="text"
+              disabled="disabled"
+              class="form-control col-md-12 col-sm-12 col-xs-12"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="salto-linea"></div>
+    </div>
+    <div
+      class="col-md-12 col-sm-12 col-xs-12 no-padding"
+      style="display: flex; justify-content: center"
+    >
+      <div class="col-md-8 no-padding" style="text-align: left">
+        <div
+          class="col-md-12 col-sm-12 col-xs-12"
+          style="
+            align-items: center;
+            display: flex;
+            padding-left: 5px;
+            justify-content: normal;
+          "
+        >
+          <label style="text-align: left">Producto a transfundir</label>
+          <div
+            id="dato_recupera_nutric"
+            class="col-md-10 col-sm-5 col-xs-5"
+            style="float: right; padding-left: 14px !important"
+          >
+            <input
+              type="text"
+              maxlength="190"
+              data-orden="1"
+              disabled="disabled"
+              class="form-control col-md-12 col-sm-12 col-xs-12"
+              style="text-align: center"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-3 no-padding"
+        style="text-align: left; display: flex; justify-content: center"
+      >
+        <div
+          class="col-md-4 no-padding"
+          style="text-align: left; align-items: center; display: flex"
+        >
+          <div class="col-md-5">
+            <label class="col-md-5" style="text-align: center">Rh</label>
+          </div>
+          <div
+            id="validarHora_AIEPI001"
+            class="input-group col-md-8 col-sm-6 col-xs-6"
+          >
+            <input
+              type="text"
+              data-orden="1"
+              maxlength="2"
+              required="required"
+              disabled="disabled"
+              class="form-control col-md-12 col-sm-12 col-xs-12"
+            />
+          </div>
+        </div>
+        <div
+          class="col-md-5 no-padding"
+          style="text-align: left; align-items: center; display: flex"
+        >
+          <div class="col-md-7">
+            <label class="col-md-6" style="text-align: center">Factor</label>
+          </div>
+          <div
+            id="validarHora_AIEPI001"
+            class="input-group col-md-12 col-sm-6 col-xs-6"
+          >
+            <input
+              type="text"
+              data-orden="1"
+              maxlength="2"
+              required="required"
+              disabled="disabled"
+              class="form-control col-md-12 col-sm-12 col-xs-12"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+<div class="col-md-12" id="menu_h15">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <div class="form-horizontal">
+                <div class="form-group col-md-7 col-sm-7 no-padding" style="float: none; margin: 0 auto;">
+                    <div class="portlet light box-center box-title" style="margin: 0 auto;">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject bold">Archivos relacionados al paciente o historia
+                                    clinica.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 no-padding" style="display: flex; justify-content: center;">
+
+                    <div class="col-md-7 col-sm-7 col-xs-12 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <table class="table table-light table-striped" style="margin-bottom: 0px; width: 99%;">
+                                <thead>
+                                    <tr>
+                                        <th class="col-md-4">Paciente</th>
+                                        <th class="col-md-4">Archivo</th>
+                                        <th class="col-md-2">Tipo de archivo</th>
+                                        <th class="col-md-2">Opciones</th>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                            <div style="max-height: 532px; overflow-y: scroll; display: inline-block;width: 100%">
+                                <table class="table table-light table-striped"
+                                    style="margin-bottom: 0px; text-align: left;">
+                                    <tbody>
+                                        <tr v-for="(item, index) in tabla" :key="index">
+                                            <td class="col-md-4">{{ paciente.DESCRIP }}
+                                            </td>
+                                            <td class="col-md-4">{{ item.ruta.split(".")[0] }}</td>
+                                            <td class="col-md-2">{{ _validarTipoArchivo(item.tipo) }}</td>
+                                            <td class="col-md-2" style="text-align: center !important;">
+                                                <a class="dark btn-md btn-outline" style="color: #525252;"
+                                                    @click="_downloadFile(item)">
+                                                    <i class="fa fa-download"></i> </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="float_salir_h15" style="left: 21px; background-color: #da2c2c; border-color: #da2c2c"
+        @click="_regresar_menuhis">
+        <span>Salir </span>
+    </a>
+</div>
+
+<style>
+    .float_salir_h15 {
+        z-index: 2;
+        position: fixed;
+        width: 65px;
+        height: 60px;
+        bottom: 16px;
+        background-color: #476fad;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 1px 1px 1px #999;
+        overflow: hidden;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .float_salir_h15:hover {
+        box-shadow: 2px 2px 2px #999;
+        transition: padding .5s ease, background-position .5s ease, transform .8s ease;
+        text-decoration: none;
+        color: #FFF;
+    }
+</style>
+
+<script src="../../HICLIN/scripts/menu-h15.js"></script>

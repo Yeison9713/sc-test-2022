@@ -1,0 +1,354 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="page-header" style="text-align: center">
+    </div>
+
+    <table>
+
+        <thead>
+            <tr>
+                <td>
+                    <!--place holder for the fixed-position header-->
+                    <div class="page-header-space">
+
+                    </div>
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <!--*** CONTENT GOES HERE ***-->
+                    <div class="page">
+                        <a class="factura_SER109T"> FACTURA DE VENTA NUMERO: NNNNNN</a>
+                        <a class="originalcopia_SER109T">C1C2C3C4C5C6C7C8</a>
+                        <a class="companiaaseguradora_SER109T">LA COMPAÑIA ASEGURADORA:
+                            123456789012345678901234567890N1N2N3N4N5N6 -
+                            X1</a>
+                        <a class="polizasoat_SER109T">POLIZA SOAT NUMERO : p1p2p3p4p5p6p7p8p9p0p1p2p3p4p5</a>
+                        <a
+                            style="float: left; font-size: 11px; font-weight: bolder; width: 89%; padding-left: 20%; text-align: initial;">DEBE
+                            A:</a>
+                        <a class="nombreusu_SER109T">1234567890123456789012345678901234567</a>
+                        <a class="nitusu_SER109T">NNNNNNNNNNNNNNNN</a>
+                        <a class="direccionusu_SER109T">123456789012345678901234567890</a>
+                        <a class="nombreciuusu_SER109T">CCCCCCCCCCCCCCC</a>
+                        <a style="font-size: 11px; font-weight: bolder; float: left; width: 15%;"> LA SUMA DE : </a>
+                        <a class="sumaenletras_SER109T">1234567890123456789012345678901234567890123456789012345</a>
+                        <a class="valor_SER109T">TTTTTTTTTTTTT</a>
+                        <a class="concepto_SER109T">Por concepto de servicios de salud correspondientes al Seguro
+                            Obligatorio de
+                            Accidente de Transito prestados a:
+                        </a>
+                        <a class="nombrepaciente_SER109T">1234567890123456789012345678901234567890</a>
+                        <a class="numerodecedulapaciente_SER109T">Ident: |1|2|3|4|5|6|7|</a>
+                        class="historia_SER109T">Historia clinica Nro: h1h2h3h4h5h6h7h8</a>
+                        <a class="fechaingreso_SER109T">Fecha de Ingreso año: 2019 mes: 11 dia: 20</a>
+                        <a class="estancia_SER109T">Dias de estancia : 0</a>
+                        <a class="fecharetiro_SER109T">Fecha de retiro año: 2020 mes: 01 dia: 20</a>
+                        <a class="fechaentrega_SER109T">Fecha de entrega: FFFFFFFFFFFFFFFFFFFFF</a>
+                        <a style="padding-top: 60px; float: left; width: 40%;">___________________________________</a>
+                        <a style="float: left; width: 99%; font-size: 11px;">Firma y sello</a>
+                        <a style="float: left; width: 99%; font-size: 12px; padding-top: 20px;"> DESCRIPCION DEL
+                            SERVICIO</a>
+                        <table class="tabladescrip_SER109T">
+                            <thead>
+                                <tr>
+                                    <th style="width: 1%;font-size:9px;">Comp.</th>
+                                    <th style="width: 5%;font-size:9px;">Codigo</th>
+                                    <th style="width: 20%;font-size:9px;">Concepto</th>
+                                    <th style="width: 1%;font-size:9px;">Cant</th>
+                                    <th style="width: 3%;font-size:9px;">VLr unitario</th>
+                                    <th style="width: 3%;font-size:9px;">Vlr total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+                        <a class="autorizaciondian_SER109T">AUTORIZACION DIAN:
+                            1234567890123456789012345678901234567890123456789012345678901234567890</a>
+                        <a class="cerro_SER109T">CERRO: AAAA</a>
+                        <a class="abre_SER109T">ABRE: A1A1 </a>
+                        <a class="imp_SER109T">IMP: A2A2</a>
+                        <a class="nomiva_SER109T">X1X2X3X4X5X6X7X8X9X0X1X2X3X4X5X6X7X8X9X0X1X2X3X4X5X6X</a>
+                        <a style="float: left; width: 99%; font-size: 11px;">La presente factura de venta se asimila en
+                            sus efectos a una letra de cambio, art 774 Codigo de comercio</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
+
+<style>
+
+    body{
+        font-family: Tahoma;
+    }
+    
+    .salto-linea {
+        padding-top: 20px;
+    }
+
+    .factura_SER109T {
+        font-size: 13px;
+        font-weight: bolder;
+        float: left;
+        width: 40%;
+        padding-top: 10%;
+        text-align: initial;
+        padding-left: 20%;
+    }
+
+    .originalcopia_SER109T {
+        font-size: 13px;
+        font-weight: bolder;
+        float: left;
+        width: 39%;
+        padding-top: 10%;
+    }
+
+    .companiaaseguradora_SER109T {
+        font-size: 11px;
+        font-weight: bolder;
+        float: left;
+        width: 89%;
+        padding-left: 20%;
+        text-align: initial;
+    }
+
+    .polizasoat_SER109T {
+        font-size: 11px;
+        font-weight: bolder;
+        float: left;
+        width: 89%;
+        padding-left: 20%;
+        text-align: initial;
+    }
+
+    .nombreusu_SER109T {
+        font-size: 11px;
+        float: left;
+        width: 89%;
+        padding-left: 20%;
+        text-align: initial;
+    }
+
+    .nitusu_SER109T {
+        font-size: 11px;
+        float: left;
+        width: 89%;
+        padding-left: 20%;
+        text-align: initial;
+    }
+
+    .direccionusu_SER109T {
+        font-size: 11px;
+        float: left;
+        width: 40%;
+        padding-left: 20%;
+        text-align: initial;
+    }
+
+    .nombreciuusu_SER109T {
+        font-size: 11px;
+        float: left;
+        width: 39%;
+        text-align: initial;
+    }
+
+    .sumaenletras_SER109T {
+        font-size: 11px;
+        float: left;
+        width: 64%;
+        text-align: initial;
+    }
+
+    .valor_SER109T {
+        font-size: 11px;
+        float: left;
+        width: 20%;
+        text-align: initial;
+    }
+
+    .concepto_SER109T {
+        font-size: 11px;
+        float: left;
+        width: 99%;
+        text-align: initial;
+        padding-top: 20px;
+    }
+
+    .historia_SER109T {
+        font-size: 11px;
+        font-weight: bolder;
+        float: left;
+        width: 39%;
+        text-align: initial;
+        padding-top: 20px;
+    }
+
+    .fechaingreso_SER109T {
+        font-size: 11px;
+        float: left;
+        width: 60%;
+        text-align: initial;
+        padding-top: 20px;
+    }
+
+    .estancia_SER109T {
+        font-size: 11px;
+        float: left;
+        width: 39%;
+        text-align: initial;
+    }
+
+    .fecharetiro_SER109T {
+        font-size: 11px;
+        float: left;
+        width: 60%;
+        text-align: initial;
+    }
+
+    .fechaentrega_SER109T {
+        font-size: 11px;
+        float: left;
+        width: 99%;
+        text-align: initial;
+    }
+
+    .tabladescrip_SER109T {
+        width: 99%;
+        border-spacing: 0;
+    }
+
+    .autorizaciondian_SER109T {
+        font-size: 11px;
+        float: left;
+        width: 54%;
+        text-align: initial;
+        padding-top: 20px;
+    }
+
+    .cerro_SER109T {
+        font-size: 11px;
+        float: left;
+        width: 15%;
+        text-align: initial;
+        padding-top: 20px;
+    }
+
+    .abre_SER109T {
+        font-size: 11px;
+        float: left;
+        width: 15%;
+        text-align: initial;
+        padding-top: 20px;
+    }
+
+    .imp_SER109T {
+        font-size: 11px;
+        float: left;
+        width: 15%;
+        text-align: initial;
+        padding-top: 20px;
+    }
+
+    .nomiva_SER109T {
+        font-size: 11px;
+        float: left;
+        width: 99%;
+        text-align: initial;
+        padding-top: 20px;
+    }
+
+    .tabladescrip_SER109T thead tr th {
+        border-top: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+    }
+
+    .tabladescrip_SER109T tbody tr th {
+        border-bottom: black solid 0.1px;
+    }
+
+    .nombrepaciente_SER109T {
+        display: inline-flex;
+        width: 20%;
+        font-size: 11px;
+    }
+
+    .numerodecedulapaciente_SER109T {
+        display: inline-flex;
+        width: 79%;
+        font-size: 11px;
+    }
+</style>
+<script>
+    var SER109T = [];
+    ipcRenderer.on('ping', (e, data) => {
+        SER109T = data.datos;
+        $('.factura_SER109T').text('FACTURA DE VENTA NUMERO: ' + SER109T.LLAVENUM);
+        $('.originalcopia_SER109T').text(SER109T.ORIGINAL);
+        $('.companiaaseguradora_SER109T').text('LA COMPAÑIA ASEGURADORA : ' + SER109T.NOMBREENTIDAD + ' ' + SER109T.NIT_NUM + ' - ' + SER109T.DV_NUM);
+        $('.polizasoat_SER109T').text('POLIZA SOAT NUMERO : ' + SER109T.POLIZA);
+        $('.nombreusu_SER109T').text(SER109T.NOMBREUSU);
+        $('.nitusu_SER109T').text(SER109T.NIT);
+        $('.direccionusu_SER109T').text(SER109T.DIRECCUSU);
+        $('.nombreciuusu_SER109T').text(SER109T.NOMBRECIUDAD);
+        $('.sumaenletras_SER109T').text(SER109T.VALORENLETRAS);
+        $('.valor_SER109T').text(SER109T.VALOR);
+        $('.historia_SER109T').text('Historia clinica Nro : ' + SER109T.NROHIST);
+        $('.fechaingreso_SER109T').text();
+        $('.estancia_SER109T').text(SER109T.DIASEST);
+        $('.nombrepaciente_SER109T').text(SER109T.NOMBRE_PACI);
+        $('.numerodecedulapaciente_SER109T').text('Ident : ' + SER109T.ID_PACI);
+
+        $('.abre_SER109T').text('ABRE : ' + SER109T.OPERNUM);
+        $('.cerro_SER109T').text('CERRO : ' + SER109T.OPERBLOQ_NUM);
+        $('.imp_SER109T').text('IMP : ' + SER109T.ADMINW);
+
+
+        for (var i in SER109T.FACTURAS) {
+            $('.tabladescrip_SER109T tbody').append(
+                '<tr>' +
+                '<td style="width: 1%;font-size:9px;">' + SER109T.FACTURAS[0].LLAVE + '</td>' +
+                '<td style="width: 5%;font-size:9px;">' + SER109T.FACTURAS[0].ART + '</td>' +
+                '<td style="width: 20%;font-size:9px;">' + SER109T.FACTURAS[0].DETALLE + '</td>' +
+                '<td style="width: 1%;font-size:9px;">' + SER109T.FACTURAS[0].CANT + '</td>' +
+                '<td style="width: 3%;font-size:9px;">' + SER109T.FACTURAS[0].VALOR + '</td>' +
+                '<td style="width: 3%;font-size:9px;">' + SER109T.FACTURAS[0].VALOR_TAR + '</td>' +
+                '</tr>'
+            )
+        }
+
+        var nit = SER109T.NIT;
+        var url = path.join(`P:\\PROG\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('.logo')
+        });
+    })
+</script>

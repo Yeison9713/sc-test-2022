@@ -1,0 +1,133 @@
+<div class="col-md-12" id="VAL_0B">
+  <div class="portlet light no-padding" style="background-color: transparent !important; box-shadow: none !important">
+    <div class="portlet-body">
+      <div class="form-horizontal">
+        <transition v-if="mostrar_CTREF802">
+          <div class="modal-mask">
+            <div class="modal-wrapper">
+              <div v-if="mostrar_CTREF802" class="col-md-10 no-padding">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                  <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <h3 style="margin-top: 5px; margin-bottom: 0px; padding-bottom: 10px">{{ descrip_paci }}</h3>
+                    <table class="table table-light table-striped" style="margin-bottom: 0px; width: 98%">
+                      <thead>
+                        <tr>
+                          <th class="col-md-1 text-center">Estado</th>
+                          <th class="col-md-1 text-center">Sucursal</th>
+                          <th class="col-md-1 text-center">Folio</th>
+                          <th class="col-md-2 text-center">Fecha</th>
+                          <th class="col-md-1 text-center">Hora</th>
+                          <th class="col-md-3 text-center">Medico Refiere</th>
+                          <th class="col-md-1 text-center">Elab</th>
+                          <th class="col-md-3 text-center">Acciones</th>
+                        </tr>
+                      </thead>
+                    </table>
+                    <div style="max-height: 532px; overflow-y: scroll; display: inline-block; width: 100%">
+                      <table id="tabla_CTREF802" class="table table-light table-striped" style="margin-bottom: 0px">
+                        <tbody>
+                          <tr v-for="(registro, index) in tabla_CTREF802" style="height: 48px">
+                            <td class="col-md-1 text-center">
+                              <button
+                                type="button"
+                                class="btn btn-default btn-circle"
+                                :class="registro.string_color"
+                                style="width: 0px; height: 24px; border: none"
+                              >
+                                &nbsp;
+                              </button>
+                            </td>
+                            <td class="col-md-1 text-center">{{ registro.folio_suc_ref }}</td>
+                            <td class="col-md-1 text-center">{{ registro.folio_nro_ref }}</td>
+                            <td class="col-md-2 text-center">{{ registro.fecha_edit }}</td>
+                            <td class="col-md-1 text-center">{{ registro.hora_edit }}</td>
+                            <td class="col-md-3 text-center">{{ registro.descrip_med_ref }}</td>
+                            <td class="col-md-1 text-center">{{ registro.oper_elab_ref }}</td>
+                            <td class="col-md-3 text-right" id="acciones">
+                              <button
+                                v-if="registro.btn.cancelar"
+                                title="Cancelar"
+                                type="button"
+                                class="btn btn-default btn-circle bt-reg"
+                                style="background-color: #cb4335"
+                                @click="event_C(registro)"
+                              >
+                                C
+                              </button>
+                              <button
+                                v-if="registro.btn.activar"
+                                title="Activar"
+                                type="button"
+                                class="btn btn-default btn-circle bt-reg"
+                                style="background-color: #27ae60"
+                                @click="event_A(registro)"
+                              >
+                                A
+                              </button>
+                              <button
+                                v-if="registro.btn.imprimir"
+                                title="Imprimir"
+                                type="button"
+                                class="btn btn-default btn-circle bt-reg"
+                                style="background-color: #f4d03f"
+                                @click="event_P(registro)"
+                              >
+                                P
+                              </button>
+                              <button
+                                v-if="registro.btn.nueva_solicitud"
+                                title="Nueva Solicitud Basada"
+                                type="button"
+                                class="btn btn-default btn-circle bt-reg"
+                                style="background-color: #5dade2"
+                                @click="event_N(registro)"
+                              >
+                                N
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .bg-red {
+    background-color: #cb4335 !important;
+  }
+
+  .bg-green {
+    background-color: #27ae60 !important;
+  }
+
+  .bg-yellow {
+    background-color: #f4d03f !important;
+  }
+
+  .bg-brown {
+    background-color: burlywood !important;
+  }
+
+  .bg-blue {
+    background-color: #5dade2 !important;
+  }
+
+  .bt-reg {
+    color: white;
+    border-radius: 17px;
+    box-shadow: rgb(35, 57, 94) 0px 1px 4px 2px !important;
+    border: none;
+  }
+</style>
+
+<script src="../../frameworks/pdf/hiclin/HCBI06.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/scripts/valMenus/VAL_0B.js" type="text/javascript"></script>

@@ -1,0 +1,1114 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER110C">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-2 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-12 col-xs-12">Novedad</label>
+                            <div class="input-group col-md-6 col-sm-12 col-xs-12">
+                                <input v-model='form.novedad_SER110C' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-7 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-9 col-xs-12">Identificación</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="NUMERO_SER110C">
+                                <input v-model='form.numero_SER110C' type="text" @Keyup.F8='_f8identificacion_SER110C'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 identificacion_SER110C" maxlength="15" data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8identificacion_SER110C' class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-5 col-xs-5 hidden" id="BLOQHC_SER110C">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-9 col-xs-12">Bloq Hc</label>
+                            <div class="input-group col-md-9 col-sm-4 col-xs-12">
+                                <input id='Bloqhc_SER110C' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-xs-5">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-9 col-xs-12">Tipo Identif</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="IDENTIF_SER110C">
+                                <input v-model='form.identif_SER110C' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-5 col-xs-5">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-9 col-xs-12">Lugar Exp</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id='LUGARNAM_SER110C'>
+                                <input v-model='form.lugar_SER110C' type="text" @Keyup.F8='_f8lugar_SER110C'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 lugar_SER110C" maxlength="5" data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8lugar_SER110C' class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">1er Apellido</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="APELLIDO1_SER110C">
+                                <input id="apellido1_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">2do Apellido</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="APELLIDO2_SER110C">
+                                <input id="apellido2_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">1er Nombre</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="NOMBRE1_SER110C">
+                                <input id="nombre1_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">2do Nombre</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="NOMBRE2_SER110C">
+                                <input id="nombre2_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-7 col-xs-12">F. Nacimiento</label>
+                            <div class="input-group col-md-3 col-sm-4 col-xs-12" id="ANONAC_SER110C">
+                                <input v-model="form.anonac_SER110C" type="text" placeholder="AAAA"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-4 col-xs-12" id="MESNAC_SER110C">
+                                <input v-model="form.mesnac_SER110C" type="text" placeholder="MM"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-4 col-xs-12" id="DIANAC_SER110C">
+                                <input v-model="form.dianac_SER110C" type="text" placeholder="DD"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Edad</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="EDAD_SER110C">
+                                <input v-model="form.edad_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-5 col-xs-12">Grup Sang:</label>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-12" id="GRUPOSANG_SER110C">
+                                <input v-model="form.gruposang_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                            </div>
+                            <label class="col-md-3 col-sm-5 col-xs-12">Factor RH:</label>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-9" id="RH_SER110C">
+                                <input v-model="form.rh_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Sexo</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="SEXO_SER110C">
+                                <input v-model="form.sexo_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="F/M">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-4 col-sm-5 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Estado Civil</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="CIVIL_SER110C">
+                                <input v-model="form.civil_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-8 col-xs-12">Nivel Estudio</label>
+                            <div class="input-group col-md-7 col-sm-8 col-xs-12" id="ESTUDIO_SER110C">
+                                <input v-model="form.estudio_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-6 col-xs-12">Zona</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="ZONA_SER110C">
+                                <input v-model="form.zona_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="U/R">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-8 col-xs-8 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-6 col-sm-5 col-xs-5 hidden" id="EMAIL2_SER110C">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-5 col-xs-12">Email</label>
+                            <div class="input-group col-md-8 col-sm-7 col-xs-12" id="CORREO2PACI_SER110C">
+                                <input v-model="form.correo2_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="80" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 hidden" id="PADRE_SER110C">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-6 col-xs-12">Nombre Padre</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                <input v-model="form.padre_SER110C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" 
+                                maxlength="30" data-orden="1" @keyup="event => _caracteresespeciales_SER110C(event, 'padre_SER110C')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 hidden" id="MADRE_SER110C">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-6 col-xs-12">Nombre Madre</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                <input v-model="form.madre_SER110C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" 
+                                    maxlength="30" data-orden="1" @keyup="event => _caracteresespeciales_SER110C(event, 'madre_SER110C')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-7 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-5 col-xs-5">Ciudad</label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-4" id="CIUDAD_SER110C">
+                                <input v-model="form.ciudad_SER110C" type="text" @Keyup.F8='_f8ciudad_SER110C'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 ciudad_SER110C" maxlength="5" data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8ciudad_SER110C()' class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-9 col-xs-9">
+                                <input v-model="form.ciudadd_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-6 col-xs-12">Telefono 1</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="TELEFONO_SER110C">
+                                <input id="tel1_SER110C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="10" data-orden="1">
+                            </div>
+                            <button type="button" @click='_cambioEvento_SER110C' class="btn hidden btn-default col-md-1 col-sm-1 col-xs-1" id= "VALIDARBOTOM_SER110C"
+                            data-validar="_evaluartelefono1_SER110C">
+                                <i class="glyphicon glyphicon-pencil" data-validar="_evaluartelefono1_SER110C"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-6 col-xs-12">Telefono 2</label>
+                            <div class="input-group col-md-7 col-sm-9 col-xs-9" id="TELEFONO2_SER110C">
+                                <input id="tel2_SER110C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="10" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-3 col-sm-5 col-xs-5">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Orig.Pais</label>
+                            <div class="input-group col-md-6 col-sm-5 col-xs-12" id="PAIS_SER110C">
+                                <input v-model="form.pais_SER110C" type="text" @Keyup.F8='_f8pais_SER110C'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 pais_SER110C" maxlength="3" data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8pais_SER110C' class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-9 col-xs-9">
+                                <input v-model="form.paisd_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-4 col-xs-12">Barrio</label>
+                            <div class="input-group col-md-6 col-sm-12 col-xs-12" id="BARRIOS_SER110C">
+                                <input v-model="form.barrio_SER110C" type="text" @Keyup.F8='_f8barrios_SER110C'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 barrio_SER110C" maxlength="11" data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8barrios_SER110C' class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.descripbarrio_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-xs-5">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Nivel</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="NIVEL_SER110C">
+                                <input v-model="form.nivel_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Copago</label>
+                            <div class="input-group col-md-7 col-sm-5 col-xs-12" id="COPAGO_SER110C">
+                                <input id="copago_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                            <button type="button" @click='_cambioEvento_SER110C' class="btn hidden btn-default col-md-1 col-sm-1 col-xs-1" id= "VALIDARBOTOM4_SER110C"
+                            data-validar="_evaluarcopago_SER110C">
+                                <i class="glyphicon glyphicon-pencil" data-validar="_evaluarcopago_SER110C"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-5 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-4 col-xs-12">Direccion</label>
+                            <div class="input-group col-md-9 col-sm-12 col-xs-12" id="DIRECCION_SER110C">
+                                <input v-model="form.direccion_SER110C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" 
+                                maxlength="30" data-orden="1"  @keyup="event => _caracteresespeciales_SER110C(event, 'direccion_SER110C')">
+                            </div>
+                            <button type="button" @click='_cambioEvento_SER110C' class="btn hidden btn-default col-md-1 col-sm-1 col-xs-1" id= "VALIDARBOTOM1_SER110C"
+                            data-validar="_evaluardireccion_SER110C">
+                                <i class="glyphicon glyphicon-pencil" data-validar="_evaluardireccion_SER110C"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-7 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-5">Ocupacion</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-4" id="OCUPACION_SER110C">
+                                <input v-model="form.ocupacion_SER110C" type="text" @Keyup.F8='_f8ocupacion_SER110C'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 ocupacion_SER110C" maxlength="4" data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8ocupacion_SER110C' class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                <input v-model="form.ocupaciond_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Regimen</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="REGIMEN_SER110C">
+                                <input v-model="form.regimen_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10" data-orden="1">
+                            </div>
+                            <button type="button" @click='_cambioEvento_SER110C' class="btn hidden btn-default col-md-1 col-sm-1 col-xs-1" id= "VALIDARBOTOM2_SER110C"
+                            data-validar="_evaluarregimen_SER110C">
+                                <i class="glyphicon glyphicon-pencil" data-validar="_evaluarregimen_SER110C"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-6">Cod Colegio</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-2" id="COLEGIO_SER110C">
+                                <input v-model="form.colegio_SER110C" type="text" @Keyup.F8='_f8colegio_SER110C'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 colegio_SER110C" maxlength="12" data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8colegio_SER110C' class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-9 col-xs-9">
+                                <input v-model="form.colegiod_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-3">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Etnia</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12" id="ETNIA_SER110C">
+                                <input v-model="form.etnia_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-2 col-xs-3">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">I:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                <input v-model="form.indigena_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-2 col-xs-3">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">C:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                <input v-model="form.comunidades_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-2 col-xs-3">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">R: </label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                <input v-model="form.resguardos_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-2 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-4 col-xs-12">T. Afiliado</label>
+                            <div class="input-group col-md-7 col-sm-8 col-xs-12" id="TIPOAFIL_SER110C">
+                                <input v-model="form.tipoafil_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Portabilidad</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="PORTABILI_SER110C">
+                                <input v-model="form.portabilidad_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12" id="CIUDADPORTA_SER110C">
+                                <input v-model="form.ciudadportab_SER110C" type="text" @Keyup.F8='_f8portabilidad_SER110C'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 portabilidad_SER110C" maxlength="5" data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8portabilidad_SER110C' class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-8 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-6 col-xs-6">Entidad Afil</label>
+                            <div class="input-group col-md-7 col-sm-3 col-xs-6" id="AFILIADO_SER110C">
+                                <input v-model="form.eps_SER110C" type="text" @Keyup.F8='_f8eps_SER110C'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 eps_SER110C" maxlength="10" data-orden="1">
+                            </div>
+                            <button type="button" @click='_cambioEvento_SER110C' class="btn hidden btn-default col-md-1 col-sm-1 col-xs-1" id= "VALIDARBOTOM3_SER110C"
+                            data-validar="_evaluarentidadafiliada_SER110C">
+                                <i class="glyphicon glyphicon-pencil" data-validar="_evaluarentidadafiliada_SER110C"></i>
+                            </button>
+                            <button type="button" @click='_f8eps_SER110C' class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.epsd_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Contrato</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="CONTRATO_SER110C">
+                                <input v-model="form.contrato_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <form class="form-horizontal">
+            <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Fecha Afilia</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="FECHAAFIL_SER110C">
+                                <input id="fechaafil_SER110C"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="12" data-orden="1"
+                                    placeholder="AAAA/MM/DD">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Ficha</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="FICHA_SER110C">
+                                <input v-model="form.ficha_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">No. Carnet</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="CARNET_SER110C">
+                                <input v-model="form.carnet_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Fecha Vence</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="FECHAVENCE_SER110C">
+                                <input id="fechavence_SER110C"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="12" data-orden="1"
+                                    placeholder="AAAA-MM-DD">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-9 col-xs-12">Fecha Demand Ind</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="FECHADEMAN_SER110C">
+                                <input v-model="form.fechademan_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="12" data-orden="1"
+                                    placeholder="AAAA-MM-DD">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Demanda Ind</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="DEMANDAINDU_SER110C">
+                                <input v-model="form.demandaindu_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Codigo Ant</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="CODANT_SER110C">
+                                <input v-model="form.codant_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-7 col-sm-7 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-6 col-xs-6">Id Cotizante</label>
+                            <div class="input-group col-md-7 col-sm-5 col-xs-5" id="COTIZANTE_SER110C">
+                                <input v-model="form.cotizante_SER110C" type="text" @Keyup.F8='_f8cotizante_SER110C'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 cotizante_SER110C" maxlength="15" data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8cotizante_SER110C' class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.cotizanted_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Parentezco</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="PARENTEZCO_SER110C">
+                                <input v-model="form.parentezco_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-7 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-12">Empresa Laboral</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-12" id="EMPRESALAB_SER110C">
+                                <input v-model="form.empresalab_SER110C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                 maxlength="30" data-orden="1" @keyup="event => _caracteresespeciales_SER110C(event, 'empresalab_SER110C')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Fecha R. Matr:</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="FECHAMATR_SER110C">
+                                <input v-model="form.fechamatr_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id="FECHAMATR2_SER110C">
+                                <input v-model="form.matr_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Fecha D. Econ:</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="FECHAECONO_SER110C">
+                                <input v-model="form.fechaecono_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id="NUMERECONO_SER110C">
+                                <input v-model="form.econo_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-8 col-xs-8 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Victima Conflicto?</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="EVAVICTIMAC_SER110C">
+                                <input id="victimac_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Programa Especial?</label>
+                            <div class="input-group col-md-6 col-sm-3 col-xs-12" id="EVAPROESPECIAL_SER110C">
+                                <input id="proespecial_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Paciente Alto Costo?</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="EVAALTOCOSTO_SER110C">
+                                <input id="altocosto_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Paciente Cronico?</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="EVACRONIC_SER110C">
+                                <input id="cronica_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="PATOLOGIA_SER110C">
+                                <input v-model="form.patologiacronica_SER110C" type="text" @Keyup.F8='_f8patologias_SER110C'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 patologiacronica_SER110C" maxlength="3" data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8patologias_SER110C' class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-8 col-xs-8 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Paciente tutela?</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="EVAPACITUTELA_SER110C">
+                                <input id="pacitutela_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Clasificacion:</label>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-12" id="CLASIF_SER110C">
+                                <input v-model="form.clasif_SER110C" type="text" @Keyup.F8='_f8clasificacion_SER110C'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 clasif_SER110C" maxlength="2" data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8clasificacion_SER110C' class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-12" id="DESCRIPCLASIF_SER110C">
+                                <input v-model="form.clasifd_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Ultima Mamografia</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="MAMOGRAFIA1_SER110C">
+                                <input v-model="form.mamografiaano_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                    placeholder="AAAA">
+                            </div>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="MAMOGRAFIA2_SER110C">
+                                <input v-model="form.mamografiames_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1"
+                                    placeholder="MM">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Pte Policonsultante?</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="EVAPOLICONSUL_SER110C">
+                                <input id="policonsul_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Cand PYP</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="EVACANDPYP_SER110C">
+                                <input id="candpyp_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-8 col-xs-12">Finalidad</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12" id="EVAFINALIDAD_SER110C">
+                                <input v-model="form.finalidad_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <label> PACIENTE TIENE DERECHO A: </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form class="form-horizontal">
+            <div class="col-md-2 col-sm-2 col-xs-2  no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">Restricc?</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="EVARESTRIC_SER110C">
+                                <input id="restric_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">Consulta</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="EVACONSULT_SER110C">
+                                <input id="consult_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">Odont</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="EVAODONT_SER110C">
+                                <input id="odont_SER110C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="1" data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">PYP</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" id="EVAPYP_SER110C">
+                                <input id="pyp_SER110C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="1" data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">Laborat</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="EVALAB_SER110C">
+                                <input id="lab_SER110C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="1" data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">RX</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="EVARX_SER110C">
+                                <input id="rx_SER110C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="1" data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form class="form-horizontal">
+            <div class="col-md-2 col-sm-2 col-xs-2  no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">Drogue</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="EVADROG_SER110C">
+                                <input id="drog_SER110C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="1" data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">Fisiote</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="EVAFISIOT_SER110C">
+                                <input id="fisiot_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">Otra Terap</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="EVATERAP_SER110C">
+                                <input id="terap_SER110C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="1" data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">Cirugia</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="EVACIRUG_SER110C">
+                                <input id="cirug_SER110C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="1" data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">Estancia</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="EVAESTANC_SER110C">
+                                <input id="estanc_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">VCM</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="EVAVCM_SER110C">
+                                <input id="vcm_SER110C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="1" data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form class="form-horizontal">
+            <div class="col-md-8 col-sm-8 col-xs-8 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-4 col-sm-5 col-xs-5">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Tiene Pagare</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" id="TIENEPAGARE_SER110C">
+                                <input id="pagare_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-5 col-xs-5">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Factura</label>
+                            <div class="input-group col-md-4 col-sm-6 col-xs-12" id="FACTURA_SER110C">
+                                <input v-model="form.prefijo_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1">
+                            </div>
+                            <div class="input-group col-md-8 col-sm-6 col-xs-12" id="FACTURA2_SER110C">
+                                <input v-model="form.factura_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-5 col-xs-5">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Valor</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" id="VALOR_SER110C">
+                                <input id="valor_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-7 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-5 col-xs-12">Observaciones</label>
+                            <div class="input-group col-md-8 col-sm-7 col-xs-12" id="OBSERVACIONES_SER110C">
+                                <input v-model="form.observaciones_SER110C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" 
+                                maxlength="20" data-orden="1" @keyup="event => _caracteresespeciales_SER110C(event, 'observaciones_SER110C')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-4 col-sm-4 col-xs-5">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Discap</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="DISCAPACIDAD_SER110C">
+                                <input v-model="form.discapacidad_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7" id="ENTIDAD_SER110C">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-8">Entidad Fact</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                                <input v-model="form.entidad_SER110C" type="text" @Keyup.F8='_f8terceros_SER110C'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 entidad_SER110C" maxlength="10" data-orden="1">
+                            </div>
+                            <button type="button" @click='_cambioEvento_SER110C' class="btn hidden btn-default col-md-1 col-sm-1 col-xs-1" id= "VALIDARBOTOM5_SER110C"
+                            data-validar="_evaluarnitfac_SER110C">
+                                <i class="glyphicon glyphicon-pencil" data-validar="_evaluarnitfac_SER110C"></i>
+                            </button>
+                            <button type="button" @click='_f8terceros_SER110C' class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-11 col-sm-11 col-xs-9">
+                                <input v-model="form.entidadd_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-9">
+                                <input v-model="form.fechasistd_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-7 col-xs-12" id="MEDICOFAM_SER110C">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Medico Familiar</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4" >
+                                <input v-model="form.medicofam_SER110C" type="text" @Keyup.F8='_f8profesionales_SER110C'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 medicofam_SER110C" maxlength="10" data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8profesionales_SER110C' class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                <input v-model="form.medicofamd_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 hidden" id="CORREO_SER110C">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Correo</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4" >
+                                <input v-model="form.correo_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="60" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <form class="form-horizontal">
+            <div class="col-md-4 col-sm-4 col-xs-4" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Estado Base Datos</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" id="BASEDATOS_SER110C">
+                                <input v-model="form.basedatos_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">Embarazo Alto Riesgo?</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="ALGORIESGO_SER110C">
+                                <input v-model="form.altoriesgo_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 hidden" id="ANTECEND_SER110C">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">Antecendentes de Cancer</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12">
+                                <input v-model="form.antecedentes_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-7 col-sm-7 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-4">Actual</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                <input v-model="form.opercreado_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10" data-orden="1">
+                            </div>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-9">
+                                <input v-model="form.fechacreado_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="8">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-5">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-12">Hr</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="HR_SER110C">
+                                <input v-model="form.hrcreado_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-7 col-sm-7 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-4">Modif</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="MODIF_SER110C">
+                                <input v-model="form.modificado_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10" data-orden="1">
+                            </div>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-9">
+                                <input v-model="form.fechamodif_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="8">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-5">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-12">Hr</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="HR2_SER110C">
+                                <input v-model="form.hrmodif_SER110C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SER110CV2.js" type="text/javascript"></script>

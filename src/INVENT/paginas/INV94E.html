@@ -1,0 +1,328 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id='INV94E'>
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-10 col-sm-10 col-xs-12 box-center" style="float: none; margin: 0 auto;">
+                    <div class="col-md-2 col-sm-2 col-xs-12" style="padding-right: 13px;">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model="form.documento_INV94E" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" style="padding-right: 13px;" id="VALIDAR1_INV94E">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Prefijo:</label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-12">
+                                <input v-model="form.sucursal_INV94E" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" style="padding-right: 13px;">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Nro:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" id="VALIDAR15_INV94E">
+                                <input id="nro_INV94E" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 nro_INV94E" data-orden="1" maxlength="6"
+                                @Keyup.F8='_ventananota_INV94E'>
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-3 col-sm-3 col-xs-3" @click='_ventananota_INV94E'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" style="padding-right: 13px;">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Fecha:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="VALIDAR2_INV94E">
+                                <input id="fecha_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="10">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-12" style="padding-right: 13px;" id="VALIDAR3_INV94E">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-3 col-xs-12">Prefijo:</label>
+                            <div class="input-group col-md-5 col-sm-2 col-xs-12">
+                                <input v-model="form.prefijo_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                            </div>
+                            <!-- <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                <input v-model="form.prefijod_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" id="VALIDAR4_INV94E">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Nro fact:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input id="nrofact_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="6">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-10 col-sm-10 col-xs-12 box-center" style="float: none; margin: 0 auto;">
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="VALIDAR5_INV94E">
+                        <div class="inline-inputs">
+                            <label class="col-md-2 col-sm-2 col-xs-12">CUFE FACTURA:</label>
+                            <div class="input-group col-md-11 col-sm-11 col-xs-12">
+                                <input v-model="form.cufe_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="127">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-2 col-sm-2 col-xs-12">CUFE NOTA:</label>
+                            <div class="input-group col-md-11 col-sm-11 col-xs-12">
+                                <input v-model='form.cufenota_INV94E' class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="salto-linea"></div> -->
+                   
+                    <!-- <div class="col-md-6 col-sm-6 col-xs-12" id="VALIDAR5_INV94E">
+                        <label>CUFE:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.cufecredito_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="127">
+                        </div>
+                    </div> -->
+                    <div class="salto-linea"></div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="float: none; margin: 0 auto;">
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">NIT:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                <input id='nit_INV94E' class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-12">Nombre:</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-12">
+                                <input v-model='form.nitd_INV94E' class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" style="padding-right: 5px;">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Neto:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                <input v-model='form.neto_INV94E' class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-12">Costo:</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12">
+                                <input v-model='form.costo_INV94E' class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                <input v-model='form.costod_INV94E' class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-1 col-sm-1 col-xs-12">
+                        <label>Item:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.item_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12" id="VALIDAR6_INV94E">
+                        <label>Grupo:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                <input v-model="form.grupo_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12 grupo_INV94E" data-orden="1" maxlength="2" @Keyup.F8='_ventanaGrupos_INV94E'>
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-3 col-sm-3 col-xs-3" @click='_ventanaGrupos_INV94E'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" id="VALIDAR7_INV94E">
+                        <label>Articulo:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                <input v-model="form.articulo_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12 articulo_INV94E" data-orden="1" maxlength="15" @Keyup.F8='_ventanaArticulos_INV94E'>
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2" @click='_ventanaArticulos_INV94E'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12" id="VALIDAR8_INV94E">
+                        <label>Cl:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.cl_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <label>Descripcion:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.descripcionarticulo_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12" id="VALIDAR9_INV94E">
+                        <label>Cantidad:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="cantidad_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="12">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" id="VALIDAR10_INV94E">
+                        <label>Vlr unit:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="vlrunitario_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="12">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" id="VALIDAR11_INV94E">
+                        <label>IVA:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="IVA_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="12">
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <table class="table table-light table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 5%; text-align: center;">Item</th>
+                                <th style="width: 5%; text-align: center;">Grupo</th>
+                                <th style="width: 10%; text-align: center;">Articulo</th>
+                                <th style="width: 5%; text-align: center;">Cl</th>
+                                <th style="width: 30%; text-align: center;">Descripcion</th>
+                                <th style="width: 5%; text-align: center;">Cantidad</th>
+                                <th style="width: 15%; text-align: center;">Vlr Unit</th>
+                                <th style="width: 15%; text-align: center;">Vlr Tot+IVA</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div>
+                        <table id="TABLA_INV94E" class="table table-light table-striped">
+                            <tbody>
+                                <tr v-for="(row, index) in tablaarticulos_INV94E">
+                                    <td style="width: 5%; text-align: center;">
+                                        {{index + 1}}
+                                    </td>
+                                    <td style="width: 5%; text-align: center;">
+                                        {{row.GRUPO}}
+                                    </td>
+                                    <td style="width: 10%; text-align: center;">
+                                        {{row.ARTICULO}}
+                                    </td>
+                                    <td style="width: 5%; text-align: center;">
+                                        {{row.CL}}
+                                    </td>
+                                    <td style="width: 30%; text-align: center;">
+                                        {{row.DESCRIPCION}}
+                                    </td>
+                                    <td style="width: 5%; text-align: center;">
+                                        {{row.CANTIDAD}}
+                                    </td >
+                                    <td style="width: 15%; text-align: center;">
+                                        {{row.VLRUNIT}}
+                                    </td>
+                                    <td style="width: 15%; text-align: center;">
+                                        {{row.VLRTOTIVA}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" style="padding-right: 13px;">
+                        <label>Valor bruto:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="vlrbruto_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="15">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" style="padding-right: 13px;">
+                        <label>IVA:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="vlriva_INV94E" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" style="padding-right: 13px;">
+                        <label>Valor neto:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="vlrneto_INV94E" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" style="padding-right: 13px;">
+                        <label>RteFte:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-2 col-sm-2 col-xs-10" id="VALIDAR12_INV94E">
+                                <input id="porcentrtefte_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                            </div>
+                            <div class="input-group col-md-10 col-sm-10 col-xs-2" id="VALIDAR13_INV94E">
+                                <input id="vlrrtefte_INV94E" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="10">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" style="padding-right: 13px;">
+                        <label>ReteCree:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="vlrretecree_INV94E" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" style="padding-right: 13px;">
+                        <label>TOTAL:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="vlrtotal_INV94E" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-8 col-sm-6 col-xs-12" id="VALIDAR14_INV94E">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-12">Detalle:</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-12">
+                                <input v-model='form.detalle_INV94E' class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="50">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-12">Tipo de Nota:</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-12">
+                                <input v-model='form.tiponota_INV94E' class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="50">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-9 col-sm-9 col-xs-12">Oper crea:</label>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-12">
+                                <input v-model='form.opercre_INV94E' class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Fecha crea:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                <input v-model='form.fechacrea_INV94E' class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-9 col-sm-9 col-xs-12">Oper modif:</label>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-12">
+                                <input v-model='form.opermodif_INV94E' class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Fecha modif:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                <input v-model='form.fechamodif_INV94E' class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../INVENT/scripts/INV94E.js" type="text/javascript"></script>

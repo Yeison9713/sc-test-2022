@@ -1,0 +1,458 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER509">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="col-md-8 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-2 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Prefijo</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="PREFIJOS_SER509">
+                                <input v-model="form.prefijo_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1"
+                                    onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-2 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">N. Factura</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" id="FACTURASER_SER509">
+                                <input v-model="form.factura_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1">
+                            </div>
+                            <button type="button" class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Convenio</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" id="CONVENIO_SER509">
+                                <input v-model="form.convenio_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1"
+                                    onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model="form.conveniod_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Historia</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="HISTORIA_SER509">
+                                <input v-model="form.historia_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1"
+                                    onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model="form.historiad_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-8 col-xs-12">Estado</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="ESTADO_SER509">
+                                <input v-model="form.estado_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-2 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Nit cliente</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" id="NIT_SER509">
+                                <input v-model="form.nit_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model="form.nitd_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-2 col-xs-6" id='CUFE_SERSER509'>
+                        <div class="inline-inputs">
+                            <label class="col-md-2 col-sm-8 col-xs-12">Cufe </label>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12 ">
+                                <input v-model="form.cufe_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="128" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-6 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Bloq rips? </label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-12" id="BLOQUEO_SER509">
+                                <input v-model="form.bloq_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6  col-sm-8 col-xs-12">Envio </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" id="ENVIORIPS_SER509">
+                                <input v-model="form.envrips_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1"
+                                    onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Envio Elec </label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-12" id="ENVIOELEC_SER509">
+                                <input v-model="form.envelec_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1"
+                                    onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Estado cob</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" id="ESTADOCOBR_SER509">
+                                <input v-model="form.cobranza_SER509" type="text" @Keyup.F8='_f8estadocobro_SER509'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 cobranza_SER509" 
+                                    maxlength="1" data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8estadocobro_SER509'
+                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Elim Envio</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model="form.Operelim_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Fecha Elim</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model="form.fechaelim_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Datos del Paciente:</label>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-8 col-xs-12">Id </label>
+                            <div class="input-group col-md-9 col-sm-4 col-xs-12" id="IDPACIENTE_SER509">
+                                <input v-model="form.idpacientes_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15" data-orden="1">
+                            </div>
+                            <button type="button" class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-8 col-xs-12">Nombre</label>
+                            <div class="input-group col-md-9 col-sm-4 col-xs-12" id="NOMBREPACIENTE_SER509">
+                                <input v-model="form.nombrepaci_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="40" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Edad </label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-12">
+                                <input v-model="form.edadpaci_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-2 col-sm-2 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-8 col-xs-12">Habitación</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model="form.habit_SER509" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="3" data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">%Copago</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model= "form.porcent_SER509" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-2 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Fecha Ing</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model="form.fechaing_SER509" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                 placeholder="AAAA/MM/DD">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-2 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Fecha Ret</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model="form.fecharet_SER509" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                 placeholder="AAAA/MM/DD">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-2 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Nr contrato</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model="form.nrocontrato_SER509" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-2 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Factura capitacion</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model="form.factcapitacion_SER509" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-2 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-8 col-xs-12">Observacion</label>
+                            <div class="input-group col-md-9 col-sm-4 col-xs-12">
+                                <input v-model="form.observacion_SER509" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-2 col-xs-6" id="DETALLEW_SER509">
+                        <div class="inline-inputs" >
+                            <label class="col-md-3 col-sm-8 col-xs-12">Detalle cartera</label>
+                            <div class="input-group col-md-9 col-sm-4 col-xs-12">
+                                <input v-model="form.detallew_SER509"  maxlength="50" data-orden="1"
+                                type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-2 col-xs-6"  id="DETALLECART_SER509">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model="form.detallecart_SER509"  maxlength="50" data-orden="1"
+                                type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-2 col-xs-6" id="POLIZA_SER509">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Poliza soat</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model="form.polizasoat_SER509" maxlength="30" data-orden="1"
+                                type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-2 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Estancia</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model="form.estancia_SER509" 
+                                type="number" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="height: 238px;">
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-8 col-xs-12">Valor factura </label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12">
+                                <input v-model="form.valorfact_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-8 col-xs-12">Copagos </label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12">
+                                <input v-model="form.copagos_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-8 col-xs-12">Abonos</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12">
+                                <input v-model="form.abonos_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box"></div>
+                    <div class="col-md-12 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-8 col-xs-12">Saldo</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12">
+                                <input v-model="form.saldo_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Datos Glosas:</label>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Fecha glosa </label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-12" id="ANOGLOSA_SER509">
+                                <input v-model="form.anoglosa_SER509"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1" placeholder="AAAA">
+                            </div>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-12" id="ANOGLOSA_SER509">
+                                <input v-model="form.mesglosa_SER509"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2" placeholder="MM">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-8 col-xs-12">Radicacion</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" id="NUMGLOSAS_SER509">
+                                <input v-model="form.radicaclosa_SER509"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-8 col-xs-12">Valor glosa </label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12"  id="NUMGLOSAS_SER509">
+                                <input id="valorglosa_SER509"  maxlength="11" data-orden="2"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-8 col-xs-12">Respuesta</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12"  id="NUMGLOSAS_SER509">
+                                <input id="repuestaglosa_SER509" maxlength="11" data-orden="3"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-8 col-xs-12">Definitiva</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12"  id="NUMGLOSAS_SER509">
+                                <input id="definitivaglosa_SER509" maxlength="12" data-orden="4"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-8 col-xs-12">Traslado contable</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12"  id="NUMGLOSAS_SER509">
+                                <input id="trasladoglosa_SER509" maxlength="11" data-orden="5"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Creado </label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-12" >
+                                <input v-model="form.opercreado_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Fecha creado</label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-12" >
+                                <input v-model="form.fechacreado_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Modificado </label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-12">
+                                <input v-model="form.opermodificado_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Fecha modificado </label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-12">
+                                <input v-model="form.fechamodificado_SER509" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script src="../../SALUD/scripts/SER509.js"></script>

@@ -1,0 +1,380 @@
+<style>
+    .totales {
+        margin: 10px auto 0 auto;
+        float: none;
+        padding: 0;
+    }
+
+    #tablaVenta td:nth-child(1) {
+        width: 15%;
+        padding: 8px;
+    }
+
+    #tablaVenta td:nth-child(2),
+    #tablaVenta td:nth-child(3) {
+        width: 42.5%;
+        padding: 8px;
+        text-align: right;
+    }
+
+    #tablaVales td:nth-child(6) {
+        white-space: nowrap;
+    }
+
+    #tablaVales td:nth-child(3),
+    #tablaVales td:nth-child(4),
+    #tablaVales td:nth-child(5),
+    #tablaVales th:nth-child(3),
+    #tablaVales th:nth-child(4),
+    #tablaVales th:nth-child(4),
+    #tablaVenta th:nth-child(2),
+    #tablaVenta th:nth-child(3) {
+        text-align: right;
+    }
+
+    #documento {
+        display: none;
+    }
+</style>
+<div class="col-md-12">
+    <div class="portlet light box-center box-title">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject bold">2-7 - Correccion de surtidores de comprobantes</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <form class="form-horizontal">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12" style="margin: 0 auto; float: none;">
+                        <div class="col-md-3 col-sm-3 col-xs-4" id="validarComprobante_104x">
+                            <label>Comprobante:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="numComprobante_104x" type="number"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1"
+                                    required="true">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-4">
+                            <label>Año:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="añoInicial_104x" type="number"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2">
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-4">
+                            <label>Mes:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="mesInicial_104x" type="number"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2">
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-4" id="fase2">
+                            <label>Dia:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="diaInicial_104x" type="number"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                            </div>
+                        </div>
+                        <div id="fase3">
+                            <div class="col-md-1 col-sm-1 col-xs-4" id="primeraIsla">
+                                <label>Islas:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="primeraIslaInpt" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                            <div class="col-md-1 col-sm-1 col-xs-4" id="segundaIsla">
+                                <label>&nbsp;</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="segundaIslaInpt" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                            <div class="col-md-1 col-sm-1 col-xs-4" id="terceraIsla">
+                                <label>&nbsp;</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="terceraIslaInpt" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                            <div class="salto-linea"></div>
+                            <div class="col-md-2 col-sm-2 col-xs-4">
+                                <div class="inline-inputs">
+                                    <label class="col-md-6 col-sm-6 col-xs-12">Turno:</label>
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                        <input id="turno_104x" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            maxlength="1" data-orden="1" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-4">
+                                <div class="inline-inputs">
+                                    <label class="col-md-3 col-sm-5 col-xs-12">Detalle:</label>
+                                    <div class="input-group col-md-9 col-sm-7 col-xs-12">
+                                        <input id="detalle_104x" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            maxlength="20" data-orden="2" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <div class=" inline-inputs">
+                                    <label class="col-md-4 col-sm-5 col-xs-12">Vendedor:</label>
+                                    <div class="input-group col-md-5 col-sm-7 col-xs-12">
+                                        <input id="vendedor_104x" class="form-control col-md-12 col-sm-12 col-xs-12 "
+                                            maxlength="5" data-orden="3">
+                                    </div>
+                                    <button type="button" id="vendedorBtn_104e"
+                                        class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-3 col-sm-3 col-xs-12">Sucursal:</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-12" id="faseSucursal">
+                                    <input id="sucursal" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" required="true">
+                                </div>
+                                <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                    <input id="sucursalNom" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="col-md-5 col-sm-4 col-xs-4 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                            <table id="tablaVenta" class="table table-light table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Sur</th>
+                                        <th>Galonaje</th>
+                                        <th>Venta</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>Total: </td>
+                                        <td><a id="galonajeTablaVenta"></a></td>
+                                        <td><a id="ventaTablaVenta"></a></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="col-md-7 col-sm-8 col-xs-4" style="padding-right: 0;">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                            <!-- Info producto -->
+                            <div class="col-md-2 col-sm-2 col-xs-4">
+                                <label>Item:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="codItem" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                <label>Producto:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="codProducto" type="test"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-4">
+                                <label>&nbsp;</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="descProducto" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                            <div style="clear:both;"></div>
+                            <hr>
+                            <!-- Info producto -->
+                            <div class="col-md-8 col-sm-12 col-xs-4" style="margin: 0 auto;float:none;padding: 0;"
+                                id="validarNumeroActual">
+                                <div class="inline-inputs">
+                                    <label class="col-md-5 col-sm-4 col-xs-12">Galonaje actual:</label>
+                                    <div class="input-group col-md-7 col-sm-4 col-xs-12">
+                                        <input id="galonajeTotal" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            data-orden="1" maxlength="16">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="clear:both;"></div>
+                            <hr>
+                            <div class="col-md-8 col-sm-10 col-xs-12" style="margin: 0 auto;float:none;padding: 0;">
+                                <div class="col-md-12 col-sm-12 col-xs-4" style="margin-top: 0px;"
+                                    id="validarValorVenta">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-5 col-xs-12">Venta combu:</label>
+                                        <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                            <input id="valorVentaMask"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 " data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-4" style="margin-top: 10px;"
+                                    id="validarSobretasa">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-5 col-xs-12">Valor sobretasa:</label>
+                                        <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                            <input id="valorSobretasaMask"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 " data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-4" style="margin-top: 10px;"
+                                    id="validarSobretasaGlobal">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-5 col-xs-12">Valor global:</label>
+                                        <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                            <input id="valorGlobalMask"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 " data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 col-sm-4 col-xs-4 no-padding"></div>
+                    <div class="col-md-7 col-sm-8 col-xs-4" style="padding-right: 0;">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                            <div class="col-md-10 col-sm-10 col-xs-12 totales" style="margin-top: 0;">
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-3 col-sm-3 col-xs-12" style="margin-right: 10px;">
+                                        <label class="col-md-12 col-sm-12 col-xs-12">4105</label>
+                                    </div>
+
+                                    <label class="col-md-3 col-sm-4 col-xs-12">Combustibles</label>
+                                    <div class="input-group col-md-6 col-sm-5 col-xs-12">
+                                        <input id="totalCombustible" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            data-orden="1" maxlength="11" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="plantillaProducto" class="hidden">
+    <div class="col-md-12">
+        <div class="portlet light no-padding">
+            <div class="portlet-body no-padding">
+                <form class="form-horizontal">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 no-padding" style="margin: 0 auto;">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="display:flex;" id="productoPopup">
+                            <div class="col-md-6 inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-12">Cod. articulo:</label>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                    <input class="codArticuloVentana form-control col-md-12 col-sm-12 col-xs-12 "
+                                        maxlength="9" data-orden="1">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input class="descripArticuloVentana form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="segundaFasePopup">
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="display:flex;margin-top: 10px;">
+                                <div class="col-md-5 col-sm-8 inline-inputs">
+                                    <label class="col-md-5 col-sm-5 col-xs-5">Cantidad:</label>
+                                    <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                        <input class="cantidadVentana form-control col-md-12 col-sm-12 col-xs-12 "
+                                            maxlength="7" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="display:flex;margin-top: 10px;">
+                                <div class="col-md-5 inline-inputs">
+                                    <label class="col-md-5 col-sm-5 col-xs-5">Placa:</label>
+                                    <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                        <input class="placaVentanaPopup form-control col-md-12 col-sm-12 col-xs-12 "
+                                            maxlength="6" data-orden="2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+
+
+
+<a class="hidden" id="abrirPopupBtn" data-toggle="modal" href="#static"></a>
+<div id="static" class="modal fade" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close hidden" data-dismiss="modal" aria-hidden="true"
+                    id="closePopup"></button>
+                <h4 class="modal-title">Impresión</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="portlet light no-padding">
+                        <div class="portlet-body no-padding">
+                            <form class="form-horizontal">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 no-padding"
+                                    style="margin: 0 auto;">
+                                    <div class="col-md-12 col-sm-12 inline-inputs">
+                                        <label class="col-md-5 col-sm-5 col-xs-5">Formato de impresión:</label>
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <select id="formatoImpresion" class="form-control select2 col-md-12">
+                                                <option value="0" selected>Seleccione</option>
+                                                <option value="1">En formato.PDF</option>
+                                                <option value="2">En formato .CSV</option>
+                                                <option value="3">Salir</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left: 0;margin-top: 10px;"
+                                        id="preguntaImpresion">
+                                        <div class="col-md-10 inline-inputs">
+                                            <label class="col-md-10 col-sm-10 col-xs-5">¿Desea
+                                                visualizar detallado?: (art/cant/placa)</label>
+                                            <div class="input-group col-md-2 col-sm-2 col-xs-7">
+                                                <input id="detallado"
+                                                    class="placaVentana form-control col-md-12 col-sm-12 col-xs-12 "
+                                                    maxlength="1" data-orden="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../BOMBAS/scripts/bom104x.js" type="text/javascript"></script>

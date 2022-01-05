@@ -1,0 +1,94 @@
+<div class="col-md-12" id="SER119D">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <form class="form-horizontal">
+                <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Novedad :</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input v-model="form.novedad_SER119D" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-2 col-sm-2 col-xs-12">Identificación :</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-11" id="VALIDAR1_SER119D">
+                                <input id="idmedico_SER119D" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="10"
+                                @Keyup.F8='_ventanaprofesionales_SER119D'>
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1" @click='_ventanaprofesionales_SER119D'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                <input v-model="form.idmedicod_SER119D" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 form-floating">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Fecha :</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR2_SER119D">
+                                <input id="fecha_SER119D" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="10" placeholder="YYYY/MM/DD">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Hora Inicial :</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR3_SER119D">
+                                <input id="horainicial_SER119D" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="5" placeholder="HH:mm">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Hora final :</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR4_SER119D">
+                                <input id="horafinal_SER119D" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="5" placeholder="HH:mm">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Observación :</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="VALIDAR5_SER119D">
+                                <input v-model="form.observacion_SER119D" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="50">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Oper mod :</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input v-model="form.opermod_SER119D" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Fecha mod :</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input v-model="form.fechamod_SER119D" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Hora mod :</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input v-model="form.horamod_SER119D" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../../SALUD/scripts/SER119D.js" type="text/javascript"></script>

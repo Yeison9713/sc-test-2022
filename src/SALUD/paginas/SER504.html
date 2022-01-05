@@ -1,0 +1,576 @@
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<div class="col-md-12" id="SER504">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="col-md-12 no-padding">
+          <div class="col-md-12 no-padding">
+            <div class="col-md-4 col-sm-6 col-xs-6" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div
+                    class="col-md-12 head-box"
+                    style="padding-bottom: 0 !important"
+                  >
+                    <label>Fecha Inicial</label>
+                  </div>
+                  <div class="col-md-12 no-padding" id="fecha_inicial">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-6 col-xs-6">Año</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="ano_ini"
+                          type="number"
+                          class="form-control col-md-12 text-center"
+                          maxlength="4"
+                          data-orden="1"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-6 col-xs-6">Mes</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="mes_ini"
+                          type="number"
+                          class="form-control col-md-12 text-center"
+                          maxlength="2"
+                          data-orden="2"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-12 col-xs-6">Dia</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="dia_ini"
+                          type="number"
+                          class="form-control col-md-12 text-center"
+                          maxlength="2"
+                          data-orden="3"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-6" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div
+                    class="col-md-12 head-box"
+                    style="padding-bottom: 0 !important"
+                  >
+                    <label>Fecha Final</label>
+                  </div>
+                  <div class="col-md-12 no-padding" id="fecha_final">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-6 col-xs-6">Año</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="ano_fin"
+                          type="number"
+                          class="form-control col-md-12 text-center"
+                          maxlength="4"
+                          data-orden="1"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-6 col-xs-6">Mes</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="mes_fin"
+                          type="number"
+                          class="form-control col-md-12 text-center"
+                          maxlength="2"
+                          data-orden="2"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-12 col-xs-6">Dia</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="dia_fin"
+                          type="number"
+                          class="form-control col-md-12 text-center"
+                          maxlength="2"
+                          data-orden="3"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-6 no-padding">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div
+                    class="col-md-12 head-box"
+                    style="padding-bottom: 0 !important"
+                  >
+                    <label>Abonos Hasta</label>
+                  </div>
+                  <div class="col-md-12 no-padding" id="fecha_abonos">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-6 col-xs-6">Año</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="ano_abo"
+                          type="number"
+                          class="form-control col-md-12 text-center"
+                          maxlength="4"
+                          data-orden="1"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-6 col-xs-6">Mes</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="mes_abo"
+                          type="number"
+                          class="form-control col-md-12 text-center"
+                          maxlength="2"
+                          data-orden="2"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-12 col-xs-6">Dia</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="dia_abo"
+                          type="number"
+                          class="form-control col-md-12 text-center"
+                          maxlength="2"
+                          data-orden="3"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 no-padding">
+            <div class="col-md-6" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="tercero">
+                    <label
+                      class="col-md-3"
+                      style="background: 0; text-align: left"
+                      >Nit del cliente a listar</label
+                    >
+                    <div class="input-group col-md-2">
+                      <input
+                        v-model="tercero"
+                        type="text"
+                        class="form-control text-center tercero"
+                        maxlength="10"
+                        data-orden="1"
+                        required="true"
+                        @keydown.f8="_ventanaTerceros"
+                      />
+                    </div>
+                    <button
+                      @click="_ventanaTerceros"
+                      type="button"
+                      class="btn f8-Btn col-md-1"
+                    >
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <label class="col-md-6" style="background: 0"
+                      >{{ descrip_tercero }}</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="mostrar_no_rad">
+                    <label
+                      class="col-md-9"
+                      style="background: 0; text-align: left"
+                      >Mostrar NO radicadas</label
+                    >
+                    <div class="input-group col-md-3">
+                      <input
+                        v-model="mostrar_no_rad"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 no-padding">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="separar_no_rad">
+                    <label
+                      class="col-md-9"
+                      style="background: 0; text-align: left"
+                      >Separar NO radicadas</label
+                    >
+                    <div class="input-group col-md-3">
+                      <input
+                        v-model="separar_no_rad"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="col-md-3" style="padding-left: 0">
+                <div
+                  class="form-group col-md-12 box-center"
+                  style="margin-bottom: 13px !important"
+                >
+                  <div class="col-md-12 no-padding" style="text-align: center">
+                    <div class="col-md-12 inline-inputs" id="prefijo">
+                      <label
+                        class="col-md-3"
+                        style="background: 0; text-align: left"
+                        >Prefijo</label
+                      >
+                      <div class="input-group col-md-3">
+                        <input
+                          v-model="prefijo"
+                          type="text"
+                          class="form-control text-center prefijo"
+                          maxlength="1"
+                          data-orden="1"
+                          required="true"
+                        />
+                      </div>
+                      <label class="col-md-6" style="background: 0"
+                        >* TODOS</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6" style="padding-left: 0">
+                <div
+                  class="form-group col-md-12 box-center"
+                  style="margin-bottom: 13px !important"
+                >
+                  <div class="col-md-12 no-padding" style="text-align: center">
+                    <div class="col-md-12 inline-inputs" id="serv_hosp">
+                      <label
+                        class="col-md-3"
+                        style="background: 0; text-align: left"
+                        >Servicio hospitalario</label
+                      >
+                      <div class="input-group col-md-2">
+                        <input
+                          v-model="serv_hosp"
+                          type="text"
+                          class="form-control text-center serv_hosp"
+                          maxlength="2"
+                          data-orden="1"
+                          required="true"
+                          @keydown.f8="_ventanaServHosp"
+                        />
+                      </div>
+                      <button
+                        @click="_ventanaServHosp"
+                        type="button"
+                        class="btn f8-Btn col-md-1"
+                      >
+                        <i class="icon-magnifier"></i>
+                      </button>
+                      <label class="col-md-7" style="background: 0"
+                        >{{ descrip_serv_hosp }}</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 no-padding">
+                <div
+                  class="form-group col-md-12 box-center"
+                  style="margin-bottom: 13px !important"
+                >
+                  <div class="col-md-12 no-padding" style="text-align: center">
+                    <div class="col-md-12 inline-inputs" id="incluir_fact_canc">
+                      <label
+                        class="col-md-9"
+                        style="background: 0; text-align: left"
+                        >Incluir fact. canceladas</label
+                      >
+                      <div class="input-group col-md-3">
+                        <input
+                          v-model="incluir_fact_canc"
+                          type="text"
+                          class="form-control text-center"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="col-md-3" style="padding-left: 0">
+                <div
+                  class="form-group col-md-12 box-center"
+                  style="margin-bottom: 13px !important"
+                >
+                  <div class="col-md-12 no-padding" style="text-align: center">
+                    <div class="col-md-12 inline-inputs" id="discrim_fact">
+                      <label
+                        class="col-md-9"
+                        style="background: 0; text-align: left"
+                        >Discriminar facturas</label
+                      >
+                      <div class="input-group col-md-3">
+                        <input
+                          v-model="discrim_fact"
+                          type="text"
+                          class="form-control text-center"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div v-if="![830092718, 830092719].includes(nit_usu)" class="col-md-3" style="padding-left: 0">
+                <div
+                  class="form-group col-md-12 box-center"
+                  style="margin-bottom: 13px !important"
+                >
+                  <div class="col-md-12 no-padding" style="text-align: center">
+                    <div class="col-md-12 inline-inputs" id="asume_glosa">
+                      <label
+                        class="col-md-9"
+                        style="background: 0; text-align: left"
+                        >Asume fecha glosa x present</label
+                      >
+                      <div class="input-group col-md-3">
+                        <input
+                          v-model="asume_glosa"
+                          type="text"
+                          class="form-control text-center"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div v-else class="col-md-3" style="padding-left: 0">
+                <div
+                  class="form-group col-md-12 box-center"
+                  style="margin-bottom: 13px !important"
+                >
+                  <div class="col-md-12 no-padding" style="text-align: center">
+                    <div class="col-md-12 inline-inputs" id="asume_radic">
+                      <label
+                        class="col-md-9"
+                        style="background: 0; text-align: left"
+                        >Asume fecha radic x present</label
+                      >
+                      <div class="input-group col-md-3">
+                        <input
+                          v-model="asume_radic"
+                          type="text"
+                          class="form-control text-center"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3" style="padding-left: 0">
+                <div
+                  class="form-group col-md-12 box-center"
+                  style="margin-bottom: 13px !important"
+                >
+                  <div class="col-md-12 no-padding" style="text-align: center">
+                    <div class="col-md-12 inline-inputs" id="saldo_mayor">
+                      <label
+                        class="col-md-9"
+                        style="background: 0; text-align: left"
+                        >Listar solo saldo mayor que</label
+                      >
+                      <div class="input-group col-md-3">
+                        <input
+                          v-model="saldo_mayor"
+                          type="number"
+                          class="form-control text-center"
+                          maxlength="12"
+                          data-orden="1"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 no-padding">
+                <div
+                  class="form-group col-md-12 box-center"
+                  style="margin-bottom: 13px !important"
+                >
+                  <div class="col-md-12 no-padding" style="text-align: center">
+                    <div class="col-md-12 inline-inputs" id="orden_alfab">
+                      <label
+                        class="col-md-9"
+                        style="background: 0; text-align: left"
+                        >Listar por orden Alfabetico</label
+                      >
+                      <div class="input-group col-md-3">
+                        <input
+                          v-model="orden_alfab"
+                          type="text"
+                          class="form-control text-center"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="col-md-3" style="padding-left: 0">
+                <div
+                  class="form-group col-md-12 box-center"
+                  style="margin-bottom: 13px !important"
+                >
+                  <div class="col-md-12 no-padding" style="text-align: center">
+                    <div class="col-md-12 inline-inputs" id="saldo_negativo">
+                      <label
+                        class="col-md-9"
+                        style="background: 0; text-align: left"
+                        >Listar solo saldo Negativo</label
+                      >
+                      <div class="input-group col-md-3">
+                        <input
+                          v-model="saldo_negativo"
+                          type="text"
+                          class="form-control text-center"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3" style="padding-left: 0">
+                <div
+                  class="form-group col-md-12 box-center"
+                  style="margin-bottom: 13px !important"
+                >
+                  <div class="col-md-12 no-padding" style="text-align: center">
+                    <div class="col-md-12 inline-inputs" id="asociar_nit">
+                      <label
+                        class="col-md-9"
+                        style="background: 0; text-align: left"
+                        >Asociar Nit</label
+                      >
+                      <div class="input-group col-md-3">
+                        <input
+                          v-model="asociar_nit"
+                          type="text"
+                          class="form-control text-center"
+                          maxlength="1"
+                          data-orden="1"
+                          placeholder="N"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <loader_modal :estado="estado_loader" :progreso="progreso" :loader="loader" :label="label_loader"></loader_modal>
+</div>
+<script src="../../SALUD/scripts/SER504.js" type="text/javascript"></script>

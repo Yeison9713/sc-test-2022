@@ -1,0 +1,86 @@
+<div class="form-body" >    
+    <div class="inline-inputs">
+        <label class="col-md-2 col-sm-2 col-xs-2">VALOR FACTURA</label>
+        <div class="input-group col-md-4 col-sm-4 col-xs-4">
+            <h1 id="tot_fact_bar101g"></h1>            
+        </div>
+        <label class="col-md-2 col-sm-2 col-xs-2">VALOR TOTAL</label>
+        <div class="input-group col-md-4 col-sm-4 col-xs-4">
+            <h1 id="tot_final_bar101g"></h1>
+        </div>
+    </div>
+    <div class="inline-inputs" id='validar_valores'>
+        <label class="col-md-2 col-sm-2 col-xs-2">Descuento:</label>
+        <div class="input-group col-md-4 col-sm-4 col-xs-4">
+            <input id="des_fact_bar101g" class="form-control col-md-12" 
+                   maxlength="14" data-orden="1" >
+        </div>
+        <label class="col-md-2 col-sm-2 col-xs-2">Propina:</label>
+        <div class="input-group col-md-4 col-sm-4 col-xs-4">
+            <input id="prop_fact_bar101g" class="form-control col-md-12" 
+                   maxlength="14" data-orden="2">
+        </div>
+    </div>
+    <div class="inline-inputs" >
+        <label class="col-md-2 col-sm-2 col-xs-2">Efectivo:</label>
+        <div id='validar_efectivo' class="input-group col-md-4 col-sm-4 col-xs-4">
+             <input id="efect_fact_bar101g" class="form-control col-md-12" 
+                    maxlength="14" data-orden="1">
+        </div>          
+        <label class="col-md-2 col-sm-2 col-xs-2">Tarjeta Debito:</label>
+        <div id='validar_debito' class="input-group col-md-4 col-sm-4 col-xs-4">
+            <input id="debit_fact_bar101g" class="form-control col-md-12" 
+                   maxlength="14" data-orden="1">        
+        </div>
+    </div>
+    <div class="inline-inputs">        
+        <label class="col-md-2 col-sm-2 col-xs-2">Tarjeta Credito:</label>
+        <div  id='validar_tcredito' class="input-group col-md-4 col-sm-4 col-xs-4">
+            <input id="tarjetaCred_fact_bar101g" class="form-control col-md-12" 
+                   maxlength="14" data-orden="1">
+        </div>
+        <label class="col-md-2 col-sm-2 col-xs-2">Pago Credito:</label>
+        <div id='validar_credito' class="input-group col-md-4 col-sm-4 col-xs-4">
+            <input id="credit_fact_bar101g" class="form-control col-md-12" 
+                   maxlength="14" data-orden="1" >        
+        </div>
+    </div>        
+    <div id='validar_cambio' class="inline-inputs">
+        <label class="col-md-2 col-sm-2 col-xs-2">Dinero Recibido:</label>
+        <div class="input-group col-md-4 col-sm-4 col-xs-4">
+            <input id="recib_fact_bar101g" class="form-control col-md-12" 
+                   maxlength="14" required="true" data-orden="1">
+        </div>
+        <label class="col-md-2 col-sm-2 col-xs-2">Cambio:</label>
+        <div class="input-group col-md-4 col-sm-4 col-xs-4">
+            <input id="camb_fact_bar101g" class="form-control col-md-12" maxlength="11" disabled>
+        </div>
+    </div>       
+    <div id='fase_cliente' class="inline-inputs">
+        <label class="col-md-2 col-sm-2 col-xs-2">Cliente:</label>
+        <div class="input-group col-md-3 col-sm-3 col-xs-3">
+            <input id="client_bar101g" class="form-control col-md-12" required= true  maxlength="12" data-orden="1">            
+        </div>    
+        <label  id="nom_client_bar101g" class="col-md-7 col-sm-7 col-xs-7"></label>    
+    </div>
+    <div id='fase_plazo' class="inline-inputs">
+        <label class="col-md-2 col-sm-2 col-xs-2">Plazo:</label>
+        <div class="input-group col-md-2 col-sm-2 col-xs-2">
+            <input id="plazo_fact_bar101g" type="number" class="form-control col-md-12" maxlength="3" data-orden="1">
+        </div>        
+    </div>
+    <div id='fase_observ' class="inline-inputs">
+        <label class="col-md-2 col-sm-2 col-xs-2">Observaciones:</label>
+        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+            <input id="observ_fact_bar101g" class="form-control col-md-12 uppercase" maxlength="50" data-orden="1">
+        </div>        
+    </div>
+    <div id='fase_sucursal' class="inline-inputs">
+        <label class="col-md-2 col-sm-2 col-xs-2">Sucursal para facturar:</label>
+        <div class="input-group col-md-2 col-sm-2 col-xs-2">
+            <input id="suc_fact_bar101g" type="number" class="form-control col-md-12 uppercase" maxlength="2" data-orden="1">
+        </div>        
+    </div>
+         
+</div>
+<script src="../../BAR/scripts/bar101g.js" type="text/javascript"></script>

@@ -1,0 +1,2375 @@
+<div class="col-md-12" id="HC003">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <!-- ventana modal lista de chequeo ws-9003 -->
+        <div v-if="params_lista_chequeo.estado">
+          <lista-chequeo-9003
+            :data="reg_dethc.lista_chequeo"
+            @callback_esc="validarEsc_lista_chequeo"
+            @callback="validarCallback_lista_chequeo"
+          ></lista-chequeo-9003>
+        </div>
+
+        <!-- ventana modal liquidos administrados y eliminados -->
+        <div v-if="params_admin_liquidos.estado">
+          <admin-liquidos
+            :data="reg_evo.LIQUIDOS"
+            @callback_esc="validarEsc_liquidos"
+            @callback="validarCallback_liquidos"
+          ></admin-liquidos>
+        </div>
+
+        <!-- ventana modal creatinina -->
+        <div class="col-12" v-if="params_creatinina.estado">
+          <creatinina 
+            :datos="datos_creatinina"
+            @callback_esc="validarEsc_creatinina" 
+            @callback="validarCallback_creatinina"
+          ></creatinina>
+        </div>
+        <!-- componenet vacunación covid -->
+        <hc9012
+          v-if="mostrarHC9012"
+          :params="params_HC9012"
+          @callback="validarCallback_HC9012"
+          @callback_esc="validarEsc_HC9012"
+        >
+        </hc9012>
+
+        <!-- Componente nuevo folio -->
+        <div v-if="mostrarHC604">
+          <transition>
+            <div class="modal-mask">
+              <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="modal-wrapper">
+                  <div class="col-md-10 no-padding">
+                    <nuevo-folio
+                      :data="datosHC604"
+                      :params="paramsHC604"
+                      @callback_esc="validarEsc_nuevoFolio"
+                      @callback="validarCallback_nuevoFolio"
+                    >
+                    </nuevo-folio>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </transition>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-1 col-sm-13 col-xs-12" id="validar_anio_HC003">
+              <label>Año</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    type="number"
+                    v-model="anio_sist"
+                    maxlength="4"
+                    data-orden="1"
+                    required="true"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-1 col-sm-3 col-xs-12" id="validar_mes_HC003">
+              <label>Mes</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    type="number"
+                    v-model="mes_sist"
+                    maxlength="2"
+                    required="true"
+                    data-orden="1"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-1 col-sm-3 col-xs-12" id="validar_dia_HC003">
+              <label>Día</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    type="number"
+                    v-model="dia_sist"
+                    maxlength="2"
+                    required="true"
+                    data-orden="1"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-1 col-sm-1 col-xs-12">
+              <label>Hora</label>
+              <div
+                class="input-group col-md-12 col-sm-12 col-xs-12"
+                id="valiadr_hora_HC003"
+              >
+                <input
+                  type="number"
+                  v-model="hora_sist"
+                  maxlength="2"
+                  required="true"
+                  data-orden="1"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                />
+              </div>
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-12">
+              <label>Min</label>
+              <div
+                class="input-group col-md-12 col-sm-12 col-xs-12"
+                id="validar_minuto_HC003"
+              >
+                <input
+                  type="number"
+                  v-model="minuto_sist"
+                  maxlength="2"
+                  required="true"
+                  data-orden="1"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: center"
+                />
+              </div>
+            </div>
+
+            <div
+              class="col-md-1 col-sm-1 col-xs-12"
+              id="validar_operador_HC003"
+            >
+              <label>Operador</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    type="text"
+                    v-model="oper_elab"
+                    maxlength="4"
+                    data-orden="1"
+                    required="true"
+                    class="form-control col-md-12 col-sm-12 col-xs-12 validar_operador"
+                    @keydown.f8="ventana_operadores"
+                    style="text-transform: uppercase"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12" style="text-align: left">
+              <label>Medico</label>
+              <div
+                class="input-group inline-inputs col-md-12 col-sm-12 col-xs-12"
+              >
+                <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
+                  <input
+                    type="number"
+                    v-model="cod_prof"
+                    maxlenght="10"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  />
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12 no-padding">
+                  <input
+                    type="text"
+                    v-model="nom_prof"
+                    maxlenght="30"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 col-sm-2 col-xs-12" style="text-align: left">
+              <label>Unidad de servicio</label>
+              <div
+                class="input-group inline-inputs col-md-12 col-sm-12 col-xs-12"
+              >
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                  <input
+                    type="text"
+                    v-model="descrip_unserv"
+                    maxlenght="10"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">{{ descrip_novedad }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          v-if="escala_downton_braden"
+          class="clas-col-md-12 col-sm-12 col-xs-12 no-padding"
+          style="display: flex; flex-wrap: wrap"
+        >
+          <div class="col-md-6 col-sm-12 col-xs-12 no-padding">
+            <div class="col-md-12 col-sm-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Escala Downton</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div
+                class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                style="text-align: left; padding-top: 15px"
+              >
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_caidas_previas_9001"
+                  >
+                    <div>
+                      <label>¿Ha presentado caídas previas?</label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="max-width: 70px; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="reg_dethc.escala_downton.caidas_previas_9001"
+                          data-orden="1"
+                          type="text"
+                          maxlength="1"
+                          placeholder="S/N"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_medica_frecuente_9001"
+                  >
+                    <div>
+                      <label>¿Toma medicamentos frecuentemente?</label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="max-width: 70px; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="reg_dethc.escala_downton.medica_frecuente_9001"
+                          data-orden="1"
+                          type="text"
+                          maxlength="1"
+                          placeholder="S/N"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_alteracion_senso_9001"
+                  >
+                    <div>
+                      <label
+                        >¿Presenta alteraciones sensoriales, visuales o
+                        auditiva?
+                      </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="max-width: 70px; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="reg_dethc.escala_downton.alteracion_senso_9001"
+                          data-orden="1"
+                          type="text"
+                          maxlength="1"
+                          placeholder="S/N"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_estado_mental_9001"
+                  >
+                    <div style="flex-grow: 2">
+                      <label>Estado mental: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_estado_mental_9001"
+                          data-orden="1"
+                          type="text"
+                          maxlength="20"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_deambulacion_9001"
+                  >
+                    <div style="flex-grow: 2">
+                      <label>Deambulación: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_deambulacion_9001"
+                          data-orden="1"
+                          type="text"
+                          maxlength="1"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12 col-xs-12" style="padding-right: 0px">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="col-md-12 col-sm-12 no-padding">
+                <div class="portlet light box-center box-title">
+                  <div class="portlet-title">
+                    <div class="caption">
+                      <span class="caption-subject bold">Escala Braden</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div
+                class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                style="text-align: left; padding-top: 15px"
+              >
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_presep_senso_9002"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Percepción sensorial:</label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; flex-basis: 50%; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_percep_sensorial_9002"
+                          data-orden="1"
+                          type="text"
+                          maxlength="30"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Humedad: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 2; flex-basis: 50%; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_humedad_9002"
+                          data-orden="1"
+                          type="text"
+                          maxlength="30"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Actividad: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 2; flex-basis: 50%; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_actividad_9002"
+                          data-orden="1"
+                          type="text"
+                          maxlength="30"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_movilidad_9002"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Movilidad </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; flex-basis: 50%; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_movilidad_9002"
+                          data-orden="1"
+                          type="text"
+                          maxlength="30"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_nutricion_9002"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Nutrición: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; flex-basis: 50%; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_nutricion_9002"
+                          data-orden="1"
+                          type="text"
+                          maxlength="30"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_peligro_lesion_9002"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Roce y peligro de lesiones: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; flex-basis: 50%; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_peligro_lesiones_9002"
+                          data-orden="1"
+                          type="text"
+                          maxlength="30"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="clas-col-md-12 col-sm-12 col-xs-12 no-padding"
+          style="display: flex; flex-wrap: wrap"
+        >
+          <div
+            v-if="habilitar_morse"
+            class="col-md-6 col-sm-12 col-xs-12 no-padding"
+          >
+            <div class="col-md-12 col-sm-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Escala Morse</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div
+                class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                style="text-align: left; padding-top: 15px"
+              >
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_historial_caidas"
+                  >
+                    <div>
+                      <label>Historial de caídas: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="max-width: 70px; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="morse.historial_caidas"
+                          data-orden="1"
+                          type="text"
+                          maxlength="1"
+                          placeholder="S/N"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_dx_secu_caidas"
+                  >
+                    <div>
+                      <label>Diagnósticos secundarios a caídas: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="max-width: 70px; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="morse.dx_secu_caidas"
+                          data-orden="1"
+                          type="text"
+                          maxlength="1"
+                          placeholder="S/N"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Ayuda para deambular: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_ayuda_deambular_morse"
+                          data-orden="1"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_venoclisis"
+                  >
+                    <div>
+                      <label>Venoclisis: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="max-width: 70px; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="morse.venoclisis"
+                          data-orden="1"
+                          type="text"
+                          placeholder="S/N"
+                          maxlength="20"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Marcha: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_marcha_morse"
+                          data-orden="1"
+                          type="text"
+                          maxlength="1"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Estado mental: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_estado_mental_morse"
+                          data-orden="1"
+                          type="text"
+                          maxlength="1"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Puntaje total: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="calc_morse"
+                          data-orden="1"
+                          type="text"
+                          maxlength="1"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            v-if="habilitar_upp"
+            class="col-md-6 col-sm-12 col-xs-12"
+            style="padding-right: 0px"
+          >
+            <div class="col-md-12 col-sm-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Escala UPP</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div
+                class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                style="text-align: left; padding-top: 15px"
+              >
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Percepción sensorial: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_percep_senso_upp"
+                          data-orden="1"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Exposición humedad: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_expo_humedad_upp"
+                          data-orden="1"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Actividad: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_actividad_upp"
+                          data-orden="1"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Movilidad: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_movilidad_upp"
+                          data-orden="1"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Nutrición: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_nutricion_upp"
+                          data-orden="1"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Fricción y cizallamiento: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="descrip_friccion_ciza_upp"
+                          data-orden="1"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                  >
+                    <div style="flex-grow: 2; flex-basis: 50%">
+                      <label>Puntaje total: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="flex-grow: 1; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="calc_upp"
+                          data-orden="1"
+                          type="text"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="salto-linea"></div>
+                <div class="salto-linea"></div>
+
+                <div v-if="calc_upp < 16">
+                  <div class="col-md-12 col-sm-12 col-xs-12 head-box"></div>
+                  <label style="padding-left: 15px"
+                    >ESTADO DE LA PIEL AL INGRESO</label
+                  >
+                  <div class="salto-linea"></div>
+
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_piel_integra_upp"
+                  >
+                    <div>
+                      <label>Piel integra: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="max-width: 70px; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="upp.estado_piel.piel_integra"
+                          data-orden="1"
+                          type="text"
+                          maxlength="1"
+                          placeholder="S/N"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="salto-linea"></div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_zona_presion"
+                  >
+                    <div>
+                      <label>Zona presión: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="max-width: 70px; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="upp.estado_piel.zona_presion"
+                          data-orden="1"
+                          type="text"
+                          maxlength="1"
+                          placeholder="S/N"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="salto-linea"></div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_laceracion"
+                  >
+                    <div>
+                      <label>Laceración: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="max-width: 70px; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="upp.estado_piel.laceracion"
+                          data-orden="1"
+                          type="text"
+                          maxlength="1"
+                          placeholder="S/N"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="salto-linea"></div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_flictemas"
+                  >
+                    <div>
+                      <label>Flictemas: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="max-width: 70px; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="upp.estado_piel.flictemas"
+                          data-orden="1"
+                          type="text"
+                          maxlength="1"
+                          placeholder="S/N"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="salto-linea"></div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left; display: flex"
+                    id="validar_escara"
+                  >
+                    <div>
+                      <label>Escara: </label>
+                    </div>
+                    <div
+                      class="inline-inputs"
+                      style="max-width: 70px; margin-right: 0px"
+                    >
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="upp.estado_piel.escara"
+                          data-orden="1"
+                          type="text"
+                          maxlength="1"
+                          placeholder="S/N"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div
+            class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+            style="margin-bottom: 13px !important"
+          >
+            <div class="col-md-3 col-sm-3 col-xs-12" style="text-align: left">
+              <label>Tipo de macro</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="descrip_tipo_macro"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-3 col-sm-3 col-xs-12 no-padding"
+              id="validar_macro"
+              style="text-align: left"
+            >
+              <label>Macro a utilizar</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                  <input
+                    id="codigoMacro_hc003"
+                    v-model="reg_evo.MACRO.CODIGO"
+                    data-orden="1"
+                    maxlength="6"
+                    @keydown.119="ventana_macros"
+                    type="number"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+                <button
+                  type="button"
+                  @click="ventana_macros"
+                  class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2"
+                >
+                  <i class="icon-magnifier"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- <div class="salto-linea"></div> -->
+
+            <div
+              class="col-md-6 col-sm-6 col-xs-12 no-padding"
+              style="text-align: left"
+            >
+              <label>Detalle</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="detalle_macro"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="salto-linea"></div>
+            <div class="salto-linea"></div>
+
+            <div class="col-md-3 col-sm-3 col-xs-12" style="text-align: left">
+              <label>Vía de acceso</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="reg_evo.MACRO.VIA"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-9 col-sm-9 col-xs-12 no-padding"
+              style="text-align: left"
+            >
+              <label>Descripción</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="detalle_via"
+                    style="text-align: left"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="col-md-12 col-sm-12 no-padding">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Signos vitales</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div
+              class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+              style="text-align: left"
+            >
+              <div
+                class="col-md-12"
+                style="
+                  padding-top: 9px;
+                  padding-right: 0;
+                  border-bottom: 1.5px solid #ececec;
+                "
+              >
+                <div class="col-md-7 no-padding">
+                  <div
+                    class="col-md-12 no-padding"
+                    style="display: flex; justify-content: center"
+                  >
+                    <div id="validar_peso">
+                        
+                      <label v-if="reg_evo.SIGNOS_VITALES.UNID_PESO == '2'">Peso (gr)</label>
+                      <label v-else>Peso (kg)</label>
+                      <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                          <input
+                            v-model="reg_evo.PESO_NEW"
+                            data-orden="1"
+                            type="number"
+                            maxlength="7"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      id="validar_talla"
+                      class="col-md-4 col-sm-4 col-xs-12"
+                      style="text-align: left"
+                    >
+                      <label>Estatura</label>
+                      <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                          <input
+                            v-model="reg_evo.SIGNOS_VITALES.TALLA"
+                            data-orden="1"
+                            type="number"
+                            maxlength="3"
+                            placeholder="Cm"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="col-md-4 col-sm-4 col-xs-12"
+                      style="text-align: left"
+                    >
+                      <label>IMC</label>
+                      <div class="inline-inputs">
+                        <input
+                          v-model="reg_evo.SIGNOS_VITALES.IMC_CORP"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+
+                    <div
+                      class="col-md-4 col-sm-4 col-xs-12"
+                      style="text-align: left"
+                    >
+                      <label>Sup C.</label>
+                      <div class="inline-inputs">
+                        <input
+                          v-model="reg_evo.SIGNOS_VITALES.SUP_CORP + 'm2'"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="
+                            text-align: center;
+                            text-transform: lowercase !important;
+                          "
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+                  <div
+                    class="col-md-12 no-padding"
+                    style="display: flex; justify-content: center"
+                  ></div>
+                  <div class="salto-linea"></div>
+
+                  <div
+                    id="validar_temperatura"
+                    class="col-md-2 col-sm-2 col-xs-12"
+                    style="text-align: left"
+                  >
+                    <label>Temp.</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="reg_evo.SIGNOS_VITALES.TEMP"
+                          data-orden="1"
+                          maxlength="5"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    id="validar_FC"
+                    class="col-md-2 col-sm-2 col-xs-12"
+                    style="text-align: left"
+                  >
+                    <label>F.C</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="reg_evo.SIGNOS_VITALES.F_CARD"
+                          data-orden="1"
+                          type="number"
+                          maxlength="3"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    id="validar_FR"
+                    class="col-md-2 col-sm-2 col-xs-12"
+                    style="text-align: left"
+                  >
+                    <label>F.R</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="reg_evo.SIGNOS_VITALES.F_RESP"
+                          data-orden="1"
+                          type="number"
+                          maxlength="3"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 col-sm-4 col-xs-12">
+                    <label>Tensión arterial</label>
+                    <div class="inline-inputs">
+                      <div
+                        id="validar_TA_1"
+                        class="input-group col-md-6 col-sm-6 col-xs-6"
+                      >
+                        <input
+                          v-model="reg_evo.SIGNOS_VITALES.TENS_1"
+                          data-orden="1"
+                          type="number"
+                          maxlength="3"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                      <div
+                        id="validar_TA_2"
+                        class="input-group col-md-6 col-sm-6 col-xs-6"
+                      >
+                        <input
+                          v-model="reg_evo.SIGNOS_VITALES.TENS_2"
+                          data-orden="1"
+                          type="number"
+                          maxlength="3"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="col-md-2 col-sm-2 col-xs-12"
+                    style="text-align: left"
+                  >
+                    <label>TA media</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="reg_evo.SIGNOS_VITALES.TENS_MEDIA"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+                  <div
+                    class="col-md-12 no-padding"
+                    style="display: flex; justify-content: center"
+                  ></div>
+                  <div class="salto-linea"></div>
+
+                  <div
+                    id="validar_PVC"
+                    class="col-md-2 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  >
+                    <label>PVC</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="reg_evo.SIGNOS_VITALES.PVC"
+                          data-orden="1"
+                          type="number"
+                          maxlength="2"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    id="validar_PERTOR"
+                    class="col-md-2 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  >
+                    <label>P. Tor</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="reg_evo.PER_TORA"
+                          data-orden="1"
+                          type="text"
+                          maxlength="5"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    id="validar_PERABDO"
+                    class="col-md-2 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  >
+                    <label>P. Abdo</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="reg_evo.PER_ABDO"
+                          data-orden="1"
+                          type="text"
+                          maxlength="5"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    id="validar_G_URIN"
+                    class="col-md-2 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  >
+                    <label>G.urin</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="reg_evo.SIGNOS_VITALES.G_URIN"
+                          data-orden="1"
+                          type="text"
+                          maxlength="4"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    id="validar_oximetria"
+                    class="col-md-2 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  >
+                    <label>Oximetria</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="reg_evo.SIGNOS_VITALES.OXIMETRIA"
+                          data-orden="1"
+                          type="number"
+                          maxlength="3"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    id="validar_glucometria"
+                    class="col-md-2 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  >
+                    <label>Glucometria</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="reg_evo.SIGNOS_VITALES.GLUCOMETRIA"
+                          data-orden="1"
+                          type="number"
+                          maxlength="3"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="col-md-5 no-padding"
+                  style="border-left: 1.5px solid #ececec"
+                >
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  >
+                    <label>Resp ocular</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="resp_ocular"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  >
+                    <label>Resp verbal</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="resp_verbal"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  >
+                    <label>Resp motora</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="resp_motora"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <label>Vlr Glasgow</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="vlr_glasgow"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+                <div class="salto-linea"></div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div
+                class="col-md-12"
+                style="
+                  padding-top: 9px;
+                  display: flex;
+                  justify-content: space-around;
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          v-if="paso_embarazo"
+          class="col-md-12 col-sm-12 col-xs-12 no-padding"
+        >
+          <transition>
+            <div class="modal-mask">
+              <div class="modal-wrapper">
+                <div class="col-lg-4 col-md-6 col-sm-8 col-xs-10 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group box-center" style="text-align: left">
+                      <div
+                        class="col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center; padding: 1rem 0 1rem 0"
+                      >
+                        <label style="font-size: 1.5em">EMBARAZO</label>
+                      </div>
+
+                      <div class="salto-linea"></div>
+                      <div class="salto-linea"></div>
+
+                      <div
+                        class="form-group col-md-12 col-sm-12 col-xs-12"
+                        style="display: flex; align-items: center"
+                      >
+                        <label class="label-center col-md-7 col-sm-7 col-xs-6"
+                          >Gestaciones previas</label
+                        >
+                        <div
+                          class="input-group col-md-5 col-sm-5 col-xs-6"
+                          id="validar_gesta_prev"
+                        >
+                          <input
+                            v-model="reg_evo.EMBAR.GESTACIONES"
+                            type="number"
+                            class="form-control center"
+                            data-orden="1"
+                            maxlength="2"
+                            disabled
+                          />
+                        </div>
+                      </div>
+                      <div class="salto-linea"></div>
+
+                      <div
+                        class="form-group col-md-12 col-sm-12 col-xs-12"
+                        style="display: flex; align-items: center"
+                      >
+                        <label class="label-center col-md-7 col-sm-7 col-xs-6"
+                          >Peso previo embarazo</label
+                        >
+                        <div
+                          class="input-group col-md-5 col-sm-5 col-xs-6"
+                          id="validar_peso_prev"
+                        >
+                          <input
+                            v-model="reg_evo.EMBAR.PESO_PREV"
+                            type="number"
+                            class="form-control center"
+                            data-orden="1"
+                            maxlength="5"
+                            disabled
+                          />
+                        </div>
+                      </div>
+                      <div class="salto-linea"></div>
+
+                      <div
+                        class="form-group col-md-12 col-sm-12 col-xs-12"
+                        style="display: flex; align-items: center"
+                      >
+                        <label class="label-center col-md-7 col-sm-7 col-xs-6"
+                          >Fecha ult. regla</label
+                        >
+                        <div
+                          class="col-md-5 col-sm-5 col-xs-6 no-padding"
+                          style="display: flex"
+                        >
+                          <div
+                            id="validar_anio_regla_emb"
+                            class="input-group col-md-4 col-sm-4 col-xs-4"
+                          >
+                            <input
+                              v-model="anio_regla_emb"
+                              type="number"
+                              class="form-control"
+                              data-orden="1"
+                              maxlength="4"
+                              disabled
+                              placeholder="AAAA"
+                            />
+                          </div>
+                          <div
+                            id="validar_mes_regla_emb"
+                            class="input-group col-md-4 col-sm-4 col-xs-4"
+                          >
+                            <input
+                              v-model="mes_regla_emb"
+                              type="number"
+                              class="form-control"
+                              data-orden="1"
+                              maxlength="2"
+                              disabled
+                              placeholder="MM"
+                            />
+                          </div>
+                          <div
+                            id="validar_dia_regla_emb"
+                            class="input-group col-md-4 col-sm-4 col-xs-4"
+                          >
+                            <input
+                              v-model="dia_regla_emb"
+                              type="number"
+                              class="form-control"
+                              data-orden="1"
+                              maxlength="2"
+                              disabled
+                              placeholder="DD"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="salto-linea"></div>
+
+                      <div
+                        class="form-group col-md-12 col-sm-12 col-xs-12"
+                        style="display: flex; align-items: center"
+                      >
+                        <label class="label-center col-md-7 col-sm-7 col-xs-6"
+                          >Edad gestacional</label
+                        >
+                        <div
+                          class="input-group col-md-5 col-sm-5 col-xs-6"
+                          id="validar_edad_gest_emb"
+                        >
+                          <input
+                            v-model="reg_evo.EMBAR.EDAD_GEST_REGLA"
+                            type="number"
+                            class="form-control center"
+                            data-orden="1"
+                            maxlength="4"
+                            disabled
+                          />
+                        </div>
+                      </div>
+                      <div class="salto-linea"></div>
+
+                      <div
+                        class="form-group col-md-12 col-sm-12 col-xs-12"
+                        style="display: flex; align-items: center"
+                      >
+                        <label class="label-center col-md-7 col-sm-7 col-xs-6"
+                          >Altura uterina (cm)</label
+                        >
+                        <div
+                          class="input-group col-md-5 col-sm-5 col-xs-6"
+                          id="validar_alt_uterina"
+                        >
+                          <input
+                            v-model="reg_evo.EMBAR.ALT_UTER"
+                            type="number"
+                            class="form-control center"
+                            data-orden="1"
+                            maxlength="4"
+                            disabled
+                          />
+                        </div>
+                      </div>
+                      <div class="salto-linea"></div>
+                      <div class="salto-linea"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </transition>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="col-md-4 col-sm-6 col-xs-12 no-padding">
+            <div>
+              <div class="col-md-12 col-sm-12 no-padding">
+                <div class="portlet light box-center box-title">
+                  <div class="portlet-title">
+                    <div class="caption">
+                      <span class="caption-subject bold">Sintomatico</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <sintomaticos
+                :data="datos_sintomatico"
+                :params="params_sintomatico"
+                @callback_esc="validarEsc_sintomatico"
+                @callback="validarCallback_sintomatico"
+              >
+              </sintomaticos>
+            </div>
+          </div>
+
+          <div class="col-md-8 col-sm-6 col-xs-12" style="padding-right: 0">
+            <div class="col-md-12 col-sm-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Detalles</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                  id="validar_detalleEvo"
+                >
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 head-box"
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      padding-right: 0;
+                      padding-left: 0;
+                    "
+                  >
+                    <label>Contenido</label>
+                    <label>(15,000 caracteres máximo)</label>
+                  </div>
+                  <textarea
+                    v-model="detalle_evo"
+                    data-orden="1"
+                    class="form-control"
+                    disabled="disabled"
+                    rows="21"
+                    maxlength="15000"
+                    required="true"
+                    style="resize: none; text-align: justify"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col-md-12 col-sm-12 col-xs-12 no-padding"
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            grid-column-gap: 1.5rem;
+          "
+        >
+          <div class="no-padding">
+            <div class="col-md-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold"
+                      >Codificación diagnósticos</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div
+                class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                style="text-align: left"
+              >
+                <div
+                  class="col-md-12 no-padding"
+                  v-for="(item,index) in diagnosticos"
+                  :key="index"
+                >
+                  <div
+                    class="col-md-3 col-sm-6 col-xs-12"
+                    style="padding-left: 0"
+                  >
+                    <div class="inline-inputs">
+                      <label class="col-md-3 col-sm-3 col-xs-3"
+                        >{{ index + 1}}</label
+                      >
+                      <div
+                        class="input-group col-md-7 col-sm-7 col-xs-7"
+                        :id="`validarCod_diag_${index}`"
+                      >
+                        <input
+                          @keydown.119="ventanaCod_diag(index)"
+                          v-model="item.CODIGO"
+                          maxlength="4"
+                          data-orden="1"
+                          :id="`cod_diag${index}`"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled="disabled"
+                        />
+                      </div>
+                      <button
+                        @click="ventanaCod_diag(index)"
+                        type="button"
+                        class="btn f8-Btn col-md-2 col-sm-2 col-xs-2"
+                      >
+                        <i class="icon-magnifier"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="col-md-9 no-padding">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        v-model="item.DESCRIP"
+                        style="text-align: left"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+
+                  <div v-if="index != 9" class="salto-linea"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="no-padding">
+            <div
+              class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+              style="
+                margin-bottom: 13px !important;
+                padding: 1.5rem 0 1.5rem 1.5rem;
+              "
+            >
+              <div class="col-md-6 col-sm-6 col-xs-12" style="text-align: left">
+                <label>Causa externa</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="descrip_causa_externa"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-12" style="text-align: left">
+                <label>Embarazo</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="descrip_embarazo"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-6 col-sm-6 col-xs-12" style="text-align: left">
+                <label>Finalidad</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="descrip_finalidad"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="col-md-3 col-sm-3 col-xs-12"
+                style="text-align: left"
+                id="validar_1er_vez"
+              >
+                <label>Primera vez</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="reg_evo.PRIMERA_VEZ"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      type="text"
+                      maxlength="1"
+                      disabled="disabled"
+                      data-orden="1"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="col-md-3 col-sm-3 col-xs-12"
+                style="text-align: left"
+                id="validar_nro_controles"
+              >
+                <label>Nro. controles</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="reg_evo.EMBAR.NRO_CONTR"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      type="number"
+                      maxlength="2"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div
+                class="col-md-12 col-sm-12 col-xs-12"
+                style="text-align: left"
+              >
+                <label>Patología crónica</label>
+                <div class="inline-inputs">
+                  <div
+                    class="input-group col-md-2 col-sm-2 col-xs-12"
+                    id="validar_patologias"
+                  >
+                    <input
+                      v-model="reg_evo.CRONICO"
+                      id="cod_patologias"
+                      style="text-align: left"
+                      @keydown.119="ventana_patologias()"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                  <button
+                    @click="ventana_patologias()"
+                    type="button"
+                    class="btn f8-Btn col-md-2 col-sm-2 col-xs-2"
+                  >
+                    <i class="icon-magnifier"></i>
+                  </button>
+                  <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                    <input
+                      v-model="descrip_patologia"
+                      style="text-align: left"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div
+                class="col-md-3 col-sm-3 col-xs-12"
+                style="text-align: left"
+                id="validar_tanner_pubico"
+              >
+                <label>Tanner púbico</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="reg_evo.SIGNOS_VITALES.TANNER_PUBICO"
+                      type="number"
+                      maxlength="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                      data-orden="1"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="col-md-3 col-sm-3 col-xs-12"
+                style="text-align: left"
+                id="validar_tanner_genital"
+              >
+                <label>{{ descrip_estadio_tanner }}</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="reg_evo.SIGNOS_VITALES.TANNER_GENIT"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      type="number"
+                      maxlength="1"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="col-md-6 col-sm-6 col-xs-12"
+                style="text-align: left"
+                id="validar_plan_familiar"
+              >
+                <label>Planificación familiar</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="descrip_plan_familiar"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      type="number"
+                      maxlength="2"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+
+              <div
+                v-if="reg_evo.RIPS.FINALID == '05'"
+                class="col-md-12 col-sm-12 col-xs-12"
+                style="display: flex; flex-direction: column;"
+              >
+                <div class="col-12">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: center; padding: 1rem 0 1rem 0"
+                  >
+                    <label>Vello pubiano</label>
+                  </div>
+                  <img
+                    v-if="reg_paci.SEXO == 'F'"
+                    src="../../frameworks/imagenes/hiclin/tanner_pubico_fem.png"
+                    alt="Tanner mamario"
+                  />
+                  <img
+                    v-else-if="reg_paci.SEXO == 'M'"
+                    src="../../frameworks/imagenes/hiclin/tanner_pubico_mas.png"
+                    alt="Tanner genital"
+                  />
+                </div>
+                <div class="col-12">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: center; padding: 1rem 0 1rem 0"
+                  >
+                    <label>Estadio</label>
+                  </div>
+                  <img
+                    v-if="reg_paci.SEXO == 'F'"
+                    src="../../frameworks/imagenes/hiclin/tanner_mamario.png"
+                    alt="Tanner mamario"
+                  />
+                  <img
+                    v-else-if="reg_paci.SEXO == 'M'"
+                    src="../../frameworks/imagenes/hiclin/tanner_genital.png"
+                    alt="Tanner mamario"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../../frameworks/pdf/hiclin/HCI02.formato.js"></script>
+<script src="../../HICLIN/scripts/HCI02.js"></script>
+<script src="../../HICLIN/scripts/hc890h.vue.js"></script>
+<script src="../../HICLIN/scripts/HC-9012.vue.js"></script>
+<script src="../../HICLIN/scripts/HC604.vue.js"></script>
+<script src="../../HICLIN/scripts/hc890d.vue.js"></script>
+<script src="../../HICLIN/scripts/lista_chequeo_9003.vue.js"></script>
+<script src="../../HICLIN/scripts/admin_liquidos.vue.js"></script>
+<script src="../../HICLIN/scripts/HC003.js"></script>
+<script src="../../HICLIN/scripts/HC002B.js"></script>
+<script src="../../frameworks/pdf/hiclin/HC002B.formato.js"></script>
+
+<style>
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  input {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: table;
+    transition: opacity 0.3s ease;
+  }
+
+  .modal-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .modal-body {
+    margin: 20px 0;
+  }
+
+  .modal-default-button {
+    float: right;
+  }
+  /*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+  .descrip_hc890d {
+    position: relative;
+    top: 7px;
+    margin-left: 10px !important;
+  }
+
+  .input-group.text-descrip {
+    display: flex;
+    margin-bottom: 5px;
+  }
+
+  .text-descrip input:nth-child(1) {
+    margin-right: 2px;
+    width: 30%;
+  }
+
+  .text-descrip input:nth-child(2) {
+    margin-right: 2px;
+    background: #d0cece21 !important;
+  }
+
+  .modal-enter {
+    opacity: 0;
+  }
+
+  .modal-leave-active {
+    opacity: 0;
+  }
+
+  .modal-enter .modal-container,
+  .modal-leave-active .modal-container {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+</style>

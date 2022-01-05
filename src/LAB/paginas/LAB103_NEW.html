@@ -1,0 +1,1004 @@
+<div class="col-md-12" id="lab103">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <form class="form-horizontal">
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-2 col-sm-2 col-xs-6">
+              <div class="inline-inputs">
+                <label class="col-md-7 col-sm-7 col-xs-7">Sucursal:</label>
+                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                  <input v-model="global_lab103.SUC" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 col-sm-2 col-xs-6">
+              <div class="inline-inputs">
+                <label class="col-md-8 col-sm-8 col-xs-8">Tipo de servicio:</label>
+                <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                  <input v-model="global_lab103.CL" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 col-sm-2 col-xs-6" id="validarComprob_lab102">
+              <div class="inline-inputs">
+                <label class="col-md-7 col-sm-7 col-xs-7">Comprobante:</label>
+                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                  <input
+                    v-model="global_lab103.COMPROB"
+                    type="text"
+                    data-orden="1"
+                    maxlength="6"
+                    required="true"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <div class="inline-inputs">
+                <label class="col-md-5 col-sm-5 col-xs-5">Codigo Cup:</label>
+                <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                  <input
+                    v-model="global_lab103.CUP"
+                    type="text"
+                    data-orden="1"
+                    maxlength="12"
+                    required="true"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <div class="inline-inputs">
+                <label class="col-md-5 col-sm-5 col-xs-5">Fecha:</label>
+                <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                  <input v-model="global_lab103.FECHA" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <label>Descrip Cup</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="global_lab103.DESCRIP_CUP" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+
+            <div class="salto-linea"></div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <label>Paciente</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="global_lab103.ID_HISTORIA"
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-8 col-sm-8 col-xs-12 no-padding">
+              <label>Nombre Paciente</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="global_lab103.DESCRIP_PACI" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-3 col-sm-3 col-xs-3">
+              <label>Factura</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="global_lab103.CTA" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-3">
+              <label>Entidad</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="global_lab103.ID_ENTIDAD" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-6">
+              <label></label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input v-model="global_lab103.NOM_ENTIDAD" class="form-control col-md-12 col-sm-12 col-xs-12" />
+              </div>
+            </div>
+
+            <div class="salto-linea"></div>
+
+            <div class="col-md-3 col-sm-3 col-xs-3" id="validarMedico_lab103">
+              <label>Médico</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                  <input
+                    id="medico_lab103"
+                    v-model="global_lab103.ID_MEDICO"
+                    required="true"
+                    maxlength="10"
+                    data-orden="1"
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    @keydown.119="ventanaMedico"
+                  />
+                </div>
+                <button type="button" @click="ventanaMedico" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                  <i class="icon-magnifier"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-3">
+              <label></label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input v-model="global_lab103.REG_MEDICO" class="form-control col-md-12 col-sm-12 col-xs-12" />
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-6">
+              <label></label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input v-model="global_lab103.NOMBRE_MEDICO" class="form-control col-md-12 col-sm-12 col-xs-12" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="col-md-2" style="padding-left: 0">
+            <div class="col-md-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Método</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.metodo"
+                      type="text"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 no-padding">
+            <div class="col-md-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Refiere</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarQuienRefiere" style="text-align: left">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="global_lab103.QUIEN_REFIERE"
+                      type="text"
+                      maxlength="50"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" style="padding-right: 0">
+            <div class="col-md-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Diagnóstico clínico</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-3 col-sm-3 col-xs-3" id="validarDiag_lab103">
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                      <input
+                        id="validarCodDiag_lab103"
+                        v-model="global_lab103.DIAGNOS"
+                        maxlength="4"
+                        data-orden="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        @keydown.119="ventanaDiagnostico"
+                      />
+                    </div>
+                    <button type="button" @click="ventanaDiagnostico" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-9 col-sm-3 col-xs-3">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input v-model="global_lab103.DESCRIP_DIAGNOS" style="text-align: left;" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="col-md-6 no-padding">
+            <div class="col-md-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Medicación</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarMedicacion">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 head-box"
+                  style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                >
+                  <label>Digite :</label>
+                  <label>(180 caracteres máximo)</label>
+                </div>
+                <textarea
+                  v-model="global_lab103.MEDICACION"
+                  class="form-control"
+                  disabled="disabled"
+                  rows="5"
+                  maxlength="180"
+                  data-orden="1"
+                  style="resize: none; text-align: justify; padding-bottom: 16px"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" style="padding-right: 0">
+            <div class="col-md-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Medidas</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+                <div class="col-md-6 no-padding" style="border-right: 1.5px solid rgb(236, 236, 236)">
+                  <div class="col-md-12 flexrow_lab103">
+                    <div class="col-md-7 col-sm-10 col-xs-12 no-padding">
+                      <label class="col-md-12 col-sm-12 col-xs-12 flexizq_lab103">Raíz aortica</label>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 no-padding flexrow_lab103">
+                      <div class="col-md-6 col-sm-6 col-xs-6 no-padding" id="validarRaizAortica">
+                        <input
+                          v-model="global_lab103.RAIZ_AORTICA"
+                          maxlength="3"
+                          class="form-control"
+                          type="text"
+                          min="0"
+                          data-orden="1"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left">
+                        <label>Cm</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-12 flexrow_lab103">
+                    <div class="col-md-7 col-sm-10 col-xs-12 no-padding">
+                      <label class="col-md-12 col-sm-12 col-xs-12 flexizq_lab103">Aurícula izquierda</label>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 no-padding flexrow_lab103">
+                      <div class="col-md-6 col-sm-6 col-xs-6 no-padding" id="validarAuriculaIzquierda">
+                        <input
+                          v-model="global_lab103.AURICULA_IZQ"
+                          maxlength="3"
+                          class="form-control"
+                          type="text"
+                          min="0"
+                          data-orden="1"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left">
+                        <label>Cm</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-12 flexrow_lab103">
+                    <div class="col-md-7 col-sm-10 col-xs-12 no-padding">
+                      <label class="col-md-12 col-sm-12 col-xs-12 flexizq_lab103">Ventrículo izq diástole</label>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 no-padding flexrow_lab103">
+                      <div class="col-md-6 col-sm-6 col-xs-6 no-padding" id="validarVentIzqDiast">
+                        <input
+                          v-model="global_lab103.VENT_IZQ_DIAS"
+                          maxlength="3"
+                          class="form-control"
+                          type="text"
+                          min="0"
+                          data-orden="1"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left">
+                        <label>Cm</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-12 flexrow_lab103">
+                    <div class="col-md-7 col-sm-10 col-xs-12 no-padding">
+                      <label class="col-md-12 col-sm-12 col-xs-12 flexizq_lab103">Ventrículo izq sístole</label>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 no-padding flexrow_lab103">
+                      <div class="col-md-6 col-sm-6 col-xs-6 no-padding" id="validarVentIzqSist">
+                        <input
+                          v-model="global_lab103.VENT_IZQ_SIS"
+                          maxlength="3"
+                          class="form-control"
+                          type="text"
+                          min="0"
+                          data-orden="1"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left">
+                        <label>Cm</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 flexrow_lab103">
+                    <div class="col-md-7 col-sm-10 col-xs-12 no-padding">
+                      <label class="col-md-12 col-sm-12 col-xs-12 flexizq_lab103">Septum IV</label>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 no-padding flexrow_lab103">
+                      <div class="col-md-6 col-sm-6 col-xs-6 no-padding" id="validarSeptum">
+                        <input
+                          v-model="global_lab103.SEPTUM"
+                          maxlength="3"
+                          class="form-control"
+                          type="text"
+                          min="0"
+                          data-orden="1"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left">
+                        <label>Cm</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-12 flexrow_lab103">
+                    <div class="col-md-7 col-sm-10 col-xs-12 no-padding">
+                      <label class="col-md-12 col-sm-12 col-xs-12 flexizq_lab103">Pared posterior</label>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 no-padding flexrow_lab103">
+                      <div class="col-md-6 col-sm-6 col-xs-6 no-padding" id="validarParedPosterior">
+                        <input
+                          v-model="global_lab103.PARED_POST"
+                          maxlength="3"
+                          class="form-control"
+                          type="text"
+                          min="0"
+                          data-orden="1"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left">
+                        <label>Cm</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-12 flexrow_lab103">
+                    <div class="col-md-7 col-sm-10 col-xs-12 no-padding">
+                      <label class="col-md-12 col-sm-12 col-xs-12 flexizq_lab103">Ventrículo derecho</label>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 no-padding flexrow_lab103">
+                      <div class="col-md-6 col-sm-6 col-xs-6 no-padding" id="validarVentDerecho">
+                        <input
+                          v-model="global_lab103.VENT_DER"
+                          maxlength="3"
+                          class="form-control"
+                          type="text"
+                          min="0"
+                          data-orden="1"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left">
+                        <label>Cm</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-12 flexrow_lab103">
+                    <div class="col-md-7 col-sm-10 col-xs-12 no-padding">
+                      <label class="col-md-12 col-sm-12 col-xs-12 flexizq_lab103">Fracción de eyección</label>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 no-padding flexrow_lab103">
+                      <div class="col-md-6 col-sm-6 col-xs-6 no-padding" id="validarFraccEyecc">
+                        <input
+                          v-model="global_lab103.FRACC_EYECC"
+                          maxlength="2"
+                          class="form-control"
+                          type="text"
+                          min="0"
+                          data-orden="1"
+                          disabled
+                        />
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6" style="text-align: left">
+                        <label>%</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="col-md-6 no-padding">
+            <div class="col-md-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Reposo</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                  id="validarEkgReposo"
+                  style="text-align: left"
+                >
+                  <label>Ekg</label>
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="global_lab103.EKG_REPOSO"
+                      type="text"
+                      maxlength="70"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 no-padding">
+              <div
+                class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                id="validarEcocardiogramaReposo"
+                style="padding-bottom: 10px"
+              >
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 head-box"
+                  style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                >
+                  <label>Ecocardiograma</label>
+                  <label>(4000 caracteres máximo)</label>
+                </div>
+                <textarea
+                  v-model="global_lab103.ECOCARDIOGRAMA_TT"
+                  class="form-control"
+                  disabled="disabled"
+                  rows="24"
+                  maxlength="4000"
+                  data-orden="1"
+                  style="resize: none; text-align: justify"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" style="padding-right: 0">
+            <div class="col-md-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Posterior</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                  id="validarEkgPost_lab103"
+                  style="text-align: left"
+                >
+                  <label>Ekg</label>
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="global_lab103.EKG"
+                      type="text"
+                      maxlength="70"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 no-padding">
+              <div
+                class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                id="validarEcocardiogramaPost_lab103"
+                style="padding-bottom: 10px"
+              >
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 head-box"
+                  style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                >
+                  <label>{{ textos.posterior }}</label>
+                  <label>(4000 caracteres máximo)</label>
+                </div>
+                <textarea
+                  v-model="global_lab103.ECOCARDIOGRAMA"
+                  class="form-control"
+                  disabled="disabled"
+                  rows="24"
+                  maxlength="4000"
+                  data-orden="1"
+                  style="resize: none; text-align: justify"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="col-md-6 no-padding">
+            <div class="col-md-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Cálculos de Frecuencia cardíaca</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+                <div class="col-md-6 no-padding" style="border-right: 1.5px solid rgb(236, 236, 236)">
+                  <div class="col-md-12 flexrow_lab103">
+                    <div class="col-md-7 col-sm-10 col-xs-12 no-padding">
+                      <label class="col-md-12 col-sm-12 col-xs-12 flexizq_lab103">Máxima 100 %</label>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 no-padding flexrow_lab103">
+                      <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <input
+                          v-model="global_lab103.TABLA_FC[0]"
+                          class="form-control"
+                          maxlength="3"
+                          type="number"
+                          data-orden="1"
+                          disabled
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-12 flexrow_lab103">
+                    <div class="col-md-7 col-sm-10 col-xs-12 no-padding">
+                      <label class="col-md-12 col-sm-12 col-xs-12 flexizq_lab103">Submáxima 95 %</label>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 no-padding flexrow_lab103">
+                      <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <input
+                          v-model="global_lab103.TABLA_FC[1]"
+                          class="form-control"
+                          type="number"
+                          data-orden="1"
+                          disabled
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-12 flexrow_lab103">
+                    <div class="col-md-7 col-sm-10 col-xs-12 no-padding">
+                      <label class="col-md-12 col-sm-12 col-xs-12 flexizq_lab103">Submáxima 90 %</label>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 no-padding flexrow_lab103">
+                      <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <input
+                          v-model="global_lab103.TABLA_FC[2]"
+                          class="form-control"
+                          type="number"
+                          data-orden="1"
+                          disabled
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 flexrow_lab103">
+                    <div class="col-md-7 col-sm-10 col-xs-12 no-padding">
+                      <label class="col-md-12 col-sm-12 col-xs-12 flexizq_lab103">Submáxima 85 %</label>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 no-padding flexrow_lab103">
+                      <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <input
+                          v-model="global_lab103.TABLA_FC[3]"
+                          class="form-control"
+                          type="number"
+                          data-orden="1"
+                          disabled
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-12 flexrow_lab103">
+                    <div class="col-md-7 col-sm-10 col-xs-12 no-padding">
+                      <label class="col-md-12 col-sm-12 col-xs-12 flexizq_lab103">Submáxima 80 %</label>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 no-padding flexrow_lab103">
+                      <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <input
+                          v-model="global_lab103.TABLA_FC[4]"
+                          class="form-control"
+                          type="number"
+                          data-orden="1"
+                          disabled
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-12 flexrow_lab103">
+                    <div class="col-md-7 col-sm-10 col-xs-12 no-padding">
+                      <label class="col-md-12 col-sm-12 col-xs-12 flexizq_lab103">Submáxima 75 %</label>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 no-padding flexrow_lab103">
+                      <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <input
+                          v-model="global_lab103.TABLA_FC[5]"
+                          class="form-control"
+                          type="number"
+                          data-orden="1"
+                          disabled
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">{{ textos.titulo_tabla }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+                <div class="col-md-12 col-sm-12 no-padding flexrow_lab103" style="border-bottom: 1.4px solid #476fad">
+                  <div class="col-md-3 no-padding" style="text-align: center">
+                    <label>{{ textos.columna_tit }}</label>
+                  </div>
+                  <div class="col-md-3 col-sm-4 col-xs-4" style="text-align: center">
+                    <label>FC</label>
+                  </div>
+                  <div class="col-md-3 col-sm-4 col-xs-4" style="text-align: center">
+                    <label>TA Sístole</label>
+                  </div>
+                  <div class="col-md-3 col-sm-4 col-xs-4" style="text-align: center">
+                    <label>TA Diástole</label>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div
+                  class="col-md-12 no-padding flexrow_lab103"
+                  v-for="(fila,index) in global_lab103.TABLA_DOBU"
+                  :key="index"
+                >
+                  <div class="col-md-3" style="text-align: center !important">
+                    <label class="col-md-12 col-sm-12 col-xs-12">{{ textos.columnas[index] }}</label>
+                  </div>
+
+                  <div class="col-md-3">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12" :id="`validarFC_${index}_LAB103`">
+                      <input
+                        v-model="fila.FC"
+                        type="text"
+                        data-orden="1"
+                        maxlength="3"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12" :id="`validarTASIS_${index}_LAB103`">
+                      <input
+                        v-model="fila.TA_SIS"
+                        type="text"
+                        data-orden="1"
+                        maxlength="3"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12" :id="`validarTADIAS_${index}_LAB103`">
+                      <input
+                        v-model="fila.TA_DIAS"
+                        type="text"
+                        maxlength="3"
+                        data-orden="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+                </div>
+                <label id="focoTabalaTobu" ></label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" style="padding-right: 0">
+            <div class="col-md-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Conclusiones</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div
+                class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                id="validarConclusiones_lab103"
+                style="padding-bottom: 10px"
+              >
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 head-box"
+                  style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                >
+                  <label>Digite :</label>
+                  <label>(2500 caracteres máximo)</label>
+                </div>
+                <textarea
+                  v-model="global_lab103.CONCLUSIONES"
+                  class="form-control"
+                  disabled="disabled"
+                  rows="21"
+                  maxlength="2500"
+                  data-orden="1"
+                  style="resize: none; text-align: justify"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div v-show="CONSULTA" class="col-md-6 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+            <label>Creación:</label>
+            <div class="inline-inputs">
+              <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                <input
+                  v-model="global_lab103.ADMI_CREA"
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: center"
+                />
+              </div>
+              <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                <input
+                  v-model="global_lab103.HORA_CREA"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: center"
+                />
+              </div>
+              <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                <input
+                  v-model="global_lab103.FECHA_CREA"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: center"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+            <label>Modificación</label>
+            <div class="inline-inputs">
+              <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                <input
+                  v-model="global_lab103.ADMI_MODIF"
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: center"
+                />
+              </div>
+              <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                <input
+                  v-model="global_lab103.HORA_MODIF"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: center"
+                />
+              </div>
+              <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                <input
+                  v-model="global_lab103.FECHA_MODIF"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: center"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div v-show="CONSULTA" class="col-md-6 col-sm-12 col-xs-12" style="padding-right: 0">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="display: flex; justify-content: left">
+              <label>Archivos adjuntos :</label>
+            </div>
+
+            <div v-for="item in global_lab103.ADJUNTOS">
+              <a a @click="aperturaAdjunto_lab103(item)">{{ item }}</a><br />
+            </div>
+          </div>
+        </div>
+
+        <a v-show="CONSULTA" class="float_lab103 btn_imprimir" v-on:click="_envioImpresion" style="right: 21px">
+          <i class="glyphicon glyphicon-print my-float-lab105"></i>
+        </a>
+
+        <a
+          v-show="CONSULTA"
+          @click="salir_lab103"
+          class="float_lab103"
+          style="left: 21px; background-color: #da2c2c; border-color: #da2c2c"
+        >
+          <span>Salir </span>
+        </a>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+  .float_lab103 {
+    z-index: 2;
+    position: fixed;
+    width: 65px;
+    height: 60px;
+    bottom: 16px;
+    background-color: #476fad;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 1px 1px 1px #999;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .float_lab103:hover {
+    box-shadow: 2px 2px 2px #999;
+    transition: padding 0.5s ease, background-position 0.5s ease, transform 0.8s ease;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .flexrow_lab103 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .flexIzq_lab103 {
+    text-align: left;
+    padding-left: 9px;
+  }
+
+  input {
+    text-align: center;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<script src="../../LAB/scripts/_impresionesLab.js" type="text/javascript"></script>
+<script src="../../LAB/scripts/LAB103_NEW.js" type="text/javascript"></script>

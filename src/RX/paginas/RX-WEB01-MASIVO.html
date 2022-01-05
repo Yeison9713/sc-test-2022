@@ -1,0 +1,173 @@
+<style>
+  input {
+    text-align: center;
+  }
+</style>
+<div class="col-md-12" id="RX_WEB01_MASIVO">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <form class="form-horizontal">
+        <div class="col-md-12 no-padding" style="display: flex; justify-content: center">
+          <div class="col-md-4 col-sm-12 col-xs-12 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="display: flex; justify-content: left">
+                <label>Fecha inicio</label>
+              </div>
+
+              <div class="col-md-12" style="display: flex; justify-content: center">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <label>Año</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input type="text" v-model="anoSync" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-3" id="validarMesPRE_rxmasivo">
+                  <label>Mes</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        type="text"
+                        maxlength="2"
+                        v-model="mesPRESync"
+                        data-orden="1"
+                        required="true"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-3" id="validarDiaPRE_rxmasivo">
+                  <label>Dia</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        type="text"
+                        maxlength="2"
+                        v-model="diaPRESync"
+                        data-orden="1"
+                        required="true"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 col-xs-12" style="padding-right: 0">
+            <div class="form-group col-md-12 col-sm-10 col-xs-12 box-center">
+              <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="display: flex; justify-content: left">
+                <label>Fecha final</label>
+              </div>
+
+              <div class="col-md-12" style="display: flex; justify-content: center">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <label>Año</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input type="text" v-model="anoSync" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-3" id="validarMesPOS_rxmasivo">
+                  <label>Mes</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        type="text"
+                        maxlength="2"
+                        v-model="mesPOSSync"
+                        data-orden="1"
+                        required="true"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-3" id="validarDiaPOS_rxmasivo">
+                  <label>Dia</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        type="text"
+                        maxlength="2"
+                        v-model="diaPOSSync"
+                        data-orden="1"
+                        required="true"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="mostrarTabla" class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-10 col-sm-10 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+              <label>Estudios creados</label>
+            </div>
+
+            <table class="table table-light table-striped" style="margin-bottom: 0px; width: 99%">
+              <thead>
+                <tr>
+                  <th style="text-align: center" class="col-md-1">Sucursal</th>
+                  <th style="text-align: center" class="col-md-1">Clase</th>
+                  <th style="text-align: center" class="col-md-1">Comprob</th>
+                  <th style="text-align: center" class="col-md-5">Artículo</th>
+                  <th style="text-align: center" class="col-md-1">Item</th>
+                  <th style="text-align: center" class="col-md-1">Fecha</th>
+                  <th style="text-align: center" class="col-md-2">Paciente</th>
+                </tr>
+              </thead>
+            </table>
+
+            <div style="max-height: 414px; overflow-y: scroll; display: inline-block; width: 100%">
+              <table class="table table-light table-striped" style="margin-bottom: 0px">
+                <tbody>
+                      <tr v-for="item in estudios">
+                          <td style="text-align: center" class="col-md-1">{{ item.SUCURSAL }}</td>
+                          <td style="text-align: center" class="col-md-1">{{ item.CLASE_SERVICIO }}</td>
+                          <td style="text-align: center" class="col-md-1">{{ parseInt(item.COMPROBANTE) }}</td>
+                          <td style="text-align: left" class="col-md-5">{{ item.CUP }}</td>
+                          <td style="text-align: center" class="col-md-1">{{ item.ITEM }}</td>
+                          <td style="text-align: center" class="col-md-1">{{ item.FECHA }}</td>
+                          <td style="text-align: center" class="col-md-2">{{ item.PACIENTE }}</td>
+                      </tr>
+                  </tbody>
+              </table>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: right">
+              <label style="color: #476fad">Fueron creados {{ estudios.length }} estudios*</label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+  .flexRow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .flexIzq {
+    text-align: left;
+    padding-left: 9px;
+  }
+</style>
+
+<script src="../../RX/scripts/RX-WEB01-MASIVO.js" type="text/javascript"></script>

@@ -1,0 +1,1426 @@
+{
+  "Menu": [
+    {
+      "Id": "01",
+      "Descripcion": "Archivos maestros",
+      "Opc-segu": "P1",
+      "Sub": [
+        {
+          "Id": "011",
+          "Descripcion": "Actualizar plan de codigos",
+          "Opc-segu": "P11",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE110B",
+              "dll": "PRESUP\\PRE110B.dll"
+            }
+          ]
+        },
+        {
+          "Id": "012",
+          "Descripcion": "Archivo de terceros",
+          "Opc-segu": "P12",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CON110C",
+              "dll": "CONTAB\\CON110C.dll"
+            }
+          ]
+        },
+        {
+          "Id": "013",
+          "Descripcion": "Niveles de seguridad",
+          "Opc-segu": "P13",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE103",
+              "dll": "PRESUP\\PRE103.dll"
+            }
+          ]
+        },
+        {
+          "Id": "014",
+          "Descripcion": "Configurar firmas",
+          "Opc-segu": "P14",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE104",
+              "dll": "PRESUP\\PRE104.dll"
+            }
+          ]
+        },
+        {
+          "Id": "015",
+          "Descripcion": "Actualizar tablas cgr-chip",
+          "Opc-segu": "P15",
+          "Sub": [
+            {
+              "Id": "0151",
+              "Descripcion": "Actualizar sobrecursos cgr",
+              "Opc-segu": "P151",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE105",
+                  "dll": "PRESUP\\PRE105.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0152",
+              "Descripcion": "Actualizar cod. rubros cgr",
+              "Opc-segu": "P152",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE106",
+                  "dll": "PRESUP\\PRE106.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0153",
+              "Descripcion": "Actualizar depend. y nivel",
+              "Opc-segu": "P153",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE107",
+                  "dll": "PRESUP\\PRE107.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0154",
+              "Descripcion": "Actualizar origen recurso",
+              "Opc-segu": "P154",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE154",
+                  "dll": "PRESUP\\PRE154.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0155",
+              "Descripcion": "Actualizar destino recurso",
+              "Opc-segu": "P155",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE155",
+                  "dll": "PRESUP\\PRE155.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0156",
+              "Descripcion": "Actualizar finalidad gasto",
+              "Opc-segu": "P156",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE156",
+                  "dll": "PRESUP\\PRE156.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0157",
+              "Descripcion": "Actualizar entidades recipr",
+              "Tipo": "ERROR",
+              "Cod": "DESHAB"
+            },
+            {
+              "Id": "0158",
+              "Descripcion": "Fuentes saldos disponibles",
+              "Opc-segu": "P158",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE158",
+                  "dll": "PRESUP\\PRE158.dll"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "016",
+          "Descripcion": "Actualizar rubros fut",
+          "Opc-segu": "P16",
+          "Sub": [
+            {
+              "Id": "0161",
+              "Descripcion": "Codigos fut generales",
+              "Opc-segu": "P161",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE108",
+                  "dll": "PRESUP\\PRE108.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0162",
+              "Descripcion": "Codigos fut salud",
+              "Opc-segu": "P162",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE108S",
+                  "dll": "PRESUP\\PRE108S.dll"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "017",
+          "Descripcion": "Actualizar codigos sia",
+          "Opc-segu": "P17",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE109",
+              "dll": "PRESUP\\PRE109.dll"
+            }
+          ]
+        },
+        {
+          "Id": "018",
+          "Descripcion": "Actualizar proyectos",
+          "Opc-segu": "P18",
+          "Sub": [
+            {
+              "Id": "0181",
+              "Descripcion": "Actualiza componentes",
+              "Opc-segu": "P181",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE1A01",
+                  "dll": "PRESUP\\PRE1A01.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0182",
+              "Descripcion": "Actualiza actividades",
+              "Opc-segu": "P182",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE1A02",
+                  "dll": "PRESUP\\PRE1A02.dll"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "02",
+      "Descripcion": "Movimiento",
+      "Opc-segu": "P2",
+      "Sub": [
+        {
+          "Id": "021",
+          "Descripcion": "Presupuesto aprobado",
+          "Opc-segu": "P21",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE005",
+              "dll": "PRESUP\\PRE005.dll",
+              "tr_pre005": "1"
+            }
+          ]
+        },
+        {
+          "Id": "022",
+          "Descripcion": "Adiciones",
+          "Opc-segu": "P22",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE005",
+              "dll": "PRESUP\\PRE005.dll",
+              "tr_pre005": "2"
+            }
+          ]
+        },
+        {
+          "Id": "023",
+          "Descripcion": "Traslados",
+          "Opc-segu": "P23",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE005",
+              "dll": "PRESUP\\PRE005.dll",
+              "tr_pre005": "3"
+            }
+          ]
+        },
+        {
+          "Id": "024",
+          "Descripcion": "Registro compromiso y recon",
+          "Opc-segu": "P24",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE005",
+              "dll": "PRESUP\\PRE005.dll",
+              "tr_pre005": "4"
+            }
+          ]
+        },
+        {
+          "Id": "025",
+          "Descripcion": "Pago o recaudos",
+          "Opc-segu": "P25",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE005",
+              "dll": "PRESUP\\PRE005.dll",
+              "tr_pre005": "5"
+            }
+          ]
+        },
+        {
+          "Id": "026",
+          "Descripcion": "Certif. disponibilidad",
+          "Opc-segu": "P26",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE005",
+              "dll": "PRESUP\\PRE005.dll",
+              "tr_pre005": "6"
+            }
+          ]
+        },
+        {
+          "Id": "027",
+          "Descripcion": "P.A.C",
+          "Opc-segu": "P27",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE005",
+              "dll": "PRESUP\\PRE005.dll",
+              "tr_pre005": "7"
+            }
+          ]
+        },
+        {
+          "Id": "028",
+          "Descripcion": "Obligaciones",
+          "Opc-segu": "P28",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE005",
+              "dll": "PRESUP\\PRE005.dll",
+              "tr_pre005": "8"
+            }
+          ]
+        },
+        {
+          "Id": "029",
+          "Descripcion": "Aplazamientos",
+          "Opc-segu": "P29",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE005",
+              "dll": "PRESUP\\PRE005.dll",
+              "tr_pre005": "9"
+            }
+          ]
+        },
+        {
+          "Id": "02A",
+          "Descripcion": "Obligaciones sobre reservas",
+          "Opc-segu": "P2A",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE005",
+              "dll": "PRESUP\\PRE005.dll",
+              "tr_pre005": "10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "03",
+      "Descripcion": "Consultas",
+      "Opc-segu": "P3",
+      "Sub": [
+        {
+          "Id": "031",
+          "Descripcion": "Consulta saldos por rubro",
+          "Opc-segu": "P31",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE301",
+              "dll": "PRESUP\\PRE301.dll"
+            }
+          ]
+        },
+        {
+          "Id": "032",
+          "Descripcion": "Consulta de mov X NIT",
+          "Opc-segu": "P32",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE302",
+              "dll": "PRESUP\\PRE302.dll"
+            }
+          ]
+        },
+        {
+          "Id": "033",
+          "Descripcion": "Consulta cdp y liberaciones",
+          "Opc-segu": "P33",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE303",
+              "dll": "PRESUP\\PRE303.dll"
+            }
+          ]
+        },
+        {
+          "Id": "034",
+          "Descripcion": "Consulta compromisos",
+          "Opc-segu": "P34",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE304",
+              "dll": "PRESUP\\PRE304.dll"
+            }
+          ]
+        },
+        {
+          "Id": "035",
+          "Descripcion": "Obligaciones",
+          "Opc-segu": "P35",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE305",
+              "dll": "PRESUP\\PRE305.dll"
+            }
+          ]
+        },
+        {
+          "Id": "036",
+          "Descripcion": "Pagos",
+          "Opc-segu": "P36",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE306",
+              "dll": "PRESUP\\PRE306.dll"
+            }
+          ]
+        },
+        {
+          "Id": "037",
+          "Descripcion": "Impresion masiva",
+          "Opc-segu": "P37",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE307",
+              "dll": "PRESUP\\PRE307.dll"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "04",
+      "Descripcion": "Listados",
+      "Opc-segu": "P4",
+      "Sub": [
+        {
+          "Id": "041",
+          "Descripcion": "Informe general saldos pre",
+          "Opc-segu": "P41",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE401",
+              "dll": "PRESUP\\PRE401.dll"
+            }
+          ]
+        },
+        {
+          "Id": "042",
+          "Descripcion": "Informe detllado de presup",
+          "Opc-segu": "P42",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE402",
+              "dll": "PRESUP\\PRE402.dll"
+            }
+          ]
+        },
+        {
+          "Id": "043",
+          "Descripcion": "Listado por transacciones",
+          "Opc-segu": "P43",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE403",
+              "dll": "PRESUP\\PRE403.dll"
+            }
+          ]
+        },
+        {
+          "Id": "044",
+          "Descripcion": "Acumulados mov. por fechas",
+          "Opc-segu": "P44",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE404",
+              "dll": "PRESUP\\PRE404.dll"
+            }
+          ]
+        },
+        {
+          "Id": "045",
+          "Descripcion": "Ejecucion por periodo",
+          "Opc-segu": "P45",
+          "Sub": [
+            {
+              "Id": "0451",
+              "Descripcion": "Ejecucion sencilla",
+              "Opc-segu": "P451",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE405",
+                  "dll": "PRESUP\\PRE405.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0452",
+              "Descripcion": "Ejecucion columnas adic red",
+              "Opc-segu": "P452",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE1405",
+                  "dll": "PRESUP\\PRE1405.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0453",
+              "Descripcion": "Informe varias ejecuciones",
+              "Opc-segu": "P453",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE2405",
+                  "dll": "PRESUP\\PRE2405.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0454",
+              "Descripcion": "Compra varias ejecuciones",
+              "Opc-segu": "P454",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE3405",
+                  "dll": "PRESUP\\PRE3405.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0455",
+              "Descripcion": "Ejecucion con CDP",
+              "Opc-segu": "P455",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE4405",
+                  "dll": "PRESUP\\PRE4405.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0456",
+              "Descripcion": "Ejecucion con codigos CGN",
+              "Opc-segu": "P456",
+              "Sub": [
+                {
+                  "Id": "04561",
+                  "Descripcion": "Ejecucion de ingresos",
+                  "Opc-segu": "P4561",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE5405",
+                      "dll": "PRESUP\\PRE5405.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "04562",
+                  "Descripcion": "Ejecucion de gastos",
+                  "Opc-segu": "P4562",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE5405B",
+                      "dll": "PRESUP\\PRE5405B.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "04563",
+                  "Descripcion": "Ejecucion de PAC",
+                  "Opc-segu": "P4563",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE5405P",
+                      "dll": "PRESUP\\PRE5405P.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "04564",
+                  "Descripcion": "Ejecucion para revision",
+                  "Opc-segu": "P4564",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE5405D",
+                      "dll": "PRESUP\\PRE5405D.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "04565",
+                  "Descripcion": "Cargar archivos SIDEFF",
+                  "Opc-segu": "P4565",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE5405F",
+                      "dll": "PRESUP\\PRE5405F.dll"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Id": "0457",
+              "Descripcion": "Formato contraloria dptal",
+              "Opc-segu": "P457",
+              "Sub": [
+                {
+                  "Id": "04571",
+                  "Descripcion": "Ejecucion de ingresos",
+                  "Opc-segu": "P4571",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE451",
+                      "dll": "PRESUP\\PRE451.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "04572",
+                  "Descripcion": "Ejecucion de gastos",
+                  "Opc-segu": "P4571",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE451",
+                      "dll": "PRESUP\\PRE451.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "04573",
+                  "Descripcion": "Ejecucion de gastos ampliad",
+                  "Opc-segu": "P4573",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE452",
+                      "dll": "PRESUP\\PRE452.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "04574",
+                  "Descripcion": "Ejecucion de gastos confis",
+                  "Opc-segu": "P4574",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE452D",
+                      "dll": "PRESUP\\PRE452D.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "04575",
+                  "Descripcion": "Ejecucion de ingresos casanare",
+                  "Opc-segu": "P4575",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE451D",
+                      "dll": "PRESUP\\PRE451D.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "04576",
+                  "Descripcion": "Ejecucion gastos tot cdp",
+                  "Opc-segu": "P4576",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE454",
+                      "dll": "PRESUP\\PRE454.dll"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Id": "0458",
+              "Descripcion": "Ejecucion de P.A.C",
+              "Opc-segu": "P458",
+              "Sub": [
+                {
+                  "Id": "04581",
+                  "Descripcion": "Ejecucion PAC contraloria",
+                  "Opc-segu": "P4581",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE6405",
+                      "dll": "PRESUP\\PRE6405.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "04582",
+                  "Descripcion": "Ejecucion PAC sencilla",
+                  "Opc-segu": "P4582",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE6405S",
+                      "dll": "PRESUP\\PRE6405S.dll"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Id": "0459",
+              "Descripcion": "Ejecucion con codigos FUT",
+              "Opc-segu": "P459",
+              "Sub": [
+                {
+                  "Id": "04591",
+                  "Descripcion": "Ejecucion de ingresos",
+                  "Opc-segu": "P4591",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE9405",
+                      "dll": "PRESUP\\PRE9405.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "04592",
+                  "Descripcion": "Ejecucion de gastos funcionam",
+                  "Opc-segu": "P4592",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE9405B",
+                      "dll": "PRESUP\\PRE9405B.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "04593",
+                  "Descripcion": "Ejecucion de inversion",
+                  "Opc-segu": "P4593",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE9405D",
+                      "dll": "PRESUP\\PRE9405D.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "04594",
+                  "Descripcion": "Servicio de deuda",
+                  "Opc-segu": "P4594",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE9405F",
+                      "dll": "PRESUP\\PRE9405F.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "04595",
+                  "Descripcion": "Ejecucion de reservas",
+                  "Opc-segu": "P4595",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE9405H",
+                      "dll": "PRESUP\\PRE9405H.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "04596",
+                  "Descripcion": "Fondo local de salud",
+                  "Opc-segu": "P4596",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE9405J",
+                      "dll": "PRESUP\\PRE9405J.dll"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Id": "045A",
+              "Descripcion": "Ejecucion con codigos CGR",
+              "Opc-segu": "P45A",
+              "Sub": [
+                {
+                  "Id": "045A1",
+                  "Descripcion": "Programacion de ingresos",
+                  "Opc-segu": "P45A1",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE10051",
+                      "dll": "PRESUP\\PRE10051.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "045A2",
+                  "Descripcion": "Ejecucion de ingresos",
+                  "Opc-segu": "P45A2",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE10052",
+                      "dll": "PRESUP\\PRE10052.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "045A3",
+                  "Descripcion": "Programacion de gastos",
+                  "Opc-segu": "P45A3",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE10053",
+                      "dll": "PRESUP\\PRE10053.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "045A4",
+                  "Descripcion": "Ejecucion de gastos",
+                  "Opc-segu": "P45A4",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE10054",
+                      "dll": "PRESUP\\PRE10054.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "045A5",
+                  "Descripcion": "Prog y ejecucion P.A.C",
+                  "Opc-segu": "P45A5",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE10055",
+                      "dll": "PRESUP\\PRE10055.dll"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Id": "045B",
+              "Descripcion": "Informes para S.I.A",
+              "Opc-segu": "P45B",
+              "Sub": [
+                {
+                  "Id": "045B1",
+                  "Descripcion": "F06 Ejecucion de ingresos",
+                  "Opc-segu": "P45B1",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE1105",
+                      "dll": "PRESUP\\PRE1105.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "045B2",
+                  "Descripcion": "F07 Ejecucion de gastos",
+                  "Opc-segu": "P45B2",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE1105B",
+                      "dll": "PRESUP\\PRE1105B.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "045B3",
+                  "Descripcion": "F08A Modificaciones ingresos",
+                  "Opc-segu": "P45B3",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE1105C",
+                      "dll": "PRESUP\\PRE1105C.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "045B4",
+                  "Descripcion": "F08B Modificaciones gastos",
+                  "Opc-segu": "P45B4",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE1105E",
+                      "dll": "PRESUP\\PRE1105E.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "045B5",
+                  "Descripcion": "F09 Ejecucion PAC",
+                  "Opc-segu": "P45B5",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE1105D",
+                      "dll": "PRESUP\\PRE1105D.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "045B6",
+                  "Descripcion": "F05 Relacion de registros",
+                  "Opc-segu": "P45B6",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE1105F",
+                      "dll": "PRESUP\\PRE1105F.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "045B7",
+                  "Descripcion": "F15 Cuentas por pagar",
+                  "Opc-segu": "P45B7",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE1105G",
+                      "dll": "PRESUP\\PRE1105G.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "045B8",
+                  "Descripcion": "F10 Informe de reservas",
+                  "Opc-segu": "P45B8",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE1105H",
+                      "dll": "PRESUP\\PRE1105H.dll"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Id": "045C",
+              "Descripcion": "Informes para SIRECI",
+              "Opc-segu": "P45C",
+              "Sub": [
+                {
+                  "Id": "045C1",
+                  "Descripcion": "Programacion de ingresos",
+                  "Opc-segu": "P45C1",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE12051",
+                      "dll": "PRESUP\\PRE12051.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "045C2",
+                  "Descripcion": "Ejecucion de ingresos",
+                  "Opc-segu": "P45C2",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE12052",
+                      "dll": "PRESUP\\PRE12052.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "045C3",
+                  "Descripcion": "Programacion de gastos",
+                  "Opc-segu": "P45C3",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE12053",
+                      "dll": "PRESUP\\PRE12053.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "045C4",
+                  "Descripcion": "Ejecucion de gastos",
+                  "Opc-segu": "P45C4",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE12054",
+                      "dll": "PRESUP\\PRE12054.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "045C5",
+                  "Descripcion": "Prog y ejecucion P.A.C",
+                  "Opc-segu": "P45C5",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "PRE12055",
+                      "dll": "PRESUP\\PRE12055.dll"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "046",
+          "Descripcion": "Libro control por rubro",
+          "Opc-segu": "P46",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE406",
+              "dll": "PRESUP\\PRE406.dll"
+            }
+          ]
+        },
+        {
+          "Id": "047",
+          "Descripcion": "Listado de saldo disponible",
+          "Opc-segu": "P47",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE407",
+              "dll": "PRESUP\\PRE407.dll"
+            }
+          ]
+        },
+        {
+          "Id": "048",
+          "Descripcion": "Relacion ingresos/egresos",
+          "Opc-segu": "P48",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE408",
+              "dll": "PRESUP\\PRE408.dll"
+            }
+          ]
+        },
+        {
+          "Id": "049",
+          "Descripcion": "Saldos registros/C.D.P",
+          "Opc-segu": "P49",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE409",
+              "dll": "PRESUP\\PRE409.dll"
+            }
+          ]
+        },
+        {
+          "Id": "04A",
+          "Descripcion": "Resumen transac. mes a mes",
+          "Opc-segu": "P4A",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE410",
+              "dll": "PRESUP\\PRE410.dll"
+            }
+          ]
+        },
+        {
+          "Id": "04B",
+          "Descripcion": "Catalogo de codigos",
+          "Opc-segu": "P4B",
+          "Sub": [
+            {
+              "Id": "04B1",
+              "Descripcion": "Catalogo codigos presupuesto",
+              "Opc-segu": "P4B1",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE420",
+                  "dll": "PRESUP\\PRE420.dll"
+                }
+              ]
+            },
+            {
+              "Id": "04B2",
+              "Descripcion": "Catalogo codigos FUT",
+              "Opc-segu": "P4B2",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE416",
+                  "dll": "PRESUP\\PRE416.dll"
+                }
+              ]
+            },
+            {
+              "Id": "04B3",
+              "Descripcion": "Catalogo codigos contraloria",
+              "Opc-segu": "P4B3",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "PRE417",
+                  "dll": "PRESUP\\PRE417.dll"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "04C",
+          "Descripcion": "Resumen de movimiento dia",
+          "Opc-segu": "P4C",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE412",
+              "dll": "PRESUP\\PRE412.dll"
+            }
+          ]
+        },
+        {
+          "Id": "04D",
+          "Descripcion": "Validacion de contrapartid",
+          "Opc-segu": "P4D",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE413",
+              "dll": "PRESUP\\PRE413.dll"
+            }
+          ]
+        },
+        {
+          "Id": "04E",
+          "Descripcion": "Informe de pagos con CDP",
+          "Opc-segu": "P4E",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE414",
+              "dll": "PRESUP\\PRE414.dll"
+            }
+          ]
+        },
+        {
+          "Id": "04G",
+          "Descripcion": "Informe ejecuc X comprobante",
+          "Opc-segu": "P4G",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE415",
+              "dll": "PRESUP\\PRE415.dll"
+            }
+          ]
+        },
+        {
+          "Id": "04H",
+          "Descripcion": "Listado de componentes",
+          "Opc-segu": "P4H",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE418",
+              "dll": "PRESUP\\PRE418.dll"
+            }
+          ]
+        },
+        {
+          "Id": "04I",
+          "Descripcion": "Reimprime solicitud de CDP",
+          "Opc-segu": "P4H",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE509I",
+              "dll": "PRESUP\\PRE509I.dll"
+            }
+          ]
+        },
+        {
+          "Id": "04J",
+          "Descripcion": "Saldos de reservas",
+          "Opc-segu": "P4H",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE40J",
+              "dll": "PRESUP\\PRE40J.dll"
+            }
+          ]
+        }
+
+
+      ]
+    },
+    {
+      "Id": "05",
+      "Descripcion": "Opciones avanzadas",
+      "Opc-segu": "P5",
+      "Sub": [
+        {
+          "Id": "051",
+          "Descripcion": "Correccion de movimiento",
+          "Opc-segu": "P51",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE501",
+              "dll": "PRESUP\\PRE501.dll"
+            }
+          ]
+        },
+        {
+          "Id": "052",
+          "Descripcion": "Entrada consolidado ingres",
+          "Opc-segu": "P52",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE502",
+              "dll": "PRESUP\\PRE502.dll"
+            }
+          ]
+        },
+        {
+          "Id": "053",
+          "Descripcion": "Entrada consolidado reconoc",
+          "Opc-segu": "P53",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE503",
+              "dll": "PRESUP\\PRE503.dll"
+            }
+          ]
+        },
+        {
+          "Id": "054",
+          "Descripcion": "Liberacion de cert. dispon.",
+          "Opc-segu": "P54",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE504",
+              "dll": "PRESUP\\PRE504.dll"
+            }
+          ]
+        },
+        {
+          "Id": "055",
+          "Descripcion": "Liberacion de registros",
+          "Opc-segu": "P55",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE505",
+              "dll": "PRESUP\\PRE505.dll"
+            }
+          ]
+        },
+        {
+          "Id": "056",
+          "Descripcion": "Recalculo de saldos",
+          "Opc-segu": "P56",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE510",
+              "dll": "PRESUP\\PRE510.dll"
+            }
+          ]
+        },
+        {
+          "Id": "057",
+          "Descripcion": "Correccion de numeraciones",
+          "Opc-segu": "P57",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE507",
+              "dll": "PRESUP\\PRE507.dll"
+            }
+          ]
+        },
+        {
+          "Id": "058",
+          "Descripcion": "Nota contabilidad ctas cero",
+          "Opc-segu": "P58",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE508",
+              "dll": "PRESUP\\PRE508.dll"
+            }
+          ]
+        },
+        {
+          "Id": "059",
+          "Descripcion": "Formato solicitud de CDP",
+          "Opc-segu": "P59",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE509",
+              "dll": "PRESUP\\PRE509.dll"
+            }
+          ]
+        },
+        {
+          "Id": "05A",
+          "Descripcion": "Traslado mov. de un NIT",
+          "Opc-segu": "P5A",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE511",
+              "dll": "PRESUP\\PRE511.dll"
+            }
+          ]
+        },
+        {
+          "Id": "05B",
+          "Descripcion": "Eliminar mov. X comprobante",
+          "Opc-segu": "P5B",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE512",
+              "dll": "PRESUP\\PRE512.dll"
+            }
+          ]
+        },
+        {
+          "Id": "05C",
+          "Descripcion": "Listado de auditoria",
+          "Opc-segu": "P5C",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE513",
+              "dll": "PRESUP\\PRE513.dll"
+            }
+          ]
+        },
+        {
+          "Id": "05D",
+          "Descripcion": "Traslado de reservas",
+          "Opc-segu": "P5D",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "PRE514",
+              "dll": "PRESUP\\PRE514.dll"
+            }
+          ]
+        }
+
+      ]
+    }
+  ]
+}

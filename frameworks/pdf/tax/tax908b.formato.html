@@ -1,0 +1,199 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+
+<body>
+    <div id="encabezado">
+        <div class="enc-logo">
+            <div id="logo">
+            </div>
+        </div>
+        <div class="enc-izq">
+            <div>
+                <a id="nombreEmpresa" style="font-weight: 600;font-size: 24px;"></a>
+                <br>
+                <a style="font-size: 12px;font-weight: 600;">Resumen de producidos</a>
+                <br>
+                <a style="font-size: 12px;font-weight: 600;">Fecha: </a><a id="fecha_TAX908B"
+                    style="font-size: 12px;"></a>
+            </div>
+        </div>
+    </div>
+    <div id="contenido">
+        <table style="width: 100%;" id="tabla_TAX908B">
+            <thead>
+                <tr>
+                    <th style="text-align:center;">PLACA</th>
+                    <th style="text-align:center;">PRODUCIDO</th>
+                    <th style="text-align:center;">REMESAS</th>
+                    <th style="text-align:center;">AVANCES</th>
+                    <th style="text-align:center;">ABONOS</th>
+                    <th style="text-align:center;">NETO</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+<style>
+    @page {
+        margin: 5mm;
+        size: A4 portrait;
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+    html,
+    body,
+    #documento,
+    #impresion {
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: 'Roboto', sans-serif;
+        box-sizing: border-box;
+    }
+
+    #encabezado {
+        width: 100%;
+        height: 100px;
+        border: 1px solid #000;
+        border-bottom: none;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        position: fixed;
+        top: 0;
+    }
+
+    .enc-logo,
+    .enc-izq,
+    .enc-der {
+        display: flex;
+        align-items: center;
+    }
+
+    .enc-izq div a {
+        text-transform: uppercase;
+    }
+
+    .enc-logo #logo {
+        width: 70%;
+        height: 60%;
+        margin: 0 auto;
+    }
+
+    .enc-logo #logo img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .tabla_TAX908B {
+        border-spacing: 0;
+    }
+
+    #contenido table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table thead tr,
+    table tfoot tr {
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+
+    table thead tr th {
+        padding: 10px 2px;
+        font-size: 12px;
+        text-transform: uppercase;
+        text-align: left;
+    }
+
+    table#tabla_TAX908B thead:before {
+        content: " ";
+        display: block;
+        margin-top: 100px;
+    }
+
+    table#tabla_TAX908B tbody tr td {
+        padding: 2px 10px;
+        font-size: 12px;
+    }
+</style>
+<script>
+    var TAX908B = [];
+    var $_URL = null;
+    ipcRenderer.on('ping', (e, data) => {
+        console.log(data)
+        TAX908B = data.datos;
+        var $_TIPO = data.tipo
+        $_URL = data.url
+
+        $('#nombreEmpresa').text(TAX908B.TOTALES[0]);
+        $('#fecha_TAX908B').text(TAX908B.TOTALES[2]);
+
+        var data = TAX908B.Listado
+        for (var i in data) {
+            $('#tabla_TAX908B tbody').append(
+                '<tr>' +
+                '<td style="text-align:right;">' + data[i].LIBRO + '</td>' +
+                '<td style="text-align:right;">' + data[i].PRODUC + '</td>' +
+                '<td style="text-align:right;">' + data[i].REMESAS + '</td>' +
+                '<td style="text-align:right;">' + data[i].ANTICIPOS + '</td>' +
+                '<td style="text-align:right;">' + data[i].ABOBOS + '</td>' +
+                '<td style="text-align: right;">' + data[i].TOTAL + '</td>' +
+                '</tr>'
+            )
+        }
+
+        var nit = TAX908B.TOTALES[1];
+        var url = path.join(`P:\\PROG\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('#logo');
+        });
+
+        if ($_TIPO == 'csv') imprimirCsv();
+    })
+
+
+    function imprimirCsv() {
+        var csv = [];
+        var rows = document.querySelectorAll("table tr");
+
+
+        for (var i = 0; i < rows.length; i++) {
+            var row = [], cols = rows[i].querySelectorAll("td, th");
+            for (var j = 0; j < cols.length; j++) row.push(cols[j].innerText.replace(/,/g, ''));
+            csv.push(row.join(","));
+        }
+
+        var head_csv = [$('#nombreEmpresa').text(), "Resumen de producidos", $('#fecha_TAX908B').text()]
+        csv.unshift(head_csv.join(","))
+
+        _formatoCsv(csv.join("\n"));
+    }
+
+    function _formatoCsv(csv) {
+        var urlCsv = $_URL + '.csv';
+        try {
+            fs.writeFile(urlCsv, csv, 'utf-8', function (e) {
+                var window = remote.getCurrentWindow();
+                window.close();
+            });
+        } catch (e) {
+            alert('Ha ocurrido un error escribiendo el archivo: ' + urlCsv);
+        }
+    }
+</script>

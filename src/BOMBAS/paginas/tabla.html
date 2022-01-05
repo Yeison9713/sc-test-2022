@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        thead {
+            float: left
+        }
+
+        tbody {
+            float: right
+        }
+
+        thead th {
+            display: block;
+        }
+
+        tbody td {
+            display: block;
+            padding: 10px 10px;
+            text-align: center;
+        }
+
+        tbody tr {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1" cellspacing="0">
+        <tbody>
+        </tbody>
+    </table>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        var num = 1;
+        for (var i = 1; i <= 15; i++) {
+            var column = $('<tr/>', { id: 'columna-' + i });
+
+            for (var j = 1; j <= 20; j++) {
+                column.append(
+                    $('<td/>',
+                        { id: 'fila-' + num })
+                        .html(num + ' = valor')
+                );
+                num++;
+            }
+
+            $('table tbody').append(column)
+        }
+    })
+</script>
+
+</html>

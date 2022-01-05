@@ -1,0 +1,12 @@
+node_modules/
+build/
+dist/
+SC-SESION.DAT
+electron-builder.yml
+datos/
+package-lock.json
+yarn-error.log
+yarn.lock
+settings.json
+app/*
+!app/inc/

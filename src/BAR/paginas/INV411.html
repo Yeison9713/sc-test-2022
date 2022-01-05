@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Impresion de formulario</title>
+    <script type="text/javascript">
+       function cargar(){
+           /*document.getElementById('RUTA-BAT').value = localStorage['keyRutaBat'];
+           document.getElementById('RUTA-PDF').value = localStorage['keyRutaPdf'];*/
+	   document.forms.item(0).submit();
+        }
+    </script>
+</head>
+
+<body onload="cargar()">
+    <form method="POST" action="../paginas/INV411.php">
+        <input id="RUTA-BAT" type="hidden" name="RUTA-BAT" value="//COBOL//RUTA-BAT-H//COBOL//"/> 
+        <input id="RUTA-PDF" type="hidden" name="RUTA-PDF" value="//COBOL//RUTA-PDF-H//COBOL//"/>
+    </form>
+</body>
+</html>
+

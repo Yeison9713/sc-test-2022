@@ -1,0 +1,157 @@
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<div class="col-md-12" id="PUB607">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="col-md-12 no-padding">
+          <div class="col-md-3" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center">
+              <div class="col-md-12 no-padding" style="text-align: center">
+                <div class="col-md-12 head-box">
+                  <label>Periodo elaboración</label>
+                </div>
+                <div class="col-md-12 no-padding" id="fecha_gen">
+                  <div class="col-md-6 inline-inputs">
+                    <label class="col-md-5" id="lbl">Año</label>
+                    <div class="input-group col-md-7">
+                      <input
+                        v-model="ano_gen"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="4"
+                        data-orden="1"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6 inline-inputs">
+                    <label class="col-md-6" id="lbl">Mes</label>
+                    <div class="input-group col-md-6">
+                      <input
+                        v-model="mes_gen"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="2"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center">
+              <div class="col-md-12 no-padding" style="text-align: center">
+                <div class="col-md-12 head-box">
+                  <label>Factura</label>
+                </div>
+                <div class="col-md-12 no-padding" id="llave">
+                  <div class="input-group col-md-9" style="display: inline-flex">
+                    <input
+                      v-model="reg_fact.llave"
+                      type="text"
+                      class="form-control text-center"
+                      maxlength="9"
+                      data-orden="1"
+                      required="true"
+                      @keydown.f8="_ventanaUsuarSer"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center">
+              <div class="col-md-12 no-padding" style="text-align: center">
+                <div class="col-md-12 head-box">
+                  <label>Nombre</label>
+                </div>
+                <label class="col-md-12" style="margin-top: 7px; margin-bottom: 6px">{{ nombre_cat }}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="mostrar_tabla">
+      <transition>
+        <div class="modal-mask">
+          <div class="modal-wrapper">
+            <div
+              class="col-md-3 no-padding form-group box-center"
+              style="padding: 15px !important; padding-bottom: 4px !important; padding-top: 4px !important"
+            >
+              <h4 style="font-weight: 600">RECAUDOS</h4>
+
+              <table class="table table-light table-striped" style="margin-bottom: 0px; width: 99%">
+                <thead>
+                  <tr>
+                    <th class="col-md-4 text-center">Fecha</th>
+                    <th class="col-md-4 text-center">Codigo</th>
+                    <th class="col-md-4 text-center">Secuencia</th>
+                  </tr>
+                </thead>
+              </table>
+              <div style="display: inline-block; width: 100%">
+                <table id="tabla" class="table table-light table-striped" style="margin-bottom: 0px">
+                  <tbody>
+                    <tr v-for="(registro, index) in tabla">
+                      <td class="col-md-4 text-center">{{ registro.fecha }}</td>
+                      <td class="col-md-4 text-center">{{ registro.cod }}</td>
+                      <td class="col-md-4 text-center">{{ registro.secu }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="col-md-12 inline-inputs" style="padding: 4px">
+                <div class="col-md-12 no-padding">
+                  <input
+                    @click="callback_tabla"
+                    @keydown.esc="callback_tabla"
+                    value="Aceptar"
+                    type="button"
+                    class="btn btn-primary"
+                    style="float: right"
+                    ref="btn_tabla"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<script src="../../SERVDOM/scripts/PUB607.js" type="text/javascript"></script>
+
+<style>
+  #lbl {
+    background: 0;
+    text-align: left;
+    padding-left: 5px;
+  }
+
+  #tabla_fact tbody tr {
+    height: 25px;
+  }
+
+  #tabla_fact tbody tr td {
+    padding: 0;
+  }
+</style>

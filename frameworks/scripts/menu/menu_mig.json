@@ -1,0 +1,15 @@
+{
+  "Menu": [
+    {
+      "Id": "01",
+      "Descripcion": "Migrador",
+      "Tipo": "JS",
+      "Js": "../../MIGRADOR/scripts/mig_sql.js"
+    },
+    {
+      "Id": "02",
+      "Descripcion": "Teclas",
+      "Href" : "../../MIGRADOR/paginas/teclas.html"
+    }
+  ]
+}

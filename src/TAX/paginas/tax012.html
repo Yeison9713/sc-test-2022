@@ -1,0 +1,145 @@
+<div class="col-md-9 col-sm-12" style="float: none; margin: 0 auto;">
+    <div class="portlet light box-center box-title" style="margin: 0 auto;">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject bold">2 - Actualizacion de agencias</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="portlet light">
+        <div class="portlet-body">
+            <form class="form-horizontal">
+
+                <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Novedad:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="novedad_tax012" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6" id="faseAgencia">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-6 col-xs-12">Codigo:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="agencia_tax012" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="2"
+                                    data-orden="1">
+                            </div>
+                            <button id="agenciaBtn_tax012" type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6" id="faseDescripcion">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="agenciaDescrip_tax012" type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="25" data-orden="1"
+                                required="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12" style="width: 100%;">Producido:</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3" id="faseProducidoEmpresa">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">% Empresa:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="producidoEmpresa_tax012" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3" id="faseProducidoAgencia">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">% Agencia:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="producidoAgencia_tax012" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">% propietario:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="producidoPropietario_tax012" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12" style="width: 100%;">Remesas:</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3" id="faseRemesaEmpresa">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">% Empresa:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="remesasEmpresa_tax012" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3" id="faseRemesaAgencia">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">% Agencia:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="remesasAgencia_tax012" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">% propietario:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="remesasPropietario_tax012" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6 col-sm-12 col-xs-12 box-center"
+                    style="display: flex; justify-content: space-around;">
+                    <div class="col-md-4 col-sm-4 col-xs-6" id="faseSucursal">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Sucursal:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="sucursal_tax012" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="2">
+                            </div>
+                            <button id="sucursalBtn_tax012" type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Descripcion:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="descripSucur_tax012" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="../../TAX/scripts/tax012.js" type="text/javascript"></script>

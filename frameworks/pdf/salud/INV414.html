@@ -1,0 +1,693 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+
+<html>
+<body>
+    <div class="page-header">
+        <div class="datosusu_INV414">
+            <div class="logo" style="position:absolute; width: 8%; height: 30%;"></div>
+            <div class="primera_linea">
+                <div class="caja_INV414"><a class="nombre_INV414" > HOSPITAL LOCAL SAN MARTIN ESE</a></div>
+                <div class="caja_INV414"><a class="nitusu_INV414" >NIT 892,000,458</a></div>
+                <div class="caja_INV414"><a class="claseserviciousu_INV414" >COMPROB. 3 IMAGENOLOGIA</a></div>
+                <div class="caja_INV414"><a class="comprobantepaciente_INV414" >NRO: 008217</a></div>
+            </div>
+            <div class="segunda_linea">
+                <div class="caja_INV414"><a class="direccionusu_INV414"> CL 4 7 34</a></div>
+                <div class="caja_INV414"><a class="telefonousu_INV414">Tel: 6483035</a></div>
+                <div class="caja_INV414"><a class="ciudadusu_INV414">SAN MARTIN</a></div>
+                <div class="caja_INV414"><a class="acceso_INV414">ACCESO: UR</a></div>
+            </div>
+        </div>
+        <div class="datosfact_INV414">
+            <div class="tercera_linea">
+                <div class="caja_INV414">
+                    <a class="entidadpaciente_INV414">ENTIDAD: CAPITAL SALUD EPSS</a>
+                </div>
+                <div class="caja_INV414">
+                    <a class="codigoeps_INV414">EPSS34</a>
+                </div>
+                <div class="caja_INV414">
+                    <a class="facturapaciente_INV414"> FACTURA NR: P027040</a>
+                </div>
+                <div class="caja_INV414">
+                    <a class="fechapaciente_INV414"> NOVIEMBRE 15 DEL 2019</a>
+                </div>
+            </div>
+            <div class="cuarta_linea">
+                <div class="caja_INV414" style="width: 50%;">
+                    <a class="medotr_INV414">ATIENDE: MONSALVE TAMAYO GUSTAVO</a>
+                </div>
+                <div class="caja_INV414">
+                    <a class="personaledit_INV414">MD.GEN</a>
+                </div>
+                <div class="caja_INV414">
+                    <a class="especialidad_INV414">Espec: 602 RADIOLOGIA E IMAGENES DIA</a>
+                </div>
+            </div>
+            <div class="quinta_linea">
+                <div class="caja_INV414" style="width: 50%;">
+                    <a class="formapago_INV414">F.PAGO: Hospit.</a>
+                </div>
+                <div class="caja_INV414">
+                    <a class="autor_INV414">Autorizacion: 123123123</a>
+                </div>
+                <div class="caja_INV414">
+                    <a class="afiliacion_INV414">Afiliciacion: </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+              <td>
+                <!--place holder for the fixed-position header-->
+                <div class="page-header-space"></div>
+              </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+            <td>
+                <!--*** CONTENT GOES HERE ***-->
+                <div class="page">
+                    <table class="tablacodservicio_INV414">
+                        <thead>
+                            <tr>
+                                <th style="width: 5%;font-size:9px;">Codigo</th>
+                                <th style="width: 12%;font-size:9px;">Descripcion</th>
+                                <th style="width: 2%;font-size:9px;">Cant</th>
+                                <th style="width: 5%;font-size:9px;">Valor unit.</th>
+                                <th style="width: 5%;font-size:9px;">Valor Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <a class="detalle_INV414"> DETALLE: PRIMERA FACTURA DE RX</a> </br>
+                    <a class="resoldian_INV414">RESOLUCION</a>
+                    <div class="recepcion_INV414">
+                        <a>Recibi el servicio a satisfaccion: _______________________________</a>
+                        <a class="elaboro_INV414">Elaboro: 0101</a>
+                    </div>
+                    <div class="historia_INV414">
+                        <a>HISTORIA CLINICA</a>
+                        <a>HORA ATENCION:</a>
+                        <a>HORA EGRESO:</a>
+                        <a class="horaimpreso_INV414">Impreso:</a>
+                    </div>
+                    <div class="sexta_linea">
+                        <div class="caja2_INV414" style="border-right: black solid 0.1px;">
+                            <a class="titulos_INV414">NOMBRE DEL PACIENTE</a>
+                        </div>
+                        <div class="caja3_INV414" style="border-right: black solid 0.1px;">
+                            <a class="titulos_INV414">IDENTIDAD</a>
+                        </div>
+                        <div class="caja4_INV414" style="border-right: black solid 0.1px;">
+                            <a class="titulos_INV414">EMB</a>
+                        </div>
+                        <div class="caja4_INV414" style="border-right: black solid 0.1px;">
+                            <a class="titulos_INV414">EDAD</a>
+                        </div>
+                        <div class="caja4_INV414" style="border-right: black solid 0.1px;">
+                            <a class="titulos_INV414">SEXO</a>
+                        </div>
+                        <div class="caja4_INV414" style="border-right: black solid 0.1px;">
+                            <a class="titulos_INV414">CIUDAD</a>
+                        </div>
+                        <div class="caja4_INV414" style="border-right: black solid 0.1px;">
+                            <a class="titulos_INV414">ZONA</a>
+                        </div>
+                        <div class="caja4_INV414">
+                            <a>FIN</a>
+                        </div>
+                    </div>
+                    <div class="septima_linea">
+                        <div class="caja2_INV414" style="border-right: black solid 0.1px;">
+                            <a class="nombrepaciente_INV414">SANDOVAL PEDREROS JHON JAIRO</a>
+                        </div>
+                        <div class="caja3_INV414" style="border-right: black solid 0.1px;">
+                            <a class="idhistoria_INV414">000001120504800</a>
+                        </div>
+                        <div class="caja4_INV414" style="border-right: black solid 0.1px;">
+                            <a class="embar_INV414"></a>
+                        </div>
+                        <div class="caja4_INV414" style="border-right: black solid 0.1px;">
+                            <a class="edad_INV414">A023</a>
+                        </div>
+                        <div class="caja4_INV414" style="border-right: black solid 0.1px;">
+                            <a class="sexo_INV414">M</a>
+                        </div>
+                        <div class="caja4_INV414" style="border-right: black solid 0.1px;">
+                            <a class="ciudadpaci_INV414">50689</a>
+                        </div>
+                        <div class="caja4_INV414" style="border-right: black solid 0.1px;">
+                            <a class="ZONA_INV414">U</a>
+                        </div>
+                        <div class="caja4_INV414">
+                            <a>ALI</a>
+                        </div>
+                    </div>
+                    <div class="octava_linea">
+                        <div class="caja2_INV414" style="border-right: black solid 0.1px;">
+                            <!-- <a class="titulos_INV414">DIRECCION: </a> -->
+                            <a class="direccionpaci_INV414"></a>
+                        </div>
+                        <div style="border-right: black solid 0.1px; display: inline-flex; width: 22.1%;">
+                            <!-- <a class="titulos_INV414">COD OCUPACION: </a> -->
+                            <a class="ocupacion_INV414">999</a>
+                        </div>
+                        <div style="border-right: black solid 0.1px; display: inline-flex; width: 28.2%;">
+                            <!-- <a class="titulos_INV414">TIPO USUARIO: </a> -->
+                            <a class="tipousuar_INV414">SUBSID</a>
+                        </div>
+                        <div style="display: inline-flex; width: 9%;">
+                            <a>DAD</a>
+                        </div>
+                    </div>
+                    <div class="novena_linea">
+                        <div class="caja2_INV414" style="border-right: black solid 0.1px;">
+                            <a class="descripocu_INV414">OCUPACION:</a>
+                        </div>
+                        <div style="border-right: black solid 0.1px; display: inline-flex; width: 22.1%;">
+                            <a class="telefonopaci_INV414">TEL:</a>
+                        </div>
+                        <div style="border-right: black solid 0.1px; display: inline-flex; width: 28.2%;">
+                            <a class="horaingresopaci_INV414">09:10</a>
+                        </div>
+                        <div style="display: inline-flex; width: 9%;">
+                            <a>PYP</a>
+                        </div>
+                    </div>
+                    <div class="decima_linea">
+                        <a class="acompañante_INV414">ACOMPAÑANTE</a>
+                    </div>
+                    <div class="onceava_linea">
+                        <div class="caja5_INV414" style="border-right: black solid 0.1px; border-bottom: black solid 0.1px;">
+                            <a class="titulos_INV414">PACIENTE LLEGO:</a>
+                        </div>
+                        <div class="caja5_INV414" style="border-right: black solid 0.1px; border-bottom: black solid 0.1px;">
+                            <a class="pacientellego_INV414"></a>
+                        </div>
+                        <div class="caja3_INV414" style="border-right: black solid 0.1px; border-bottom: black solid 0.1px;">
+                            <a class="consulta_INV414">CONSULTA</a>
+                        </div>
+                        <div class="caja3_INV414" style="border-right: black solid 0.1px; border-bottom: black solid 0.1px;">
+                            <a class="estadosalida_INV414">ESTADO SALIDA</a>
+                        </div>
+                        <div class="caja3_INV414" style="border-right: black solid 0.1px; width: 20.2%; border-bottom: black solid 0.1px;">
+                            <a class="finalidad_INV414">FINALIDAD CONS</a>
+                        </div>
+                        <div class="caja4_INV414">
+                            <a>T.DX</a>
+                        </div>
+                    </div>
+                    <div class="doceava_linea">
+                        <div class="caja5_INV414" style="border-right: black solid 0.1px;">
+                            <a class="conseciente_INV414"> CONSCIENTE :</a>
+                        </div>
+                        <div class="caja5_INV414" style="width: 18%;border-right: black solid 0.1px;">
+                            <a class="pretriage12_INV414">TRIAGE 1 Y 2</a>
+                        </div>
+                        <div style="display: inline-flex; width: 1.9%; border-right: black solid 0.1px;">
+                            <a class="triage12_INV414"> tt </a>
+                        </div>
+                        <div class="caja5_INV414" style="width: 13%; border-right: black solid 0.1px;">
+                            <a class="primeravez_INV414">1A VEZ</a>
+                        </div>
+                        <div style="display: inline-flex; width: 2%; border-right: black solid 0.1px;">
+                            <a class="casilla1ravez_INV11"></a>
+                        </div>
+                        <div class="caja3_INV414" style="border-right: black solid 0.1px;">
+                            <a class="titulos_INV414">VIVO:</a>
+                            <a class="estado_INV414"></a>
+                        </div>
+                        <div class="caja5_INV414" style="border-right: black solid 0.1px;width: 20.1%;">
+                            <!-- <a class="titulos_INV414">CAUSA EXTERNA</a> -->
+                            <a class="causaexterna_INV414">1234</a>
+                        </div>
+                    </div>
+                    <div class="treceava_linea">
+                        <div class="caja5_INV414" style="border-right: black solid 0.1px;border-bottom: black solid 0.1px;">
+                            <a class="inconsciente_INV414">INCONSCIENTE :</a>
+                        </div>
+                        <div class="caja5_INV414" style="width: 18%; border-right: black solid 0.1px;">
+                        </div>
+                        <div style="display: inline-flex; width: 1.9%; border-right: black solid 0.1px;">
+                        </div>
+                        <div class="caja5_INV414" style="width: 13%; border-right: black solid 0.1px;">
+                        </div>
+                        <div style="display: inline-flex; width: 2%; border-right: black solid 0.1px;">
+                        </div>
+                        <div class="caja3_INV414" style="border-right: black solid 0.1px;border-bottom: black solid 0.1px;">
+                            <!-- <a class="titulos_INV414">MUERTO:</a> -->
+                            <a class="muerto_INV414"></a>
+                        </div>
+                        <div class="caja5_INV414" style="border-right: black solid 0.1px;width: 20.1%; border-bottom: black solid 0.1px;">
+                            <!-- <a class="titulos_INV414">DIAGN.PRINCIP</a> -->
+                            <a class="diagnprincip_INV414">1234</a>
+                        </div>
+                        <div class="caja4_INV414">
+                            <a class="tipo_INV414">TIPO</a>
+                        </div>
+                    </div>
+                    <div class="catorceava_linea">
+                        <div class="caja5_INV414" style="border-right: black solid 0.1px;">
+                            <a class="muerto2_INV414">MUERTO : </a>
+                        </div>
+                        <div class="caja5_INV414" style="width: 18%; border-right: black solid 0.1px;">
+                            <a class="pretriage34_INV4411">TRIAGE 3 Y 4</a>
+                        </div>
+                        <div style="display: inline-flex; width: 1.9%; border-right: black solid 0.1px;">
+                            <a class="triage34_INV414">tt</a>
+                        </div>
+                        <div class="caja5_INV414" style="width: 13%; border-right: black solid 0.1px;">
+                            <a class="repet_INV414">REPET.</a>
+                        </div>
+                        <div style="display: inline-flex; width: 2%; border-right: black solid 0.1px;">
+                            <a class="spacesrepet_INV414"></a>
+                        </div>
+                        <div class="caja3_INV414" style="border-right: black solid 0.1px;">
+                            <!-- <a class="titulos_INV414">REMITID:</a> -->
+                            <a class="remitid_INV414"></a>
+                        </div>
+                        <div class="caja5_INV414" style="border-right: black solid 0.1px;width: 20.1%;">
+                            <!-- <a class="titulos_INV414">DIAGN.RELACI:</a> -->
+                            <a class="diagnrelacion_INV414"></a>
+                        </div>
+                        <div class="caja4_INV414">
+                        </div>
+                    </div>
+                    <a class="diagnosticoprincipal_INV414">Diagnostico Principal </a>
+                    <a class="diagnosticorelacionado_INV414">Diagnostico Relacionado </a>
+                    <a> Causa Basica que origina la atencion:</a>
+                </div>
+                </div>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+<div class="encabezado_INV414">
+    <div class="cuerpo_INV414">
+    <!-- 
+    <a class="ivausu_INV414">NO RESPONSABLES DE IVA</a>
+
+    <div class="terceralinea_INV414" style="font-size:12px">
+        <a class="costo_INV414">COS: 02 CONSULTA EXTERNA</a>
+    </div>
+    <div class="cuartalinea_INV414" style="font-size:12px">
+        <a class="us_INV414">US: URGENCIAS</a>
+    </div>
+    <div class="quintalinea_INV414" style="font-size:12px">
+    </div>
+    <div class="sextalinea_INV414" style="font-size:12px">
+    </div>
+    <a class="remite_INV414" style="font-size:12px">SOLICITA: ARTEGA LOPEZ JOSE IGNACIO</a>
+    <div class="septimalinea" style="font-size:12px">
+        <a class="totalfactura_INV414">TOTAL FACTURA: 1,000</a>
+        <a class="copagos_INV414">ABONOS/COPAGOS: </a>
+        <a class="saldo_INV414">SALDO: 1,000</a>
+    </div>
+    <a class="cantidadennumeros_INV414" style="font-size:12px">SON: UN MILLON DE PESOS</a>
+    <div class="octavalinea_INV414" style="font-size:12px">
+        <a class="fechaelaborado_INV414">191128 11:44</a>
+        <a>Firma paciente: _____________________________ ______________________________</a>
+        <a class="operelabfact_INV414">0101</a>
+        <a class="opercorrecfact_INV414">Mod: 0101</a>
+        <a class="imprime_INV414">0101</a>
+    </div> -->
+</div>
+<style>
+    body{
+        font-family: Tahoma;
+    }
+
+    .logo img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .caja_INV414 {
+        display: inline-flex;
+        width: 25%;
+    }
+
+    .caja2_INV414{
+        display: inline-flex;
+        width: 40%;
+    }
+
+    .caja3_INV414{
+        display: inline-flex;
+        width: 15%;
+    }
+
+    .caja4_INV414{
+        display: inline-flex;
+        width: 7%;
+    }
+
+    .caja5_INV414{
+        display: inline-flex;
+        width: 20%;
+    }
+
+    .encabezado_INV414 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .datosusu_INV414 {
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-top: black solid 0.1px;
+    }
+
+    .primera_linea {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .segunda_linea {
+        font-size: 10px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .datosfact_INV414 {
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-top: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+    }
+
+    .tercera_linea {
+        font-size: 10px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .cuarta_linea {
+        font-size: 10px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .quinta_linea {
+        font-size: 10px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .cuerpo_INV414 {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .tablacodservicio_INV414 {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .tablacodservicio_INV414 thead tr th{
+        border-bottom: black solid 0.1px;
+    }
+
+    .tablacodservicio_INV414 tbody tr td{
+        text-align: center;
+    }
+
+    .detalle_INV414 {
+        width: 100;
+        font-size: 10px;
+    }
+
+    .resoldian_INV414 {
+        width: 100%;
+        font-size: 10px;
+    }
+
+    .recepcion_INV414 {
+        font-size: 10px;
+    }
+
+    .historia_INV414 {
+        font-size: 10px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .sexta_linea {
+        display: flex;
+        width: 100%;
+        font-size: 10px;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-top: black solid 0.1px;
+    }
+
+    .septima_linea {
+        width: 100%;
+        display: flex;
+        font-size: 10px;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-top: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+    }
+
+    .octava_linea {
+        width: 100%;
+        display: flex;
+        font-size: 10px;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+    }
+
+    .novena_linea {
+        width: 100%;
+        display: flex;
+        font-size: 10px;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+    }
+
+    .decima_linea {
+        display: inline-flex;
+        width: 100%;
+        font-size: 10px;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+    }
+
+    .onceava_linea {
+        font-size: 10px;
+        display: flex;
+        width: 100%;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+    }
+
+    .doceava_linea {
+        font-size: 10px;
+        display: flex;
+        width: 100%;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+    }
+
+    .treceava_linea {
+        font-size: 10px;
+        display: flex;
+        width: 100%;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+    }
+
+
+    .catorceava_linea {
+        font-size: 10px;
+        display: flex;
+        width: 100%;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+    }
+
+    .diagnosticoprincipal_INV414{
+        font-size: 10px;
+        display: flex;
+        width: 100%;
+    }
+    .diagnosticorelacionado_INV414{
+        font-size: 10px;
+        display: flex;
+        width: 100%;
+    }
+</style>
+<script>
+    var INV414 = [];
+    ipcRenderer.on('ping', (e, data) => {
+        INV414 = data.datos;
+        $('.nombre_INV414').text(INV414.NOMBREUSU);
+        $('.nitusu_INV414').text(INV414.NITUSU);
+        // $('.ivausu_INV414').text(INV414.IVAUSU);
+        $('.direccionusu_INV414').text(INV414.DIRECCIONUSU);
+        $('.telefonousu_INV414').text(INV414.TELEFONOUSU);
+        $('.claseserviciousu_INV414').text(INV414.CLASESERVICIO);
+        $('.comprobantepaciente_INV414').text(INV414.COMPROBANTE)
+        $('.ciudadusu_INV414').text(INV414.CIUDADUSU);
+        $('.acceso_INV414').text(INV414.PUERTAW);
+        $('.entidadpaciente_INV414').text(INV414.DESCRIPTER);
+        $('.codigoeps_INV414').text(INV414.CODIGOEPS);
+        $('.facturapaciente_INV414').text(INV414.FACTURA);
+        $('.fechapaciente_INV414').text(INV414.FECHAFACT);
+        $('.medotr_INV414').text(INV414.ATIENDE);
+        $('.personaledit_INV414').text(INV414.PERSONALEDIT);
+        $('.especialidad_INV414').text(INV414.ESPECIALIDAD);
+        $('.formapago_INV414').text(INV414.FPAGO);
+        $('.autor_INV414').text(INV414.NROAURO);
+        
+        $('.detalle_INV414').text(INV414.DETALLE);
+        $('.resoldian_INV414').text(INV414.RESOLDIAN);
+        $('.elaboro_INV414').text(INV414.OPERELABFACT)
+        
+        $('.nombrepaciente_INV414').text(INV414.NOMBREPACIENTE)
+        $('.idhistoria_INV414').text(INV414.PACIENTE);
+        $('.edad_INV414').text(INV414.EDAD);
+        $('.sexo_INV414').text(INV414.SEXO);
+        $('.ciudadpaci_INV414').text(INV414.CIUDADPACI);
+        $('.ZONA_INV414').text(INV414.ZONA);
+        $('.direccionpaci_INV414').text(INV414.DIRECCPACI)
+        $('.ocupacion_INV414').text(INV414.OCUPACION);
+        $('.tipousuar_INV414').text(INV414.TIPOUSUW);
+        $('.descripocu_INV414').text(INV414.NOMBREOCU);
+        $('.telefonopaci_INV414').text(INV414.CELLPACI);
+        $('.horaingresopaci_INV414').text(INV414.HORAESTAD);
+        $('.acompañante_INV414').text(INV414.ACOMPAPACI);
+        $('.triage12_INV414').text(INV414.TRIAGEESTAD12);
+
+        $('.finalidad_INV414').text('FINALIDAD CONS ' + INV414.FINALIDESTAD);
+        $('.causaexterna_INV414').text('CAUSA EXTERNA ' + INV414.CAUSAESTAD);
+        $('.triage34_INV414').text(INV414.TRIAGEESTAD34);
+        $('.diagnprincip_INV414').text('DIAGN.PRINCIP: ' + INV414.CODDIAGESTAD);
+        $('.estado_INV414').text('VIVO ' + INV414.VIVO);
+        $('.muerto_INV414').text('MUERTO ' + INV414.MUERTO);
+        $('.remitid_INV414').text('REMITID ' + INV414.REMITID);
+
+        $('.diagnosticoprincipal_INV414').text('Diagnostico Principal : ' + INV414.NOMBREENF1);
+        $('.diagnosticorelacionado_INV414').text('Diagnostico Relacionado : ' + INV414.NOMBREENF2);
+        $('.original_INV411').text(INV411.ORIGINAL);
+
+        // $('.costo_INV414').text(INV414.COSTO);
+        // $('.us_INV414').text(INV414.UNSERVFACT);
+        // $('.remite_INV414').text(INV414.SOLICITA);
+        // $('.cantidadennumeros_INV414').text(INV414.SON);
+        // $('.operelabfact_INV414').text(INV414.OPERELABFACT);
+        // $('.opercorrecfact_INV414').text(INV414.OPERCORRECFACT);
+        // $('.imprime_INV414').text(INV414.ADMINW);
+
+        // $('.ciudad_INV414').text(INV414.CIUDAD);
+        // $('.totalfactura_INV414').text(INV414.VLRTOTAL);
+        // $('.copagos_INV414').text(INV414.COPAGO);
+        // $('.saldo_INV414').text(INV414.SALDO);
+        // $('.fechaelaborado_INV414').text(INV414.FECHAELABORADO);
+
+        if (parseInt(INV414.VLRIVAFACT) == 0) {
+            for (var i in INV414.TABLA) {
+                $('.tablacodservicio_INV414 tbody').append(
+                    '<tr>' +
+                    '<th>' + INV414.TABLA[i].ARTFACT + '</th>' +
+                    '<td>' + INV414.TABLA[i].DESCRIPCUP + '</td>' +
+                    '<td>' + INV414.TABLA[i].CANTFACT + '</td>' +
+                    '<td>' + INV414.TABLA[i].VLRFACT + '</td>' +
+                    '<td>' + INV414.TABLA[i].VLRTOTAL + '</td>' +
+                    '</tr>'
+                )
+            }
+        } if (parseInt(INV414.VLRIVAFACT) > 0) {
+            for (var i in INV414.TABLA) {
+                alert(INV414.TABLA[i].ARTFACT);
+                $('.tablacodservicio_INV414 tbody').append(
+                    '<tr>' +
+                    '<th>' + INV414.TABLA[i].ARTFACT + '</th>' +
+                    '<td>' + INV414.TABLA[i].DESCRIPCUP + '</td>' +
+                    '<td>' + INV414.TABLA[i].CANTFACT + '</td>' +
+                    '<td>' + INV414.TABLA[i].VLRFACT + '</td>' +
+                    '<td>' + INV414.TABLA[i].VLRTOTAL + '</td>' +
+                    '</tr>'
+                )
+            }
+            $('.tablacodservicio_INV414 tbody').append(
+                '<tr>' +
+                '<th>' + '</th>' +
+                '<td>' + 'I.V.A.' + '</td>' +
+                '<td>' + INV414.VLRIVAFACT + '</td>' +
+                '<td>' + + '</td>' +
+                '<td>' + + '</td>' +
+                '</tr>'
+            )
+        } if (parseInt(INV414.COPAGO) > 0) {
+            switch (INV414.COPAGO) {
+                case '1':
+                    $('.tablacodservicio_INV414 tbody').append(
+                        '<tr>' +
+                        '<th>' + '</th>' +
+                        '<td>' + 'COPAGOS' + '</td>' +
+                        '<td>' + INV414.VLRCOPAGO + '</td>' +
+                        '<td>' + + '</td>' +
+                        '<td>' + + '</td>' +
+                        '</tr>'
+                    )
+                    break;
+                case '2':
+                    $('.tablacodservicio_INV414 tbody').append(
+                        '<tr>' +
+                        '<th>' + '</th>' +
+                        '<td>' + 'CUOTA MODERADORA' + '</td>' +
+                        '<td>' + INV414.VLRCOPAGO + '</td>' +
+                        '<td>' + + '</td>' +
+                        '<td>' + + '</td>' +
+                        '</tr>'
+                    )
+                    break;
+                case '3':
+                    $('.tablacodservicio_INV414 tbody').append(
+                        '<tr>' +
+                        '<th>' + '</th>' +
+                        '<td>' + 'VALOR A PAGAR' + '</td>' +
+                        '<td>' + INV414.VLRCOPAGO + '</td>' +
+                        '<td>' + + '</td>' +
+                        '<td>' + + '</td>' +
+                        '</tr>'
+                    )
+                    break;
+            }
+        }
+        var nit = INV414.NIT;
+        var url = path.join(`P:\\PROG\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('.logo')
+        });
+
+    })
+</script>

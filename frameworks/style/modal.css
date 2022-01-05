@@ -1,0 +1,113 @@
+.modal_prosoft {
+    min-width: 300px;
+    width: 45%;
+    margin: 0px auto;
+    padding: 0;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px 3px;
+    transition: all 0.2s ease-in;
+    /* font-family: Helvetica, Arial, sans-serif; */
+}
+
+.header_prosoft {
+    width: 100%;
+    height: auto;
+    background: rgba(0, 0, 0, .03);
+    max-width: 100%;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+}
+
+.header_prosoft p{
+    padding: 9px 25px;
+    margin: 0 auto;
+}
+
+.body_prosoft {
+    height: 100%;
+    width: 100%;
+}
+
+.body_prosoft .content-modal{
+    padding: 8px !important;
+}
+
+.footer_prosoft {
+    width: 100%;
+    height: auto;
+    background: #f6fbff;
+    display: show;
+    border-radius: 0px 0px 3px 3px
+}
+
+.btn_acept_prosoft {
+    width: auto;
+    height: auto;
+    padding: 8px 25px;
+    margin: 10px 10px 10px 5px;
+    float: right;
+    background: #0e86cc;
+    color: #FFF;
+    border: 1px solid #0e86cc;
+    transition: all 200ms;
+    outline: none;
+    border-radius: 2px;
+    font-size: 12px;
+    text-rendering: optimizeLegibility;
+}
+
+.btn_acept_prosoft:hover {
+    background: #0e86cc;
+}
+
+.btn_cancel_prosoft {
+    width: auto;
+    height: auto;
+    padding: 8px 25px;
+    margin: 10px 5px;
+    float: right;
+    background: #FFF;
+    color: #ab1409;
+    border: 1px solid #ab1409;
+    transition: all 200ms;
+    outline: none;
+    border-radius: 2px;
+    font-size: 12px;
+    text-rendering: optimizeLegibility;
+}
+
+.btn_cancel_prosoft:hover {
+    background: #FFF;
+    color: #ab1409;
+}
+
+.fadeIn-enter {
+    opacity: 0;
+}
+
+.fadeIn-leave-active {
+    opacity: 0;
+    transition: all 0.2s step-end;
+}
+
+.fadeIn-enter .modal,
+.fadeIn-leave-active.modal {
+    transform: scale(1.1);
+}
+
+.overlay_prosoft {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: #00000094;
+    z-index: 999999 !important;
+    transition: opacity 0.2s ease;
+}

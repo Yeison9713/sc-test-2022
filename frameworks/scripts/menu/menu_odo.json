@@ -1,0 +1,992 @@
+{
+    "Menu": [
+        {
+            "Id": "01",
+            "Descripcion": "Identificacion paciente",
+            "Tipo": "RM",
+            "Params": [
+                {
+                    "formulario": "SER110C",
+                    "dll": "SALUD\\SER110C"
+                }
+            ]
+        },
+        {
+            "Id": "02",
+            "Descripcion": "Apertura historia clinica",
+            "Opc-segu": "ISH3",
+            "Tipo": "RM",
+            "Params": [
+                {
+                    "formulario": "OD001",
+                    "dll": "ODONTO\\OD001"
+                }
+            ]
+        },
+        {
+            "Id": "03",
+            "Descripcion": "Evolucion odontologica",
+            "Sub": [
+                {
+                    "Id": "031",
+                    "Descripcion": "Evolucion de odontologia",
+                    "Opc-segu": "ISH4",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "OD002",
+                            "dll": "ODONTO\\OD002"
+                        }
+                    ]
+                },
+                {
+                    "Id": "032",
+                    "Descripcion": "Nota SIN atencion",
+                    "Opc-segu": "ISH4",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "OD022",
+                            "dll": "ODONTO\\OD022"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Id": "04",
+            "Descripcion": "Otros procesos",
+            "Sub": [
+                {
+                    "Id": "041",
+                    "Descripcion": "Cerrar historia odontologica",
+                    "Opc-segu": "ISH61",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "OD605",
+                            "dll": "ODONTO\\OD605"
+                        }
+                    ]
+                },
+                {
+                    "Id": "042",
+                    "Descripcion": "Cambiar entidad historia",
+                    "Opc-segu": "ISH62",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "OD601",
+                            "dll": "ODONTO\\OD601"
+                        }
+                    ]
+                },
+                {
+                    "Id": "043",
+                    "Descripcion": "Abrir folio en blanco",
+                    "Opc-segu": "ISH63",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "OD603",
+                            "dll": "ODONTO\\OD603"
+                        }
+                    ]
+                },
+                {
+                    "Id": "044",
+                    "Descripcion": "Remisiones",
+                    "Opc-segu": "ISH64",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "OD604",
+                            "dll": "ODONTO\\OD604"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Id": "05",
+            "Descripcion": "Submenu impresion historia",
+            "Opc-segu": "ISH7",
+            "Sub": [
+                {
+                    "Id": "051",
+                    "Descripcion": "Imprime historia clinica",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "OD501",
+                            "dll": "ODONTO\\OD501"
+                        }
+                    ]
+                },
+                {
+                    "Id": "052",
+                    "Descripcion": "Reimprime evolucion medica",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "OD502",
+                            "dll": "ODONTO\\OD502"
+                        }
+                    ]
+                },
+                {
+                    "Id": "053",
+                    "Descripcion": "Reimprime odontograma",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "OD705B",
+                            "dll": "ODONTO\\OD705B"
+                        }
+                    ]
+                },
+                {
+                    "Id": "054",
+                    "Descripcion": "Reimprime placa bacteriana",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "OD705B",
+                            "dll": "ODONTO\\OD705B"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Id": "06",
+            "Descripcion": "Submenu actualizar tablas",
+            "Opc-segu": "ISHD",
+            "Sub": [
+                {
+                    "Id": "061",
+                    "Descripcion": "Actualizar farmacos",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "SER202",
+                            "dll": "SALUD\\SER202"
+                        }
+                    ]
+                },
+                {
+                    "Id": "062",
+                    "Descripcion": "Actualizar laboratorio",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "HC102",
+                            "dll": "ODONTO\\HC102"
+                        }
+                    ]
+                },
+                {
+                    "Id": "063",
+                    "Descripcion": "Actualizar imagenologia",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "HC103",
+                            "dll": "ODONTO\\HC103"
+                        }
+                    ]
+                },
+                {
+                    "Id": "064",
+                    "Descripcion": "Actualizar ordenes medicas",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "HC104",
+                            "dll": "ODONTO\\HC104"
+                        }
+                    ]
+                },
+                {
+                    "Id": "065",
+                    "Descripcion": "Actualizar consultas y terapias",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "HC105",
+                            "dll": "ODONTO\\HC105"
+                        }
+                    ]
+                },
+                {
+                    "Id": "066",
+                    "Descripcion": "Actualizar macro formulacion",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "HC106",
+                            "dll": "ODONTO\\HC106"
+                        }
+                    ]
+                },
+                {
+                    "Id": "067",
+                    "Descripcion": "Actualizar macro evolucion",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "HC107",
+                            "dll": "ODONTO\\HC107"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Id": "07",
+            "Descripcion": "Muestra imagenes asociadas",
+            "Opc-segu": "ISHA",
+            "Tipo": "RM",
+            "Params": [
+                {
+                    "formulario": "HIS802A",
+                    "dll": "ODONTO\\HIS802A"
+                }
+            ]
+        },
+        {
+            "Id": "08",
+            "Descripcion": "Menu ayudas del sistema",
+            "Sub": [
+                {
+                    "Id": "081",
+                    "Descripcion": "Manuales de programas S.C.",
+                    "Sub": [
+                        {
+                            "Id": "0811",
+                            "Descripcion": "Manual usuario (Config)",
+                            "Tipo": "CMD",
+                            "Href": "D:/SC/newcobol/manual/MANUAL.PDF"
+                        },
+                        {
+                            "Id": "0812",
+                            "Descripcion": "Manual contabilidad",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\newcobol\\manual\\CONTAB.PDF"
+                        },
+                        {
+                            "Id": "0813",
+                            "Descripcion": "Manual inventarios",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual.PDF"
+                        },
+                        {
+                            "Id": "0814",
+                            "Descripcion": "Manual nomina",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\NOMINA.PDF"
+                        },
+                        {
+                            "Id": "0815",
+                            "Descripcion": "Manual presupuesto",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\PRESUP.PDF"
+                        },
+                        {
+                            "Id": "0816",
+                            "Descripcion": "Manual sector salud",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\SALUD.PDF"
+                        },
+                        {
+                            "Id": "0817",
+                            "Descripcion": "Manual historia clinica",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\H_CLIN.PDF"
+                        },
+                        {
+                            "Id": "0818",
+                            "Descripcion": "Manual servicios publicos",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\SERV-PUB.PDF"
+                        },
+                        {
+                            "Id": "0819",
+                            "Descripcion": "Informacion exogena DIAN",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\ET631.PDF"
+                        },
+                        {
+                            "Id": "081A",
+                            "Descripcion": "Manual costos hospitalarios",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\COSTOS.PDF"
+                        },
+                        {
+                            "Id": "081B",
+                            "Descripcion": "Manual odontologia",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\ODONTO.PDF"
+                        },
+                        {
+                            "Id": "081C",
+                            "Descripcion": "Manual resultados laboratorios",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\RESULT.PDF"
+                        },
+                        {
+                            "Id": "081D",
+                            "Descripcion": "Manual NIIFS",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\NIIFS.PDF"
+                        },
+                        {
+                            "Id": "081E",
+                            "Descripcion": "Manual error-98",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\LUZ.PDF"
+                        }
+                    ]
+                },
+                {
+                    "Id": "082",
+                    "Descripcion": "Planes de cuenta",
+                    "Sub": [
+                        {
+                            "Id": "0821",
+                            "Descripcion": "PUC comerciantes",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\PUC-COM.PDF"
+                        },
+                        {
+                            "Id": "0822",
+                            "Descripcion": "PUC cooperativo",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\PUC-COO.PDF"
+                        },
+                        {
+                            "Id": "0823",
+                            "Descripcion": "PUC salud privado",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\PUC-SALU.PDF"
+                        },
+                        {
+                            "Id": "0824",
+                            "Descripcion": "PUC oficial",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\PUC-OFI.PDF"
+                        },
+                        {
+                            "Id": "0825",
+                            "Descripcion": "Cuentas contraloria general",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\CTAS-CGR.PDF"
+                        },
+                        {
+                            "Id": "0826",
+                            "Descripcion": "Cuentas F.U.T.",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\CTAS-FUT.PDF"
+                        }
+                    ]
+                },
+                {
+                    "Id": "083",
+                    "Descripcion": "Documentos juridicos",
+                    "Sub": [
+                        {
+                            "Id": "0831",
+                            "Descripcion": "Estatuto tributario",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\ET.PDF"
+                        },
+                        {
+                            "Id": "0832",
+                            "Descripcion": "Normas contables",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\NORMACON.PDF"
+                        },
+                        {
+                            "Id": "0833",
+                            "Descripcion": "Cod. sustantivo trabajo",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\\newcobol\\manual\\LABORAL.PDF"
+                        },
+                        {
+                            "Id": "0834",
+                            "Descripcion": "Codigo de comercio",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\CODCOMER.PDF"
+                        },
+                        {
+                            "Id": "0835",
+                            "Descripcion": "Estatuto org. presupuesto",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\ESPRESUP.PDF"
+                        },
+                        {
+                            "Id": "0836",
+                            "Descripcion": "Estados finan NIIFS ecuador",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\ESTADOS_NIIF.PDF"
+                        },
+                        {
+                            "Id": "0837",
+                            "Descripcion": "Cartilla laboral setor pub",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\CARTILLA.PDF"
+                        },
+                        {
+                            "Id": "0838",
+                            "Descripcion": "Cartilla activ. econimicas",
+                            "Tipo": "CMD",
+                            "Href": "D:\\SC\\newcobol\\manual\\ACTIV-ECON.PDF"
+                        }
+                    ]
+                },
+                {
+                    "Id": "084",
+                    "Descripcion": "Temas de interes",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "CON888",
+                            "dll": "CONTAB\\CON888"
+                        }
+                    ]
+                },
+                {
+                    "Id": "085",
+                    "Descripcion": "Instalacion de complementos",
+                    "Sub": [
+                        {
+                            "Id": "0851",
+                            "Descripcion": "Instalar ACROBAT READER",
+                            "Tipo": "CMD",
+                            "Href": "START X:/NEWCOBOL/READER/acrobat.EXE"
+                        },
+                        {
+                            "Id": "0852",
+                            "Descripcion": "Instalar RPV",
+                            "Tipo": "CMD",
+                            "Href": "START X:/RMCOBOL/NOVAPDF.BAT HIGH"
+                        },
+                        {
+                            "Id": "0853",
+                            "Descripcion": "Instalar SKYPE",
+                            "Tipo": "CMD",
+                            "Href": "START X:/RMCOBOL/NOVAPDF.BAT HIGH"
+                        },
+                        {
+                            "Id": "0854",
+                            "Descripcion": "Instalar MENU-RK",
+                            "Tipo": "CMD",
+                            "Href": "XCOPY X:/NEWCOBOL/READER/MENU-RK/*.* C:/PROSOFT"
+                        },
+                        {
+                            "Id": "0855",
+                            "Descripcion": "Instalar NOVA PDF",
+                            "Tipo": "CMD",
+                            "Href": "START X:/RMCOBOL/NOVAPDF.BAT HIGH"
+                        }
+                    ]
+                },
+                {
+                    "Id": "086",
+                    "Descripcion": "Copia de seguridad",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "SALVMN",
+                            "dll": "SALUD\\SALVMN"
+                        }
+                    ]
+                },
+                {
+                    "Id": "087",
+                    "Descripcion": "Acerca de prosoft",
+                    "Tipo": "CMD",
+                    "Href": "START /NEWCOBOL/UTILITAR/SC/ACERCA.EXE"
+                },
+                {
+                    "Id": "088",
+                    "Descripcion": "Consultar venc. otro nit",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "CON880E",
+                            "dll": "CONTAB\\CON880E"
+                        }
+                    ]
+                },
+                {
+                    "Id": "089",
+                    "Descripcion": "Agenda de recordatorios",
+                    "Opc-segu": "CF97",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "CON880R",
+                            "dll": "CONTAB\\CON880R"
+                        }
+                    ]
+                },
+                {
+                    "Id": "08A",
+                    "Descripcion": "Solicitar soporte remoto",
+                    "Sub": [
+                        {
+                            "Id": "08A1",
+                            "Descripcion": "Showy PC",
+                            "Tipo": "CMD",
+                            "Href": "/RMCOBOL/SHOWMY.BAT"
+                        },
+                        {
+                            "Id": "08A2",
+                            "Descripcion": "Instalacion AEROADMIN",
+                            "Tipo": "CMD",
+                            "Href": "/RMCOBOL/AEROADMIN.BAT"
+                        }
+                    ]
+                },
+                {
+                    "Id": "08B",
+                    "Descripcion": "Actualizaciones Prosoft",
+                    "Sub": [
+                        {
+                            "Id": "08B1",
+                            "Descripcion": "Actualizar contabilidad",
+                            "Href": "CONTAB.exe"
+                        },
+                        {
+                            "Id": "08B2",
+                            "Descripcion": "Actualizar inventarios",
+                            "Href": "INVENT.exe"
+                        },
+                        {
+                            "Id": "08B3",
+                            "Descripcion": "Actualizar nomina",
+                            "Href": "NOMINA.exe"
+                        },
+                        {
+                            "Id": "08B4",
+                            "Descripcion": "Acrtualizar presupuesto",
+                            "Href": "PRESUP.exe"
+                        },
+                        {
+                            "Id": "08B5",
+                            "Descripcion": "Actualizar salud",
+                            "Href": "SALUD.exe"
+                        },
+                        {
+                            "Id": "08B6",
+                            "Descripcion": "Actualizar hist. clinica",
+                            "Href": "HICLIN.exe"
+                        },
+                        {
+                            "Id": "08B7",
+                            "Descripcion": "Actualizar hist. odontolog",
+                            "Href": "ODONTO.exe"
+                        },
+                        {
+                            "Id": "08B8",
+                            "Descripcion": "Actualizar cereales",
+                            "Href": "CEREALES.exe"
+                        },
+                        {
+                            "Id": "08B9",
+                            "Descripcion": "Actualizar emp. comunicacion",
+                            "Href": "ETELL.exe"
+                        },
+                        {
+                            "Id": "08BA",
+                            "Descripcion": "Actualizar serv. publicos",
+                            "Href": "SERVPUB.exe"
+                        },
+                        {
+                            "Id": "08BB",
+                            "Descripcion": "Actualizar serv.domiciliar",
+                            "Href": "SERVDOM.exe"
+                        },
+                        {
+                            "Id": "08BC",
+                            "Descripcion": "Actualizar est. de servicio",
+                            "Href": "BOMBAS.exe"
+                        },
+                        {
+                            "Id": "08BD",
+                            "Descripcion": "Actualizar hoteles",
+                            "Href": "HOTEL.exe"
+                        },
+                        {
+                            "Id": "08BE",
+                            "Descripcion": "Actualizar bares y restaurant",
+                            "Href": "BAR-REST.exe"
+                        },
+                        {
+                            "Id": "08BG",
+                            "Descripcion": "Actualizar fact colegios",
+                            "Href": "COLEGIO.exe"
+                        },
+                        {
+                            "Id": "08BH",
+                            "Descripcion": "Actualizar declarac. renta",
+                            "Href": "RENTA.exe"
+                        },
+                        {
+                            "Id": "08BI",
+                            "Descripcion": "Actualizar modulo de costos",
+                            "Href": "COSTOS.exe"
+                        },
+                        {
+                            "Id": "08BJ",
+                            "Descripcion": "Actualizar modulo mantenim",
+                            "Href": "MANTENI.exe"
+                        },
+                        {
+                            "Id": "08BK",
+                            "Descripcion": "Actualizar impuestos munic",
+                            "Sub": [
+                                {
+                                    "Id": "08BK1",
+                                    "Descripcion": "Actualiza ind. y comercio",
+                                    "Href": "IMPUESTO.exe"
+                                },
+                                {
+                                    "Id": "08BK2",
+                                    "Descripcion": "Actualiza imp. predial",
+                                    "Href": "PREDIAL.exe"
+                                }
+                            ]
+                        },
+                        {
+                            "Id": "08BL",
+                            "Descripcion": "Actualizar talleres",
+                            "Href": "TALLER.exe"
+                        },
+                        {
+                            "Id": "08BM",
+                            "Descripcion": "Actualizar transp. intermun",
+                            "Href": "TAX.exe"
+                        },
+                        {
+                            "Id": "08BN",
+                            "Descripcion": "Actualizar clubes sociales",
+                            "Href": "CLUBES.exe"
+                        },
+                        {
+                            "Id": "08BO",
+                            "Descripcion": "Actualizar contorl corresp",
+                            "Href": "CORRES.exe"
+                        },
+                        {
+                            "Id": "08BP",
+                            "Descripcion": "Actualizar fact otros serv",
+                            "Href": "SERVICIOS.exe"
+                        },
+                        {
+                            "Id": "08BQ",
+                            "Descripcion": "Actualizar alquiler maq",
+                            "Href": "ANDAMIOS.exe"
+                        },
+                        {
+                            "Id": "08BR",
+                            "Descripcion": "Actualizar mensajes error",
+                            "Href": "UTILITAR.exe"
+                        },
+                        {
+                            "Id": "08BS",
+                            "Descripcion": "Actualizar datos",
+                            "Href": "DATOS.exe"
+                        },
+                        {
+                            "Id": "08BT",
+                            "Descripcion": "Actualizar RMCOBOL",
+                            "Sub": [
+                                {
+                                    "Id": "08BT1",
+                                    "Descripcion": "Config. listados en PDF",
+                                    "Href": "JAR.exe"
+                                },
+                                {
+                                    "Id": "08BT2",
+                                    "Descripcion": "Actualizar Java",
+                                    "Href": "JAVA.exe"
+                                },
+                                {
+                                    "Id": "08BT3",
+                                    "Descripcion": "Actualizar Powercobol",
+                                    "Href": "POWER.exe"
+                                },
+                                {
+                                    "Id": "08BT4",
+                                    "Descripcion": "Actualizar RmCobol Completo",
+                                    "Href": "RMCOBOL.exe"
+                                },
+                                {
+                                    "Id": "08BT5",
+                                    "Descripcion": "Actualizar .Exe",
+                                    "Href": "EXE.exe"
+                                },
+                                {
+                                    "Id": "08BT6",
+                                    "Descripcion": "Actualizar .Bat",
+                                    "Href": "BAT.exe"
+                                }
+                            ]
+                        },
+                        {
+                            "Id": "08BU",
+                            "Descripcion": "Actualizar complementos",
+                            "Sub": [
+                                {
+                                    "Id": "08BU1",
+                                    "Descripcion": "Actualizar soporte remoto",
+                                    "Href": "SOPORTE.exe"
+                                },
+                                {
+                                    "Id": "08BU2",
+                                    "Descripcion": "Actualizar R.P.V",
+                                    "Href": "RPV.exe"
+                                },
+                                {
+                                    "Id": "08BU3",
+                                    "Descripcion": "Actualizar manuales",
+                                    "Href": "MANUAL.exe"
+                                }
+                            ]
+                        },
+                        {
+                            "Id": "0EBV",
+                            "Descripcion": "Actualizar banco proyectos",
+                            "Href": "PROYECTOS.exe"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Id": "08C",
+            "Descripcion": "Solicitar mantenimiento",
+            "Sub": [
+                {
+                    "Id": "08C1",
+                    "Descripcion": "Comprob. PQR Prosoft",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "CON880P1",
+                            "dll": "CONTAB\\CON880P1"
+                        }
+                    ]
+                },
+                {
+                    "Id": "08C2",
+                    "Descripcion": "Informe de PQR Prosoft",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "CON880P2",
+                            "dll": "CONTAB\\CON880P2"
+                        }
+                    ]
+                },
+                {
+                    "Id": "08C3",
+                    "Descripcion": "Solicitar Mantenim. Equipos",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "MANT201",
+                            "dll": "CONTAB\\MANT201"
+                        }
+                    ]
+                },
+                {
+                    "Id": "08C4",
+                    "Descripcion": "Servicio Al Cliente Prosoft",
+                    "Tipo": "HTML",
+                    "Href": "start http://www.prosoft.com.co"
+                }
+            ]
+        },
+        {
+            "Id": "08D",
+            "Descripcion": "Menu de correspondencia",
+            "Sub": [
+                {
+                    "Id": "08D1",
+                    "Descripcion": "Consultar correspondencia",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "CORR401",
+                            "dll": "CORRES\\CORR401"
+                        }
+                    ]
+                },
+                {
+                    "Id": "08D2",
+                    "Descripcion": "Facturar correspondencia",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "CORR868D",
+                            "dll": "CORRES\\CORR868D"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Id": "08E",
+            "Descripcion": "Pagos a prosoft por PSE",
+            "Tipo": "CMD",
+            "Href": " START https://www.zonapagos.com/t_prosoft/pagos.asp"
+        },
+        {
+            "Id": "09",
+            "Descripcion": "Informe de HC odontologia",
+            "Sub": [
+                {
+                    "Id": "091",
+                    "Descripcion": "Informe H. OD. diario",
+                    "Opc-segu": "OD9",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "OD009",
+                            "dll": "ODONTO\\OD009"
+                        }
+                    ]
+                },
+                {
+                    "Id": "092",
+                    "Descripcion": "Informe formulacion por tipo",
+                    "Opc-segu": "OD9",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "OD0092",
+                            "dll": "ODONTO\\OD0092"
+                        }
+                    ]
+                },
+                {
+                    "Id": "093",
+                    "Descripcion": "Informe odontologia por fecha",
+                    "Opc-segu": "OD9",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "OD0093",
+                            "dll": "ODONTO\\OD0093"
+                        }
+                    ]
+                },
+                {
+                    "Id": "094",
+                    "Descripcion": "Informe brigada por tipo",
+                    "Opc-segu": "OD9",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "OD0094",
+                            "dll": "ODONTO\\OD0094"
+                        }
+                    ]
+                },
+                {
+                    "Id": "095",
+                    "Descripcion": "Informe brigada por consulta",
+                    "Opc-segu": "OD9",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "OD0095",
+                            "dll": "ODONTO\\OD0095"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Id": "0A",
+            "Descripcion": "Referencia/Contrareferencia",
+            "Sub": [
+                {
+                    "Id": "0A1",
+                    "Descripcion": "Nota de referenciacion",
+                    "Opc-segu": "ISHB1",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "CTREFOD803",
+                            "dll": "ODONTO\\CTREFOD803"
+                        }
+                    ]
+                },
+                {
+                    "Id": "0A2",
+                    "Descripcion": "Re-imprimir referenciacion",
+                    "Opc-segu": "ISHB2",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "CTREFOD801",
+                            "dll": "ODONTO\\CTREFOD801"
+                        }
+                    ]
+                },
+                {
+                    "Id": "0A3",
+                    "Descripcion": "Historial referenciacion",
+                    "Opc-segu": "ISHB3",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "ODB04",
+                            "dll": "ODONTO\\ODB04"
+                        }
+                    ]
+                },
+                {
+                    "Id": "0A4",
+                    "Descripcion": "Informe referenciacion",
+                    "Opc-segu": "ISHB4",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "ODBI04",
+                            "dll": "ODONTO\\ODBI04"
+                        }
+                    ]
+                },
+                {
+                    "Id": "0A5",
+                    "Descripcion": "Imprimir remision",
+                    "Opc-segu": "ISHB5",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "CTREFOD801",
+                            "dll": "ODONTO\\CTREFOD801"
+                        }
+                    ]
+                },
+                {
+                    "Id": "0A6",
+                    "Descripcion": "Solicitar referencia (medico)",
+                    "Opc-segu": "ISHB6",
+                    "Tipo": "RM",
+                    "Params": [
+                        {
+                            "formulario": "CTREFOD802",
+                            "dll": "ODONTO\\CTREFOD802"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

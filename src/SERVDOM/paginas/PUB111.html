@@ -1,0 +1,155 @@
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<div class="col-md-12" id="PUB111">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="col-md-12 no-padding">
+          <div class="col-md-12 no-padding" style="margin-top: 3px">
+            <div class="col-md-12 form-group box-center no-padding">
+              <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%">
+                <thead>
+                  <tr>
+                    <th class="text-center" style="width: 10%">Código</th>
+                    <th class="text-center" style="width: 40%">Descripción</th>
+                    <th class="text-center" style="width: 10%">Normal</th>
+                    <th class="text-center" style="width: 10%">Incrementa</th>
+                    <th class="text-center" style="width: 10%">Promedio</th>
+                    <th class="text-center" style="width: 10%">Cob mts3</th>
+                    <th class="text-center" style="width: 10%">Invertido</th>
+                  </tr>
+                  <tr>
+                    <td style="width: 10%">
+                      <div class="input-group col-md-12" id="codigo">
+                        <input
+                          v-model="reg_tabla.codigo"
+                          type="number"
+                          class="form-control text-center"
+                          maxlength="2"
+                          min="01"
+                          max="20"
+                          data-orden="1"
+                          required="true"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 40%">
+                      <div class="input-group col-md-12" id="concep">
+                        <input
+                          v-model="reg_tabla.concep"
+                          type="text"
+                          class="form-control text-left"
+                          maxlength="35"
+                          data-orden="1"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 10%">
+                      <div class="input-group col-md-12" id="normal">
+                        <input
+                          v-model="reg_tabla.normal"
+                          type="text"
+                          class="form-control text-center"
+                          maxlength="1"
+                          data-orden="1"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 10%">
+                      <div class="input-group col-md-12" id="increm">
+                        <input
+                          v-model="reg_tabla.increm"
+                          type="text"
+                          class="form-control text-center"
+                          maxlength="1"
+                          data-orden="1"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 10%">
+                      <div class="input-group col-md-12" id="promed">
+                        <input
+                          v-model="reg_tabla.promed"
+                          type="text"
+                          class="form-control text-center"
+                          maxlength="1"
+                          data-orden="1"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 10%">
+                      <div class="input-group col-md-12" id="consum">
+                        <input
+                          v-model="reg_tabla.consum"
+                          type="number"
+                          class="form-control text-center"
+                          maxlength="3"
+                          data-orden="1"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 10%">
+                      <div class="input-group col-md-12" id="invert">
+                        <input
+                          v-model="reg_tabla.invert"
+                          type="text"
+                          class="form-control text-center"
+                          maxlength="1"
+                          data-orden="1"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                </thead>
+              </table>
+              <div style="display: inline-block; width: 100%">
+                <table id="tabla_serv" class="table table-light table-striped" style="margin-bottom: 0px">
+                  <tbody>
+                    <tr v-for="(registro, index) in reg_lec.tabla_lec">
+                      <td class="text-center" style="width: 10%">{{ registro.codigo }}</td>
+                      <td class="text-left" style="width: 40%">{{ registro.concep }}</td>
+                      <td class="text-center" style="width: 10%">{{ registro.normal }}</td>
+                      <td class="text-center" style="width: 10%">{{ registro.increm }}</td>
+                      <td class="text-center" style="width: 10%">{{ registro.promed }}</td>
+                      <td class="text-center" style="width: 10%">{{ parseInt(registro.consum) || "" }}</td>
+                      <td class="text-center" style="width: 10%">{{ registro.invert }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding" style="margin-top: -7px">
+          <div class="form-group box-center inline-inputs col-md-13">
+            <label class="col-md-12" id="lbl" style="color: #476fad; text-align: center"
+              >F3 graba, F5 salir sin grabar</label
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../../SERVDOM/scripts/PUB111.js" type="text/javascript"></script>
+
+<style>
+  #lbl {
+    background: 0;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  #tabla_tarifas tbody tr td {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+</style>

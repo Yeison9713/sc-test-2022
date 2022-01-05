@@ -1,0 +1,446 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        remote = require('electron').remote,
+        path = require('path');
+    window.$ = window.jQuery = require('jquery');
+</script>
+<style id="estiloImpresion">
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+
+    /* @page {
+        margin: 5mm;
+        size: A4 landscape;
+    } */
+
+    html,
+    body,
+    #documento,
+    #impresion {
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: 'Roboto', sans-serif;
+        box-sizing: border-box;
+    }
+
+    input[type="button"] {
+        /* display: none; */
+    }
+
+    #encabezado {
+        width: 100%;
+        height: 100px;
+        border: 1px solid #000;
+        border-bottom: none;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        position: fixed;
+        top: 0;
+    }
+
+    .enc-logo,
+    .enc-izq,
+    .enc-der {
+        display: flex;
+        align-items: center;
+    }
+
+    .enc-izq div a {
+        text-transform: uppercase;
+    }
+
+    .enc-logo #logo {
+        width: 70%;
+        height: 60%;
+        margin: 0 auto;
+    }
+
+    .enc-logo #logo img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #contenido {
+        padding: 0 1px 0 0;
+    }
+
+    #contenido table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    #contenido #tabla-secundaria {
+        width: 100%;
+    }
+
+    table thead tr {
+        border: 1px solid #000;
+    }
+
+    table thead tr th {
+        padding: 12px 0;
+        font-size: 8px;
+        text-transform: uppercase;
+    }
+
+    table tbody tr td {
+        padding: 2px 0;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    table#tabla-principal tbody tr td {
+        text-align: right;
+    }
+
+    table#tabla-principal tbody tr td:nth-child(1),
+    table#tabla-principal tbody tr td:nth-child(2),
+    table#tabla-principal tbody tr td:nth-child(3) {
+        text-align: center;
+    }
+
+    table#tabla-principal thead tr th:nth-child(4),
+    table#tabla-principal thead tr th:nth-child(5),
+    table#tabla-principal thead tr th:nth-child(6) {
+        text-align: right;
+    }
+
+    table#tabla-head thead:before {
+        margin-top: 100px;
+        content: " ";
+        display: block;
+    }
+
+    table#tabla-principal thead:before {
+        margin-top: 10px;
+        content: " ";
+        display: block;
+    }
+
+    table#tabla-secundaria thead:before {
+        content: " ";
+        display: block;
+        margin-top: 100px;
+    }
+
+    table#tabla-secundaria tbody tr td {
+        font-size: 10px !important;
+    }
+
+    table#tabla-secundaria tbody tr td:nth-child(6),
+    table#tabla-secundaria tbody tr td:nth-child(7) {
+        text-align: right;
+    }
+
+    table#tabla-secundaria tbody tr td:nth-child(4) {
+        text-align: left;
+    }
+
+
+    table thead:after {
+        content: " ";
+        display: block;
+        margin-bottom: 5px;
+    }
+
+
+    @media print {
+        #impresion {
+            display: block;
+        }
+    }
+</style>
+
+<div id="impresion">
+    <div id="encabezado">
+        <div class="enc-logo">
+            <div id="logo">
+            </div>
+        </div>
+        <div class="enc-izq">
+            <div>
+                <a id="nombreEmpresa" style="font-weight: 600;font-size: 24px;"></a>
+                <br>
+                <a id="nitEmpresa" style="font-size: 16px;font-weight: 600;"></a>
+                <br>
+                <a style="font-size: 12px;font-weight: 600;">Comprobantes de combustible</a>
+            </div>
+        </div>
+        <div class="enc-der">
+            <div style="margin: 0 auto;">
+                <a style="font-weight: 500;font-size: 12px;">Opc. 9.7.9</a>
+            </div>
+        </div>
+    </div>
+    <div id="contenido">
+        <table id="tabla-head">
+            <thead>
+                <tr>
+                    <th>Venta de combustible</th>
+                    <th>Fecha: <a id="fechaComprobante"></a></th>
+                    <th>Turno: <a id="turnoComprobante"></a></th>
+                    <th><a id="almacenComprobante"></a></th>
+                    <th>Comprobante numero: <a id="comprobanteIniPdf"></a></th>
+                </tr>
+            </thead>
+        </table>
+
+        <table id="tabla-principal">
+            <thead>
+                <tr>
+                    <th>Surt</th>
+                    <th>Articulo</th>
+                    <th>Lectura ant.</th>
+                    <th>Lectura act.</th>
+                    <th>Cantidad</th>
+                    <th>Valor venta</th>
+                    <th>Sobretasa</th>
+                    <th>Impto. Global</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <table id="tabla-secundaria">
+            <thead>
+                <tr>
+                    <th>Secuencia</th>
+                    <th>Código</th>
+                    <th>Tercero</th>
+                    <th>Nombre</th>
+                    <th>Refer.</th>
+                    <th>Débitos</th>
+                    <th>Créditos</th>
+                    <th>Articulo</th>
+                    <th>Cantidad</th>
+                    <th>Placa</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+<script>
+    var $_DATOS, $_TIPO, $_URL;
+    ipcRenderer.on('ping', (e, data) => {
+        $_DATOS = data.datos;
+        $_TIPO = data.tipo;
+        $_URL = data.url;
+        var nit = $_DATOS.TOTALES[16].slice(2),
+            url = path.join(`P:\\PROG\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg}`).appendTo('#logo')
+        });
+
+        $('#logo_url').attr('src', $_DATOS.TOTALES[16]);
+        montarImpresion_109();
+
+    })
+
+    // var _getDatos = function (url) {
+    //     CONS
+    //     fetch(url)
+    //         .then(function (response) {
+    //             return response.json();
+    //         })
+    //         .then(function (data) {
+    //             console.log(data)
+    //             $_LISTADO = data.LISTADO
+    //             $_LISTADO.pop();
+
+    //             montarImpresion_109();
+    //         });
+    // }
+
+
+    function montarImpresion_109() {
+        $('#nombreEmpresa').html($_DATOS.TOTALES[13].toString().trim())
+        $('#nitEmpresa').html('Nit: ' + $_DATOS.TOTALES[14].toString().trim())
+        $('#comprobanteIniPdf').html($_DATOS.TOTALES[15].toString().trim())
+
+        // $_DATOS.LISTADO.pop();
+        var listado = $_DATOS.LISTADO;
+
+        for (var i in listado) {
+            $('#contenido table#tabla-principal tbody').append(''
+                + '<tr>'
+                + ' <td>' + listado[i].SURTI.trim() + '</td>'
+                + ' <td>' + listado[i].ARTIC.trim() + '</td>'
+                + ' <td>' + listado[i]['NUM-ANT'].trim() + '</td>'
+                + ' <td>' + listado[i]['NUM-ACT'].trim() + '</td>'
+                + ' <td>' + listado[i].CANTID.trim() + '</td>'
+                + ' <td>' + listado[i].VALOR.trim() + '</td>'
+                + ' <td>' + listado[i].SOBRET.trim() + '</td>'
+                + ' <td>' + listado[i].GLOBAL.trim() + '</td>'
+                + ' <td>' + listado[i].TOTAL.trim() + '</td>'
+                + '</tr>'
+            );
+        }
+
+        var listado2 = $_DATOS["LINEA-ART"];
+        for (var i in listado2) {
+            $('#contenido table#tabla-secundaria tbody').append(''
+                + '<tr>'
+                + ' <td>' + listado2[i].SEC.trim() + '</td>'
+                + ' <td>' + listado2[i].CUENT.trim() + '</td>'
+                + ' <td>' + listado2[i].NIT.trim() + '</td>'
+                + ' <td>' + listado2[i].NOMB.trim() + '</td>'
+                + ' <td>' + listado2[i].REFER.trim() + '</td>'
+                + ' <td>' + listado2[i].DEBITO.trim() + '</td>'
+                + ' <td>' + listado2[i].CREDIT.trim() + '</td>'
+                + ' <td>' + listado2[i].ART.trim() + '</td>'
+                + ' <td>' + listado2[i].DEUDA.trim() + '</td>'
+                + ' <td>' + listado2[i].PLACA.trim() + '</td>'
+                + '</tr>'
+            );
+        }
+
+        // // Total-vales
+        $('#contenido table#tabla-principal tbody').append(''
+            + '<tr style="height: 30px;border-top: 1px solid #000">'
+            + ' <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>'
+            + '</tr>'
+        );
+
+        var totales = $_DATOS.TOTALES;
+        var subCantidad = totales[0].trim();
+        var subValor = totales[1].trim();
+        var subSobre = totales[2].trim();
+        var subGlobal = totales[3].trim();
+        var subTotal = totales[4].trim();
+        var financiacion = totales[5].trim() || 0;
+        var vales = totales[6].trim();
+        var cheques = totales[7].trim();
+        var efectivo = totales[8].trim();
+
+        let fechaComprobante = totales[9].trim();
+        $('#fechaComprobante').html(fechaComprobante);
+
+        let turnoCod = totales[10].trim();
+        let turnoDescrip = totales[11].trim();
+        $('#turnoComprobante').html(turnoCod + ' - ' + turnoDescrip);
+
+        let almacenComprobante = totales[12].trim();
+        $('#almacenComprobante').html(almacenComprobante);
+
+
+        // Sub-total
+        $('#contenido table#tabla-principal tbody').append(''
+            + '<tr>'
+            + ' <td></td>'
+            + ' <td>Sub-total</td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td>' + subCantidad + '</td>'
+            + ' <td>' + subValor + '</td>'
+            + ' <td>' + subSobre + '</td>'
+            + ' <td>' + subGlobal + '</td>'
+            + ' <td>' + subTotal + '</td>'
+            + '</tr>'
+        );
+
+        if (financiacion != 0) {
+            // Financiación
+            $('#contenido table#tabla-principal tbody').append(''
+                + '<tr>'
+                + ' <td></td>'
+                + ' <td></td>'
+                + ' <td></td>'
+                + ' <td></td>'
+                + ' <td></td>'
+                + ' <td>OTROS INGRESOS</td>'
+                + ' <td></td>'
+                + ' <td></td>'
+                + ' <td>' + financiacion + '</td>'
+                + '</tr>'
+            );
+        }
+
+        // // Total-vales
+        $('#contenido table#tabla-principal tbody').append(''
+            + '<tr>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td>MENOS VALES</td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td>' + vales + '</td>'
+            + '</tr>'
+        );
+
+        // // Cheques
+        $('#contenido table#tabla-principal tbody').append(''
+            + '<tr>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td>RECIBIDO EN CHEQUES</td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td>' + cheques + '</td>'
+            + '</tr>'
+        );
+
+        // // Neto recaudado
+        $('#contenido table#tabla-principal tbody').append(''
+            + '<tr>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td>RECIBIDO EN EFECTIVO</td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td>' + efectivo + '</td>'
+            + '</tr>'
+        );
+
+        if ($_TIPO == 'csv') imprimirCsv();
+    }
+
+    function imprimirCsv() {
+        var csv = [];
+        var rows = document.querySelectorAll("table tr");
+
+        for (var i = 0; i < rows.length; i++) {
+            var row = [], cols = rows[i].querySelectorAll("td, th");
+            for (var j = 0; j < cols.length; j++) row.push(cols[j].innerText.replace(/,/g, ''));
+            csv.push(row.join(","));
+        }
+        _formatoCsv(csv.join("\n"));
+    }
+
+    function _formatoCsv(csv) {
+        var urlCsv = $_URL + '.csv';
+        try {
+            fs.writeFile(urlCsv, csv, 'utf-8', function (e) {
+                var window = remote.getCurrentWindow();
+                window.close();
+            });
+        } catch (e) {
+            alert('Ha ocurrido un error escribiendo el archivo: ' + urlCsv);
+        }
+    }
+
+    function cerosIzq(obj, tam) {
+        while (obj.toString().length < tam)
+            obj = '0' + obj;
+        return obj;
+    }
+
+</script>

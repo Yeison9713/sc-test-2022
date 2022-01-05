@@ -1,0 +1,2189 @@
+{
+  "Menu": [
+    {
+      "Id": "01",
+      "Descripcion": "Actualizar pacientes",
+      "Opc-segu": "IS767",
+      "Tipo": "HTML",
+      "Href": "../../SALUD/paginas/SER110CV2.html",
+      "Params": [
+        {
+          "formulario": "SER110C",
+          "dll": "SALUD\\SER110C"
+        }
+      ]
+    },
+    {
+      "Id": "02",
+      "Descripcion": "Notas terapia y nutricion",
+      "Opc-segu": "ISH2",
+      "Tipo": "HTML",
+      "Href": "../../HICLIN/paginas/HC004.html",
+      "Params": [
+        {
+          "formulario": "HC004",
+          "dll": "HICLIN\\HC004"
+        }
+      ]
+    },
+    {
+      "Id": "03",
+      "Descripcion": "Apertura historia clinica",
+      "Opc-segu": "ISH3",
+      "Tipo": "HTML",
+      "Href": "../../HICLIN/paginas/menu-h03.html",
+      "Params": [
+        {
+          "formulario": "MENUH03",
+          "dll": "HICLIN\\MENUH03"
+        }
+      ]
+    },
+    {
+      "Id": "04",
+      "Descripcion": "Evolucion Med. / Control",
+      "Sub": [
+        {
+          "Id": "041",
+          "Descripcion": "Evolucion medica",
+          "Opc-segu": "ISH41",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/HC002.html"
+        },
+        {
+          "Id": "042",
+          "Descripcion": "Interpretacion de resultados",
+          "Opc-segu": "ISH42",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/HC012.html"
+        },
+        {
+          "Id": "043",
+          "Descripcion": "Solo formulacion",
+          "Opc-segu": "ISH44",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/HC002F.html",
+          "Params": [
+            {
+              "formulario": "HC002F",
+              "dll": "HICLIN\\HC002F"
+            }
+          ]
+        },
+        {
+          "Id": "044",
+          "Descripcion": "Nota sin atencion",
+          "Opc-segu": "ISH41",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC044",
+              "dll": "HICLIN\\HC044"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "05",
+      "Descripcion": "Procesos de enfermeria",
+      "Opc-segu": "ISH5",
+      "Sub": [
+        {
+          "Id": "051",
+          "Descripcion": "Notas enfermeria",
+          "Opc-segu": "ISH51",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/HC003.html",
+          "Params": [
+            {
+              "formulario": "HC003",
+              "dll": "HICLIN\\HC003"
+            }
+          ]
+        },
+        {
+          "Id": "052",
+          "Descripcion": "Registro de enfermeria",
+          "Opc-segu": "ISH52",
+          "Sub": [
+            {
+              "Id": "0521",
+              "Descripcion": "Administracion de medicamentos",
+              "Opc-segu": "ISH42",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC003A.html"
+            },
+            {
+              "Id": "0522",
+              "Descripcion": "Registro signos vitales",
+              "Opc-segu": "IS45",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC522.html"
+            },
+            {
+              "Id": "0523",
+              "Descripcion": "Registro glucometrias",
+              "Opc-segu": "IS45",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC523.html"
+            },
+            {
+              "Id": "0524",
+              "Descripcion": "Registro de oxigeno",
+              "Opc-segu": "IS45",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC524.html"
+            },
+            {
+              "Id": "0525",
+              "Descripcion": "Control neurologico",
+              "Opc-segu": "IS45",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC525.html"
+            },
+            {
+              "Id": "0526",
+              "Descripcion": "Control de liquidos",
+              "Opc-segu": "IS46",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC526.html"
+            },
+            {
+              "Id": "0527",
+              "Descripcion": "Devolucion medicamentos",
+              "Opc-segu": "IS45",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC527.html"
+            },
+            {
+              "Id": "0528",
+              "Descripcion": "Test de aldrete",
+              "Opc-segu": "IS45",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC528.html",
+              "Params": [
+                {
+                  "formulario": "HC528",
+                  "dll": "HICLIN\\HC528"
+                }
+              ]
+            },
+            {
+              "Id": "0529",
+              "Descripcion": "Hoja de gastos",
+              "Opc-segu": "IS45",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC529.html"
+            },
+            {
+              "Id": "052A",
+              "Descripcion": "Control de transfusion",
+              "Opc-segu": "IS45",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC52A.html",
+              "Params": [
+                {
+                  "formulario": "HC52A",
+                  "dll": "HICLIN\\HC52A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "053",
+          "Descripcion": "Resumen facturacion X paci",
+          "Opc-segu": "IS45",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "SER120",
+              "dll": "SALUD\\SER120"
+            }
+          ]
+        },
+        {
+          "Id": "054",
+          "Descripcion": "Resumen facturacion X tipo",
+          "Opc-segu": "IS44",
+          "Tipo": "HTML",
+          "Href": "../../SALUD/paginas/SER604.html"
+        },
+        {
+          "Id": "055",
+          "Descripcion": "AIEPI niños",
+          "Opc-segu": "ISH55",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "AIEPI000",
+              "dll": "HICLIN\\AIEPI000"
+            }
+          ]
+        },
+        {
+          "Id": "056",
+          "Descripcion": "Control de vacunacion",
+          "Opc-segu": "ISH56",
+          "Sub": [
+            {
+              "Id": "0561",
+              "Descripcion": "Registro de vacunacion",
+              "Opc-segu": "ISH51",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "VACUNAS",
+                  "dll": "HICLIN\\VACUNAS"
+                }
+              ]
+            },
+            {
+              "Id": "0562",
+              "Descripcion": "Reimpresion de vacunacion",
+              "Opc-segu": "ISH51",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "VACUNASI",
+                  "dll": "HICLIN\\VACUNASI"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "057",
+          "Descripcion": "Control de desarrollo",
+          "Opc-segu": "ISH57",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "PYP1",
+              "dll": "HICLIN\\PYP1"
+            }
+          ]
+        },
+        {
+          "Id": "058",
+          "Descripcion": "Reimprime control de desarrollo",
+          "Opc-segu": "ISH58",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "PYP1I",
+              "dll": "HICLIN\\PYP1I"
+            }
+          ]
+        },
+        {
+          "Id": "059",
+          "Descripcion": "Interpretacion citologia",
+          "Opc-segu": "ISH59",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC003C",
+              "dll": "HICLIN\\HC003C"
+            }
+          ]
+        },
+        {
+          "Id": "05A",
+          "Descripcion": "Interpretacion patologia",
+          "Opc-segu": "ISH5A",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC003D",
+              "dll": "HICLIN\\HC003D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "06",
+      "Descripcion": "Otros procesos historia",
+      "Opc-segu": "ISH6",
+      "Sub": [
+        {
+          "Id": "061",
+          "Descripcion": "Asignar cama o factura",
+          "Opc-segu": "ISH61",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/HC601.html"
+        },
+        {
+          "Id": "062",
+          "Descripcion": "Elaborar pedidos farmacia",
+          "Opc-segu": "ISH62",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/HC602.html"
+        },
+        {
+          "Id": "063",
+          "Descripcion": "Reimprimir pedidos farmacia",
+          "Opc-segu": "ISH63",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/HC603.html"
+        },
+        {
+          "Id": "064",
+          "Descripcion": "Habilitar historia en blanco",
+          "Opc-segu": "ISH64",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/HC604.html"
+        },
+        {
+          "Id": "065",
+          "Descripcion": "Cierre/Apertura historia clinica",
+          "Opc-segu": "ISH65",
+          "Sub": [
+            {
+              "Id": "0651",
+              "Descripcion": "Cierre historia clinica",
+              "Opc-segu": "ISH651",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC605.html"
+            },
+            {
+              "Id": "0652",
+              "Descripcion": "Reapertura historica clinica",
+              "Opc-segu": "ISH652",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC605B.html"
+            }
+          ]
+        },
+        {
+          "Id": "066",
+          "Descripcion": "Formulario APACHE II",
+          "Sub": [
+            {
+              "Id": "0661",
+              "Descripcion": "Diligenciar APACHE",
+              "Opc-segu": "ISH66",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC606",
+                  "dll": "HICLIN\\HC606"
+                }
+              ]
+            },
+            {
+              "Id": "0662",
+              "Descripcion": "Reimprimir APACHE",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC6062",
+                  "dll": "HICLIN\\HC6062"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "067",
+          "Descripcion": "Epicrisis, remisiones",
+          "Opc-segu": "ISH67",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/HC607.html",
+          "Params": [
+            {
+              "formulario": "HC607",
+              "dll": "HICLIN\\HC607"
+            }
+          ]
+        },
+        {
+          "Id": "068",
+          "Descripcion": "Correccion formulario NoPos",
+          "Opc-segu": "ISH68",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC608",
+              "dll": "HICLIN\\HC608"
+            }
+          ]
+        },
+        {
+          "Id": "069",
+          "Descripcion": "Marcar triage no atendidos",
+          "Opc-segu": "ISH69",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC609",
+              "dll": "HICLIN\\HC609"
+            }
+          ]
+        },
+        {
+          "Id": "06A",
+          "Descripcion": "Firma form. NOPOS especialista",
+          "Opc-segu": "ISH6A",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC610",
+              "dll": "HICLIN\\HC610"
+            }
+          ]
+        },
+        {
+          "Id": "06B",
+          "Descripcion": "Reg anteced. bacteria resist",
+          "Opc-segu": "ISH6B",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC611",
+              "dll": "HICLIN\\HC611"
+            }
+          ]
+        },
+        {
+          "Id": "06C",
+          "Descripcion": "Demanda inducida",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC612",
+              "dll": "HICLIN\\HC612"
+            }
+          ]
+        },
+        {
+          "Id": "06D",
+          "Descripcion": "Consentimientos informados",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/CONSEN_INF.html"
+        }
+      ]
+    },
+    {
+      "Id": "07",
+      "Descripcion": "Submenu impresion historia",
+      "Tipo": "RM",
+      "Sub": [
+        {
+          "Id": "071",
+          "Descripcion": "Imprime historia clinica",
+          "Opc-segu": "ISH42",
+          "Tipo": "JS",
+          "JS": "../../frameworks/scripts/valMenus/VAL_71.js"
+        },
+        {
+          "Id": "072",
+          "Descripcion": "Imprime Epicrisis, remision",
+          "Opc-segu": "IS45",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/HC702.html",
+          "Params": [
+            {
+              "formulario": "HC702",
+              "dll": "HICLIN\\HC702"
+            }
+          ]
+        },
+        {
+          "Id": "073",
+          "Descripcion": "Consulta resultados lab",
+          "Opc-segu": "IS45",
+          "Tipo": "HTML",
+          "Href": "../../frameworks/scripts/valMenus/VAL_RXLAB.html"
+        },
+        {
+          "Id": "074",
+          "Descripcion": "Imprime resultados rx",
+          "Opc-segu": "IS45",
+          "Tipo": "JS",
+          "JS": "../../frameworks/scripts/valMenus/VAL_RXLAB.js"
+        },
+        {
+          "Id": "075",
+          "Descripcion": "Reimprime evolucion medica",
+          "Opc-segu": "IS45",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/HC705.html"
+        },
+        {
+          "Id": "076",
+          "Descripcion": "Reimprime evolucion enferm",
+          "Opc-segu": "IS46",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/HC706.html",
+          "Params": [
+            {
+              "formulario": "HC706",
+              "dll": "HICLIN\\HC706"
+            }
+          ]
+        },
+        {
+          "Id": "077",
+          "Descripcion": "Reimprime nota terapeutas",
+          "Opc-segu": "IS45",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/HC707.html",
+          "Params": [
+            {
+              "formulario": "HC707",
+              "dll": "HICLIN\\HC707"
+            }
+          ]
+        },
+        {
+          "Id": "078",
+          "Descripcion": "Reimprime Ordenes NOPOS",
+          "Opc-segu": "IS45",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC708",
+              "dll": "HICLIN\\HC708"
+            }
+          ]
+        },
+        {
+          "Id": "079",
+          "Descripcion": "Imprime todos los folios",
+          "Opc-segu": "IS45",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/HC709.html",
+          "Params": [
+            {
+              "formulario": "HC709",
+              "dll": "HICLIN\\HC709"
+            }
+          ]
+        },
+        {
+          "Id": "07A",
+          "Descripcion": "Informe de signos vitales",
+          "Opc-segu": "IS45",
+          "Tipo": "RM",
+          "Sub": [
+            {
+              "Id": "07A1",
+              "Descripcion": "Grafico signos seriado seman",
+              "Opc-segu": "IS45",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC710",
+                  "dll": "HICLIN\\HC710"
+                }
+              ]
+            },
+            {
+              "Id": "07A2",
+              "Descripcion": "Grafico signos seriado x hor",
+              "Opc-segu": "IS45",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC711",
+                  "dll": "HICLIN\\HC711"
+                }
+              ]
+            },
+            {
+              "Id": "07A3",
+              "Descripcion": "Informe detallado x signo",
+              "Opc-segu": "IS45",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC7A3",
+                  "dll": "HICLIN\\HC7A3"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "07B",
+          "Descripcion": "Informe Ordenes Medicas",
+          "Opc-segu": "ISH7A",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC712",
+              "dll": "HICLIN\\HC712"
+            }
+          ]
+        },
+        {
+          "Id": "07C",
+          "Descripcion": "Informe Procesos Enfermeria",
+          "Opc-segu": "ISH7A",
+          "Tipo": "RM",
+          "Sub": [
+            {
+              "Id": "07C1",
+              "Descripcion": "Imprime Administ. Medicamentos",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC003A.html"
+            },
+            {
+              "Id": "07C2",
+              "Descripcion": "Registro Signos Vitales",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC522.html"
+            },
+            {
+              "Id": "07C3",
+              "Descripcion": "Registro Glucometrias",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC523.html"
+            },
+            {
+              "Id": "07C4",
+              "Descripcion": "Registro De Oxigeno",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC524.html"
+            },
+            {
+              "Id": "07C5",
+              "Descripcion": "Control Neurologico",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC525.html"
+            },
+            {
+              "Id": "07C6",
+              "Descripcion": "Control De Liquidos",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC526.html"
+            },
+            {
+              "Id": "07C7",
+              "Descripcion": "Impresion Devol. Medicamentos",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC7C7.html"
+            },
+            {
+              "Id": "07C8",
+              "Descripcion": "Test De Aldrete",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC528.html",
+              "Params": [
+                {
+                  "formulario": "HC713",
+                  "dll": "HICLIN\\HC713"
+                }
+              ]
+            },
+            {
+              "Id": "07C9",
+              "Descripcion": "Hoja De Gastos",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC529.html"
+            },
+            {
+              "Id": "07CA",
+              "Descripcion": "Imprime control transfusion",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC52C",
+                  "dll": "HICLIN\\HC52C"
+                }
+              ]
+            },
+            {
+              "Id": "07CB",
+              "Descripcion": "Resumen administ. medicamentos",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC52D",
+                  "dll": "HICLIN\\HC52D"
+                }
+              ]
+            },
+            {
+              "Id": "07CC",
+              "Descripcion": "Info. medicamentos solicitados",
+              "Tipo": "RM"
+            },
+            {
+              "Id": "07CD",
+              "Descripcion": "Auditoria medicamentos",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC712D",
+                  "dll": "HICLIN\\HC712D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "07D",
+          "Descripcion": "Reimprime autorizacion urg.",
+          "Opc-segu": "IS4B3",
+          "Tipo": "HTML",
+          "Href": "../../SALUD/paginas/SER4B3.html"
+        },
+        {
+          "Id": "07E",
+          "Descripcion": "Imprime Tablas crecimiento",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "GRAFDESA",
+              "dll": "HICLIN\\GRAFDESA"
+            }
+          ]
+        },
+        {
+          "Id": "07G",
+          "Descripcion": "Imprime Graficos maternas",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "GRAFEMBA",
+              "dll": "HICLIN\\GRAFEMBA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "08",
+      "Descripcion": "Submenu procesos cirugia",
+      "Opc-segu": "ISH8",
+      "Sub": [
+        {
+          "Id": "081",
+          "Descripcion": "Pre-Anestesia",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "CIR001",
+              "dll": "HICLIN\\CIR001"
+            }
+          ]
+        },
+        {
+          "Id": "082",
+          "Descripcion": "Cirugia",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "CIRUGIA ",
+              "dll": "HICLIN\\CIRUGIA"
+            }
+          ]
+        },
+        {
+          "Id": "083",
+          "Descripcion": "Procesos Instrumentadora",
+          "Sub": [
+            {
+              "Id": "0831",
+              "Descripcion": "Nota de Instrumentadora",
+              "Opc-segu": "ISH5",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC003",
+                  "dll": "HICLIN\\HC003"
+                }
+              ]
+            },
+            {
+              "Id": "0832",
+              "Descripcion": "",
+              "Opc-segu": "IS45",
+              "Tipo": "ERROR",
+              "Cod": "DESHAB"
+            },
+            {
+              "Id": "0833",
+              "Descripcion": "Gastos de Cirugia",
+              "Opc-segu": "IS45",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC529",
+                  "dll": "HICLIN\\HC529"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "084",
+          "Descripcion": "Reimpresion de cirugia",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "forulario": "CIR901",
+              "dll": "HICLIN\\CIR901"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "09",
+      "Descripcion": "Informe historia clinica",
+      "Opc-segu": "ISH9",
+      "Sub": [
+        {
+          "Id": "091",
+          "Descripcion": "Actualiza camas censo",
+          "Opc-segu": "ISH91",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC901",
+              "dll": "HICLIN\\HC901"
+            }
+          ]
+        },
+        {
+          "Id": "092",
+          "Descripcion": "Cambio Camas Censo",
+          "Opc-segu": "ISH92",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC902",
+              "dll": "HICLIN\\HC902"
+            }
+          ]
+        },
+        {
+          "Id": "093",
+          "Descripcion": "Traslado de Cama",
+          "Opc-segu": "ISH93",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC903",
+              "dll": "HICLIN\\HC903"
+            }
+          ]
+        },
+        {
+          "Id": "094",
+          "Descripcion": "Censo Hospitalario",
+          "Opc-segu": "ISH94",
+          "Sub": [
+            {
+              "Id": "0941",
+              "Descripcion": "Informe de censo diario",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC904.html"
+            },
+            {
+              "Id": "0942",
+              "Descripcion": "Actualizar inf. del censo",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC904A",
+                  "dll": "HICLIN\\HC904A"
+                }
+              ]
+            },
+            {
+              "Id": "0943",
+              "Descripcion": "Informe rotacion cama dia",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC904B",
+                  "dll": "HICLIN\\HC904B"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "095",
+          "Descripcion": "Informes de Hist. Clinicas",
+          "Opc-segu": "ISH95",
+          "Sub": [
+            {
+              "Id": "0951",
+              "Descripcion": "Informe H.C Abiertas",
+              "Opc-segu": "ISH951",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC905.html"
+            },
+            {
+              "Id": "0952",
+              "Descripcion": "Registro Diario de H.C",
+              "Opc-segu": "ISH952",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC9052.html"
+            },
+            {
+              "Id": "0953",
+              "Descripcion": "Informe Formulacion X tipo",
+              "Opc-segu": "ISH953",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC9053.html"
+            },
+            {
+              "Id": "0954",
+              "Descripcion": "HC Cerradas VS Fact. Abierta",
+              "Opc-segu": "ISH954",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC9054.html"
+            },
+            {
+              "Id": "0955",
+              "Descripcion": "Informe de Triage X Paciente",
+              "Opc-segu": "ISH955",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC9055.html"
+            },
+            {
+              "Id": "0956",
+              "Descripcion": "Informe Egreso de Pacientes",
+              "Opc-segu": "ISH956",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC9056.html"
+            },
+            {
+              "Id": "0957",
+              "Descripcion": "Informe Sisvan",
+              "Opc-segu": "ISH957",
+              "Sub": [
+                {
+                  "Id": "09571",
+                  "Descripcion": "Sisvan Crecim. Y Desarrollo",
+                  "Tipo": "HTML",
+                  "Href": "../../HICLIN/paginas/HC9571.html"
+                },
+                {
+                  "Id": "09572",
+                  "Descripcion": "Sisvan Maternas",
+                  "Tipo": "HTML",
+                  "Href": "../../SALUD/paginas/SER01M.html"
+                }
+              ]
+            },
+            {
+              "Id": "0958",
+              "Descripcion": "Informe Facturacion X Tipo",
+              "Opc-segu": "ISH958",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC9058.html"
+            },
+            {
+              "Id": "0959",
+              "Descripcion": "Informe Facturacion Consult",
+              "Opc-segu": "ISH959",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC9059.html"
+            },
+            {
+              "Id": "095A",
+              "Descripcion": "Informe Solicitud Especiali",
+              "Opc-segu": "ISH95A",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC905A.html"
+            },
+            {
+              "Id": "095B",
+              "Descripcion": "Censo Basado Ingreso Y Egre",
+              "Opc-segu": "ISH95B",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC905B.html"
+            },
+            {
+              "Id": "095C",
+              "Descripcion": "Productividad X HC",
+              "Opc-segu": "ISH952",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC905C.html"
+            },
+            {
+              "Id": "095D",
+              "Descripcion": "Informe Egreso de Pacientes",
+              "Opc-segu": "ISH95D",
+              "Sub": [
+                {
+                  "Id": "095D1",
+                  "Descripcion": "Inf.Gestion Riesgo Gestantes",
+                  "Tipo": "RM",
+                  "Params": [
+                    {
+                      "formulario": "HC905D1",
+                      "dll": "HICLIN\\HC905D1"
+                    }
+                  ]
+                },
+                {
+                  "Id": "095D2",
+                  "Descripcion": "Inf.Gestion Riesgo Cronicos",
+                  "Tipo": "RM",
+                  "Params": [
+                    {
+                      "formulario": "HC905D2",
+                      "dll": "HICLIN\\HC905D2"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Id": "095E",
+              "Descripcion": "Informe Gestantes",
+              "Opc-segu": "ISH95E",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC905-E.html"
+            },
+            {
+              "Id": "095G",
+              "Descripcion": "Sius Interfase Cundinamarca",
+              "Opc-segu": "ISH95E",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC905E1",
+                  "dll": "HICLIN\\HC905E1"
+                }
+              ]
+            },
+            {
+              "Id": "095H",
+              "Descripcion": "Info. Oportunidad M.General",
+              "Opc-segu": "ISH95H",
+              "Tipo": "HTML",
+              "Href": "../../HICLIN/paginas/HC905H.html"
+            },
+            {
+              "Id": "095I",
+              "Descripcion": "Info. consentimientos",
+              "Sub": [
+                {
+                  "Id": "095I1",
+                  "Descripcion": "Listado de consentimientos",
+                  "Tipo": "HTML",
+                  "Href": "../../HICLIN/paginas/HC905I1.html"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "0A",
+      "Descripcion": "Otros Formularios",
+      "Opc-segu": "ISHA",
+      "Sub": [
+        {
+          "Id": "0A1",
+          "Descripcion": "Formulario Clap",
+          "Opc-segu": "ISHA1",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/CLAP001.html"
+        },
+        {
+          "Id": "0A2",
+          "Descripcion": "Re-Imprimir Clap",
+          "Opc-segu": "ISHA2",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/CLAP001.html"
+        },
+        {
+          "Id": "0A3",
+          "Descripcion": "Formulario Recien Nacido",
+          "Opc-segu": "ISHA3",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HCRN1",
+              "dll": "HICLIN\\HCRN1"
+            }
+          ]
+        },
+        {
+          "Id": "0A4",
+          "Descripcion": "Re-Imprimir Recien Nacido",
+          "Opc-segu": "ISHA4",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HCRNI",
+              "dll": "HICLIN\\HCRNI"
+            }
+          ]
+        },
+        {
+          "Id": "0A5",
+          "Descripcion": "Evaluacion Salud Ocupacional",
+          "Opc-segu": "ISHA5",
+          "Sub": [
+            {
+              "Id": "0A51",
+              "Descripcion": "Apertura H.C. Ocupacional",
+              "Opc-segu": "ISH451",
+              "Tipo": "JS",
+              "JS": "../../HICLIN/scripts/OCUP804.js"
+            },
+            {
+              "Id": "0A52",
+              "Descripcion": "Evaluacion Optometria",
+              "Opc-segu": "ISH452",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC01452",
+                  "dll": "HICLIN\\HC01452"
+                }
+              ]
+            },
+            {
+              "Id": "0A53",
+              "Descripcion": "Evaluacion Audiometria",
+              "Opc-segu": "ISH453",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC01453",
+                  "dll": "HICLIN\\HC01453"
+                }
+              ]
+            },
+            {
+              "Id": "0A54",
+              "Descripcion": "Evaluacion Espirometria",
+              "Opc-segu": "ISH454",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC01454",
+                  "dll": "HICLIN\\HC01454"
+                }
+              ]
+            },
+            {
+              "Id": "0A55",
+              "Descripcion": "Evaluacion Medica",
+              "Opc-segu": "ISH455",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC01455",
+                  "dll": "HICLIN\\HC01455"
+                }
+              ]
+            },
+            {
+              "Id": "0A56",
+              "Descripcion": "Impresion Apertura H.C Ocupa",
+              "Opc-segu": "ISH456",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC01456",
+                  "dll": "HICLIN\\HC01456"
+                }
+              ]
+            },
+            {
+              "Id": "0A57",
+              "Descripcion": "Interpreta. de Laboratorios",
+              "Opc-segu": "ISH457",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "HC01457",
+                  "dll": "HICLIN\\HC01457"
+                }
+              ]
+            },
+            {
+              "Id": "0A58",
+              "Descripcion": "Menu Tablas De Anexos",
+              "Opc-segu": "ISH457",
+              "Sub": [
+                {
+                  "Id": "0A581",
+                  "Descripcion": "Tabla Osteomuscular",
+                  "Opc-segu": "ISHA1",
+                  "Tipo": "RM",
+                  "Params": [
+                    {
+                      "formulario": "HCANEOST",
+                      "dll": "HICLIN\\HCANEOST"
+                    }
+                  ]
+                },
+                {
+                  "Id": "0A582",
+                  "Descripcion": "Tabla Audiometria",
+                  "Opc-segu": "ISHA2",
+                  "Tipo": "RM",
+                  "Params": [
+                    {
+                      "formulario": "HCANEAUD",
+                      "dll": "HICLIN\\HCANEAUD"
+                    }
+                  ]
+                },
+                {
+                  "Id": "0A583",
+                  "Descripcion": "Tabla Optometria",
+                  "Opc-segu": "ISHA2",
+                  "Tipo": "RM",
+                  "Params": [
+                    {
+                      "formulario": "HCANEOPT",
+                      "dll": "HICLIN\\HCANEOPT"
+                    }
+                  ]
+                },
+                {
+                  "Id": "0A584",
+                  "Descripcion": "Tabla Ocupacional",
+                  "Opc-segu": "ISHA1",
+                  "Tipo": "RM",
+                  "Params": [
+                    {
+                      "formulario": "HCANERODRI",
+                      "dll": "HICLIN\\HCANERODRI"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "0A6",
+          "Descripcion": "Partograma",
+          "Opc-segu": "ISHA6",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "PARTOGR",
+              "dll": "HICLIN\\PARTOGR"
+            }
+          ]
+        },
+        {
+          "Id": "0A7",
+          "Descripcion": "Re-Imprimir Partograma",
+          "Opc-segu": "ISHA7",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "PART901",
+              "dll": "HICLIN\\PART901"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "0B",
+      "Descripcion": "Referencia/Contrareferenc.",
+      "Opc-segu": "ISHB",
+      "Sub": [
+        {
+          "Id": "0B1",
+          "Descripcion": "Nota de Referenciacion",
+          "Opc-segu": "ISHB1",
+          "Tipo": "HTML",
+          "Href": "../../frameworks/scripts/valMenus/VAL_0B.html"
+        },
+        {
+          "Id": "0B2",
+          "Descripcion": "Re-Imprimir Referenciacion",
+          "Opc-segu": "ISHB2",
+          "Tipo": "HTML",
+          "Href": "../../frameworks/scripts/valMenus/VAL_0B.html"
+        },
+        {
+          "Id": "0B3",
+          "Descripcion": "Historial Referenciacion",
+          "Opc-segu": "ISHB3",
+          "Tipo": "HTML",
+          "Href": "../../frameworks/scripts/valMenus/VAL_0B.html"
+        },
+        {
+          "Id": "0B4",
+          "Descripcion": "Informe Referenciacion",
+          "Opc-segu": "ISHB4",
+          "Tipo": "HTML",
+          "Href": "../../frameworks/scripts/valMenus/VAL_0B.html"
+        },
+        {
+          "Id": "0B5",
+          "Descripcion": "Imprimir Remision",
+          "Opc-segu": "ISHB5",
+          "Tipo": "HTML",
+          "Href": "../../frameworks/scripts/valMenus/VAL_0B.html"
+        },
+        {
+          "Id": "0B6",
+          "Descripcion": "Solicitar Referencia(Medico)",
+          "Opc-segu": "ISHB6",
+          "Tipo": "HTML",
+          "Href": "../../frameworks/scripts/valMenus/VAL_0B.html"
+        }
+      ]
+    },
+    {
+      "Id": "0C",
+      "Descripcion": "Submenu P.Q.R.",
+      "Opc-segu": "ISB",
+      "Sub": [
+        {
+          "Id": "0C1",
+          "Descripcion": "Actualizar Servicios",
+          "Opc-segu": "ISB1",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "SERB01",
+              "dll": "SALUD\\SERB01"
+            }
+          ]
+        },
+        {
+          "Id": "0C2",
+          "Descripcion": "Actualizar Motivos",
+          "Opc-segu": "ISB2",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "SERB02",
+              "dll": "SALUD\\SERB02"
+            }
+          ]
+        },
+        {
+          "Id": "0C3",
+          "Descripcion": "Actualizar Funcionarios",
+          "Opc-segu": "ISB3",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "SERB03",
+              "dll": "SALUD\\SERB03"
+            }
+          ]
+        },
+        {
+          "Id": "0C4",
+          "Descripcion": "Entrada de Datos P.Q.R.",
+          "Opc-segu": "ISB4",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "SERB04",
+              "dll": "SALUD\\SERB04"
+            }
+          ]
+        },
+        {
+          "Id": "0C5",
+          "Descripcion": "Listado de Pendientes",
+          "Opc-segu": "ISB5",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "SERB05",
+              "dll": "SALUD\\SERB05"
+            }
+          ]
+        },
+        {
+          "Id": "0C6",
+          "Descripcion": "Estadistica P.Q.R.",
+          "Opc-segu": "ISB6",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "SERB06",
+              "dll": "SALUD\\SERB06"
+            }
+          ]
+        },
+        {
+          "Id": "0C7",
+          "Descripcion": "Reimprimir P.Q.R.",
+          "Opc-segu": "ISB7",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "SERB07",
+              "dll": "SALUD\\SERB07"
+            }
+          ]
+        },
+        {
+          "Id": "0C8",
+          "Descripcion": "Encuesta Satisfaccion Paci",
+          "Opc-segu": "ISB7",
+          "Sub": [
+            {
+              "Id": "0C81",
+              "Descripcion": "Configurar Preguntas",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "SERB101",
+                  "dll": "SALUD\\SERB101"
+                }
+              ]
+            },
+            {
+              "Id": "0C82",
+              "Descripcion": "Impresion Formulario Encues",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "SERB102",
+                  "dll": "SALUD\\SERB102"
+                }
+              ]
+            },
+            {
+              "Id": "0C83",
+              "Descripcion": "Llenar Datos Encues",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "SERB103",
+                  "dll": "SALUD\\SERB103"
+                }
+              ]
+            },
+            {
+              "Id": "0C84",
+              "Descripcion": "Resultados De La Encuesta",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "SERB104",
+                  "dll": "SALUD\\SERB104"
+                }
+              ]
+            },
+            {
+              "Id": "0C85",
+              "Descripcion": "Resumen de Encuestas",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "SERB105",
+                  "dll": "SALUD\\SERB105"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "0D",
+      "Descripcion": "Actualizacion de tablas",
+      "Opc-segu": "ISHD",
+      "Sub": [
+        {
+          "Id": "0D1",
+          "Descripcion": "Actualizar Farmacos",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "SER202",
+              "dll": "SALUD\\SER202"
+            }
+          ]
+        },
+        {
+          "Id": "0D2",
+          "Descripcion": "Actualizar Laboratorios",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC102",
+              "dll": "HICLIN\\HC102"
+            }
+          ]
+        },
+        {
+          "Id": "0D3",
+          "Descripcion": "Actualizar Imagenologia",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC103",
+              "dll": "HICLIN\\HC103"
+            }
+          ]
+        },
+        {
+          "Id": "0D4",
+          "Descripcion": "Actualizar Ordenes Medicas",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC104",
+              "dll": "HICLIN\\HC104"
+            }
+          ]
+        },
+        {
+          "Id": "0D5",
+          "Descripcion": "Actualizar Consultas y Terap",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC105",
+              "dll": "HICLIN\\HC105"
+            }
+          ]
+        },
+        {
+          "Id": "0D6",
+          "Descripcion": "Actualizar Macros Formulac",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/HC106.html"
+        },
+        {
+          "Id": "0D7",
+          "Descripcion": "Actualizar Macros Evolucion",
+          "Tipo": "HTML",
+          "Href": "../../HICLIN/paginas/HC107.html"
+        },
+        {
+          "Id": "0D8",
+          "Descripcion": "Actualizar Salas De Cirugia",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC108",
+              "dll": "HICLIN\\HC108"
+            }
+          ]
+        },
+        {
+          "Id": "0D9",
+          "Descripcion": "Parametrizar Apertura H.C.",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "HC109",
+              "dll": "HICLIN\\HC109"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "0E",
+      "Descripcion": "Menu de ayudas del sistema",
+      "Sub": [
+        {
+          "Id": "0E1",
+          "Descripcion": "Manuales del programa S.C",
+          "Sub": [
+            {
+              "Id": "0E11",
+              "Descripcion": "Manual Usuario (Config)",
+              "Tipo": "CMD",
+              "Href": "D:/SC/newcobol/manual/MANUAL.PDF"
+            },
+            {
+              "Id": "0E12",
+              "Descripcion": "Manual Contabilidad",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\newcobol\\manual\\CONTAB.PDF"
+            },
+            {
+              "Id": "0E13",
+              "Descripcion": "Manual Inventarios",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual.PDF"
+            },
+            {
+              "Id": "0E14",
+              "Descripcion": "Manual Nomina",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\NOMINA.PDF"
+            },
+            {
+              "Id": "0E15",
+              "Descripcion": "Manual Presupuesto",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\PRESUP.PDF"
+            },
+            {
+              "Id": "0E16",
+              "Descripcion": "Manual Sector Salud",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\SALUD.PDF"
+            },
+            {
+              "Id": "0E17",
+              "Descripcion": "Manual Historia Clinica",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\H_CLIN.PDF"
+            },
+            {
+              "Id": "0E18",
+              "Descripcion": "Manual Servicios Publicos",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\SERV-PUB.PDF"
+            },
+            {
+              "Id": "0E19",
+              "Descripcion": "Informacion Exogena Dian",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\ET631.PDF"
+            },
+            {
+              "Id": "0E1A",
+              "Descripcion": "Manual Costos Hospitalarios",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\COSTOS.PDF"
+            },
+            {
+              "Id": "0E1B",
+              "Descripcion": "Manual Odontologia",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\ODONTO.PDF"
+            },
+            {
+              "Id": "0E1C",
+              "Descripcion": "Manual Resultados Laborator",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\RESULT.PDF"
+            },
+            {
+              "Id": "0E1D",
+              "Descripcion": "Manual Niifs",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\NIIFS.PDF"
+            },
+            {
+              "Id": "0E1E",
+              "Descripcion": "Manual Eroor-98",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\LUZ.PDF"
+            }
+          ]
+        },
+        {
+          "Id": "0E2",
+          "Descripcion": "Planes De Cuentas",
+          "Sub": [
+            {
+              "Id": "0E21",
+              "Descripcion": "Puc Comerciantes",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\PUC-COM.PDF"
+            },
+            {
+              "Id": "0E22",
+              "Descripcion": "Puc Cooperativo",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\PUC-COO.PDF"
+            },
+            {
+              "Id": "0E23",
+              "Descripcion": "Puc Salud Privado",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\PUC-SALU.PDF"
+            },
+            {
+              "Id": "0E24",
+              "Descripcion": "Puc Oficial",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\PUC-OFI.PDF"
+            },
+            {
+              "Id": "0E25",
+              "Descripcion": "Cuentas Contraloria General",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\CTAS-CGR.PDF"
+            },
+            {
+              "Id": "0E26",
+              "Descripcion": "Cuentas F.U.T.",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\CTAS-FUT.PDF"
+            }
+          ]
+        },
+        {
+          "Id": "0E3",
+          "Descripcion": "Documentos Juridicos",
+          "Sub": [
+            {
+              "Id": "0E31",
+              "Descripcion": "Estatuto Tributario",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\ET.PDF"
+            },
+            {
+              "Id": "0E32",
+              "Descripcion": "Normas Contables",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\NORMACON.PDF"
+            },
+            {
+              "Id": "0E33",
+              "Descripcion": "Cod. Sustantivo Trabajo",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\\newcobol\\manual\\LABORAL.PDF"
+            },
+            {
+              "Id": "0E34",
+              "Descripcion": "Codigo de Comercio",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\CODCOMER.PDF"
+            },
+            {
+              "Id": "0E35",
+              "Descripcion": "Estatuto Org. Presupuesto",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\ESPRESUP.PDF"
+            },
+            {
+              "Id": "0E36",
+              "Descripcion": "Estados Finan Niifs Ecuador",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\ESTADOS_NIIF.PDF"
+            },
+            {
+              "Id": "0E37",
+              "Descripcion": "Cartilla Laboral Sector Pub",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\CARTILLA.PDF"
+            },
+            {
+              "Id": "0E38",
+              "Descripcion": "Cartilla Activ. Economicas",
+              "Tipo": "CMD",
+              "Href": "D:\\SC\\newcobol\\manual\\ACTIV-ECON.PDF"
+            }
+          ]
+        },
+        {
+          "Id": "0E4",
+          "Descripcion": "Temas De Interes",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "CON888",
+              "dll": "CONTAB\\CON888"
+            }
+          ]
+        },
+        {
+          "Id": "0E5",
+          "Descripcion": "Instalacion de Complementos",
+          "Sub": [
+            {
+              "Id": "0E51",
+              "Descripcion": "Instalar Acrobat Reader",
+              "Tipo": "CMD",
+              "Href": "START X:/NEWCOBOL/READER/acrobat.EXE"
+            },
+            {
+              "Id": "0E52",
+              "Descripcion": "Instalar RPV",
+              "Tipo": "CMD",
+              "Href": "START X:/RMCOBOL/NOVAPDF.BAT HIGH"
+            },
+            {
+              "Id": "0E53",
+              "Descripcion": "Instalar Skype",
+              "Tipo": "CMD",
+              "Href": "START X:/RMCOBOL/NOVAPDF.BAT HIGH"
+            },
+            {
+              "Id": "0E54",
+              "Descripcion": "Instalar Menu-RK",
+              "Tipo": "CMD",
+              "Href": "XCOPY X:/NEWCOBOL/READER/MENU-RK/*.* C:/PROSOFT"
+            },
+            {
+              "Id": "0E55",
+              "Descripcion": "Instalar Nova PDF",
+              "Tipo": "CMD",
+              "Href": "START X:/RMCOBOL/NOVAPDF.BAT HIGH"
+            }
+          ]
+        },
+        {
+          "Id": "0E6",
+          "Descripcion": "Copia De Seguridad",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "SALVMN",
+              "dll": "SALUD\\SALVMN"
+            }
+          ]
+        },
+        {
+          "Id": "0E7",
+          "Descripcion": "Acerca De Prosoft",
+          "Tipo": "CMD",
+          "Href": "START /NEWCOBOL/UTILITAR/SC/ACERCA.EXE"
+        },
+        {
+          "Id": "0E8",
+          "Descripcion": "Consultar Vencim. Otro NIT",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "CON880E",
+              "dll": "CONTAB\\CON880E"
+            }
+          ]
+        },
+        {
+          "Id": "0E9",
+          "Descripcion": "Agenda De Recordatorios",
+          "Tipo": "RM",
+          "Params": [
+            {
+              "formulario": "CON880R",
+              "dll": "CONTAB\\CON880R"
+            }
+          ]
+        },
+        {
+          "Id": "0EA",
+          "Descripcion": "Solicitar Soporte Remoto",
+          "Tipo": "RM",
+          "Sub": [
+            {
+              "Id": "0EA1",
+              "Descripcion": "Showmy Pc",
+              "Tipo": "CMD",
+              "Href": "/RMCOBOL/SHOWMY.BAT"
+            },
+            {
+              "Id": "0EA2",
+              "Descripcion": "Instalacion Aeroadmin",
+              "Tipo": "CMD",
+              "Href": "/RMCOBOL/AEROADMIN.BAT"
+            }
+          ]
+        },
+        {
+          "Id": "0EB",
+          "Descripcion": "Actualizaciones Prosoft",
+          "Sub": [
+            {
+              "Id": "0EB1",
+              "Descripcion": "Actualizar Contabilidad",
+              "Href": "CONTAB.exe"
+            },
+            {
+              "Id": "0EB2",
+              "Descripcion": "Actualizar Inventarios",
+              "Href": "INVENT.exe"
+            },
+            {
+              "Id": "0EB3",
+              "Descripcion": "Actualizar Nomina",
+              "Href": "NOMINA.exe"
+            },
+            {
+              "Id": "0EB4",
+              "Descripcion": "Actualizar Presupuesto",
+              "Href": "PRESUP.exe"
+            },
+            {
+              "Id": "0EB5",
+              "Descripcion": "Actualizar Salud",
+              "Href": "SALUD.exe"
+            },
+            {
+              "Id": "0EB6",
+              "Descripcion": "Actualizar Hist. Clinicas",
+              "Href": "HICLIN.exe"
+            },
+            {
+              "Id": "0EB7",
+              "Descripcion": "Actualizar Hist. Odontog.",
+              "Href": "ODONTO.exe"
+            },
+            {
+              "Id": "0EB8",
+              "Descripcion": "Actualizar Cereales",
+              "Href": "CEREALES.exe"
+            },
+            {
+              "Id": "0EB9",
+              "Descripcion": "Actualizar Emp. Comunicacion",
+              "Href": "ETELL.exe"
+            },
+            {
+              "Id": "0EBA",
+              "Descripcion": "Actualizar Serv. Publicos",
+              "Href": "SERVPUB.exe"
+            },
+            {
+              "Id": "0EBB",
+              "Descripcion": "Actualizar Serv. Domiciliar",
+              "Href": "SERVDOM.exe"
+            },
+            {
+              "Id": "0EBC",
+              "Descripcion": "Actualizar Est. De Servicio",
+              "Href": "BOMBAS.exe"
+            },
+            {
+              "Id": "0EBD",
+              "Descripcion": "Actualizar Hoteles",
+              "Href": "HOTEL.exe"
+            },
+            {
+              "Id": "0EBE",
+              "Descripcion": "Actualizar Bares Restaurant",
+              "Href": "BAR-REST.exe"
+            },
+            {
+              "Id": "0EBG",
+              "Descripcion": "Actualizar Fact Colegios",
+              "Href": "COLEGIO.exe"
+            },
+            {
+              "Id": "0EBH",
+              "Descripcion": "Actualizar Declarac. Renta",
+              "Href": "RENTA.exe"
+            },
+            {
+              "Id": "0EBI",
+              "Descripcion": "Actualizar Modulo De Costos",
+              "Href": "COSTOS.exe"
+            },
+            {
+              "Id": "0EBJ",
+              "Descripcion": "Actualizar Modulo Mantenim",
+              "Href": "MANTENI.exe"
+            },
+            {
+              "Id": "0EBK",
+              "Descripcion": "Actualizar Impuestos Munic",
+              "Sub": [
+                {
+                  "Id": "0EBK1",
+                  "Descripcion": "Actualiza Ind. Y Comercio",
+                  "Href": "IMPUESTO.exe"
+                },
+                {
+                  "Id": "0EBK2",
+                  "Descripcion": "Actualiza Imp. Predial",
+                  "Href": "PREDIAL.exe"
+                }
+              ]
+            },
+            {
+              "Id": "0EBL",
+              "Descripcion": "Actualizar Talleres",
+              "Href": "TALLER.exe"
+            },
+            {
+              "Id": "0EBM",
+              "Descripcion": "Actualizar Transp. Intermun",
+              "Href": "TAX.exe"
+            },
+            {
+              "Id": "0EBN",
+              "Descripcion": "Actualizar Clubes Sociales",
+              "Href": "CLUBES.exe"
+            },
+            {
+              "Id": "0EBO",
+              "Descripcion": "Actualizar Control Corresp",
+              "Href": "CORRES.exe"
+            },
+            {
+              "Id": "0EBP",
+              "Descripcion": "Actualizar Fact Otros Serv",
+              "Href": "SERVICIOS.exe"
+            },
+            {
+              "Id": "0EBQ",
+              "Descripcion": "Actualizar Alquiler Maq",
+              "Href": "ANDAMIOS.exe"
+            },
+            {
+              "Id": "0EBR",
+              "Descripcion": "Actualizar Mensajes Error",
+              "Href": "UTILITAR.exe"
+            },
+            {
+              "Id": "0EBS",
+              "Descripcion": "Actualizar Datos",
+              "Href": "DATOS.exe"
+            },
+            {
+              "Id": "0EBT",
+              "Descripcion": "Actualizar Rmcobol",
+              "Sub": [
+                {
+                  "Id": "0EBT1",
+                  "Descripcion": "Config. Listados En Pdf",
+                  "Href": "JAR.exe"
+                },
+                {
+                  "Id": "0EBT2",
+                  "Descripcion": "Actualizar Java",
+                  "Href": "JAVA.exe"
+                },
+                {
+                  "Id": "0EBT3",
+                  "Descripcion": "Actualizar Powercobol",
+                  "Href": "POWER.exe"
+                },
+                {
+                  "Id": "0EBT4",
+                  "Descripcion": "Actualizar RmCobol Completo",
+                  "Href": "RMCOBOL.exe"
+                },
+                {
+                  "Id": "0EBT5",
+                  "Descripcion": "Actualizar .Exe",
+                  "Href": "EXE.exe"
+                },
+                {
+                  "Id": "0EBT6",
+                  "Descripcion": "Actualizar .Bat",
+                  "Href": "BAT.exe"
+                }
+              ]
+            },
+            {
+              "Id": "0EBU",
+              "Descripcion": "Actualizar Complementos",
+              "Sub": [
+                {
+                  "Id": "0EBU1",
+                  "Descripcion": "Actualizar Soporte Remoto",
+                  "Href": "SOPORTE.exe"
+                },
+                {
+                  "Id": "0EBU2",
+                  "Descripcion": "Actualizar R.P.V",
+                  "Href": "RPV.exe"
+                },
+                {
+                  "Id": "0EBU3",
+                  "Descripcion": "Actualizar Manuales",
+                  "Href": "MANUAL.exe"
+                }
+              ]
+            },
+            {
+              "Id": "0EBV",
+              "Descripcion": "Actualizar Banco Proyectos",
+              "Href": "PROYECTOS.exe"
+            }
+          ]
+        },
+        {
+          "Id": "0EC",
+          "Descripcion": "Solicitar Mantenimineto",
+          "Sub": [
+            {
+              "Id": "0EC1",
+              "Descripcion": "Comprob. PQR Prosoft",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "CON880P1",
+                  "dll": "CONTAB\\CON880P1"
+                }
+              ]
+            },
+            {
+              "Id": "0EC2",
+              "Descripcion": "Informe de PQR Prosoft",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "CON880P2",
+                  "dll": "CONTAB\\CON880P2"
+                }
+              ]
+            },
+            {
+              "Id": "0EC3",
+              "Descripcion": "Solicitar Mantenim. Equipos",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "MANT201",
+                  "dll": "CONTAB\\MANT201"
+                }
+              ]
+            },
+            {
+              "Id": "0EC4",
+              "Descripcion": "Servicio Al Cliente Prosoft",
+              "Tipo": "HTML",
+              "Href": "start http://www.prosoft.com.co"
+            }
+          ]
+        },
+        {
+          "Id": "0ED",
+          "Descripcion": "Menu de Correspondencia",
+          "Sub": [
+            {
+              "Id": "0ED1",
+              "Descripcion": "Consultar Correspondencia",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "CORR401",
+                  "dll": "CORRES\\CORR401"
+                }
+              ]
+            },
+            {
+              "Id": "0ED2",
+              "Descripcion": "Facturas Correspondencia",
+              "Tipo": "RM",
+              "Params": [
+                {
+                  "formulario": "CORR868D",
+                  "dll": "CORRES\\CORR868D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "0EE",
+          "Descripcion": "Pagos A Prosoft Por PSE",
+          "Tipo": "CMD",
+          "Href": " START https://www.zonapagos.com/t_prosoft/pagos.asp"
+        }
+      ]
+    },
+    {
+      "Id": "0G",
+      "Descripcion": "Muestra imagenes asociadas",
+      "Tipo": "HTML",
+      "Href": "../../HICLIN/paginas/menu-h15.html"
+    }
+  ]
+}

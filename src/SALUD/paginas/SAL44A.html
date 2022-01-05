@@ -1,0 +1,497 @@
+<style>
+    .form-horizontal .form-group {
+        float: left;
+    }
+
+    .box-center {
+        padding: 10px;
+    }
+
+    #TABLA_44A th {
+        text-align: center;
+    }
+
+</style>
+
+
+<div class="portlet light col-md-12 col-sm-12 col-xs-12">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-1 col-sm-1 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Suc:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="SUC_SAL44A">
+                                <input id="unidades_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-4">Clase servicio:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-7" id="CLASE_SAL44A">
+                                <input id="claseservicio_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="1">
+                            </div>
+                            <button type="button" id="claseservicioBtn_SAL44A" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Compr:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="COMPR_SAL44A">
+                                <input id="compr_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="6">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Fecha:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="VALIDAR4_SAL44A">
+                                <input id="fecha_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="10">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Factura:</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id="FACTURA_SAL44A">
+                                <input id="factura_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="1">
+                            </div>
+                            <button type="button" id="facturaBtn_SAL44A" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="FACTURAD_SAL44A">
+                                <input id="facturad_SAL44A" data-orden="1" maxlength="6" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">P.ingreso:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="PINGRESO_SAL44A">
+                                <input id="pingreso_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Cliente(Entid):</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="CLIENTE_SAL44A">
+                                <input id="cliente_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="12">
+                            </div>
+                            <button type="button" id="clienteBtn_SAL44A" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                <input id="cliented_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-12">Paciente:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="PACIENTE_SAL44A">
+                                <input id="paciente_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="15">
+                            </div>
+                            <button type="button" id="pacienteBtn_SAL44A" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-12">
+                                <input id="paciented_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Sexo:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input id="sexo_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Edad:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input id="edad_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="elementos-tabla">
+                    <div class="col-md-4 col-sm-4 col-xs-12" id="primer-elemento">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Cod.Servicio:</label>
+                            <!-- <div class="input-group col-md-2 col-sm-2 col-xs-12" id="CODSERVICIO_SAL44A">
+                                <input id="codservicio1_SAL44A" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="2">
+                            </div>
+                            <button type="button" id="codservicioBtn_SAL44A"
+                                class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button> -->
+                            <div class="input-group col-md-3 col-sm-3 col-xs-3" id="CODSERVICIO2_SAL44A">
+                                <input id="codservicio2_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="13">
+                            </div>
+                            <button type="button" id="codservicio2Btn_SAL44A" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                                <input id="detalle_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="300">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-12">Detalle:</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-12">
+                                <input id="detalle_401" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Almac:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-11" id="ALMACEN_SAL44A">
+                                <input id="almac_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1">
+                            </div>
+                            <button type="button" id="almacBtn_401" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Cant:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="CANT_SAL44A">
+                                <input id="cant_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Und:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                <input id="und_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Vlr Unit:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="VLRUNIT_SAL44A">
+                                <input id="vlrunit_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="11">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea" style="margin: 5px 0;"></div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Vlr Total:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12" id="VLRTOTAL_SAL44A">
+                                <input id="vlrtotal_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="11">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="elementos-adicionales">
+                    <table id="TABLA_44A" class="table table-light table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Cod.servicio</th>
+                                <th>Detalle</th>
+                                <th>Almac</th>
+                                <th>Cant</th>
+                                <th>Und</th>
+                                <th>Valor Unit</th>
+                                <th>Valor Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="VALOR_SAL44A">
+                <div class="col-md-2 col-sm-4 col-xs-4">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="vlrtot_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-8 col-xs-8">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Valor Iva:</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input id="valoriva_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-8 col-xs-8">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">P.Copago:</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6" id="PCOPAGO_SAL44A">
+                            <input id="porcentcopago_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="4">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-8 col-xs-8">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Copago:</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6" id="COPAGO_SAL44A">
+                            <input id="copagoestimfact_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-8 col-xs-8">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Neto Factura:</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input id="netofact_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="DETALLECITA_SAL44A">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-4 col-xs-4">Especialidad:</label>
+                        <div class="input-group col-md-2 col-sm-3 col-xs-3" id="ESPEC_SAL44A">
+                            <input id="espec_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                maxlength="3">
+                        </div>
+                        <button type="button" id="especBtn_SAL44A" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i></button>
+                        <div class="input-group col-md-5 col-sm-4 col-xs-4">
+                            <input id="despec_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-8 col-xs-8">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-4 col-xs-4">Centro de costos:</label>
+                        <div class="input-group col-md-2 col-sm-3 col-xs-3" id="CCOSTOS_SAL44A">
+                            <input id="ccostos_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                maxlength="4">
+                        </div>
+                        <button type="button" id="ccostosBtn_SAL44A" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i></button>
+                        <div class="input-group col-md-5 col-sm-4 col-xs-4">
+                            <input id="dccostos_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-8 col-xs-8">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Convenio:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="convenio_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-8 col-xs-8">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Estr:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="estrato_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-4 col-xs-4">Atendido por:</label>
+                        <div class="input-group col-md-2 col-sm-3 col-xs-3" id="ATEND_SAL44A">
+                            <input id="atend_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                        </div>
+                        <button type="button" id="especBtn_SAL44A" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i></button>
+                        <div class="input-group col-md-5 col-sm-4 col-xs-4">
+                            <input id="datend_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-4 col-xs-4">Solicitante:</label>
+                        <div class="input-group col-md-2 col-sm-3 col-xs-3" id="SOLIC_SAL44A">
+                            <input id="solic_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                        </div>
+                        <button type="button" id="solicBtn_SAL44A" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i></button>
+                        <div class="input-group col-md-5 col-sm-4 col-xs-4">
+                            <input id="dsolic_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-8 col-xs-8">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Tipo Afiliacion</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input id="tipoafiliacion_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="DIVFACTURA_SAL44A">
+                <div class="col-md-4 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Divis. fact.</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6" id="CAP_SAL44A">
+                            <input id="cap_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="5" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Oper Elab:</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input id="operElab_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="5" data-orden="1">
+                        </div>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input id="fechaElab_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="8">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Oper Correc:</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input id="operCorrec_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="5" data-orden="1">
+                        </div>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input id="fechaCorrec_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="8">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="ULTIMOSDATOS_SAL44A">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Secu. Copago:</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input id="secuCopago_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="5" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Ciudad</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input id="ciudad_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Refact:</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input id="refactura_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="5" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Destino:</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input id="destino_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="5" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Fecha atencion:</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input id="fechaAten_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="5" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Detalle:</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input id="detalle_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="30" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Finalidad</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input id="finalidad_SAL44A" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Unidad Serv:</label>
+                        <div class="input-group col-md-2 col-sm-6 col-xs-6">
+                            <input id="unidserv_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="2" data-orden="1">
+                        </div>
+                        <div class="input-group col-md-10 col-sm-6 col-xs-6">
+                            <input id="descripunidserv_SAL44A" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SAL44A.js" type="text/javascript"></script>

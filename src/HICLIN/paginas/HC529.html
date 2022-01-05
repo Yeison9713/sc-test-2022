@@ -1,0 +1,629 @@
+<!-- <script src="../../HICLIN/scripts/HCI02.js" disabled='disabled' type="text/javascript"></script> -->
+
+<div class="col-md-12" id="HC529">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <form class="form-horizontal" onsubmit="return false;">
+                <div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-xs-12 col-sm-12" style="padding-left:18px;text-align: left;">
+                            <label>HOJA DE GASTOS DE CIRUGIA</label>
+                        </div>
+                        <div class="salto-linea head-box"></div>
+
+                        <div class="col-md-3">
+                            <label class="col-md-12" style="text-align: left;">Atiende:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarAtiende_HC529">
+                                <div class="inline-inputs">
+                                    <input v-model="form.descripAtiende_529" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase descripAtiende_529"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <!-- <label class="col-md-12" style="text-align: left;">Cargo:</label> -->
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarCargo_HC529">
+                                <div class="inline-inputs">
+                                    <input v-model="form.cargo_529" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase cargo_529"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1">
+                            <label class="col-md-12" style="text-align: left;">Nro:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarnumero_HC529">
+                                <div class="inline-inputs">
+                                    <input @keyup.f8="_ventanaHojaGastos_HC529" v-model="form.numero_529" type="text"
+                                        class="form-control col-md-6 col-sm-12 col-xs-12 uppercase numero_529"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+
+                                    <button @click="_ventanaHojaGastos_HC529" type="button"
+                                        class="btn col-md-6 col-sm-2 col-xs-2 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="col-md-3 no-padding">
+                                <label class="col-md-12">Año:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                    id="año_HC529">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.año_529" type="number"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="4"
+                                            data-orden="2" disabled="disabled" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 no-padding">
+                                <label class="col-md-12">Mes:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                    id="mes_HC529">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.mes_529" type="number"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="3" disabled="disabled" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 no-padding">
+                                <label class="col-md-12">Dia:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                    id="dia_HC529A">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.dia_529" type="number"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="4" disabled="disabled" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 no-padding">
+                                <div class="col-md-6 no-padding">
+                                    <label class="col-md-12">Hr:</label>
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                        id="hora_HC529">
+                                        <div class="inline-inputs">
+                                            <input v-model="form.hora_529" type="number"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                                data-orden="5" disabled="disabled" required="true" style="text-align: center; height: 34px;">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-6 no-padding">
+                                    <label class="col-md-12">Mn:</label>
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;" id="minutos_HC529">
+                                        <div class="inline-inputs">
+                                            <input v-model="form.minutos_529" type="number" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                                maxlength="2" data-orden="5" disabled="disabled" ref="minutos_medica_HC529" required="true"
+                                                style="text-align: center; height: 34px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="col-md-12" style="text-align: left;">Und Servicio:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarUnserv_HC529">
+                                
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-3 col-sm-12 col-xs-12" id="validarCodUnserv_HC529">
+                                            <input @keyup.f8="_ventanaUnserv_HC529" v-model="form.unserv_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase unserv_529"
+                                                maxlength="2" disabled="disabled" data-orden="1">
+                                        </div>
+                                        <button @click="_ventanaUnserv_HC529" type="button"
+                                            class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-7 col-sm-12 col-xs-12">
+                                            <input v-model="form.descripUnserv_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" disabled="disabled" maxlength="25"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-5">
+                            <label class="col-md-12" style="text-align: left;">Nombre:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarId_HC529">
+                                <div class="inline-inputs">
+                                    <input v-model="form.descripId_529" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase descripId_529" maxlength="30"
+                                        disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1">
+                            <label class="col-md-12" style="text-align: left;">Sala:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarSala_HC529">
+                                <div class="inline-inputs">
+                                    <input @keyup.f8="_ventanaCamas_HC529" v-model="form.sala_529" type="text"
+                                        class="form-control col-md-7 col-sm-12 col-xs-12 uppercase sala_529" maxlength="3"
+                                        disabled="disabled" data-orden="1">
+
+                                    <button @click="_ventanaCamas_HC529" type="button"
+                                        class="btn col-md-5 col-sm-2 col-xs-2 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="col-md-4">
+                                <label class="col-md-12" style="text-align: left;">Fact:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarPrefijo_HC529">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.prefijo_529" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase prefijo_529" maxlength="1"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-8">
+                                <div class="salto-linea"></div>
+                                <div class="salto-linea"></div>
+                                <div class="salto-linea"></div>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarFact_HC529">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.fact_529" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase fact_529" maxlength="6"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <!-- <label class="col-md-12" style="text-align: left;">Nombre:</label> -->
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarDescripFact_HC529">
+                                <div class="inline-inputs">
+                                    <input v-model="form.descripFact_529" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase descripFact_529" maxlength="30"
+                                        disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-6 col-xs-12 col-sm-12" style="padding-left:18px;text-align: left;">
+                            <label>PROFESIONALES QUE ATENDIERON</label>
+                        </div>
+                        <div class="col-md-6 col-xs-12 col-sm-12" style="padding-left:18px;text-align: left;">
+                            <label>CUPS DE LAS CIRUGIAS REALIZADAS:</label>
+                        </div>
+                        <div class="salto-linea head-box"></div>
+
+                        <div class="col-md-6">
+                            <label class="col-md-12" style="text-align: left;">Cirujano:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarCirujano_HC529">
+                                
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-3 col-sm-12 col-xs-12" id="validarCodCirujano_HC529">
+                                            <input @keyup.f8="_ventanaProfesionales_HC529" v-model="form.cirujano_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase cirujano_529"
+                                                maxlength="13" disabled="disabled" data-orden="1">
+                                        </div>
+                                        <button @click="_ventanaProfesionales_HC529" type="button"
+                                            class="btn col-md-1 col-sm-2 col-xs-2 f8-Btn">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                            <input v-model="form.descripCirujano_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" disabled="disabled" maxlength="2"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarCx_HC529">
+                                
+                                    <div class="inline-inputs">
+                                        <label class="col-md-2 col-sm-2 col-xs-2">01 CUPS:</label>
+
+                                        <div class="input-group col-md-2 col-sm-2 col-xs-2" id="validarCodCx1_HC529">
+                                            <input @keyup.f8="_ventanaCodigosCups1_HC529" v-model="form.cx1_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase cx1_529"
+                                                maxlength="13" disabled="disabled" data-orden="1">
+                                        </div>
+
+                                        <button @click="_ventanaCodigosCups1_HC529" type="button"
+                                            class="btn col-md-1 col-sm-1 col-xs-1 f8-Btn">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+
+                                        <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                            <input v-model="form.descripCx1_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" disabled="disabled" maxlength="2"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-6">
+                            <label class="col-md-12" style="text-align: left;">Anestesiologo:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarAnestesiologo_HC529">
+                                
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-3 col-sm-12 col-xs-12" id="validarCodAnestesiologo_HC529">
+                                            <input @keyup.f8="_ventanaProfesionales2_HC529" v-model="form.anestesiologo_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase anestesiologo_529"
+                                                maxlength="13" disabled="disabled" data-orden="1">
+                                        </div>
+                                        <button @click="_ventanaProfesionales2_HC529" type="button"
+                                            class="btn col-md-1 col-sm-2 col-xs-2 f8-Btn">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                            <input v-model="form.descripAnestesiologo_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" disabled="disabled" maxlength="2"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarCx_HC529">
+                                
+                                    <div class="inline-inputs">
+                                        <label class="col-md-2 col-sm-2 col-xs-2">02 CUPS:</label>
+
+                                        <div class="input-group col-md-2 col-sm-2 col-xs-2" id="validarCodCx2_HC529">
+                                            <input @keyup.f8="_ventanaCodigosCups2_HC529" v-model="form.cx2_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase cx2_529"
+                                                maxlength="13" disabled="disabled" data-orden="1">
+                                        </div>
+
+                                        <button @click="_ventanaCodigosCups2_HC529" type="button"
+                                            class="btn col-md-1 col-sm-1 col-xs-1 f8-Btn">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+
+                                        <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                            <input v-model="form.descripCx2_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" disabled="disabled" maxlength="2"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-6">
+                            <label class="col-md-12" style="text-align: left;">Ayudante:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarAyudante_HC529">
+                                
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-3 col-sm-12 col-xs-12" id="validarCodAyudante_HC529">
+                                            <input @keyup.f8="_ventanaProfesionales3_HC529" v-model="form.ayudante_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase ayudante_529"
+                                                maxlength="13" disabled="disabled" data-orden="1">
+                                        </div>
+                                        <button @click="_ventanaProfesionales3_HC529" type="button"
+                                            class="btn col-md-1 col-sm-2 col-xs-2 f8-Btn">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                            <input v-model="form.descripAyudante_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" disabled="disabled" maxlength="2"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarCx_HC529">
+                                
+                                    <div class="inline-inputs">
+                                        <label class="col-md-2 col-sm-2 col-xs-2">03 CUPS:</label>
+
+                                        <div class="input-group col-md-2 col-sm-2 col-xs-2" id="validarCodCx3_HC529">
+                                            <input @keyup.f8="_ventanaCodigosCups3_HC529" v-model="form.cx3_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase cx3_529"
+                                                maxlength="13" disabled="disabled" data-orden="1">
+                                        </div>
+
+                                        <button @click="_ventanaCodigosCups3_HC529" type="button"
+                                            class="btn col-md-1 col-sm-1 col-xs-1 f8-Btn">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+
+                                        <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                            <input v-model="form.descripCx3_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" disabled="disabled" maxlength="2"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-6">
+                            <label class="col-md-12" style="text-align: left;">Instrumentador:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarInstrumentador_HC529">
+                                
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-3 col-sm-12 col-xs-12" id="validarCodInstrumentador_HC529">
+                                            <input @keyup.f8="_ventanaProfesionales4_HC529" v-model="form.instrumentador_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase instrumentador_529"
+                                                maxlength="13" disabled="disabled" data-orden="1">
+                                        </div>
+                                        <button @click="_ventanaProfesionales4_HC529" type="button"
+                                            class="btn col-md-1 col-sm-2 col-xs-2 f8-Btn">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                            <input v-model="form.descripInstrumentador_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" disabled="disabled" maxlength="2"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarCx_HC529">
+                                
+                                    <div class="inline-inputs">
+                                        <label class="col-md-2 col-sm-2 col-xs-2">04 CUPS:</label>
+
+                                        <div class="input-group col-md-2 col-sm-2 col-xs-2" id="validarCodCx4_HC529">
+                                            <input @keyup.f8="_ventanaCodigosCups4_HC529" v-model="form.cx4_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase cx4_529"
+                                                maxlength="13" disabled="disabled" data-orden="1">
+                                        </div>
+
+                                        <button @click="_ventanaCodigosCups4_HC529" type="button"
+                                            class="btn col-md-1 col-sm-1 col-xs-1 f8-Btn">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+
+                                        <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                            <input v-model="form.descripCx4_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" disabled="disabled" maxlength="2"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-6">
+                            <label class="col-md-12" style="text-align: left;">Circulante:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarCirculante_HC529">
+                                
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-3 col-sm-12 col-xs-12" id="validarCodCirculante_HC529">
+                                            <input @keyup.f8="_ventanaProfesionales5_HC529" v-model="form.circulante_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase circulante_529"
+                                                maxlength="13" disabled="disabled" data-orden="1">
+                                        </div>
+                                        <button @click="_ventanaProfesionales5_HC529" type="button"
+                                            class="btn col-md-1 col-sm-2 col-xs-2 f8-Btn">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                            <input v-model="form.descripCirculante_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" disabled="disabled" maxlength="2"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarCx_HC529">
+                                
+                                    <div class="inline-inputs">
+                                        <label class="col-md-2 col-sm-2 col-xs-2">05 CUPS:</label>
+
+                                        <div class="input-group col-md-2 col-sm-2 col-xs-2" id="validarCodCx5_HC529">
+                                            <input @keyup.f8="_ventanaCodigosCups5_HC529" v-model="form.cx5_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase cx5_529"
+                                                maxlength="13" disabled="disabled" data-orden="1">
+                                        </div>
+
+                                        <button @click="_ventanaCodigosCups5_HC529" type="button"
+                                            class="btn col-md-1 col-sm-1 col-xs-1 f8-Btn">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+
+                                        <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                            <input v-model="form.descripCx5_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" disabled="disabled" maxlength="2"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                    </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div>
+                    <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-2">
+                            <label class="col-md-12" style="text-align: center;">Item:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="itm_HC529">
+                                <div class="inline-inputs">
+                                    <input v-model="form.itm_529" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3"
+                                        data-orden="1" required="true" disabled="disabled" ref="item_HC529" style="text-align: center;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="col-md-12" style="text-align: center;">Grp:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="grp_HC529">
+                                <div class="inline-inputs">
+                                    <input v-model="form.grp_529" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                        data-orden="1" disabled="disabled" style="text-align: center;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="col-md-12" style="text-align: left;">Articulo:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarArticulo_HC529">
+                                
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-3 col-sm-12 col-xs-12" id="articulos_HC529">
+                                            <input @keyup.f8="_ventanaArticulos_HC529" v-model="form.articulos_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase articulos_529"
+                                                maxlength="18" disabled="disabled" data-orden="1">
+                                        </div>
+                                        <button @click="_ventanaArticulos_HC529" type="button"
+                                            class="btn col-md-1 col-sm-2 col-xs-2 f8-Btn">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                            <input v-model="form.descripArticulo_529" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" disabled="disabled" maxlength="20"
+                                                data-orden="">
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="col-md-12" style="text-align: center;">Cantidad:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="cantidad_HC529">
+                                <div class="inline-inputs">
+                                    <input v-model="form.cantidad_529" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3"
+                                        data-orden="1" required="true" disabled="disabled" style="text-align: center;">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="table-scrollable">
+                            <table id="table_contenido" class="table table-light table-striped"
+                                style="text-align: left;">
+                                <thead>
+                                    <tr>
+                                        <th>&nbsp;# Item &nbsp;</th>
+                                        <th>Grp</th>
+                                        <th>Articulo</th>
+                                        <th>Descripcion</th>
+                                        <th>Cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in hc529.tablaGastos">
+
+                                        <td style="width: 15%;">
+                                            <label> {{ item.item.toString().padStart(2,"0") }} </label>
+                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                                style="margin-bottom: 14px !important;">
+                                                <input type="checkbox" @click="_deleteItemFormu_HC529"
+                                                    :value="item.item">
+                                                <span></span>
+                                            </label>
+                                        </td>
+
+                                        <!-- <td>{{item.item}}</td> -->
+                                        <td>{{item.grupo}}</td>
+                                        <td>{{item.articulo}}</td>
+                                        <td>{{item.descripArt}}</td>
+                                        <td>{{item.cantidad}}</td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="../../frameworks/pdf/hiclin/HCI529.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HC529.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI529.js" disabled='disabled' type="text/javascript"></script>

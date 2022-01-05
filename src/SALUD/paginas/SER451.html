@@ -1,0 +1,467 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER451">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="col-md-6 col-sm-6 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Saldos de cartera</label>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-12">CLAVE:</label>
+                            <div class="input-group col-md-9 col-sm-4 col-xs-12" id="VALIDAR1_SER451">
+                                <input v-model='form.clave_SER451' type="password" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Estado:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12" >
+                                <input v-model='form.estado_SER451' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-4 col-sm-3 col-xs-7" id='VALIDAR2_SER451'>
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-9 col-xs-12">Prefijo:</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" >
+                                <input id='prefijo_SER451'  class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-4 col-xs-5" id='VALIDAR3_SER451'>
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Numero:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                <input id='numerofactura_SER451' class="form-control col-md-12 col-sm-12 col-xs-12 factura_SER451" data-orden="1" maxlength="6">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-2 col-sm-2 col-xs-12">Nit Cliente:</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" >
+                                <input v-model='form.nit_SER451' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12" >
+                                <input v-model='form.descripnit_SER451' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Convenio:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12" >
+                                <input v-model='form.convenio_SER451' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-6 col-sm-6 col-xs-12" id='VALIDARFECHAAPER_513'>
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12" style="font-size:small;">Fecha de apertura (Ingreso):</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" >
+                                <input v-model='form.fechaapertura_SER451' placeholder="AAAA/MM/DD"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="10"> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12" id='VALIDARFECHACIER_513' style="padding-right: 1px;">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12" style="font-size:small;">Fecha de cierre fact. (Retiro):</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" >
+                                <input v-model='form.fechacierre_SER451' type="text" placeholder="AAAA/MM/DD"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="10">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12" style="font-size:small;">Nro.envio y fecha:</label>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-12" >
+                                <input v-model='form.numeroenvio_SER451' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" >
+                                <input v-model='form.fechaenvio_SER451' type="text" placeholder="AAAA/MM/DD"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12" style="font-size:small;">Fecha radicación (ultima):</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id='VALIDARANOPRE_513'>
+                                <input v-model='form.anopresente_SER451' type="text"  placeholder="AAAA"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="4" style="padding-left: 10px; padding-right: 5px;">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id='VALIDARMESPRE_513'>
+                                <input v-model='form.mespresente_SER451' type="text"  placeholder="MM"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="2">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id='VALIDARDIAPRE_513'>
+                                <input v-model='form.diapresente_SER451' type="text"  placeholder="DD"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-12" id='VALIDARREPRESENT_513'>
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12" style="font-size:small;">Fecha de Re present (Inicial):</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" >
+                                <input v-model='form.anorepret_SER451' type="text"  placeholder="AAAA"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="4" style="padding-left: 10px; padding-right: 5px;">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12">
+                                <input v-model='form.mesrepre_SER451' type="text"  placeholder="MM"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="2" maxlength="2">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" >
+                                <input v-model='form.diarepre_SER451' type="text"  placeholder="DD"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="3" maxlength="2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12" style="font-size:small;">Fecha contabilidad radicado:</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id='VALIDARANOCONTRAD_513'>
+                                <input v-model='form.anoperiodorad_SER451' type="text" data-orden="1" maxlength="2" placeholder="AA"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" style="padding-left: 10px; padding-right: 5px;">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id='VALIDARMESCONTRAD_513'>
+                                <input v-model='form.mesperiodorad_SER451' type="text" data-orden="1" maxlength="2" placeholder="MM"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id='VALIDARDIACONTRAD_513'>
+                                <input v-model='form.diaperiodorad_SER451' type="text" data-orden="1" maxlength="2" placeholder="DD"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-7" >
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12" style="font-size:small;">Fecha radicado electronica:</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12">
+                                <input v-model='form.anoeletronica_SER451' type="text" data-orden="1" maxlength="4" placeholder="AAAA"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" style="padding-left: 10px; padding-right: 5px;">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12">
+                                <input v-model='form.meseletronica_SER451' type="text" data-orden="1" maxlength="2" placeholder="MM"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12">
+                                <input v-model='form.diaeletronica_SER451' type="text" data-orden="1" maxlength="2" placeholder="DD"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Total facturado:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.totalfact_SER451' type="text"  
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Total Abonos:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" >
+                                <input v-model='form.totalabono_SER451' type="text" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-12" id="VALIDAR14_SER451">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Copagos y cuota mod:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" >
+                                <input id='copagos_SER451' class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="13">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Saldo neto factura:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" >
+                                <input v-model='form.saldoneto_SER451' type="text" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Glosas</label>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Fecha glosa: </label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" >
+                                <input v-model='form.fechaglosa_SER451' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Radicacion: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.radicacion_SER451' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Vlr glosa: </label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input v-model='form.vlrglosa_SER451' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Vlr soportado: </label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input v-model='form.vlrsoportado_SER451' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Fecha radgl:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id='VALIDARANOGLOSAS_513'>
+                                <input v-model='form.anoradglosa_SER451' type="text" data-orden="1" maxlength="4" placeholder="AAAA"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-3 col-sm-4 col-xs-12" id='VALIDARMESGLOSAS_513'>
+                                <input v-model='form.mesradglosa_SER451' type="text" data-orden="1" maxlength="2" placeholder="MM"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-3 col-sm-4 col-xs-12" id='VALIDARDIAGLOSAS_513'>
+                                <input v-model='form.diaradglosa_SER451' type="text" data-orden="1" maxlength="2" placeholder="DD"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <label>#:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.numerofacturado_SER451">
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12">
+                        <label>Fecha:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="VALIDAR4_SER451">
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" id="añofacturado_SER451" data-orden="1" maxlength="4">
+                            </div>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-12" id="VALIDAR5_SER451">
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" id="mesfacturado_SER451" data-orden="1" maxlength="2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12" id="VALIDAR6_SER451">
+                        <label>Valor:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" >
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" id="vlrfacturado_SER451" maxlength="15">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Facturado</label>
+                    </div>
+                    <table id="TABLAFACTURADO_SER451" class="table table-light table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Fecha</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div style="height: 242px; overflow-y: auto;">
+                        <table id="TABLAFACTURADO1_SER451" class="table table-light table-striped">
+                            <tbody>
+                                <tr v-for="(row, index) in tablafact_SER451">
+                                    <td>
+                                      {{index + 1}}
+                                    </td>
+                                    <td>
+                                      {{row.FECHA_FACT}}
+                                    </td>
+                                    <td>
+                                      {{row.VLR_FACT}}
+                                    </td>
+                                  </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-1 col-sm-1 col-xs-12" style="padding-right: 0px;">
+                        <label>#:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15" data-orden="1" v-model="form.numerotablasecuencia_SER451">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12" style="padding-right: 0px;">
+                        <label>Fecha:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="VALIDAR7_SER451">
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" id="añoabono_SER451" maxlength="4" data-orden="1">
+                            </div>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-12" id="VALIDAR8_SER451">
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" id="mesabono_SER451" maxlength="2" data-orden="1">
+                            </div>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-12" id="VALIDAR9_SER451">
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" id="diaabono_SER451" maxlength="2" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12" style="padding-right: 0px;">
+                        <label>Secuencia:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-3 col-sm-3 col-xs-12" id="VALIDAR10_SER451">
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" v-model='form.lotesecuencia_SER451' maxlength="2" data-orden="1">
+                            </div>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" id="VALIDAR11_SER451">
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" id="numerosecuencia_SER451" maxlength="6" data-orden="1">
+                            </div>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-12" id="VALIDAR12_SER451">
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" id="secsecuencia_SER451" maxlength="3" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="VALIDAR13_SER451" style="padding-right: 0px;">
+                        <label>Valor:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15" data-orden="1" id="vlrabono_SER451">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Abonos</label>
+                    </div>
+                    <table id="TABLAABONOS_SER451" class="table table-light table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Fecha</th>
+                                <th>Secuencia</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div style="height: 242px; overflow-y: auto;">
+                        <table id="TABLAABONOS1_SER451" class="table table-light table-striped">
+                            <tbody>
+                                <tr v-for="(row, index) in tablaabon_SER451">
+                                    <td>
+                                      {{index + 1}}
+                                    </td>
+                                    <td>
+                                      {{row.FECHA_ABON}}
+                                    </td>
+                                    <td>
+                                      {{row.SECU_ABON}}
+                                    </td>
+                                    <td>
+                                       {{row.VLR_ABON}}
+                                      </td>
+                                  </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-md-3 col-sm-12 col-xs-12" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="height: 687px;">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Glosas</label>
+                    </div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Fecha glosa: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.fechaglosa_SER451' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Radicacion: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.radicacion_SER451' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Vlr glosa: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.vlrglosa_SER451' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Vlr soportado: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.vlrsoportado_SER451' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Fecha radgl:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id='VALIDARANOGLOSAS_513'>
+                                <input v-model='form.anoradglosa_SER451' type="text" data-orden="1" maxlength="4" placeholder="AAAA"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-3 col-sm-4 col-xs-12" id='VALIDARMESGLOSAS_513'>
+                                <input v-model='form.mesradglosa_SER451' type="text" data-orden="1" maxlength="2" placeholder="MM"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-3 col-sm-4 col-xs-12" id='VALIDARDIAGLOSAS_513'>
+                                <input v-model='form.diaradglosa_SER451' type="text" data-orden="1" maxlength="2" placeholder="DD"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </form>        
+    </div>
+</div>
+<script src="../../SALUD/scripts/SER451.js" type="text/javascript"></script>
+

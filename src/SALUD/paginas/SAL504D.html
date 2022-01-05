@@ -1,0 +1,523 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SAL504D">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="col-md-4 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Saldos de cartera</label>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-12">CLAVE:</label>
+                            <div class="input-group col-md-9 col-sm-4 col-xs-12" >
+                                <input v-model='form.clave_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-3 col-xs-7" id='VALIDARESTADO_504D'>
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Estado:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12" >
+                                <input v-model='form.estado_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-4 col-sm-3 col-xs-7" id='VALIDARPREFIJO_504D'>
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-9 col-xs-12">Prefijo:</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" >
+                                <input v-model='form.prefijo_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12" 
+                                data-orden="1" maxlength="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-4 col-xs-5" id='VALIDARNUMERO_504D'>
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-9 col-xs-12">Numero:</label>
+                            <div class="input-group col-md-9 col-sm-4 col-xs-12">
+                                <input v-model='form.numero_SAL504D' type="text" @Keyup.F8='_f8facturas_SAL504D'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 numero_SAL504D" maxlength="6" data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8facturas_SAL504D'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7" id='VALIDARNIT_504D'>
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Nit Cliente:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12" >
+                                <input v-model='form.nit_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    
+                    <div class="col-md-12 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12" >
+                                <input v-model='form.descripnit_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                 
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Convenio:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12" >
+                                <input v-model='form.convenio_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-12">Contrato:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.contrato_SAL504D' type="text"  
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-12">Nro rad ex:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.nrorad_SAL504D' type="text" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-12">Fecha de apertura (Ingreso):</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.fechaapertura_SAL504D' type="text"  placeholder="AAAA/MM/DD"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-12">Fecha de cierre fact:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.fechacierre_SAL504D' type="text" placeholder="AAAA/MM/DD"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-12">Fecha de presentacion:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.fechapresent_SAL504D' type="text"  placeholder="AAAA/MM/DD"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-9 col-xs-12">#Envio:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" >
+                                <input v-model='form.nroenvio_SAL504D' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <label class="col-md-2 col-sm-9 col-xs-12">Fecha:</label>
+                            <div class="input-group col-md-9 col-sm-4 col-xs-12" >
+                                <input v-model='form.fechaenvio_SAL504D' type="text" placeholder="AAAA/MM/DD"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-12">Fecha contab radicado:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.periodorad_SAL504D' type="text" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-12">Total facturado:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.totalfact_SAL504D' type="text"  
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-12">Total Abonos:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.totalabono_SAL504D' type="text" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-12">Copagos y cuota mod:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.copagos_SAL504D' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-12">Saldo neto factura:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.saldoneto_SAL504D' type="text" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-12 col-xs-12" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Facturado</label>
+                    </div>
+                    <table id="TABLAFACTURADO_SAL504D" class="table table-light table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 2%; text-align: center;">#</th>
+                                <th style="width: 6%; text-align: center;">Fecha</th>
+                                <th style="width: 6%; text-align: center;">Secuencia</th>
+                                <th style="width: 6%; text-align: center;">Valor</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div style="height: 241px; overflow-y: auto;">
+                        <table id="TABLAFACTURADO1_SAL504D" class="table table-light table-striped">
+                            <tbody>
+                                <tr v-for="(row, index) in tablafact_SAL504D">
+                                    <td style="width: 2%; text-align: center;">
+                                      {{index + 1}}
+                                    </td>
+                                    <td style="width: 7%; text-align: center;">
+                                      {{row.FECHA_FACT}}
+                                    </td>
+                                    <td style="width: 7%; text-align: center;">
+                                        {{row.SECUENCIA}}
+                                      </td>
+                                    <td style="width: 7%; text-align: center;">
+                                      {{ parseInt(row.VLR_FACT || 0)}}
+                                    </td>
+                                  </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Abonos</label>
+                    </div>
+                    <table id="TABLAABONOS_SAL504D" class="table table-light table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 2%; text-align: center;">#</th>
+                                <th style="width: 6%; text-align: center;">Fecha</th>
+                                <th style="width: 6%; text-align: center;">Secuencia</th>
+                                <th style="width: 6%; text-align: center;">Valor</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div style="height: 241px; overflow-y: auto;">
+                        <table id="TABLAABONOS1_SAL504D" class="table table-light table-striped">
+                            <tbody>
+                                <tr v-for="(row, index) in tablaabon_SAL504D">
+                                    <td style="width: 2%; text-align: center;">
+                                      {{index + 1}}
+                                    </td>
+                                    <td style="width: 7%; text-align: center;">
+                                      {{row.FECHA_ABON}}
+                                    </td>
+                                    <td style="width: 7%; text-align: center;">
+                                      {{row.SECU_ABON}}
+                                    </td>
+                                    <td style="width: 7%; text-align: center;">
+                                       {{row.VLR_ABON}}
+                                      </td>
+                                  </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="height: 556px;">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Glosas</label>
+                    </div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Fecha glosa: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.fechaglosa_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Radicacion: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.radicacion_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Vlr glosa: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.vlrglosa_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Vlr soportado: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.vlrsoportado_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Periodo det: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.periododet_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Total det:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.totaldet_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Retencion:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.retencion_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Traslado glosa: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.traslado_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Copago estim: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.copagoesti_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div> 
+                    <div class="col-md-12 col-sm-6 col-xs-7 hidden"  id= "RERADICADO_SAL504D">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12 ">RE-RADICADA: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.fechareradicada_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-6 col-xs-7 hidden"  id= "LEVANTGLOSA_SAL504D">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12 ">LEVANT.GLOSA: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.levant_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-6 col-xs-7 hidden"  id= "FECHALEVANT_SAL504D">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12 ">FECHA LEVANT GLOSA: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.fechalevant_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-6 col-xs-7 hidden"  id= "CAPITAC_SAL504D">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12 ">CAPITAC: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.capitac_SAL504D' type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Factura electronica</label>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-12">Nro radicado:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.radicadoext_SAL504D' type="text"  
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-12">Fecha rad. Elect:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" >
+                                <input v-model='form.nroenvioelect_SAL504D' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12" >
+                                <input v-model='form.fecharadelect_SAL504D' type="text" placeholder="AAAA/MM/DD"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-5 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-2 col-sm-9 col-xs-12">Cufe:</label>
+                            <div class="input-group col-md-10 col-sm-4 col-xs-12" >
+                                <input v-model='form.cufe_SAL504D' type="text" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-5 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-2 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-9 col-xs-12">Creado:</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" >
+                                <input v-model='form.creado_SAL504D' type="text" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-9 col-xs-12">Modificado:</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" >
+                                <input v-model='form.modificado_SAL504D' type="text" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-9 col-xs-12">Bloq:</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12" >
+                                <input v-model='form.bloq_SAL504D' type="text" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Fact armado:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12" >
+                                <input v-model='form.factarm_SAL504D' type="text" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Armad fact:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12" >
+                                <input v-model='form.armadfact_SAL504D' type="text" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-5 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Fecha radic:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12" >
+                                <input v-model='form.fecharad_SAL504D' type="text" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Oper radic:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12" >
+                                <input v-model='form.operradi_SAL504D' type="text" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Arma radic:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12" >
+                                <input v-model='form.armarad_SAL504D' type="text" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Radic arma:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12" >
+                                <input v-model='form.radicarma_SAL504D' type="text" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>        
+    </div>
+</div>
+<script src="../../SALUD/scripts/SAL504D.js" type="text/javascript"></script>
+

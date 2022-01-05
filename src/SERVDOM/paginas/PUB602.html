@@ -1,0 +1,514 @@
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<div class="col-md-12" id="PUB602">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="col-md-12 no-padding">
+          <div class="col-md-3" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center">
+              <div class="col-md-12 no-padding" style="text-align: center">
+                <div class="col-md-12 head-box">
+                  <label>Periodo elaboración</label>
+                </div>
+                <div class="col-md-12 no-padding" id="llave_ctl">
+                  <div class="col-md-6 inline-inputs">
+                    <label class="col-md-5" id="lbl">Año</label>
+                    <div class="input-group col-md-7">
+                      <input
+                        v-model="fecha_ctl.ano_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="4"
+                        data-orden="1"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6 inline-inputs">
+                    <label class="col-md-6" id="lbl">Mes</label>
+                    <div class="input-group col-md-6">
+                      <input
+                        v-model="fecha_ctl.mes_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="2"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-md-12 box-center">
+              <div class="col-md-12 no-padding" style="text-align: center">
+                <div class="col-md-12 head-box">
+                  <label>Periodo anterior</label>
+                </div>
+                <div class="col-md-12 no-padding" id="per_ant">
+                  <div class="col-md-6 inline-inputs">
+                    <label class="col-md-5" id="lbl">Año</label>
+                    <div class="input-group col-md-7">
+                      <input
+                        v-model="fecha_per_ant.ano_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="4"
+                        data-orden="1"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6 inline-inputs">
+                    <label class="col-md-6" id="lbl">Mes</label>
+                    <div class="input-group col-md-6">
+                      <input
+                        v-model="fecha_per_ant.mes_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="2"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-md-12 box-center">
+              <div class="col-md-12 no-padding" style="text-align: center">
+                <div class="col-md-12 head-box">
+                  <label>Nro factura anterior</label>
+                </div>
+                <div class="col-md-12 no-padding" id="fecha_inicial">
+                  <div class="col-md-12" id="nro_ant">
+                    <div class="input-group col-md-7" style="display: inline-flex">
+                      <input
+                        v-model="reg_control_w.nro_ant"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="9"
+                        data-orden="1"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2" style="padding-left: 0">
+            <div class="col-md-12 no-padding">
+              <div class="col-md-12 form-group box-center head-box">
+                <label class="no-padding" id="lbl">TARIFAS</label>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="col-md-12 form-group box-center no-padding">
+                <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%">
+                  <thead>
+                    <tr>
+                      <th class="text-center" style="width: 60%">Año</th>
+                      <th class="text-center" style="width: 40%">Mes</th>
+                    </tr>
+                    <tr>
+                      <td style="width: 60%">
+                        <div class="input-group col-md-12" id="codigo">
+                          <label class="no-padding" id="lbl">{{ reg_control_w.periodo[0].ano_per }}</label>
+                        </div>
+                      </td>
+                      <td style="width: 40%">
+                        <div class="input-group col-md-12" id="codigo">
+                          <label class="no-padding" id="lbl">{{ reg_control_w.periodo[0].mes_per }}</label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 60%">
+                        <div class="input-group col-md-12" id="codigo">
+                          <label class="no-padding" id="lbl">S/N</label>
+                        </div>
+                      </td>
+                      <td style="width: 40%; padding: 0">
+                        <div class="input-group col-md-12" id="conf_1">
+                          <input
+                            v-model="conf_1"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="1"
+                            placeholder="N"
+                            data-orden="1"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding" style="margin-top: 7px !important">
+              <div class="col-md-12 form-group box-center no-padding">
+                <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%">
+                  <thead>
+                    <tr>
+                      <th class="text-center" style="width: 60%">Año</th>
+                      <th class="text-center" style="width: 40%">Mes</th>
+                    </tr>
+                    <tr>
+                      <td style="width: 60%">
+                        <div class="input-group col-md-12" id="codigo">
+                          <label class="no-padding" id="lbl">{{ reg_control_w.periodo[1].ano_per }}</label>
+                        </div>
+                      </td>
+                      <td style="width: 40%">
+                        <div class="input-group col-md-12" id="codigo">
+                          <label class="no-padding" id="lbl">{{ reg_control_w.periodo[1].mes_per }}</label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 60%">
+                        <div class="input-group col-md-12" id="codigo">
+                          <label class="no-padding" id="lbl">S/N</label>
+                        </div>
+                      </td>
+                      <td style="width: 40%; padding: 0">
+                        <div class="input-group col-md-12" id="conf_2">
+                          <input
+                            v-model="conf_2"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="1"
+                            placeholder="N"
+                            data-orden="1"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding" style="margin-top: 7px !important">
+              <div class="col-md-12 form-group box-center no-padding">
+                <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%">
+                  <thead>
+                    <tr>
+                      <th class="text-center" style="width: 60%">Año</th>
+                      <th class="text-center" style="width: 40%">Mes</th>
+                    </tr>
+                    <tr>
+                      <td style="width: 60%">
+                        <div class="input-group col-md-12" id="codigo">
+                          <label class="no-padding" id="lbl">{{ reg_control_w.periodo[2].ano_per }}</label>
+                        </div>
+                      </td>
+                      <td style="width: 40%">
+                        <div class="input-group col-md-12" id="codigo">
+                          <label class="no-padding" id="lbl">{{ reg_control_w.periodo[2].mes_per }}</label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 60%">
+                        <div class="input-group col-md-12" id="codigo">
+                          <label class="no-padding" id="lbl">S/N</label>
+                        </div>
+                      </td>
+                      <td style="width: 40%; padding: 0">
+                        <div class="input-group col-md-12" id="conf_3">
+                          <input
+                            v-model="conf_3"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="1"
+                            placeholder="N"
+                            data-orden="1"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-7 no-padding">
+            <div class="col-md-12 no-padding">
+              <div class="col-md-12 form-group box-center no-padding" style="min-height: 377px">
+                <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%">
+                  <thead>
+                    <tr>
+                      <th class="text-center" style="width: 10%">{{ titulos_tabla[0] }}</th>
+                      <th class="text-center" style="width: 15%">{{ titulos_tabla[1] }}</th>
+                      <th class="text-center" style="width: 15%">{{ titulos_tabla[2] }}</th>
+                      <th class="text-center" style="width: 15%">{{ titulos_tabla[3] }}</th>
+                      <th class="text-center" style="width: 15%">{{ titulos_tabla[4] }}</th>
+                      <th class="text-center" style="width: 15%">{{ titulos_tabla[5] }}</th>
+                      <th class="text-center" style="width: 15%">{{ titulos_tabla[6] }}</th>
+                    </tr>
+                  </thead>
+                </table>
+                <div style="display: inline-block; width: 100%">
+                  <table id="tabla_fact" class="table table-light table-striped" style="margin-bottom: 0px">
+                    <tbody>
+                      <tr v-for="(registro, index) in tabla_fact_w">
+                        <td class="text-center" style="width: 10%">{{ registro.est }}</td>
+                        <td class="text-right" style="width: 15%">{{ registro.col1 }}</td>
+                        <td class="text-right" style="width: 15%">{{ registro.col2 }}</td>
+                        <td class="text-right" style="width: 15%">{{ registro.col3 }}</td>
+                        <td class="text-right" style="width: 15%">{{ registro.col4 }}</td>
+                        <td class="text-right" style="width: 15%">{{ registro.col5 }}</td>
+                        <td class="text-right" style="width: 15%">{{ registro.col6 }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="col-md-5" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center">
+              <div class="col-md-12 no-padding" style="text-align: center">
+                <div class="col-md-12 head-box no-padding" style="text-align: left">
+                  <label class="no-padding" id="lbl">Mensaje en la facturación</label>
+                </div>
+                <div class="col-md-12 no-padding" id="mensaje1">
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="reg_control_w.mensaje1"
+                      type="text"
+                      class="form-control text-left"
+                      maxlength="60"
+                      data-orden="1"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-12 no-padding" id="mensaje2">
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="reg_control_w.mensaje2"
+                      type="text"
+                      class="form-control text-left"
+                      maxlength="60"
+                      data-orden="1"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-12 no-padding" id="mensaje3">
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="reg_control_w.mensaje3"
+                      type="text"
+                      class="form-control text-left"
+                      maxlength="60"
+                      data-orden="1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center" style="padding-bottom: 25px !important">
+              <div class="col-md-12 no-padding" style="text-align: center">
+                <div class="col-md-12 no-padding">
+                  <div class="col-md-5 head-box" style="text-align: left; padding-left: 0">
+                    <label id="lbl">Fecha Vencimiento</label>
+                  </div>
+                  <div class="col-md-3 head-box">
+                    <label class="no-padding">Año</label>
+                  </div>
+                  <div class="col-md-2 head-box">
+                    <label class="no-padding">Mes</label>
+                  </div>
+                  <div class="col-md-2 head-box">
+                    <label class="no-padding">Dia</label>
+                  </div>
+                </div>
+                <div class="col-md-12 no-padding inline-inputs" id="fecha_vence">
+                  <label class="col-md-5" id="lbl">Pago oportuno</label>
+                  <div class="col-md-3 no-padding">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="fecha_vence.ano_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="4"
+                        data-orden="1"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-2 no-padding" style="padding-left: 2px !important">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="fecha_vence.mes_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="2"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-2 no-padding" style="padding-left: 2px !important">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="fecha_vence.dia_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="3"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12 no-padding inline-inputs" id="fecha_vence2">
+                  <label class="col-md-5" id="lbl">Pago con recargo</label>
+                  <div class="col-md-3 no-padding">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="fecha_vence2.ano_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="4"
+                        data-orden="1"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-2 no-padding" style="padding-left: 2px !important">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="fecha_vence2.mes_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="2"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-2 no-padding" style="padding-left: 2px !important">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="fecha_vence2.dia_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="3"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 no-padding">
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <label class="col-md-6" id="lbl">Fecha expedición</label>
+                  <label class="col-md-6" id="lbl">{{ fecha_exp_edit }}</label>
+                </div>
+
+                <div class="salto-linea"></div>
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12 no-padding inline-inputs" style="text-align: center">
+                  <label class="col-md-6" id="lbl">Valor recargo</label>
+                  <div class="col-md-6 no-padding" id="recargo">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="reg_control_w.recargo"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="5"
+                        data-orden="1"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12 no-padding inline-inputs" style="text-align: center">
+                  <label class="col-md-6" id="lbl">Int. corriente mensual</label>
+                  <div class="col-md-6 no-padding" id="int">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="reg_control_w.int"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="5"
+                        data-orden="1"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12 no-padding inline-inputs" style="text-align: center">
+                  <label class="col-md-6" id="lbl">Int. refinanc.</label>
+                  <div class="col-md-6 no-padding" id="int_ref">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="reg_control_w.int_ref"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="5"
+                        data-orden="1"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12 no-padding" v-if="mostrar_CLAVE">
+    <clave :params="params_CLAVE" @callback="callback_clave" @callback_esc="esc_clave"> </clave>
+  </div>
+</div>
+
+<script src="../../SERVDOM/scripts/PUB602.js" type="text/javascript"></script>
+
+<style>
+  #lbl {
+    background: 0;
+    text-align: left;
+    padding-left: 5px;
+  }
+
+  #tabla_fact tbody tr {
+    height: 25px;
+  }
+
+  #tabla_fact tbody tr td {
+    padding: 0;
+  }
+</style>

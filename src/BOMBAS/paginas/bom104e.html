@@ -1,0 +1,787 @@
+<style>
+  .totales {
+    margin: 10px auto 0 auto;
+    float: none;
+    padding: 0;
+  }
+
+  #tablaVenta td:nth-child(1) {
+    width: 15%;
+    padding: 8px;
+  }
+
+  #tablaVenta td:nth-child(2),
+  #tablaVenta td:nth-child(3) {
+    width: 42.5%;
+    padding: 8px;
+    text-align: right;
+  }
+
+  #tablaVales_104e td:nth-child(6) {
+    white-space: nowrap;
+  }
+
+  #tablaVales_104e td:nth-child(3),
+  #tablaVales_104e td:nth-child(4),
+  #tablaVales_104e td:nth-child(5),
+  #tablaVales_104e th:nth-child(3),
+  #tablaVales_104e th:nth-child(4),
+  #tablaVales_104e th:nth-child(4),
+  #tablaVenta th:nth-child(2),
+  #tablaVenta th:nth-child(3) {
+    text-align: right;
+  }
+
+  #documento {
+    display: none;
+  }
+</style>
+<div class="col-md-12">
+  <div class="portlet light box-center box-title">
+    <div class="portlet-title">
+      <div class="caption">
+        <span class="caption-subject bold">2-5 - Correccion de comprobantes</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-12">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <form class="form-horizontal">
+        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+          <div
+            class="form-group col-md-12 col-sm-12 col-xs-12"
+            style="margin: 0 auto; float: none;"
+          >
+            <div class="col-md-3 col-sm-3 col-xs-4" id="validarComprobante_104e">
+              <label>Comprobante:</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input
+                  id="numComprobante_104e"
+                  type="number"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  maxlength="6"
+                  data-orden="1"
+                  required="true"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-2 col-sm-2 col-xs-4" id="fase_anio104e">
+              <label>Año:</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input
+                  id="añoInicial_104e"
+                  type="number"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  maxlength="2"
+                  data-orden="1"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-2 col-sm-2 col-xs-4" id="fase_mes_104e">
+              <label>Mes:</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input
+                  id="mesInicial_104e"
+                  type="number"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  maxlength="2"
+                  data-orden="1"
+                />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-4" id="fase2_104e">
+              <label>Dia:</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input
+                  id="diaInicial_104e"
+                  type="number"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  maxlength="2"
+                  data-orden="1"
+                />
+              </div>
+            </div>
+            <div>
+              <div class="col-md-1 col-sm-1 col-xs-4" id="primeraIsla_104e">
+                <label>Islas:</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    id="primeraIslaInpt_104e"
+                    type="number"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    data-orden="1"
+                  />
+                </div>
+              </div>
+              <div class="col-md-1 col-sm-1 col-xs-4" id="segundaIsla_104e">
+                <label>&nbsp;</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    id="segundaIslaInpt_104e"
+                    type="number"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    data-orden="1"
+                  />
+                </div>
+              </div>
+              <div class="col-md-1 col-sm-1 col-xs-4" id="terceraIsla_104e">
+                <label>&nbsp;</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    id="terceraIslaInpt_104e"
+                    type="number"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    data-orden="1"
+                  />
+                </div>
+              </div>
+              <div class="salto-linea"></div>
+              <div class="col-md-2 col-sm-2 col-xs-4" id="fase3_104e">
+                <div class="inline-inputs">
+                  <label class="col-md-6 col-sm-6 col-xs-12">Turno:</label>
+                  <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                    <input
+                      id="turno_104e"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      maxlength="1"
+                      data-orden="1"
+                      required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-4" id="fase3_104e">
+                <div class="inline-inputs">
+                  <label class="col-md-3 col-sm-5 col-xs-12">Detalle:</label>
+                  <div class="input-group col-md-9 col-sm-7 col-xs-12">
+                    <input
+                      id="detalle_104e"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      maxlength="20"
+                      data-orden="2"
+                      required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3" id="fase3_104e">
+                <div class="inline-inputs">
+                  <label class="col-md-4 col-sm-5 col-xs-12">Vendedor:</label>
+                  <div class="input-group col-md-5 col-sm-7 col-xs-12">
+                    <input
+                      id="vendedor_104e"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      maxlength="5"
+                      data-orden="3"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    id="vendedorBtn_104e"
+                    class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn"
+                  >
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+              <div class="inline-inputs">
+                <label class="col-md-3 col-sm-3 col-xs-12">Sucursal:</label>
+                <div
+                  class="input-group col-md-2 col-sm-2 col-xs-12"
+                  id="faseSucursal_104e"
+                >
+                  <input
+                    id="sucursal_104e"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="2"
+                    data-orden="1"
+                    required="true"
+                  />
+                </div>
+                <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                  <input
+                    id="sucursalNom_104e"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="1"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="col-md-5 col-sm-4 col-xs-4 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <table id="tablaVenta" class="table table-light table-striped">
+                <thead>
+                  <tr>
+                    <th>Sur</th>
+                    <th>Galonaje</th>
+                    <th>Venta</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                  <tr>
+                    <td>Total:</td>
+                    <td><a id="galonajeTablaVenta"></a></td>
+                    <td><a id="ventaTablaVenta"></a></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+
+          <div class="col-md-7 col-sm-8 col-xs-4" style="padding-right: 0;">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <!-- Info producto -->
+              <div class="col-md-2 col-sm-2 col-xs-4">
+                <label>Item:</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    id="codItem_104e"
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-4">
+                <label>Producto:</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    id="codProducto_10e4"
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-4">
+                <label>&nbsp;</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    id="descProducto"
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+              <div style="clear: both;"></div>
+              <hr />
+              <!-- Info producto -->
+
+              <div class="col-md-3 col-sm-4 col-xs-4">
+                <label>&nbsp;</label>
+              </div>
+              <div class="col-md-5 col-sm-4 col-xs-4">
+                <label>Galonaje</label>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-4">
+                <label>Valor</label>
+              </div>
+
+              <div
+                class="col-md-12 col-sm-12 col-xs-4"
+                style="margin-top: 10px;"
+                id="validarNumeroAnterior_104e"
+              >
+                <div class="inline-inputs">
+                  <label class="col-md-3 col-sm-4 col-xs-12">Num anter:</label>
+                  <div class="input-group col-md-5 col-sm-4 col-xs-12">
+                    <input
+                      id="numAnter_104e"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      data-orden="1"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-12 col-sm-12 col-xs-4"
+                style="margin-top: 10px;"
+                id="validarNumeroActual_104e"
+              >
+                <div class="inline-inputs">
+                  <label class="col-md-3 col-sm-4 col-xs-12">Num actual:</label>
+                  <div class="input-group col-md-5 col-sm-4 col-xs-12">
+                    <input
+                      id="numActual_104e"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      data-orden="1"
+                      maxlength="16"
+                    />
+                  </div>
+                  <div
+                    class="input-group col-md-3 col-sm-3 col-xs-12"
+                    style="margin-left: 10px;"
+                  >
+                    <input
+                      id="valorActual_104e"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-12 col-sm-12 col-xs-4"
+                style="margin-top: 10px;"
+              >
+                <div class="inline-inputs">
+                  <label class="col-md-3 col-sm-4 col-xs-12">
+                    Total venta:
+                  </label>
+                  <div class="input-group col-md-5 col-sm-4 col-xs-12">
+                    <input
+                      id="galonajeTotal_104e"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                  <div
+                    class="input-group col-md-3 col-sm-3 col-xs-12"
+                    style="margin-left: 10px;"
+                  >
+                    <input
+                      id="valorTotal_104e"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-sm-4 col-xs-4 no-padding"></div>
+          <div class="col-md-7 col-sm-8 col-xs-4" style="padding-right: 0;">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div class="col-md-2 col-sm-2 col-xs-4" id="itemSegundaTabla_104e">
+                <label>Item:</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    id="itemVales_104e"
+                    min="0"
+                    type="number"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="3"
+                    data-orden="1"
+                  />
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-3 col-xs-4" id="validarCuenta_104e">
+                <label>Codigo:</label>
+                <div class="col-md-12 inline-inputs no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      id="codigoCuenta_104e"
+                      type="text"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      maxlength="11"
+                      data-orden="1"
+                    />
+                  </div>
+                  <button
+                    id="codigoCuentaBtn_104e"
+                    type="button"
+                    class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn"
+                  >
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-5 col-sm-3 col-xs-4">
+                <label>Descrip. Cuenta.</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    id="desCuenta_104e"
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-2 col-xs-4" id="nitTercero_104e">
+                <label>Nit:</label>
+                <div class="col-md-12 inline-inputs no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      id="nitTerceroInpt_104e"
+                      type="number"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      maxlength="10"
+                      data-orden="1"
+                    />
+                  </div>
+                  <button
+                    id="nitTerceroInptBtn_104e"
+                    type="button"
+                    class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn"
+                  >
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-3 col-xs-4">
+                <label>Descrip. Cliente.</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    id="desCliente_104e"
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-2 col-xs-4" id="documentoVale_104e">
+                <label>Docum:</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    id="documentoInpt_104e"
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12 text-uppercase"
+                    maxlength="6"
+                    data-orden="1"
+                    required="true"
+                  />
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-4" id="validarPopup_104e">
+                <label>Valor:</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    id="valorVale_104e"
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="11"
+                    data-orden="1"
+                    required="true"
+                  />
+                </div>
+              </div>
+              <div style="clear: both;"></div>
+              <hr />
+              <div
+                class="table-scrollable"
+                style="overflow-y: auto; max-height: 500px;"
+              >
+                <table id="tablaVales_104e" class="table table-light table-striped">
+                  <thead>
+                    <tr>
+                      <th>Item</th>
+                      <th>Codigo</th>
+                      <th>Nit</th>
+                      <th>Documento</th>
+                      <th>Valor</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="items_tablaVales_104e"></tbody>
+                  <tfoot>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>Total vales:</td>
+                      <td><a id="totalTablaVales"></a></td>
+                      <td></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-sm-4 col-xs-4 no-padding"></div>
+          <div class="col-md-7 col-sm-8 col-xs-4" style="padding-right: 0;">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div
+                class="col-md-10 col-sm-10 col-xs-12 totales"
+                style="margin-top: 0;"
+              >
+                <div class="inline-inputs">
+                  <div
+                    class="input-group col-md-3 col-sm-3 col-xs-12"
+                    style="margin-right: 10px;"
+                  >
+                    <label class="col-md-12 col-sm-12 col-xs-12">4105</label>
+                  </div>
+
+                  <label class="col-md-3 col-sm-4 col-xs-12">
+                    Combustibles
+                  </label>
+                  <div class="input-group col-md-6 col-sm-5 col-xs-12">
+                    <input
+                      id="totalCombustible_104e"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      data-orden="1"
+                      maxlength="11"
+                      style="text-align: center;"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-10 col-sm-10 col-xs-12 totales">
+                <div class="inline-inputs">
+                  <div
+                    class="input-group col-md-3 col-sm-3 col-xs-12"
+                    style="margin-right: 10px;"
+                  >
+                    <label class="col-md-12 col-sm-12 col-xs-12">4305</label>
+                  </div>
+
+                  <label class="col-md-3 col-sm-4 col-xs-12">
+                    Financiacion
+                  </label>
+                  <div
+                    class="input-group col-md-6 col-sm-5 col-xs-12"
+                    id="validarFinanciacion_104e"
+                  >
+                    <input
+                      id="totalFinanciacion_104e"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      data-orden="1"
+                      maxlength="11"
+                      style="text-align: center;"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-10 col-sm-10 col-xs-12 totales">
+                <div class="inline-inputs">
+                  <div
+                    class="input-group col-md-3 col-sm-3 col-xs-12"
+                    style="margin-right: 10px;"
+                  >
+                    <label class="col-md-12 col-sm-12 col-xs-12">130505</label>
+                  </div>
+
+                  <label class="col-md-3 col-sm-4 col-xs-12">
+                    Total créditos
+                  </label>
+                  <div class="input-group col-md-6 col-sm-5 col-xs-12">
+                    <input
+                      id="totalCreditos_104e"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      data-orden="1"
+                      maxlength="11"
+                      style="text-align: center;"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="col-md-10 col-sm-10 col-xs-12 totales"
+                id="validarCheques_104e"
+              >
+                <div class="inline-inputs">
+                  <div
+                    class="input-group col-md-3 col-sm-3 col-xs-12"
+                    style="margin-right: 10px;"
+                  >
+                    <label class="col-md-12 col-sm-12 col-xs-12">
+                      1105050001
+                    </label>
+                  </div>
+
+                  <label class="col-md-3 col-sm-4 col-xs-12">Cheques</label>
+                  <div class="input-group col-md-6 col-sm-5 col-xs-12">
+                    <input
+                      id="totalCheques_104e"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      data-orden="1"
+                      maxlength="11"
+                      style="text-align: center;"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-10 col-sm-10 col-xs-12 totales">
+                <div class="inline-inputs">
+                  <div
+                    class="input-group col-md-3 col-sm-3 col-xs-12"
+                    style="margin-right: 10px;"
+                  >
+                    <label class="col-md-12 col-sm-12 col-xs-12">
+                      1105050001
+                    </label>
+                  </div>
+
+                  <label class="col-md-3 col-sm-4 col-xs-12">Efectivo</label>
+                  <div class="input-group col-md-6 col-sm-5 col-xs-12">
+                    <input
+                      id="totalEfectivo_104e"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      data-orden="1"
+                      maxlength="16"
+                      style="text-align: center;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="plantillaProducto_104e" class="hidden">
+  <div class="col-md-12">
+    <div class="portlet light no-padding">
+      <div class="portlet-body no-padding">
+        <div class="form-horizontal">
+          <div
+            class="form-group col-md-12 col-sm-12 col-xs-12 no-padding"
+            style="margin: 0 auto;"
+          >
+            <div
+              class="col-md-12 col-sm-12 col-xs-12 no-padding"
+              style="display: flex;"
+              id="productoPopup_104e"
+            >
+              <div class="col-md-6 inline-inputs">
+                <label class="col-md-6 col-sm-6 col-xs-12">
+                  Cod. articulo:
+                </label>
+                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                  <input
+                    class="codArticuloVentana form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="9"
+                    data-orden="1"
+                    required="true"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    class="descripArticuloVentana form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div id="segundaFasePopup_104e">
+              <div
+                class="col-md-12 col-sm-12 col-xs-12"
+                style="display: flex; margin-top: 10px;"
+              >
+                <div class="col-md-5 col-sm-8 inline-inputs">
+                  <label class="col-md-5 col-sm-5 col-xs-5">Cantidad:</label>
+                  <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                    <input
+                      class="cantidadVentana form-control col-md-12 col-sm-12 col-xs-12"
+                      maxlength="7"
+                      data-orden="1"
+                      required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="col-md-12 col-sm-12 col-xs-12"
+                style="display: flex; margin-top: 10px;"
+              >
+                <div class="col-md-5 inline-inputs">
+                  <label class="col-md-5 col-sm-5 col-xs-5">Placa:</label>
+                  <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                    <input
+                      class="placaVentanaPopup form-control col-md-12 col-sm-12 col-xs-12"
+                      maxlength="6"
+                      data-orden="2"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="clear: both;"></div>
+</div>
+
+<a class="hidden" id="abrirPopupBtn_104e" data-toggle="modal" href="#static_104e"></a>
+<div
+  id="static_104e"
+  class="modal fade"
+  data-backdrop="static"
+  data-keyboard="false"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close hidden"
+          data-dismiss="modal"
+          aria-hidden="true"
+          id="closePopup"
+        ></button>
+        <h4 class="modal-title">Impresión</h4>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12">
+          <div class="portlet light no-padding">
+            <div class="portlet-body no-padding">
+              <form class="form-horizontal">
+                <div
+                  class="form-group col-md-12 col-sm-12 col-xs-12 no-padding"
+                  style="margin: 0 auto;"
+                >
+                  <div class="col-md-12 col-sm-12 inline-inputs">
+                    <label class="col-md-5 col-sm-5 col-xs-5">
+                      Formato de impresión:
+                    </label>
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <select
+                        id="formatoImpresion_104e"
+                        class="form-control select2 col-md-12"
+                      >
+                        <option value="" selected>Seleccione</option>
+                        <option value="1">En formato.PDF</option>
+                        <option value="2">En formato .CSV</option>
+                        <option value="3">Salir</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12"
+                    style="padding-left: 0; margin-top: 10px;"
+                    id="preguntaImpresion_104e"
+                  >
+                    <div class="col-md-10 inline-inputs">
+                      <label class="col-md-10 col-sm-10 col-xs-5">
+                        ¿Desea visualizar detallado?: (art/cant/placa)
+                      </label>
+                      <div class="input-group col-md-2 col-sm-2 col-xs-7">
+                        <input
+                          id="detallado_104e"
+                          class="placaVentana form-control col-md-12 col-sm-12 col-xs-12"
+                          maxlength="1"
+                          data-orden="1"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div style="clear: both;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../../BOMBAS/scripts/bom104e.js" type="text/javascript"></script>

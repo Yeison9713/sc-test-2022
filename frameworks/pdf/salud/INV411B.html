@@ -1,0 +1,263 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+<div class="encabezado_INV411B">
+    <div class="logo" style="position:absolute; width: 8%; height: 30%;"></div>
+    <a class="nombre_INV411B"> HOSPITAL LOCAL SAN MARTIN ESE</a>
+    <a class="nitusu_INV411B">NIT 892,000,458</a>
+    <a class="ivausu_INV411B">NO RESPONSABLES DE IVA</a>
+    <div class="datos_usu_INV411B">
+        <a class="direccionusu_INV411B"> CL 4 7 34</a>
+        <a class="telefonousu_INV411B">Tel: 6483035</a>
+    </div>
+    <a class="ciudadusu_INV411B">SAN MARTIN</a>
+    <div class="primeralinea_INV411B" style="font-size:12px">
+        <a class="fechapaciente_INV411B"> NOVIEMBRE 15 DEL 2019</a>
+        <a class="comprobantepaciente_INV411B">COMPROBANTE NUMERO: 008217</a>
+        <a class="facturapaciente_INV411B"> FACTURA DE VENTA: P027040</a>
+    </div>
+    <div class="segundalinea_INV411B" style="font-size:12px">
+        <a class="entidadpaciente_INV411B">CLIENTE: CAPITAL SALUD EPSS</a>
+        <a class="formapago_INV411B">F.PAGO: Hospit.</a>
+    </div>
+    <a class="remite_INV411B" style="font-size:12px">SOLICITA: ARTEGA LOPEZ JOSE IGNACIO</a>
+    <table class="tablacodservicio_INV411B table table-bordered table-hover" style="font-size:12px">
+        <thead>
+            <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Cant</th>
+                <th scope="col">Valor unit.</th>
+                <th scope="col">Valor Total</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div class="septimalinea" style="font-size:12px">
+        <a class="totalfactura_INV411B">TOTAL FACTURA: 1,000</a>
+        <a class="copagos_INV411B">ABONOS/COPAGOS: </a>
+        <a class="saldo_INV411B">SALDO: 1,000</a>
+    </div>
+    <a class="cantidadennumeros_INV411B" style="font-size:12px">SON: UN MILLON DE PESOS</a>
+    <a class="resoldian_INV411B" style="font-size:12px">RESOLUCION DIAN</a>
+    <div class="octavalinea_INV411B" style="font-size:12px">
+        <a class="fechaelaborado_INV411B">191128 11:44</a>
+        <a>Firma paciente: _____________________________ ______________________________</a>
+        <a class="operelabfact_INV411B">0101</a>
+        <a class="opercorrecfact_INV411B">Mod: 0101</a>
+        <a class="imprime_INV411B">0101</a>
+    </div>
+</div>
+<style>
+    .encabezado_INV411B {
+        width: 100%;
+        height: 100%;
+    }
+
+    .logo img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .nombre_INV411B {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nitusu_INV411B {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ivausu_INV411B {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .datos_usu_INV411B {
+        display: flex;
+        justify-content: space-around;
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .ciudadusu_INV411B {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .claseserviciousu_INV411B {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .primeralinea_INV411B {
+        margin: 0 auto;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-top: black solid 0.1px;
+    }
+
+    .segundalinea_INV411B {
+        margin: 0 auto;
+        display: flex;
+        width: 100%;
+        padding-bottom: 50px;
+        justify-content: space-between;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+    }
+
+    .remite_INV411B {
+        margin: 0 auto;
+        display: flex;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .tablacodservicio_INV411B {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    thead {
+        border-top: black solid 0.1px;
+    }
+
+    tbody {
+        text-align: center;
+    }
+</style>
+<script>
+    var INV411B = [];
+    ipcRenderer.on('ping', (e, data) => {
+        INV411B = data.datos;
+        $('.nombre_INV411B').text(INV411B.NOMBREUSU);
+        $('.nitusu_INV411B').text(INV411B.NITUSU);
+        $('.ivausu_INV411B').text(INV411B.IVAUSU);
+        $('.direccionusu_INV411B').text(INV411B.DIRECCIONUSU);
+        $('.telefonousu_INV411B').text(INV411B.TELEFONOUSU);
+        $('.comprobantepaciente_INV411B').text(INV411B.COMPROBANTE)
+        $('.fechapaciente_INV411B').text(INV411B.FECHAFACT);
+        $('.facturapaciente_INV411B').text(INV411B.FACTURA);
+        $('.comprobantepaciente_INV411B').text(INV411B.COMPROBANTE);
+        $('.entidadpaciente_INV411B').text(INV411B.DESCRIPTER);
+        $('.formapago_INV411B').text(INV411B.FPAGO);
+        $('.medotr_INV411B').text(INV411B.ATIENDE);
+        $('.ciudadusu_INV411B').text(INV411B.CIUDAD);
+        $('.cantidadennumeros_INV411B').text(INV411B.SON);
+        $('.resoldian_INV411B').text(INV411B.RESOLDIAN);
+        $('.operelabfact_INV411B').text(INV411B.OPERELABFACT);
+        $('.opercorrecfact_INV411B').text(INV411B.OPERCORRECFACT);
+        $('.imprime_INV411B').text(INV411B.ADMINW);
+
+        $('.tipousuar_INV411B').text(INV411B.TIPOUSUW);
+        $('.ciudad_INV411B').text(INV411B.CIUDAD);
+        $('.totalfactura_INV411B').text(INV411B.VLRTOTAL);
+        $('.copagos_INV411B').text(INV411B.COPAGO);
+        $('.saldo_INV411B').text(INV411B.SALDO);
+        $('.fechaelaborado_INV411B').text(INV411B.FECHAELABORADO);
+        $('.original_INV411').text(INV411.ORIGINAL);
+
+        if (parseInt(INV411B.VLRIVAFACT) == 0) {
+            for (var i in INV411B.TABLA) {
+                $('.tablacodservicio_INV411B tbody').append(
+                    '<tr>' +
+                    '<th>' + INV411B.TABLA[i].ARTICULO + '</th>' +
+                    '<td>' + INV411B.TABLA[i].DESCRIP_ART + '</td>' +
+                    '<td>' + INV411B.TABLA[i].CANTIDAD + '</td>' +
+                    '<td>' + INV411B.TABLA[i].VALOR_FACT + '</td>' +
+                    '<td>' + INV411B.TABLA[i].VALOR_UNIT + '</td>' +
+                    '</tr>'
+                )
+            }
+        } if (parseInt(INV411B.VLRIVAFACT) > 0) {
+            for (var i in INV411B.TABLA) {
+                alert(INV411B.TABLA[i].ARTFACT);
+                $('.tablacodservicio_INV411B tbody').append(
+                    '<tr>' +
+                    '<th>' + INV411B.TABLA[i].ARTICULO + '</th>' +
+                    '<td>' + INV411B.TABLA[i].DESCRIP_ART + '</td>' +
+                    '<td>' + INV411B.TABLA[i].CANTIDAD + '</td>' +
+                    '<td>' + INV411B.TABLA[i].VALOR_FACT + '</td>' +
+                    '<td>' + INV411B.TABLA[i].VALOR_UNIT + '</td>' +
+                    '</tr>'
+                )
+            }
+            $('.tablacodservicio_INV411B tbody').append(
+                '<tr>' +
+                '<th>' + '</th>' +
+                '<td>' + 'I.V.A.' + '</td>' +
+                '<td>' + INV411B.VLRIVAFACT + '</td>' +
+                '<td>' + + '</td>' +
+                '<td>' + + '</td>' +
+                '</tr>'
+            )
+        } if (parseInt(INV411B.COPAGO) > 0) {
+            switch (INV411B.COPAGO) {
+                case '1':
+                    $('.tablacodservicio_INV411B tbody').append(
+                        '<tr>' +
+                        '<th>' + '</th>' +
+                        '<td>' + 'COPAGOS' + '</td>' +
+                        '<td>' + INV411B.COPAGO + '</td>' +
+                        '<td>' + + '</td>' +
+                        '<td>' + + '</td>' +
+                        '</tr>'
+                    )
+                    break;
+                case '2':
+                    $('.tablacodservicio_INV411B tbody').append(
+                        '<tr>' +
+                        '<th>' + '</th>' +
+                        '<td>' + 'CUOTA MODERADORA' + '</td>' +
+                        '<td>' + INV411B.COPAGO + '</td>' +
+                        '<td>' + + '</td>' +
+                        '<td>' + + '</td>' +
+                        '</tr>'
+                    )
+                    break;
+                case '3':
+                    $('.tablacodservicio_INV411B tbody').append(
+                        '<tr>' +
+                        '<th>' + '</th>' +
+                        '<td>' + 'VALOR A PAGAR' + '</td>' +
+                        '<td>' + INV411B.COPAGO + '</td>' +
+                        '<td>' + + '</td>' +
+                        '<td>' + + '</td>' +
+                        '</tr>'
+                    )
+                    break;
+            }
+        }
+        var nit = INV411B.NIT;
+        var url = path.join(`P:\\PROG\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('.logo')
+        });
+    })
+</script>

@@ -1,0 +1,487 @@
+{
+  "Menu": [
+    {
+      "Id": "01",
+      "Descripcion": "Archivos maestros",
+      "Opc-segu": "J1",
+      "Sub": [
+        {
+          "Id": "011",
+          "Descripcion": "Actualiza ambientes",
+          "Opc-segu": "J11",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CAJC01",
+              "dll": "BAR-REST\\CAJC01.dll"
+            }
+          ]
+        },
+        {
+          "Id": "012",
+          "Descripcion": "Actualiza mesas",
+          "Opc-segu": "J12",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CAJC02",
+              "dll": "BAR-REST\\CAJC02.dll"
+            }
+          ]
+        },
+        {
+          "Id": "013",
+          "Descripcion": "Actualiza grupos",
+          "Opc-segu": "J13",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "INV104",
+              "dll": "INVENT\\INV104.dll"
+            }
+          ]
+        },
+        {
+          "Id": "014",
+          "Descripcion": "Actualizar precios",
+          "Opc-segu": "I13",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "INV103",
+              "dll": "INVENT\\INV103.dll"
+            }
+          ]
+        },
+        {
+          "Id": "015",
+          "Descripcion": "Configurar impresora",
+          "Opc-segu": "I15",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "BAR",
+              "dll": "CONTAB\\CON110G.dll"
+            }
+          ]
+        },
+        {
+          "Id": "016",
+          "Descripcion": "Configurar servidor",
+          "Opc-segu": "I16",
+          "Tipo": "HTML",
+          "Href": "../../BAR/paginas/BAR002.html"
+        },
+        {
+          "Id": "017",
+          "Descripcion": "Actualiza acompañamientos",
+          "Opc-segu": "J17",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CAJC03",
+              "dll": "BAR-REST\\CAJC03.dll"
+            }
+          ]
+        }
+        
+      ]
+    },
+    {
+      "Id": "02",
+      "Descripcion": "Movimientos",
+      "Opc-segu": "J2",
+      "Sub": [
+        {
+          "Id": "021",
+          "Descripcion": "Elaborar facturas",
+          "Opc-segu": "J21",
+		      "Tipo": "HTML",
+          "Href": "../../BAR/paginas/BAR101.html"
+        },
+        {
+          "Id": "022",
+          "Descripcion": "Reimprimir facturas",
+          "Opc-segu": "J22",
+          "Tipo": "HTML",
+          "Href": "../../BAR/paginas/BAR102.html"
+        },
+        {
+          "Id": "023",
+          "Descripcion": "Correccion de facturas",
+          "Opc-segu": "J23",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "INV401",
+              "dll": "INVENT\\INV401.dll",
+              "NomFact": "FACT",
+              "Tipo-Opcion": "3"
+            }
+          ]
+        },
+        {
+          "Id": "024",
+          "Descripcion": "Cuadre diario de caja",
+          "Opc-segu": "J24",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "OLI135A",
+              "dll": "BAR-REST\\OLI135A.dll"
+            }
+          ]
+        },
+        {
+          "Id": "025",
+          "Descripcion": "Venta diaria de la caja",
+          "Opc-segu": "I48",          
+          "Tipo": "HTML",
+          "Href": "../../BAR/paginas/INV408.html"
+        },
+        {
+          "Id": "026",
+          "Descripcion": "Reconsolidar facturacion",
+          "Opc-segu": "I44",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "INV404",
+              "dll": "BAR-REST\\INV404.dll"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "03",
+      "Descripcion": "Informes",
+      "Opc-segu": "J3",
+      "Sub": [
+        {
+          "Id": "031",
+          "Descripcion": "Lista de precios",
+          "Opc-segu": "I65",
+          "Tipo": "POWER",
+          "Sub": [
+            {
+              "Id": "0311",
+              "Descripcion": "Catalogo de almacenes",
+              "Opc-segu": "I651",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "INV607",
+                  "dll": "INVENT\\INV607.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0312",
+              "Descripcion": "Catalogo de grupos",
+              "Opc-segu": "I652",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "INV606",
+                  "dll": "INVENT\\INV606.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0313",
+              "Descripcion": "Catalogo de politicas",
+              "Opc-segu": "I653",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "INV604",
+                  "dll": "INVENT\\INV604.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0314",
+              "Descripcion": "Catalogo de promociones",
+              "Opc-segu": "I654",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "INV611",
+                  "dll": "INVENT\\INV611.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0315",
+              "Descripcion": "Catalogo de vendedores",
+              "Opc-segu": "I655",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "INV655",
+                  "dll": "INVENT\\INV655.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0316",
+              "Descripcion": "Catalogo de articulos",
+              "Opc-segu": "I66",
+              "Tipo": "POWER",
+              "Sub": [
+                {
+                  "Id": "03161",
+                  "Descripcion": "Lista de precios normal",
+                  "Opc-segu": "I6561",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "INV405",
+                      "dll": "INVENT\\INV405.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "03162",
+                  "Descripcion": "Liquida precio seg politica",
+                  "Opc-segu": "I6562",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "INV405I",
+                      "dll": "INVENT\\INV405I.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "03163",
+                  "Descripcion": "Catalogo art ord X nombre",
+                  "Opc-segu": "I6563",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "INV605",
+                      "dll": "INVENT\\INV605.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "03164",
+                  "Descripcion": "Catalogo art ord X politica",
+                  "Opc-segu": "I6564",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "INV608",
+                      "dll": "INVENT\\INV608.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "03165",
+                  "Descripcion": "Catalogo art Grupo-Nombre",
+                  "Opc-segu": "I6565",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "INV610",
+                      "dll": "INVENT\\INV610.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "03166",
+                  "Descripcion": "Catalogo art todos datos",
+                  "Opc-segu": "I6566",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "INV405V",
+                      "dll": "INVENT\\INV405V.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "03167",
+                  "Descripcion": "Lista con fecha adquisicion",
+                  "Opc-segu": "I6567",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "INV405F",
+                      "dll": "INVENT\\INV405F.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "03168",
+                  "Descripcion": "Lista precios distribuidora",
+                  "Opc-segu": "I6568",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "INV405D",
+                      "dll": "INVENT\\INV405D.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "03169",
+                  "Descripcion": "Catalogo por patron de busqueda",
+                  "Opc-segu": "I6569",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "INV405E",
+                      "dll": "INVENT\\INV405E.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "0316A",
+                  "Descripcion": "Catalogo por referencia",
+                  "Opc-segu": "I656A",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "INV405R",
+                      "dll": "INVENT\\INV405R.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "0316B",
+                  "Descripcion": "Tarjetas para toma inventario",
+                  "Opc-segu": "I656B",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "INV405T",
+                      "dll": "INVENT\\INV405T.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "0316C",
+                  "Descripcion": "Catalogo Grupo-Uso-Nombre",
+                  "Opc-segu": "I656C",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "INV610C",
+                      "dll": "INVENT\\INV610C.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "0316D",
+                  "Descripcion": "Lista precios segun marca",
+                  "Opc-segu": "I656D",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "INV610E",
+                      "dll": "INVENT\\INV610E.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "0316E",
+                  "Descripcion": "Lista precios segun agencia",
+                  "Opc-segu": "I656E",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "INV610F",
+                      "dll": "INVENT\\INV610F.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "0316G",
+                  "Descripcion": "Lista precios segun graddo neg",
+                  "Opc-segu": "I656F",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "INV656F",
+                      "dll": "INVENT\\INV656F.dll"
+                    }
+                  ]
+                },
+                {
+                  "Id": "0316H",
+                  "Descripcion": "Lista precios X lista de venta",
+                  "Opc-segu": "I656H",
+                  "Tipo": "POWER",
+                  "Params": [
+                    {
+                      "formulario": "INV656H",
+                      "dll": "INVENT\\INV656H.dll"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Id": "0317",
+              "Descripcion": "Catalogo de lotes farmac",
+              "Opc-segu": "I657",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "INV657",
+                  "dll": "INVENT\\INV657.dll"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "032",
+          "Descripcion": "Informe vendedor articulo",
+          "Opc-segu": "J2",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CAJ506C",
+              "dll": "BAR-REST\\CAJ506C.dll"
+            }
+          ]
+        },
+        {
+          "Id": "033",
+          "Descripcion": "Informe de saldos inventario",
+          "Opc-segu": "J3",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CAJ580",
+              "dll": "BAR-REST\\CAJ580.dll"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "04",
+      "Descripcion": "Ayudas",
+      "Opc-segu": "J4",
+      "Sub": [
+        {
+          "Id": "041",
+          "Descripcion": "Consultar fact temp",
+          "Opc-segu": "J41",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CAJ401",
+              "dll": "BAR-REST\\CAJ401.dll"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,869 @@
+<div class="col-md-12">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <form class="form-horizontal">
+
+                <div class="col-md-1 col-sm-1 col-xs-1 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <label>Novedad :</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="novedad_mant101" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-11 col-sm-11 col-xs-11" style="padding-right: 0">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-2 col-sm-2 col-xs-6" style="text-align: left">
+                            <label>Tipo :</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="tipo_mant101" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1 col-sm-2 col-xs-6">
+                            <label>Grupo :</label>
+                            <div class="inline-inputs" id="validarGrupo_mant101">
+                                <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                    <input id="grupo_mant101" type="text" data-orden="1" maxlength="2"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                                <button type="button" id="grupoBtn_mant101"
+                                    class="btn f8-Btn col-md-3 col-sm-3 col-xs-3" disabled="disabled">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-6">
+                            <label></label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="descripGrupo_mant101" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-6" style="text-align: left">
+                            <label>Código :</label>
+                            <div class="inline-inputs" id="validarCodigo_mant101">
+                                <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                    <input id="codigo_mant101" type="text" data-orden="1" maxlength="13" required
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                                <button type="button" id="codigoBtn_mant101"
+                                    class="btn f8-Btn col-md-2 col-sm-2 col-xs-2" disabled="disabled">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1 col-sm-2 col-xs-6">
+                            <label>Clase:</label>
+                            <div class="inline-inputs" id="validarClase_mant101">
+                                <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                    <input id="clase_mant101" type="text" data-orden="1" maxlength="2"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                                <button type="button" id="claseBtn_mant101"
+                                    class="btn f8-Btn col-md-3 col-sm-3 col-xs-3" disabled="disabled">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-6 no-padding" style="text-align: left">
+                            <label>Descripción:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="descripcion_mant101" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="display: flex">
+
+                    <div class="col-md-2 col-sm-2 col-xs-2 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                style="text-align: left !important;display: flex;justify-content: space-between">
+                                <label>Fechas</label>
+                                <label>(AAAA/MM/DD)</label>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                                style="display: flex; justify-content: center">
+                                <div class="col-md-10" style="text-align: left">
+                                    <label>Compra</label>
+                                    <div class="inline-inputs" id="validarFechaCompra_mant101">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="fechaCompra_mant101" data-orden="1" maxlength="10" required
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                                style="display: flex; justify-content: center">
+                                <div class="col-md-10" style="text-align: left">
+                                    <label>Vence garantía</label>
+                                    <div class="inline-inputs" id="validarFechaVenceGaran_mant101">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="fechaVenGaran_mant101" data-orden="1" maxlength="10" required
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                                style="display: flex; justify-content: center">
+                                <div class="col-md-10" style="text-align: left">
+                                    <label>Fabricación</label>
+                                    <div class="inline-inputs" id="validarFechaFabricacion_mant101">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="fechaFabric_mant101" data-orden="1" maxlength="7"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                                style="display: flex; justify-content: center">
+                                <div class="col-md-10" style="text-align: left">
+                                    <label>Último mantenimiento</label>
+                                    <div class="inline-inputs" id="validarFechaUltMant_mant101">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="fechaUltMant_mant101" data-orden="1" maxlength="10"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                                style="display: flex; justify-content: center">
+                                <div class="col-md-10" style="text-align: left">
+                                    <label>Baja</label>
+                                    <div class="inline-inputs" id="validarFechaBaja_mant101">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="fechaBaja_mant101" data-orden="1" maxlength="10"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-3" style="padding-right: 0">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: left !important">
+                                <label>Datos del tercero</label>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                                style="display: flex;justify-content: center">
+                                <div class="col-md-8" style="text-align: left">
+
+                                    <label>Nit</label>
+                                    <div class="inline-inputs" id="validarNitProveedor_mant101">
+                                        <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                            <input id="nitProveedor_mant101" data-orden="1" maxlength="10"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                        <button type="button" id="nitProveedorBtn_mant101"
+                                            class="btn f8-Btn col-md-2 col-sm-2 col-xs-2" disabled="disabled">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="text-align: left">
+                                <label>Nombre</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input id="descripProveedor_mant101"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="text-align: left">
+                                <label>Dirección</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input id="direccProveedor_mant101"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-6 col-sm-12 col-xs-12" style="text-align: left">
+                                <label>Teléfono</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input id="telefProveedor_mant101"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-xs-12 no-padding" style="text-align: left">
+                                <label>Ciudad</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input id="ciudProveedor_mant101"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="text-align: left">
+                                <label>Forma de adquisición</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input id="adquisicion_mant101"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-4" style="padding-right: 0">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: left !important">
+                                <label>Datos del equipo</label>
+                            </div>
+
+                            <div class="col-md-7 no-padding">
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="text-align: left">
+                                    <label>Marca</label>
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="marca_mant101" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                                disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="text-align: left">
+                                    <label>Serial</label>
+                                    <div class="inline-inputs" id="validarSerial_mant101">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="serial_mant101" data-orden="1" maxlength="20"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="text-align: left">
+                                    <label>Tecnovigilancia</label>
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="tecnovigilancia_mant101"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="col-md-7 col-sm-6 col-xs-12" style="text-align: left;padding-left: 0">
+                                    <label>Manual</label>
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="manual_mant101"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-5 col-sm-6 col-xs-12 no-padding" style="text-align: left">
+                                    <label>Idioma</label>
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="idioma_mant101"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="text-align: left">
+                                    <label>Almacén</label>
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="almacén_mant101"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-5 no-padding">
+
+                                <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left;padding-right: 0">
+                                    <label>Modelo</label>
+                                    <div class="inline-inputs" id="validarModelo_mant101">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="modelo_mant101" data-orden="1" maxlength="15"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left;padding-right: 0">
+                                    <label>Voltaje</label>
+                                    <div class="inline-inputs" id="validarVoltaje_mant101">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="voltaje_mant101" data-orden="1" maxlength="3" placeholder="V"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left;padding-right: 0">
+                                    <label>Corriente</label>
+                                    <div class="inline-inputs" id="validarCorriente_mant101">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="corriente_mant101" data-orden="1" maxlength="5" placeholder="A"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left;padding-right: 0">
+                                    <label>Potencia</label>
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="potencia_mant101" placeholder="W"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left;padding-right: 0">
+                                    <label>Frecuencia</label>
+                                    <div class="inline-inputs" id="validarFrecuencia_mant101">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="frecuencia_mant101" data-orden="1" maxlength="2" placeholder="HZ"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-3" style="padding-right: 0">
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: left !important">
+                                <label>Clase de tecnología</label>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="padding-left: 0">
+                                <label class="col-md-2 col-sm-2 col-xs-2" style="padding-top: 7px">1.</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input id="claseTec1_mant101" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="padding-left: 0">
+                                <label class="col-md-2 col-sm-2 col-xs-2" style="padding-top: 7px">2.</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input id="claseTec2_mant101" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="padding-left: 0">
+                                <label class="col-md-2 col-sm-2 col-xs-2" style="padding-top: 7px">3.</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input id="claseTec3_mant101" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: left !important">
+                                <label>Fuentes de alimentación</label>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="padding-left: 0">
+                                <label class="col-md-2 col-sm-2 col-xs-2" style="padding-top: 7px">1.</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input id="fuenteAli1_mant101"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="padding-left: 0">
+                                <label class="col-md-2 col-sm-2 col-xs-2" style="padding-top: 7px">2.</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input id="fuenteAli2_mant101"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="padding-left: 0">
+                                <label class="col-md-2 col-sm-2 col-xs-2" style="padding-top: 7px">3.</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input id="fuenteAli3_mant101"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="display: flex">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: left !important">
+                            <label>Mantenimiento</label>
+                        </div>
+
+                        <div class="col-md-4" style="border-right:  1.5px solid #ececec">
+
+                            <div class="col-md-12" style="display: flex; justify-content: space-around">
+
+                                <div class="col-md-5 col-sm-5 col-xs-5">
+                                    <div style="text-align: left">
+                                        <label>Uso</label>
+                                        <div class="inline-inputs">
+                                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                                <input id="uso_mant101"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                                    disabled="disabled">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div style="text-align: left">
+                                        <label>Vida útil</label>
+                                        <div class="inline-inputs" id="validarVidaUtil_mant101">
+                                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                                <input id="vidaUtil_mant101" data-orden="1" type="text" maxlength="3" required
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                                    disabled="disabled">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12" style="display: flex; justify-content: space-around">
+
+                                <div class="col-md-5 col-sm-5 col-xs-5">
+                                    <div style="text-align: left">
+                                        <label>Estado del equipo</label>
+                                        <div class="inline-inputs">
+                                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                                <input id="estado_mant101"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                                    disabled="disabled">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div style="text-align: left">
+                                        <label>Última ubicación</label>
+                                        <div class="inline-inputs">
+                                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                                <input id="ultUbica_mant101"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                                    disabled="disabled">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-8" style="padding-right: 0">
+
+                            <div class="col-md-12" style="display: flex; justify-content: space-around">
+
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <div style="text-align: left">
+                                        <label>Responsable</label>
+                                        <div class="inline-inputs">
+                                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                                <input id="responsable_mant101"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                                    disabled="disabled">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <div style="text-align: left">
+                                        <label>Periocidad</label>
+                                        <div class="inline-inputs">
+                                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                                <input id="periocidad_mant101"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                                    disabled="disabled">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 col-sm-2 col-xs-2">
+                                    <div style="text-align: left">
+                                        <label>Protocolo</label>
+                                        <div class="inline-inputs" id="validarProtocolo_mant101">
+                                            <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                                <input id="protocolo_mant101" data-orden="1" maxlength="4"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                                    disabled="disabled">
+                                            </div>
+                                            <button type="button" id="protocoloBtn_mant101"
+                                                class="btn f8-Btn col-md-3 col-sm-3 col-xs-3" disabled="disabled">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <label></label>
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="descripProtocolo_mant101"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12" style="display: flex; justify-content: space-around">
+
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <div style="text-align: left">
+                                        <label>Proveedor</label>
+                                        <div class="inline-inputs" id="validarProveedorMant_mant101">
+                                            <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                                <input id="proveedorMant_mant101" data-orden="1" maxlength="10"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                                    disabled="disabled">
+                                            </div>
+                                            <button type="button" id="proveedorMantBtn_mant101"
+                                                class="btn f8-Btn col-md-2 col-sm-2 col-xs-2" disabled="disabled">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <label></label>
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="descripProveedorMant_mant101"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-3 col-sm-3 col-xs-3" style="text-align: left">
+                                    <label>Ciudad</label>
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="ciudadProveedorMant_mant101"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="display: flex">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: left !important">
+                            <label>Componentes y accesorios</label>
+                        </div>
+
+                        <div class="col-md-1 col-sm-2 col-xs-4" id="validarItem_mant101">
+                            <label>Item</label>
+
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="item_mant101" required data-orden="1" type="number" disabled="disabled"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" min="1" max="20"
+                                    style="text-align: left">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-4" id="validarDescripComp_mant101">
+                            <label>Descripcion</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="descripcionComp_mant101"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="40"
+                                        disabled="disabled" style="text-align: left" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-3" id="validarMarcaComp_mant101">
+                            <label>Marca</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="resul_mant101" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="20" data-orden="1" disabled="disabled" style="text-align: left">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-2" id="validarModeloComp_mant101">
+                            <label>Modelo</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="modeloComp_mant101" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    disabled="disabled" style="text-align: left" data-orden="1" maxlength="15">
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-2 col-sm-2 col-xs-2" id="validarSerieComp_mant101">
+                            <label>Serie</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="serieComp_mant101" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        disabled="disabled" style="text-align: left" data-orden="1" maxlength="20">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <table class="table table-light table-striped" style="margin-bottom: 0px; width: 99%;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: left" class="col-md-1">Item</th>
+                                    <th style="text-align: left" class="col-md-4">Descripción</th>
+                                    <th style="text-align: left" class="col-md-3">Marca</th>
+                                    <th style="text-align: left" class="col-md-2">Modelo</th>
+                                    <th style="text-align: left" class="col-md-2">Serie</th>
+                                </tr>
+                            </thead>
+                        </table>
+
+
+                        <div style="max-height: 205px; overflow-y: scroll; display: inline-block;width: 100%">
+                            <table id="tabla_mant101" class="table table-light table-striped"
+                                style="margin-bottom: 0px">
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="mostrarObservaciones_mant101">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                        style="text-align: left; display: flex; justify-content: space-around">
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left !important">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                style="display: flex; justify-content:space-between">
+                                <label>Observaciones:</label>
+                            </div>
+                            <textarea  class="form-control col-md-12 col-sm-12"
+                                disabled="disabled" rows="3" id="observacionDisplay_mant101"
+                                style="display: flex; justify-content:space-between;resize: none; text-align: justify"></textarea>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                    style="text-align: left; display: flex; justify-content: space-around">
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <label>Modificación:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                <input id="modifico_mant101" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                            </div>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                <input id="fecha_modif_mant101" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <label>Ultimo cambio aceite (YYYY/MM/DD)</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="aceite_mant101" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <label>Horometro o tacometro:</label>
+                        <div class="inline-inputs">
+
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="horometro_tacometro_mant101"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </div>
+</div>
+</div>
+
+<style>
+    .float_mant101 {
+        position: fixed;
+        width: 65px;
+        height: 60px;
+        bottom: 16px;
+        background-color: #476fad;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 1px 1px 1px #999;
+        overflow: hidden;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .float_mant101:hover {
+        box-shadow: 2px 2px 2px #999;
+        transition: padding .5s ease, background-position .5s ease, transform .8s ease;
+        text-decoration: none;
+        color: #FFF;
+    }
+
+    .my-float-mant101 {
+        margin-left: 5px;
+    }
+
+    input {
+        text-align: center;
+    }
+
+    input[type=text] {
+        text-transform: uppercase;
+    }
+</style>
+
+<script src="../../MANT/scripts/mant101.js" type="text/javascript"></script>

@@ -1,0 +1,145 @@
+<div class="col-md-12" id="HC012">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <div class="form-horizontal">
+
+                <div class="col-md-6 no-padding">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <table class="table table-light table-striped" style="margin-bottom: 0px; width: 99%;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center" class="col-md-2">Fecha</th>
+                                        <th style="text-align: center" class="col-md-2">Hora</th>
+                                        <th style="text-align: center" class="col-md-2">Folio</th>
+                                        <th style="text-align: center" class="col-md-6">Médico ordena</th>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                            <div style="max-height: 532px; overflow-y: scroll; display: inline-block;width: 100%">
+                                <table id="tablaIzq_HC012" class="table table-light table-striped"
+                                    style="margin-bottom: 0px">
+                                    <tbody>
+                                        <tr v-for="(estudio, index) in tablaIzq_interpretaciones" :key="index"
+                                            :class="index == posicionIzq && enterIzq == 'S' ? 'seleccionado' : ''">
+                                            <td style="text-align: center" class="col-md-2">{{ estudio.FECHA_LETRAS }}
+                                            </td>
+                                            <td style="text-align: center" class="col-md-2">{{ estudio.HORA }}</td>
+                                            <td style="text-align: center" class="col-md-2">{{ estudio.FOLIO }}</td>
+                                            <td style="text-align: left" class="col-md-6">{{ estudio.MEDICO }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6" style="padding-right: 0;">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <table class="table table-light table-striped" style="margin-bottom: 0px; width: 97%;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center" class="col-md-1">Tipo</th>
+                                        <th style="text-align: center" class="col-md-2">Cups</th>
+                                        <th style="text-align: center" class="col-md-8">Descripción</th>
+                                        <th style="text-align: right" class="col-md-1">Inter</th>
+                                    </tr>
+                                </thead>
+
+                            </table>
+                            <div style="max-height: 520px; overflow-y: scroll; display: inline-block;width: 100%">
+                                <table id="tablaDer_HC012" class="table table-light table-striped"
+                                    style="margin-bottom: 0px">
+                                    <tbody>
+                                        <tr v-for="(item,index) in tablaDer_interpretaciones" :key="index"
+                                            :class="evaluarClase(item, index)">
+                                            <!-- :class="[ {seleccionado ? item_yellow} {item.INTERPRETADO.trim() == '' || item.INTERPRETADO == '6' ? '' : 'item_green'} ]"> -->
+                                            <!-- <td v-bind:style=" item.INTERPRETADO == ' ' || item.INTERPRETADO == '6' ?  'background-color: white;' : 'background-color: #008000d6; color: white'"
+                                                style="text-align: center" class="col-md-1">{{ item.TIPO }}</td> -->
+                                            <td style="text-align: center" class="col-md-1">{{ item.TIPO }}</td>
+                                            <td style="text-align: center" class="col-md-2">{{ item.CUP }}</td>
+                                            <td style="text-align: left" class="col-md-8">{{ item.DESCRIP_CUP }}</td>
+                                            <td style="text-align: left" class="col-md-1">{{ item.INTERPRETADO == '6' ?
+                                                'PEND' : ''}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="col-md-12"
+                                style="display: flex;justify-content: space-around;padding-right: 0;">
+                                <a>Los estudios ya interpretados no se pueden modificar*</a>
+                                <a id="lab_hc012" @click="ventanaLaboratorios" class="float_hc012">Ver laboratorios</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #tablaDer_HC012 .item_green {
+        background-color: #129012;
+    }
+
+    #tablaDer_HC012 .item_green td {
+        color: white;
+    }
+
+    #tablaDer_HC012 .item_orange td {
+        color: white;
+    }
+
+    #tablaDer_HC012 .item_orange {
+        background-color: #e88005;
+    }
+
+    .seleccionado {
+        background-Color: #f4d03fc2 !important;
+    }
+
+    .seleccionado td {
+        color: black !important
+    }
+
+    #tablaDer_HC012 .item_normal {
+        color: #8896a0;
+    }
+
+    .float_hc012 {
+        width: 30%;
+        height: 25px;
+        background-color: #476fad;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 1px 1px 1px #999;
+        overflow: hidden;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .float_hc012:hover {
+        box-shadow: 2px 2px 2px #999;
+        transition: padding .5s ease, background-position .5s ease, transform .8s ease;
+        text-decoration: none;
+        color: #FFF;
+    }
+</style>
+
+
+<script src="../../HICLIN/scripts/HC012.js" type="text/javascript"></script>

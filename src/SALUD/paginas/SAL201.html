@@ -1,0 +1,441 @@
+<style>
+    #TABLA_SAL201 th {
+        text-align: center;
+    }
+
+    #divTabla {
+        overflow: scroll;
+        height: 230px;
+    }
+</style>
+
+<div class="col-md-12">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <form class="form-horizontal">
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-4 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones_lin1'>
+                            <label class="col-md-5 col-sm-9 col-xs-9">Transaccion:</label>
+                            <div class="input-group col-md-7 col-sm-3 col-xs-3" id="transaccion">
+                                <input id="transaccion_SAL201" type="text" maxlength="3" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <button type="button" id="transaccionBtn_SAL201"
+                                class="btn btn-default col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-9">Comprobante:</label>
+                            <div class="input-group col-md-6 col-sm-3 col-xs-3" id="comprobante">
+                                <input id="comprobante_SAL201" type="text" maxlength="6" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-3 col-sm-9 col-xs-9">Docum:</label>
+                            <div class="input-group col-md-9 col-sm-3 col-xs-3" id="docum">
+                                <input id="docum_SAL201" type="text" maxlength="2" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-5 col-sm-9 col-xs-9">N. Orden:</label>
+                            <div class="input-group col-md-7 col-sm-3 col-xs-3" id="orden">
+                                <input id="orden_SAL201" type="text" maxlength="6" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <button type="button" id="ordenBtn_SAL201"
+                                class="btn btn-default col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-5 col-sm-9 col-xs-9">Numero:</label>
+                            <div class="input-group col-md-7 col-sm-3 col-xs-3" id="numero">
+                                <input id="numero_SAL201" type="text" maxlength="6" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-2 col-sm-12 col-xs-12" id="ITEM_71G">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-9 col-xs-9">N.I.T</label>
+                            <div class="input-group col-md-9 col-sm-3 col-xs-3" id="nit">
+                                <input id="nit_SAL201" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="10" data-orden="1" required="true">
+                            </div>
+                            <button type="button" id="nitBtn_SAL201"
+                                class="btn btn-default col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <div class="input-group col-md-12 col-sm-3 col-xs-3" id="nom_terce">
+                                <input id="nom_tercero_SAL201" type="text" maxlength="4" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id="remisiones">
+                            <label class="col-md-5 col-sm-9 col-xs-9">Observacion:</label>
+                            <div class="input-group col-md-9 col-sm-3 col-xs-3" id="observacion">
+                                <input id="observacion_SAL201" type="text" maxlength="2" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-5 col-sm-9 col-xs-9">Referencia:</label>
+                            <div class="input-group col-md-7 col-sm-3 col-xs-3" id="referencia">
+                                <input id="referencia_SAL201" type="text" maxlength="10" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-5 col-sm-9 col-xs-9">Reserva:</label>
+                            <div class="input-group col-md-2 col-sm-3 col-xs-3" id="tipo_reserva">
+                                <input id="tipo_reserva_SAL201" type="text" maxlength="1" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-5 col-sm-3 col-xs-3" id="nro_reserva">
+                                <input id="nro_reserva_SAL201" type="text" maxlength="6" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-xs-5">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-5">Fecha</label>
+                            <div class="input-group col-md-3 col-sm-5 col-xs-5" id="fecha_año">
+                                <input id="fecha_año_SAL201" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                    required="true">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-5 col-xs-5" id="fecha_mes">
+                                <input id="fecha_mes_SAL201" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1"
+                                    required="true">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-5 col-xs-5" id="fecha_dia">
+                                <input id="fecha_dia_SAL201" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id="remisiones">
+                            <label class="col-md-5 col-sm-9 col-xs-9">Contrato:</label>
+                            <div class="input-group col-md-7 col-sm-3 col-xs-3" id="contr">
+                                <input id="contr_SAL201" type="text" maxlength="6" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                            </div>
+                            <button type="button" id="contrBtn_SAL201"
+                                class="btn btn-default col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id="vence_hide">
+                            <label class="col-md-5 col-sm-5 col-xs-5" id="labelVence">Vence</label>
+                            <div class="input-group col-md-7 col-sm-5 col-xs-5" id="fecha_vence">
+                                <input id="fecha_vence_SAL201" type="text" placeholder="YYYY/MM/DD"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="11" data-orden="1"
+                                    required="true" disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-5 col-sm-9 col-xs-9">Item:</label>
+                            <div class="input-group col-md-7 col-sm-3 col-xs-3" id="item">
+                                <input id="item_SAL201" type="number" min="0" maxlength="3" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-5 col-sm-9 col-xs-9">Tipo:</label>
+                            <div class="input-group col-md-8 col-sm-3 col-xs-3" id="tipo">
+                                <input id="tipo_SAL201" type="text" maxlength="1" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-4 col-sm-9 col-xs-9">Grupo:</label>
+                            <div class="input-group col-md-6 col-sm-3 col-xs-3" id="grupo">
+                                <input id="grupo_SAL201" type="text" maxlength="2" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <button type="button" id="grupoBtn_SAL201"
+                                class="btn btn-default col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-4 col-sm-9 col-xs-9">Articulo:</label>
+                            <div class="input-group col-md-7 col-sm-3 col-xs-3" id="codigo">
+                                <input id="codigo_SAL201" type="text" maxlength="15" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <button type="button" id="codigoBtn_SAL201"
+                                class="btn btn-default col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-4 col-sm-9 col-xs-9">Clase:</label>
+                            <div class="input-group col-md-6 col-sm-3 col-xs-3" id="clase">
+                                <input id="clase_SAL201" type="text" maxlength="2" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <button type="button" id="claseBtn_SAL201"
+                                class="btn btn-default col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12" id="ITEM_71G">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-9">Cent. costo:</label>
+                            <div class="input-group col-md-8 col-sm-3 col-xs-3" id="centcosto">
+                                <input id="centcosto_SAL201" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="4" data-orden="1" required="true" disabled="disabled">
+                            </div>
+                            <button type="button" id="centcostoBtn_SAL201"
+                                class="btn btn-default col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-4 col-sm-9 col-xs-9">Descripcion:</label>
+                            <div class="input-group col-md-8 col-sm-3 col-xs-3" id="descripcion_codigo">
+                                <input id="descripcion_codigo_SAL201" type="text" maxlength="4" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-5 col-sm-9 col-xs-9">Almacen:</label>
+                            <div class="input-group col-md-7 col-sm-3 col-xs-3" id="almac">
+                                <input id="almac_SAL201" type="text" maxlength="5" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <button type="button" id="almacBtn_SAL201"
+                                class="btn btn-default col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-4 col-sm-9 col-xs-9">Cantidad:</label>
+                            <div class="input-group col-md-8 col-sm-3 col-xs-3" id="cantidad">
+                                <input id="cantidad_SAL201" type="text" maxlength="15" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-4 col-sm-9 col-xs-9" id="labelVlrCosto">Vlr Costo:</label>
+                            <div class="input-group col-md-8 col-sm-3 col-xs-3" id="valorCosto">
+                                <input id="valorCosto_SAL201" type="text" maxlength="15" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-4 col-sm-9 col-xs-9">Iva:</label>
+                            <div class="input-group col-md-8 col-sm-3 col-xs-3" id="iva">
+                                <input id="iva_SAL201" type="text" maxlength="4" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id="division_hides">
+                            <label class="col-md-6 col-sm-5 col-xs-5">Division</label>
+                            <div class="input-group col-md-7 col-sm-5 col-xs-5" id="division">
+                                <input id="division_SAL201" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="2" data-orden="1" required="true" disabled="disabled">
+                            </div>
+                            <button type="button" id="divisionBtn_SAL201"
+                                class="btn btn-default col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="divTabla">
+                    <div style="clear:both;"></div>
+                    <!-- <hr> -->
+                    <table id="TABLA_SAL201" class="table table-light table-striped" data-orden="1">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Tipo</th>
+                                <th>Grupo</th>
+                                <th>Grp Codigo Articulo</th>
+                                <th>Clase</th>
+                                <th>Descripcion</th>
+                                <th>Almac</th>
+                                <th>Cantidad</th>
+                                <th>Valor</th>
+                                <th>Iva</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-7 col-sm-6 col-xs-6" style="visibility: hidden">
+                        <div class="inline-inputs" id='remisiones'>
+                            <div class="input-group col-md-12 col-sm-3 col-xs-3" id="vacio">
+                                <input id="vacio_SAL201" type="text" maxlength="4" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-11 col-sm-7 col-xs-9">Total comprobante:</label>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <div class="input-group col-md-12 col-sm-3 col-xs-3" id="totalCant">
+                                <input id="totalCant_SAL201" type="text" maxlength="15" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <div class="input-group col-md-10 col-sm-3 col-xs-3" id="totalValor">
+                                <input id="totalValor_SAL201" type="text" maxlength="15" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-1 col-sm-6 col-xs-6" style="visibility: hidden">
+                        <div class="inline-inputs" id='remisiones'>
+                            <div class="input-group col-md-12 col-sm-3 col-xs-3" id="vacio2">
+                                <input id="vacio2_SAL201" type="text" maxlength="4" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-3 col-xs-3" id="display1">
+                                <input id="display1_SAL201" type="text" maxlength="20" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-7 col-sm-6 col-xs-6">
+                        <div class="inline-inputs" id='remisiones'>
+                            <label class="col-md-4 col-sm-9 col-xs-9">Funcionario que recibe:</label>
+                            <div class="input-group col-md-8 col-sm-3 col-xs-3" id="funcionario">
+                                <input id="funcionario_SAL201" type="text" maxlength="10" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <button type="button" id="funcionarioBtn_SAL201"
+                                class="btn btn-default col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div><a id="imprimir_SAL71G" class="float_SAL71G" style="left: 21px;">
+                <span>F3 tabla</span>
+                <i class="glyphicon glyphicon-floppy-save my-float-SAL71G"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<style>
+    .float_SAL71G {
+        position: fixed;
+        width: 65px;
+        height: 60px;
+        bottom: 20px;
+        background-color: #476fad;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 1px 1px 1px #999;
+        overflow: hidden;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .float_SAL71G:hover {
+        box-shadow: 2px 2px 2px #999;
+        transition: padding .5s ease, background-position .5s ease, transform .8s ease;
+        text-decoration: none;
+        color: #FFF;
+    }
+
+    .my-float-SAL71G {
+        margin-left: 5px;
+    }
+</style>
+
+<script src="../../SALUD/scripts/SAL201.js" type="text/javascript"></script>
+<script src="../../FRAMEWORKS/scripts/ventanas.js"></script>

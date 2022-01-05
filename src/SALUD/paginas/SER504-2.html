@@ -1,0 +1,150 @@
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
+
+
+<div class="col-md-12" id="SER504-2">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <div class="form-horizontal">
+
+                <div class="col-md-12 no-padding">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="portlet light box-center box-title">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Fechas</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-6" style="padding-left: 0;">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                                style="margin-bottom: 13px !important">
+
+                                <div class="col-md-12 no-padding" style="text-align: center;">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                        style="padding-bottom: 0 !important">
+                                        <label>Fecha Inicio</label>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="fecha_inicial">
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <label class="col-md-12 col-sm-6 col-xs-6">Año</label>
+                                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                                <input v-model="año_ini" type="number"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    maxlength="4" data-orden="1" required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <label class="col-md-12 col-sm-6 col-xs-6">Mes</label>
+                                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                                <input v-model="mes_ini" type="number"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    maxlength="2" data-orden="2" required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <label class="col-md-12 col-sm-12 col-xs-6">Dia</label>
+                                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                                <input v-model="dia_ini" type="number"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    maxlength="2" data-orden="3" required="true">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-6" style="padding-left: 0;">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                                style="margin-bottom: 13px !important">
+
+                                <div class="col-md-12 no-padding" style="text-align: center;">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                        style="padding-bottom: 0 !important">
+                                        <label>Fecha Final</label>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="fecha_final">
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <label class="col-md-12 col-sm-6 col-xs-6">Año</label>
+                                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                                <input v-model="año_fin" type="number"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    maxlength="4" data-orden="1" required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <label class="col-md-12 col-sm-6 col-xs-6">Mes</label>
+                                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                                <input v-model="mes_fin" type="number"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    maxlength="2" data-orden="2" required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <label class="col-md-12 col-sm-12 col-xs-6">Dia</label>
+                                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                                <input v-model="dia_fin" type="number"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    maxlength="2" data-orden="3" required="true">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-6 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                                style="margin-bottom: 13px !important">
+
+                                <div class="col-md-12 no-padding" style="text-align: center;">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                        style="padding-bottom: 0 !important">
+                                        <label>Abonos</label>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="fecha_abonos">
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <label class="col-md-12 col-sm-6 col-xs-6">Año</label>
+                                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                                <input v-model="año_abo" type="number"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    maxlength="4" data-orden="1" required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <label class="col-md-12 col-sm-6 col-xs-6">Mes</label>
+                                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                                <input v-model="mes_abo" type="number"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    maxlength="2" data-orden="2" required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <label class="col-md-12 col-sm-12 col-xs-6">Dia</label>
+                                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                                <input v-model="dia_abo" type="number"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    maxlength="2" data-orden="3" required="true">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../SALUD/scripts/SER504-2.js" disabled='disabled' type="text/javascript"></script>

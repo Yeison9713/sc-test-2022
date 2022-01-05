@@ -1,0 +1,244 @@
+<div class="col-md-12" id="SER11A">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <form class="form-horizontal">
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-8 col-sm-8 col-xs-12 box-center">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="inline-inputs">
+                <label class="col-md-6 col-sm-6 col-xs-12">Novedad:</label>
+                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                  <input
+                    v-model="novedad_SER11A"
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="inline-inputs">
+                <label class="col-md-6 col-sm-6 col-xs-12">Operador:</label>
+                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                  <input
+                    v-model="oper_SER11A"
+                    type="text"
+                    maxlength="4"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="inline-inputs">
+                <label class="col-md-6 col-sm-6 col-xs-12">Fecha:</label>
+                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                  <input
+                    v-model="fecha_SER11A"
+                    type="text"
+                    maxlength="6"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="salto-linea"></div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="inline-inputs">
+                <label class="col-md-3 col-sm-3 col-xs-12">Codigo CUPS:</label>
+                <div
+                  class="input-group col-md-2 col-sm-2 col-xs-12"
+                  id="VALIDAR1_SER11A"
+                >
+                  <input
+                    v-model="codcups_SER11A"
+                    id="codigicups_SER11A"
+                    @keydown.119="_ventanCupsSER11A"
+                    type="text"
+                    maxlength="12"
+                    data-orden="1"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    onkeyup="this.value = this.value.toUpperCase();"
+                  />
+                </div>
+                <button
+                  @click="_ventanCupsSER11A"
+                  type="button"
+                  class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1"
+                >
+                  <i class="icon-magnifier"></i>
+                </button>
+                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                  <input
+                    v-model="descripcup_SER11A"
+                    type="text"
+                    onkeyup="this.value = this.value.toUpperCase();"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="salto-linea"></div>
+            <div class="col-md-2 col-sm-2 col-xs-12">
+              <div class="inline-inputs">
+                <label class="col-md-6 col-sm-6 col-xs-6 text-label"
+                  >PYP?:</label
+                >
+                <div
+                  class="input-group col-md-6 col-sm-6 col-xs-6"
+                  id="VALIDAR2_SER11A"
+                >
+                  <input
+                    v-model="pyp_SER11A"
+                    id="pyp_SER11A"
+                    type="text"
+                    maxlength="1"
+                    data-orden="1"
+                    onkeyup="this.value = this.value.toUpperCase();"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 col-sm-5 col-xs-12">
+              <div class="inline-inputs">
+                <label class="col-md-6 col-sm-6 col-xs-12 text-label"
+                  >Tip procedimiento:</label
+                >
+                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                  <input
+                    v-model="tipoproced_SER11A"
+                    type="text"
+                    onkeyup="this.value = this.value.toUpperCase();"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 col-sm-5 col-xs-12">
+              <div class="inline-inputs">
+                <label class="col-md-5 col-sm-5 col-xs-12 text-label"
+                  >Finalidad:</label
+                >
+                <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                  <input
+                    v-model="finalidad_SER11A"
+                    type="text"
+                    onkeyup="this.value = this.value.toUpperCase();"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="salto-linea"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="inline-inputs">
+                <label class="col-md-8 col-sm-8 col-xs-12">Sexo Aplica:</label>
+                <div
+                  class="input-group col-md-4 col-sm-4 col-xs-12"
+                  id="VALIDAR3_SER11A"
+                >
+                  <input
+                    v-model="sexo_SER11A"
+                    type="text"
+                    maxlength="1"
+                    data-orden="1"
+                    type="text"
+                    onkeyup="this.value = this.value.toUpperCase();"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-12">
+              <div class="inline-inputs">
+                <label class="col-md-4 col-sm-4 col-xs-12"
+                  >Persona Atiende:</label
+                >
+                <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                  <input
+                    v-model="atiende_SER11A"
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="salto-linea"></div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="inline-inputs">
+                <div class="input-group col-md-1 col-sm-1 col-xs-12">
+                  <input
+                    v-model="conteoespec_SER11A"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+                <label class="col-md-2 col-sm-2 col-xs-12">Especialidad:</label>
+                <div
+                  class="input-group col-md-2 col-sm-2 col-xs-12"
+                  id="VALIDAR4_SER11A"
+                >
+                  <input
+                    @keydown.119="_ventanEspecSER11A"
+                    id="especialidad_SER11A"
+                    v-model="espec_SER11A"
+                    type="text"
+                    maxlength="3"
+                    data-orden="1"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+                <button
+                  @click="_ventanEspecSER11A"
+                  type="button"
+                  class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1"
+                >
+                  <i class="icon-magnifier"></i>
+                </button>
+                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                  <input
+                    v-model="descripespec_SER11A"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group col-md-8 col-sm-8 col-xs-12 box-center">
+            <table
+              id="TABLAESPECIALIDADES_SER11A"
+              class="table table-light table-striped table-bordered"
+              data-orden="1"
+            >
+              <thead>
+                <th>#</th>
+                <th>Cod Especialidad</th>
+                <th>Nombre Especialidad</th>
+              </thead>
+              <tbody>
+                <tr v-for="(row, index) in tablaespec_SER11A">
+                  <td>
+                    {{index}}
+                  </td>
+                  <td>
+                    {{row.COD_ESP}}
+                  </td>
+                  <td>
+                    {{row.DESCRIP_ESP}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="../../SALUD/scripts/SER11A.js" type="text/javascript"></script>

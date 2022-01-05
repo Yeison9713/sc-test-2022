@@ -1,0 +1,369 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER890">
+    <div class="portlet-body">
+        <div class="form-horizontal">
+
+            <div v-if="ESTADO_VENTANA_AGENDAMIENTO">
+                <ventana_agendamiento @callback_esc="salirventanaagendamiento_esc" @cambiofocotabla="cambiofocoventanaagendamiento" @callback="salirventanaagendamiento">
+
+                    <template style="font-size: 17px" slot="titulo">VENTANA DE AGENDAMIENTO</template>
+
+                    <template slot="EncabezadoTablaIzquierda">
+                        <tr>
+                            <th style="text-align: center" class="col-md-1">Identificación</th>
+                            <th style="text-align: center" class="col-md-1">Nombre</th>
+                        </tr>
+                    </template>
+
+                    <template slot="Busqueda">
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="height: 250px;">
+                            <v-date-picker
+                                v-model="range"
+                                is-range
+                            />
+                        </div>
+                    </template>
+
+                    <template slot="ContenidoTablaIzquierda">
+                        <tr v-for="(fila, index) in PROFESIONALES" :key="index">
+                            <td style="text-align: center; font-size: 11px" class="col-md-1">{{ fila.ID }}</td>
+                            <td style="text-align: center; font-size: 11px" class="col-md-1">{{ fila.NOMBRE }}</td>
+                        </tr>
+                    </template>
+
+                    <template slot="EncabezadoTablaDerecha">
+                        <tr>
+                            <th style="text-align: center">Horario disponible</th>
+                        </tr>
+                    </template>
+
+                    <template slot="ContenidoTablaDerecha">
+                        <tbody>
+                            <tr v-for="fecha in FECHAS">
+                                <td style="text-align: center; font-size: 11px;" v-for="datos in fecha">
+                                    <button 
+                                        @click="callbackfecha(datos)" 
+                                        class="botonesagendamiento_SER890"
+                                        v-bind:class="[datos.DISPONIBLE.trim() == 'CITA DISPONIBLE' ? botondisponibleAgendamiento_SER890 : botonnodisponibleAgendamiento_SER890]"
+                                    >
+                                        <span>-> {{ datos.FECHA }}</span> <br/>
+                                        <span>-> {{ datos.HORA }}</span> <br/>
+                                        <span>-> {{ datos.DISPONIBLE }}</span> <br/>
+                                        <span>-> {{ datos.NOMBRE_PACIENTE }}</span> <br/>
+                                        <span>-> {{ datos.ID_PACIENTE }}</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- v-for="(fila, index) in FECHAS" :key="index"  datos.DISPONIBLE.trim() == 'CITA AGENDADA'-->
+                            <!-- <tr v-for="(value, key, index) in FECHAS[index]" :key="index">
+                                <td style="text-align: center; font-size: 11px;">
+                                    <button @click="callbackfecha(fila)">{{ value.DATO }}</button>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </template>
+
+                </ventana_agendamiento>
+            </div>
+
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Novedad</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input v-model="form.novedad_SER890" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-2 col-sm-2 col-xs-2">Paciente</label>
+                        <div class="input-group col-md-3 col-sm-3 col-xs-3" id="VALIDAR1_SER890">
+                            <input v-model="form.paciente_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="15">
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                            @click=''>
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input v-model="form.paciented_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-5 col-xs-5">Edad</label>
+                        <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                            <input v-model="form.edadpaciente_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-2 col-sm-2 col-xs-2">Eps</label>
+                        <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                            <input v-model="form.epspaciente_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                        <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                            <input v-model="form.epspaciented_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-5 col-xs-5">Sucursal</label>
+                        <div class="input-group col-md-2 col-sm-2 col-xs-2" id="VALIDAR2_SER890">
+                            <input v-model="form.sucursal_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                        <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                            <input v-model="form.sucursald_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-5 col-xs-5">Tipo de profesion</label>
+                        <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                            <input v-model="form.tipoprofesion_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                        <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                            <input v-model="form.tipoprofesiond_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-2 col-sm-2 col-xs-2">Medico</label>
+                        <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                            <input v-model="form.medico_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="15">
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                            @click=''>
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input v-model="form.medicod_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-7 col-xs-7">Fecha desea cita</label>
+                        <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                            <input v-model="form.fechadesea_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-5 col-xs-5">Fecha cita</label>
+                        <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                            <input v-model="form.fechacita_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-5 col-xs-5">Hora cita</label>
+                        <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                            <input v-model="form.horacita_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-5 col-xs-5">Duración</label>
+                        <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                            <input v-model="form.duracion_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-5 col-xs-5">Clase de servicio</label>
+                        <div class="input-group col-md-2 col-sm-2 col-xs-2" id="VALIDAR2_SER890">
+                            <input v-model="form.clasedeservicio_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                        </div>
+                        <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                            <input v-model="form.clasedeserviciod_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 hide" id="TERAPIAS_SER890">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-5 col-xs-5">Cantidad de terapias</label>
+                        <div class="input-group col-md-2 col-sm-2 col-xs-2" id="VALIDAR4_SER890">
+                            <input v-model="form.cantidaddeterapias_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-2 col-sm-2 col-xs-2">Procedimiento</label>
+                        <div class="input-group col-md-3 col-sm-3 col-xs-3" id="VALIDAR3_SER890">
+                            <input v-model="form.procedimiento_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="12">
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                            @click=''>
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input v-model="form.procedimientod_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-2 col-sm-2 col-xs-2">Contrato</label>
+                        <div class="input-group col-md-3 col-sm-3 col-xs-3" id="VALIDAR5_SER890">
+                            <input v-model="form.contrato_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                            @click=''>
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input v-model="form.contratod_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-2 col-sm-2 col-xs-2">Convenio</label>
+                        <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                            <input v-model="form.convenio_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                            @click=''>
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input v-model="form.conveniod_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Telefono</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR6_SER890">
+                            <input v-model="form.telefonouno_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Telefono</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR6_SER890">
+                            <input v-model="form.telefonodos_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="2" maxlength="12">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-5 col-xs-5">Embarazo</label>
+                        <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                            <input v-model="form.embarazo_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                        <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                            <input v-model="form.embarazod_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-4 col-xs-4">Finalidad</label>
+                        <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                            <input v-model="form.finalidad_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input v-model="form.finalidadd_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-3 col-sm-3 col-xs-3">Observación</label>
+                        <div class="input-group col-md-9 col-sm-9 col-xs-9" id="VALIDAR7_SER890">
+                            <input v-model="form.observacion_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="45">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-5 col-xs-5">Via de asignacion</label>
+                        <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                            <input v-model="form.viaasignacion_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                        <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                            <input v-model="form.viaasignaciond_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-5 col-xs-5">Tipo cita</label>
+                        <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                            <input v-model="form.citadoble_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                        <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                            <input v-model="form.citadobled_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-5 col-xs-5">Tipo anestecia</label>
+                        <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                            <input v-model="form.tipoanestesia_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                        <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                            <input v-model="form.tipoanestesiad_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-5 col-xs-5">Unidad de servicio</label>
+                        <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                            <input v-model="form.unidaddeservicio_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                        <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                            <input v-model="form.unidaddeserviciod_SER890"  class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../SALUD/scripts/ventanaAgendamiento.vue.js" type="text/javascript"></script>
+<script src="../../SALUD/scripts/SER890.js" type="text/javascript"></script>
+<style type="text/css">
+    .botonesagendamiento_SER890{
+        border: 0.5 px solid;
+        width:140px;
+        height:140px;
+        background: transparent;
+    }
+    .botonesagendamiento_SER890:hover{
+        background: #FFF;
+    }
+    .vc-weeks{
+        padding: 0;
+    }
+    .botondisponibleAgendamiento_SER890{
+        background-color: lightblue; 
+        border: 0.1px solid white; 
+        font-size: 13px;
+    }
+    .botonnodisponibleAgendamiento_SER890{
+        background-color: lightblue; 
+        border: 0.1px solid white; 
+        font-size: 13px;
+    }
+</style>

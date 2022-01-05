@@ -1,0 +1,28 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER106C">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="form-group col-md-6 col-sm-6 col-xs-6 box-center">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="inline-inputs" id="VALIDAR1_SER106C">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Convenio a lista:</label>
+                        <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                            <input v-model='form.conveniomedic_SER106C' @Keyup.F8='_f8conveniomedic_SER106C'
+                            type="text" maxlength="2" data-orden="1" onkeyup="this.value = this.value.toUpperCase();"
+                                class="form-control col-md-12 col-sm-12 col-xs-12 convenios_SER106C" >
+                        </div>
+                        <button type="button" @click='_f8conveniomedic_SER106C'
+                            class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                            <input v-model="form.descripmedic_SER106C" type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="../../SALUD/scripts/SER106C.js" type="text/javascript"></script>

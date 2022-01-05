@@ -1,0 +1,305 @@
+<script src="../../HICLIN/scripts/HCI02.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/PATOL.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI01I.js" disabled='disabled' type="text/javascript"></script>
+
+<div class="col-md-12" id="HC707">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <div class="form-horizontal">
+                <div class="col-md-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-3">
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="fechaEnc_HC707">
+                                <div class="col-md-4 col-sm-4 col-xs-4" style="padding-left: 0;">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Año</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="global_HC707.añoEnc_HC707" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 añoEnc_HC707"
+                                            maxlength="4" data-orden="1" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4" style="padding-left: 0;">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Mes</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="global_HC707.mesEnc_HC707" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 mesEnc_HC707"
+                                            maxlength="2" data-orden="2" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4" style="padding-left: 0;">
+                                    <label class="col-md-12 col-sm-12 col-xs-6">Dia</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="global_HC707.diaEnc_HC707" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 diaEnc_HC707"
+                                            maxlength="2" data-orden="3" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="time_HC707">
+                                <div class="col-md-6 col-sm-4 col-xs-4" style="padding-left: 0;">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Hora</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="global_HC707.hr_HC707" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 hr_HC707" maxlength="4"
+                                            data-orden="1" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-4 col-xs-4" style="padding-left: 0;">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Min</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="global_HC707.mn_HC707" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 mn_HC707" maxlength="2"
+                                            data-orden="2" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="col-md-12" style="text-align: center;">Medico</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarMedico_HC707">
+                                <div class="inline-inputs">
+                                    <input v-model="global_HC707.medico_HC707" type="text"
+                                        class="form-control col-md-4 col-sm-12 col-xs-12 uppercase medico_HC707"
+                                        maxlength="10" data-orden="1" style="text-align: center;">
+                                    <input v-model="global_HC707.descripMedico_HC707" type="text"
+                                        class="form-control col-md-8 col-sm-12 col-xs-12 uppercase descripMedico_HC707"
+                                        maxlength="10" data-orden="" style="text-align: center;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="col-md-12">Consultando</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="global_HC707.consultando_HC707" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase consultando_HC707"
+                                    maxlength="10" data-orden="1" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 no-padding">
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="portlet light box-center box-title">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Macro</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                            style="margin-bottom: 13px !important">
+
+                            <div class="col-md-3 col-sm-3 col-xs-12" style="text-align: left;">
+                                <label>Tipo de macro</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input v-model="macro.tipoMacro_HC707"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-12 no-padding" id="validarMacro_HC707"
+                                style="text-align: left;">
+                                <label>Macro a utilizar</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                        <input v-model="macro.codMacro_HC707" data-orden="1" maxlength="6" type="number"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 col-xs-12 no-padding" style="text-align: left;">
+                                <label>Detalle</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input v-model="macro.detalleMacro_HC707"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-12" style="text-align: left;">
+                                <label>Vía de acceso</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input v-model="macro.viaMacro_HC707"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-9 col-sm-9 col-xs-12 no-padding" style="text-align: left;">
+                                <label>Descripción</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input v-model="macro.descripVia_HC707" style="text-align: left;"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-12 col-sm-6 col-xs-12 no-padding">
+                            <div class="col-md-12 col-sm-12 no-padding">
+                                <div class="portlet light box-center box-title">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <span class="caption-subject bold">Contenido</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarContenido_HC707">
+                                        <textarea class="form-control" disabled="disabled" rows="21" maxlength="15000"
+                                            data-orden="1" required="true" v-model="contenido_evo"
+                                            style="resize: none; text-align: justify"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                    <div class="col-md-12" style="padding-right: 0;">
+                        <div class="portlet light box-center box-title">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Opciones</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left;">
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        evolución
+                                        terapias?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarNotasTer_HC707">
+                                        <input v-model="global_HC707.notasTer_HC707" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        Formulacion MED?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarFormuMed_HC707">
+                                        <input v-model="global_HC707.formuMed_HC707" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        Solicitud
+                                        labor.?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarSolicLab_HC707">
+                                        <input v-model="global_HC707.solicLab_HC707" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-10 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        Solicitud imag.?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarSolicImag_HC707">
+                                        <input v-model="global_HC707.solicImag_HC707" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        Solicitud
+                                        Ord md?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarSolicOrdMd_HC707">
+                                        <input v-model="global_HC707.solicOrdMd_HC707" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        Solicitud
+                                        consul.?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarSolicConsul_HC707">
+                                        <input v-model="global_HC707.solicConsul_HC707" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-10 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        Incapacidad Med?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarIncapMed_HC707">
+                                        <input v-model="global_HC707.incapMed_HC707" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-md-3" style="padding-right: 0;">
+                </div> -->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../frameworks/pdf/hiclin/HCI02.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Patol.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI01I.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HC707.js" disabled='disabled' type="text/javascript"></script>

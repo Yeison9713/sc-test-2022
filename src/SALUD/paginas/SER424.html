@@ -1,0 +1,186 @@
+
+<div class="col-md-12" id="SER424">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <form class="form-horizontal" onsubmit="return false;">
+                <div class="col-md-3 no-padding box-center">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-9 col-sm-8 col-xs-12">Digite el prefijo a listar:</label>
+                                <div class="input-group col-md-3 col-sm-5 col-xs-5" id="prefijo_SER424">
+                                    <input v-model="form.prefijo_424" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                        data-orden="1" required="true">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div class="col-md-6 no-padding box-center">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>LISTAR DESDE:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="fechaIni_424" style="margin-top: 4px;">
+                                <div class="inline-inputs">
+                                    <label class="col-md-8 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-11 col-sm-5 col-xs-5">
+                                        <input v-model="form.añoIni_424" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                            data-orden="1" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                        <input v-model="form.mesIni_424" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="2" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-8 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                        <input v-model="form.diaIni_424" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="3" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>HASTA:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="fechaFin_424" style="margin-top: 4px;">
+                                <div class="inline-inputs">
+                                    <label class="col-md-8 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-11 col-sm-5 col-xs-5">
+                                        <input v-model="form.añoFin_424" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                            data-orden="1" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                        <input v-model="form.mesFin_424" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="2" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-8 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                        <input v-model="form.diaFin_424" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="3" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-12">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>PAGOS HASTA:</label>
+                            </div>
+                            <div id="fechaPago_424">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                                        <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                            <input type="number" v-model='form.añoPago_424'
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1" required="true">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                        <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                            <input type="number" v-model='form.mesPago_424'
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2" required="true">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                        <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                            <input type="number" v-model='form.diaPago_424'
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3" required="true">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 no-padding box-center">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-5">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-12 col-sm-12 col-xs-12">Fecha base: 2. Retiro</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-7">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-10 col-sm-8 col-xs-12">Ordenar por 1. factura 2. entidad:</label>
+                                    <div class="input-group col-md-2 col-sm-5 col-xs-5" id="orden_SER424">
+                                        <input v-model="form.orden_424" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                            data-orden="1" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-12">
+                            <div class="col-md-8 col-sm-12 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-8 col-sm-12 col-xs-12">Nit a listar (99 para todos):</label>
+                                    <div class="input-group col-md-4 col-sm-12 col-xs-12" id="nit_SER424">
+                                        <input @keyup.f8="_ventanaNitSER424" v-model="form.nit_424" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase nit_424" maxlength="2" data-orden="1">
+                                    </div>
+                                    <button @click="_ventanaNitSER424" type="button" class="btn col-md-2 col-sm-4 col-xs-4 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="input-group col-md-4 col-sm-12 col-xs-12">
+                                <input v-model="form.descripNit_SER424" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 " maxlength="20">
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-7">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-10 col-sm-8 col-xs-12">Listar facturas sin saldo?</label>
+                                    <div class="input-group col-md-2 col-sm-5 col-xs-5" id="listar_SER424">
+                                        <input v-model="form.listar_424" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="../../SALUD/scripts/SER424.js" type="text/javascript"></script>

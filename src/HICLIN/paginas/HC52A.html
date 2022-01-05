@@ -1,0 +1,1947 @@
+<!-- @format -->
+
+<style>
+  .controles > thead > tr > th {
+    font-size: 12px !important;
+    text-align: center;
+    padding-left: 2px !important;
+  }
+
+  .controles > thead input {
+    font-size: 11.5px !important;
+  }
+  .controles > thead td {
+    font-size: 11.5px !important;
+  }
+  .diagnosticos > td {
+    font-size: 0.78vw !important;
+  }
+  input {
+    padding-right: 0px !important;
+    height: 29px !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    padding-left: 0px !important;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .tablas table {
+    width: 100%;
+  }
+
+  .tablas thead,
+  .tablas tbody,
+  .tablas tr,
+  .tablas td,
+  .tablas th {
+    display: block;
+  }
+
+  .tablas tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+  }
+
+  .tablas thead th {
+    height: 30px;
+
+    /*text-align: left;*/
+  }
+
+  .tablas tbody {
+    max-height: 120px;
+    overflow-y: auto;
+  }
+
+  .tablas tbody td,
+  .tablas thead th {
+    width: 19.2%;
+    float: left;
+  }
+  /* Para pantallas pequeñas */
+  @media only screen and (max-width: 1100px) and (min-width: 500px) {
+    .sub-encabezado label {
+      font-size: 11.1px !important;
+    }
+
+    .datos-encabezado label {
+      font-size: 11.1px !important;
+    }
+
+    .datos-encabezado input {
+      font-size: 11.3px !important;
+    }
+    .controles > thead > tr > th {
+      font-size: 10px !important;
+    }
+
+    .controles > thead input {
+      font-size: 10px !important;
+      width: auto !important;
+      text-align: center !important;
+      max-width: 48px !important;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+    .controles > tbody td {
+      font-size: 10px !important;
+      text-align: center !important;
+    }
+    .float_salir {
+      right: 21px !important;
+      left: none !important;
+      width: 65px;
+      height: 60px;
+      bottom: 16px;
+    }
+    .capturas label {
+      font-size: 12px !important;
+      font-weight: 500 !important;
+    }
+    .capturas > input {
+      font-size: 12px !important;
+      width: 2.9vw !important;
+    }
+  }
+  .float_salir {
+    z-index: 2;
+    position: fixed;
+    width: 65px;
+    height: 60px;
+    bottom: 16px;
+    background-color: #476fad;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 1px 1px 1px #999;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .float_salir:hover {
+    box-shadow: 2px 2px 2px #999;
+    transition: padding 0.5s ease, background-position 0.5s ease, transform 0.8s ease;
+    text-decoration: none;
+    color: #fff;
+  }
+  .float_imprimir {
+    z-index: 2;
+    position: fixed;
+    width: 65px;
+    height: 60px;
+    bottom: 16px;
+    background-color: #476fad;
+    color: #fff;
+    border-radius: 70px;
+    text-align: center;
+    box-shadow: 1px 1px 1px #999;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .float_imprimir:hover {
+    box-shadow: 2px 2px 2px #999;
+    transition: padding 0.5s ease, background-position 0.5s ease, transform 0.8s ease;
+    text-decoration: none;
+    color: #fff;
+  }
+</style>
+<div class="col-md-12" id="HC52A">
+  <div
+    class="portlet light no-padding"
+    style="background-color: transparent !important; box-shadow: none !important"
+  >
+    <div class="portlet-body">
+      <form class="form-horizontal" onsubmit="return false;">
+        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+          <div
+            class="col-md-2 no-padding sub-encabezado"
+            style="padding-right: 5px !important; padding-left: 5px !important"
+          >
+            <label class="col-md-12 head-box" style="margin-top: 3px; text-align: center"
+              >PROCESOS DE ENFERMERÍA</label
+            >
+            <label class="col-md-12" style="margin-top: 6px; text-align: center"
+              >CONTROL DE TRANSFUSIÓN</label
+            >
+          </div>
+          <div class="no-padding datos-encabezado">
+            <div class="col-md-6">
+              <label class="col-md-3" style="text-align: center">Médico</label>
+              <div
+                class="input-group inline-inputs col-md-12 col-sm-12 col-xs-12"
+                id="dato_codmedico"
+              >
+                <input
+                  v-model="medico.cod"
+                  type="text"
+                  class="form-control col-md-4 col-sm-12 col-xs-12 uppercase"
+                  maxlength="10"
+                  data-orden="1"
+                  style="text-align: center; width: 60%; border-radius: 0px !important"
+                  disabled="disabled"
+                />
+                <input
+                  v-model="medico.descripcion"
+                  type="text"
+                  class="form-control col-md-6 col-sm-12 col-xs-12 uppercase"
+                  maxlength="50"
+                  data-orden=""
+                  style="
+                    text-align: center;
+                    margin-left: 0px !important;
+                    border-radius: 0px !important;
+                  "
+                  disabled="disabled"
+                />
+                <input
+                  v-model="medico.especialidad"
+                  type="text"
+                  class="form-control col-md-8 col-sm-12 col-xs-12 uppercase"
+                  maxlength="50"
+                  data-orden=""
+                  style="text-align: center; border-radius: 0px !important"
+                  disabled="disabled"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label class="col-md-12">Consultando</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input
+                  v-model="evolucion.unserv"
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                  style="text-align: center; border-radius: 0px !important"
+                  disabled="disabled"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-1" style="padding-right: 4px">
+              <label class="col-md-12">Folio</label>
+              <div
+                class="input-group col-md-12 col-sm-12 col-xs-12"
+                style="border-radius: 0px !important"
+              >
+                <input
+                  v-model="folio"
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                  maxlength="10"
+                  data-orden="1"
+                  style="text-align: center"
+                  disabled="disabled"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="portlet light box-center box-title" style="height: 35px !important">
+            <div class="portlet-title col-md-9 col-sm-9 col-xs-9">
+              <div class="caption" style="display: flex; padding-top: 4px !important">
+                <span class="caption-subject bold" style="align-items: center"
+                  >Ficha transfusión</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding datos-encabezado">
+          <div
+            class="col-md-12 col-sm-12 col-xs-12 form-group box-center"
+            style="padding-right: 0px"
+          >
+            <div
+              class="col-md-2 col-sm-3 col-xs-12 no-padding"
+              style="padding-left: 3px !important; margin-right: -25px !important"
+            >
+              <label style="margin-left: -17px !important">Fecha</label>
+              <div class="inline-inputs">
+                <div id="dato_anio_control" class="input-group col-md-4 col-sm-4 col-xs-4">
+                  <input
+                    v-model="form.anioTransfusion"
+                    type="number"
+                    disabled="disabled"
+                    data-orden="1"
+                    maxlength="4"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="padding-right: 0px"
+                  />
+                </div>
+                <div id="dato_mes_control" class="input-group col-md-3 col-sm-4 col-xs-4">
+                  <input
+                    v-model="form.mesTransfusion"
+                    type="number"
+                    data-orden="1"
+                    maxlength="2"
+                    required="required"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="padding-right: 0px"
+                  />
+                </div>
+                <div id="dato_dia_control" class="input-group col-md-3 col-sm-4 col-xs-4">
+                  <input
+                    v-model="form.diaTransfusion"
+                    type="number"
+                    data-orden="1"
+                    maxlength="2"
+                    required="required"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="padding-right: 0px"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1 col-sm-2 col-xs-12 no-padding">
+              <label>Hora</label>
+              <div class="inline-inputs no-padding">
+                <div id="dato_hora_control" class="input-group col-md-6 col-sm-6 col-xs-6">
+                  <input
+                    v-model="form.hraTransfusion"
+                    type="number"
+                    max="24"
+                    data-orden="1"
+                    maxlength="2"
+                    required="required"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+                <div id="dato_minutos_control" class="input-group col-md-6 col-sm-6 col-xs-6">
+                  <input
+                    v-model="form.minTransfusion"
+                    type="number"
+                    max="59"
+                    data-orden="1"
+                    maxlength="2"
+                    required="required"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="no-padding col-md-3 col-sm-2 col-xs-12"
+              style="text-align: left; padding-right: 0px; padding-left: 14px !important"
+            >
+              <label>Paciente</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="paciente.descrip"
+                    type="text"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="no-padding col-md-2 col-sm-2 col-xs-12" style="text-align: left">
+              <label style="padding-left: 5px !important">Documento</label>
+              <div class="inline-inputs">
+                <div
+                  class="input-group col-md-3 col-sm-3 col-xs-3 no-padding"
+                  style="padding-left: 1px !important"
+                >
+                  <input
+                    v-model="paciente.tipo_id"
+                    type="text"
+                    disabled="disabled"
+                    placeholder="DI"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: center"
+                  />
+                </div>
+                <div class="input-group col-md-8 col-sm-10 col-xs-10">
+                  <input
+                    v-model="paciente.cod"
+                    type="number"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 no-padding" style="text-align: left; justify-content: center">
+              <div class="col-md-5 no-padding" style="text-align: left; align-items: center">
+                <label style="text-align: center">Grupo (RH)</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="paciente.grp_sang"
+                    type="text"
+                    disabled="disabled"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+              <div
+                class="col-md-7 no-padding"
+                style="text-align: left; align-items: center; padding-left: 23px !important"
+              >
+                <label style="text-align: center">Factor (RH) </label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="paciente.rh"
+                    type="text"
+                    disabled="disabled"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+              <div class="salto-linea"></div>
+            </div>
+            <div
+              class="col-md-2 col-sm-2 col-xs-2 no-padding"
+              style="
+                width: 18%;
+                text-align: left;
+                padding-right: 0px !important;
+                padding-left: 20px !important;
+              "
+            >
+              <label>Cama</label>
+              <div id="dato_cama" class="inline-inputs no-padding">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="form.cama"
+                    type="text"
+                    disabled="disabled"
+                    maxlength="4"
+                    data-orden="1"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="salto-linea"></div>
+          </div>
+
+          <div
+            class="col-md-9 col-sm-9 col-xs-9 box-center form-group no-padding"
+            style="padding-bottom: 3px; float: left"
+          >
+            <div
+              class="col-md-12 col-sm-12 col-xs-12 no-padding"
+              style="padding-bottom: 5px !important; padding-right: 6px !important"
+            >
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+              <div
+                class="col-md-12"
+                style="text-align: left; padding-right: 0px; padding-left: 8px !important"
+              >
+                <div
+                  class="col-md-10 col-sm-12 col-xs-12 no-padding"
+                  style="
+                    text-align: left;
+                    align-items: center;
+                    padding-left: 4px !important;
+                    padding-right: 7px !important;
+                  "
+                >
+                  <label style="text-align: center">Producto a transfundir</label>
+                  <div
+                    id="dato_producto_transfusion"
+                    class="input-group col-md-12 col-sm-12 col-xs-12"
+                  >
+                    <input
+                      v-model="form.productoTransfusion"
+                      type="text"
+                      maxlength="190"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12 transfusion-txt"
+                      style="text-align: left !important; font-size: 12.2px"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="col-md-1 no-padding"
+                  style="text-align: left; align-items: center; padding-right: 7px !important"
+                >
+                  <label style="text-align: center">Grupo (RH)</label>
+                  <div
+                    id="dato_grupo_transfusion"
+                    class="input-group col-md-12 col-sm-12 col-xs-12"
+                  >
+                    <input
+                      v-model="form.grupoSanguineo"
+                      type="text"
+                      data-orden="1"
+                      maxlength="2"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="col-md-1 col-sm-1 col-xs-1 no-padding"
+                  style="text-align: left; align-items: center"
+                >
+                  <label style="text-align: center">Factor (RH)</label>
+                  <div id="dato_rh_transfusion" class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="form.rhSanguineo"
+                      type="text"
+                      data-orden="1"
+                      maxlength="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+              <div class="salto-linea"></div>
+              <div class="col-md-12" style="padding-right: 7px !important">
+                <label class="col-md-12" style="text-align: center"
+                  >Carácteristicas orina antes de transfusión</label
+                >
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                  style="display: flex; align-items: center; justify-content: flex-start"
+                >
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                    style="display: flex; padding-right: 6px !important"
+                  >
+                    <div
+                      id="dato_carac_orina_ant"
+                      class="input-group col-md-12 col-sm-12 col-xs-12"
+                    >
+                      <input
+                        v-model="form.caracOrinaAnt"
+                        type="text"
+                        data-orden="1"
+                        maxlength="180"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="padding-right: 0px"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-6 col-sm-6 col-xs-6 no-padding"
+              style="padding-left: 10px !important; padding-right: 6px !important"
+            >
+              <label class="col-md-12" style="text-align: center"
+                >Quien realiza la transfusión?</label
+              >
+              <div class="col-md-12 no-padding">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                  style="display: flex; align-items: center; justify-content: flex-start"
+                >
+                  <div class="col-md-12 col-sm-3 col-xs-12 no-padding" style="display: flex">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        v-model="realizaOper"
+                        type="text"
+                        disabled="disabled"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="padding-right: 0px"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="salto-linea"></div>
+          </div>
+          <div
+            class="col-md-3 col-sm-3 col-xs-3 no-padding"
+            style="padding-bottom: 7px !important; padding-left: 10px !important"
+          >
+            <div class="col-md-12 col-sm-12 col-xs-12 form-group no-padding box-center">
+              <div class="col-md-12 no-padding" style="max-height: 124px">
+                <table
+                  data-orden="1"
+                  class="table table-light table-striped controles"
+                  style="padding-right: 0px; margin-bottom: 0px !important; padding-left: 1px"
+                >
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Diagnostico</th>
+                      <th>Enfermedad</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="diagnosticos">
+                    <tr v-for="(dx,index) in tablaDiagnosticos">
+                      <td>{{index+1}}</td>
+                      <td>{{dx.cod}}</td>
+                      <td>{{dx.descrip}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="salto-linea"></div>
+            </div>
+          </div>
+        </div>
+        <div
+          v-if="!sw.cierre"
+          class="col-md-12 col-sm-12 col-xs-12 no-padding"
+          style="padding-right: 0px"
+        >
+          <div class="col-md-12 form-group no-padding">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="portlet light box-center box-title" style="height: 35px !important">
+                <div class="portlet-title col-md-9 col-sm-9 col-xs-9">
+                  <div class="caption" style="display: flex; padding-top: 4px !important">
+                    <span class="caption-subject bold" style="align-items: center"
+                      >Control Unidades transfusión</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-8 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center no-padding">
+                <div class="salto-linea"></div>
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 no-padding capturas"
+                  style="display: flex; padding-bottom: 5px !important"
+                >
+                  <div class="col-md-12" style="padding-right: 0px !important; padding-left: 10px">
+                    <div
+                      id="dato_nro_unidad"
+                      class="col-md-6 col-sm-6 col-xs-6"
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        padding-right: 0px !important;
+                        padding-left: 0px !important;
+                      "
+                    >
+                      <label class="col-md-2 col-sm-2 col-xs-2" style="text-align: left"
+                        >No. Unidad</label
+                      >
+                      <div class="no-padding" style="float: right; padding-left: 1vw !important">
+                        <input
+                          v-model="form.nroUnidad"
+                          type="text"
+                          maxlength="15"
+                          required="required"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center; height: 29px"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      id="dato_fecha_vencimiento"
+                      class="col-md-6 col-sm-6 col-xs-6"
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        padding-right: 0px !important;
+                        padding-left: 0px !important;
+                      "
+                    >
+                      <label class="col-md-6 col-sm-6 col-xs-6" style="text-align: right"
+                        >Fecha vencimiento</label
+                      >
+                      <div
+                        class="col-md-4 col-sm-4 col-xs-4 no-padding"
+                        style="
+                          display: flex;
+                          padding-left: 14px !important;
+                          padding-right: 6px !important;
+                        "
+                      >
+                        <div
+                          id="dato_anio_vencimiento"
+                          class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                        >
+                          <input
+                            v-model="form.anioVence"
+                            type="number"
+                            data-orden="1"
+                            maxlength="4"
+                            required="required"
+                            disabled="disabled"
+                            placeholder="YYYY"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="
+                              padding-right: 0px;
+                              height: 29px;
+                              font-size: 14px;
+                              text-align: center;
+                              padding-left: 0px;
+                            "
+                          />
+                        </div>
+                        <div
+                          id="dato_mes_vencimiento"
+                          class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                        >
+                          <input
+                            v-model="form.mesVence"
+                            type="number"
+                            data-orden="1"
+                            maxlength="2"
+                            required="required"
+                            disabled="disabled"
+                            placeholder="MM"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="
+                              padding-right: 0px;
+                              height: 29px;
+                              font-size: 14px;
+                              text-align: center;
+                              padding-left: 0px;
+                            "
+                          />
+                        </div>
+                        <div
+                          id="dato_dia_vencimiento"
+                          class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                        >
+                          <input
+                            v-model="form.diaVence"
+                            type="number"
+                            data-orden="1"
+                            maxlength="2"
+                            required="required"
+                            disabled="disabled"
+                            placeholder="DD"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="
+                              padding-right: 0px;
+                              height: 29px;
+                              font-size: 14px;
+                              text-align: center;
+                              padding-left: 0px;
+                            "
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="salto-linea"></div>
+                <div class="salto-linea"></div>
+                <div class="salto-linea"></div>
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                  style="
+                    display: flex;
+                    padding-bottom: 5px !important;
+                    justify-content: space-around;
+                  "
+                >
+                  <div class="col-md-6 capturas" style="padding-right: 0px !important">
+                    <div
+                      id="dato_fechaInicio"
+                      class="col-md-7 col-sm-7 col-xs-7"
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        padding-right: 0px !important;
+                        padding-left: 0px !important;
+                      "
+                    >
+                      <label
+                        class="col-md-7 col-sm-7 col-xs-7"
+                        style="text-align: left; max-width: 107px"
+                        >Fecha inicio</label
+                      >
+                      <div
+                        class="col-md-7 col-sm-7 col-xs-7 no-padding"
+                        style="display: flex; padding-right: 6px !important"
+                      >
+                        <div
+                          id="dato_anio_inicio"
+                          class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                        >
+                          <input
+                            v-model="form.anioInicio"
+                            type="number"
+                            data-orden="1"
+                            maxlength="4"
+                            required="required"
+                            disabled="disabled"
+                            placeholder="YYYY"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="
+                              padding-right: 0px;
+                              height: 29px;
+                              font-size: 14px;
+                              text-align: center;
+                              padding-left: 0px;
+                            "
+                          />
+                        </div>
+                        <div
+                          id="dato_mes_inicio"
+                          class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                        >
+                          <input
+                            v-model="form.mesInicio"
+                            type="number"
+                            data-orden="1"
+                            maxlength="2"
+                            required="required"
+                            disabled="disabled"
+                            placeholder="MM"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="
+                              padding-right: 0px;
+                              height: 29px;
+                              font-size: 14px;
+                              text-align: center;
+                              padding-left: 0px;
+                            "
+                          />
+                        </div>
+                        <div
+                          id="dato_dia_inicio"
+                          class="input-group capturas col-md-7 col-sm-7 col-xs-7"
+                        >
+                          <input
+                            v-model="form.diaInicio"
+                            type="number"
+                            data-orden="1"
+                            maxlength="2"
+                            required="required"
+                            disabled="disabled"
+                            placeholder="DD"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="
+                              padding-right: 0px;
+                              height: 29px;
+                              font-size: 14px;
+                              text-align: center;
+                              padding-left: 0px;
+                            "
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      id="dato_hora_inicio"
+                      class="col-md-5 col-sm-5 col-xs-5"
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        padding-right: 0px !important;
+                        padding-left: 0px !important;
+                      "
+                    >
+                      <label class="col-md-5 col-sm-5 col-xs-5" style="text-align: left"
+                        >Hora inicio</label
+                      >
+                      <div
+                        class="col-md-6 col-sm-6 col-xs-6 no-padding"
+                        style="display: flex; padding-right: 6px !important"
+                      >
+                        <div
+                          id="dato_hra_inicio"
+                          class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                        >
+                          <input
+                            v-model="form.hraInicio"
+                            type="number"
+                            data-orden="1"
+                            maxlength="2"
+                            required="required"
+                            disabled="disabled"
+                            placeholder="HH"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="
+                              padding-right: 0px;
+                              height: 29px;
+                              font-size: 14px;
+                              text-align: center;
+                              padding-left: 0px;
+                            "
+                          />
+                        </div>
+                        <div
+                          id="dato_minutos_inicio"
+                          class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                        >
+                          <input
+                            v-model="form.minInicio"
+                            type="number"
+                            data-orden="1"
+                            maxlength="2"
+                            required="required"
+                            disabled="disabled"
+                            placeholder="mm"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="
+                              padding-right: 0px;
+                              height: 29px;
+                              font-size: 14px;
+                              text-align: center;
+                              padding-left: 0px;
+                            "
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-md-6 capturas"
+                    style="padding-right: 0px !important; padding-left: 10px"
+                  >
+                    <div
+                      id="dato_fin"
+                      class="col-md-7 col-sm-7 col-xs-7"
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        padding-right: 0px !important;
+                        padding-left: 0px !important;
+                      "
+                    >
+                      <label
+                        class="col-md-5 col-sm-5 col-xs-5"
+                        style="text-align: left; max-width: 107px"
+                        >Fecha Fin</label
+                      >
+                      <div
+                        class="col-md-7 col-sm-7 col-xs-7 no-padding"
+                        style="display: flex; padding-right: 6px !important"
+                      >
+                        <div
+                          id="dato_anio_fin"
+                          class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                        >
+                          <input
+                            v-model="form.anioFinal"
+                            type="number"
+                            data-orden="1"
+                            maxlength="4"
+                            required="required"
+                            disabled="disabled"
+                            placeholder="YYYY"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="
+                              padding-right: 0px;
+                              height: 29px;
+                              font-size: 14px;
+                              text-align: center;
+                              padding-left: 0px;
+                            "
+                          />
+                        </div>
+                        <div
+                          id="dato_mes_fin"
+                          class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                        >
+                          <input
+                            v-model="form.mesFinal"
+                            type="number"
+                            data-orden="1"
+                            maxlength="2"
+                            required="required"
+                            disabled="disabled"
+                            placeholder="MM"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="
+                              padding-right: 0px;
+                              height: 29px;
+                              font-size: 14px;
+                              text-align: center;
+                              padding-left: 0px;
+                            "
+                          />
+                        </div>
+                        <div
+                          id="dato_dia_fin"
+                          class="input-group capturas col-md-7 col-sm-7 col-xs-7"
+                        >
+                          <input
+                            v-model="form.diaFinal"
+                            type="number"
+                            data-orden="1"
+                            maxlength="2"
+                            placeholder="DD"
+                            required="required"
+                            disabled="disabled"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="
+                              padding-right: 0px;
+                              height: 29px;
+                              font-size: 14px;
+                              text-align: center;
+                              padding-left: 0px;
+                            "
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      id="dato_hora_fin"
+                      class="col-md-5 col-sm-5 col-xs-5"
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        padding-right: 0px !important;
+                        padding-left: 0px !important;
+                      "
+                    >
+                      <label class="col-md-6 col-sm-6 col-xs-6" style="text-align: left"
+                        >Hora Fin</label
+                      >
+                      <div
+                        class="col-md-7 col-sm-7 col-xs-7 no-padding"
+                        style="display: flex; padding-right: 6px !important"
+                      >
+                        <div
+                          id="dato_hra_fin"
+                          class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                        >
+                          <input
+                            v-model="form.hraFinal"
+                            type="number"
+                            data-orden="1"
+                            maxlength="2"
+                            required="required"
+                            disabled="disabled"
+                            placeholder="HH"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="
+                              padding-right: 0px;
+                              height: 29px;
+                              font-size: 14px;
+                              text-align: center;
+                              padding-left: 0px;
+                            "
+                          />
+                        </div>
+                        <div
+                          id="dato_minutos_fin"
+                          class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                        >
+                          <input
+                            v-model="form.minFinal"
+                            type="number"
+                            data-orden="1"
+                            maxlength="2"
+                            required="required"
+                            disabled="disabled"
+                            placeholder="mm"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="
+                              padding-right: 0px;
+                              height: 29px;
+                              font-size: 14px;
+                              text-align: center;
+                              padding-left: 0px;
+                            "
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+              </div>
+            </div>
+            <div
+              class="col-md-4 col-sm-4 col-xs-4 no-padding"
+              style="padding-bottom: 7px !important; padding-left: 10px !important"
+            >
+              <div class="col-md-12 col-sm-12 col-xs-12 form-group no-padding box-center">
+                <div class="col-md-12 no-padding tablas" style="max-height: 99px">
+                  <table
+                    data-orden="1"
+                    class="table table-light table-striped controles"
+                    style="padding-right: 0px; margin-bottom: 0px !important; padding-left: 1px"
+                  >
+                    <thead>
+                      <tr>
+                        <th>Nro signos</th>
+                        <th>Temp</th>
+                        <th>Tens</th>
+                        <th>Fcard</th>
+                        <th>Diuresis</th>
+                      </tr>
+                    </thead>
+
+                    <tbody style="max-height: 72px !important">
+                      <tr
+                        class="diagnosticos"
+                        v-for="(signos,index) in tablaSignos"
+                        v-if="signos.fecha>0"
+                      >
+                        <td style="font-size: 0.85vw; padding: 0">{{index+1}}</td>
+                        <td style="font-size: 0.85vw; padding: 0">{{signos.temp}}</td>
+                        <td style="font-size: 0.85vw; padding: 0">
+                          {{signos.tens1+" / "+signos.tens2}}
+                        </td>
+                        <td style="font-size: 0.85vw; padding: 0">{{signos.fcard}}</td>
+                        <td style="font-size: 0.85vw; padding: 0">{{signos.diuresis}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="salto-linea"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="no-padding col-md-12 col-xs-12 col-sm-12" v-if="sw.cierre">
+          <div class="col-md-12 col-sm-12 no-padding">
+            <div class="portlet light box-center box-title" style="height: 36px">
+              <div class="portlet-title">
+                <div
+                  class="caption"
+                  style="display: flex; align-items: center; align-content: center"
+                >
+                  <span class="caption-subject bold">Cierre control transfusión</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 no-padding">
+            <div id="cierre_control" class="form-group col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div
+                class="col-md-12 col-sm-12 col-xs-12 form-group box-center"
+                style="overflow: auto; float: left !important; padding-top: 10px"
+              >
+                <div
+                  id="dato_fecha_cierre"
+                  class="col-md-3 col-sm-3 col-xs-3 capturas"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    padding-right: 0px !important;
+                    padding-left: 0px !important;
+                  "
+                >
+                  <label
+                    class="col-md-7 col-sm-7 col-xs-7"
+                    style="text-align: left; max-width: 163px"
+                    >Fecha Cierre unidad</label
+                  >
+                  <div
+                    class="col-md-6 col-sm-6 col-xs-6"
+                    style="display: flex; padding-right: 6px !important"
+                  >
+                    <div
+                      id="dato_anio_cierre"
+                      class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                    >
+                      <input
+                        v-model="form.anioCierre"
+                        type="number"
+                        data-orden="1"
+                        maxlength="4"
+                        required="required"
+                        disabled="disabled"
+                        placeholder="YYYY"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="
+                          padding-right: 0px;
+                          height: 29px;
+                          font-size: 14px;
+                          text-align: center;
+                          padding-left: 0px;
+                        "
+                      />
+                    </div>
+                    <div
+                      id="dato_mes_cierre"
+                      class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                    >
+                      <input
+                        v-model="form.mesCierre"
+                        type="number"
+                        data-orden="1"
+                        maxlength="2"
+                        required="required"
+                        disabled="disabled"
+                        placeholder="MM"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="
+                          padding-right: 0px;
+                          height: 29px;
+                          font-size: 14px;
+                          text-align: center;
+                          padding-left: 0px;
+                        "
+                      />
+                    </div>
+                    <div
+                      id="dato_dia_cierre"
+                      class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                    >
+                      <input
+                        v-model="form.diaCierre"
+                        type="number"
+                        data-orden="1"
+                        maxlength="2"
+                        required="required"
+                        disabled="disabled"
+                        placeholder="02"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="
+                          padding-right: 0px;
+                          height: 29px;
+                          font-size: 14px;
+                          text-align: center;
+                          padding-left: 0px;
+                        "
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  id="dato_hora_cierre"
+                  class="col-md-3 col-sm-3 col-xs-3 capturas"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    padding-right: 0px !important;
+                    padding-left: 20px !important;
+                  "
+                >
+                  <label class="col-md-8 col-sm-8 col-xs-8" style="text-align: left"
+                    >Hora cierre unidad</label
+                  >
+                  <div
+                    class="col-md-6 col-sm-6 col-xs-6 no-padding"
+                    style="display: flex; padding-right: 6px !important"
+                  >
+                    <div
+                      id="dato_hra_cierre"
+                      class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                    >
+                      <input
+                        v-model="form.hraCierre"
+                        type="number"
+                        data-orden="1"
+                        maxlength="2"
+                        required="required"
+                        disabled="disabled"
+                        placeholder="HH"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="
+                          padding-right: 0px;
+                          height: 29px;
+                          font-size: 14px;
+                          text-align: center;
+                          padding-left: 0px;
+                        "
+                      />
+                    </div>
+                    <div
+                      id="dato_minutos_cierre"
+                      class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                    >
+                      <input
+                        v-model="form.minCierre"
+                        type="number"
+                        data-orden="1"
+                        maxlength="2"
+                        required="required"
+                        disabled="disabled"
+                        placeholder="mm"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="
+                          padding-right: 0px;
+                          height: 29px;
+                          font-size: 14px;
+                          text-align: center;
+                          padding-left: 0px;
+                        "
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  id="dato_reaccion"
+                  class="col-md-2 col-sm-2 col-xs-2 capturas"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    padding-right: 0px !important;
+                    padding-left: 29px !important;
+                  "
+                >
+                  <label class="col-md-6 col-sm-6 col-xs-6" style="text-align: left"
+                    >Reaccion</label
+                  >
+                  <div
+                    class="no-padding col-md-3 col-sm-3 col-xs-3"
+                    style="float: right"
+                    id="dato-reaccion"
+                  >
+                    <input
+                      v-model="form.reaccionTransfusion"
+                      type="text"
+                      maxlength="1"
+                      data-orden="1"
+                      disabled="disabled"
+                      placeholder="N"
+                      class="uppercase form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center; height: 29px"
+                    />
+                  </div>
+                </div>
+                <div
+                  id="dato_devolucion"
+                  class="col-md-2 col-sm-2 col-xs-2 capturas"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    padding-right: 0px !important;
+                    padding-left: 0px !important;
+                  "
+                >
+                  <label class="col-md-6 col-sm-6 col-xs-6" style="text-align: left"
+                    >Devolución</label
+                  >
+                  <div class="no-padding col-md-3 col-sm-3 col-xs-3" style="float: right">
+                    <input
+                      v-model="form.devolucionTransfusion"
+                      type="text"
+                      maxlength="1"
+                      data-orden="1"
+                      disabled="disabled"
+                      placeholder="N"
+                      class="uppercase form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center; height: 29px"
+                    />
+                  </div>
+                </div>
+                <div
+                  id="dato_volumen"
+                  class="col-md-2 col-sm-2 col-xs-2 capturas"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    padding-right: 0px !important;
+                    padding-left: 0px !important;
+                  "
+                >
+                  <label class="col-md-5 col-sm-5 col-xs-5" style="text-align: left"
+                    >Volumén ML</label
+                  >
+                  <div class="no-padding col-md-7 col-sm-7 col-xs-7" style="float: right">
+                    <input
+                      v-model="form.volumenTransfusion"
+                      type="number"
+                      maxlength="6"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center; height: 29px"
+                    />
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="salto-linea"></div>
+
+                <div
+                  id="dato_carac_cierre"
+                  class="col-md-12 col-sm-12 col-xs-12 capturas"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding-right: 0px !important;
+                    padding-left: 0px !important;
+                  "
+                >
+                  <label
+                    class="col-md-4 col-sm-4 col-xs-4"
+                    style="text-align: left; max-width: 161px"
+                    >Carácteristicas cierre</label
+                  >
+                  <div class="no-padding col-md-12 col-sm-12 col-xs-12" style="float: right">
+                    <input
+                      v-model="form.caracCierre"
+                      type="text"
+                      maxlength="190"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center; height: 29px; font-size: 10px"
+                    />
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div
+                  id="dato_orina_pos"
+                  class="col-md-6 col-sm-6 col-xs-6 capturas"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    padding-right: 0px !important;
+                    padding-left: 0px !important;
+                  "
+                >
+                  <label class="col-md-3 col-sm-3 col-xs-3" style="text-align: left"
+                    >Orina pos transfusión</label
+                  >
+                  <div class="no-padding col-md-9 col-sm-9 col-xs-9" style="float: right">
+                    <input
+                      v-model="form.caracOrinaPos"
+                      type="text"
+                      maxlength="190"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center; height: 29px"
+                    />
+                  </div>
+                </div>
+                <div
+                  id="dato_tratamiento"
+                  class="col-md-6 col-sm-6 col-xs-6 capturas"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    padding-right: 2px !important;
+                    padding-left: 27px;
+                  "
+                >
+                  <label
+                    class="col-md-5 col-sm-5 col-xs-5"
+                    style="text-align: left; max-width: 171px"
+                    >Tratamiento</label
+                  >
+                  <div class="no-padding col-md-11 col-sm-11 col-xs-11" style="float: right">
+                    <input
+                      v-model="form.tratamientoTransfusion"
+                      type="text"
+                      maxlength="190"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div
+                  v-if="devolucion"
+                  id="dato_moti_devol"
+                  class="col-md-6 col-sm-6 col-xs-6 capturas"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    padding-right: 0px !important;
+                  "
+                >
+                  <label
+                    class="col-md-5 col-sm-5 col-xs-5"
+                    style="text-align: left; max-width: 163px"
+                    >Motivo devolución</label
+                  >
+                  <div class="no-padding col-md-9 col-sm-9 col-xs-9" style="float: right">
+                    <input
+                      v-model="form.motivoDevolucionTransfusion"
+                      type="text"
+                      maxlength="190"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center; height: 29px"
+                    />
+                  </div>
+                </div>
+                <div
+                  v-if="devolucion"
+                  id="dato_estado"
+                  class="col-md-6 col-sm-6 col-xs-6 capturas"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    padding-right: 0px !important;
+                    padding-left: 28px !important;
+                  "
+                >
+                  <label
+                    class="col-md-4 col-sm-4 col-xs-4"
+                    style="text-align: left; max-width: 171px"
+                    >Estado componente</label
+                  >
+                  <div class="no-padding col-md-9 col-sm-9 col-xs-9 capturas" style="float: right">
+                    <input
+                      v-model="form.estadoProductoTransfusion"
+                      type="text"
+                      maxlength="190"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+            </div>
+            <div class="salto-linea"></div>
+            <div class="salto-linea"></div>
+          </div>
+        </div>
+        <transition name="modal_prosoft" v-if="sw.signos">
+          <div class="overlay_prosoft">
+            <div class="modal_prosoft">
+              <div class="container_prosoft">
+                <div class="header_prosoft">
+                  <p
+                    style="
+                      padding: 9px 25px;
+                      margin: 0px auto;
+                      display: flex;
+                      justify-content: center;
+                    "
+                  >
+                    <span
+                      >Captura Signos Vitales &nbsp;&nbsp; {{indexSignos}} &nbsp; de
+                      &nbsp;{{limiteCapturaSignos}}</span
+                    >
+                  </p>
+                </div>
+                <div class="body_prosoft">
+                  <div class="col-md-12">
+                    <div class="portlet light no-padding">
+                      <div class="portlet-body">
+                        <div id="datos_signos" class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                          <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+                            <div
+                              id="dato_fecha_signos"
+                              class="col-md-12 col-sm-12 col-xs-12"
+                              style="
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                padding-right: 0px !important;
+                                padding-left: 0px !important;
+                              "
+                            >
+                              <label
+                                class="col-md-5 col-sm-5 col-xs-5 caption-bold"
+                                style="text-align: left; font-weight: 700"
+                                >Fecha captura</label
+                              >
+                              <div
+                                class="col-md-7 col-sm-7 col-xs-7 no-padding"
+                                style="display: flex; padding-right: 6px !important"
+                              >
+                                <div
+                                  id="dato_anio_signos"
+                                  class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                                >
+                                  <input
+                                    v-model="form.anioSignos"
+                                    type="number"
+                                    data-orden="1"
+                                    maxlength="4"
+                                    required="required"
+                                    disabled="disabled"
+                                    placeholder="YYYY"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    style="
+                                      padding-right: 0px;
+                                      height: 29px;
+                                      font-size: 14px;
+                                      text-align: center;
+                                      padding-left: 0px;
+                                    "
+                                  />
+                                </div>
+                                <div
+                                  id="dato_mes_signos"
+                                  class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                                >
+                                  <input
+                                    v-model="form.mesSignos"
+                                    type="number"
+                                    data-orden="1"
+                                    maxlength="2"
+                                    required="required"
+                                    disabled="disabled"
+                                    placeholder="MM"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    style="
+                                      padding-right: 0px;
+                                      height: 29px;
+
+                                      font-size: 14px;
+                                      text-align: center;
+                                      padding-left: 0px;
+                                    "
+                                  />
+                                </div>
+                                <div
+                                  id="dato_dia_signos"
+                                  class="input-group capturas col-md-7 col-sm-7 col-xs-7"
+                                >
+                                  <input
+                                    v-model="form.diaSignos"
+                                    type="number"
+                                    data-orden="1"
+                                    maxlength="2"
+                                    required="required"
+                                    disabled="disabled"
+                                    placeholder="DD"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    style="
+                                      padding-right: 0px;
+                                      height: 29px;
+                                      font-size: 14px;
+                                      text-align: center;
+                                      padding-left: 0px;
+                                    "
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            id="dato_hora_signos"
+                            class="col-md-6 col-sm-6 col-xs-6"
+                            style="
+                              display: flex;
+                              align-items: center;
+                              justify-content: flex-start;
+                              padding-right: 0px !important;
+                              padding-left: 0px !important;
+                            "
+                          >
+                            <label
+                              class="col-md-5 col-sm-5 col-xs-5"
+                              style="text-align: left; font-weight: 700"
+                              >Hora captura</label
+                            >
+                            <div
+                              class="col-md-6 col-sm-6 col-xs-6 no-padding"
+                              style="display: flex; padding-right: 6px !important"
+                            >
+                              <div
+                                id="dato_hra_signos"
+                                class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                              >
+                                <input
+                                  v-model="form.hraSignos"
+                                  type="number"
+                                  data-orden="1"
+                                  maxlength="2"
+                                  required="required"
+                                  disabled="disabled"
+                                  placeholder="HH"
+                                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                                  style="
+                                    padding-right: 0px;
+                                    height: 29px;
+                                    font-size: 14px;
+                                    text-align: center;
+                                    padding-left: 0px;
+                                  "
+                                />
+                              </div>
+                              <div
+                                id="dato_minutos_signos"
+                                class="input-group capturas col-md-6 col-sm-6 col-xs-6"
+                              >
+                                <input
+                                  v-model="form.minSignos"
+                                  type="number"
+                                  data-orden="1"
+                                  maxlength="2"
+                                  required="required"
+                                  disabled="disabled"
+                                  placeholder="mm"
+                                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                                  style="
+                                    padding-right: 0px;
+                                    height: 29px;
+                                    font-size: 14px;
+                                    text-align: center;
+                                    padding-left: 0px;
+                                  "
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="salto-linea"></div>
+                          <div class="salto-linea"></div>
+                          <div class="salto-linea"></div>
+                          <div
+                            class="col-md-6 col-sm-6 col-xs-6 no-padding"
+                            style="margin: 0px auto"
+                          >
+                            <div
+                              id="dato_signos_tensionart"
+                              class="col-md-12 col-sm-12 col-xs-12"
+                              style="
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                padding-right: 0px !important;
+                                padding-left: 0px !important;
+                              "
+                            >
+                              <label
+                                class="col-md-6 col-sm-5 col-xs-5 caption-bold"
+                                style="text-align: left; font-weight: 700"
+                                >Tensión arterial</label
+                              >
+                              <div
+                                id="dato_signos_tens1"
+                                class="col-md-2 col-sm-2 col-xs-2 no-padding"
+                                style="float: right"
+                              >
+                                <input
+                                  v-model="form.tens1Signos"
+                                  type="number"
+                                  maxlength="3"
+                                  data-orden="1"
+                                  disabled="disabled"
+                                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                                  style="text-align: center; height: 29px"
+                                />
+                              </div>
+                              <div
+                                id="dato_signos_tens2"
+                                class="col-md-2 col-sm-2 col-xs-2 no-padding"
+                                style="float: right"
+                              >
+                                <input
+                                  v-model="form.tens2Signos"
+                                  type="number"
+                                  maxlength="3"
+                                  data-orden="1"
+                                  disabled="disabled"
+                                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                                  style="text-align: center; height: 29px"
+                                />
+                              </div>
+                            </div>
+                            <div class="salto-linea"></div>
+                            <div
+                              id="dato_signos_temperatura"
+                              class="col-md-12 col-sm-12 col-xs-12"
+                              style="
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                padding-right: 0px !important;
+                                padding-left: 0px !important;
+                              "
+                            >
+                              <label
+                                class="col-md-6 col-sm-5 col-xs-5 caption-bold"
+                                style="text-align: left; font-weight: 700"
+                                >Temperatura</label
+                              >
+                              <div
+                                class="col-md-4 col-sm-4 col-xs-4 no-padding"
+                                style="float: right"
+                              >
+                                <input
+                                  v-model="form.tempSignos"
+                                  type="number"
+                                  maxlength="5"
+                                  data-orden="1"
+                                  disabled="disabled"
+                                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                                  style="text-align: center; height: 29px"
+                                />
+                              </div>
+                            </div>
+                            <div class="salto-linea"></div>
+                          </div>
+                          <div
+                            class="col-md-6 col-sm-6 col-xs-6 no-padding"
+                            style="margin: 0px auto"
+                          >
+                            <div
+                              id="dato_signos_fcard"
+                              class="col-md-12 col-sm-12 col-xs-12"
+                              style="
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                padding-right: 0px !important;
+                                padding-left: 0px !important;
+                              "
+                            >
+                              <label
+                                class="col-md-6 col-sm-5 col-xs-5 caption-bold"
+                                style="text-align: left; font-weight: 700"
+                                >Frec. cardiaca</label
+                              >
+                              <div
+                                class="col-md-4 col-sm-4 col-xs-4 no-padding"
+                                style="float: right"
+                              >
+                                <input
+                                  v-model="form.fcardSignos"
+                                  type="number"
+                                  maxlength="3"
+                                  data-orden="1"
+                                  disabled="disabled"
+                                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                                  style="text-align: center; height: 29px"
+                                />
+                              </div>
+                            </div>
+                            <div class="salto-linea"></div>
+                            <div
+                              id="dato_signos_diuresis"
+                              class="col-md-12 col-sm-12 col-xs-12"
+                              style="
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                padding-right: 0px !important;
+                                padding-left: 0px !important;
+                              "
+                            >
+                              <label
+                                class="col-md-6 col-sm-5 col-xs-5 caption-bold"
+                                style="text-align: left; font-weight: 700"
+                                >Diuresis (ML)</label
+                              >
+                              <div
+                                class="col-md-4 col-sm-4 col-xs-4 no-padding"
+                                style="float: right"
+                              >
+                                <input
+                                  v-model="form.diuresisSignos"
+                                  type="number"
+                                  maxlength="5"
+                                  data-orden="1"
+                                  disabled="disabled"
+                                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                                  style="text-align: center; height: 29px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="salto-linea"></div>
+                          <div class="salto-linea"></div>
+                          <div class="caption col-md-12 col-xs-12 col-sm-12">
+                            <span
+                              class="caption-subject bold"
+                              style="font-size: 0.92vw; font-weight: 500 !important"
+                              >Máximo 10 capturas</span
+                            >
+                            <div class="salto-linea"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="clear: both"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+        <transition name="modal_prosoft" v-if="sw.fin">
+          <div class="overlay_prosoft">
+            <div class="modal_prosoft">
+              <div class="container_prosoft">
+                <div class="header_prosoft">
+                  <p style="padding: 9px 25px; margin: 0px auto">Observaciones</p>
+                  <label>(285 caracteres máximo)</label>
+                </div>
+                <div class="body_prosoft">
+                  <div class="col-md-12">
+                    <div class="portlet light no-padding">
+                      <div class="portlet-body">
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                          <div
+                            id="dato_observaciones"
+                            class="input-group capturas col-md-12 col-sm-5 col-xs-5"
+                            style="padding-bottom: 10px"
+                          >
+                            <textarea
+                              v-model="form.observacionesTransfusion"
+                              rows="2"
+                              maxlength="285"
+                              data-orden="1"
+                              class="form-control"
+                              disabled="disabled"
+                              style="resize: none; text-align: justify; padding-bottom: 4px"
+                            ></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </form>
+    </div>
+  </div>
+  <a
+    class="float_salir"
+    style="background-color: #da2c2c; border-color: #da2c2c"
+    @click="terminarEjecucion"
+  >
+    <span>Salir </span>
+  </a>
+  <a
+    v-if="sw.mostrar"
+    class="float_imprimir"
+    style="background-color: #1b489b; border-color: #1b489b"
+    @click="ventanaOpcionesImp"
+  >
+    <span>Imprimir </span>
+  </a>
+</div>
+<script src="../../HICLIN/scripts/HC52A.js" type="text/javascript"></script>
+<!-- <script
+  src="../../frameworks/pdf/hiclin/HCI52A.formato.js"
+  type="text/javascript"
+></script> -->

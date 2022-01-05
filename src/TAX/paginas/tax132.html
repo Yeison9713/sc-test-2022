@@ -1,0 +1,272 @@
+<style>
+    #tablaLibros tfoot td {
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+<div class="col-md-9 col-sm-12" style="float: none; margin: 0 auto;">
+    <div class="portlet light box-center box-title" style="margin: 0 auto;">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject bold">5 - Facturación intermunicipal</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="portlet light">
+        <div class="portlet-body">
+            <form class="form-horizontal">
+
+                <div class="form-group col-md-11 col-sm-12 col-xs-12 box-center">
+                    <div class="form-group col-md-10 col-sm-12 col-xs-12"
+                        style="margin: 0 auto; float: none; margin-bottom: 10px" id="faseFechaComp_132">
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-12">Consecutivo:</label>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                    <input id="comprobante_132" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-12">Año:</label>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                    <input id="añoComp_132" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-12">Mes:</label>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                    <input id="mesComp_132" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-12">Dia:</label>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                    <input id="diaComp_132" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="faseAgencia_132">
+                        <label>&nbsp;</label>
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Agencia:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                                <input id="agencia_132" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="2">
+                            </div>
+                            <button id="agenciaBtn_132" type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <label>&nbsp;</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="descripAgenc_132" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <label>&nbsp;</label>
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-12 col-xs-12">Fecha planilla:</label>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-4">
+                        <label>Año:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="añoPlanilla_132" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="2" data-orden="2">
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-4" id="faseDia_132">
+                        <label>Mes:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="mesPlanilla_132" type="number"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-4" id="faseDia_132">
+                        <label>Dia:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="diaPlanilla_132" type="number" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="2">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-11 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-3 col-sm-3 col-xs-4" id="validarLibro">
+                            <label>Libro:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="libro_132" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="9" data-orden="1" required="true">
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-4" id="validarPlaca">
+                            <label>Placa:</label>
+                            <div class="col-md-12 inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="placa_132" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="6"
+                                        data-orden="1" required="true">
+                                </div>
+                                <button id="placaBtn_104" type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-4" id="validarVlrBruto">
+                            <label>Vlr. Bruto:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="vlrBruto_132" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="12" data-orden="1">
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-4" id="validarseguro">
+                            <label>Seguro:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="seguro_132" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-3 col-sm-3 col-xs-4" id="validarRemesas">
+                            <label>Remesas:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="remesas_132" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="12" data-orden="1">
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-4" id="validarAvances">
+                            <label>Avances:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="avances_132" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="12" data-orden="1">
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-4" id="validarAbonos">
+                            <label>Abonos:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="abonos_132" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="12" data-orden="1">
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-4" id="validarDescuadre">
+                            <label>Descuadre:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="descuadre_132" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-11 col-sm-12 col-xs-12 box-center">
+                    <table id="tablaLibros" class="table table-light table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nro. libro</th>
+                                <th>Placa</th>
+                                <th>Vlr. bruto</th>
+                                <th>Seguro</th>
+                                <th>Remesas</th>
+                                <th>Avances</th>
+                                <th>Abonos</th>
+                                <th>Descuadre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tfoot>
+                        </tfoot>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="form-group col-md-11 col-sm-12 col-xs-12 box-center">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12" style="margin: 0 auto; float: none;">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-9 col-sm-9 col-xs-12">Forma de pago</label>
+                                <label class="col-md-3 col-sm-3 col-xs-12">Valor</label>
+                            </div>
+                            <div class="inline-inputs">
+                                <div class="col-md-4 col-sm-4 col-xs-4" id="_validarFormaPago1">
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                            <input id="sctaCaja_132" type="text" data-orden="1"
+                                                class="form-control col-md-12 col-xs-12">
+                                        </div>
+                                        <button id="sctaCajaBtn_132" type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4" id="_validarPago1">
+                                    <input id="descripcionCuenta_1" type="text" class="form-control col-md-6 col-sm-6 col-xs-12">
+                                </div>
+                                <!-- <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <input id="auxCaja_132" type="number"
+                                        class="form-control col-md-3 col-sm-3 col-xs-12" data-orden="1" maxlength="2"
+                                        style="margin: 5px;">
+                                </div> -->
+                                <div class="col-md-4 col-sm-4 col-xs-4" id="_validarPago1">
+                                    <input id="valorPago1_132" type="text"
+                                        class="form-control col-md-6 col-sm-6 col-xs-12" data-orden="1"
+                                        style="margin: 5px;">
+                                </div>
+                            </div>
+
+                            <div class="inline-inputs">
+                                <div class="col-md-4 col-sm-4 col-xs-12" id="_validarSctBanco">
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                            <input id="sctaBanco_132" type="text" data-orden="1"
+                                                class="form-control col-md-12 col-xs-12">
+                                        </div>
+                                        <button id="sctaBancoBtn_132" type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4" id="_validarPago1">
+                                    <input id="descripcionCuenta_2" type="text" class="form-control col-md-6 col-sm-6 col-xs-12">
+                                </div>
+                                <!-- <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <input id="auxBanco_132" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" style="margin: 5px;">
+                                </div> -->
+                                <div class="col-md-4 col-sm-4 col-xs-12" id="_validarFormaPago2">
+                                    <input id="valorPago2_132" type="text"
+                                        class="form-control col-md-6 col-sm-6 col-xs-12" data-orden="1"
+                                        style="margin: 5px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-12">Total</label>
+                                <input id="vlrTotal_132" type="text" class="form-control col-md-6 col-sm-6 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="../../TAX/scripts/tax132.js" type="text/javascript"></script>

@@ -1,0 +1,341 @@
+<div class="col-md-12" id="INV109">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <form class="form-horizontal">
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                    <div class="col-md-1 col-sm-2 col-xs-4">
+                        <label>Nro</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validar_NRO_prefijo109">
+                            <input v-model="global_INV109.NRO" required="true" type="number"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" min="1" max="99"
+                                data-orden="1">
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-2 col-xs-4">
+                        <label>Prefijo</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarPrefijo_109">
+                            <input v-model="global_INV109.PREFIJO" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="4" data-orden="1">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-4" id="validarDescripcion_109">
+                        <label>Descripción</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="global_INV109.DESCRIPCION" required="true" style="text-align: left;"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15" data-orden="1"
+                                disabled="disabled">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-4" id="validarAutDian_109">
+                        <label>Autorizacion DIAN</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="global_INV109.RESOLUCION" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="15" required="true" data-orden="1" disabled="disabled">
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-12">
+                        <label>Fecha Inicio</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-5 col-sm-4 col-xs-4" id="validarAnoIni_109">
+                                <input v-model="global_INV109.ANO_INI" type="number" data-orden="1" maxlength="4"
+                                    required="true" style="padding-right: 0;" placeholder="AAAA"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4" id="validarMesIni_109">
+                                <input v-model="global_INV109.MES_INI" type="number" data-orden="1" maxlength="2"
+                                    required="true" style="padding-right: 0;" max="12" min="0" placeholder="MM"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-3 col-sm-4 col-xs-4" id="validarDiaIni_109">
+                                <input v-model="global_INV109.DIA_INI" type="number" data-orden="1" maxlength="2"
+                                    required="true" style="padding-right: 0;" max="31" min="0" placeholder="DD"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-12">
+                        <label>Fecha Final</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-5 col-sm-4 col-xs-4" id="validarAnoFin_109">
+                                <input v-model="global_INV109.ANO_FIN" type="number" data-orden="1" maxlength="4"
+                                    required="true" style="padding-right: 0;" placeholder="AAAA"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4" id="validarMesFin_109">
+                                <input v-model="global_INV109.MES_FIN" type="number" data-orden="1" maxlength="2"
+                                    required="true" style="padding-right: 0;" max="12" min="0" placeholder="MM"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-3 col-sm-4 col-xs-4" id="validarDiaFin_109">
+                                <input v-model="global_INV109.DIA_FIN" type="number" data-orden="1" maxlength="2"
+                                    required="true" style="padding-right: 0;" max="31" min="0" placeholder="DD"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-3 col-xs-4" id="validarVigencia_109">
+                        <label>Vigencia</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="global_INV109.VIGENCIA" type="number" required="true" min="0"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3" data-orden="1"
+                                disabled="disabled">
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-4" id="validarNroDesde_109">
+                        <label>Desde el Nro</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input type="number" v-model="global_INV109.DESDE_NRO"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="9" data-orden="1"
+                                disabled="disabled">
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-4" id="validarHasta_109">
+                        <label>Hasta el Nro</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input type="number" v-model="global_INV109.HASTA_NRO"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="9" data-orden="1"
+                                disabled="disabled">
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-3 col-xs-4" id="validarSucursal_109">
+                        <label>Sucursal</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input type="number" v-model="global_INV109.SUCURSAL"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1"
+                                disabled="disabled">
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-2 col-xs-4" id="validarCosto_109">
+                        <label>Centro Costo</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                <input type="text" v-model="global_INV109.CENTRO_COSTO" id="centroCosto_inv109"
+                                    @keydown.119="ventanaCentrosCosto"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                    disabled="disabled">
+                            </div>
+                            <button type="button" @click="ventanaCentrosCosto"
+                                class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-4">
+                        <label></label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="textos.descrip_centroCosto" type="text" style="text-align: left;"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" disabled="disabled">
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-1 col-sm-3 col-xs-4" id="validarAlmacen_109">
+                        <label>Almacen</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                <input v-model="global_INV109.ALMACEN" type="text" id="almacen_inv109"
+                                    @keydown.119="ventanaAlmacenes" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="5" data-orden="1" required="true" disabled="disabled">
+                            </div>
+                            <button type="button" @click="ventanaAlmacenes"
+                                class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-4">
+                        <label></label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="textos.descrip_almacen" type="text" style="text-align: left;"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" disabled="disabled">
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-3 col-xs-4" id="validarContingencia_109">
+                        <label>Contingencia</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" min="1" v-model="global_INV109.TIPO_FACT" placeholder="N"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div v-if="global_INV109.TOKEN.trim() != '' || flujo || textos.descrip_comportamiento.trim() != ''" class="col-md-12"
+                        style="display: flex;justify-content: center;">
+
+                        <div class="col-md-3 col-sm-2 col-xs-2">
+                            <label>Comportamiento</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="text" v-model="textos.descrip_comportamiento"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-7 col-sm-12 col-xs-12" id="validarToken_109">
+                            <label>Token</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="text" v-model="global_INV109.TOKEN" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="80" data-orden="1"
+                                        disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th class="col-md-1">Nro</th>
+                                <th class="col-md-1">Prefijo</th>
+                                <th class="col-md-2">Descripción</th>
+                                <th class="col-md-1">Fecha Inicio</th>
+                                <th class="col-md-1">Fecha Final</th>
+                                <th class="col-md-1"># Desde</th>
+                                <th class="col-md-1"># Hasta</th>
+                                <th class="col-md-1">Sucursal</th>
+                                <th class="col-md-1">C. C.</th>
+                                <th class="col-md-1">Almacen</th>
+                                <th class="col-md-1">Token</th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                    <div style="max-height: 318px; overflow-y: scroll; display: inline-block;width: 100%">
+                        <table class="table table-light table-striped" style="margin-bottom: 0px; width: 99%;"
+                            id="validarTabla_INV109">
+                            <tbody>
+                                <tr v-for="fila in DLL.TABLA">
+                                    <td class="col-md-1" style="text-align:left">{{ fila.NRO }}</td>
+
+                                    <td class="col-md-1" style="text-align:left">{{ fila.PREFIJO }}</td>
+
+                                    <td class="col-md-2" style="text-align:left">{{ fila.DESCRIPCION }}</td>
+
+                                    <td class="col-md-1" style="text-align:center">{{ fila.FECHA_INI }}</td>
+
+                                    <td class="col-md-1" style="text-align:center">{{ fila.FECHA_FIN }}</td>
+
+                                    <td class="col-md-1" style="text-align:center">{{ fila.DESDE_NRO }}</td>
+
+                                    <td class="col-md-1" style="text-align:center">{{ fila.HASTA_NRO }}</td>
+
+                                    <td class="col-md-1" style="text-align:center">{{ fila.SUCURSAL }}</td>
+
+                                    <td class="col-md-1" style="text-align:center">{{ fila.CENTRO_COSTO }}</td>
+
+                                    <td class="col-md-1" style="text-align:center">{{ fila.ALMACEN }}</td>
+
+                                    <td class="col-md-1" style="text-align:center">
+                                        {{ fila.TOKEN.trim() == '' ? 'NO'  : 'SI'}}</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                    style="display: flex;justify-content: space-around;">
+
+                    <div v-if="DLL.OPER_CREA.trim() != ''" class="col-md-3 col-sm-6 col-xs-12">
+                        <label>Creación</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                                <input v-model="DLL.OPER_CREA" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                            </div>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                                <input v-model="DLL.FECHA_CREA" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    style="text-align: center">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <label>Modificación</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                                <input v-model="DLL.OPER_MODIF" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                            </div>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                                <input v-model="DLL.FECHA_MODIF" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    style="text-align: center">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-2 col-sm-3 col-xs-4" id="validarFactPref_109">
+                        <label>Factura desde prefijo #</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="number" min="1" v-model="DLL.FPREF_NUM" required="true" max="99"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="22" data-orden="1"
+                                    disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-8">
+                        <label>Proveedor Factura Electrónica</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="textos.proveedor_fact_elect" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-4 col-xs-8">
+                        <label>Entorno pruebas ? </label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarEntornoPrueba">
+                                <input v-model="DLL.PRUEBA_TOKEN" type="text" maxlength="1" placeholder="N"
+                                    data-orden="1" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    input {
+        text-align: center
+    }
+</style>
+
+<script src="../../INVENT/scripts/INV109.js" type="text/javascript"></script>

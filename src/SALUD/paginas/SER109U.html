@@ -1,0 +1,56 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER109U">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <!-- <div class="col-md-9 col-sm-12 col-xs-12 no-padding"> -->
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center" style="float: none; margin: 0 auto;">
+                    <div class="col-md-6 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Numero de envio:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="VALIDAR1_SER109U">
+                                <input v-model="form.envio_SER109U" data-orden="1" maxlength="10" @Keyup.F8='_f8envio_SER109U' 
+                                class="form-control col-md-12 col-sm-12 col-xs-12 envio_SER109U ">
+                            </div>
+                            <button type="button" @click='_f8envio_SER109U'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-5 col-xs-12">Periodo:</label>
+                            <div class="input-group col-md-6 col-sm-7 col-xs-12">
+                                <input v-model="form.periodo_SER109U" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12 envio_SER109U ">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-7 col-xs-12">Nit del cliente:</label>
+                            <div class="input-group col-md-6 col-sm-5 col-xs-12">
+                                <input v-model="form.nitcliente_SER109U"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="6">
+                            </div>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12">
+                                <input v-model="form.descripcliente_SER109U"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="6">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-5 col-xs-12">Observaciones:</label>
+                            <div class="input-group col-md-6 col-sm-7 col-xs-12">
+                                <input v-model="form.observacion_SER109U" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12 envio_SER109U ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </form>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SER109U.js" type="text/javascript"></script>

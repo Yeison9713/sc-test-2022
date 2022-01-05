@@ -1,0 +1,241 @@
+<div class="col-md-12" id="SER516">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <form class="form-horizontal" onsubmit="return false;">
+                <div class="col-md-6 no-padding box-center">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>Listar Desde:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="fechaInicial_516">
+                                <div class="inline-inputs" style="margin-left: 4px;">
+                                    <label class="col-md-5 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-7 col-sm-5 col-xs-5">
+                                        <input v-model="form.añoInicial_516" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                            data-orden="1" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                        <input v-model="form.mesInicial_516" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="2" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                        <input v-model="form.diaInicial_516" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="3" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>Hasta:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="fechaFinal_516">
+                                <div class="inline-inputs">
+                                    <label class="col-md-5 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-7 col-sm-5 col-xs-5">
+                                        <input v-model="form.añoFinal_516" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                            data-orden="1" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                        <input v-model="form.mesFinal_516" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="2" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                        <input v-model="form.diaFinal_516" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="3" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>Abonos Desde:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="fechaAbonosInicial_516">
+                                <div class="inline-inputs" style="margin-left: 4px;">
+                                    <label class="col-md-5 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-7 col-sm-5 col-xs-5">
+                                        <input v-model="form.añoAbonosInicial_516" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                            data-orden="1" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                        <input v-model="form.mesAbonosInicial_516" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="2" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                        <input v-model="form.diaAbonosInicial_516" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="3" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>Abonos Hasta:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="fechaAbonosFinal_516">
+                                <div class="inline-inputs">
+                                    <label class="col-md-5 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-7 col-sm-5 col-xs-5">
+                                        <input v-model="form.añoAbonosFinal_516" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                            data-orden="1" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                        <input v-model="form.mesAbonosFinal_516" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="2" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                        <input v-model="form.diaAbonosFinal_516" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="3" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 box-center" style="padding-right: 0;">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-6 col-xs-6">
+                                <div class="inline-inputs">
+                                    <label class="col-md-5">Nit del cliente:</label>
+                                    <div class="input-group col-md-5 col-sm-12 col-xs-6" id="validarTercero_516">
+                                        <input @keyup.f8="_ventanaTercerosSER516" v-model="form.tercero_SER516"
+                                            type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase tercero_SER516"
+                                            maxlength="10" data-orden="1">
+                                    </div>
+                                    <button @click="_ventanaTercerosSER516" type="button"
+                                        class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-6 col-xs-6">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="form.descripTercero_SER516" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="20"
+                                        data-orden="2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <div class="inline-inputs">
+                                    <label class="col-md-5 col-sm-8 col-xs-12">Prefijo</label>
+                                    <div class="input-group col-md-3 col-sm-4 col-xs-6" id="validarPrefijo_516">
+                                        <input v-model="form.prefijo_SER516" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                                            maxlength="1" data-orden="1">
+                                    </div>
+                                    <label class="col-md-4 col-sm-8 col-xs-12">(* Todos)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <div class="inline-inputs">
+                                    <label class="col-md-10 col-sm-10 col-xs-12">Discriminar facturas?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarDiscFact_516">
+                                        <input v-model="form.discFact_SER516" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                                            maxlength="1" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <div class="inline-inputs">
+                                    <label class="col-md-5 col-sm-10 col-xs-12">Servic. Hospitalario:</label>
+                                    <div class="input-group col-md-5 col-sm-4 col-xs-6" id="validarServHosp_516">
+                                        <input @keyup.f8="_ventanaServiciosHospSER516" v-model="form.servHosp_SER516" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase servHosp_SER516"
+                                            maxlength="2" data-orden="1">
+                                    </div>
+                                    <button @click="_ventanaServiciosHospSER516" type="button"
+                                        class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-6 col-xs-6">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="form.descripServHosp_SER516" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="20"
+                                        data-orden="2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <div class="inline-inputs">
+                                    <label class="col-md-10 col-sm-8 col-xs-12">Solo incluir fact. Radica?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarFactRadic_516">
+                                        <input v-model="form.factRadic_SER516" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                                            maxlength="1" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../../SALUD/scripts/SER516.js" type="text/javascript"></script>

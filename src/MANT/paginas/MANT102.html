@@ -1,0 +1,145 @@
+<div class="col-md-12">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <form class="form-horizontal">
+
+                <div class="col-md-1 col-sm-1 col-xs-1 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <label>Novedad :</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="novedad_mant102" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-11 col-sm-11 col-xs-11" style="padding-right: 0">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-2 col-sm-2 col-xs-6">
+                            <label>Tipo :</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="tipo_mant102" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-6">
+                            <label>Descripcion tipo</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="descripTipo_mant102" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-6" style="text-align: left">
+                            <label>Código :</label>
+                            <div class="inline-inputs" id="validarCodigo_mant102">
+                                <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                    <input id="codigo_mant102" data-orden="1" maxlength="4"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" required="" type="text"
+                                        disabled="disabled">
+                                </div>
+                                <button type="button" id="codigoBtn_mant102"
+                                    class="btn f8-Btn col-md-2 col-sm-2 col-xs-2" disabled="disabled">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 no-padding" style="text-align: left">
+                            <label>Detalle:</label>
+                            <div class="inline-inputs" id="validarDescrip_mant102">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="descripcion_mant102" required="" type="text" style="text-align: left"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="40"
+                                        disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="display: flex">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarTextareaMacros_mant102">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: left !important">
+                            <label>Rutina Mantenimiento Equipos, Maximo (5,700 caracteres)</label>
+                        </div>
+                        <div class="salto-linea"></div>
+                        <textarea id="rutina_macroProtocolo_mant102" class="form-control col-md-12 col-sm-12"
+                            disabled="disabled" rows="15" maxlength="5700" data-orden="1"
+                            style="display: flex; justify-content:space-between;resize: none; text-align: justify"></textarea>
+
+                        <div class="salto-linea"></div>
+                    </div>
+
+                </div>
+                <div class="col-md-12 sol-sm-12 col-xs-12 box-center"
+                    style="display: grid;grid-template-columns: 63% 74%; margin-left: 11%;">
+                    <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                        <label>Operador creación:</label>
+                        <input id="creacion_mant102" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                            disabled="disabled">
+                    </div>
+                    <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                        <label>Fecha creación:</label>
+                        <input id="fecha_creacion_mant102" class="form-control col-md-12 col-sm-12 col-xs-12"
+                            disabled="disabled">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+    .float_mant102 {
+        position: fixed;
+        width: 65px;
+        height: 60px;
+        bottom: 16px;
+        background-color: #476fad;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 1px 1px 1px #999;
+        overflow: hidden;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .float_mant102:hover {
+        box-shadow: 2px 2px 2px #999;
+        transition: padding .5s ease, background-position .5s ease, transform .8s ease;
+        text-decoration: none;
+        color: #FFF;
+    }
+
+    .my-float-mant102 {
+        margin-left: 5px;
+    }
+
+    input {
+        text-align: center;
+    }
+
+    input[type=text] {
+        text-transform: uppercase;
+    }
+</style>
+<script src="../../MANT/scripts/mant102.js" type="text/javascript"></script>

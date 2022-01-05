@@ -1,0 +1,415 @@
+<div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="AIEPI845A">
+    <div v-if="unidad_serv == '08'" class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+        <div class="col-md-12 no-padding">
+
+            <div class="col-md-6 no-padding" style="text-align: left;border-right:  1.5px solid #ececec">
+
+                <div class="col-md-6" style="display: flex;justify-content: space-between;top: 8px;">
+
+                    <div class="col-md-11 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                        id="validarEmbarazoDeseado">
+                        <label style="position: relative;top: 6px;">Embarazo deseado ?</label>
+                        <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                            <input v-model="DETALLE_HISTORIA.antec_perinatal.embarazo_deseado" type="text" maxlength="1"
+                                placeholder="N" data-orden="1" disabled="disabled"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-4 col-xs-12" id="validarPatolEmbarazo" style="text-align: left">
+                    <label>Patología embarazo</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input data-orden="1" maxlength="30" type="text"
+                                v-model="DETALLE_HISTORIA.antec_perinatal.patol_embarazo" style="text-align: left;"
+                                required="true" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                                disabled="disabled">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 col-sm-4 col-xs-12" id="validarPatolParto" style="text-align: left">
+                    <label>Patología parto</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input data-orden="1" maxlength="30" type="text"
+                                v-model="DETALLE_HISTORIA.antec_perinatal.patol_parto" style="text-align: left;"
+                                required="true" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                                disabled="disabled">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-4 col-xs-12" id="validarPatolPuerperio" style="text-align: left">
+                    <label>Patología puerperio</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input data-orden="1" maxlength="30" type="text"
+                                v-model="DETALLE_HISTORIA.antec_perinatal.patol_puerperio" style="text-align: left;"
+                                required="true" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                                disabled="disabled">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12" id="validarLugarNacim" style="text-align: left">
+                    <label>Lugar nacimiento</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input data-orden="1" maxlength="20" type="text"
+                                v-model="DETALLE_HISTORIA.antec_perinatal.lugar_nacimiento" style="text-align: left;"
+                                required="true" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                                disabled="disabled">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 no-padding" style="display: flex;justify-content: space-between;">
+
+                    <div class="col-md-4 col-sm-4 col-xs-12" style="text-align: left">
+                        <label>Apgar 1 Min</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" v-model="DETALLE_HISTORIA.antec_perinatal.apgar_1_min"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12" style="text-align: left; padding-left: 8px;">
+                        <label>Apgar 5 Min</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" v-model="DETALLE_HISTORIA.antec_perinatal.apgar_5_min"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12" style="text-align: left; padding-left: 6px;">
+                        <label>Apgar 10 Min</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" v-model="DETALLE_HISTORIA.antec_perinatal.apgar_10_min"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12 no-padding" style="display: flex;justify-content: space-between;">
+
+                    <div class="col-md-5 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                        id="validarAtencionPerinatal">
+                        <label style="position: relative;top: 6px;">Atención perinatal ?</label>
+                        <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                            <input v-model="DETALLE_HISTORIA.antec_perinatal.atencion_perinatal" type="text"
+                                maxlength="1" placeholder="N" data-orden="1" disabled="disabled"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarReanimacion">
+                        <label style="position: relative;top: 6px;">Reanimación ?</label>
+                        <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                            <input type="text" maxlength="1" placeholder="N" data-orden="1"
+                                v-model="DETALLE_HISTORIA.antec_perinatal.reanimacion" disabled="disabled"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12 no-padding" style="display: flex;justify-content: space-between;">
+
+                    <div class="col-md-5 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarGrupoSangMadre">
+                        <label style="position: relative;top: 6px;">Grupo sang Madre</label>
+                        <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                            <input v-model="DETALLE_HISTORIA.antec_perinatal.grupo_sang_madre" type="text" maxlength="2"
+                                data-orden="1" disabled="disabled" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                style="text-align: center;">
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarRhMadre">
+                        <label style="position: relative;top: 6px;">RH Madre </label>
+                        <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                            <input v-model="DETALLE_HISTORIA.antec_perinatal.rh_madre" type="text" maxlength="1"
+                                data-orden="1" disabled="disabled" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                style="text-align: center;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12 no-padding" style="display: flex;justify-content: space-around;">
+
+                    <div class="col-md-4 col-sm-4 col-xs-12" style="text-align: left">
+                        <label>Serología Madre</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input data-orden="1" type="text" v-model="textos.serologia_madre"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12" style="text-align: left">
+                        <label>Lactancia materna</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input data-orden="1" type="text" v-model="textos.lactancia_materna"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6" style="padding-left: 15px;">
+
+                <div class="col-md-12 no-padding" style="text-align: left;border-bottom:  1.5px solid #ececec">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="text-align: center;">
+                        <label>Patologias del recién nacido</label>
+                        <div class="tooltip-proft left-text">
+                            <span class="icon-proft icon-info"></span>
+                            <span class="tiptext">
+                                <div>Opciones respuesta: S (si),N (no),I (ignora)</div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-12 no-padding" style="display: flex;justify-content: space-between;">
+
+                        <div class="col-md-5 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarSano">
+                            <label style="position: relative;top: 6px;">Sano ?</label>
+                            <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                                <input v-model="DETALLE_HISTORIA.antec_perinatal.sano" type="text" maxlength="1"
+                                    placeholder="N" data-orden="1" disabled="disabled"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarHemorragias">
+                            <label style="position: relative;top: 6px;">Hemorragias ?</label>
+                            <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                                <input v-model="DETALLE_HISTORIA.antec_perinatal.hemorragias" type="text" maxlength="1"
+                                    placeholder="N" data-orden="1" disabled="disabled"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-12 no-padding" style="display: flex;justify-content: space-between;">
+
+                        <div class="col-md-5 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarInfecciones">
+                            <label style="position: relative;top: 6px;">Infecciones ?</label>
+                            <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                                <input v-model="DETALLE_HISTORIA.antec_perinatal.infecciones" type="text" maxlength="1"
+                                    placeholder="N" data-orden="1" disabled="disabled"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                            id="validarDeformasCongeni">
+                            <label style="position: relative;top: 6px;">Deformac congeni ?</label>
+                            <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                                <input v-model="DETALLE_HISTORIA.antec_perinatal.deforma_cong" type="text" maxlength="1"
+                                    placeholder="N" data-orden="1" disabled="disabled"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-12 no-padding" style="display: flex;justify-content: space-between;">
+
+                        <div class="col-md-5 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                            id="validarHipoglicemia">
+                            <label style="position: relative;top: 6px;">Hipoglicemia ?</label>
+                            <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                                <input v-model="DETALLE_HISTORIA.antec_perinatal.hipoglicemia" type="text" maxlength="1"
+                                    placeholder="N" data-orden="1" disabled="disabled"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarApnea">
+                            <label style="position: relative;top: 6px;">Apnea ?</label>
+                            <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                                <input v-model="DETALLE_HISTORIA.antec_perinatal.apnea" type="text" maxlength="1"
+                                    placeholder="N" data-orden="1" disabled="disabled"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-12 no-padding" style="display: flex;justify-content: space-between;">
+
+                        <div class="col-md-5 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarIctericia">
+                            <label style="position: relative;top: 6px;">Ictericia ?</label>
+                            <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                                <input type="text" maxlength="1" placeholder="N" data-orden="1"
+                                    v-model="DETALLE_HISTORIA.antec_perinatal.ictericia" disabled="disabled"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                            id="validarBroncoaspiracion">
+                            <label style="position: relative;top: 6px;">Broncoaspiración ?</label>
+                            <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                                <input type="text" maxlength="1" placeholder="N" data-orden="1"
+                                    v-model="DETALLE_HISTORIA.antec_perinatal.broncoasp" disabled="disabled"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-12 no-padding" style="display: flex;justify-content: space-between;">
+
+                        <div class="col-md-5 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarNeurologias">
+                            <label style="position: relative;top: 6px;">Neurologías ?</label>
+                            <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                                <input v-model="DETALLE_HISTORIA.antec_perinatal.neurologia" type="text" maxlength="1"
+                                    placeholder="N" data-orden="1" disabled="disabled"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarMembHialina">
+                            <label style="position: relative;top: 6px;">Membrana Hialina ?</label>
+                            <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                                <input v-model="DETALLE_HISTORIA.antec_perinatal.memb_hialina" type="text" maxlength="1"
+                                    placeholder="N" data-orden="1" disabled="disabled"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="text-align: center;">
+                    <label>Hermanos</label>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-4 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarNroHermanos">
+                    <label style="position: relative;top: 8px;"># de hermanos</label>
+                    <div class="col-md-4 no-padding inline-inputs" style="float: right;">
+                        <input v-model="DETALLE_HISTORIA.antec_perinatal.nro_hermanos" type="number" maxlength="2"
+                            data-orden="1" disabled="disabled" class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center;">
+                    </div>
+                </div>
+
+                <div v-if="DETALLE_HISTORIA.antec_perinatal.nro_hermanos != '00' && DETALLE_HISTORIA.antec_perinatal.nro_hermanos != ''"
+                    class="col-md-5 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarHermanosMuertos">
+                    <label style="position: relative;top: 8px;">Muertos < 5 años</label>
+                            <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                                <input v-model="DETALLE_HISTORIA.antec_perinatal.hermanos_muer" type="number"
+                                    maxlength="2" data-orden="1" disabled="disabled" required="true"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                            </div>
+                </div>
+
+
+                <div v-if="DETALLE_HISTORIA.antec_perinatal.nro_hermanos != '00' && DETALLE_HISTORIA.antec_perinatal.nro_hermanos != ''"
+                    class="col-md-3 col-sm-12 col-xs-12 form-group form-md-checkboxes">
+                    <label style="position: relative;top: 8px;">Vivos</label>
+                    <div class="col-md-5 no-padding inline-inputs" style="float: right;">
+                        <input v-model="DETALLE_HISTORIA.antec_perinatal.hermanos_vivos" type="text" disabled="disabled"
+                            class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center;">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="salto-linea"></div>
+
+        <div class="col-md-12 no-padding" style="border-top: 1.5px solid #ececec">
+
+            <div class="salto-linea"></div>
+            <div class="salto-linea"></div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex; justify-content: space-around">
+                <div class="col-md-2" style="top: 19px;">
+                    <label>Patologías familiares</label>
+                    <label>(300 caracteres máximo)</label>
+                </div>
+
+                <div class="col-md-9 col-sm-12 col-xs-12" id="validarPatologiasFamiliares">
+                    <div class="col-md-12">
+
+                        <textarea v-model="DETALLE_HISTORIA.antec_perinatal.patologias_familiares" class="form-control"
+                            rows="3" maxlength="300" data-orden="1" disabled="disabled"
+                            style="resize: none;font-size: 15px; text-align: justify" required="true"></textarea>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="col-md-12"
+                            style="display: flex; justify-content: center; border-top:  1.5px solid #ececec">
+
+                            <div class="col-md-6 no-padding">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label></label>
+                                    <label>(300 caracteres máximo)</label>
+                                </div>
+                                <textarea class="form-control"
+                                    v-model="DETALLE_HISTORIA.antec_perinatal.patologias_familiares" disabled="disabled"
+                                    rows="3" maxlength="300" data-orden="1" required="true"
+                                    style="resize: none; text-align: justify"></textarea>
+                            </div>
+                        </div> -->
+
+    </div>
+
+    <div v-else class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validar_Antecedentes_text">
+            <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                <label>Digite:</label>
+                <label>(19,000 caracteres máximo)</label>
+            </div>
+            <textarea class="form-control" v-model="DETALLE_HISTORIA.antec_perinatal_text" disabled="disabled" rows="15"
+                maxlength="19000" data-orden="1" required="true" style="resize: none; text-align: justify"></textarea>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script src="../../HICLIN/scripts/AIEPI845A.js" type="text/javascript"></script>

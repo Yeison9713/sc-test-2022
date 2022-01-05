@@ -1,0 +1,134 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SAL544T">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="form-group col-md-10 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                    <label>Fecha inicio</label>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                    <label>Fecha Final</label>
+                </div>
+                <div id="fechaInicial_SAL544T">
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                            <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.anoini_SAL544T'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                            <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.mesini_SAL544T'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                            <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.diaini_SAL544T'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="fechaFinal_SAL544T">
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                            <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.anofin_SAL544T'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                            <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.mesfin_SAL544T'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                            <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.diafin_SAL544T'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-10 col-sm-12 col-xs-12 box-center" style="float: none; margin: 0 auto;">
+                <div class="col-md-6 col-sm-4 col-xs-12" id="VALIDAR1_SAL544T">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-5 col-xs-12">Cod entidad:</label>
+                        <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                            <input v-model="form.entidad_SAL544T" @Keyup.F8='_f8entidad_SAL544T' data-orden="1" maxlength="6" 
+                            class="form-control col-md-12 col-sm-12 col-xs-12 entidad_SAL544T">
+                        </div>
+                        <button type="button" @click='_f8entidad_SAL544T'
+                            class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-8 col-sm-7 col-xs-12">
+                            <input v-model="form.descripentidad_SAL544T"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-4 col-xs-12" id="VALIDAR2_SAL544T">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-5 col-xs-12">Medico:</label>
+                        <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                            <input v-model="form.medico_SAL544T" @Keyup.F8='_f8medico_SAL544T' data-orden="1" maxlength="10"
+                                class="form-control col-md-12 col-sm-12 col-xs-12 medico_SAL544T">
+                        </div>
+                        <button type="button" @click='_f8medico_SAL544T'
+                            class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-8 col-sm-7 col-xs-12">
+                            <input v-model="form.descripmedico_SAL544T"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>   
+                <div class="salto-linea"></div> 
+                <div class="col-md-6 col-sm-4 col-xs-12" id="VALIDAR3_SAL544T">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-5 col-xs-12">Incluir los NO atendidos :</label>
+                        <div class="input-group col-md-5 col-sm-7 col-xs-12">
+                            <input v-model="form.atendidos_SAL544T" data-orden="1" maxlength="1" placeholder="S/N"
+                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-4 col-xs-12" id="VALIDAR4_SAL544T">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-5 col-xs-12">Incluir reingresos:</label>
+                        <div class="input-group col-md-5 col-sm-7 col-xs-12">
+                            <input v-model="form.reingresos_SAL544T" data-orden="1" maxlength="1" placeholder="S/N"
+                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SAL544T.js" type="text/javascript"></script>

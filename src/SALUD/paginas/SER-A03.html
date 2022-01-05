@@ -1,0 +1,405 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id='SERA03'>
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="col-md-8 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-12 col-xs-12">Novedad:</label>
+                            <div class="input-group col-md-6 col-sm-12 col-xs-12">
+                                <input v-model="novedad_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-12 col-xs-12">Año:</label>
+                            <div class="input-group col-md-7 col-sm-12 col-xs-12" id="VALIDAR01_A03">
+                                <input v-model="ano_SERA03" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-5 col-xs-12">Consecutivo:</label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-12" id="VALIDAR02_A03">
+                                <input v-model="consecutivo_SERA03" id="con_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="6" @Keyup.F8='_f8consecutivo_SERA03'>
+                            </div>
+                            <button type="button" @click='_f8consecutivo_SERA03'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-12 col-xs-12">Factura:</label>
+                            <div class="input-group col-md-2 col-sm-12 col-xs-12" id="VALIDAR03_A03">
+                                <input id="prefijo_SERA03" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                            </div>
+                            <div class="input-group col-md-5 col-sm-12 col-xs-12" id="VALIDAR04_A03">
+                                <input id="factura_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" 
+                                       maxlength="6" @Keyup.F8='_f8numeracion_SERA03'>
+                            </div>
+                            <button type="button" @click='_f8numeracion_SERA03'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="VALIDAR05_A03">
+                        <div class="inline-inputs">
+                            <label class="col-md-2 col-sm-12 col-xs-12">Entidad:</label>
+                            <div class="input-group col-md-3 col-sm-12 col-xs-12">
+                                <input v-model="entidad_SERA03" type="text" @Keyup.F8='_f8entidad_SERA03'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="6">
+                            </div>
+                            <button type="button" @click='_f8entidad_SERA03'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-6 col-sm-12 col-xs-12">
+                                <input type="text" v-model='descripentidad_SERA03'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="VALIDAR06_A03">
+                        <div class="inline-inputs">
+                            <label class="col-md-2 col-sm-12 col-xs-12">Paciente:</label>
+                            <div class="input-group col-md-3 col-sm-12 col-xs-12">
+                                <input id="paciente_SERA03" type="text" @Keyup.F8='_f8paciente_SERA03'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="15">
+                            </div>
+                            <button type="button" @click='_f8paciente_SERA03'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-6 col-sm-12 col-xs-12">
+                                <input type="text" v-model='descrippaciente_SERA03'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-5 col-sm-12 col-xs-12" id="VALIDAR11_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-12 col-xs-12">Radicado:</label>
+                            <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                <input v-model="radicado_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="8">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-12 col-xs-12">Estado:</label>
+                            <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                <input v-model="estado_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12 col-xs-12 " style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="VALIDAR07_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-12 col-xs-12">Recep. ent:</label>
+                            <div class="input-group col-md-2 col-sm-12 col-xs-12">
+                                <input v-model="anoent_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="4" required="true">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-12 col-xs-12">
+                                <input v-model="mesent_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="2" maxlength="2" required="true">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-12 col-xs-12">
+                                <input v-model="diaent_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="3" maxlength="2" required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="VALIDAR08_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-12 col-xs-12">Recep. aud:</label>
+                            <div class="input-group col-md-2 col-sm-12 col-xs-12">
+                                <input v-model="anoaud_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="4" required="true">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-12 col-xs-12">
+                                <input v-model="mesaud_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="2" maxlength="2" required="true">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-12 col-xs-12">
+                                <input v-model="diaaud_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="3" maxlength="2" required="true">
+                            </div>
+                            <!-- <div class="input-group col-md-6 col-sm-12 col-xs-12">
+                                <input v-model="fechaaud_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="8">
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="VALIDAR09_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-12 col-xs-12">Ult. doc:</label>
+                            <div class="input-group col-md-2 col-sm-12 col-xs-12">
+                                <input v-model="anoultdoc_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="4" required="true">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-12 col-xs-12">
+                                <input v-model="mesultdoc_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="2" maxlength="2" required="true">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-12 col-xs-12">
+                                <input v-model="diaultdoc_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="3" maxlength="2" required="true">
+                            </div>
+                            <!-- <div class="input-group col-md-6 col-sm-12 col-xs-12">
+                                <input v-model="fechault_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="8">
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="VALIDAR10_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-12 col-xs-12">Contabilid:</label>
+                            <div class="input-group col-md-2 col-sm-12 col-xs-12">
+                                <input v-model="anocontab_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="4" required="true">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-12 col-xs-12">
+                                <input v-model="mescontab_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="2" maxlength="2" required="true">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-12 col-xs-12">
+                                <input v-model="diacontab_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="3" maxlength="2" required="true">
+                            </div>
+                            <!-- <div class="input-group col-md-6 col-sm-12 col-xs-12">
+                                <input v-model="fechacontab_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="8">
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="elementos-adicionales">
+                    <div class="col-md-1 col-sm-12 col-xs-12" id="VALIDAR12_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-12 col-xs-12">Item:</label>
+                            <div class="input-group col-md-6 col-sm-12 col-xs-12">
+                                <input id="item_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-12 col-xs-12" id="VALIDAR13_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-12 col-xs-12">Referencia:</label>
+                            <div class="input-group col-md-7 col-sm-12 col-xs-12">
+                                <input v-model="referencia_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="10">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12" id="VALIDAR14_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-2 col-sm-12 col-xs-12">Motivo:</label>
+                            <div class="input-group col-md-2 col-sm-3 col-xs-12">
+                                <input v-model="motivo_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12 motivoclass_SERA03"
+                                    data-orden="1" maxlength="3" @Keyup.F8='_ventanamotivosglosa_SERA03'>
+                            </div>
+                            <button type="button" @click='_ventanamotivosglosa_SERA03'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-7 col-sm-6 col-xs-12">
+                                <input v-model="motivod_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12" id="VALIDAR15_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-12 col-xs-12">Fecha:</label>
+                            <div class="input-group col-md-4 col-sm-12 col-xs-12">
+                                <input v-model="anomotivo_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="4" required="true">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-12 col-xs-12">
+                                <input v-model="mesmotivo_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="2" maxlength="2" required="true">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-12 col-xs-12">
+                                <input v-model="diamotivo_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="3" maxlength="2" required="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" >
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="elementos-adicionales">
+                    <div class="col-md-12 col-sm-6 col-xs-12" id="VALIDARRESP_SERA03">
+                        <label class="col-md-12 col-sm-12 col-xs-12">Respuesta Glosa</label>
+                        <textarea v-model="respuesta_SERA03" class="form-control" rows="7" data-orden="1"
+                            maxlength="900" style="resize: none;" required></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-2 col-xs-12" id="VALIDAR16_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-5 col-xs-12">Valor Glosa:</label>
+                            <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                <input id="valorglosa_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="8">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-2 col-xs-12" id="VALIDAR17_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-5 col-xs-12">Valor Soportado:</label>
+                            <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                <input id="valorsoportado_SERA03"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-2 col-xs-12" id="VALIDAR18_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-5 col-xs-12">Valor aceptado:</label>
+                            <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                <input id="valoraceptado_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="8">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 " style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-2 col-xs-12" id="VALIDAR19_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-5 col-xs-12">Total Glosa:</label>
+                            <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                <input id="totalglosa_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="8">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-2 col-xs-12" id="VALIDAR20_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-5 col-xs-12">Total soportado:</label>
+                            <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                <input id="totalsoportado_SERA03"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="8">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-2 col-xs-12" id="VALIDAR21_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-5 col-xs-12">Total aceptado:</label>
+                            <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                <input id="totalaceptado_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="8">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 " style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-2 col-xs-12" id="VALIDAR22_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-5 col-xs-12">Total fact:</label>
+                            <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                <input id="totalfact_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="8">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-2 col-xs-12" id="VALIDAR23_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-5 col-xs-12">Abonos:</label>
+                            <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                <input id="abonos_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="8">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-2 col-xs-12" id="VALIDAR24_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-5 col-xs-12">Saldo fact:</label>
+                            <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                <input id="saldofact_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="8">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-2 col-xs-12" id="VALIDAR25_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-5 col-xs-12">Valor recobro:</label>
+                            <div class="input-group col-md-8 col-sm-12 col-xs-12">
+                                <input v-model="valorrecobro_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="8">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="VALIDAR26_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Responsable:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input v-model="responsable_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="10">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="VALIDAR27_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Creado:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input v-model="opercreado_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="8">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="VALIDAR27_SERA03">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Modificado:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input v-model="opermodif_SERA03" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="8">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SER-A03.js" type="text/javascript"></script>

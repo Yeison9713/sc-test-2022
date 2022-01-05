@@ -1,0 +1,75 @@
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+</style>
+
+<div class="col-md-12" id="GET_CITAS">
+  <div class="portlet light no-padding" style="background-color: transparent !important; box-shadow: none !important">
+    <div class="portlet-body">
+      <div class="form-horizontal">
+        <transition>
+          <div class="modal-mask">
+            <div class="modal-wrapper">
+              <div class="col-md-8 no-padding form-group box-center">
+                  <h4 style="margin-top: 10px; font-weight: 500;">VENTANA CONSULTA DE CITAS</h4>
+
+                <div class="col-md-12 inline-inputs" style="padding: 15px; padding-top: 0; margin-top: 7px;">
+                    <div class="col-md-2 inline-inputs no-padding" style="float: none;">
+                        <label class="col-md-6" style="background: 0;">Año</label>
+                        <div class="col-md-6 input-group" id="ano_citas">
+                            <input v-model="ano_citas" type="number" class="form-control text-center" data-orden="1" required="true" maxlength="4">
+                        </div>
+                    </div>
+                      
+                    <div class="col-md-10 inline-inputs" style="float: none;">
+                        <label class="col-md-2" style="background: 0;">Id paciente</label>
+                        <div class="col-md-3 input-group" id="id_paci">
+                            <input v-model="id_paci" type="text" class="form-control text-center id_paci" data-orden="1" required="true" maxlength="15" @keydown.f8="_ventanaPacientes">
+                        </div>
+                        <button @click="_ventanaPacientes" type="button" class="btn col-md-1 f8-Btn">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="col-md-6 input-group">
+                            <input v-model="descrip_paci" type="text" class="form-control text-center" style="margin-left: 10px;" required="true">
+                        </div>
+                    </div>
+                </div>
+
+                <div v-if="mostrar_tabla" class="col-md-12 no-padding">
+                    <table class="table table-light table-striped" style="margin-bottom: 0px; width: 99%">
+                      <thead>
+                        <tr>
+                          <th class="col-md-2 text-center">Fecha</th>
+                          <th class="col-md-1 text-center">Hora</th>
+                          <th class="col-md-4 text-center">Medico Refiere</th>
+                          <th class="col-md-5 text-center">Observación</th>
+                        </tr>
+                      </thead>
+                    </table>
+                    <div style="max-height: 532px; overflow-y: scroll; display: inline-block; width: 100%">
+                      <table id="tabla_citas" class="table table-light table-striped" style="margin-bottom: 0px">
+                        <tbody>
+                          <tr v-for="(registro, index) in tabla_citas">
+                            <td class="col-md-2 text-center">{{ registro.FECHA_CITA }}</td>
+                            <td class="col-md-1 text-center">{{ registro.HORA_CITA }}</td>
+                            <td class="col-md-4 text-left">{{ registro.NOMBRE_PROFESIONAL }}</td>
+                            <td class="col-md-5 text-left">{{ registro.OBSERVACION_CITA }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../../HICLIN/scripts/GET_CITAS.js" type="text/javascript"></script>

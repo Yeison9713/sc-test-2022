@@ -1,0 +1,298 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id='FAC135'>
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="float: none; margin: 0 auto;">
+                    <!-- <div class="salto-linea"></div> -->
+                    <div class="col-md-1 col-sm-1 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model='form.lote_FAC135'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model='form.nombrelote_FAC135'
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model='form.nombreusu_FAC135'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-5">NUMERO:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                <input v-model='form.comprobante_FAC135'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">FECHA DE ELABORACION:</label>
+                            <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                                <input v-model='form.anoelab_FAC135' class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-3 col-sm-7 col-xs-12">
+                                <input v-model='form.meselab_FAC135' class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-3 col-sm-7 col-xs-12" id='VALIDAR1_FAC135'>
+                                <input v-model='form.diaelab_FAC135' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="2" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6" id= 'VALIDARRECAUDO_FAC135'>
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">FECHA DE RECAUDO:</label>
+                            <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                                <input v-model='form.anorecaudo_FAC135' maxlength="2" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-7 col-xs-12">
+                                <input v-model='form.mesrecaudo_FAC135' maxlength="2" data-orden="2"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-7 col-xs-12">
+                                <input v-model='form.diarecaudo_FAC135' maxlength="2" data-orden="3"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-4 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Nombre tercero:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                <input v-model='form.tercero_FAC135' class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" id="VALIDAR2_FAC135">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Suc:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                <input v-model='form.sucursal_FAC135' maxlength="2" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Factura:</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12" id="VALIDAR3_FAC135">
+                                <input v-model='form.prefijo_FAC135' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                            </div>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="VALIDAR4_FAC135">
+                                <input v-model='form.factura_FAC135' @Keyup.F8='_f8numeracion_FAC135'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 factura_fac135" data-orden="1" maxlength="6">
+                            </div>
+                            <button type="button" @click='_f8numeracion_FAC135'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-2 col-xs-12" id="VALIDAR5_FAC135">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-5 col-xs-12">Tipo:</label>
+                            <div class="input-group col-md-9 col-sm-7 col-xs-12">
+                                <input v-model='form.tipofact_FAC135' maxlength="1" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-1 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-4 col-xs-4">
+                                <input v-model='form.numerotabla_FAC135'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 numerotabla_FAC135">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-6 col-sm-8 col-xs-8" id="VALIDAR6_FAC135">
+                                <input v-model='form.codcontable_FAC135' maxlength="12" data-orden="1"
+                                    @Keyup.F8='_f8ctacontable_FAC135'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 codcontable_fac135">
+                            </div>
+                            <button type="button" @click='_f8ctacontable_FAC135'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model='form.nombrecta_FAC135'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDAR6_1_FAC135">
+                                <input v-model='form.tercerotabla_FAC135' data-orden="1" maxlength="10"
+                                    @Keyup.F8='_f8terceros_FAC135'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 tercero_fac135">
+                            </div>
+                            <button type="button" @click='_f8terceros_FAC135'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-5 col-sm-12 col-xs-12" id="VALIDAR6_2_FAC135">
+                                <input v-model='form.prefijotabla_FAC135' data-orden="1" maxlength="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDAR6_3_FAC135">
+                                <input v-model='form.facturatabla_FAC135' data-orden="1" maxlength="7" @Keyup.F8='_f8factura_FAC135' 
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 facturatabla_FAC135">
+                            </div>
+                            <button type="button" @click='_f8factura_FAC135'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div> 
+                    <div class="col-md-3 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDAR7_FAC135">
+                                <input v-model='form.debito_FAC135' maxlength="14" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDAR8_FAC135">
+                                <input v-model='form.credito_FAC135' maxlength="14" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <table id="TITULOSTABLA_FAC135" class="table table-light table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 5%; text-align: center;">#</th>
+                                <th style="width: 15%; text-align: center;">Cod.contable</th>
+                                <th style="width: 20%; text-align: center;">Nombre cta</th>
+                                <th style="width: 15%; text-align: center;">Tercero</th>
+                                <th style="width: 15%; text-align: center;">Fact.</th>
+                                <th style="width: 15%; text-align: center;">Débito</th>
+                                <th style="width: 15%; text-align: center;">Crédito</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div>
+                        <table id="TABLARECIBOSCAJA_FAC135" class="table table-light table-striped">
+                            <tbody>
+                                <tr v-for="(row, index) in tablareccaja_FAC135">
+                                    <td style="width: 5%; text-align: center;">
+                                        {{index + 1}}
+                                    </td>
+                                    <td style="width: 15%; text-align: center;">
+                                        {{row.CODIGO_CONTROL}}
+                                    </td>
+                                    <td style="width: 20%; text-align: center;">
+                                        {{row.DESCRIP_CODIGO}}
+                                    </td>
+                                    <td style="width: 15%; text-align: center;">
+                                        {{row.NIT}}
+                                    </td>
+                                    <td style="width: 15%; text-align: center;">
+                                        {{row.SUCURSAL + row.DOCUM}}
+                                    </td>
+                                    <td style="width: 15%; text-align: center;">
+                                        {{row.VALORDEBITO}}
+                                    </td >
+                                    <td style="width: 15%; text-align: center;">
+                                        {{row.VALORCREDITO}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-9 col-sm-8 col-xs-12" id="VALIDAR9_FAC135">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-12">Detalle:</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-12" >
+                                <input v-model='form.detalle_FAC135' data-orden="1" maxlength="51"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model='form.totaldebito_FAC135' maxlength="12"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model='form.totalcredito_FAC135' maxlength="12"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-3 col-xs-12" id="VALIDAR10_FAC135">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Centro costo:</label>
+                            <div class="input-group col-md-3 col-sm-7 col-xs-12" data-orden="1" maxlength="4">
+                                <input v-model='form.centrocosto_FAC135'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <button type="button" class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12" data-orden="1" maxlength="4">
+                                <input v-model='form.descripcosto_FAC135'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-2 col-xs-12 hidden" id="VALIDAR11_FAC135">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Documento:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                <input v-model='form.documento_FAC135' maxlength="6"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-2 col-xs-12 hidden" id="VALIDAR12_FAC135">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Referencia:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                <input v-model='form.refencia_FAC135' maxlength="6"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-2 col-xs-12 hidden" id="VALIDAR13_FAC135">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Diferencia:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                <input v-model='form.diferencia_FAC135' maxlength="12"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../SALUD/scripts/FAC135.js" type="text/javascript"></script>

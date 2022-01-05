@@ -1,0 +1,204 @@
+<div class="col-md-7 col-sm-12" style="float: none; margin: 0 auto;">
+    <div class="portlet light box-center box-title" style="margin: 0 auto;">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject bold">1,2,4 - Actualizacion Lotes De Movimiento</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <form class="form-horizontal">
+
+                <div class="col-md-7 col-sm-12 col-xs-12" style="float: none; margin: 0 auto;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex">
+                            <div class="col-md-6 col-sm-8 col-xs-12 inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Novedad:</label>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                    <input id="novCon110i" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="col-md-7 col-sm-12 col-xs-12" style="float: none; margin: 0 auto;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+
+                        <div class="col-md-4 col-sm-6 col-xs-12" id="lote">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-5">Lote:</label>
+                                <div class="input-group col-md-4 col-sm-5 col-xs-5">
+                                    <input id="lote_110I" type="text" maxlength="2" data-orden="1" required
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <button type="button" id="loteBtn_110I"
+                                    class="btn btn-default col-md-3 col-sm-2 col-xs-2">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 col-sm-6 col-xs-12" id="nombre">
+                            <div class="inline-inputs">
+                                <label class="col-md-3 col-sm-3 col-xs-3">Nombre:</label>
+                                <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                    <input id="nombre110I" type="text" data-orden="1" maxlength="30"
+                                        class="form-control text-uppercase col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-md-7 col-sm-12 col-xs-12" style="float: none; margin: 0 auto;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+
+                            <div class="inline-inputs" id="consecutivo">
+                                <label class="col-md-7 col-sm-7 col-xs-8">Tipo Consecutivo:</label>
+                                <div class="input-group col-md-5 col-sm-5 col-xs-4">
+                                    <input id="consec_110I" type="text" maxlength="3" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-7 col-sm-7 col-xs-12" style="display: flex">
+                            <div class="col-md-12 col-sm-12 col-xs-12 inline-inputs" id="prefijo">
+                                <label class="col-md-8 col-sm-8 col-xs-8">Usar unicamente con el prefijo:</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                                    <input id="pref_110I" type="text" maxlength="1" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <button type="button" id="prefBtn_110I"
+                                    class="btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-7 col-sm-12 col-xs-12" style="float: none; margin: 0 auto;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label>Seleccione :</label>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex">
+                            <div class="col-md-6 col-sm-10 col-xs-10 form-group form-md-checkboxes">
+                                <div class="md-checkbox-list">
+                                    <label>Permite cruzar con presupuesto? :</label>
+                                    <div class="md-checkbox" style="float:right">
+                                        <input type="checkbox" id="PRESU_110I" class="md-check">
+                                        <label for="PRESU_110I">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span> </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex">
+                            <div class="col-md-6 col-sm-10 col-xs-10 form-group form-md-checkboxes">
+                                <div class="md-checkbox-list">
+                                    <label>Ingreso sin situacion fondos? :</label>
+                                    <div class="md-checkbox" style="float:right">
+                                        <input type="checkbox" id="INGRE_110I" class="md-check">
+                                        <label for="INGRE_110I">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span> </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex">
+                            <div class="col-md-6 col-sm-10 col-xs-10 form-group form-md-checkboxes">
+                                <div class="md-checkbox-list">
+                                    <label>Preguntar numero de contrato? :</label>
+                                    <div class="md-checkbox" style="float:right">
+                                        <input type="checkbox" id="CONTR_110I" class="md-check">
+                                        <label for="CONTR_110I">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span> </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex">
+                            <div class="col-md-6 col-sm-10 col-xs-10 form-group form-md-checkboxes">
+                                <div class="md-checkbox-list">
+                                    <label>Usar unicamente con el prefijo? :</label>
+                                    <div class="md-checkbox" style="float:right">
+                                        <input type="checkbox" id="PREF_110I" class="md-check">
+                                        <label for="PREF_110I">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span> </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex">
+                            <div class="col-md-6 col-sm-10 col-xs-10 form-group form-md-checkboxes">
+                                <div class="md-checkbox-list">
+                                    <label>Imprimir en formato regimen simplificado? :</label>
+                                    <div class="md-checkbox" style="float:right">
+                                        <input type="checkbox" id="IMPR_110I" class="md-check">
+                                        <label for="IMPR_110I">
+                                            <span></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span> </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex">
+                            <div class="col-md-2 col-sm-2 col-xs-4 form-group">
+                                <button id="guardarCon110I" class="col-md-12 btn btn-primary"
+                                    type="button">Guardar</button>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../../CONTAB/scripts/CON110I.js" type="text/javascript"></script>

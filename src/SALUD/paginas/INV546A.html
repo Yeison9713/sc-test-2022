@@ -1,0 +1,80 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id='INV546A'>
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="col-md-8 col-sm-8 col-xs-12" style="padding-left: 0;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="float: none; margin: 0 auto;">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-3">Factura :</label>
+                            <div class="input-group col-md-1 col-sm-1 col-xs-1">
+                                <input v-model='form.prefijo_INV546A' class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-2" id="VALIDAR1_INV546A">
+                                <input v-model='form.numerofactura_INV546A' class="form-control col-md-12 col-sm-12 col-xs-12 numerofactura_INV546A" data-orden="1" maxlength="6" @Keyup.F8='_ventanaNumeracion_INV546A'>
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                                @click='_ventanaNumeracion_INV546A'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                <label class="form-control col-md-12 col-sm-12 col-xs-12" style="background-color: #f5f5f5;">
+                                    {{ form.entidad_INV546A }}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-10 col-xs-10">Incluir comp. sin Valor?</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-2" id="VALIDAR2_INV546A">
+                                <input v-model="form.vlrencero_INV546A" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12" style="padding-left: 0;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="VALIDAR3_INV546A">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Fecha inicio</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                                <input v-model="form.fechainicioaño_INV546A" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="4">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                                <input v-model="form.fechainiciomes_INV546A" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="2" maxlength="2">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                                <input v-model="form.fechainiciodia_INV546A" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="3" maxlength="2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12" style="padding-right: 0;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="VALIDAR4_INV546A">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Fecha final</label>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                                <input v-model="form.fechafinalaño_INV546A" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="4">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                                <input v-model="form.fechafinalmes_INV546A" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="2" maxlength="2">
+                            </div>
+                            <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                                <input v-model="form.fechafinaldia_INV546A" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="3" maxlength="2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <loader_modal :estado="estado_loader" :progreso="progreso" :loader="loader" :label="label_loader"></loader_modal>
+</div>
+<script src="../../SALUD/scripts/INV546A.js" type="text/javascript"></script>

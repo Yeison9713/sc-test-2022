@@ -1,0 +1,79 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER102R">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center" style="float: none; margin: 0 auto;">
+                    <div class="col-md-4 col-sm-4 col-xs-12" id="VALIDAR0_SER102R">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-5 col-xs-12">Novedad:</label>
+                            <div class="input-group col-md-6 col-sm-7 col-xs-12">
+                                <input v-model="form.novedad_SER102R" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-4 col-xs-12" >
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-5 col-xs-12">Nit:</label>
+                            <div class="input-group col-md-4 col-sm-7 col-xs-12" id="VALIDAR1_SER102R">
+                                <input v-model="form.nit_SER102R" id= 'terceros_SER102R' data-orden="1" maxlength="10" @Keyup.F8='_f8terceros_SER102R' 
+                                class="form-control col-md-12 col-sm-12 col-xs-12 terceros_SER102R">
+                            </div>
+                            <button type="button" @click='_f8terceros_SER102R'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-8 col-sm-7 col-xs-12">
+                                <input v-model="form.descripnit_SER102R" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-8 col-sm-4 col-xs-12" >
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-5 col-xs-12">Grupo:</label>
+                            <div class="input-group col-md-6 col-sm-7 col-xs-12" id="VALIDAR2_SER102R">
+                                <input v-model="form.codgrupo_SER102R"  data-orden="1" maxlength="2" @Keyup.F8='_f8grupo_SER102R' 
+                                class="form-control col-md-12 col-sm-12 col-xs-12 grupo_SER102R ">
+                            </div>
+                            <button type="button" @click='_f8grupo_SER102R'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-7 col-xs-12">
+                                <input v-model="form.descripgrupo_SER102R" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-5 col-xs-12">Fecha de creacion:</label>
+                            <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                                <input v-model="form.opercreacion_SER102R" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-6 col-sm-7 col-xs-12">
+                                <input v-model="form.fechacreacion_SER102R" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-4 col-xs-12" >
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-5 col-xs-12">Codigo:</label>
+                            <div class="input-group col-md-4 col-sm-7 col-xs-12" id="VALIDAR3_SER102R">
+                                <input v-model="form.codigo_SER102R" data-orden="1" maxlength="10" @Keyup.F8='_f8codcups_SER102R' 
+                                class="form-control col-md-12 col-sm-12 col-xs-12 codcups_SER102R">
+                            </div>
+                            <button type="button" @click='_f8codcups_SER102R'
+                            class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-8 col-sm-7 col-xs-12" >
+                                <input v-model="form.descripcups_SER102R" data-orden="1" maxlength="20"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SER102R.js" type="text/javascript"></script>

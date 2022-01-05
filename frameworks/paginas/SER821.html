@@ -1,0 +1,104 @@
+<style>
+  @media(max-width: 768px){
+        .popUpF8Ser821{width: 90%!important;}
+    }
+
+  #tablaF8Ser821 tr:hover,.focoTabla {
+          background-color: #f7eaea;
+          box-shadow: 0 0 0px 1px #900000;
+        }
+
+        .popUpF8Ser821 {
+            width: 35%;
+            max-height: 100%;
+            padding: 15px;
+            background: #FFF;
+            box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
+            border-radius: 2px;
+            display: none;
+            margin: 0 auto;
+            z-index: 99999;
+        }
+
+        .overlayF8Servicio {
+            background: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            align-items: center;
+            margin: 0 auto;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        #tablaF8Ser821 {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #tablaF8Ser821 td {
+            padding: 8px;
+            position: relative;
+            font-weight:600;
+            color:black;
+            font-size: 14px
+        }
+
+        #tablaTitulo {
+        border-collapse: collapse;
+        width: 100%;
+         border: 1px solid #900000;
+         font-size: 14px;
+        }
+
+        #tablaTitulo th {
+          background-color: #900000;
+          color: white;
+          text-align: left;
+          padding: 10px;
+          font-size: 18px;
+       }
+
+        #busquedaF8InputSer821{
+          width: 100%;
+          font-size: 15px;
+          padding: 12px;
+          border-radius: 3px;
+          border: none;
+          background: rgba(0,0,0,.1);
+          outline: 0;
+          margin-bottom: 10px;
+          color: black
+        }
+
+        .popup > h2{
+            margin: 0;
+        }
+
+        #contentTableF8Ser821 {
+          max-height: 300px;
+          height: auto;
+          overflow-y: auto;
+        }
+
+        #tituloPopUp {
+          color: #900000;
+          text-align: center;
+          font-weight: 1000;
+        }
+    </style>
+
+<div class="popUpF8Ser821" id="ser821Servicio">
+  <h2 id="tituloPopUp">DESCRIPCION SERVICIOS</h2>
+  <input type="text" class="input-circle" onkeyup="FuncionBusqueda()" id="busquedaF8InputSer821" placeholder="Búsqueda" />
+  <table id="tablaTitulo">
+    <thead>
+      <tr>
+        <th style="width:20%;">Codigo</th>
+        <th style="width:80%;">Descripcion</th>
+      </tr>
+    </thead>
+  </table>
+</div>

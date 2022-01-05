@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+-> Proyecto: Bares y restaurantes
+-> Empresa: Prosoft
+-> Archivo: Cargar base de datos - BAR002
+-->
+<div class="container-fluid">
+    <div class="page-fixed-main-content">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="portlet light portlet-fit portlet-form bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <h4>
+                                <span class="caption-subject font-blue bold uppercase">Carga de sincronizacion</span>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="container">
+                            <div class="col-md-offset-3 col-md-6 col-sm-12 col-xs-12">
+                                <div class="portlet light bordered">
+                                    <div class="portlet-body form">
+                                        <a class="" id="etiqueta-sinc">Cargando informacion...</a>
+                                        <center>
+                                            <button id="btn-sinc-ini" class="btn btn-lg btn-primary" disabled="">Inicie la sincronizacion</button>
+                                        </center>
+                                        <center>
+                                            <img id="imp-sinc" src="../../bar/imagenes/loading.gif">
+                                        </center>
+                                        <input id="dominio-sinc" name="DOMINIO-H" type="text" hidden> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--modal1-->
+            <a hidden id="bar002_modal" data-toggle="modal" href="#small"></a>
+            <div class="modal fade bs-modal-sm" id="small" tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header" style="color: red">
+                            <h4 class="modal-title"><i id="title_modal" class="fa fa-exclamation-triangle"> Advertencia !</i></h4>
+                        </div>
+                        <div id="body_modal" class="modal-body"> </div>
+                        <div class="modal-footer">
+                            <button id="cerrar_modal" type="button" class="btn red-thunderbird" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../bar/paginas/msjProsoft.js"></script>
+<script type="text/javascript" src="../../bar/dist/js/ajax.js"></script>
+<script type="text/javascript" src="../../bar/dist/js/bd.js"></script>
+<script type="text/javascript" src="../../bar/dist/js/bar002.js"></script>
+<script type="text/javascript" src="../../bar/dist/js/notificaciones.js"></script>
+
+

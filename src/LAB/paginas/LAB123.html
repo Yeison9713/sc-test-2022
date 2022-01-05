@@ -1,0 +1,179 @@
+<style>
+    #tablaMacro_LAB123 th {
+        text-align: center;
+    }
+</style>
+
+<div class="col-md-12">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <form class="form-horizontal">
+                <div class="col-md-6 col-sm-6 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-12">Fecha:</label>
+                                <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                    <input id="fecha_LAB123"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-12" id="VALIDAR1_LAB123">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-12">Tipo Serv:</label>
+                                <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                    <input id="claseservicio_LAB123"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12" id="VALIDAR2_LAB123">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-3 col-xs-3">Compr:</label>
+                                <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                    <input id="comprobante_LAB123"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="6">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-9 col-xs-12" style="padding-right: 0; padding-left: 10px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-4 col-xs-12">Factura:</label>
+                                <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                    <input id="factura_LAB123" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-12">Forma de pago:</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-12">
+                                    <input id="pago_LAB123" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <div class="input-group col-md-5 col-sm-5 col-xs-12">
+                                    <input id="pagod_LAB123" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <form class="form-horizontal">
+                <div class="col-md-6 col-sm-6 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-3 col-sm-3 col-xs-12">Paciente:</label>
+                                <div class="input-group col-md-3 col-sm-3 col-xs-12">
+                                    <input id="paciente_LAB123" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                    <input id="paciented_LAB123" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="salto-linea"></div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-3 col-sm-3 col-xs-12">Bacteriologo:</label>
+                                <div class="input-group col-md-3 col-sm-3 col-xs-12">
+                                    <input id="profesional_LAB123" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                    <input id="profesionald_LAB123" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="salto-linea"></div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-12">Sexo:</label>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                    <input id="sexo_LAB123" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-12">Edad:</label>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                    <input id="edad_LAB123" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12" style="padding-right: 0; padding-left: 10px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-3 col-sm-3 col-xs-12">Entidad:</label>
+                                <div class="input-group col-md-3 col-sm-3 col-xs-12">
+                                    <input id="entidad_LAB123" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                    <input id="entidadd_LAB123" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="salto-linea"></div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-3 col-sm-3 col-xs-12">Codigo cups:</label>
+                                <div class="input-group col-md-3 col-sm-3 col-xs-12">
+                                    <input id="cups_LAB123" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                    <input id="descripcups_LAB123" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="salto-linea"></div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-10 col-sm-10 col-xs-12">Desear imprimir el resultado en la lista de
+                                    impresion?:</label>
+                                <div class="input-group col-md-2 col-sm-2 col-xs-12">
+                                    <input id="descripcups_LAB123" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <form class="form-horizontal">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <table class="table table-light table-striped" style="margin-bottom: 0px; width: 99%">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center" class="col-md-1">Item</th>
+                                    <th style="text-align: center" class="col-md-3">Descripción</th>
+                                    <th style="text-align: center" class="col-md-2">Resultado</th>
+                                    <th style="text-align: center" class="col-md-2">Unidad medida</th>
+                                    <th style="text-align: center" class="col-md-4">Plantilla resultado</th>
+                                </tr>
+                            </thead>
+                        </table>
+
+                        <div style="max-height: 432px; overflow-y: scroll; display: inline-block;width: 100%">
+                            <table id="tablaMacro_LAB123" class="table table-light table-striped">
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../../LAB/scripts/LAB123.js" type="text/javascript"></script>

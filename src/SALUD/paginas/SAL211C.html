@@ -1,0 +1,307 @@
+<div class="col-md-12" id="SA211C" style="padding-top: 1rem;">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal no-padding">
+        <div
+          class="col-md-12 no-padding"
+          style="display: flex; justify-content: center;"
+        >
+          <div
+            class="col-xs-12 col-sm-12 col-md-12 col-lg-10 no-padding flex-container"
+          >
+            <div
+              class="col-xs-12 col-sm-8 col-md-8 col-lg-9 flex-container"
+              style="padding: 0;"
+            >
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+                  <div class="portlet light box-center box-title">
+                    <div class="portlet-title">
+                      <div class="caption" style="width: 100%;">
+                        <span class="caption-subject bold">
+                          ARTÍCULO ORIGEN
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+                  <div class="form-group box-center col-12 flex-inputs">
+                    <label style="flex: 2 1 20%; padding-left: 0.5rem;">
+                      Grupo
+                    </label>
+                    <div
+                      id="datoGrupoOrigen"
+                      class="input-group"
+                      style="flex: 1 1 20%;"
+                    >
+                      <input
+                        v-model="art_origen.grupo"
+                        type="text"
+                        class="form-control center datoGrupoOrigen"
+                        @keydown.f8="ventanaGrupos('datoGrupoOrigen')"
+                        data-orden="1"
+                        maxlength="3"
+                        disabled
+                      />
+                    </div>
+                    <div class="input-group" style="flex: 2 2 60%;">
+                      <input
+                        :value="descripGrupoOrigen"
+                        type="text"
+                        class="form-control center"
+                        data-orden="1"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+                  <div class="form-group box-center col-12 flex-inputs">
+                    <label style="flex: 2 1 20%; padding-left: 0.5rem;">
+                      Artículo
+                    </label>
+                    <div
+                      id="datoArticuloOrigen"
+                      class="input-group"
+                      style="flex: 1 1 20%;"
+                    >
+                      <input
+                        v-model="art_origen.articulo"
+                        type="text"
+                        class="form-control center datoArticuloOrigen"
+                        @keydown.f8="ventanaArticulos('datoArticuloOrigen')"
+                        data-orden="1"
+                        maxlength="13"
+                        disabled
+                      />
+                    </div>
+                    <div class="input-group" style="flex: 2 2 60%;">
+                      <input
+                        :value="descripArticuloOrigen"
+                        type="text"
+                        class="form-control center"
+                        data-orden="1"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+                  <div class="form-group box-center col-12 flex-inputs">
+                    <label style="flex: 2 1 20%; padding-left: 0.5rem;">
+                      Clase
+                    </label>
+                    <div
+                      id="datoClaseOrigen"
+                      class="input-group"
+                      style="flex: 1 1 20%;"
+                    >
+                      <input
+                        v-model="art_origen.clase"
+                        type="text"
+                        class="form-control center datoClaseOrigen"
+                        @keydown.f8="ventanaClase('datoClaseOrigen')"
+                        data-orden="1"
+                        maxlength="2"
+                        disabled
+                      />
+                    </div>
+                    <div class="input-group" style="flex: 2 2 60%;">
+                      <input
+                        :value="descripClaseOrigen"
+                        type="text"
+                        class="form-control center"
+                        data-orden="1"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+                  <div class="portlet light box-center box-title">
+                    <div class="portlet-title">
+                      <div class="caption" style="width: 100%;">
+                        <span class="caption-subject bold">
+                          ARTÍCULO DESTINO
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+                  <div class="form-group box-center col-12 flex-inputs">
+                    <label style="flex: 2 1 20%; padding-left: 0.5rem;">
+                      Grupo
+                    </label>
+                    <div
+                      id="datoGrupoDestino"
+                      class="input-group"
+                      style="flex: 1 1 20%;"
+                    >
+                      <input
+                        v-model="art_destino.grupo"
+                        type="text"
+                        class="form-control center datoGrupoDestino"
+                        @keydown.f8="ventanaGrupos('datoGrupoDestino')"
+                        data-orden="1"
+                        maxlength="3"
+                        disabled
+                      />
+                    </div>
+                    <div class="input-group" style="flex: 2 2 60%;">
+                      <input
+                        :value="descripGrupoDestino"
+                        type="text"
+                        class="form-control center"
+                        data-orden="1"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+                  <div class="form-group box-center col-12 flex-inputs">
+                    <label style="flex: 2 1 20%; padding-left: 0.5rem;">
+                      Artículo
+                    </label>
+                    <div
+                      id="datoArticuloDestino"
+                      class="input-group"
+                      style="flex: 1 1 20%;"
+                    >
+                      <input
+                        v-model="art_destino.articulo"
+                        type="text"
+                        class="form-control center datoArticuloDestino"
+                        @keydown.f8="ventanaArticulos('datoArticuloDestino')"
+                        data-orden="1"
+                        maxlength="13"
+                        disabled
+                      />
+                    </div>
+                    <div class="input-group" style="flex: 2 2 60%;">
+                      <input
+                        :value="descripArticuloDestino"
+                        type="text"
+                        class="form-control center"
+                        data-orden="1"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+                  <div class="form-group box-center col-12 flex-inputs">
+                    <label style="flex: 2 1 20%; padding-left: 0.5rem;">
+                      Clase
+                    </label>
+                    <div
+                      id="datoClaseDestino"
+                      class="input-group"
+                      style="flex: 1 1 20%;"
+                    >
+                      <input
+                        v-model="art_destino.clase"
+                        type="text"
+                        class="form-control center datoClaseDestino"
+                        @keydown.f8="ventanaClase('datoClaseDestino')"
+                        data-orden="1"
+                        maxlength="2"
+                        disabled
+                      />
+                    </div>
+                    <div class="input-group" style="flex: 2 2 60%;">
+                      <input
+                        :value="descripClaseDestino"
+                        type="text"
+                        class="form-control center"
+                        data-orden="1"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 box-center">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+                <div class="portlet light box-center box-title">
+                  <div class="portlet-title">
+                    <div class="caption" style="width: 100%;">
+                      <span class="caption-subject bold">
+                        PERÍODO TRASLADO
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-lg-12 no-padding">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+                  <div
+                    class="form-group col-12 flex-inputs"
+                    v-for="(item, index) in meses"
+                  >
+                    <div
+                      :id="`mes_traslado${index}`"
+                      class="input-group"
+                      style="flex: 1 2 20%;"
+                    >
+                      <input
+                        v-model="periodoTraslado[index]"
+                        :key="index"
+                        type="text"
+                        class="form-control text-center"
+                        data-orden="1"
+                        :placeholder="index === 0 ? 'ENE' : ''"
+                        maxlength="3"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <loader_modal
+    :estado="estado_loader"
+    :progreso="progreso"
+    :loader="loader"
+    :label="label_loader"
+  ></loader_modal>
+</div>
+
+<style>
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .flex-container > div {
+    padding: 0.5rem;
+  }
+
+  .flex-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    /* margin: 0 !important; */
+    text-align: start;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+</style>
+
+<script src="../../SALUD/scripts/SAL211C.js"></script>

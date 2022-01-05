@@ -1,0 +1,814 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER108">
+    <div class="portlet-body">
+        <!-- <div class="portlet-body"> -->
+        <form class="form-horizontal">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-3 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-8 col-xs-12">Novedad</label>
+                        <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                            <input v-model='form.novedad_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-8 col-xs-12">Prefijo</label>
+                        <div class="input-group col-md-4 col-sm-4 col-xs-12" id="PREFIJOS_SER108">
+                            <input v-model='form.prefijo_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-8 col-xs-12">N. Factura</label>
+                        <div class="input-group col-md-6 col-sm-4 col-xs-12" id="FACTURASER_SER108">
+                            <input v-model='form.factura_SER108' type="text" @Keyup.F8='_f8factura_SER108'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 factura_SER108" maxlength="6"
+                                data-orden="1">
+                        </div>
+                        <button type="button" @click='_f8factura_SER108'
+                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-8 col-xs-12">Unidad Serv.</label>
+                        <div class="input-group col-md-8 col-sm-4 col-xs-12" id="UNIDSERV_SER108">
+                            <input v-model='form.undservicio_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-6 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-8 col-xs-12">Nit cliente</label>
+                        <div class="input-group col-md-5 col-sm-4 col-xs-12" id="NIT_SER108">
+                            <input v-model='form.nit_SER108' type="text" @Keyup.F8='_f8terceros_SER108'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 cliente_SER108" maxlength="10"
+                                data-orden="1">
+                        </div>
+                        <button type="button" @click='_f8terceros_SER108'
+                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-12 col-sm-4 col-xs-12" id="DESCRIPNIT_SER108">
+                            <input v-model='form.nitd_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="40" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-4 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-8 col-xs-12">Convenio</label>
+                        <div class="input-group col-md-5 col-sm-4 col-xs-12" id="CONVENIO_SER108">
+                            <input v-model='form.convenio_SER108' type="text" @Keyup.F8='_f8convenio_SER108'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 convenio_SER108" maxlength="2"
+                                data-orden="1">
+                        </div>
+                        <button type="button" @click='_f8convenio_SER108'
+                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                            <input v-model='form.conveniod_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-8 col-xs-12">Estado</label>
+                        <div class="input-group col-md-6 col-sm-4 col-xs-12" id="ESTADO_SER108">
+                            <input v-model='form.estado_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-8 col-xs-12">Sucursal</label>
+                        <div class="input-group col-md-3 col-sm-4 col-xs-12" id="SUCURSAL_SER108">
+                            <input v-model='form.sucur_SER108' type="text" @Keyup.F8='_f8sucursal_SER108'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 sucursal_SER108" maxlength="2"
+                                data-orden="1">
+                        </div>
+                        <button type="button" @click='_f8sucursal_SER108'
+                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-9 col-sm-4 col-xs-12">
+                            <input v-model='form.descripsucur_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-8 col-xs-12">% Retenc</label>
+                        <div class="input-group col-md-6 col-sm-4 col-xs-12" id="RETENCION_SER108">
+                            <input v-model='form.retencion_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-12 hidden" id="BLOQUEOOTRO">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-8 col-xs-12">Bloq rips? </label>
+                        <div class="input-group col-md-6 col-sm-4 col-xs-12" id="BLOQ_SER108">
+                            <input v-model='form.bloq_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-12 hidden" id="BLOQUEORIPS">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-8 col-xs-12">Lista rips? </label>
+                        <div class="input-group col-md-6 col-sm-4 col-xs-12" id="BLOQRIPS_SER108">
+                            <input v-model='form.listorips_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-8 col-xs-12">Pic</label>
+                        <div class="input-group col-md-8 col-sm-4 col-xs-12" id="PIC_SER108">
+                            <input v-model='form.pic_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                    <label>Datos del Paciente:</label>
+                </div>
+                <div class="col-md-3 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-8 col-xs-12">Id</label>
+                        <div class="input-group col-md-12 col-sm-4 col-xs-12" id="PACIENTE_SER108">
+                            <input v-model='form.idpaciente_SER108' type="text" @Keyup.F8='_f8paciente_SER108'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 paciente_SER108" maxlength="15"
+                                data-orden="1">
+                        </div>
+                        <button type="button" @click='_f8paciente_SER108'
+                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-3 col-sm-8 col-xs-12">Nombre</label>
+                        <div class="input-group col-md-12 col-sm-4 col-xs-12" id="DESCRIPPACI_SER108">
+                            <input v-model='form.idpaciented_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="40" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-8 col-xs-12">Edad</label>
+                        <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                            <input v-model='form.edad_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-8 col-xs-12">Tipo</label>
+                        <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                            <input v-model='form.tipo_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salto-linea"></div>
+                <div class="col-md-2 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-10 col-sm-8 col-xs-12">Habitación</label>
+                        <div class="input-group col-md-6 col-sm-4 col-xs-12" id="HABIT_SER108">
+                            <input v-model='form.habit_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-8 col-xs-12">%Copago</label>
+                        <div class="input-group col-md-6 col-sm-4 col-xs-12" id="PORCENTAJE_SER108">
+                            <input id='porcent_SER108' type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="5" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-8 col-xs-12">Fecha Ing</label>
+                        <div class="input-group col-md-6 col-sm-4 col-xs-12" id="ANOING_SER108">
+                            <input v-model='form.anoing_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                placeholder="AAAA">
+                        </div>
+                        <div class="input-group col-md-5 col-sm-4 col-xs-12" id="MESING_SER108">
+                            <input v-model='form.mesing_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1"
+                                placeholder="MM">
+                        </div>
+                        <div class="input-group col-md-5 col-sm-4 col-xs-12" id="DIAING_SER108">
+                            <input v-model='form.diaing_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1"
+                                placeholder="DD">
+                        </div>
+                        <div class="input-group col-md-6 col-sm-4 col-xs-12" id="HORAING_SER108">
+                            <input v-model='form.horaing_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" placeholder="HH:MM">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-8 col-xs-12">Fecha Sal</label>
+                        <div class="input-group col-md-6 col-sm-4 col-xs-12" id="ANOSAL_SER108">
+                            <input v-model='form.anosal_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                placeholder="AAAA">
+                        </div>
+                        <div class="input-group col-md-5 col-sm-4 col-xs-12" id="MESSAL_SER108">
+                            <input v-model='form.messal_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1"
+                                placeholder="MM">
+                        </div>
+                        <div class="input-group col-md-5 col-sm-4 col-xs-12" id="DIASAL_SER108">
+                            <input v-model='form.diasal_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1"
+                                placeholder="MM">
+                        </div>
+                        <div class="input-group col-md-6 col-sm-4 col-xs-12" id="HORASAL_SER108">
+                            <input v-model='form.horasal_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5" placeholder="HH:MM">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-12">Serv. Hospital</label>
+                        <div class="input-group col-md-3 col-sm-4 col-xs-12" id="SERVICIO_SER108">
+                            <input v-model='form.servicio_SER108' type="text" @Keyup.F8='_f8serviciohosp_SER108'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 servicio_SER108" maxlength="2"
+                                data-orden="1">
+                        </div>
+                        <button type="button" @click='_f8serviciohosp_SER108'
+                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-9 col-sm-4 col-xs-12">
+                            <input v-model='form.descripservicio_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-8 col-xs-12">Red Externa</label>
+                        <div class="input-group col-md-8 col-sm-4 col-xs-12" id="REDEXT_SER108">
+                            <input v-model='form.redext_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-10 col-sm-8 col-xs-12">Contrato </label>
+                        <div class="input-group col-md-10 col-sm-4 col-xs-12" id="CONTRATO_SER108">
+                            <input v-model='form.contrato_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="21" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-8 col-xs-12">Fact. Capitación</label>
+                        <div class="input-group col-md-3 col-sm-4 col-xs-12" id="PRECAPIT_SER108">
+                            <input v-model='form.precapit_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1">
+                        </div>
+                        <div class="input-group col-md-6 col-sm-4 col-xs-12" id="CAPIT_SER108">
+                            <input v-model='form.capit_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10" data-orden="1">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-8 col-xs-12">C. Costos</label>
+                        <div class="input-group col-md-3 col-sm-4 col-xs-12" id="COSTOS_SER108">
+                            <input v-model='form.costos_SER108' type="text" @Keyup.F8='_f8costos_SER108'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 costo_SER108" maxlength="4"
+                                data-orden="1">
+                        </div>
+                        <button type="button" @click='_f8costos_SER108'
+                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-9 col-sm-4 col-xs-12">
+                            <input v-model='form.costosd_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-8 col-xs-12">División </label>
+                        <div class="input-group col-md-12 col-sm-4 col-xs-12" id="DIVISION_SER108">
+                            <input v-model='form.division_SER108' type="text" @Keyup.F8='_f8division_SER108'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 division_SER108" maxlength="2"
+                                data-orden="1">
+                        </div>
+                        <button type="button" @click='_f8division_SER108'
+                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                    <div class="inline-inputs">
+                        <label class="col-md-12">Forma de pago</label>
+                        <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                            <input v-model='form.formadepago_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-8 col-xs-12">Envio</label>
+                        <div class="input-group col-md-8 col-sm-4 col-xs-12" id="ENVIO_SER108">
+                            <input v-model='form.envio_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-2 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-8 col-xs-12">Ctrl Di</label>
+                        <div class="input-group col-md-8 col-sm-4 col-xs-12 " id="CTRLDIAG_SER108">
+                            <input v-model='form.ctrldi_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-3 col-sm-8 col-xs-12">Observación</label>
+                        <div class="input-group col-md-12 col-sm-4 col-xs-12" id="OBSERVACIONES_SER108">
+                            <input v-model='form.observacion_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="240" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-8 col-xs-12">Ctrl Cont</label>
+                        <div class="input-group col-md-6 col-sm-4 col-xs-12" id="CTRLCONT_SER108">
+                            <input v-model='form.ctrlcont_SER108' type="text" @Keyup.F8='_f8control_SER108'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 contrato_SER108" maxlength="4"
+                                data-orden="1">
+                        </div>
+                        <button type="button" @click='_f8control_SER108'
+                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-12 col-sm-2 col-xs-6 hidden" id='CUFE_SER108'>
+                    <div class="inline-inputs">
+                        <label class="col-md-2 col-sm-8 col-xs-12">Cufe </label>
+                        <div class="input-group col-md-12 col-sm-4 col-xs-12 ">
+                            <input v-model='form.cufe_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="128" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-12 col-sm-12 col-xs-12 head-box"></div>
+                <div class="salto-linea"></div>
+
+                <div class="col-md-7 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-3 col-sm-6 col-xs-12">Detalle Cartera</label>
+                        <div class="input-group col-md-10 col-sm-6 col-xs-12" id="DETALLE_SER108">
+                            <input v-model='form.detalle_SER108' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="40" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-6 col-xs-12">Bol</label>
+                        <div class="input-group col-md-8 col-sm-6 col-xs-12" id="BOL_SER108">
+                            <input v-model='form.bol_SER108' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="10" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-12">Tipo de Paci</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-12" id="TIPODEPACI_SER108">
+                            <input v-model='form.tipopaci_SER108' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="8" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-6 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-12 col-sm-6 col-xs-12" id="MOSTRAR_SER108">Mostrar cuantos pacientes
+                            van a elaborar comprobante?</label>
+                        <div class="input-group col-md-3 col-sm-6 col-xs-12" id='COMPROBANTE_SER108'>
+                            <input v-model='form.mostrar_SER108' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="1" data-orden="1" placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-6 col-xs-12">Nivel</label>
+                        <div class="input-group col-md-8 col-sm-6 col-xs-12" id="NIVEL_SER108">
+                            <input v-model='form.nivel_SER108' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="1" placeholder="*,1,2,3,4">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-9 col-sm-6 col-xs-12">Solo cod cis</label>
+                        <div class="input-group col-md-5 col-sm-6 col-xs-12" id="CIS_SER108">
+                            <input id='codcis_SER108' class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                maxlength="1" placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-6 col-xs-12">Myt</label>
+                        <div class="input-group col-md-8 col-sm-6 col-xs-12" id="MYT_SER108">
+                            <input id='myt_SER108' class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                maxlength="1" placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-6 col-xs-12">C19</label>
+                        <div class="input-group col-md-5 col-sm-6 col-xs-12" id="C19_SER108">
+                            <input id='covid19_SER108' class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                maxlength="1" placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-6 col-xs-12">N-PBS</label>
+                        <div class="input-group col-md-5 col-sm-6 col-xs-12" id="PBS_SER108">
+                            <input id='npbs_SER108' class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                maxlength="1" placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-6 col-xs-12">Ctrl X cl serv</label>
+                        <div class="input-group col-md-5 col-sm-6 col-xs-12" id="CTRLXSERV_SER108">
+                            <input id='ctrlxserv_SER108' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="1" placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-6 col-xs-12">Med</label>
+                        <div class="input-group col-md-5 col-sm-6 col-xs-12" id="MED_SER108">
+                            <input id='controlcl0_SER108' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="1" placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-6 col-xs-12">Cirg</label>
+                        <div class="input-group col-md-5 col-sm-6 col-xs-12" id="CIRUG_SER108">
+                            <input id='controlcl1_SER108' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="1" placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-6 col-xs-12">Lab</label>
+                        <div class="input-group col-md-5 col-sm-6 col-xs-12" id="LAB_SER108">
+                            <input id='controlcl2_SER108' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="1" placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-6 col-xs-12">Rx</label>
+                        <div class="input-group col-md-5 col-sm-6 col-xs-12" id="RX_SER108">
+                            <input id='controlcl3_SER108' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="1" placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-6 col-xs-12">Otro</label>
+                        <div class="input-group col-md-5 col-sm-6 col-xs-12" id="OTRO_SER108">
+                            <input id='controlcl4_SER108' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="1" placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-6 col-xs-12">Cons</label>
+                        <div class="input-group col-md-5 col-sm-6 col-xs-12" id="CONS_SER108">
+                            <input id='controlcl5_SER108' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="1" placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-6 col-xs-12">Pato</label>
+                        <div class="input-group col-md-5 col-sm-6 col-xs-12" id="PATO_SER108">
+                            <input id='controlcl6_SER108' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="1" placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-6 col-xs-12">Pyp</label>
+                        <div class="input-group col-md-5 col-sm-6 col-xs-12" id="PYP_SER108">
+                            <input id='controlcl7_SER108' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="1" placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-6 col-xs-12">Art con iva</label>
+                        <div class="input-group col-md-5 col-sm-6 col-xs-12" id="ARTCONIVA_SER108">
+                            <input id='artconiva_SER108' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="1" placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-6 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-3 col-sm-6 col-xs-12">Poliza soat</label>
+                        <div class="input-group col-md-9 col-sm-6 col-xs-12" id="NROPOL_SER108">
+                            <input v-model='form.nropol_SER108' class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="30">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-6 col-xs-12">Ruta</label>
+                        <div class="input-group col-md-8 col-sm-6 col-xs-12" id="ZONA_SER108">
+                            <input v-model='form.ruta_SER108'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 rutas_SER108" data-orden="1"
+                                maxlength="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-2 col-xs-4">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-6 col-xs-12">Est</label>
+                        <div class="input-group col-md-8 col-sm-6 col-xs-12" id="DIASEST_SER108">
+                            <input v-model='form.est_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="3">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salto-linea"></div>
+                <div class="col-md-3 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-8 col-xs-12">Clasificación</label>
+                        <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                            <input v-model='form.clasificacion_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-8 col-xs-12">Entra remitido?</label>
+                        <div class="input-group col-md-4 col-sm-4 col-xs-12" id="REMITE_SER108">
+                            <input v-model='form.remitido_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1"
+                                placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-8 col-xs-12">Cod. Ips origen</label>
+                        <div class="input-group col-md-4 col-sm-4 col-xs-12" id="ORIGEN_SER108">
+                            <input v-model='form.origen_SER108' type="text" @Keyup.F8='_f8ipsorigen_SER108'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 origen_SER108" data-orden="1"
+                                maxlength="20">
+                        </div>
+                        <button type="button" @click='_f8ipsorigen_SER108'
+                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                            <input v-model='form.origend_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-7 col-sm-8 col-xs-12">Tipo de Evento</label>
+                        <div class="input-group col-md-7 col-sm-4 col-xs-12">
+                            <input v-model='form.tipoevento_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="10">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-8 col-xs-12">Ciudad</label>
+                        <div class="input-group col-md-7 col-sm-4 col-xs-12" id="CIUDAD_SER108">
+                            <input v-model='form.ciudad_SER108' type="text" @Keyup.F8='_f8ciudad_SER108'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 ciudad_SER108" data-orden="1"
+                                maxlength="5">
+                        </div>
+                        <button type="button" @click='_f8ciudad_SER108'
+                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-10 col-sm-4 col-xs-12" id="NOMCIUDAD_SER108">
+                            <input v-model='form.ciudadd_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-8 col-xs-12">Fun. autoriza</label>
+                        <div class="input-group col-md-7 col-sm-4 col-xs-12" id="FUNCAUTO_SER108">
+                            <input v-model='form.funauto_SER108' type="text" @Keyup.F8='_f8funcionario_SER108'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 funcionario_SER108" data-orden="1"
+                                maxlength="10">
+                        </div>
+                        <button type="button" @click='_f8funcionario_SER108'
+                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-10 col-sm-4 col-xs-12" id="NOMFUNCAUTO_SER108">
+                            <input v-model='form.funautod_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salto-linea"></div>
+                <div class="col-md-2 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-8 col-xs-12">Fact abierta</label>
+                        <div class="input-group col-md-7 col-sm-4 col-xs-12" id="FACTURAREP_SER108">
+                            <input v-model='form.factrepetida_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-8 col-xs-12">Nro. autorización</label>
+                        <div class="input-group col-md-7 col-sm-4 col-xs-12" id="NROAUTO_SER108">
+                            <input v-model='form.nroauto_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="15">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-2 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-8 col-xs-12">Obser. Apertura</label>
+                        <div class="input-group col-md-7 col-sm-4 col-xs-12" id="OBSERAPERTURA_SER108">
+                            <input v-model='form.obserapertura_SER108' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="30">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-4 col-xs-4 hidden" id='DATOSTRIAGE_SER108'>
+                        <div class="inline-inputs">
+                            <label class="col-md-2 col-sm-8 col-xs-12">Pac triage</label>
+                            <div class="input-group col-md-2 col-sm-4 col-xs-12">
+                                <input v-model='form.tipodoctriage_SER108' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-12">
+                                <input v-model='form.pacientetriage_SER108' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-1 col-sm-4 col-xs-12">
+                                <input v-model='form.epstriage_SER108' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                <input v-model='form.nomepstriage_SER108' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-5 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Creado</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                <input v-model='form.creado_SER108' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-12">
+                                <input v-model='form.creadod_SER108' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Modificado</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                <input v-model='form.modificado_SER108' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12">
+                                <input v-model='form.modificadod_SER108' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Bloq</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                <input v-model='form.bloqueo_SER108' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <transition v-if="mostrarpacientes">
+        <div class="overlay_prosoft">
+            <div class="modal_prosoft" style="width: 90%">
+                <div class="container_prosoft">
+                    <div class="col-md-12 no-padding">
+                        <ventanapacientes :data="datos_pacientes" :params="params_pacientes"
+                            @callback_esc="validarEsc_pacientes" @callback="validarCallback_pacientes">
+                        </ventanapacientes>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+</div>
+
+<script src="../../SALUD/scripts/SER108V2.js"></script>

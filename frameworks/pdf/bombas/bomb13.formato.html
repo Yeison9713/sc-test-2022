@@ -1,0 +1,211 @@
+<script>
+    const { ipcRenderer } = require('electron')
+    const fs = require('fs')
+    const exec = require('child_process').exec;
+    window.$ = window.jQuery = require('jquery');
+    const remote = require('electron').remote;
+</script>
+<style id="estiloImpresion">
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+    html,
+    body,
+    #documento,
+    #impresion {
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: 'Roboto', sans-serif;
+        box-sizing: border-box;
+    }
+
+    input[type="button"] {
+        /* display: none; */
+    }
+
+    #encabezado {
+        width: 100%;
+        height: 100px;
+        border: 1px solid #000;
+        border-bottom: none;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        position: fixed;
+        top: 0;
+    }
+
+    .enc-logo,
+    .enc-izq,
+    .enc-der {
+        display: flex;
+        align-items: center;
+    }
+
+    .enc-izq div a {
+        text-transform: uppercase;
+    }
+
+    .enc-logo #logo {
+        width: 70%;
+        height: 60%;
+        margin: 0 auto;
+    }
+
+    .enc-logo #logo img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #contenido {
+        padding: 0 1px 0 0;
+        /* margin-top: 10%; */
+    }
+
+    #contenido table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table#tabla-principal tbody tr td:nth-child(7) {
+        text-align: right !important;
+    }
+
+    #contenido #tabla-secundaria {
+        width: 100%;
+    }
+
+    #contenido table thead tr {
+        border: 1px solid #000;
+    }
+
+    #contenido table thead tr th {
+        padding: 10px 0;
+        font-size: 8px;
+        text-transform: uppercase;
+    }
+
+    #contenido table tbody tr td {
+        padding: 2px 0;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    table#tabla-principal tbody tr td {
+        text-align: center;
+    }
+
+    @media print {
+        #impresion {
+            display: block;
+        }
+    }
+</style>
+
+<div id="impresion">
+    <div id="contenido">
+        <table id="tabla-secundaria">
+            <thead>
+                <tr>
+                    <th><a id="nombreEmpresa"></a></th>
+                    <th>LISTA DE VALES DEL CLIENTE:</th>
+                    <th><a id="nitTercero"></a></th>
+                    <th>IMP:190325</th>
+                </tr>
+            </thead>
+        </table>
+        <table id="tabla-principal">
+            <thead>
+                <tr>
+                    <th>Comprob</th>
+                    <th>Fecha</th>
+                    <th>Articulo</th>
+                    <th>Descripcion</th>
+                    <th>Cantidad</th>
+                    <th>Valor</th>
+                    <th>Placa</th>
+                    <th>No. VAle</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+    </div>
+</div>
+
+<script>
+    var $_LISTADO_013, $_TOTALES, $_TIPO, $_URL;
+    ipcRenderer.on('ping', (e, data) => {
+        $_LISTADO_013 = data.datos.LISTADO;
+        // $_LISTADO_013.pop();
+        $_TOTALES = data.datos.TOTALES;
+        $_TIPO = data.tipo;
+        $_URL = data.url;
+        montarImpresion_013();
+    })
+
+    function montarImpresion_013() {
+        $('#nombreEmpresa').html($_TOTALES[2]);
+        $('#nitTercero').html($_TOTALES[3]);
+        totales = $_TOTALES;
+
+        for (var i in $_LISTADO_013) {
+            var valor = $_LISTADO_013[i]['VLR-DEUDA'] || "0";
+            valor = parseFloat(valor.replace(/,/g, '')).toFixed(2)
+
+            $('#contenido table#tabla-principal tbody').append(''
+                + '<tr>'
+                + ' <td>' + $_LISTADO_013[i].COMP + '</td>'
+                + ' <td>' + $_LISTADO_013[i].FECHA.trim() + '</td>'
+                + ' <td>' + $_LISTADO_013[i].ARTICULO.trim() + '</td>'
+                + ' <td>' + $_LISTADO_013[i]['DESC-ART'].trim() + '</td>'
+                + ' <td>' + $_LISTADO_013[i]['CANT-DEUDA'].trim() + '</td>'
+                + ' <td>' + valor + '</td>'
+                + ' <td>' + $_LISTADO_013[i].PLACA + '</td>'
+                + ' <td>' + $_LISTADO_013[i].NVALE + '</td>'
+                + '</tr>'
+            );
+        }
+
+        $('#contenido table#tabla-principal tbody').append(''
+            + '<tr>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td>TOTAL CLIENTE: </td>'
+            + ' <td></td>'
+            + ' <td>' + totales[1] + '</td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + '</tr>'
+        );
+
+        if ($_TIPO == 'csv') imprimirCsv();
+    }
+
+    function imprimirCsv() {
+        var csv = [];
+        var rows = document.querySelectorAll("table tr");
+
+        for (var i = 0; i < rows.length; i++) {
+            var row = [], cols = rows[i].querySelectorAll("td, th");
+            for (var j = 0; j < cols.length; j++) row.push(cols[j].innerText.replace(/,/g, '.'));
+            csv.push(row.join(","));
+        }
+        _formatoCsv(csv.join("\n"));
+    }
+
+    function _formatoCsv(csv) {
+        var urlCsv = $_URL + '.csv';
+        try {
+            fs.writeFile(urlCsv, csv, 'utf-8', function (e) {
+                var window = remote.getCurrentWindow();
+                window.close();
+            });
+        } catch (e) {
+            alert('Ha ocurrido un error escribiendo el archivo: ' + urlCsv);
+        }
+    }
+
+</script>

@@ -1,0 +1,1084 @@
+<script>
+    const {
+        ipcRenderer
+    } = require("electron"),
+        fs = require("fs"),
+        exec = require("child_process").exec,
+        path = require("path"),
+        remote = require("electron").remote;
+    window.$ = window.jQuery = require("jquery");
+</script>
+
+<body>
+    <div class="page-header">
+        <div id="encabezado_LAB103P">
+            <div id="encabezadoimagen_LAB103P"></div>
+            <div id="encabezadocontenido_LAB103P">
+                <div style="width: 100%;">
+                    <div id="divHeader1">
+                        <strong>Primera digitación :</strong>
+                        <a id="contentHeader1_LAB103P">Nombre del formato: Reportes examenes cardiológicos</a>
+                    </div>
+                    <div id="divHeader2">
+                        <strong>Codigo :</strong>
+                        <a id="contentHeader2_LAB103P">REC-SC11-001</a>
+                        <strong>Fecha de aprobación :</strong>
+                        <a id="contentHeader3_LAB103P">01 Ene 2014</a>
+                        <strong>Versión :</strong>
+                        <a id="contentHeader4_LAB103P">Vr 1</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <td>
+                    <!--place holder for the fixed-position header-->
+                    <div class="page-header-space"></div>
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <!--*** CONTENT GOES HERE ***-->
+                    <div class="page">
+                        <div style="text-align: center;">
+                            <h4 id="tituloPrincipal_LAB103P">ECOCARDIOGRAMA STRESS CON DOBUTAMINA</h4>
+                        </div>
+
+                        <!-- DIV DATOS PACIENTE -->
+                        <div id="divPaciente_LAB103P">
+                            <strong class="tituloCol1_LAB103P">CIUDAD Y FECHA :</strong>
+                            <a id="ciudadFechaPac_LAB103P"></a>
+                            <strong class="tituloCol2_LAB103P">IDENTIFICACION :</strong>
+                            <a id="IdPac_LAB103P"></a>
+                            <strong class="tituloCol1_LAB103P">PACIENTE
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                :</strong>
+                            <a id="nomPac_LAB103P"></a>
+                            <strong class="tituloCol2_LAB103P">EDAD
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                :</strong>
+                            <a id="edadPac_LAB103P"></a>
+                            <strong class="tituloCol1_LAB103P">ENTIDAD
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp :</strong>
+                            <a id="entidadPac_LAB103P"></a>
+                            <strong class="pesoTalla_LAB103P">PESO :</strong>
+                            <a id="pesoPac_LAB103P"></a>
+                            <strong class="pesoTalla_LAB103P">TALLA :</strong>
+                            <a id="tallaPac_LAB103P"></a>
+                        </div>
+
+                        <!-- DIV DIAGNOSTICO -->
+                        <div class="divDiagnostico_LAB103P">
+                            <strong class="tituloReferido_LAB103P">Referido por :</strong>
+                            <a id="referido_LAB103P"></a>
+                            <strong class="tituloReferido_LAB103P">Diagnostico Clinico :</strong>
+                            <a id="diagnostico_LAB103P"></a>
+                        </div>
+
+                        <!-- DIV TEXTAREA MEDICACION -->
+                        <div id="divMedicacion_LAB103P">
+                            <strong>Medicación :</strong>
+                            <pre id="medicacion_LAB103P"></pre>
+                        </div>
+
+                        <!-- CONTINUACION DIV DIAGNOSTICO -->
+                        <div id="divEKG_LAB103P">
+                            <strong class="tituloReferido_LAB103P">EKG reposo :</strong>
+                            <a id="bkg_LAB103P"></a>
+                        </div>
+
+                        <!-- DIV TEXTAREA REPOSO -->
+                        <div id="divReposo_LAB103P">
+                            <strong>Ecocardiograma TT Reposo :</strong>
+                            <pre id="reposo_LAB103P"></pre>
+                        </div>
+
+                        <!-- DIV FCM Y TABLA MEDICAMENTOS -->
+                        <div id="tablaFCM_LAB103P">
+                            <strong>FCM :</strong>
+                            <a id="FCM_LAB103P"></a>
+                            <strong>FCSM :</strong>
+                            <a id="FCSM_LAB103P"></a>
+                            <strong>SC :</strong>
+                            <a id="SC_LAB103P"></a>
+                        </div>
+
+                        <div id="divMedicamentos">
+                            <table id="tablaMedicamentos_LAB103P">
+                                <thead>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- TABLA 2 -->
+                        <div id="tabla2_LB103P">
+                            <strong id="TituloTabla2_LAB103P"></strong>
+                            <table id="tablaGrande_LAB103P">
+                                <thead>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <div id="respuesta_LAB103P">
+                                <strong>Tipos de respuesta contráctil</strong>
+                                <a>1. Normal</a>
+                                <a>2. Hipocinesia</a>
+                                <a>3. Acinesia</a>
+                                <a>4. Discinesia</a>
+                                <strong>Etapas de Infusión de dobutamina</strong>
+                                <a>R. Reposo</a>
+                                <a>B. Dosis baja</a>
+                                <a>M. Dosis Máxima</a>
+                                <a>R. Recuperación</a>
+                            </div>
+                        </div>
+                        <div id="duranteInfusion_LAB103P">
+                            <div id="tituloInfusion_LAB103P">
+                                <strong id="infusionStrong_LAB103P">DURANTE LA INFUSIÓN DE DOBUTAMINA</strong>
+                            </div>
+                            <strong>Sintomas:</strong>
+                            <pre id="sintomas_LAB103P"></pre>
+                            <strong>Ecocardiograma:</strong>
+                            <pre id="ecocardiograma_LAB103P"></pre>
+                            <a id="tituloEKG_LAB103P">EKG:</a>
+                            <a id="ekgInfusion_LAB103P"></a>
+                            <strong>Conclusiones:</strong>
+                            <pre id="conclusiones_LAB103P"></pre>
+                        </div>
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <div id=" contenedor_final">
+                            <div id="firmaprofesional_LAB103P"></div>
+                            <!-- <a id="elaborado_LAB103P">ELAB 0101 200504 11:54</a> -->
+                            <a id="medicoordena_LAB103P"></a>
+                            <a id="cedulaMedico_LAB103P"></a>
+                            <a id="regMedico_LAB103P"></a>
+                            <!-- <a id="imprime_LAB103P">IMPRIME 0101 200504 11:54</a> -->
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+    html,
+    body {
+        font-family: 'Roboto', sans-serif !important;
+    }
+
+    .page-header-space {
+        height: 80px;
+    }
+
+    .page-header {
+        height: 50px;
+    }
+
+    .page-header {
+        position: fixed;
+        top: 0mm;
+        width: 99%;
+    }
+
+    .page {
+        page-break-after: always;
+        width: 100%;
+    }
+
+    .footer {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+
+    @page {
+        margin: 20mm;
+    }
+
+    #encabezado_LAB103P {
+        display: flex;
+        width: 100%;
+        height: 60px;
+        /* margin-left: 30px; */
+        box-sizing: border-box;
+        /* border: 1px solid black; */
+    }
+
+    #encabezadocontenido_LAB103P {
+        width: 80%;
+        /* border-bottom: black solid 0.3px; */
+        /* border: 1px solid black; */
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+    }
+
+    #encabezadoimagen_LAB103P {
+        width: 20%;
+        height: auto;
+        /* border: 1px solid black; */
+        box-sizing: border-box;
+        border-right: 0px;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    #encabezadoimagen_LAB103P img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #divHeader1 {
+        display: block;
+        padding: 2px;
+        padding-left: 5px;
+    }
+
+    #divHeader1 a {
+        display: inline-flex;
+        font-size: 10px;
+        padding-left: 0px;
+        width: 50%;
+    }
+
+    #contentHeader3_LAB103P,
+    #contentHeader2_LAB103P {
+        display: inline-flex;
+        font-size: 10px;
+        width: 23%;
+    }
+
+    #contentHeader4_LAB103P {
+        display: inline-flex;
+        font-size: 10px;
+        width: 7%;
+    }
+
+    /* #divHeader2 a {
+        display: inline-flex;
+        font-size: 10px;
+        padding-left: 0px;
+        width: 17%;
+    } */
+
+    #divHeader1 strong,
+    #divHeader2 strong {
+        font-size: 10px;
+    }
+
+    #divHeader2 {
+        border-top: 1px solid black;
+        margin: 0;
+        padding: 2px;
+        padding-left: 5px;
+    }
+
+    .titulos_LAB103P {
+        display: inline-flex;
+        width: 13%;
+        /* font-weight: bolder; */
+        font-size: 10px;
+    }
+
+    #divPaciente_LAB103P {
+        width: 99%;
+        border: 1px solid black;
+        /* margin-left: 30px; */
+        box-sizing: border-box;
+        padding: 5px;
+    }
+
+    .divDiagnostico_LAB103P {
+        margin-top: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #divMedicacion_LAB103P {
+        display: inline-flex;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #divMedicacion_LAB103P strong {
+        display: inline-flex;
+        font-weight: bolder;
+        font-size: 11px !important;
+        width: 18%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #medicacion_LAB103P {
+        width: 53%;
+        height: auto;
+        white-space: pre-wrap;
+        font-size: 11px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 0;
+        margin-left: 5px;
+    }
+
+    #divReposo_LAB103P {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #divReposo_LAB103P strong {
+        display: inline-flex;
+        font-weight: bolder;
+        font-size: 11px !important;
+        width: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        /* margin-top: 5px; */
+        /* padding: 2px; */
+    }
+
+    #reposo_LAB103P {
+        width: 73%;
+        height: auto;
+        white-space: pre-wrap;
+        font-size: 11px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #divEKG_LAB103P {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #divEKG_LAB103P strong {
+        width: 18%;
+        box-sizing: border-box;
+        font-size: 11px;
+    }
+
+    #tablaFCM_LAB103P {
+        text-align: center;
+        margin-left: 15px;
+    }
+
+    #tablaFCM_LAB103P strong {
+        display: inline-flex;
+        font-weight: bolder;
+        font-size: 11px !important;
+        width: 7%;
+        padding: 2px;
+    }
+
+    #tablaFCM_LAB103P a {
+        display: inline-flex;
+        font-size: 11px;
+        width: 10%;
+        padding: 2px;
+    }
+
+    .tituloReferido_LAB103P {
+        display: inline-flex;
+        font-weight: bolder;
+        font-size: 11px !important;
+        width: 18%;
+        /* padding: 2px; */
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #referido_LAB103P,
+    #diagnostico_LAB103P,
+    #bkg_LAB103P {
+        display: inline-flex;
+        font-size: 11px;
+        width: 80%;
+        padding: 2px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .tituloCol1_LAB103P,
+    .tituloCol2_LAB103P {
+        display: inline-flex;
+        font-weight: bolder;
+        font-size: 10px !important;
+        width: 17%;
+    }
+
+    .pesoTalla_LAB103P {
+        display: inline-flex;
+        font-weight: bolder;
+        font-size: 10px !important;
+        width: 8%;
+    }
+
+
+    #ciudadFechaPac_LAB103P,
+    #entidadPac_LAB103P,
+    #nomPac_LAB103P {
+        display: inline-flex;
+        width: 35%;
+        font-size: 10px;
+    }
+
+    #idPac_LAB103P,
+    #edadPac_LAB103P {
+        display: inline-flex;
+        width: 20%;
+        font-size: 10px;
+    }
+
+    #pesoPac_LAB103P,
+    #tallaPac_LAB103P {
+        display: inline-flex;
+        width: 9%;
+        font-size: 10px;
+    }
+
+    #tablaMedicamentos_LAB103P {
+        margin-top: 11px;
+        width: 70%;
+        /* border: 1px solid; */
+        font-size: 11px;
+        border-collapse: collapse;
+        margin-left: 100px;
+    }
+
+    #tablaMedicamentos_LAB103P tr th {
+        border: 1px solid;
+        padding: 4px;
+    }
+
+    #tablaMedicamentos_LAB103P tr td {
+        border: 1px solid;
+        padding: 4px;
+    }
+
+    #TituloTabla2_LAB103P {
+        text-align: center;
+        font-weight: bold;
+        display: block;
+        font-size: 11px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 10px;
+    }
+
+    #tablaGrande_LAB103P {
+        font-size: 11px;
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    #tablaGrande_LAB103P tr th {
+        font-size: 10px;
+        border: 1px solid;
+        padding: 2px;
+    }
+
+    #tablaGrande_LAB103P tr td {
+        font-size: 10px;
+        border: 1px solid;
+        padding: 2px;
+    }
+
+    #paginas_LAB103P::after {
+        counter-increment: page;
+        content: counter(page);
+    }
+
+    #respuesta_LAB103P {
+        border: 1px solid;
+        width: 100%;
+        font-size: 11px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 5px;
+        padding: 3px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    #respuesta_LAB103P strong {
+        display: inline-flex;
+        width: 35%;
+        font-size: 11px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #respuesta_LAB103P a {
+        width: 12%;
+        font-size: 11px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #tituloInfusion_LAB103P {
+        width: 100%;
+        text-align: center;
+        font-size: 11px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+
+    #duranteInfusion_LAB103P {
+        width: 100%;
+        height: auto;
+        font-size: 11px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 5px;
+        /* border: 1px solid; */
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    #duranteInfusion_LAB103P strong {
+        width: 100%;
+    }
+
+    #sintomas_LAB103P,
+    #ecocardiograma_LAB103P,
+    #conclusiones_LAB103P {
+        width: 100%;
+        height: auto;
+        white-space: pre-wrap;
+        font-size: 11px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #tituloEKG_LAB103P {
+        width: 6%;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    #ekgInfusion_LAB103P {
+        width: 94%;
+        display: inline-flex;
+        margin-bottom: 8px;
+    }
+
+    @media print {
+        thead {
+            display: table-header-group;
+        }
+
+        tfoot {
+            display: table-footer-group;
+        }
+
+        button {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+            -webkit-print-color-adjust: exact;
+        }
+
+        #duranteInfusion_LAB103P {
+            page-break-inside: avoid;
+        }
+
+        #tabla2_LB103P {
+            page-break-inside: avoid;
+        }
+
+        #divMedicamentos {
+            page-break-inside: avoid;
+        }
+
+        #firmaprofesional_LAB103P {
+            page-break-inside: avoid;
+        }
+
+    }
+
+    .salto-linea {
+        padding-top: 10px;
+    }
+
+    #div1 {
+        /* width: 80%;
+        height: 100%; */
+        padding-left: 120px;
+        border: 1px solid black;
+    }
+
+    #div2 {
+        width: 30%;
+        /* height: 100%; */
+        padding-left: 120px;
+        border: 1px solid black;
+        display: inline-flex;
+    }
+
+    #div3 {
+        width: 30%;
+        /* height: 100%; */
+        padding-left: 120px;
+        border: 1px solid black;
+        display: inline-flex;
+    }
+
+    #nombreusu_LAB103P,
+    #nitusu_LAB103P {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: bolder;
+    }
+
+    #resultados_LAB103P {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        font-size: 16px;
+    }
+
+    #paginas_LAB103P {
+        display: inline-flex;
+        width: 99%;
+        justify-content: flex-end;
+        font-size: 11px;
+    }
+
+    .tablaheader_LAB103P {
+        font-size: 9px;
+        width: 100%;
+        border-spacing: 0;
+        table-layout: inherit;
+        border: none;
+        background-color: #476fad;
+        color: white;
+        box-shadow: 0px 4px 30px -4px rgba(0, 51, 90, 0.1);
+        border-radius: 3px;
+    }
+
+    .tabla_LAB103P {
+        width: 100%;
+        table-layout: inherit;
+        border-spacing: 0;
+    }
+
+    .tabla_LAB103P tr td {
+        display: inline-block;
+        word-wrap: break-word;
+        font: 10px Arial;
+
+    }
+
+    .tabla_LAB103P tr td:nth-child(3) {
+        text-align: center;
+    }
+
+    #firmaprofesional_LAB103P {
+        display: flex;
+        width: 20%;
+        /* border-bottom: black solid 0.2px; */
+    }
+
+    #firmaprofesional_LAB103P {
+        display: flex;
+        width: 20%;
+        padding-top: 10px;
+    }
+
+    #firmaprofesional_LAB103P img {
+        display: flex;
+        width: 100%;
+    }
+
+    #cedulaMedico_LAB103P,
+    #regMedico_LAB103P,
+    #medicoordena_LAB103P {
+        display: inline-flex;
+        width: 50%;
+        font: 11px Arial;
+        padding-top: 4px;
+    }
+
+    #elaborado_LAB103P,
+    #imprime_LAB103P {
+        display: inline-flex;
+        width: 49%;
+        font: 10px Arial;
+        justify-content: center;
+    }
+</style>
+<script>
+    var LAB103P = [];
+    ipcRenderer.on("ping", (e, data) => {
+        LAB103P = data.datos;
+
+        var x = 00;
+        for (i = 0; i < LAB103P.ID_PACI.length; i++) {
+            var res = LAB103P.ID_PACI.charAt(i);
+            console.log(res);
+            if (isNaN(res)) {
+                console.log("letra");
+                x = 01;
+            }
+        }
+        if (x != 00) {
+            $("#IdPac_LAB103P").text(LAB103P.ID_PACI);
+        } else {
+            $("#IdPac_LAB103P").text(LAB103P.ID_HISTORIA);
+        }
+
+        $("#ciudadFechaPac_LAB103P").text(LAB103P.CIUDAD_PACI + ", " + LAB103P.FECHA);
+        $("#nomPac_LAB103P").text(LAB103P.DESCRIP_PACI);
+        $("#edadPac_LAB103P").text(LAB103P.EDAD);
+        $("#entidadPac_LAB103P").text(LAB103P.NOM_ENTIDAD);
+
+        if (LAB103P.PESO != '      ') LAB103P.PESO = (LAB103P.PESO + ' KG')
+
+        if (LAB103P.TALLA != '   ') LAB103P.TALLA = (LAB103P.TALLA + ' CM')
+
+        $("#pesoPac_LAB103P").text(LAB103P.PESO);
+        $("#tallaPac_LAB103P").text(LAB103P.TALLA);
+
+        $("#FCM_LAB103P").text(LAB103P.FCM + " /m");
+        $("#FCSM_LAB103P").text(LAB103P.FCSM + " /m");
+        $("#SC_LAB103P").text(LAB103P.SC + ' /m²');
+        $("#referido_LAB103P").text(LAB103P.NOM_ESPECIALIDAD);
+        $("#diagnostico_LAB103P").text(LAB103P.DIAGNOS + " - " + LAB103P.NOM_DIAGNOS);
+        $("#medicacion_LAB103P").text(LAB103P.MEDICACION);
+        $("#bkg_LAB103P").text(LAB103P.EKG_REPOSO);
+        $("#reposo_LAB103P").text(LAB103P.ECOCARDIOGRAMA_TT);
+        $("#sintomas_LAB103P").text(LAB103P.SINTOMAS);
+        $("#ecocardiograma_LAB103P").text(LAB103P.ECOCARDIOGRAMA);
+        $("#ekgInfusion_LAB103P").text(LAB103P.EKG);
+        $("#conclusiones_LAB103P").text(LAB103P.CONCLUSIONES);
+
+        $("#medicoordena_LAB103P").text(LAB103P.NOM_MEDICO);
+        $("#cedulaMedico_LAB103P").text(LAB103P.ID_BACTERIOLOGO);
+        $("#regMedico_LAB103P").text("RM " + LAB103P.REG_MEDICO);
+
+        if (LAB103P.CUP.trim() == '88121002') {
+            $("#tituloPrincipal_LAB103P").text("ECOCARDIOGRAMA STRESS CON EJERCICIO");
+
+            document.getElementById("infusionStrong_LAB103P").innerHTML = "DURANTE LA INFUSIÓN EL EJERCICIO";
+        }
+
+        // HEADERS TABLA MEDICAMENTOS
+        var result = [];
+        if (LAB103P.CUP.trim() == '88121002') {
+            result = ["EJERCICIO", "FC", "TA", "", ""];
+        } else {
+            result = ["Dobutamina", "FC", "TA", "Atropina", "Anormalidad"];
+        }
+        $("#tablaMedicamentos_LAB103P thead").append(
+            "<tr>" +
+            "<th style='text-align: center; width: 20%; font-weight: bold;'>" +
+            result[0] +
+            "</th>" +
+            "<th style='text-align: center; width: 20%; font-weight: bold;'>" +
+            result[1] +
+            "</th>" +
+            "<th style='text-align: center; width: 20%; font-weight: bold;'>" +
+            result[2] +
+            "</th>" +
+            "<th style='text-align: center; width: 20%; font-weight: bold;'>" +
+            result[3] +
+            "</th>" +
+            "<th style='text-align: center; width: 20%; font-weight: bold;'>" +
+            result[4] +
+            "</th>" +
+            "</tr>"
+        );
+
+        // PRIMERA COLUMNA TABLA MEDICAMENTOS
+        if (LAB103P.CUP.trim() == '88121002') {
+            var arrayHead = ["Etapa", "I", "II", "III", "IV", "V"];
+        } else {
+            var arrayHead = ["Basal", "5", "10", "20", "30", "40"];
+        }
+        for (var i in LAB103P.TABLA_DOBU) {
+            $("#tablaMedicamentos_LAB103P thead").append(
+                "<tr>" +
+                "<td style='text-align: center; width: 20%;'>" +
+                arrayHead[i] +
+                "</td>" +
+                "<td style='text-align: center; width: 20%;'>" +
+                LAB103P.TABLA_DOBU[i].FC +
+                "</td>" +
+                "<td style='text-align: center; width: 20%;'>" +
+                LAB103P.TABLA_DOBU[i].TA +
+                "</td>" +
+                "<td style='text-align: center; width: 20%;'>" +
+                LAB103P.TABLA_DOBU[i].ATROPINA +
+                "</td>" +
+                "<td style='text-align: center; width: 20%;'>" +
+                LAB103P.TABLA_DOBU[i].ANORMALIDAD +
+                "</td>" +
+                "</tr>"
+            );
+        }
+
+        if (LAB103P.CUP.trim() == '88121002') {
+            document.getElementById("TituloTabla2_LAB103P").innerHTML = "Respuesta contráctil segmentaria con el ejercicio";
+        }
+
+        // SE LLENA LA TABLA 2  -- HEADER
+        $("#tablaGrande_LAB103P thead").append(
+            "<tr>" +
+            "<th style='text-align: center; font-weight: bold;' rowspan='2'>" +
+            "" +
+            "</th>" +
+            "<th style='text-align: center; font-weight: bold;' colspan='4' rowspan='2'>" +
+            "Anterior" +
+            "</th>" +
+            "<th style='text-align: center; font-weight: bold;' colspan='8'>" +
+            "Septal" +
+            "</th>" +
+            "<th style='text-align: center; font-weight: bold;' colspan='4' rowspan='2'>" +
+            "Inferior" +
+            "</th>" +
+            "<th style='text-align: center; font-weight: bold;' colspan='8'>" +
+            "Lateral" +
+            "</th>" +
+            "</tr>" +
+
+            "<tr>" +
+            "<th style='text-align: center; font-weight: bold;' colspan='4'>" +
+            "Anterior" +
+            "</th>" +
+            "<th style='text-align: center; font-weight: bold;' colspan='4'>" +
+            "Inferior" +
+            "</th>" +
+            "<th style='text-align: center; font-weight: bold;' colspan='4'>" +
+            "Inferior" +
+            "</th>" +
+            "<th style='text-align: center; font-weight: bold;' colspan='4'>" +
+            "Anterior" +
+            "</th>" +
+            "</tr>"
+        );
+
+        // SE LLENA LA TABLA 2  -- COLUMNAS IZQUIERDA
+        $("#tablaGrande_LAB103P tbody").append(
+            "<tr id='filaDobutamina'>" +
+            "<td style='text-align: center; height: 32px; width: .5%; font-weight: bold;'>" +
+            "Dobutamina" +
+            "</td>" +
+            "</tr>" +
+
+            "<tr id='filaBasal'>" +
+            "<td style='text-align: center; height: 32px; width: .5%; font-weight: bold;'>" +
+            "Basal" +
+            "</td>" +
+            "</tr>" +
+
+            "<tr id='filaMedio'>" +
+            "<td style='text-align: center; height: 32px; width: .5%; font-weight: bold;'>" +
+            "Medio" +
+            "</td>" +
+            "</tr>" +
+
+            "<tr id='filaApical'>" +
+            "<td style='text-align: center; height: 32px; width: .5%; font-weight: bold;'>" +
+            "Apical" +
+            "</td>" +
+            "</tr>" +
+
+            "<tr id='filaApex'>" +
+            "<td style='text-align: center; height: 32px; width: .5%; font-weight: bold;' rowspan='2'>" +
+            "Ápex" +
+            "</td>" +
+            "</tr>" +
+
+            "<tr id='filaAdicional'>" +
+            "</tr>"
+        );
+
+        // SE LLENA LA TABLA 2  -- CELDAS PRIMERA FILA
+        for (i = 0; i < 6; i++) {
+            $("#filaDobutamina").append(
+                "<td style='text-align: center; width: .2%;' >" +
+                "R" +
+                "</td>" +
+                "<td style='text-align: center; width: .2%;' >" +
+                "B" +
+                "</td>" +
+                "<td style='text-align: center; width: .2%;' >" +
+                "M" +
+                "</td>" +
+                "<td style='text-align: center; width: .2%; background-color: #476fad54;' >" +
+                "R" +
+                "</td>"
+            );
+        }
+
+        // FILA BASAL
+        for (var i in LAB103P.BASAL) {
+            const res = [3, 7, 11, 15, 19, 23];
+            if (res.find(e => e == i)) {
+                $("#filaBasal").append(
+                    "<td style='text-align: center; width: .2%; background-color: #476fad54;' >" +
+                    LAB103P.BASAL[i] +
+                    "</td>"
+                );
+            } else {
+                $("#filaBasal").append(
+                    "<td style='text-align: center; width: .2%;' >" +
+                    LAB103P.BASAL[i] +
+                    "</td>"
+                );
+            }
+        }
+
+        // FILA MEDIO
+        for (var i in LAB103P.MEDIO) {
+            const res = [3, 7, 11, 15, 19, 23];
+            if (res.find(e => e == i)) {
+                $("#filaMedio").append(
+                    "<td style='text-align: center; width: .2%; background-color: #476fad54;' >" +
+                    LAB103P.MEDIO[i] +
+                    "</td>"
+                );
+            } else {
+                $("#filaMedio").append(
+                    "<td style='text-align: center; width: .2%;' >" +
+                    LAB103P.MEDIO[i] +
+                    "</td>"
+                );
+            }
+        }
+
+        // FILA APICAL
+        for (i = 0; i < 4; i++) {
+            if (i == 3) {
+                $("#filaApical").append(
+                    "<td style='text-align: center; width: .2%; background-color: #476fad54;' >" +
+                    LAB103P.APICAL[i] +
+                    "</td>"
+                );
+            } else {
+                $("#filaApical").append(
+                    "<td style='text-align: center; width: .2%;' >" +
+                    LAB103P.APICAL[i] +
+                    "</td>"
+                );
+            }
+        }
+        for (i = 4; i < 8; i++) {
+            if (i == 5 || i == 7) {
+                $("#filaApical").append(
+                    "<td style='text-align: center; width: .2%; background-color: #476fad54;' colspan='2'>" +
+                    LAB103P.APICAL[i] +
+                    "</td>"
+                );
+            } else {
+                $("#filaApical").append(
+                    "<td style='text-align: center; width: .2%;' colspan='2'>" +
+                    LAB103P.APICAL[i] +
+                    "</td>"
+                );
+            }
+        }
+        for (i = 8; i < 12; i++) {
+            if (i == 11) {
+                $("#filaApical").append(
+                    "<td style='text-align: center; width: .2%; background-color: #476fad54;' >" +
+                    LAB103P.APICAL[i] +
+                    "</td>"
+                );
+            } else {
+                $("#filaApical").append(
+                    "<td style='text-align: center; width: .2%;' >" +
+                    LAB103P.APICAL[i] +
+                    "</td>"
+                );
+            }
+        }
+        for (i = 12; i < 16; i++) {
+            if (i == 13 || i == 15) {
+                $("#filaApical").append(
+                    "<td style='text-align: center; width: .2%; background-color: #476fad54;' colspan='2'>" +
+                    LAB103P.APICAL[i] +
+                    "</td>"
+                );
+            } else {
+                $("#filaApical").append(
+                    "<td style='text-align: center; width: .2%;' colspan='2'>" +
+                    LAB103P.APICAL[i] +
+                    "</td>"
+                );
+            }
+        }
+
+        // FILA APEX
+        $("#filaApex").append(
+            "<td style='text-align: center; width: .2%;' colspan='6'>" +
+            "R" +
+            "</td>" +
+            "<td style='text-align: center; width: .2%;' colspan='6'>" +
+            "B" +
+            "</td>" +
+            "<td style='text-align: center; width: .2%;' colspan='6'>" +
+            "M" +
+            "</td>" +
+            "<td style='text-align: center; width: .2%;' colspan='6'>" +
+            "R" +
+            "</td>"
+        );
+        for (var i in LAB103P.APEX) {
+            if (i == 3) {
+                $("#filaAdicional").append(
+                    "<td style='text-align: center; width: .2%; background-color: #476fad54;' colspan='6'>" +
+                    LAB103P.APEX[i] +
+                    "</td>"
+                );
+            } else {
+                $("#filaAdicional").append(
+                    "<td style='text-align: center; width: .2%;' colspan='6'>" +
+                    LAB103P.APEX[i] +
+                    "</td>"
+                );
+            }
+        }
+
+        var nit = LAB103P.NIT;
+
+        var url = path.join(`D:\\SC\\newcobol\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString('base64');
+            // console.log(dataImg1)
+
+            var el = document.getElementById('encabezadoimagen_LAB103P')
+            el.style.backgroundImage = `url(data:image/jpeg;base64,${dataImg1})`
+
+            if (LAB103P.NIT == 844002258) {
+                $("#encabezadoimagen_LAB103P").css("width", "35%")
+                $("#encabezadoimagen_LAB103P img").css("width", "60%");
+                $("#encabezadoimagen_LAB103P img").css("height", "60%");
+            }
+        });
+
+        var nitprofe = parseInt(LAB103P.ID_BACTERIOLOGO);
+        var urlprofe = path.join(`D:\\SC\\newcobol\\HC\\DATOS\\${nitprofe}.bmp`);
+        fs.readFile(urlprofe, function (err, data) {
+            if (err) throw err;
+            var dataImg2 = Buffer.from(data).toString("base64");
+            $("<img/>")
+                .attr("src", `data:image/jpeg;base64,${dataImg2}`)
+                .appendTo("#firmaprofesional_LAB103P");
+        });
+    });
+</script>

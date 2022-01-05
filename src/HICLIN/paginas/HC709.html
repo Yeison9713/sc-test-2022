@@ -1,0 +1,401 @@
+<script src="../../HICLIN/scripts/HCI-8031.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI01.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/BARTHELI.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/KARNOFI.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/DEPENDE.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/FINDRI.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/DISCAP.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HERIDAI.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI-5414A.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/ACO-COVIDI.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI01C.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI02.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/PATOL.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI01I.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/AIEPI010.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI-9010.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI-9011.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/AIEPI020.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI9007.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI-8001.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../LAB/scripts/_impresionesLab.js" disabled='disabled' type="text/javascript"></script>
+<script src="https://unpkg.com/pdf-lib"></script>
+
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    #TABLA_HC709 tbody td {
+        text-align: left;
+    }
+</style>
+
+
+<div class="col-md-12" id="HC709">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <div class="form-horizontal">
+
+                <div class="col-md-6 no-padding">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="portlet light box-center box-title">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Fechas</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6" style="padding-left: 0;">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                                style="margin-bottom: 13px !important">
+
+                                <div class="col-md-12 no-padding" style="text-align: center;">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                        style="padding-bottom: 0 !important">
+                                        <label>Procesar desde</label>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarFechaIni_HC709">
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <label class="col-md-12 col-sm-6 col-xs-6">Año</label>
+                                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                                <input v-model="global_HC709.año_ini" type="number"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    maxlength="4" data-orden="1" required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <label class="col-md-12 col-sm-6 col-xs-6">Mes</label>
+                                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                                <input v-model="global_HC709.mes_ini" type="number" class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    maxlength="2" data-orden="2" required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <label class="col-md-12 col-sm-12 col-xs-6">Dia</label>
+                                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                                <input v-model="global_HC709.dia_ini" type="number" class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    maxlength="2" data-orden="3" required="true">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                                style="margin-bottom: 13px !important">
+
+                                <div class="col-md-12 no-padding" style="text-align: center;">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                        style="padding-bottom: 0 !important">
+                                        <label>Hasta</label>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarFechaFin_HC709">
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <label class="col-md-12 col-sm-6 col-xs-6">Año</label>
+                                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                                <input v-model="global_HC709.año_fin" type="number" class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    maxlength="4" data-orden="1" required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <label class="col-md-12 col-sm-6 col-xs-6">Mes</label>
+                                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                                <input v-model="global_HC709.mes_fin" type="number" class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    maxlength="2" data-orden="2" required="true">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <label class="col-md-12 col-sm-12 col-xs-6">Dia</label>
+                                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                                <input v-model="global_HC709.dia_fin" type="number" class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    maxlength="2" data-orden="3" required="true">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="portlet light box-center box-title">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Opción Macro</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                            style="padding-bottom: 9px">
+
+                            <div class="col-md-3 col-sm-3 col-xs-12" style="text-align: left;" id="validarTipoMacro_HC709">
+                                <label>Tipo de macro</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                        <input @keyup.f8="_ventanaTipoMacro_HC709" v-model="macro.tipoMacro_HC709" data-orden="1" maxlength="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 tipoMacro_HC709" disabled="disabled">
+                                    </div>
+                                    <button @click="_ventanaTipoMacro_HC709" type="button"
+                                        class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 col-xs-12" style="text-align: left;">
+                                <label>Descripción</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input v-model="macro.descripTipoMacro_HC709"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-12 no-padding" id="validarCodMacro_HC709"
+                                style="text-align: left;">
+                                <label>Macro a utilizar</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                        <input @keyup.f8="_ventanaCodigosMacro_HC709" v-model="macro.codMacro_HC709" data-orden="1" maxlength="6" type="number"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 codMacro_HC709" disabled="disabled">
+                                    </div>
+                                    <button @click="_ventanaCodigosMacro_HC709" type="button"
+                                        class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6" style="padding-right: 0;">
+                    <div class="col-md-12 no-padding">
+                        <div class="portlet light box-center box-title">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Opciones</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left;">
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        Apertura Historia?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarOpcAper_HC709">
+                                        <input v-model="opciones.opc_aper" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        Evolución Médica?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarOpcEvo_HC709">
+                                        <input v-model="opciones.opc_evo" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir Notas
+                                        Enfermeria?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarOpcEnf_HC709">
+                                        <input v-model="opciones.opc_enf" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        Evolución Terapias?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarOpcTer_HC709">
+                                        <input v-model="opciones.opc_ter" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        Formulacion MED?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarOpcFor_HC709">
+                                        <input v-model="opciones.opc_for" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        Solicitud Labor.?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarOpcLab_HC709">
+                                        <input v-model="opciones.opc_lab" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-10 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        Solicitud Imag.?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarOpcIma_HC709">
+                                        <input v-model="opciones.opc_ima" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        Solicitud Ord Md?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarOpcOrd_HC709">
+                                        <input v-model="opciones.opc_ord" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        Solicitud Consul.?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarOpcCon_HC709">
+                                        <input v-model="opciones.opc_con" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-8 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        Resultados Labor.?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarOpcRla_HC709">
+                                        <input v-model="opciones.opc_rla" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-6">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <label class="col-md-10 col-sm-10 col-xs-12" style="padding-top: 6px;">Imprimir
+                                        Incapacidad Med?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarOpcInc_HC709">
+                                        <input v-model="opciones.opc_inc" type="text" placeholder="N"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-6 col-xs-12 no-padding">
+                    <div class="col-md-12 col-sm-12 no-padding">
+                        <div class="portlet light box-center box-title">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Historias Clínicas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="divTabla">
+                            <div style="clear:both;"></div>
+                            <table id="TABLA_HC709" class="table table-light table-striped" data-orden="1">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 12%;">Folio</th>
+                                        <th style="width: 12%;">Fecha</th>
+                                        <th style="width: 35%;">Médico</th>
+                                        <th style="width: 41%;">Motivo de consulta</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in historias_tabla">
+                                        <td>{{item.folio}}</td>
+                                        <td>{{item.fecha}}</td>
+                                        <td>{{item.medico}}</td>
+                                        <td>{{item.motivo}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../frameworks/pdf/hiclin/HCI02.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI01.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/AcoCovid.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Barthel.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Depende.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Discapacidad.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Findri.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI5414A.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Herida.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Karnof.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Patol.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI01I.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/AIEPI010.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI-9010.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI-9011.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/AIEPI020.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI-8031.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI9007.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI-8001.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HC709.js" disabled='disabled' type="text/javascript"></script>

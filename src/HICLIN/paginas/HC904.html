@@ -1,0 +1,236 @@
+<style>
+  .grid-2 {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .grid-field {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+</style>
+
+<div class="col-xs12 col-sm-12 col-md-12 col-lg-12" id="HC904">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="form-group col-md-8 col-sm-8 col-xs-8 box-center">
+          <div class="col-12 no-padding">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption" style="width: 100%;">
+                  <span class="caption-subject bold">
+                    LISTADO DE CENSO HOSPITALARIO
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding"
+            style="height: 100%; overflow: hidden;"
+          >
+            <div class="col-12 flex-container">
+              <div class="salto-linea"></div>
+              <div
+                class="inline-inputs col-md-12 col-sm-12 col-xs-12 col-lg-12"
+                >
+                <label
+                  class="col-md-3 col-sm-3 col-xs-3 col-lg-3"
+                  style="text-align: left; background: 0;"
+                >
+                  Servicio Hospitalario:
+                </label>
+                <div
+                  class="input-group col-md-4 col-sm-4 col-xs-4"
+                  id="dato_tipo_serv"
+                >
+                  <input
+                    v-model="form.tipo_serv"
+                    type="text"
+                    @keydown.f8="_ventanaServHosp"
+                    class="form-control col-md-2 col-sm-2 col-xs-2 text-center tipo_serv"
+                    data-orden="1"
+                    maxlength="2"
+                    disabled="disabled"
+                  />
+                </div>
+
+                <button
+                  @click="_ventanaServHosp"
+                  type="button"
+                  class="btn f8-Btn col-md-2 col-sm-2 col-xs-2"
+                >
+                  <i class="icon-magnifier"></i>
+                </button>
+                <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                  <input
+                    type="text"
+                    disabled="disabled"
+                    ref="descrip_tipo_serv"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <label>Fecha inicial</label>
+                <div class="grid-field">
+                  <div
+                    class="input-group col-md-12 col-sm-12 col-xs-12"
+                    id="ano_inicial"
+                  >
+                    <input
+                      v-model="form.ano_ini"
+                      type="number"
+                      required="true"
+                      placeholder="AAAA"
+                      class="form-control"
+                      maxlength="4"
+                      disabled="disabled"
+                      data-orden="1"
+                    />
+                  </div>
+                  <div
+                    class="input-group col-md-12 col-sm-12 col-xs-12"
+                    id="mes_inicial"
+                  >
+                    <input
+                      v-model="form.mes_ini"
+                      type="number"
+                      required="true"
+                      placeholder="MM"
+                      class="form-control"
+                      maxlength="2"
+                      disabled="disabled"
+                      data-orden="1"
+                    />
+                  </div>
+                  <div
+                    class="input-group col-md-12 col-sm-12 col-xs-12"
+                    id="dia_inicial"
+                  >
+                    <input
+                      v-model="form.dia_ini"
+                      type="number"
+                      required="true"
+                      placeholder="DD"
+                      class="form-control"
+                      maxlength="2"
+                      disabled="disabled"
+                      data-orden="1"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+                <label>Fecha final</label>
+                <div class="grid-field">
+                  <div
+                    class="input-group col-md-12 col-sm-12 col-xs-12"
+                    id="ano_final"
+                  >
+                    <input
+                      v-model="form.ano_fin"
+                      type="number"
+                      required="true"
+                      placeholder="AAAA"
+                      class="form-control"
+                      maxlength="4"
+                      disabled="disabled"
+                      data-orden="1"
+                    />
+                  </div>
+                  <div
+                    class="input-group col-md-12 col-sm-12 col-xs-12"
+                    id="mes_final"
+                  >
+                    <input
+                      v-model="form.mes_fin"
+                      type="number"
+                      required="true"
+                      placeholder="MM"
+                      class="form-control"
+                      maxlength="2"
+                      disabled="disabled"
+                      data-orden="1"
+                    />
+                  </div>
+                  <div
+                    class="input-group col-md-12 col-sm-12 col-xs-12"
+                    style="padding-right: 15px;"
+                    id="dia_final"
+                  >
+                    <input
+                      v-model="form.dia_fin"
+                      type="number"
+                      required="true"
+                      placeholder="DD"
+                      class="form-control"
+                      maxlength="2"
+                      disabled="disabled"
+                      data-orden="1"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                <div class="inline-inputs">
+                  <label
+                    class="col-md-5 col-sm-5 col-xs-5 col-lg-5"
+                    style="text-align: left; background: 0;"
+                  >
+                    Opciones de CTAS:
+                  </label>
+                  <div
+                    class="input-group col-md-10 col-sm-10 col-xs-10 col-lg-10"
+                    id="opcion_cta"
+                  >
+                    <input
+                      :value="descrip_opcion_cta"
+                      type="text"
+                      class="form-control col-md-10 col-sm-10 col-xs-10 col-lg-10 text-center"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 no-padding">
+                <div class="inline-inputs">
+                  <label
+                    class="col-md-2 col-sm-2 col-xs-2 col-lg-2"
+                    style="text-align: left; background: 0;"
+                  >
+                    JORNADA:
+                  </label>
+                  <div
+                    class="input-group col-md-10 col-sm-10 col-xs-10 col-lg-10"
+                    id="jornada"
+                  >
+                    <input
+                      :value="descrip_jornada"
+                      type="text"
+                      class="form-control col-md-10 col-sm-10 col-xs-10 col-lg-10 text-center"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <loader_modal :estado="estado_loader" :progreso="progreso" :loader="loader" :label="label_loader"></loader_modal>
+</div>
+
+<script src="../../HICLIN/scripts/HC904.js" type="text/javascript" ></script>

@@ -1,0 +1,689 @@
+<script>
+    const {
+        ipcRenderer
+    } = require("electron"),
+        fs = require("fs"),
+        exec = require("child_process").exec,
+        path = require("path"),
+        remote = require("electron").remote;
+    window.$ = window.jQuery = require("jquery");
+</script>
+
+<body>
+    <div class="page-header" style="">
+        <div id="encabezado_LAB102P">
+            <div id="encabezadoimagen_LAB102P"></div>
+            <div id="encabezadocontenido_LAB102P">
+                <a id="nombreusu_LAB102P">LABORATORIO PROSOFT</a>
+                <a id="nitusu_LAB102P">891236767123-1</a>
+                <a id="resultados_LAB102P">RESULTADOS DE EXAMEN</a>
+            </div>
+        </div>
+        <!-- <a id="paginas_LAB102P" class="paginas_LAB102P">Pagina 1</a> -->
+        <a class="titulos_LAB102P">FECHA &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</a>
+        <a id="fecha_LAB102P"></a>
+        <!-- <a class="titulos_LAB102P">FECHA LECT &nbsp&nbsp:</a>
+        <a id="fechalect_LAB102P"></a> -->
+        <a class="titulos_LAB102P" style="width: 18% !important;">COMPROBANTE NRO :</a>
+        <a id="comprobante_LAB102P"></a>
+        <a class="titulos_LAB102P">FACTURA &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</a>
+        <a id="factura_LAB102P"></a>
+        <a class="titulos_LAB102P" style="width: 18% !important;">OCUPACION
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</a>
+        <a id="ocupacion_LAB102P"></a>
+        <a class="titulos_LAB102P" style="width: 13% !important;">ID ENTIDAD
+            &nbsp&nbsp&nbsp&nbsp:</a>
+        <a id="codigo_LAB102P"></a>
+        <a class="titulos_LAB102P" style="width: 18% !important;">ENTIDAD
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</a>
+        <a id="entidad_LAB102P"></a>
+        <a class="titulos_LAB102P">ID PACIENTE
+            &nbsp&nbsp:</a>
+        <a id="idPaciente_LAB102P" style="width: 22% !important;"></a>
+        <a class="titulos_LAB102P" id="nomPaciente_LAB102P" style="width: 11% !important;">PACIENTE &nbsp:</a>
+        <a id="NomPaciente_LAB102P" style="width: 50% !important;"></a>
+        <div style="padding-top: 0px;"></div>
+        <a class="titulos_LAB102P" style="width: 12% !important;">TIPO USUARIO:</a>
+        <a id="tipousuario_LAB102P"></a>
+        <a class="titulos_LAB102P" style="width: 9% !important;">EDAD:</a>
+        <a id="edad_LAB102P"></a>
+        <a class="titulos_LAB102P" style="width: 5% !important;">SEXO:</a>
+        <a id="sexo_LAB102P"></a>
+        <a class="titulos_LAB102P" style="width: 13% !important;">CIUDAD:</a>
+        <a id="ciudad_LAB102P"></a>
+        <a class="titulos_LAB102P" style="width: 5% !important;">ZONA:</a>
+        <a id="zona_LAB102P"></a>
+        <a class="titulos_LAB102P" style="width: 12% !important;">ESTUDIO
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</a>
+        <a id="descripcion_LAB102P"></a>
+    </div>
+
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <td>
+                    <!--place holder for the fixed-position header-->
+                    <div class="page-header-space"></div>
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <!--*** CONTENT GOES HERE ***-->
+                    <div class="page">
+                        <p style="text-align: center; padding-top: 10px; font-weight: 600;">TABLA DE RESULTADOS</p>
+                        <table class="tabla_LAB102P">
+                            <thead>
+                                <tr style="font-size: 11px;">
+                                    <th style="width: 25%; padding-top: 6px; padding-bottom: 6px; margin-bottom: 6px;">
+                                        Descripcion</th>
+                                    <th style="width: 38%; padding-top: 6px; padding-bottom: 6px;">Resultado</th>
+                                    <th style="width: 15%; padding-top: 6px; padding-bottom: 6px;">Unidades</th>
+                                    <th style="width: 20%; padding-top: 6px; padding-bottom: 6px;">Valores de Referencia
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <div id="hallazgos_LAB102P">
+                            <div style="text-align: center;">
+                                <a style="font-size: 13px; font-weight: bold;">Hallazgos</a>
+                            </div>
+                            <br>
+                            <pre id="hallazgosText_LAB102P"
+                                style="width: 100%; white-space: pre-wrap;"></pre>
+                        </div>
+                        <br>
+                        <div id="conclusiones_LAB102P">
+                            <div style="text-align: center;">
+                                <a style="font-size: 13px; font-weight: bold;">Conclusiones</a>
+                            </div>
+                            <br>
+                            <pre id="conclusionesText_LAB102P" style="width: 100%; white-space: pre-wrap;"></pre>
+                        </div>
+                        <div id=" contenedor_final">
+                            <div id="firmaprofesional_LAB102P"></div>
+                            <!-- <a id="elaborado_LAB102P">ELAB 0101 200504 11:54</a> -->
+                            <a id="medicoordena_LAB102P"></a>
+                            <a id="cedulaMedico_LAB102P"></a>
+                            <a id="regMedico_LAB102P"></a>
+                            <!-- <a id="imprime_LAB102P">IMPRIME 0101 200504 11:54</a> -->
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+<style>
+    .page-header,
+    .page-header-space {
+        height: 155px;
+    }
+
+    .page-header {
+        position: fixed;
+        top: 0mm;
+        width: 99%;
+        padding-bottom: 12px;
+        padding-left: 5px;
+    }
+
+    .page {
+        page-break-after: always;
+        width: 100%;
+        /* margin-top: 1%; */
+    }
+
+    .footer {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+
+    @page {
+        margin: 20mm;
+        counter-increment: page;
+    }
+
+    @page: right {
+        @bottom-right {
+            content: counter(page) " of "counter(pages);
+            font-family: Arial, Sans Serif;
+        }
+    }
+
+    .pagina_LAB102P::after {
+        counter-increment: page;
+        content: counter(page);
+    }
+
+    #contenedor_final {
+        page-break-inside: avoid;
+    }
+
+    #firmaprofesional_LAB102P {
+        page-break-inside: avoid;
+    }
+
+    #hallazgos_LAB102P {
+        page-break-inside: auto;
+    }
+
+    #conclusiones_LAB102P {
+        page-break-inside: avoid;
+    }
+
+    #bodyRef tr td {
+        page-break-inside: avoid;
+        white-space: nowrap;
+    }
+
+    @media print {
+        #bodyRef>tr:first-of-type {
+            page-break-after: avoid;
+        }
+
+        div {
+            page-break-inside: inherit;
+        }
+
+        div#contenedor_final {
+            page-break-inside: avoid;
+        }
+
+        #firmaprofesional_LAB102P {
+            page-break-inside: avoid;
+        }
+
+        table {
+            page-break-after: auto;
+        }
+
+        tr {
+            page-break-inside: avoid;
+            page-break-after: auto;
+        }
+
+        td {
+            page-break-inside: avoid;
+            page-break-after: auto;
+        }
+
+        thead {
+            display: table-header-group;
+        }
+
+        tfoot {
+            display: table-footer-group;
+        }
+
+        button {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+            -webkit-print-color-adjust: exact;
+        }
+
+        table #bodyRef tr td {
+            page-break-inside: avoid;
+            white-space: nowrap;
+        }
+    }
+
+    .salto-linea {
+        padding-top: 10px;
+    }
+
+    #encabezado_LAB102P {
+        display: flex;
+        width: 100%;
+    }
+
+    #encabezadoimagen_LAB102P {
+        width: 15%;
+        height: 40%;
+        position: absolute;
+        /* padding-left: 40px; */
+        /* margin-bottom: 2px; */
+    }
+
+    #encabezadoimagen_LAB102P img {
+        width: 80%;
+        height: 80%;
+    }
+
+    #encabezadocontenido_LAB102P {
+        width: 100%;
+        border-bottom: black solid 0.3px;
+    }
+
+    #nombreusu_LAB102P,
+    #nitusu_LAB102P {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: bolder;
+    }
+
+    #resultados_LAB102P {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        font-size: 16px;
+    }
+
+    #paginas_LAB102P {
+        display: inline-flex;
+        width: 99%;
+        justify-content: flex-end;
+        font-size: 11px;
+    }
+
+    .titulos_LAB102P {
+        display: inline-flex;
+        width: 13%;
+        font-weight: bolder;
+        font-size: 10px;
+    }
+
+    #fecha_LAB102P,
+    #idPaciente_LAB102P,
+    #factura_LAB102P,
+    #codigo_LAB102P {
+        display: inline-flex;
+        width: 34%;
+        font-size: 10px;
+    }
+
+    #descripcion_LAB102P {
+        display: inline-flex;
+        width: 87%;
+        font-size: 10px;
+    }
+
+
+    #entidad_LAB102P,
+    #fechalect_LAB102P,
+    #comprobante_LAB102P,
+    #ocupacion_LAB102P,
+    #NomPaciente_LAB102P {
+        display: inline-flex;
+        width: 33%;
+        font-size: 10px;
+    }
+
+    #tipousuario_LAB102P,
+    #edad_LAB102P,
+    #sexo_LAB102P,
+    #ciudad_LAB102P,
+    #zona_LAB102P {
+        display: inline-flex;
+        width: 10%;
+        font-size: 10px;
+    }
+
+    .tabla_LAB102P thead {
+        font-size: 7px;
+        width: 100%;
+        border-spacing: 0;
+        table-layout: inherit;
+        border: none;
+        background-color: #476fad;
+        color: white;
+        box-shadow: 0px 4px 30px -4px rgba(0, 51, 90, 0.1);
+        border-radius: 3px;
+    }
+
+    .tabla_LAB102P {
+        width: 100%;
+        table-layout: inherit;
+        border-spacing: 0;
+    }
+
+    .tabla_LAB102P tbody tr td {
+        font: 10px Arial;
+    }
+
+    .tabla_LAB102P tr td:nth-child(3) {
+        text-align: center;
+    }
+
+    #firmaprofesional_LAB102P {
+        display: flex;
+        width: 20%;
+        padding-top: 10px;
+    }
+
+    #firmaprofesional_LAB102P img {
+        display: flex;
+        width: 100%;
+    }
+
+    #cedulaMedico_LAB102P,
+    #regMedico_LAB102P,
+    #medicoordena_LAB102P {
+        display: inline-flex;
+        width: 50%;
+        font: 10px Arial;
+        padding-top: 4px;
+    }
+
+    #hallazgos_LAB102P {
+        width: 100%;
+        height: auto;
+        /* border-bottom: black solid 0.3px; */
+        /* border-top: black solid 0.3px; */
+        /* margin-bottom: 3px; */
+        /* text-align: center; */
+        padding-top: 5px;
+        font-size: 12px;
+    }
+
+    #conclusiones_LAB102P {
+        width: 100%;
+        height: auto;
+        /* border-bottom: black solid 0.3px; */
+        margin-bottom: 3px;
+        /* text-align: center; */
+        padding-top: 5px;
+        font-size: 12px;
+    }
+
+    #elaborado_LAB102P,
+    #imprime_LAB102P {
+        display: inline-flex;
+        width: 49%;
+        font: 10px Arial;
+        justify-content: center;
+    }
+</style>
+<script>
+    var LAB102P = [];
+    ipcRenderer.on("ping", (e, data) => {
+        LAB102P = data.datos;
+        switch (LAB102P.TIPO_PACI) {
+            case "C":
+                LAB102P.TIPO_PACI = "CONTR";
+                break;
+            case "S":
+                LAB102P.TIPO_PACI = "SUBSID";
+                break;
+            case "V":
+                LAB102P.TIPO_PACI = "VINCUL";
+                break;
+            case "P":
+                LAB102P.TIPO_PACI = "PARTIC";
+                break;
+            case "O":
+                LAB102P.TIPO_PACI = "OTRO  ";
+                break;
+            default:
+                break;
+        }
+
+        var x = 00;
+        for (i = 0; i < LAB102P.ID_PACI.length; i++) {
+            var res = LAB102P.ID_PACI.charAt(i);
+            console.log(res);
+            if (isNaN(res)) {
+                console.log("letra");
+                x = 01;
+            }
+        }
+        if (x != 00) {
+            $("#idPaciente_LAB102P").text(LAB102P.ID_PACI);
+        } else {
+            $("#idPaciente_LAB102P").text(LAB102P.IDHIS_FACTRX);
+        }
+
+        $("#nombreusu_LAB102P").text(LAB102P.USU);
+        $("#nitusu_LAB102P").text(LAB102P.NIT);
+        $("#fecha_LAB102P").text(LAB102P.FECHA);
+        $("#fechalect_LAB102P").text(LAB102P.FECHA);
+        $("#factura_LAB102P").text(LAB102P.CTA);
+        $("#comprobante_LAB102P").text(LAB102P.COMPROBANTE);
+        $("#entidad_LAB102P").text(LAB102P.ENTIDAD);
+        $("#codigo_LAB102P").text(LAB102P.ID_ENTIDAD);
+        $("#ocupacion_LAB102P").text(LAB102P.OCUP_PACI);
+        $("#tipousuario_LAB102P").text(LAB102P.TIPO_PACI);
+        $("#NomPaciente_LAB102P").text(LAB102P.DESCRIP_PACIRX)
+        $("#edad_LAB102P").text(LAB102P.EDAD);
+        $("#sexo_LAB102P").text(LAB102P.SEXO);
+        $("#ciudad_LAB102P").text(LAB102P.CIUDAD_PACI);
+        $("#zona_LAB102P").text(LAB102P.ZONA_PACI);
+        $("#hallazgosText_LAB102P").text(LAB102P.HALLAZGOS);
+        $("#conclusionesText_LAB102P").text(LAB102P.CONCLUSIONES);
+        $("#medicoordena_LAB102P").text(LAB102P.NOM_MEDICO);
+        $("#cedulaMedico_LAB102P").text(LAB102P.ID_BACTERIOLOGO);
+        $("#regMedico_LAB102P").text("RM " + LAB102P.REG_MEDICO);
+        $("#descripcion_LAB102P").text(LAB102P.DESCRIP1_CUPRX);
+
+        var result = $("#hallazgos_LAB102P").css('height');
+        console.log(result, "height");
+
+        var tabla = document
+            .getElementsByClassName("tabla_LAB102P")[0]
+            .getElementsByTagName("tbody")[0];
+        var textoencelda = "";
+
+        for (var i in LAB102P.MACROS) {
+            if (LAB102P.MACROS[i].VLR_REFER[1].CODIGO.trim() != "") {
+                var body = document.createElement("tbody");
+                body.setAttribute("id", "bodyRef");
+                body.style.display = "table-header-group";
+                body.style.whiteSpace = "nowrap";
+
+                var filax = document.createElement("tr");
+                var celda3 = document.createElement("td");
+                textoencelda = document.createTextNode(LAB102P.MACROS[i].DESCRIPCION.trim());
+                celda3.appendChild(textoencelda);
+                celda3.style.paddingTop = "6px";
+                celda3.style.paddingBottom = "6px";
+                celda3.style.fontWeight = "700";
+                filax.setAttribute("class", "filaCombinada1");
+                filax.appendChild(celda3);
+
+                var celda2 = document.createElement("td");
+                textoencelda = document.createTextNode(LAB102P.TABLA[i].RESULTADO.trim());
+                celda2.appendChild(textoencelda);
+                celda2.style.textAlign = "center";
+                celda2.style.paddingTop = "6px";
+                celda2.style.paddingBottom = "6px";
+                filax.appendChild(celda2);
+                // celda2.setAttribute("width", "38%");
+
+                var celda3 = document.createElement("td");
+                textoencelda = document.createTextNode(LAB102P.MACROS[i].UNID_MEDIDA.trim());
+                celda3.appendChild(textoencelda);
+                celda3.style.paddingTop = "6px";
+                celda3.style.paddingBottom = "6px";
+                filax.appendChild(celda3);
+                body.appendChild(filax);
+
+                // tabla.appendChild(body);
+                tabla.appendChild(filax);
+
+                var filax = document.createElement("tr");
+                var celda11 = document.createElement("td");
+                var celda12 = document.createElement("td");
+                var celda13 = document.createElement("td");
+                var celda14 = document.createElement("td");
+                celda11.style.borderBottom = '.1px groove';
+                celda12.style.borderBottom = '.1px groove';
+                celda12.style.paddingBottom = '10px';
+                celda13.style.borderBottom = '.1px groove';
+                celda14.style.borderBottom = '.1px groove';
+                filax.appendChild(celda11);
+                filax.appendChild(celda12);
+                filax.appendChild(celda13);
+                filax.appendChild(celda14);
+                filax.setAttribute("class", "filaCombinada");
+                // filax.style.breakBefore = "always";
+                // filax.style.fontSize = "15pt";
+                body.appendChild(filax);
+                tabla.appendChild(filax);
+                // tabla.appendChild(body);
+                tabla3 = document.createElement("table");
+                celda12.appendChild(tabla3);
+                tabla3tbody = document.createElement("tbody");
+                tabla3.appendChild(tabla3tbody);
+                tabla3.setAttribute("id", "variasReferencias" + i);
+                tabla3.setAttribute("border-collapse", "collapse");
+                tabla3.setAttribute("border-spacing", "0");
+                tabla3.setAttribute("width", "100%");
+
+                if (i == 0) {
+                    celda3.style.paddingTop = "6px";
+                    celda2.style.paddingTop = "6px";
+                    celda3.style.paddingTop = "6px";
+                }
+
+                $("#variasReferencias" + i + " tbody").append(
+                    "<tr>" +
+                    "<td style='text-align: center; width: 100%; font-weight: bold;'colspan='2'>" +
+                    "Valores de referencia" +
+                    "</td>" +
+                    "</tr>"
+                );
+
+                for (let x in LAB102P.MACROS[0].VLR_REFER) {
+                    if (LAB102P.MACROS[i].VLR_REFER[x].CODIGO.trim() != "") {
+                        $("#variasReferencias" + i + " tbody").append(
+                            "<tr>" +
+                            "<td style='text-align: left; width: 50%; white-space: pre;'>" +
+                            LAB102P.MACROS[i].VLR_REFER[x].CODIGO.trim() +
+                            "</td>" +
+                            "<td style='text-align: left; width: 50%; white-space: pre;'>" +
+                            LAB102P.MACROS[i].VLR_REFER[x].REFER.trim() +
+                            "</td>" +
+                            "</tr>"
+                        );
+                    }
+                }
+
+            } else {
+                var body = document.createElement("tbody");
+
+                var fila = document.createElement("tr");
+                var celda1 = document.createElement("td");
+
+                textoencelda = document.createTextNode(LAB102P.MACROS[i].DESCRIPCION.trim());
+                celda1.appendChild(textoencelda);
+                celda1.style.paddingTop = "6px";
+                celda1.style.paddingBottom = "6px";
+                celda1.style.borderBottom = '.1px groove';
+                celda1.style.fontWeight = "700";
+                fila.appendChild(celda1);
+                // celda1.setAttribute("width", "25%");
+
+                var celda2 = document.createElement("td");
+                textoencelda = document.createTextNode(LAB102P.TABLA[i].RESULTADO.trim());
+                celda2.appendChild(textoencelda);
+                celda2.style.textAlign = "center";
+                celda2.style.paddingTop = "6px";
+                celda2.style.paddingBottom = "6px";
+                celda2.style.borderBottom = '.1px groove';
+                fila.appendChild(celda2);
+                // celda2.setAttribute("width", "38%");
+
+                var celda3 = document.createElement("td");
+                textoencelda = document.createTextNode(LAB102P.MACROS[i].UNID_MEDIDA.trim());
+                celda3.appendChild(textoencelda);
+                celda3.style.paddingTop = "6px";
+                celda3.style.paddingBottom = "6px";
+                celda3.style.borderBottom = '.1px groove';
+                fila.appendChild(celda3);
+
+                // celda3.setAttribute("width", "15%");
+                var celda4 = document.createElement("td");
+                tabla2 = document.createElement("table");
+                celda4.appendChild(tabla2);
+                tabla2tbody = document.createElement("tbody");
+                celda4.style.paddingTop = "6px";
+                celda4.style.paddingBottom = "6px";
+                celda4.style.borderBottom = '.1px groove';
+                tabla2.appendChild(tabla2tbody);
+                fila.appendChild(celda4);
+                celda4.style.width = "19%";
+                celda4.style.textAlign = "center";
+                tabla2.setAttribute("id", "tablareferencia" + i);
+                tabla2.setAttribute("border-collapse", "collapse");
+                tabla2.setAttribute("border-spacing", "0");
+                tabla2.setAttribute("width", "100%");
+                if (i == 0) {
+                    celda1.style.paddingTop = "6px";
+                    celda2.style.paddingTop = "6px";
+                    celda3.style.paddingTop = "6px";
+                    celda4.style.paddingTop = "6px";
+                }
+                body.appendChild(fila);
+
+                tabla.appendChild(fila);
+                // tabla.appendChild(body);
+            }
+        }
+
+        for (const i in LAB102P.MACROS) {
+            for (let x in LAB102P.MACROS[0].VLR_REFER) {
+                if (LAB102P.MACROS[i].VLR_REFER[x].CODIGO.trim() != "") {
+                    if (LAB102P.MACROS[i].VLR_REFER[1].CODIGO.trim() != "") {
+                    } else {
+                        console.log(LAB102P.MACROS[i].VLR_REFER[x].CODIGO);
+                        $("#tablareferencia" + i + " tbody").append(
+                            "<tr>" +
+                            "<td style='text-align: center;' white-space: pre-wrap;>" +
+                            LAB102P.MACROS[i].VLR_REFER[x].CODIGO.trim() +
+                            "</td>" +
+                            "<td style='text-align: center;' white-space: pre-wrap;>" +
+                            LAB102P.MACROS[i].VLR_REFER[x].REFER.trim() +
+                            "</td>" +
+                            "</tr>"
+                        );
+                    }
+                }
+            }
+        }
+
+        if (LAB102P.CUP == '90' || LAB102P.CUP == '91') {
+            $("#hallazgos_LAB102P").css("display", "none")
+            $("#conclusiones_LAB102P").css("display", "none")
+        }
+
+        var nit = LAB102P.NIT;
+
+        var url = path.join(`D:\\SC\\newcobol\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString("base64");
+            $("<img/>")
+                .attr("src", `data:image/jpeg;base64,${dataImg1}`)
+                .appendTo("#encabezadoimagen_LAB102P");
+
+            if (LAB102P.NIT == 844002258) {
+                $("#encabezadoimagen_LAB102P").css("width", "25%")
+                $("#encabezadoimagen_LAB102P img").css("width", "100%");
+            }
+        });
+        var nitprofe = parseInt(LAB102P.ID_BACTERIOLOGO);
+        var urlprofe = path.join(`D:\\SC\\newcobol\\HC\\DATOS\\${nitprofe}.bmp`);
+        fs.readFile(urlprofe, function (err, data) {
+            if (err) throw err;
+            var dataImg2 = Buffer.from(data).toString("base64");
+            $("<img/>")
+                .attr("src", `data:image/jpeg;base64,${dataImg2}`)
+                .appendTo("#firmaprofesional_LAB102P");
+        });
+    });
+</script>

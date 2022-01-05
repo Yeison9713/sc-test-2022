@@ -1,0 +1,167 @@
+<div class="col-md-12" id="SER7623">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <div class="form-horizontal">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-10 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label>Datos de origen</label>
+                        </div>
+                        <div class="col-md-12" style="text-align: left;">
+                            <div class="col-md-6 col-sm-5 col-xs-6">
+                                <label>Paciente</label>
+                                <div class="inline-inputs" id="validarPacienteOrigen">
+                                    <div class="input-group col-md-4 col-sm-10 col-xs-10">
+                                        <input type="text" v-model="form.pacienteOri" @keydown.f8="_f8Pacienteorig"
+                                            data-orden="1" maxlength="15"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 text-left pacienteOrigen_SER7623">
+                                    </div>
+                                    <button @click="_f8Pacienteorig" type="button"
+                                        class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" v-model="form.nombrePaciOri" style="text-align: left;"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1 col-sm-5 col-xs-6">
+                                <label>Sucursal</label>
+                                <div class="inline-inputs" id="validarsucursalOrigen">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" v-model="form.sucursalOri" data-orden="1" maxlength="2"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-5 col-xs-6">
+                                <label>Folio</label>
+                                <div class="inline-inputs" id="validarFolioOrigen">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="number" v-model="form.folioOri" data-orden="1" maxlength="6"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 text-left">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-5 col-xs-6">
+                                <label>Tipo evolución</label>
+                                <div class="inline-inputs" id="validarTipoEvoOrigen">
+                                    <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                                        <input type="text" v-model="form.tipoevo" data-orden="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                    <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                                        <input type="text" v-model="form.tipoevoDescrip" data-orden="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-10 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label>Datos de Destino</label>
+                        </div>
+                        <div class="col-md-12" style="text-align: left;">
+                            <div class="col-md-6 col-sm-5 col-xs-6">
+                                <label>Paciente</label>
+                                <div class="inline-inputs" id="validarPacienteDestino">
+                                    <div class="input-group col-md-4 col-sm-10 col-xs-10">
+                                        <input type="text" v-model="form.pacientedesti"
+                                            @keydown.119="_f8Pacientedestino" data-orden="1" maxlength="15"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 text-left pacientedestino_SER7623">
+                                    </div>
+                                    <button type="button" @click="_f8Pacientedestino"
+                                        class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" v-model="form.nombrePaciDest" style="text-align: left;"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-5 col-xs-6">
+                                <label>Sucursal</label>
+                                <div class="inline-inputs"  id="validarsucDestino">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" data-orden="1" maxlength="2" v-model="form.sucursalDest"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-5 col-xs-6">
+                                <label>Folio</label>
+                                <div class="inline-inputs" id="validarFolioDestino">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" data-orden="1" maxlength="6" v-model="form.folioDest"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 text-left">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="salto-linea"></div>
+                            <div class="col-md-6 col-sm-5 col-xs-6">
+                                <label>Fecha desde</label>
+                                <div class="inline-inputs" id="validarfechaini">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" data-orden="1" maxlength="4" placeholder="AAAA"
+                                            v-model="form.anoini" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" data-orden="2" maxlength="2" placeholder="MM"
+                                            v-model="form.mesini" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" data-orden="3" maxlength="2" placeholder="DD"
+                                            v-model="form.diaini" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" data-orden="4" maxlength="2" placeholder="HH"
+                                            v-model="form.horaini" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" data-orden="5" maxlength="2" placeholder="mm"
+                                            v-model="form.minutini" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-5 col-xs-6">
+                                <label>Fecha hasta</label>
+                                <div class="inline-inputs" id="validarfechafin">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" data-orden="1" maxlength="4" placeholder="AAAA"
+                                            v-model="form.anofin" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" data-orden="2" maxlength="2" placeholder="MM"
+                                            v-model="form.mesfin" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" data-orden="3" maxlength="2" placeholder="DD"
+                                            v-model="form.diafin" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" data-orden="4" maxlength="2" placeholder="HH"
+                                            v-model="form.horafin" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" data-orden="5" maxlength="2" placeholder="mm"
+                                            v-model="form.minutfin" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    input {
+        text-align: center
+    }
+</style>
+<script src="../../SALUD/scripts/SER7623.js" type="text/javascript"></script>

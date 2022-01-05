@@ -1,0 +1,699 @@
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<div class="col-md-12" id="INV544">
+  <div
+    class="portlet light no-padding"
+    style="
+      background-color: transparent !important;
+      box-shadow: none !important;
+    "
+  >
+    <div class="portlet-body">
+      <div class="form-horizontal">
+        <div class="col-md-12 no-padding">
+
+          <div class="col-md-12 no-padding">
+            <div class="col-md-4" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="tipo_fact" style="padding-right: 0;">
+                    <label
+                      class="col-md-3"
+                      style="background: 0; text-align: left"
+                      >Tipo de fact.</label
+                    >
+                    <div class="input-group col-md-2">
+                      <input
+                        v-model="tipo_fact"
+                        type="text"
+                        class="form-control text-center tipo_fact"
+                        maxlength="1"
+                        data-orden="1"
+                        required="true"
+                      />
+                    </div>
+                    <label class="col-md-6" style="background: 0"
+                      >{{ descrip_tipo_fact }}</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="prefijo" style="padding-right: 0;">
+                    <label
+                      class="col-md-8"
+                      style="background: 0; text-align: left"
+                      >Prefijo</label
+                    >
+                    <div class="input-group col-md-4">
+                      <input
+                        v-model="prefijo"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="discrimina_unserv" style="padding-right: 0;">
+                    <label
+                      class="col-md-9"
+                      style="background: 0; text-align: left"
+                      >Discrimina unid ser</label
+                    >
+                    <div class="input-group col-md-3">
+                      <input
+                        v-model="discrimina_unserv"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        required="true"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="discrimina_paciente" style="padding-right: 0;">
+                    <label
+                      class="col-md-9"
+                      style="background: 0; text-align: left"
+                      >Discrimina paciente</label
+                    >
+                    <div class="input-group col-md-3">
+                      <input
+                        v-model="discrimina_paciente"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        required="true"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 no-padding">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="discrimina_ciudad" style="padding-right: 0;">
+                    <label
+                      class="col-md-9"
+                      style="background: 0; text-align: left"
+                      >Discrimina ciudad</label
+                    >
+                    <div class="input-group col-md-3">
+                      <input
+                        v-model="discrimina_ciudad"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        required="true"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 no-padding">
+            <div class="col-md-2" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 2px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="discrimina_factura" style="padding-right: 0;">
+                    <label
+                      class="col-md-9"
+                      style="background: 0; text-align: left"
+                      >Discrimina factura</label
+                    >
+                    <div class="input-group col-md-3">
+                      <input
+                        v-model="discrimina_factura"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        required="true"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="discrimina_especialidad" style="padding-right: 0;">
+                    <label
+                      class="col-md-9"
+                      style="background: 0; text-align: left"
+                      >Discrim especialid</label
+                    >
+                    <div class="input-group col-md-3">
+                      <input
+                        v-model="discrimina_especialidad"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        required="true"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-6" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 head-box"
+                    style="padding-bottom: 0 !important"
+                  >
+                    <label>Fecha Inicial</label>
+                  </div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                    id="fecha_inicial"
+                  >
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-6 col-xs-6">Año</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="ano_ini"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                          maxlength="4"
+                          data-orden="1"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-6 col-xs-6">Mes</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="mes_ini"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                          maxlength="2"
+                          data-orden="2"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-12 col-xs-6">Dia</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="dia_ini"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                          maxlength="2"
+                          data-orden="3"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-6" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 head-box"
+                    style="padding-bottom: 0 !important"
+                  >
+                    <label>Fecha Final</label>
+                  </div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                    id="fecha_final"
+                  >
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-6 col-xs-6">Año</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="ano_fin"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                          maxlength="4"
+                          data-orden="1"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-6 col-xs-6">Mes</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="mes_fin"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                          maxlength="2"
+                          data-orden="2"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-12 col-xs-6">Dia</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="dia_fin"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                          maxlength="2"
+                          data-orden="3"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 no-padding">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 2px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="grupo" style="padding-right: 0;">
+                    <label
+                      class="col-md-5"
+                      style="background: 0; text-align: left"
+                      >Grupo</label
+                    >
+                    <div class="input-group col-md-4">
+                      <input
+                        v-model="grupo"
+                        type="text"
+                        class="form-control text-center grupo"
+                        maxlength="2"
+                        data-orden="1"
+                        required="true"
+                        @keydown.f8="_ventanaGrupos"
+                      />
+                    </div>
+                    <button
+                      @click="_ventanaGrupos"
+                      type="button"
+                      class="btn f8-Btn col-md-3"
+                    >
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="discrimina_especialidad" style="padding-right: 0;">
+                    <label
+                      class="col-md-12"
+                      style="background: 0; text-align: left"
+                      >{{ descrip_grupo || '** Para generalizar' }}</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 no-padding">
+            <div class="col-md-6" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="articulo">
+                    <label
+                      class="col-md-2"
+                      style="background: 0; text-align: left"
+                      >Articulo</label
+                    >
+                    <div class="input-group col-md-3">
+                      <input
+                        v-model="articulo"
+                        type="text"
+                        class="form-control text-center articulo"
+                        maxlength="15"
+                        data-orden="1"
+                        required="true"
+                        @keydown.f8="_ventanaArticulos"
+                      />
+                    </div>
+                    <button
+                      @click="_ventanaArticulos"
+                      type="button"
+                      class="btn f8-Btn col-md-1"
+                    >
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <label class="col-md-6" style="background: 0"
+                      >{{ descrip_articulo }}</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2" style="padding-left: 0;">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="discrimina_codigo" style="padding-right: 0;">
+                    <label
+                      class="col-md-9"
+                      style="background: 0; text-align: left"
+                      >Discrimina codigo</label
+                    >
+                    <div class="input-group col-md-3">
+                      <input
+                        v-model="discrimina_codigo"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        required="true"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2" style="padding-left: 0;">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="solo_primera" style="padding-right: 0;">
+                    <label
+                      class="col-md-9"
+                      style="background: 0; text-align: left"
+                      >Solo primera vez</label
+                    >
+                    <div class="input-group col-md-3">
+                      <input
+                        v-model="solo_primera"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        required="true"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 no-padding">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="solo_mayores" style="padding-right: 0;">
+                    <label
+                      class="col-md-9"
+                      style="background: 0; text-align: left"
+                      >Solo mayores de 15</label
+                    >
+                    <div class="input-group col-md-3">
+                      <input
+                        v-model="solo_mayores"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        required="true"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 no-padding">
+            <div class="col-md-6" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="entidad">
+                    <label
+                      class="col-md-3"
+                      style="background: 0; text-align: left"
+                      >Entidad a procesar</label
+                    >
+                    <div class="input-group col-md-2">
+                      <input
+                        v-model="entidad"
+                        type="text"
+                        class="form-control text-center entidad"
+                        maxlength="10"
+                        data-orden="1"
+                        required="true"
+                        @keydown.f8="_ventanaEntidades"
+                      />
+                    </div>
+                    <button
+                      @click="_ventanaEntidades"
+                      type="button"
+                      class="btn f8-Btn col-md-1"
+                    >
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <label class="col-md-6" style="background: 0"
+                      >{{ descrip_entidad }}</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="especialidad">
+                    <label
+                      class="col-md-3"
+                      style="background: 0; text-align: left"
+                      >Especialidad</label
+                    >
+                    <div class="input-group col-md-2">
+                      <input
+                        v-model="especialidad"
+                        type="text"
+                        class="form-control text-center especialidad"
+                        maxlength="3"
+                        data-orden="1"
+                        required="true"
+                        @keydown.f8="_ventanaEspecialidades"
+                      />
+                    </div>
+                    <button
+                      @click="_ventanaEspecialidades"
+                      type="button"
+                      class="btn f8-Btn col-md-1"
+                    >
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <label class="col-md-6" style="background: 0"
+                      >{{ descrip_especialidad || "Todas las especialidades" }}</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 no-padding">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="distrib" style="padding-right: 0;">
+                    <label
+                      class="col-md-9"
+                      style="background: 0; text-align: left"
+                      >Distrib med x form</label
+                    >
+                    <div class="input-group col-md-3">
+                      <input
+                        v-model="distrib"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        required="true"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 no-padding">
+            <div class="col-md-6" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="centro_costo">
+                    <label
+                      class="col-md-3"
+                      style="background: 0; text-align: left"
+                      >Centro de costos</label
+                    >
+                    <div class="input-group col-md-2">
+                      <input
+                        v-model="centro_costo"
+                        type="text"
+                        class="form-control text-center centro_costo"
+                        maxlength="4"
+                        data-orden="1"
+                        required="true"
+                        @keydown.f8="_ventanaCentroCostos"
+                      />
+                    </div>
+                    <button
+                      @click="_ventanaCentroCostos"
+                      type="button"
+                      class="btn f8-Btn col-md-1"
+                    >
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <label class="col-md-6" style="background: 0"
+                      >{{ descrip_centro_costo || "**** Todos los costos" }}</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2" style="padding-left: 0;">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="omitir" style="padding-right: 0;">
+                    <label
+                      class="col-md-9"
+                      style="background: 0; text-align: left"
+                      >Omitir SIN99 y 0MO</label
+                    >
+                    <div class="input-group col-md-3">
+                      <input
+                        v-model="omitir"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        required="true"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script
+  src="../../SALUD/scripts/INV544.js"
+  disabled="disabled"
+  type="text/javascript"
+></script>

@@ -1,0 +1,97 @@
+{
+  "Menu": [
+    {
+      "Id": "01",
+      "Descripcion": "Actualizar resultados",
+      "Tipo": "JS",
+      "JS": "../../frameworks/scripts/valMenus/VAL_RXLAB.js"
+    },
+    {
+      "Id": "02",
+      "Descripcion": "Actualizar macros examenes",
+      "Opc-segu": "ISR1",
+      "Tipo": "HTML",
+      "Href": "../../HICLIN/paginas/HC107.html"
+    },
+    {
+      "Id": "03",
+      "Descripcion": "Impresiones masivas",
+      "Sub": [
+        {
+          "Id": "031",
+          "Descripcion": "Impresion masiva de estudios",
+          "Opc-segu": "ISR3",
+          "Tipo": "HTML",
+          "Href": "../../RX/paginas/RX-424-NEW.html"
+        },
+        {
+          "Id": "032",
+          "Descripcion": "Impresion masiva por entidad",
+          "Opc-segu": "ISR4",
+          "Tipo": "HTML",
+          "Href": "../../RX/paginas/RX-425.html"
+        }
+      ]
+    },
+    {
+      "Id": "04",
+      "Descripcion": "Consentimientos",
+      "Sub": [
+        {
+          "Id": "041",
+          "Descripcion": "Maestro Consentimientos",
+          "Tipo": "HTML",
+          "Href": "../../RX/paginas/RX-44.html"
+        },
+        {
+          "Id": "042",
+          "Descripcion": "Aprobar Consentimientos",
+          "Tipo": "JS",
+          "JS": "../../frameworks/scripts/valMenus/VAL_RXLAB.js"
+        },
+        {
+          "Id": "043",
+          "Descripcion": "Reimprimir Consentimientos",
+          "Tipo": "JS",
+          "JS": "../../frameworks/scripts/valMenus/VAL_RXLAB.js"
+        }
+      ]
+    },
+    {
+      "Id": "05",
+      "Descripcion": "Listado EXCEL",
+      "Tipo": "HTML",
+      "Href": "../../RX/paginas/RX-500.html"
+    },
+    {
+      "Id": "06",
+      "Descripcion": "Interfaz",
+      "Sub": [
+        {
+          "Id": "061",
+          "Descripcion": "Cargar archivos HL7 TDX",
+          "Tipo": "HTML",
+          "Href": "../../RX/paginas/HL7.html"
+        },
+        {
+          "Id": "062",
+          "Descripcion": "Consultar órdenes de DGH",
+          "Tipo": "HTML",
+          "Href": "../../RX/paginas/DGHX.html"
+        },
+        {
+          "Id": "063",
+          "Descripcion": "Listado órdenes",
+          "Tipo": "HTML",
+          "Href": "../../RX/paginas/LIS_DGHX.html"
+        }
+      ]
+    },
+    {
+      "Id": "07",
+      "Descripcion": "Sincronizar a base de facturación",
+      "Tipo": "HTML",
+      "Href": "../../RX/paginas/RX-WEB01-MASIVO.html"
+    }
+  ]
+}

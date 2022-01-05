@@ -1,0 +1,193 @@
+<div class="col-md-12" id="ser890p">
+    <div class="portlet light">
+        <div class="portlet-body">
+            <form class="form-horizontal">
+                <!-- <div class="form-group col-md-3 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="validarimpresion_890P">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-8 col-xs-12">Formato impresión:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                <input v-model='form.formato_SER890P' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="form-group col-md-6 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="validarmedico_890P">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-8 col-xs-12">Medico:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input @Keyup.F8='_f8Profesionales_SER809P' v-model='form.cedmedico_SER890P' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 medicos_ser890p" maxlength="10"
+                                    data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8Profesionales_SER809P' id="medicoBtn_ser890p"
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input id="descripmedico_ser890p" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 "
+                                    v-model='form.descripmedi_SER890P'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                        <label>Fecha inicial</label>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                        <label>Fecha Final</label>
+                    </div>
+                    <div id="fechaInicial_890P">
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                                <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.anoini_SER890P'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.mesini_SER890P'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.diaini_SER890P'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fechaFinal_890P">
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                                <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.anofin_SER890P'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.mesfin_SER890P'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.diafin_SER890P'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                </div>
+
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-4 col-sm-4 col-xs-6" id="validarjornada_890P">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Jornada:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-6">
+                                <input type="text" v-model='form.jornada_SER890P'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                    data-orden="1" placeholder="M/T/*" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-xs-6" id="validartipofact_890P">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Tipo factura:</label>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-6">
+                                <input type="text" @Keyup.F8='_f8clasesserv_SER890P' v-model='form.tipofact_SER890P'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 servicios_ser890p" maxlength="1"
+                                    data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8clasesserv_SER890P' id="tipofactBtn_ser890p"
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6" id="validarimprimir_890P">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-8 col-xs-12">Imprimir fact?:</label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-6">
+                                <input type="text" v-model='form.imprimirfact_SER890P'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                    data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-2 col-sm-4 col-xs-6" id="validarcirugia_890P">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-8 col-xs-12">Sala cirugia?:</label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-6">
+                                <input type="text" v-model='form.salacirug_SER890P'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="2"
+                                    data-orden="1" placeholder="**">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-6" id="validarformato_890P">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Tipo formato:</label>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-6">
+                                <input type="text" v-model='form.tipoform_SER890P'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                    data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6" id="validarobservac_890P">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-8 col-xs-12">Ver observaciones?:</label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-6">
+                                <input type="text" v-model='form.observac_SER890P'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                    data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6" id="validarcotizante_890P">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-8 col-xs-12">Ver Id. cotizante?:</label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-6">
+                                <input type="text" v-model='form.cotizante_SER890P'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                    data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SER890P.js" type="text/javascript"></script>

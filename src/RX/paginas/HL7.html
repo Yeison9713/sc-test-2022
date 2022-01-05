@@ -1,0 +1,148 @@
+<div class="col-md-12" id="HL7">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <form class="form-horizontal">
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-5 col-sm-10 col-xs-12 box-center"
+                        style="padding: 16px 0px 16px 16px; display: flex; justify-content: space-around;">
+
+                        <div class="col-md-3">
+                            <button v-on:click="salirHl7" class="col-md-12 btn" type="button"
+                                style="color: white; background-color: #da2c2c; border-color: #da2c2c">Salir</button>
+                        </div>
+
+                        <div class="col-md-5">
+                            <button v-on:click="buscarHl7" class="col-md-12 btn btn-primary" type="button">Iniciar
+                                proceso</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="display: flex;">
+                    <div class="col-md-6">
+
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: center;">
+                                <label>Guardados correctamente</label>
+                            </div>
+
+                            <table class="table table-light table-striped" style="margin-bottom: 0px; width: 99%;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center">Archivo</th>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                            <div style="max-height: 532px; overflow-y: scroll; display: inline-block;width: 100%">
+                                <table class="table table-light table-striped" style="margin-bottom: 0px">
+                                    <tbody>
+                                        <tr v-for="item in guardados">
+                                            <td style="text-align: left">{{ item.archivo }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="padding-right: 0;">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: center;">
+                                <label>Error al Guardar</label>
+                            </div>
+
+                            <table class="table table-light table-striped" style="margin-bottom: 0px; width: 99%;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center">Archivo</th>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                            <div style="max-height: 532px; overflow-y: scroll; display: inline-block;width: 100%">
+                                <table class="table table-light table-striped" style="margin-bottom: 0px">
+                                    <tbody>
+                                        <tr v-for="item in error_guardado">
+                                            <td style="text-align: left">{{ item.nombre }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="display: flex">
+                    <div class="col-md-6">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: center;">
+                                <label>Enviados por email</label>
+                            </div>
+
+                            <table class="table table-light table-striped" style="margin-bottom: 0px; width: 99%;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center">Archivo</th>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                            <div style="max-height: 532px; overflow-y: scroll; display: inline-block;width: 100%">
+                                <table class="table table-light table-striped" style="margin-bottom: 0px">
+                                    <tbody>
+                                        <tr v-for="item in enviados_correo">
+                                            <td style="text-align: left">{{ item.archivo }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="padding-right: 0;">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: center;">
+                                <label>Error al enviar email</label>
+                            </div>
+
+                            <table class="table table-light table-striped" style="margin-bottom: 0px; width: 99%;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center">Archivo</th>
+                                        <th style="text-align: center">Motivo</th>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                            <div style="max-height: 532px; overflow-y: scroll; display: inline-block;width: 100%">
+                                <table class="table table-light table-striped" style="margin-bottom: 0px">
+                                    <tbody>
+                                        <tr v-for="item in error_envio">
+                                            <td style="text-align: left">{{ item.nombre }}</td>
+                                            <td style="text-align: left">{{ item.motivo }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../../RX/scripts/impresiones_rx.js" type="text/javascript"></script>
+<script src="../../RX/scripts/HL7.js" type="text/javascript"></script>

@@ -1,0 +1,324 @@
+<div class="col-md-12 col-sm-12" style="float: none; margin: 0 auto;">
+    <div class="portlet light box-center box-title" style="margin: 0 auto;">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject bold">Información basica poblacion desplazada</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <form class="form-horizontal">
+                <div class="col-md-4 col-sm-3 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-12 col-sm-12 col-xs-12">Novedad:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="novedad_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-9 col-xs-12" style="padding-right: 0; padding-left: 10px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-6 col-sm-7 col-xs-7">
+                            <div class="inline-inputs">
+                                <label class="col-md-7 col-sm-9 col-xs-12">Identificacion</label>
+                                <div class="input-group col-md-9 col-sm-4 col-xs-12" id="DOC_SER110D">
+                                    <input id="identif_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="15" data-orden="1">
+                                </div>
+                                <button type="button" id="identifBtn_SER110D" class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 col-sm-5 col-xs-5">
+                            <div class="inline-inputs">
+                                <label class="col-md-7 col-sm-9 col-xs-12">Ciudad exp</label>
+                                <div class="input-group col-md-7 col-sm-4 col-xs-12" id='LUGARDOC_SER110D'>
+                                    <input id="lugar_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="5" data-orden="1">
+                                </div>
+                                <button type="button" id="lugarBtn_SER110D" class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                                <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                    <input id="descriplugar_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <form class="form-horizontal">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-12">1er Apellido</label>
+                                <div class="input-group col-md-7 col-sm-4 col-xs-12" id="APELLIDO1_SER110D">
+                                    <input id="apellido1_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="15" data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-12">2do Apellido</label>
+                                <div class="input-group col-md-7 col-sm-4 col-xs-12" id="APELLIDO2_SER110D">
+                                    <input id="apellido2_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="15" data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-12">1er Nombre</label>
+                                <div class="input-group col-md-7 col-sm-4 col-xs-12" id="NOMBRE1_SER110D">
+                                    <input id="nombre1_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="12" data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-12">2do Nombre</label>
+                                <div class="input-group col-md-7 col-sm-4 col-xs-12" id="NOMBRE2_SER110D">
+                                    <input id="nombre2_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="12" data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <form class="form-horizontal">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-12">Sitio desplaz</label>
+                                <div class="input-group col-md-7 col-sm-4 col-xs-12" id="SITIODES_SER110D">
+                                    <input id="sitiodesplaz_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="35" data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-12">Fecha</label>
+                                <div class="input-group col-md-7 col-sm-4 col-xs-12" id="FECHA_SER110D">
+                                    <input id="fecha_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="10" data-orden="1" placeholder="AAAA/MM/DD">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-5 col-xs-12">Ciudad despl</label>
+                                <div class="input-group col-md-7 col-sm-4 col-xs-12" id="CIUDADDESP_SER110D">
+                                    <input id="ciudaddesp_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="5" data-orden="1">
+                                </div>
+                                <button type="button" id="ciudaddesptn_SER110D" class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-5 col-xs-12">Zona</label>
+                                <div class="input-group col-md-7 col-sm-4 col-xs-12" id="ZONA_SER110D">
+                                    <input id="zona_ser110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="U/R" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-12">Funcionario</label>
+                                <div class="input-group col-md-7 col-sm-4 col-xs-12" id="FUNCIONARIO_SER110D">
+                                    <input id="funcionario_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="30" data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+            <form class="form-horizontal">
+                <div class="col-md-4 col-sm-4 col-xs-4 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label>Naturales</label>
+                        </div>
+                        <div class="col-md-6 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">Sismos</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="SISMO_SER110D">
+                                    <input id="sismos_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">Maretomos</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="MARETOMOS_SER110D">
+                                    <input id="maremotos_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-6 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">Erup. Volc</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="ERUP_SER110D">
+                                    <input id="erup_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">Deslizamien</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="DESLIZAM_SER110D">
+                                    <input id="deslizam_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-6 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">Inundacion</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="INUNDACION_SER110D">
+                                    <input id="inundacion_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">Incendio</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="INCENDIO1_SER110D">
+                                    <input id="incendio1_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="salto-linea"></div>
+                        <div class="col-md-6 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">Avalancha</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="AVALANCHA_SER110D">
+                                    <input id="avalancha_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12" style="padding-right: 0;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label>Tecnologicos </label>
+                        </div>
+                        <div class="col-md-6 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">Sust. Toxicas</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="SUST_SER110D">
+                                    <input id="sustancis_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">Incendio</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="INCENDIO2_SER110D">
+                                    <input id="incendio2_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="salto-linea"></div>
+                        <div class="col-md-6 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">Corrosivos</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="CORROSIVOS_SER110D">
+                                    <input id="corrosivos_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">Envenenamiento</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="ENVENENAMIENTO_SER110D">
+                                    <input id="envenenami_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12" style="padding-right: 0;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label>Terrorista </label>
+                        </div>
+                        <div class="col-md-6 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">Explosion</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="EXPLOSION_SER110D">
+                                    <input id="explosion_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">Incendio</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="INCENDIO3_SER110D">
+                                    <input id="incendio3_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="salto-linea"></div>
+                        <div class="col-md-6 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">Desplazados</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="DESPLAZADOS_SER110D">
+                                    <input id="desplazados_SER110D" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script src="../../SALUD/scripts/SER110D.js" type="text/javascript"></script>

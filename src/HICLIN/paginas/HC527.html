@@ -1,0 +1,291 @@
+<div class="col-md-12" id="HC527">
+  <div class="portlet light no-padding">
+    <div class="portlet-body">
+      <form class="form-horizontal">
+        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-12 col-xs-12 col-sm-12" style="padding: 10px 0 5px 18px; text-align: left;">
+              <label>Devolucion De Medicamentos</label>
+            </div>
+            <div class="salto-linea head-box"></div>
+          </div>
+
+          <div class="col-md-2 col-sm-2 col-xs-4">
+            <label>Pedido:</label>
+            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+              <input v-model="form.numero_ctl" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                maxlength="18" data-orden="2" disabled />
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="col-md-3 no-padding">
+              <label class="col-md-12">Año:</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;" id="año_HC003A">
+                <div class="inline-inputs">
+                  <input v-model="form.ano" type="number" class="form-control col-md-2 col-sm-12 col-xs-12"
+                    maxlength="4" data-orden="2" disabled required="true" style="text-align: center;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 no-padding">
+              <label class="col-md-12">Mes:</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;" id="mes_HC527">
+                <div class="inline-inputs">
+                  <input v-model="form.mes" type="number" class="form-control col-md-2 col-sm-12 col-xs-12"
+                    maxlength="2" data-orden="1" disabled required="true" style="text-align: center;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 no-padding">
+              <label class="col-md-12">Dia:</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;" id="dia_HC527">
+                <div class="inline-inputs">
+                  <input v-model="form.dia" type="number" class="form-control col-md-2 col-sm-12 col-xs-12"
+                    maxlength="2" data-orden="1" disabled required="true" style="text-align: center;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 no-padding">
+              <div class="col-md-6 no-padding">
+                <label class="col-md-12">Hr:</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;" id="hora_HC527">
+                  <div class="inline-inputs">
+                    <input v-model="form.hora" type="number" class="form-control col-md-12 col-sm-12 col-xs-12"
+                      maxlength="2" data-orden="1" disabled required="true" style="text-align: center; height: 34px;" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 no-padding">
+                <label class="col-md-12">Mn:</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;" id="minutos_HC527">
+                  <div class="inline-inputs">
+                    <input v-model="form.minutos" type="number" class="form-control col-md-12 col-sm-12 col-xs-12"
+                      maxlength="2" data-orden="1" disabled required="true" style="text-align: center; height: 34px;" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-sm-2 col-xs-2">
+            <label>&nbsp;</label>
+            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+              <input v-model="form.cod_prof" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                maxlength="18" data-orden="2" disabled />
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-4 col-xs-4">
+            <label>&nbsp;</label>
+            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+              <input v-model="form.descrip_prof" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                maxlength="18" data-orden="2" disabled />
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-1 col-sm-1 col-xs-4">
+              <label>Item:</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validar_item">
+                <input v-model="actual.item" type="number" class="form-control col-md-12 col-sm-12 col-xs-12"
+                  maxlength="2" data-orden="1" disabled />
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-4" id="validar_codigo">
+              <label>Código:</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                  <input v-model="actual.codigo" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="13" data-orden="1" disabled @keyup.f8="_ventanaMedicamentos" id="cod_medicamento" />
+                </div>
+                <button type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                  <i class="icon-magnifier"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-4 text-left">
+              <label>Descripcion:</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input v-model="actual.descripcion" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                  maxlength="60" data-orden="1" disabled />
+              </div>
+            </div>
+
+            <div class="col-md-1 col-sm-1 col-xs-1" id="validar_cantidad">
+              <label>Cantidad:</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input v-model="actual.cantidad" type="number" class="form-control col-md-12 col-sm-12 col-xs-12"
+                  maxlength="3" data-orden="1" disabled />
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-3">
+              <label>Indicaciones:</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input v-model="actual.indicaciones" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                  maxlength="18" data-orden="1" disabled />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <table class="table table-light table-striped" id="tabla_HC527">
+              <thead>
+                <tr>
+                  <th>
+                    Item
+                  </th>
+                  <th>
+                    Código
+                  </th>
+                  <th>
+                    Descripción
+                  </th>
+                  <th>
+                    Cantidad
+                  </th>
+                  <th>
+                    Indicaciones
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="item in tabla_medicamentos">
+                  <td>
+                    {{ item.item }}
+                  </td>
+                  <td>
+                    {{ item.codigo }}
+                  </td>
+                  <td>
+                    {{ item.descripcion }}
+                  </td>
+                  <td>
+                    {{ item.cantidad }}
+                  </td>
+                  <td>
+                    {{ item.indicaciones }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <transition name="modal_prosoft" v-if="modal_f9">
+    <div class="overlay_prosoft">
+      <div class="modal_prosoft" style="width: 1000px !important;">
+        <div class="container_prosoft">
+          <div class="header_prosoft">
+            <p style="padding: 15px 25px;margin: 0 auto;">Devoluciones anteriores</p>
+          </div>
+          <div class="body_prosoft">
+            <div class="col-md-12">
+              <div class="portlet light no-padding">
+                <div class="portlet-body">
+                  <form class="form-horizontal" onsubmit="return false;">
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                      <div class="col-md-6  no-padding">
+                        <table class="table table-light table-striped" style="margin-bottom: 0px; width: 99%;">
+                          <thead>
+                            <tr>
+                              <th class="col-md-2">Pedido</th>
+                              <th class="col-md-2">Fecha</th>
+                              <th class="col-md-2">Hora</th>
+                              <th class="col-md-2">Operador</th>
+                            </tr>
+                          </thead>
+
+                        </table>
+                        <div style="max-height: 532px; overflow-y: scroll; display: inline-block;width: 100%">
+                          <table class="table table-light table-striped" style="margin-bottom: 0px" id="tablaIzq_hc527">
+                            <tr v-for="item in listado_devoluciones">
+                              <td>
+                                {{ item.nro_ped }}
+                              </td>
+                              <td>
+                                {{ item.fecha_ped }}
+                              </td>
+                              <td>
+                                {{ item.hora_ped }}
+                              </td>
+                              <td>
+                                {{ item.oper_ped }}
+                              </td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <div class="col-md-6 no-padding" style="padding-right: 0;">
+                        <table class="table table-light table-striped" style="margin-bottom: 0px; width: 97%;">
+                          <thead>
+                            <tr>
+                              <th>Codigo </th>
+                              <th>Medicamento</th>
+                              <th>Cantidad</th>
+                            </tr>
+                          </thead>
+                        </table>
+                        <div style="max-height: 532px; overflow-y: scroll; display: inline-block;width: 100%">
+                          <table class="table table-light table-striped" style="margin-bottom: 0px">
+                            <tbody>
+                              <tr v-for="item in segundaTabla">
+                                <td>
+                                  {{ item.cod_ped }}
+                                </td>
+                                <td>
+                                  {{ item.nombre_ped }}
+                                </td>
+                                <td>
+                                  {{ item.cant_ped }}
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<style>
+  #tabla_HC527 th:nth-child(1),
+  #tabla_HC527 td:nth-child(1) {
+    text-align: center;
+  }
+
+  #tabla_HC527 th:nth-child(2),
+  #tabla_HC527 td:nth-child(2) {
+    text-align: center;
+  }
+
+  #tabla_HC527 th:nth-child(3),
+  #tabla_HC527 td:nth-child(3) {
+    text-align: left;
+  }
+
+  #tabla_HC527 th:nth-child(4),
+  #tabla_HC527 td:nth-child(4) {
+    text-align: center;
+  }
+</style>
+<script src="../../HICLIN/scripts/HC527.js" disabled="disabled" type="text/javascript"></script>

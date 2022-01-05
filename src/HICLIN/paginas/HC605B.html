@@ -1,0 +1,356 @@
+<div class="col-md-12" id="HC605B">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <form class="form-horizontal" onsubmit="return false;">
+                <div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-3">
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="fechaEnc_605B">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="datosIni.añoEnc_605B" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 añoEnc_605B" maxlength="4"
+                                            data-orden="1" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="datosIni.mesEnc_605B" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 mesEnc_605B" maxlength="2"
+                                            data-orden="2" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-12 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="datosIni.diaEnc_605B" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 diaEnc_605B" maxlength="2"
+                                            data-orden="3" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="time_605B">
+                                <div class="col-md-6 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">hr:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="datosIni.hr_605B" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 hr_605B" maxlength="4"
+                                            data-orden="1" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">mn:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="datosIni.mn_605B" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 mn_605B" maxlength="2"
+                                            data-orden="2" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="col-md-12" style="text-align: center;">Medico:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarMedico_605B">
+                                <div class="inline-inputs">
+                                    <input v-model="datosIni.medico_HC605B" type="text"
+                                        class="form-control col-md-4 col-sm-12 col-xs-12 uppercase medico_HC605B"
+                                        maxlength="10" data-orden="1" style="text-align: center;">
+                                    <input v-model="datosIni.descripMedico_HC605B" type="text"
+                                        class="form-control col-md-8 col-sm-12 col-xs-12 uppercase descripMedico_HC605B"
+                                        maxlength="10" data-orden="" style="text-align: center;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="col-md-12">Consultando:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="datosIni.consultando_HC605B" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase consultando_HC605B"
+                                    maxlength="10" data-orden="1" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4 no-padding">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                        style="text-align: left; padding-bottom: 7px;">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                            <label>Enfermedad Actual:</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea v-model='datosIni.enfAct_605B' class="form-control" disabled="disabled" rows="14"
+                                style="resize: none; text-align: justify; margin-bottom: 7px;"></textarea>
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 head-box no-padding" style="padding-bottom: 0 !important">
+                            <label style='padding-top: 7px; padding-bottom: 6px;'>ESTADO HISTORIA:</label>
+                        </div>
+                        <div class="col-md-2 col-sm-12 col-xs-12" id='estadoHistoria_605B'>
+                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                <input v-model="form.estadoHistoria_HC605B" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-center" maxlength="1"
+                                    data-orden="1" required="true">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                            <label style='padding-top: 7px; padding-bottom: 6px;'>1 - ABIERTA &nbsp&nbsp&nbsp 2 -
+                                CERRADA</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8" style="padding-right: 0;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left;">
+
+                        <div class="col-md-2" style="text-align: center;">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>FACTURA:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id='factura_605B'>
+                                <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                    <input v-model="form.factura_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 text-center" maxlength="10"
+                                        data-orden="1" required="true">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3" style="text-align: center;">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>FECHA ING:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id='fechaIng_605B'>
+                                <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                    <input v-model="form.fechaIng_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 text-center" maxlength="20"
+                                        data-orden="1" required="true">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5" style="text-align: center;">
+                            <div class="col-md-5 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label style='padding-top: 18px; padding-bottom: 19px;'>FECHA EGRESO:</label>
+                            </div>
+                            <div class="col-md-7 col-sm-12 col-xs-12" id="fechaEgr_605B">
+                                <div class="col-md-4 col-sm-4 col-xs-4 no-padding">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                        style="padding-bottom: 0 !important">
+                                        <label>Año:</label>
+                                    </div>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="form.añoEgr_605B" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 text-center" maxlength="4"
+                                            data-orden="1" required="true">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 no-padding">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                        style="padding-bottom: 0 !important">
+                                        <label>Mes:</label>
+                                    </div>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="form.mesEgr_605B" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 text-center" maxlength="2"
+                                            data-orden="2" required="true">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 no-padding">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                        style="padding-bottom: 0 !important">
+                                        <label>Dia:</label>
+                                    </div>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="form.diaEgr_605B" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 text-center" maxlength="2"
+                                            data-orden="3" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2" style="text-align: center;">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box no-padding" style="padding-bottom: 0 !important">
+                                <label>HORA EGRESO:</label>
+                            </div>
+                            <div class="col-md-6 col-sm-4 col-xs-4 no-padding">
+                                <div class="input-group col-md-12 col-sm-5 col-xs-5" id='hrEgr_605B'>
+                                    <input v-model="form.hrEgr_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 text-center" maxlength="2"
+                                        data-orden="1" required="true">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-4 col-xs-4 no-padding">
+                                <div class="input-group col-md-12 col-sm-5 col-xs-5" id='mnEgr_605B'>
+                                    <input v-model="form.mnEgr_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 text-center mnEgr_HC605B"
+                                        maxlength="2" data-orden="1" required="true">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-5" style="text-align: center;">
+                            <div class="col-md-12 col-sm-6 col-xs-6 head-box"
+                                style="padding-bottom: 0 !important;">
+                                <label>ESTADO SALIDA:</label>
+                            </div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-5 col-sm-2 col-xs-2" id='estadoSalida_605B'
+                                    style="padding-right: 2px;">
+                                    <input v-model="form.estadoSalida_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 estadoSalida_HC605B"
+                                        maxlength="10" data-orden="1" required="true">
+                                </div>
+                                <div class="col-md-7 col-sm-9 col-xs-9 no-padding" id='descripEstadoSalida_605B'>
+                                    <input v-model="form.descripEstadoSalida_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 descripEstadoSalida_HC605B"
+                                        maxlength="30" data-orden="1" required="true">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-7" style="text-align: center;">
+                            <div class="col-md-12 col-sm-6 col-xs-6 head-box"
+                                style="padding-bottom: 0 !important;">
+                                <label>DIAGNOSTICO MUERTE:</label>
+                            </div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-2 col-sm-2 col-xs-2" id='diagMuerte_605B' style="padding-right: 2px;">
+                                    <input @keyup.f8='_ventanaEnfermedadesHC605B' v-model="form.diagMuerte_HC605B"
+                                        type="text" class="form-control col-md-12 col-sm-12 col-xs-12 diagMuerte_HC605B"
+                                        maxlength="4" data-orden="1" required="true">
+                                </div>
+                                <div class="col-md-10 col-sm-9 col-xs-9 no-padding" id='descripDiagMuerte_605B'>
+                                    <input v-model="form.descripDiagMuerte_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="30" data-orden="1"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-7" style="text-align: center;">
+                            <div class="col-md-12 col-sm-6 col-xs-6 head-box"
+                                style="padding-bottom: 0 !important;">
+                                <label>DIAGNOSTICO DE SALIDA:</label>
+                            </div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-2 col-sm-2 col-xs-2" id='diagSalida1_605B'
+                                    style="padding-right: 2px;">
+                                    <input @keyup.f8='_ventanaEnfermedadesDiagHC605B' @keyup.f5='_confirmarSalir'
+                                        v-model="form.diagSalida1_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 diagSalida1_HC605B"
+                                        maxlength="4" data-orden="1">
+                                </div>
+                                <div class="col-md-10 col-sm-9 col-xs-9 no-padding" id='descripDiagSalida_605B'>
+                                    <input v-model="form.descripDiagSalida1_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="30"
+                                        data-orden="1">
+                                </div>
+                            </div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-2 col-sm-2 col-xs-2" id='diagSalida2_605B'
+                                    style="padding-right: 2px;">
+                                    <input @keyup.f8='_ventanaEnfermedadesDiagHC605B' @keyup.f5='_confirmarSalir'
+                                        v-model="form.diagSalida2_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 diagSalida2_HC605B"
+                                        maxlength="4" data-orden="1">
+                                </div>
+                                <div class="col-md-10 col-sm-9 col-xs-9 no-padding" id='descripDiagSalida2_605B'>
+                                    <input v-model="form.descripDiagSalida2_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="30"
+                                        data-orden="1">
+                                </div>
+                            </div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-2 col-sm-2 col-xs-2" id='diagSalida3_605B'
+                                    style="padding-right: 2px;">
+                                    <input @keyup.f8='_ventanaEnfermedadesDiagHC605B' @keyup.f5='_confirmarSalir'
+                                        v-model="form.diagSalida3_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 diagSalida3_HC605B"
+                                        maxlength="4" data-orden="1">
+                                </div>
+                                <div class="col-md-10 col-sm-9 col-xs-9 no-padding" id='descripDiagSalida3_605B'>
+                                    <input v-model="form.descripDiagSalida3_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="30"
+                                        data-orden="1">
+                                </div>
+                            </div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-2 col-sm-2 col-xs-2" id='diagSalida4_605B'
+                                    style="padding-right: 2px;">
+                                    <input @keyup.f8='_ventanaEnfermedadesDiagHC605B' @keyup.f5='_confirmarSalir'
+                                        v-model="form.diagSalida4_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 diagSalida4_HC605B"
+                                        maxlength="4" data-orden="1">
+                                </div>
+                                <div class="col-md-10 col-sm-9 col-xs-9 no-padding" id='descripDiagSalida4_605B'>
+                                    <input v-model="form.descripDiagSalida4_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="30"
+                                        data-orden="1">
+                                </div>
+                            </div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-2 col-sm-2 col-xs-2" id='diagSalida5_605B'
+                                    style="padding-right: 2px;">
+                                    <input @keyup.f8='_ventanaEnfermedadesDiagHC605B' @keyup.f5='_confirmarSalir'
+                                        v-model="form.diagSalida5_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 diagSalida5_HC605B"
+                                        maxlength="4" data-orden="1">
+                                </div>
+                                <div class="col-md-10 col-sm-9 col-xs-9 no-padding" id='descripDiagSalida5_605B'>
+                                    <input v-model="form.descripDiagSalida5_HC605B" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="30"
+                                        data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5" style="text-align: center;">
+                            <div class="col-md-12 col-sm-6 col-xs-6 head-box" style="padding-bottom: 0 !important;">
+                                <label>OBSERVACIONES:</label>
+                            </div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id='observaciones_605B'>
+                                <textarea v-model='form.observaciones_HC605B' class="form-control" rows="8"
+                                    style="resize: none; text-align: justify" data-orden="1"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-10" style="text-align: left;">
+                            <div class="col-md-5 col-sm-5 col-xs-5" style="padding-bottom: 0 !important; margin-top: 1px; margin-bottom: 2px;">
+                                <label>OPERADOR QUE CIERRA: &nbsp&nbsp&nbsp</label>
+                                <label id='oper_cie_HC605B'></label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2" style="text-align: right;">
+                            <div class="col-md-12 col-sm-6 col-xs-6 no-padding" style="padding-bottom: 0 !important; margin-top: 1px; margin-bottom: 2px;">
+                                <label>FOLIO: &nbsp&nbsp&nbsp</label>
+                                <label id='folio_HC605B'></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../../HICLIN/scripts/HC605B.js" type="text/javascript"></script>

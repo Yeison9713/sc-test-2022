@@ -1,0 +1,194 @@
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<div class="col-md-12" id="PUB705">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="col-md-12 no-padding">
+          <div class="col-md-3" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center" style="margin-bottom: 13px !important">
+              <div class="col-md-12 head-box no-padding">
+                <label>Fecha Inicial</label>
+              </div>
+              <div class="col-md-12 no-padding" id="fecha_ini">
+                <div class="col-md-4">
+                  <label class="col-md-12">Año</label>
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="ano_ini"
+                      type="number"
+                      class="form-control text-center"
+                      maxlength="4"
+                      data-orden="1"
+                      required="true"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label class="col-md-12">Mes</label>
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="mes_ini"
+                      type="number"
+                      class="form-control text-center"
+                      maxlength="2"
+                      data-orden="2"
+                      required="true"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label class="col-md-12">Dia</label>
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="dia_ini"
+                      type="number"
+                      class="form-control text-center"
+                      maxlength="2"
+                      data-orden="3"
+                      required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center" style="margin-bottom: 13px !important">
+              <div class="col-md-12 head-box no-padding">
+                <label>Fecha Final</label>
+              </div>
+              <div class="col-md-12 no-padding" id="fecha_fin">
+                <div class="col-md-4">
+                  <label class="col-md-12">Año</label>
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="ano_fin"
+                      type="number"
+                      class="form-control text-center"
+                      maxlength="4"
+                      data-orden="1"
+                      required="true"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label class="col-md-12">Mes</label>
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="mes_fin"
+                      type="number"
+                      class="form-control text-center"
+                      maxlength="2"
+                      data-orden="2"
+                      required="true"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label class="col-md-12">Dia</label>
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="dia_fin"
+                      type="number"
+                      class="form-control text-center"
+                      maxlength="2"
+                      data-orden="3"
+                      required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 no-padding">
+            <div class="form-group col-md-12 box-center inline-inputs">
+              <label class="col-md-3 lbl_left">Servicio a listar</label>
+              <div class="input-group col-md-2" id="serv">
+                <input
+                  v-model="serv"
+                  type="text"
+                  class="form-control serv"
+                  style="text-align: center"
+                  data-orden="1"
+                  @keydown.f8="_ventanaServicios"
+                  maxlength="1"
+                  required="true"
+                />
+              </div>
+              <button @click="_ventanaServicios" type="button" class="btn col-md-1 f8-Btn">
+                <i class="icon-magnifier"></i>
+              </button>
+              <div class="input-group col-md-6">
+                <input v-model="descrip_serv" type="text" class="form-control" style="text-align: center" />
+              </div>
+            </div>
+
+            <div class="form-group col-md-12 box-center inline-inputs" style="margin-top: -7px !important">
+              <label class="col-md-3 lbl_left">Clase de Motivo</label>
+              <label class="col-md-9 lbl_left" style="padding-left: 15px !important">{{ descrip_mot }}</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="col-md-6" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center inline-inputs">
+              <label class="col-md-3 lbl_left">Dependencia</label>
+              <div class="input-group col-md-2" id="dep">
+                <input
+                  v-model="dep"
+                  type="text"
+                  class="form-control dep"
+                  style="text-align: center"
+                  data-orden="1"
+                  @keydown.f8="_ventanaDependencias"
+                  maxlength="3"
+                  required="true"
+                />
+              </div>
+              <button @click="_ventanaDependencias" type="button" class="btn col-md-1 f8-Btn">
+                <i class="icon-magnifier"></i>
+              </button>
+              <label class="col-md-6 lbl_left" style="margin-left: 10px !important"> {{ descrip_dep }}</label>
+            </div>
+          </div>
+
+          <div class="col-md-6 no-padding">
+            <div class="form-group col-md-12 box-center inline-inputs">
+              <label class="col-md-3 lbl_left">Estado a Procesar</label>
+              <label class="col-md-9 lbl_left" style="padding-left: 15px !important">{{ descrip_est }}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <loader_modal :estado="estado_loader" :progreso="progreso" :loader="loader" :label="label_loader"></loader_modal>
+    </div>
+  </div>
+</div>
+
+<script src="../../SERVDOM/scripts/PUB705.js" type="text/javascript"></script>
+
+<style>
+  label {
+    background: 0 !important;
+  }
+
+  .lbl_left {
+    text-align: left !important;
+    padding-left: 5px !important;
+  }
+
+  .lbl_right {
+    text-align: right !important;
+  }
+</style>

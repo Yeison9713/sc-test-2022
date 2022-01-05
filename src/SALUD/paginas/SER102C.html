@@ -1,0 +1,427 @@
+<!-- <style>
+    input {
+        text-transform: uppercase;
+    }
+</style> -->
+
+<div class="portlet light no-padding col-md-12">
+    <div class="portlet-body no-padding">
+
+        <div class="form-horizontal">
+
+            <div class="col-md-10 col-sm-12 col-xs-12" style="float: none; margin: 0 auto;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex">
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-12 col-sm-12 col-xs-12">Novedad:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="novedadSER102C" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12" style="display:flex;">
+                            <div class="col-md-12 inline-inputs">
+                                <label class="col-md-12 col-sm-12 col-xs-12">Operador:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="operSER102C" type="text" maxlength="4"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-12 col-sm-12 col-xs-12">Fecha:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="fechaSER102C" type="text" maxlength="6"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12" style="float: none; margin: 0 auto;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-5 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-3">Grupo:</label>
+                            <div class="input-group col-md-3 col-sm-9 col-xs-9" id="grupoSER102C">
+                                <input id="codgrupo_SER102C" type="text" maxlength="2" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                            <button type="button" id="codgrupoBtn_SER102C"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                <input id="descripgrupo_SER102C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-3 col-xs-3">Codigo CUPS:</label>
+                            <div class="input-group col-md-3 col-sm-9 col-xs-9" id="cupsSER102C">
+                                <input id="codcups_SER102C" type="text" maxlength="10" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <button type="button" id="codcupsBtn_SER102C"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-3 col-xs-3">Tipo:</label>
+                            <div class="input-group col-md-5 col-sm-12 col-xs-12" id= 'tiposerv_SER102C'>
+                                <input id="tipocups_SER102C" type="text" maxlength="1" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <button type="button" id="tipocupsBtn_SER102C"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="descriptipocups_SER102C" type="text" 
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-5">Descripcion:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="descripcioncupsSER102C">
+                                <input id="descripcups_SER102C" type="text" data-orden="1" maxlength="80"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12" style="float: none; margin: 0 auto;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-9 col-sm-6 col-xs-6 text-label">Cod.Abreviado:</label>
+                            <div class="input-group col-md-7 col-sm-6 col-xs-6" id="codabreviadoSER102C">
+                                <input id="codabrev_SER102C" type="text" maxlength="5" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6 text-label">Duración:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-8" id="duracionprocSER102C">
+                                <input id="duracion_SER102C" type="text" maxlength="3" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-6 col-xs-6 text-label">Niv.Complejidad</label>
+                            <div class="input-group col-md-7 col-sm-6 col-xs-6" id="nivcomplejidadSER102C">
+                                <input id="nivcompl_SER102C" type="text" maxlength="1" placeholder="1,2,3,4"
+                                    class="form-control col-md-3 col-sm-2 col-xs-2" data-orden="1">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6 text-label">Pago Paciente:</label>
+                            <div class="input-group col-md-9 col-sm-8 col-xs-8" id="pagopaciSER102C">
+                                <input id="pagoPaci_SER102C" type="text" data-orden="1"
+                                    class="form-control col-md-8 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-6 col-xs-6 text-label">Proced No Pos</label>
+                            <div class="input-group col-md-9 col-sm-8 col-xs-8" id="procedencianoposSER102C">
+                                <input id="proced_SER102C" type="text" maxlength="1" data-orden="1" placeholder="S/N"
+                                    class="form-control col-md-8 col-sm-12 col-xs-12" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4" id="cisSER102C">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-6 col-xs-6 text-label">C.I.S?</label>
+                            <div class="input-group col-md-9 col-sm-8 col-xs-8">
+                                <input id="cis_SER102C" type="text" maxlength="1" data-orden="1" placeholder="S/N"
+                                    class="form-control col-md-8 col-sm-12 col-xs-12" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-6 col-xs-6 text-label">C.Cost:</label>
+                            <div class="input-group col-md-3 col-sm-6 col-xs-6" id="centrocostoSER102C">
+                                <input id="centrocosto_SER102C" type="text" maxlength="4" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <button type="button" id="centrocostogrupoBtn_SER102C"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-10 col-sm-6 col-xs-6" >
+                                <input id="descripcosto_SER102C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-6 col-xs-6 text-label">Edad Minima:</label>
+                            <div class="input-group col-md-7 col-sm-6 col-xs-6" id="edadminimaSER102C">
+                                <input id="edadminima_SER102C" type="text"
+                                    class="form-control col-md-3 col-sm-2 col-xs-2" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12" style="float: none; margin: 0 auto;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    
+                   
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-6 col-xs-6 text-label">Edad Maxima:</label>
+                            <div class="input-group col-md-7 col-sm-6 col-xs-6" id="edadmaximaSER102C">
+                                <input id="edadmaxima_SER102C" type="text"
+                                    class="form-control col-md-3 col-sm-2 col-xs-2" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-6 col-xs-6 text-label">Unid.Medida Edad:</label>
+                            <div class="input-group col-md-7 col-sm-6 col-xs-6" id="undedadSER102C">
+                                <input id="undedad_SER102C" maxlength="1" type="text"
+                                    class="form-control col-md-3 col-sm-2 col-xs-2" data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6 text-label">Sexo:</label>
+                            <div class="input-group col-md-12 col-sm-8 col-xs-8" id="sexoSER102C">
+                                <input id="sexo_SER102C" type="text"  data-orden="1" max-length="1" onkeyup="this.value = this.value.toUpperCase();"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-8 col-xs-6 text-label">Diagnostico en RIPS?</label>
+                            <div class="input-group col-md-9 col-sm-5 col-xs-8" id="pregRipsSER102C">
+                                <input id="pregRips_SER102C" type="text" data-orden="1" placeholder= "S/N" 
+                                    class="form-control col-md-8 col-sm-12 col-xs-12" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" col-md-12">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <label style="text-align:center;" class="col-md-12">Distribución del ingreso</label>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-6 col-xs-6">100% para el médico?</label>
+                            <div class="input-group col-md-9 col-sm-8 col-xs-8" id="porcmedicoSER102C">
+                                <input id="porcmedico_SER102C" type="text" maxlength="1" data-orden="1" placeholder="S/N"
+                                    class="form-control col-md-8 col-sm-12 col-xs-12" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-7">% Ingreso clinica:</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9" id="ingrclinicaSER102C">
+                                <input id="ingrclinica_SER102C" type="text" maxlength="2" data-orden="1"
+                                    class="form-control col-md-5 col-sm-5 col-xs-5">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-9 col-sm-9 col-xs-9">% Ingreso para terceros:</label>
+                                <div class="input-group col-md-9 col-sm-9 col-xs-9" id="ingrtercerSER102C">
+                                    <input id="ingrtercer_SER102C" type="text" maxlength="5" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-9 col-sm-9 col-xs-9">Cta ingreso tercero:</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9" id="ctaingrTercerSER102C">
+                                <input id="ctaingrTercer_SER102C" type="text" maxlength="12" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <button type="button" id="ctaingrTercerBtn_SER102C"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-9 col-sm-9 col-xs-9">Descripcion cta tercero:</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                <input id="ctaDescripTercer_SER102C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-6" id="codTerceSER102C">
+                        <div class="inline-inputs">
+                            <label class="col-md-9 col-sm-9 col-xs-9">Nit tercero:</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9" id="nitTercerSER102C">
+                                <input id="nitTercer_SER102C" type="text" maxlength="12" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <button type="button" id="nitTercerBtn_SER102C"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6" id="nomTerceSER102C">
+                        <div class="inline-inputs">
+                            <label class="col-md-9 col-sm-9 col-xs-9">Descripcion Tercero:</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                <input id="descripTercer_SER102C" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 hidden" id="codHeonSER102C">
+                        <div class="inline-inputs">
+                            <label class="col-md-9 col-sm-9 col-xs-9">Cod. Heon:</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                <input id="codHeon_SER102C" type="text" maxlength="10" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 hidden" id="cupPrincSER102C">
+                        <div class="inline-inputs">
+                            <label class="col-md-9 col-sm-9 col-xs-9">Cups Principal:</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                <input id="cupPrinc_SER102C" type="text" maxlength="12" data-orden="2"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" col-md-12">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <label style="text-align:center;" class="col-md-12">Código contable de ingresos</label>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-6 col-xs-6">Cod PUC</label>
+                            <div class="input-group col-md-9 col-sm-8 col-xs-8" id="codPucSER102C">
+                                <input id="codPuc_SER102C" type="text" maxlength="12" data-orden="1"
+                                    class="form-control col-md-8 col-sm-12 col-xs-12">
+                            </div>
+                            <button type="button" id="codPucBtn_SER102C"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-7">Cod COOP</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9" id="codCoopSER102C">
+                                <input id="codCoop_SER102C" type="text" maxlength="12" data-orden="1"
+                                    class="form-control col-md-5 col-sm-5 col-xs-5">
+                            </div>
+                            <button type="button" id="codCoopBtn_SER102C"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-7">Cod OFICIAL</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9" id="codOficialSER102C">
+                                <input id="codOficial_SER102C" type="text" maxlength="12" data-orden="1"
+                                    class="form-control col-md-5 col-sm-5 col-xs-5">
+                            </div>
+                            <button type="button" id="codOficialBtn_SER102C"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-7">División 1</label>
+                            <div class="input-group col-md-3 col-sm-9 col-xs-9" id="division1SER102C">
+                                <input id="division1_SER102C" type="text" maxlength="3" data-orden="1"
+                                    class="form-control col-md-5 col-sm-5 col-xs-5">
+                            </div>
+                            <button type="button" id="division1Btn_SER102C"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i></button>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                <input id="descripdiv1_SER102C" type="text"
+                                    class="form-control col-md-5 col-sm-5 col-xs-5">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-7">División 2</label>
+                            <div class="input-group col-md-3 col-sm-9 col-xs-9" id="division2SER102C">
+                                <input id="division2_SER102C" type="text" maxlength="3" data-orden="1"
+                                    class="form-control col-md-5 col-sm-5 col-xs-5">
+                            </div>
+                            <button type="button" id="division2Btn_SER102C"
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i></button>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                <input id="descripdiv2_SER102C" type="text"
+                                    class="form-control col-md-5 col-sm-5 col-xs-5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </form>
+</div>
+</div>
+
+<script src="../../SALUD/scripts/SER102C.js" type="text/javascript"></script>

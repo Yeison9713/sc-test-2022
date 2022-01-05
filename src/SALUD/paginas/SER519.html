@@ -1,0 +1,341 @@
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<div class="col-md-12" id="SER519">
+  <div
+    class="portlet light no-padding"
+    style="
+      background-color: transparent !important;
+      box-shadow: none !important;
+    "
+  >
+    <div class="portlet-body">
+      <div class="form-horizontal">
+        <div class="col-md-12 no-padding">
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div class="col-md-4 col-sm-6 col-xs-6" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 head-box"
+                    style="padding-bottom: 0 !important"
+                  >
+                    <label>Fecha Inicial</label>
+                  </div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                    id="fecha_inicial"
+                  >
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-6 col-xs-6">Año</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="ano_ini"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                          maxlength="4"
+                          data-orden="1"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-6 col-xs-6">Mes</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="mes_ini"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                          maxlength="2"
+                          data-orden="2"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-12 col-xs-6">Dia</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="dia_ini"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                          maxlength="2"
+                          data-orden="3"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-6" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 head-box"
+                    style="padding-bottom: 0 !important"
+                  >
+                    <label>Fecha Final</label>
+                  </div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                    id="fecha_final"
+                  >
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-6 col-xs-6">Año</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="ano_fin"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                          maxlength="4"
+                          data-orden="1"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-6 col-xs-6">Mes</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="mes_fin"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                          maxlength="2"
+                          data-orden="2"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-12 col-xs-6">Dia</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="dia_fin"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                          maxlength="2"
+                          data-orden="3"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-6 no-padding">
+              <div
+                class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 head-box"
+                    style="padding-bottom: 0 !important"
+                  >
+                    <label>Abonos Hasta Fecha Final Trimes</label>
+                  </div>
+                  <div
+                    class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                    id="fecha_abonos"
+                  >
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-6 col-xs-6">Año</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="ano_abo"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                          maxlength="4"
+                          data-orden="1"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-6 col-xs-6">Mes</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="mes_abo"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                          maxlength="2"
+                          data-orden="2"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="col-md-12 col-sm-12 col-xs-6">Dia</label>
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="dia_abo"
+                          type="number"
+                          class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                          maxlength="2"
+                          data-orden="3"
+                          required="true"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 no-padding">
+            <div class="col-md-5" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="actividad">
+                    <label
+                      class="col-md-4"
+                      style="background: 0; text-align: left"
+                      >Codigo actividad a listar</label
+                    >
+                    <div class="input-group col-md-2">
+                      <input
+                        v-model="actividad"
+                        type="text"
+                        class="form-control text-center actividad"
+                        maxlength="2"
+                        data-orden="1"
+                        required="true"
+                        @keydown.f8="_ventanaActividades"
+                      />
+                    </div>
+                    <button
+                      @click="_ventanaActividades"
+                      type="button"
+                      class="btn f8-Btn col-md-1"
+                    >
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <label class="col-md-5" style="background: 0"
+                      >{{ descrip_actividad }}</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="prese">
+                    <label
+                      class="col-md-9"
+                      style="background: 0; text-align: left"
+                      >1ra vez que presenta archivo</label
+                    >
+                    <div class="input-group col-md-3">
+                      <input
+                        v-model="prese"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        required="true"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 no-padding">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="trimestre">
+                    <label
+                      class="col-md-6"
+                      style="background: 0; text-align: left"
+                      >Nro del trimestre a reportar</label
+                    >
+                    <div class="input-group col-md-2">
+                      <input
+                        v-model="trimestre"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        required="true"
+                        min="1"
+                        max="4"
+                      />
+                    </div>
+                    <label class="col-md-4" style="background: 0"
+                      >{{ descrip_trimestre }}</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 no-padding">
+            <div class="col-md-4" style="padding-left: 0">
+              <div
+                class="form-group col-md-12 box-center"
+                style="margin-bottom: 13px !important"
+              >
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 inline-inputs" id="no_radicadas">
+                    <label
+                      class="col-md-10"
+                      style="background: 0; text-align: left"
+                      >Incluir factura no radicadas del trimestre</label
+                    >
+                    <div class="input-group col-md-2">
+                      <input
+                        v-model="no_radicadas"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        required="true"
+                        placeholder="N"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script
+  src="../../SALUD/scripts/SER519.js"
+  disabled="disabled"
+  type="text/javascript"
+></script>

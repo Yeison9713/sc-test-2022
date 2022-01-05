@@ -1,0 +1,135 @@
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<div class="col-md-12" id="PUB504">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="col-md-12 no-padding">
+          <div class="col-md-5" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center inline-inputs" id="fecha_ini">
+              <label class="col-md-3 lbl_left">Listar desde</label>
+              <label class="col-md-1">Año</label>
+              <div class="input-group col-md-2">
+                <input
+                  v-model="ano_ini"
+                  type="number"
+                  class="form-control text-center"
+                  maxlength="4"
+                  data-orden="1"
+                  required="true"
+                />
+              </div>
+              <label class="col-md-1">Mes</label>
+              <div class="input-group col-md-2">
+                <input
+                  v-model="mes_ini"
+                  type="number"
+                  class="form-control text-center"
+                  maxlength="2"
+                  data-orden="2"
+                  required="true"
+                />
+              </div>
+              <label class="col-md-1">Dia</label>
+              <div class="input-group col-md-2">
+                <input
+                  v-model="dia_ini"
+                  type="number"
+                  class="form-control text-center"
+                  maxlength="2"
+                  data-orden="3"
+                  required="true"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center inline-inputs" id="fecha_fin">
+              <label class="col-md-3 lbl_left">Listar hasta</label>
+              <label class="col-md-1">Año</label>
+              <div class="input-group col-md-2">
+                <input
+                  v-model="ano_fin"
+                  type="number"
+                  class="form-control text-center"
+                  maxlength="4"
+                  data-orden="1"
+                  required="true"
+                />
+              </div>
+              <label class="col-md-1">Mes</label>
+              <div class="input-group col-md-2">
+                <input
+                  v-model="mes_fin"
+                  type="number"
+                  class="form-control text-center"
+                  maxlength="2"
+                  data-orden="2"
+                  required="true"
+                />
+              </div>
+              <label class="col-md-1">Dia</label>
+              <div class="input-group col-md-2">
+                <input
+                  v-model="dia_fin"
+                  type="number"
+                  class="form-control text-center"
+                  maxlength="2"
+                  data-orden="3"
+                  required="true"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center inline-inputs" id="punto">
+              <label class="col-md-3 lbl_left">Punto de recaudo</label>
+              <div class="input-group col-md-2">
+                <input
+                  v-model="punto"
+                  type="text"
+                  class="form-control punto text-center"
+                  maxlength="3"
+                  data-orden="1"
+                  required="true"
+                  @keydown.f8="_ventanaPuntoPago"
+                />
+              </div>
+              <button @click="_ventanaPuntoPago" type="button" class="btn col-md-1 f8-Btn">
+                <i class="icon-magnifier"></i>
+              </button>
+              <label class="col-md-6 lbl_left" style="padding-left: 15px !important">{{ descrip_punto }}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <loader_modal :estado="estado_loader" :progreso="progreso" :loader="loader" :label="label_loader"></loader_modal>
+    </div>
+  </div>
+</div>
+
+<script src="../../SERVDOM/scripts/PUB504.js" type="text/javascript"></script>
+
+<style>
+  label {
+    background: 0 !important;
+  }
+
+  .lbl_left {
+    text-align: left !important;
+    padding-left: 5px !important;
+  }
+
+  .lbl_right {
+    text-align: right !important;
+  }
+</style>

@@ -1,0 +1,78 @@
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+  
+  <div class="col-md-12" id="PUB106">
+    <div class="portlet light no-padding">
+      <div class="portlet-body no-padding">
+        <div class="form-horizontal">
+          <div class="col-md-12 no-padding box-center">
+            <div class="col-md-2">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 head-box">
+                  <label>Novedad</label>
+                </div>
+                <div
+                  class="col-md-12"
+                  style="padding-top: 7px; padding-bottom: 6px"
+                >
+                  {{ novedad }}
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-md-5" style="padding-left: 0">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 no-padding">
+                  <div class="col-md-12 head-box">
+                    <label class="col-md-2" style="text-align: center"
+                      >Código</label
+                    >
+                    <label class="col-md-10" style="text-align: center"
+                      >Descripción</label
+                    >
+                  </div>
+                  <div class="inline-inputs col-md-12 no-padding">
+                    <div class="input-group col-md-2" id="codigo">
+                      <input
+                        v-model="codigo"
+                        type="text"
+                        class="form-control codigo"
+                        style="text-align: center"
+                        data-orden="1"
+                        @keydown.f8="_ventanaUsoTarifas"
+                        maxlength="1"
+                        required="true"
+                      />
+                    </div>
+                    <button
+                      @click="_ventanaUsoTarifas"
+                      type="button"
+                      class="btn col-md-1 f8-Btn"
+                    >
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <div class="input-group col-md-9" id="descripcion">
+                      <input
+                        v-model="descripcion"
+                        type="text"
+                        maxlength="20"
+                        class="form-control text-left descripcion"
+                        data-orden="1"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="../../SERVDOM/scripts/PUB106.js" type="text/javascript"></script>  

@@ -1,0 +1,309 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Prosoft : Acceso</title>
+    <link href="css/global.css" type="text/css" rel="stylesheet" />
+    <link
+      href="../../frameworks/assets/global/plugins/font-awesome/css/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="../../frameworks/assets/global/plugins/bootstrap-toastr/toastr.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- <link href="../../frameworks/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+    <link
+      href="../../frameworks/assets/global/plugins/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="../../frameworks/assets/global/plugins/select2/css/select2-bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      .select2-dropdown {
+        z-index: 9999999;
+      }
+
+      main {
+        display: flex !important;
+      }
+
+      #pantalladecarga {
+        background-color: rgb(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 999;
+      }
+      .ventana {
+        background-color: #fff;
+        height: auto;
+        margin: 0 auto;
+        box-shadow: 0 25px 20px -20px rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+        min-width: 300px;
+        width: 40%;
+        margin-top: 20%;
+      }
+      .ventanaheader {
+        width: 100%;
+        height: auto;
+        background: rgba(0, 0, 0, 0.03);
+        max-width: 100%;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 14px;
+        text-align: center;
+      }
+      .ventanaheader p {
+        padding: 15px 25px;
+        margin: 0 auto;
+      }
+      .ventanabody {
+        width: 100%;
+        height: auto;
+        padding: 20px 20px;
+        font-size: 16px;
+      }
+      .ventanafoot {
+        width: 100%;
+        height: 50px;
+        background: #f6fbff;
+        border-radius: 0px 0px 3px 3px;
+      }
+      #ventanabutton_callback {
+        width: auto;
+        height: auto;
+        padding: 8px 25px;
+        margin: 10px 10px 10px 5px;
+        float: right;
+        background: #0e86cc;
+        color: #fff;
+        border: 1px solid #0e86cc;
+        transition: all 200ms;
+        outline: none;
+        border-radius: 2px;
+        font-size: 12px;
+        text-rendering: optimizeLegibility;
+      }
+      #ventanabutton_callback:hover {
+        background: #08659c;
+      }
+      #ventanabutton_cancel {
+        width: auto;
+        height: auto;
+        padding: 8px 25px;
+        margin: 10px 5px;
+        float: right;
+        background: #fff;
+        color: #ab1409;
+        border: 1px solid #ab1409;
+        transition: all 200ms;
+        outline: none;
+        border-radius: 2px;
+        font-size: 12px;
+        text-rendering: optimizeLegibility;
+      }
+      #ventanabutton_cancel:hover {
+        background-color: #ab1409;
+        color: #fff;
+      }
+
+      .progress {
+        background-color: #e5e9eb;
+        height: 10px;
+        position: relative;
+        width: 0%;
+      }
+
+      .progress-bar {
+        background-color: #0e86cc;
+        height: 100%;
+        position: relative;
+      }
+
+      .progress-shadow {
+        background: linear-gradient(to bottom, #eaecee, transparent);
+        height: 100%;
+        position: absolute;
+        top: 100%;
+        transform: skew(45deg);
+        transform-origin: 0 0;
+        width: 100%;
+      }
+
+      .titulo-progreso {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 12px;
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page-content-fixed-header">
+    </div>
+    <!-- <header>
+        <div id="logo-prosoft"></div>
+    </header> -->
+    <main>
+      <div id="content">
+        <div id="box-form">
+          <div class="box-content">
+            <div class="logo-content">
+              <div id="logo"></div>
+            </div>
+            <div class="header">
+              Inicio de sesión
+            </div>
+            <div class="mid">
+              <form id="login" onsubmit="return false">
+                <div id="fase_usuario">
+                  <input
+                    id="usuario"
+                    class="form-control"
+                    type="text"
+                    placeholder="Usuario"
+                    data-orden="1"
+                    maxlength="4"
+                    disabled
+                  />
+                </div>
+                <div id="fase_clave">
+                  <input
+                    id="clave"
+                    class="form-control"
+                    type="password"
+                    placeholder="Contraseña"
+                    data-orden="1"
+                    maxlength="8"
+                    disabled
+                  />
+                </div>
+                <div class="content-grid hidden">
+                  <div
+                    class="content-grid"
+                    style="
+                      margin: 0;
+                      grid-template-columns: 3fr 1fr;
+                      grid-gap: 0;
+                    "
+                  >
+                    <select id="select-contabilidad">
+                      <option value="0" selected disabled>Seleccione:</option>
+                    </select>
+                    <input
+                      id="inpt-contabilidad"
+                      type="text"
+                      placeholder="Contabilidad"
+                      class="hidden"
+                      style="margin: 0; text-transform: uppercase;"
+                    />
+                    <button
+                      class="btn input-group-addon btn-edit"
+                      type="button"
+                    >
+                      <i class="fa fa-pencil fa-fw"></i>
+                    </button>
+                  </div>
+                  <select id="mesIngreso"></select>
+                  <select id="select-nomina" hidden>
+                    <option value="0" selected disabled>Seleccione:</option>
+                  </select>
+                </div>
+                <div class="actions_form">
+                  <a href="#" class="recov_pass"></a>
+                  <button id="validarForm" type="button">Ingresar</button>
+                  <div style="clear: both;"></div>
+                </div>
+              </form>
+            </div>
+            <div class="footer">
+              © 2021 Prosoft
+            </div>
+          </div>
+        </div>
+        <div id="box-image">
+          <div class="imagen-cover">
+            <!-- <div id="header-cover">
+                        <div class="text-cover">Módulo de contabilidad</div>
+                    </div> -->
+          </div>
+        </div>
+      </div>
+      <div id="pantalladecarga" class="hidden">
+        <div class="ventana">
+          <div class="ventanaheader">
+            <p></p>
+          </div>
+          <div class="ventanabody">
+            <div class="titulo-progreso"></div>
+            <div class="progress hidden">
+              <div class="progress-bar">
+                <div class="progress-shadow"></div>
+              </div>
+            </div>
+          </div>
+          <div class="ventanafoot">
+            <div class="ventanafoot_container">
+              <button id="ventanabutton_callback"></button>
+              <button id="ventanabutton_cancel"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../../frameworks/assets/global/plugins/jquery.min.js"></script>
+    <script src="../../frameworks/assets/global/plugins/jquery-3.4.1.min.js"></script>
+    <script src="../../frameworks/assets/global/scripts/jquery-1.12.4.js"></script>
+
+    <script src="../../frameworks/scripts/ajax.js" type="text/javascript"></script>
+    <script src="../../frameworks/scripts/_alerts_prosoft.js"></script>
+    <script src="../../frameworks/scripts/_validarInputs.js"></script>
+    <script
+      src="../../frameworks/scripts/logeo.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="../../frameworks/scripts/_CON852.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="../../frameworks/scripts/_CON851.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="../../frameworks/scripts/POPUP.JS"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="../../frameworks/scripts/fetch.js"
+      type="text/javascript"
+    ></script>
+
+    <script
+      src="../../frameworks/assets/global/plugins/bootstrap-toastr/toastr.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="../../frameworks/scripts/notificaciones.js"
+      type="text/javascript"
+    ></script>
+    <script src="../../frameworks/assets/global/plugins/moment.js"></script>
+    <script src="../../frameworks/assets/pages/scripts/ui-bootbox.min.js"></script>
+    <script src="../../frameworks/assets/global/plugins/bootbox/bootbox.min.js"></script>
+    <script src="../../frameworks/assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../frameworks/assets/global/plugins/select2/js/select2.full.min.js"></script>
+  </body>
+</html>

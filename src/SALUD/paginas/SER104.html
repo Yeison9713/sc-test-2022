@@ -1,0 +1,399 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER104">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-4 col-sm-3 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-12">Novedad:</label>
+                            <div class="input-group col-md-9 col-sm-4 col-xs-12">
+                                <input v-model='form.novedad_SER104' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-7" id='VALIDARTARIFA_SER104'>
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Cod tarifa:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                <input type="text" v-model='form.codtarifa_SER104' @Keyup.F8='_f8convenio_SER104' 
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 convenio_SER104" maxlength="2" data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8convenio_SER104'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 col-sm-3 col-xs-7" id='VALIDARDESCRIP_SER104'>
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-9 col-xs-12">Descripcion:</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12">
+                                <input type="text" v-model='form.descriptarifa_SER104'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="30">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-12 col-xs-12 no-padding hidden" id='OTRONIT'>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="height: 360px;">
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Tipo</label>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-8 col-xs-12">Cirugia: </label>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-8 col-xs-12">Ecografias: </label>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-8 col-xs-12">Radiologia: </label>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-8 col-xs-12">Doppler: </label>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-8 col-xs-12">T.A.C: </label>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-8 col-xs-12">Resonancia mag: </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-12 col-xs-12 no-padding hidden" id='NITVALIDACION'>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="height: 360px;">
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Tipo</label>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-8 col-xs-12">Cirugia: </label>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-8 col-xs-12">Laboratorio: </label>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-8 col-xs-12">Radiologia: </label>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-8 col-xs-12">Otros servicios: </label>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-8 col-xs-12">Consulta. Terap: </label>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-8 col-xs-12">Internacion: </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-4 col-xs-4" id="IDTABLA_SER104">
+                                <input v-model='form.numerotabla_SER104' maxlength="1" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDARTARTABLA_SER104">
+                                <input v-model='form.codtartabla_SER104' maxlength="2" data-orden="1" @Keyup.F8='_f8tarifas_SER104' 
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 nomtarifas_SER104">
+                            </div>
+                            <button type="button" @click='_f8tarifas_SER104'
+                            class="btn  f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model='form.descriptartabla_SER104'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDARPORCENT_SER104">
+                                <input id='porcenttabla_SER104' maxlength="14" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <table id="TITULOSTABLATAR_SER104" class="table table-light table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 2%; text-align: center;">#</th>
+                                <th style="width: 2%; text-align: center;">Cod</th>
+                                <th style="width: 6%; text-align: center;">Tarifa</th>
+                                <th style="width: 6%; text-align: center;">%</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div style="height: 256px; overflow-y: auto;">
+                        <table id="TABLATABLATAR_SER104" class="table table-light table-striped">
+                            <tbody>
+                                <tr v-for="(row, index) in tablatarifas_SER104">
+                                    <td style="width: 2%; text-align: center;">
+                                        {{index + 1}}
+                                    </td>
+                                    <td style="width: 2%; text-align: center;">
+                                        {{row.CODTABTAR}}
+                                    </td>
+                                    <td style="width: 7%; text-align: center;">
+                                        {{row.DESCRIPTAR}}
+                                    </td>
+                                    <td style="width: 7%; text-align: center;">
+                                        {{row.PORCTABTAR}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="height: 360px;">
+                    <div class="col-md-12 col-sm-6 col-xs-7" id='VALIDARMEDIC_SER104'>
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Valor medicamentos: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.vlrmedic_SER104' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Factor incremento</label>
+                    </div>
+                    <div class="col-md-12 col-sm-6 col-xs-7" id='VALIDARMEDICPOS_SER104'>
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Medic. POS: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input id='medicpos_SER104' type="text" maxlength="6" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7" id='VALIDARMEDICNOPOS_SER104'>
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Medic. NO POS: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input id='medicnopos_SER104' type="text" maxlength="6" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7" id='VALIDARMAT_SER104'>
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Mat osteos: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input id='mat_SER104' type="text" maxlength="6" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7 " id='VALIDARMQOTROS_SER104'>
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">MQ y otros: </label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input id='otros_SER104' type="text" maxlength="6" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Excluir de acuerdo</label>
+                    </div>
+                    <div class="col-md-12 col-sm-6 col-xs-7" id='VALIDARACUERDO_SER104'>
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Nro 260-2004: </label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                <input id='nroacuerdo_SER104' type="text" maxlength="1" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-7" id='VALIDARSALARIO_SER104'>
+                        <label class="col-md-6 col-sm-8 col-xs-12">Si la tarifa se basa en un salario minimo de otra año
+                            digite el valor del salario minimo al dia: </label>
+                        <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                            <input id='salario_SER104' type="text" maxlength="9" data-orden="1"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDARGRP_SER104">
+                                <input v-model='form.grp_SER104' maxlength="12" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDARQUIRURG_SER104">
+                                <input id='quirurgico_SER104' maxlength="12" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDARAYUDANTIA_SER104">
+                                <input id='ayudantia_SER104' maxlength="12" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDARANESTESIA_SER104">
+                                <input id='anestesia_SER104' maxlength="12" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDARMATQUIRURG_SER104">
+                                <input id='matquirurg_SER104' maxlength="12" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDARDERECHOS_SER104">
+                                <input id='derechos_SER104' maxlength="14" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <table id="TITULOSTARIFAS_SER104" class="table table-light table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 7%; text-align: center;">Grp</th>
+                                <th style="width: 7%; text-align: center;">Hon. Quirurgico</th>
+                                <th style="width: 7%; text-align: center;">Hon. Ayudantia</th>
+                                <th style="width: 7%; text-align: center;">Hon. Anestesia</th>
+                                <th style="width: 7%; text-align: center;">Mat. Quirurgico</th>
+                                <th style="width: 7%; text-align: center;">Derechos sala</th>
+                                <th style="width: 7%; text-align: center;" class="hidden" id= 'DESCRIPNUEVO1_SER104' >Descripcion</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div style="height: 287px; overflow-y: auto;">
+                        <table id="TABLATARIFAS_SER104" class="table table-light table-striped">
+                            <tbody>
+                                <tr v-for="(row, index) in tablaext_SER104">
+                                    <td style="width: 8%; text-align: center;">
+                                        {{index + 1}}
+                                    </td>
+                                    <td style="width: 8%; text-align: center;">
+                                        {{row.HNQUIRTAR}}
+                                    </td>
+                                    <td style="width: 8%; text-align: center;">
+                                        {{row.HNAYUDTAR}}
+                                    </td>
+                                    <td style="width: 8%; text-align: center;">
+                                        {{row.HNANESTAR}}
+                                    </td>
+                                    <td style="width: 8%; text-align: center;">
+                                        {{row.MATQUITAR}}
+                                    </td>
+                                    <td style="width: 8%; text-align: center;">
+                                        {{row.DRSALATAR}}
+                                    </td>
+                                    <td style="width: 8%; text-align: center;" class="hidden DESCRIPNUEVO_SER104" >
+                                        {{row.DESCRIPTAB}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-2 col-sm-2 col-xs-12  hidden" id='VALIDARINF'>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model='form.informacion_SER104' maxlength="12" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SER104.js" type="text/javascript"></script>

@@ -1,0 +1,169 @@
+<div class="col-md-12" id="SER120">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <form class="form-horizontal">
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label> {{ form.formato_SER120 }} </label>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-3 col-xs-12">Consulta de movimientos por paciente:</label>
+                            <div class="input-group col-md-6 col-sm-1 col-xs-12" id="VALIDAR1_SER120">
+                                <input v-model="form.swarch_SER120" type="text" data-orden="1" maxlength="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-2 col-xs-12">1. Seleccione periodos a alistar </label>
+                            <div class="input-group col-md-6 col-sm-2 col-xs-12" id="VALIDAR2_SER120">
+                                <input v-model="form.directorio1_SER120" type="text" data-orden="1" maxlength="20"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-2 col-xs-12">2. Seleccione periodos a alistar </label>
+                            <div class="input-group col-md-6 col-sm-2 col-xs-12" id="VALIDAR3_SER120">
+                                <input v-model="form.directorio2_SER120" type="text" data-orden="1" maxlength="20"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-2 col-xs-12">3. Seleccione periodos a alistar </label>
+                            <div class="input-group col-md-6 col-sm-2 col-xs-12" id="VALIDAR4_SER120">
+                                <input v-model="form.directorio3_SER120" type="text" data-orden="1" maxlength="20"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-3">Paciente a listar:</label>
+                            <div class="input-group col-md-3 col-sm-9 col-xs-9" id="VALIDAR5_SER120">
+                                <input v-model="form.paciente_SER120" type="text" @Keyup.F8='_f8paciente_SER120'
+                                    data-orden="1" maxlength="15"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 paciente_SER120">
+                            </div>
+                            <button type="button" @click='_f8paciente_SER120'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-6 col-sm-9 col-xs-9">
+                                <input v-model="form.descripentid_SER120" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-3 col-xs-3">Discriminar:</label>
+                            <div class="input-group col-md-6 col-sm-9 col-xs-9" id="VALIDAR6_SER120">
+                                <input v-model="form.discriminar_SER120" type="text"
+                                    data-orden="1" maxlength="1" placeholder="S/N"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-3 col-xs-3">Mostrar valores en cero?:</label>
+                            <div class="input-group col-md-6 col-sm-9 col-xs-9" id="VALIDAR7_SER120">
+                                <input v-model="form.valores_SER120" type="text"
+                                    data-orden="1" maxlength="1" placeholder="S/N"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                        <label>Fecha inicio</label>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                        <label>Fecha Final</label>
+                    </div>
+                    <div id="fechaInicial_SER120">
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                                <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.anoini_SER120'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.mesini_SER120'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.diaini_SER120'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fechaFinal_SER120">
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                                <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.anofin_SER120'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.mesfin_SER120'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.diafin_SER120'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../../SALUD/scripts/SER120.js" type="text/javascript"></script>

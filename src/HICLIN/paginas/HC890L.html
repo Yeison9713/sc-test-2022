@@ -1,0 +1,97 @@
+<div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="HC890L">
+    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+        <div class="col-md-12 no-padding" style="display: flex;justify-content: center;">
+
+            <div class="col-md-9 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                id="validarLlenadoDiscapacidad_HC890L">
+                <label style="position: relative;top: 6px;">Desea determinar la discapacidad del
+                    paciente ?</label>
+                <div class="col-md-2 no-padding inline-inputs" style="float: right;">
+                    <input type="text" v-model="preguntaLllenado" maxlength="1" placeholder="N" data-orden="1"
+                        disabled="disabled" class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center;">
+                </div>
+            </div>
+
+        </div>
+
+        <div  v-if="preguntaLllenado == 'S'" class="salto-linea"></div>
+
+        <div class="col-md-4 no-padding" v-if="preguntaLllenado == 'S'">
+
+            <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                id="validarDiscapacidadFisica_HC890L">
+                <label style="position: relative;top: 6px;">Fisica ?</label>
+                <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                    <input type="text" v-model="global_HC890L.fisica" maxlength="1" placeholder="N" data-orden="1"
+                        disabled="disabled" class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center;">
+                </div>
+            </div>
+
+            <div class="salto-linea"></div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                id="validarDiscapacidadAuditiva_HC890L">
+                <label style="position: relative;top: 6px;">Auditiva ?</label>
+                <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                    <input type="text" v-model="global_HC890L.auditiva" maxlength="1" placeholder="N" data-orden="1"
+                        disabled="disabled" class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center;">
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-md-4 no-padding" v-if="preguntaLllenado == 'S'">
+
+            <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                id="validarDiscapacidadMental_HC890L">
+                <label style="position: relative;top: 6px;">Mental ?</label>
+                <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                    <input type="text" v-model="global_HC890L.mental" maxlength="1" placeholder="N" data-orden="1"
+                        disabled="disabled" class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center;">
+                </div>
+            </div>
+
+            <div class="salto-linea"></div>
+
+
+            <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                id="validarDiscapacidadVisual_HC890L">
+                <label style="position: relative;top: 6px;">Visual ?</label>
+                <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                    <input type="text" v-model="global_HC890L.visual" maxlength="1" placeholder="N" data-orden="1"
+                        disabled="disabled" class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center;">
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-md-4 no-padding" v-if="preguntaLllenado == 'S'">
+
+            <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                id="validarDiscapacidadCognitiva_HC890L">
+                <label style="position: relative;top: 6px;">Cognitiva ?</label>
+                <div class="col-md-3 no-padding inline-inputs" style="float: right;">
+                    <input type="text" v-model="global_HC890L.cognitiva" maxlength="1" placeholder="N" data-orden="1"
+                        disabled="disabled" class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center;">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<style>
+    input {
+        text-align: center
+    }
+</style>
+<script src="../../HICLIN/scripts/HC890L.js" type="text/javascript"></script>

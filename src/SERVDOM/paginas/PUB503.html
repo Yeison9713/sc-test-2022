@@ -1,0 +1,85 @@
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<div class="col-md-12" id="PUB503">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="col-md-12 no-padding">
+          <div class="col-md-4" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center inline-inputs" id="serv">
+              <label class="col-md-4 lbl_left">Servicio a procesar</label>
+              <div class="input-group col-md-2">
+                <input
+                  v-model="serv"
+                  type="text"
+                  class="form-control serv text-center"
+                  maxlength="1"
+                  data-orden="1"
+                  @keydown.f8="_ventanaServicios"
+                  required="true"
+                />
+              </div>
+              <button @click="_ventanaServicios" type="button" class="btn col-md-1 f8-Btn">
+                <i class="icon-magnifier"></i>
+              </button>
+              <label class="col-md-5 lbl_left" style="padding-left: 15px !important">{{ descrip_serv }}</label>
+            </div>
+          </div>
+
+          <div class="col-md-4" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center inline-inputs" id="fecha_gen">
+              <label class="col-md-4 lbl_left">Fecha Generación</label>
+              <label class="col-md-2">Año</label>
+              <div class="input-group col-md-2">
+                <input
+                  v-model="ano_gen"
+                  type="number"
+                  class="form-control text-center"
+                  maxlength="4"
+                  data-orden="1"
+                  required="true"
+                />
+              </div>
+              <label class="col-md-2">Mes</label>
+              <div class="input-group col-md-2">
+                <input
+                  v-model="mes_gen"
+                  type="number"
+                  class="form-control text-center"
+                  maxlength="2"
+                  data-orden="2"
+                  required="true"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <loader_modal :estado="estado_loader" :progreso="progreso" :loader="loader" :label="label_loader"></loader_modal>
+    </div>
+  </div>
+</div>
+
+<script src="../../SERVDOM/scripts/PUB503.js" type="text/javascript"></script>
+
+<style>
+  label {
+    background: 0 !important;
+  }
+
+  .lbl_left {
+    text-align: left !important;
+    padding-left: 5px !important;
+  }
+
+  .lbl_right {
+    text-align: right !important;
+  }
+</style>

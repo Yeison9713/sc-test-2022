@@ -1,0 +1,114 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER109S">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="float: none; margin: 0 auto;">
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Prefijo:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="VALIDAR1_SER109S">
+                                <input id="prefijo_SER109S" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1" placeholder="Ambulatorio o Pensionado">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Numero:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="VALIDAR2_SER109S">
+                                <input id="numeroprefijo_SER109S" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="6">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-12">Entidad:</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-12">
+                                <input v-model="form.entidad_SER109S" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Nombre paciente:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                <input v-model="form.paciente_SER109S" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Estado de la factura:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input v-model="form.estado_SER109S" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Paciente FOSYGA:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" id="VALIDAR3_SER109S">
+                                <input v-model="form.pacienteFOSYGA_SER109S" class="form-control col-md-12 col-sm-12 col-xs-12 pacienteFOSYGA_SER109S" data-orden="1" @Keyup.F8='_ventanaPacientes_SER109S'>
+                            </div>
+                            <button type="button" @click='_ventanaPacientes_SER109S' class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-6">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.pacientedFOSYGA_SER109S" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="float: none; margin: 0 auto;" id="ADICIONALES_SER109S">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">Dias estancia:</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="VALIDAR4_SER109S">
+                                <input id="diasestancia_SER109S" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Poliza numero:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="VALIDAR4_SER109S">
+                                <input v-model="form.poliza_SER109S" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="30" data-orden="2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-5 col-xs-12">Hist. clinica:</label>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12" id="VALIDAR4_SER109S">
+                                <input v-model="form.histclinica_SER109S" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="16" data-orden="3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Generar Medic codigo?:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="VALIDAR4_SER109S">
+                                <input id="mediccodigo_SER109S" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="4" maxlength="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Imprimir factura original?:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="VALIDAR5_SER109S">
+                                <input id="original_SER109S" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SER109S.js" type="text/javascript"></script>

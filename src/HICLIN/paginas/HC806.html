@@ -1,0 +1,480 @@
+<script src="../../SALUD/scripts/ser110c-ac.vue.js"></script>
+
+<div class="col-md-12" id="HC806">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <div class="form-horizontal">
+
+                <div class="col-md-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="portlet light box-center box-title">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">SOLICITUD DE REFERENCIA</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 no-padding">
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="fecha_HC806">
+                                <div class="col-md-4 col-sm-4 col-xs-4 text-center" style="padding-left: 0;">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Año</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="global_HC806.año_HC806" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 año_HC806" maxlength="4"
+                                            data-orden="" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 text-center" style="padding-left: 0;">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Mes</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="global_HC806.mes_HC806" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 mes_HC806" maxlength="2"
+                                            data-orden="2" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 text-center" style="padding-left: 0;">
+                                    <label class="col-md-12 col-sm-12 col-xs-6">Dia</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="global_HC806.dia_HC806" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 dia_HC806" maxlength="2"
+                                            data-orden="3" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 no-padding">
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="hora_HC806">
+                                <div class="col-md-6 col-sm-4 col-xs-4 text-center" style="padding-left: 0;">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Hora</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="global_HC806.hora_HC806" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 hora_HC806" maxlength="4"
+                                            data-orden="1" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-4 col-xs-4 text-center" style="padding-left: 0;">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Min:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="global_HC806.min_HC806" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 min_HC806" maxlength="2"
+                                            data-orden="2" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="col-md-12" style="text-align: center;">Operador</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-3 col-sm-12 col-xs-6" id="validarMedico_HC806">
+                                        <input @keyup.f8="_ventanaMedico_HC806" v-model="global_HC806.medico_HC806"
+                                            type="text"
+                                            class="form-control col-md-4 col-sm-12 col-xs-12 uppercase medico_HC806"
+                                            maxlength="10" data-orden="1" style="text-align: center;">
+                                    </div>
+                                    <button @click="_ventanaMedico_HC806" type="button"
+                                        class="btn col-md-1 col-sm-1 col-xs-1 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                    <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                                        <input v-model="global_HC806.descripMedico_HC806" type="text"
+                                            class="form-control col-md-4 col-sm-12 col-xs-12 uppercase descripMedico_HC806"
+                                            maxlength="50" data-orden="1" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 no-padding">
+                            <label class="col-md-12">Unidad de servicio</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="global_HC806.servIni_HC806" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase servIni_HC806"
+                                    maxlength="10" data-orden="1" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 no-padding">
+
+                    <div class="col-md-6 no-padding">
+
+                        <div class="col-md-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                                <div class="col-md-6 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                                    id="validarEsqVacuna">
+                                    <label style="position: relative;top: 6px;">Tipo de prioridad</label>
+                                    <div class="col-md-7 no-padding inline-inputs" style="float: right;">
+                                        <input v-model="global_AIEPI001.esq_vacuna_completo" type="text" maxlength="1"
+                                            data-orden="1" disabled="disabled"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            style="text-align: center;">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                                    id="validarEsqVacuna" style="padding-right: 0;">
+                                    <label style="position: relative;top: 6px;">Servicio solicitado</label>
+                                    <div class="col-md-7 no-padding inline-inputs" style="float: right;">
+                                        <input v-model="global_AIEPI001.esq_vacuna_completo" type="text" maxlength="1"
+                                            data-orden="1" disabled="disabled"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 no-padding">
+
+                            <div class="form-group col-md-12 col-sm-4 col-xs-4 box-center">
+                                <label class="col-md-12" style="text-align: center;">Especialidades</label>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-3 col-sm-3 col-xs-3">1.</label>
+                                        <div class="input-group col-md-7 col-sm-7 col-xs-7"
+                                            id="validarCod_diag_1_HC002">
+                                            <input id="cod_diag_1" @keydown.119="ventanaCod_diag('1')"
+                                                v-model="global_HC002.TABLA_DIAGNOSTICOS[0]" maxlength="4"
+                                                data-orden="1" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                                disabled="disabled" required="true">
+                                        </div>
+                                        <button @click="ventanaCod_diag('1')" type="button"
+                                            class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-9 no-padding">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input v-model="textos.descrip_diagnosticos[0]" style="text-align: left;"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-3 col-sm-3 col-xs-3">2.</label>
+                                        <div class="input-group col-md-7 col-sm-7 col-xs-7"
+                                            id="validarCod_diag_1_HC002">
+                                            <input id="cod_diag_1" @keydown.119="ventanaCod_diag('1')"
+                                                v-model="global_HC002.TABLA_DIAGNOSTICOS[0]" maxlength="4"
+                                                data-orden="1" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                                disabled="disabled" required="true">
+                                        </div>
+                                        <button @click="ventanaCod_diag('1')" type="button"
+                                            class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-9 no-padding">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input v-model="textos.descrip_diagnosticos[0]" style="text-align: left;"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-3 col-sm-3 col-xs-3">3.</label>
+                                        <div class="input-group col-md-7 col-sm-7 col-xs-7"
+                                            id="validarCod_diag_1_HC002">
+                                            <input id="cod_diag_1" @keydown.119="ventanaCod_diag('1')"
+                                                v-model="global_HC002.TABLA_DIAGNOSTICOS[0]" maxlength="4"
+                                                data-orden="1" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                                disabled="disabled" required="true">
+                                        </div>
+                                        <button @click="ventanaCod_diag('1')" type="button"
+                                            class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-9 no-padding">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input v-model="textos.descrip_diagnosticos[0]" style="text-align: left;"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" style="padding-right: 0;">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="padding-bottom: 6px;">
+
+
+                            <div class="col-md-6">
+                                <label class="col-md-12" style="text-align: center;">Nombres y apellidos</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarConsecutivo_HC806">
+                                    <input v-model="global_HC806.consecutivo_HC806" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 uppercase consecutivo_HC806"
+                                        maxlength="54" data-orden="1" style="text-align: center;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 no-padding">
+                                <label class="col-md-12" style="text-align: center;">Médico tratante</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarFormato_HC806">
+                                    <input v-model="global_HC806.formato_HC806" type="text"
+                                        class="form-control col-md-4 col-sm-12 col-xs-12 uppercase formato_HC806"
+                                        maxlength="50" data-orden="1" style="text-align: center;">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: center;">Edad</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarFormato_HC806">
+                                    <input v-model="global_HC806.formato_HC806" type="text"
+                                        class="form-control col-md-4 col-sm-12 col-xs-12 uppercase formato_HC806"
+                                        style="text-align: center;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-10 no-padding">
+                                <label class="col-md-12" style="text-align: center;">Aseguradora</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarFormato_HC806">
+                                    <input v-model="global_HC806.formato_HC806" type="text"
+                                        class="form-control col-md-4 col-sm-12 col-xs-12 uppercase formato_HC806"
+                                        maxlength="70" data-orden="1" style="text-align: center;">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: center;">Cup</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarFormato_HC806">
+                                    <input v-model="global_HC806.formato_HC806" type="text"
+                                        class="form-control col-md-4 col-sm-12 col-xs-12 uppercase formato_HC806"
+                                        style="text-align: center;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-10 no-padding">
+                                <label class="col-md-12" style="text-align: left;">Descripción</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarFormato_HC806">
+                                    <input v-model="global_HC806.formato_HC806" type="text"
+                                        class="form-control col-md-4 col-sm-12 col-xs-12 uppercase formato_HC806"
+                                        maxlength="70" data-orden="1" style="text-align: center;">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-md-7 no-padding">
+                    <div class="col-md-12 col-sm-12 no-padding">
+                        <div class="portlet light box-center box-title">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Resumen Historia Clínica</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validar_Analisis">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Digite:</label>
+                                    <label>(25,000 caracteres máximo)</label>
+                                </div>
+                                <textarea class="form-control" v-model="DETALLE_EVO.ANALISIS" disabled="disabled"
+                                    rows="14" maxlength="15000" data-orden="1" required="true"
+                                    style="resize: none; text-align: justify"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-5" style="padding-right: 0;">
+
+                    <div class="col-md-12 col-sm-12 no-padding">
+                        <div class="portlet light box-center box-title">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Diagnósticos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-7 col-xs-7 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <div class="col-md-4 col-sm-3 col-xs-3" style="padding-left: 0;">
+                                <div class="inline-inputs">
+                                    <label class="col-md-3 col-sm-3 col-xs-3">1.</label>
+                                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarDiagn1">
+                                        <input @keydown.119="_ventanaDiagnosticos_HC806('1')"
+                                            v-model="global_HC806.diagnosticos[0].cod" maxlength="4" data-orden="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 diagn1"
+                                            disabled="disabled" required="true">
+                                    </div>
+                                    <button @click="_ventanaDiagnosticos_HC806('1')" type="button"
+                                        class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 no-padding">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HC806.diagnosticos[0].descrip" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-4 col-sm-3 col-xs-3" style="padding-left: 0;">
+                                <div class="inline-inputs">
+                                    <label class="col-md-3 col-sm-3 col-xs-3">2.</label>
+                                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarDiagn2">
+                                        <input @keydown.119="_ventanaDiagnosticos_HC806('2')"
+                                            v-model="global_HC806.diagnosticos[1].cod" maxlength="4" data-orden="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 diagn2"
+                                            disabled="disabled" required="true">
+                                    </div>
+                                    <button @click="_ventanaDiagnosticos_HC806('2')" type="button"
+                                        class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 no-padding">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HC806.diagnosticos[1].descrip" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-4 col-sm-3 col-xs-3" style="padding-left: 0;">
+                                <div class="inline-inputs">
+                                    <label class="col-md-3 col-sm-3 col-xs-3">3.</label>
+                                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarDiagn3">
+                                        <input @keydown.119="_ventanaDiagnosticos_HC806('3')"
+                                            v-model="global_HC806.diagnosticos[2].cod" maxlength="4" data-orden="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 diagn3"
+                                            disabled="disabled" required="true">
+                                    </div>
+                                    <button @click="_ventanaDiagnosticos_HC806('3')" type="button"
+                                        class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 no-padding">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HC806.diagnosticos[2].descrip" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-4 col-sm-3 col-xs-3" style="padding-left: 0;">
+                                <div class="inline-inputs">
+                                    <label class="col-md-3 col-sm-3 col-xs-3">3.</label>
+                                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarDiagn4">
+                                        <input @keydown.119="_ventanaDiagnosticos_HC806('4')"
+                                            v-model="global_HC806.diagnosticos[3].cod" maxlength="4" data-orden="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 diagn4"
+                                            disabled="disabled" required="true">
+                                    </div>
+                                    <button @click="_ventanaDiagnosticos_HC806('4')" type="button"
+                                        class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 no-padding">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HC806.diagnosticos[3].descrip" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-4 col-sm-3 col-xs-3" style="padding-left: 0;">
+                                <div class="inline-inputs">
+                                    <label class="col-md-3 col-sm-3 col-xs-3">3.</label>
+                                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarDiagn5">
+                                        <input @keydown.119="_ventanaDiagnosticos_HC806('5')"
+                                            v-model="global_HC806.diagnosticos[4].cod" maxlength="4" data-orden="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 diagn5"
+                                            disabled="disabled" required="true">
+                                    </div>
+                                    <button @click="_ventanaDiagnosticos_HC806('5')" type="button"
+                                        class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 no-padding">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HC806.diagnosticos[4].descrip" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validar_Analisis">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Motivo de la revisión:</label>
+                                    <label>(100 caracteres máximo)</label>
+                                </div>
+                                <textarea class="form-control" v-model="DETALLE_EVO.ANALISIS" disabled="disabled"
+                                    rows="3" maxlength="15000" data-orden="1" required="true"
+                                    style="resize: none; text-align: justify"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <script src="../../HICLIN/scripts/HC806.js" type="text/javascript"></script> -->

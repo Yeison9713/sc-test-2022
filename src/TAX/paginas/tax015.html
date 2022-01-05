@@ -1,0 +1,374 @@
+<div class="col-md-10 col-sm-12" style="float: none; margin: 0 auto;">
+    <div class="portlet light box-center box-title" style="margin: 0 auto;">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject bold">3 - Actualizacion de vehiculos</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="portlet light">
+        <div class="portlet-body">
+            <form class="form-horizontal">
+                <div class="form-group col-md-10 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Novedad:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="novedad_tax015" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6" id="fasePlaca">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-6 col-xs-12">Placa:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="placa_tax015" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="6"
+                                    data-orden="1">
+                            </div>
+                            <button id="placaBtn_tax015" type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6" id="fasePropietario">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Propietario:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="propie_tax015" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="10"
+                                    data-orden="1">
+                            </div>
+                            <button id="propieBtn_tax015" type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="propieDescrip_tax015" type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-10 col-sm-12 col-xs-12 box-center" id="segundaFase_tax015">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Marca:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="marca_tax015" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="20" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Motor:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="motor_tax015" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                                    maxlength="20" data-orden="2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Chasis:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="chasis_tax015" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="20" data-orden="3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-10 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-3 col-xs-3" id="faseModalidad">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Modalidad:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-6">
+                                <input id="modalidad_tax015" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" data-orden="1"
+                                    maxlength="1">
+                            </div>
+                            <button id="modalidadBtn_tax015" type="button"
+                                class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="modaldidaDescrip_tax015" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3" id="terceraFase_tax015">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Modelo:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-6">
+                                <input id="modelo_tax015" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="4" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3" id="terceraFase_tax015">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Pasajeros:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-6">
+                                <input id="pasajeros_tax015" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-10 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-4 col-sm-4 col-xs-4" id="faseProducEmpresa">
+                        <label>% Producido para empresa:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                <input id="producEmpresa_tax015" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4" id="faseFondoMant">
+                        <label>% Fondo mantenimiento int:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                <input id="fondoMant_tax015" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4" id="faseFondoRepos">
+                        <label>% Fondo reposicion interm:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                <input id="fondoReposicion_tax015" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-10 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-12 col-xs-12">Combustible:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <select id="combu_tax015" class="form-control select2 col-md-12" disabled>
+                                    <option value="0" selected disabled>Seleccione</option>
+                                    <option value="1">Gasolina</option>
+                                    <option value="2">A.C.P.M.</option>
+                                    <option value="3">Otro</option>
+                                    <option value="F">Volver</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Naturaleza:</label>
+                            <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                <select class="form-control col-md-12 select2" id="Naturaleza_tax015" disabled>
+                                    <option value="0" selected disabled>Seleccione</option>
+                                    <option value="1">Ajeno</option>
+                                    <option value="2">Propio</option>
+                                    <option value="3">Leasing</option>
+                                    <option value="F">Volver</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs" id="faseNroInterno">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Nro interno:</label>
+                            <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                <input id="nroInterno_tax015" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: #f2f3f8 !important; box-shadow: none !important; padding: 0px 8px 0px 9px; display: flex; margin-bottom: 0px !important;"
+                    class="form-group col-md-11 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-5 col-sm-5 col-xs-12 box-center"
+                        style="float: left !important; margin-right: 9px;" id="faseTarjOperacion">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label>Tarjeta operacion.</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <label>Año:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="margin-left: 5px;">
+                                    <input id="añoTajOpera_015" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <label>Mes:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="mesTajOpera_015" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <label>Dia:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="diaTajOpera_015" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 box-center"
+                        style="float: right !important; margin-left: 9px;" id="faseFechaAfil">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label>Fecha afiliacion</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <label>Año:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="margin-left: 5px;">
+                                    <input id="añoAfil_015" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <label>Mes:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="mesAfil_015" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <label>Dia:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="diaAfil_015" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div style="background: #f2f3f8 !important; box-shadow: none !important; padding: 0px 8px 0px 9px; display: flex; margin-bottom: 0px !important;"
+                    class="form-group col-md-11 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-5 col-sm-5 col-xs-12 box-center"
+                        style="float: left !important; margin-right: 9px;" id="faseFechaRetiro">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label>Fecha retiro.</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <label>Año:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="margin-left: 5px;">
+                                    <input id="añoRet_015" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <label>Mes:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="mesRet_015" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <label>Dia:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="diaRet_015" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12 box-center"
+                        style="float: right !important; margin-left: 9px;">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label>Centro de costos</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-6" id="faseCcosto_tax015">
+                            <label>C-Costo:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-10 col-sm-8 col-xs-8" style="margin-left: 5px;">
+                                    <input id="costo_tax015" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1">
+                                </div>
+                                <button id="costoBtn_tax015" type="button"
+                                    class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-xs-8">
+                            <label>Descripcion:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="costoDescrip_tax015" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="form-group col-md-10 col-sm-12 col-xs-12 box-center" id="faseFechas" hidden>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs" id="faseTarjOperacion">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Tarj. Operacion:</label>
+                            <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                <input id="tarjOperacoion_tax015" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs" id="faseFechaAfil">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Fecha afiliacion:</label>
+                            <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                <input id="fechaAfil_tax015" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs" id="faseFechaRetiro">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Fecha retiro:</label>
+                            <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                <input id="fechaRetiro_tax015" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-6 col-sm-12 col-xs-12 box-center"
+                    style="display: flex; justify-content: space-around;">
+                    
+                </div>  -->
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../../TAX/scripts/tax015.js" type="text/javascript"></script>

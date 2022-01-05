@@ -1,0 +1,184 @@
+<div class="col-md-12" id="LABCOMP">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <div class="form-horizontal">
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-7 col-sm-12 col-xs-12 box-center"
+                        style="display: flex;justify-content: space-around;">
+
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <label>Novedad</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="textos.descrip_novedad" type="text" disabled="disabled"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 col-xs-12" style="text-align: left">
+                            <label>Código</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-10 col-sm-10 col-xs-10" id="validarCodigo_LABCOMP">
+                                    <input v-model="llave" id="codigo_labcomp" @keydown.119="ventana_componentes"
+                                        type="text" maxlength="10" data-orden="1" disabled="disabled" required="true"
+                                        style="text-align: left"
+                                        class="form-control uppercase col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <button type="button" @click="ventana_componentes"
+                                    class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-7 col-sm-6 col-xs-12 no-padding" style="text-align: left">
+                            <label>Descripción Componente</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarDescrip_LABCOMP">
+                                    <input v-model="global_LABCOMP.DESCRIPCION" type="text" maxlength="80"
+                                        data-orden="1" disabled="disabled" required="true" style="text-align: left"
+                                        class="form-control uppercase col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-7 col-sm-12 col-xs-12 box-center"
+                        style="display: flex;justify-content: space-around;">
+
+                        <div class="col-md-2 col-sm-3 col-xs-4" id="validarTitulo_LABCOMP">
+                            <label>Título ?</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="global_LABCOMP.TITULO" placeholder="N"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                    disabled="disabled">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-3 col-xs-4" id="validarUnidMed_LABCOMP">
+                            <label>Unidad medida</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="global_LABCOMP.UNIDAD_MEDIDA"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15" data-orden="1"
+                                    disabled="disabled">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-4" id="validarPlantilla_LABCOMP">
+                            <label>Plantilla</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                    <input @keydown.119="ventanaPlantillas" v-model="global_LABCOMP.PLANTILLA"
+                                        id="plantilla_LABCOMP" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="2" data-orden="1" disabled="disabled" type="number">
+                                </div>
+                                <button type="button" @click="ventanaPlantillas"
+                                    class="btn f8-Btn btn-default col-md-3 col-sm-3 col-xs-3">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-3 col-xs-4 no-padding" style="text-align: left;">
+                            <label>Descripción plantilla</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="textos.descrip_plantilla"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled"
+                                    style="text-align: left">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-7 col-sm-12 col-xs-12 box-center">
+
+                        <table class="table table-light table-striped" style="margin-bottom: 0px; width: 99%;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center">Valores de referencia</th>
+                                </tr>
+                            </thead>
+                        </table>
+
+                        <div style="max-height: 337px; overflow-y: scroll; display: inline-block;width: 100%">
+                            <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%;">
+                                <tbody>
+                                    <tr v-for="(fila,index) in global_LABCOMP.VLR_REFER" :key="index"
+                                        style="display: flex; justify-content: space-around;">
+
+                                        <td class="col-md-6">
+                                            <div :id="`validarDescripRefer${index}_LABCOMP`">
+                                                <input type="text" v-model="fila.DESCRIP" data-orden="1" maxlength="30"
+                                                    class="form-control" />
+                                            </div>
+                                        </td>
+
+                                        <td class="col-md-6">
+                                            <div :id="`validarVlrRefer${index}_LABCOMP`">
+                                                <input type="text" v-model="fila.VLR" data-orden="1" maxlength="30"
+                                                    class="form-control" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-7 col-sm-12 col-xs-12 box-center"
+                    style="display: flex; justify-content: space-around">
+
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <label>Creación</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input v-model="global_LABCOMP.OPER_CREA" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                            </div>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input v-model="global_LABCOMP.FECHA_CREA"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <label>Modificación</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input v-model="global_LABCOMP.OPER_MODIF" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                            </div>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input v-model="global_LABCOMP.FECHA_MODIF"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<style>
+    input {
+        text-align: center
+    }
+</style>
+<script src="../../LAB/scripts/LABCOMP.js" type="text/javascript"></script>

@@ -1,0 +1,405 @@
+<div class="portlet light no-padding" id="SER4B8">
+  <div class="portlet-body no-padding">
+    <div class="form-horizontal no-padding">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding form-group sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> Fecha </label>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex no-padding">
+                      <div class="input-group" style="flex: 1 1 40%">
+                        <input
+                          type="number"
+                          :value="fecha_act.slice(0,4)"
+                          maxlength="4"
+                          placeholder="AAAA"
+                          disabled="disabled"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                      <div class="input-group" style="flex: 1 1 30%; padding-right: 0.2rem; padding-left: 0.2rem">
+                        <input
+                          type="number"
+                          :value="fecha_act.slice(4,6)"
+                          maxlength="2"
+                          placeholder="MM"
+                          disabled="disabled"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                      <div class="input-group" style="flex: 1 1 30%">
+                        <input
+                          type="number"
+                          :value="fecha_act.slice(6)"
+                          maxlength="2"
+                          placeholder="DD"
+                          disabled="disabled"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> Hora </label>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex no-padding">
+                      <div class="input-group" style="flex: 1 1 50%; padding-right: 0.2rem; padding-left: 0.2rem">
+                        <input
+                          type="number"
+                          :value="hora_act.slice(0,2)"
+                          maxlength="2"
+                          placeholder="HH"
+                          disabled="disabled"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                      <div class="input-group" style="flex: 1 1 50%">
+                        <input
+                          type="number"
+                          :value="hora_act.slice(2)"
+                          maxlength="2"
+                          placeholder="mm"
+                          disabled="disabled"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> Consecutivo </label>
+                    <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12" id="consecutivo">
+                      <input
+                        :value="reg_solau.consecutivo"
+                        type="number"
+                        maxlength="6"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> Factura </label>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex no-padding inline-inputs">
+                      <div class="input-group" style="flex: 1 1 10%" id="prefijo">
+                        <input
+                          v-model="reg_solau.fact.prefijo"
+                          type="text"
+                          maxlength="1"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control text-center"
+                        />
+                      </div>
+                      <div class="input-group" style="flex: 1 1 20%" id="nro">
+                        <input
+                          v-model="reg_solau.fact.nro"
+                          type="number"
+                          maxlength="6"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control center"
+                        />
+                      </div>
+                      <button type="button" class="btn f8-Btn">
+                        <i class="icon-magnifier"></i>
+                      </button>
+                      <div class="input-group" style="flex: 1 1 70%; padding-left: 0.3rem">
+                        <input
+                          :value="reg_num.descrip"
+                          type="text"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> Tipo </label>
+                    <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12" id="tipo">
+                      <input
+                        :value="reg_activ.nombre"
+                        type="text"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> Novedad </label>
+                    <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <input
+                        :value="descrip_novedad"
+                        type="text"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding form-group sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> Paciente </label>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex no-padding inline-inputs">
+                      <div class="input-group" style="flex: 1 1 35%" id="paci">
+                        <input
+                          v-model="reg_solau.paci"
+                          type="text"
+                          maxlength="15"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control center"
+                          @keydown.f8="_ventanaPaci"
+                        />
+                      </div>
+                      <button type="button" class="btn f8-Btn btn-paci">
+                        <i class="icon-magnifier"></i>
+                      </button>
+                      <div class="input-group" style="flex: 1 1 65%; padding-left: 0.3rem">
+                        <input
+                          :value="reg_paci.descrip"
+                          type="text"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> Tipo Afiliado </label>
+                    <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <input :value="tipo_afil" type="text" data-orden="1" disabled="disabled" class="form-control" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> Nivel </label>
+                    <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <input
+                        :value="reg_paci.estrato"
+                        type="text"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> Semanas Cotizadas </label>
+                    <div class="input-group col-xs-12 col-sm-12 col-md-12 col-lg-12" id="sem_cot">
+                      <input
+                        v-model="reg_solau.sem_cot"
+                        type="text"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding form-group sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <table class="table table-light table-striped">
+                  <thead>
+                    <tr>
+                      <th class="text-center" style="width: 5%"></th>
+                      <th class="text-center" style="width: 15%">CUPS</th>
+                      <th class="text-center" style="width: 15%">SERVICIO</th>
+                      <th class="text-center" style="width: 15%">NRO. AUTORIZACIÓN</th>
+                      <th class="text-center" style="width: 15%">AUTORIZADO POR</th>
+                      <th class="text-center" style="width: 27%">OBSERVACIONES</th>
+                      <th class="text-center" style="width: 8%">OPER</th>
+                    </tr>
+                    <tr>
+                      <td style="width: 5%">
+                        <div class="input-group col-md-12" id="item">
+                          <input
+                            :value="reg_act.item"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="3"
+                            min="001"
+                            max="010"
+                            data-orden="1"
+                            required="true"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 15%">
+                        <div class="input-group col-md-12" id="cups">
+                          <input
+                            v-model="reg_act.cups"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="10"
+                            data-orden="1"
+                            @keydown.f8="_ventanaCups"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 15%">
+                        <div class="input-group col-md-12" id="unserv">
+                          <input
+                            v-model="reg_act.unserv"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="2"
+                            data-orden="1"
+                            @keydown.f8="_ventanaUsuarSer"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 15%">
+                        <div class="input-group col-md-12" id="cod">
+                          <input
+                            v-model="reg_act.cod"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="20"
+                            data-orden="1"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 15%">
+                        <div class="input-group col-md-12" id="nom_quien_autoriza">
+                          <input
+                            v-model="reg_act.nom_quien_autoriza"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="30"
+                            data-orden="1"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 27%">
+                        <div class="input-group col-md-12" id="observacion">
+                          <textarea
+                            v-model="reg_act.observacion"
+                            class="form-control observacion"
+                            :rows="rows_observ"
+                            maxlength="285"
+                            data-orden="1"
+                            style="resize: none; text-align: justify"
+                            disabled="disabled"
+                          ></textarea>
+                        </div>
+                      </td>
+                      <td style="width: 8%">
+                        <div class="input-group col-md-12" id="oper">
+                          <input
+                            :value="admin_w"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="4"
+                            data-orden="1"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(registro, index) in reg_solau.tabla">
+                      <td class="text-center" style="width: 5%">
+                        {{ (parseInt(index) + 1).toString().padStart(3, "0") }}
+                      </td>
+                      <td class="text-center" style="width: 15%">
+                        {{ registro.cups || "" }} - {{ registro.descrip_cups }}
+                      </td>
+                      <td class="text-center" style="width: 15%">
+                        {{ registro.unserv || "" }} - {{ registro.descrip_unserv }}
+                      </td>
+                      <td class="text-center" style="width: 15%">{{ registro.cod }}</td>
+                      <td class="text-center" style="width: 15%">{{ registro.nom_quien_autoriza }}</td>
+                      <td class="text-center" style="width: 27%">{{ registro.observacion.slice(0,30) }}</td>
+                      <td class="text-center" style="width: 8%">{{ registro.oper }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <label class="col-md-12" style="color: #476fad; text-align: center; padding: 7px"
+                  >F3 grabar - F5 salir sin grabar</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div v-if="ventanaCups">
+    <ser802c @callback="successVentanaCups" @callback_esc="escVentanaCups"></ser802c>
+  </div>
+  <div v-if="ventanaPaci">
+    <ser810 @callback="successVentanaPaci" @callback_esc="escVentanaPaci"></ser810>
+  </div>
+</div>
+
+<script src="../../SALUD/scripts/SER4B8.js"></script>
+
+<style>
+  .box-center {
+    margin-bottom: 0 !important;
+  }
+  tbody {
+    display: block;
+    height: 310px;
+    overflow: auto;
+  }
+  thead,
+  tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  thead {
+    width: calc(100% - 1em);
+  }
+  table {
+    width: 400px;
+  }
+</style>

@@ -1,0 +1,737 @@
+<style>
+    textarea {
+        resize: none;
+        text-align: justify;
+    }
+
+    .text-descrip {
+        display: flex;
+        align-items: center;
+    }
+
+    .text-descrip input:nth-child(1) {
+        width: 40%;
+    }
+
+    .text-descrip input:nth-child(2) {
+        background: #d0cece21 !important;
+    }
+
+    .center {
+        text-align: center;
+    }
+</style>
+
+<script src="../../HICLIN/scripts/HCI-8031.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI-8001.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI-8002.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI01.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/AIEPI010.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/AIEPI020.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/BARTHELI.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/KARNOFI.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/DEPENDE.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HERIDAI.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI-5414A.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/ACO-COVIDI.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI01C.js" type="text/javascript"></script>
+
+<script src="../../HICLIN/scripts/hc890p.vue.js"></script>
+<script src="../../HICLIN/scripts/hc110.vue.js"></script>
+<script src="../../HICLIN/scripts/HCI02.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/PATOL.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI01I.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI-9010.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI-9011.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI9007.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI-9012.js" disabled='disabled' type="text/javascript"></script>
+<div class="col-md-12" id="hc002f">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <form class="form-horizontal">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                    <div class="col-md-1 col-sm-4 col-xs-12" id="ValidarOperador_hc002F" style="text-align: left;">
+                        <label>Operador</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" v-model="operador"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="4"
+                                    data-orden="1" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-3 col-xs-12" id="validarAno_hc002F" style="text-align: left;">
+                        <label>Año</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" v-model="fecha_act.año" maxlength="4" data-orden="1" required
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-3 col-xs-12" id="validarMes_hc002F" style="text-align: left;">
+                        <label>Mes</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" v-model="fecha_act.mes" maxlength="2" data-orden="1" required
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-3 col-xs-12" id="validarDia_hc002F" style="text-align: left;">
+                        <label>Dia</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" v-model="fecha_act.dia" maxlength="2" data-orden="1" required
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-2 col-xs-12" id="validarHora_hc002F" style="text-align: left;">
+                        <label>Hora</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" v-model="hora_act" maxlength="4" data-orden="1" required
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12" style="text-align: left;">
+                        <label>Médico</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="profesional" type="text" style="text-align: left;"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-12" style="text-align: left;">
+                        <label></label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12" v-model="unserv">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="col-md-1 col-sm-4 col-xs-4">
+                        <label>Año:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12" v-model="fecha_act.año">
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-2 col-xs-2">
+                        <label>Mes:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12" v-model="fecha_act.mes">
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-2 col-xs-2">
+                        <label>Dia:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12" v-model="fecha_act.dia">
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-2 col-xs-2">
+                        <label>Hora:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12" v-model="hora_act.hr">
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-2 col-xs-2">
+                        <label>Minutos:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12" v-model="hora_act.min">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-8 col-xs-8">
+                        <label>&nbsp;</label>
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-4 col-xs-12">Médico:</label>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12" v-model="profesional">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <label>&nbsp;</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12" v-model="unserv">
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+
+                <periodo_formu v-bind:params="params_hc890p" @callback="_terminarTrimestral"></periodo_formu>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" v-show="pagina.uno">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">codigo: </label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6" id="fase_diagnosticos_hc_01">
+                                <input type="text" class="form-control  font-small uppercase" maxlength="4"
+                                    ref="cod_diagn" data-orden="1" v-model="form_diag.diagn"
+                                    v-on:keyup.119="_ventanaDiagnosticos" required />
+                            </div>
+                            <button id="diagnosticoBtn_hc_01" type="button"
+                                class="btn col-md-4 col-sm-4 col-xs-4 f8-Btn" @click="_ventanaDiagnosticos">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">F3 - Grabar</label>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="table-scrollable">
+                            <table id="table_diagnosticos" class="table table-light table-striped"
+                                style="text-align: left;">
+                                <thead>
+                                    <tr>
+                                        <th> # Item &nbsp;</th>
+                                        <th>Codigo</th>
+                                        <th>Descripcion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in hc002f._diagnosticos">
+                                        <td style="width: 15%;">
+                                            <label> {{ item.item.toString().padStart(2,"0") }} </label>
+                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                                style="margin-bottom: 14px !important;">
+                                                <input type="checkbox" @click="_deleteItemDiagn" :value="item.diagn">
+                                                <span></span>
+                                            </label>
+                                        </td>
+
+                                        <td>{{ item.diagn }}</td>
+                                        <td>{{ _consultarDiagnostico(item.diagn).NOMBRE_ENF }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group col-md-12 col-sm-12 no-padding" style="float: none; margin: 0 auto;"
+                    v-show="pagina.dos">
+                    <div class="portlet light box-center box-title" style="margin: 0 auto;">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject bold">Formulacion.</span>
+                            </div>
+                            <div class="actions" style="padding: 10px 0 !important">
+                                <label style="color: #fff;">F3 Grabar - </label>
+                                <label style="color: #fff;">F5 Salir sin grabar - </label>
+                                <label style="color: #fff;">F7 ventana de macros - </label>
+                                <label style="color: #fff;">F8 Ventana de formulacion - </label>
+                                <label style="color: #fff;">F9 Ventana Formulacion anterior </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" v-show="pagina.dos">
+                    <div class="col-md-1 col-sm-6 col-xs-4" id="fase_item_formu">
+                        <label class="col-md-2">Item: </label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                v-model="form.item_formu" required>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-6 col-xs-4">
+                        <label class="col-md-1">Tipo: </label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12" ref="tipo_formu">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-8">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Codigo: </label>
+                        <div class="inline-inputs col-md-12 col-sm-12 col-xs-12" id="fase_cod_formu_hc002f">
+                            <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" data-orden="1"
+                                    required v-model="form.cod_formu" v-on:keyup.119="_validarVentanaFormu"
+                                    ref="cod_formu_hc002f">
+                            </div>
+                            <button type="button" v-on:click="_validarVentanaFormu"
+                                class="btn col-md-4 col-sm-4 col-xs-4 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-6">
+                        <label class="col-md-1 col-sm-3 col-xs-5">Descripcion: </label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12 " maxlength="30"
+                                v-model="form.descripcion">
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-3 col-xs-6">
+                        <label class="col-md-3 col-sm-4 col-xs-6">cantidad: </label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12" id="fase_cant_formu_hc002f">
+                            <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12 " maxlength="6"
+                                data-orden="1" required v-model="form.cant_formu">
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <label class="col-md-2 col-sm-4 col-xs-6">Indicaciones: </label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="inidic_formu_hc002f" class="form-control col-md-12 col-sm-12 col-xs-12 "
+                                maxlength="30" v-model="form.indic_formu.indic2_formu">
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-3 col-xs-6" id="fase_dias_tot_formu_hc002f">
+                        <label class="col-md-2 col-sm-4 col-xs-6">Dias: </label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input type="number" id="dias_tot_formu_hc002f"
+                                class="form-control col-md-12 col-sm-12 col-xs-12 " maxlength="3" data-orden="1"
+                                v-model="form.indic_formu.indi1_formu.dias_trat_formu">
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-2 col-xs-4" id="fase_ord_formu_hc002f">
+                        <label class="col-md-2 col-sm-4 col-xs-6">Imprimir: </label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input type="number" id="ord_formu_hc002f"
+                                class="form-control col-md-12 col-sm-12 col-xs-12 " maxlength="1" data-orden="1"
+                                v-model="form.nro_ord_formu">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" v-show="pagina.dos">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="table-scrollable">
+                            <table id="table_diagnosticos" class="table table-light table-striped"
+                                style="text-align: left;">
+                                <thead>
+                                    <tr>
+                                        <th>&nbsp; # &nbsp;</th>
+                                        <th>Tipo</th>
+                                        <th>Codigo</th>
+                                        <th>Descripcion</th>
+                                        <th>Cantidad</th>
+                                        <th>Indicaciones</th>
+                                        <th>Dias/Imprimir</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in hc002f._tablaFormu">
+
+                                        <td style="width: 15%;">
+                                            <label> {{ item.item_formu.toString().padStart(2,"0") }} </label>
+                                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline"
+                                                style="margin-bottom: 14px !important;">
+                                                <input type="checkbox" @click="_deleteItemFormu"
+                                                    :value="item.item_formu">
+                                                <span></span>
+                                            </label>
+                                        </td>
+
+                                        <td>{{ item.tipo_formu }}</td>
+                                        <td>{{ item.cod_formu }}</td>
+                                        <td>{{ _consultaDescripcionFormula(item.tipo_formu, item.cod_formu ).DESCRIP }}
+                                        </td>
+                                        <!-- <td>{{ item.descripcion }}</td> -->
+                                        <td>{{ item.cant_formu }}</td>
+                                        <td>{{ item.indic_formu.indic2_formu }}</td>
+                                        <td>{{ item.indic_formu.indi1_formu.dias_trat_formu }} / {{item.nro_ord_formu}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 no-padding" style="float: none; margin: 0 auto;"
+                    v-show="pagina.tres">
+                    <div class="portlet light box-center box-title" style="margin: 0 auto;">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject bold">Demanda inducida.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <demanda_inducida v-show="pagina.tres" v-bind:params="params_hc110"
+                    @callback="_terminarDemandaInducida"></demanda_inducida>
+                <div style="clear: both;"></div>
+            </form>
+        </div>
+    </div>
+
+    <transition name="modal_prosoft" v-if="modal_f9">
+        <div class="overlay_prosoft">
+            <div class="modal_prosoft" style="width: 1000px !important;">
+                <div class="container_prosoft">
+                    <div class="header_prosoft">
+                        <p style="padding: 15px 25px;margin: 0 auto;">Formulacion anterior</p>
+                    </div>
+                    <div class="body_prosoft">
+                        <div class="col-md-12">
+                            <div class="portlet light no-padding">
+                                <div class="portlet-body">
+                                    <form class="form-horizontal" onsubmit="return false;">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                            <div class="col-md-6  no-padding">
+                                                <table class="table table-light table-striped"
+                                                    style="margin-bottom: 0px; width: 99%;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="col-md-2">Fecha</th>
+                                                            <th class="col-md-2">Hora</th>
+                                                            <th class="col-md-2">Operador</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                </table>
+                                                <div
+                                                    style="max-height: 532px; overflow-y: scroll; display: inline-block;width: 100%">
+                                                    <table class="table table-light table-striped"
+                                                        style="margin-bottom: 0px" id="tablaIzq_hc002f">
+                                                        <tr v-for="item in hc002f._formulaAnt">
+                                                            <td>
+                                                                {{ item.fecha }}
+                                                            </td>
+                                                            <td>
+                                                                {{ item.hora }}
+                                                            </td>
+                                                            <td>
+                                                                {{ item.oper }}
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 no-padding" style="padding-right: 0;">
+                                                <table class="table table-light table-striped"
+                                                    style="margin-bottom: 0px; width: 97%;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Medicamento</th>
+                                                            <th>Cantidad</th>
+                                                            <th>Indicaciones </th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                                <div
+                                                    style="max-height: 532px; overflow-y: scroll; display: inline-block;width: 100%">
+                                                    <table id="tablaDer_HC012" class="table table-light table-striped"
+                                                        style="margin-bottom: 0px">
+                                                        <tbody>
+                                                            <tr v-for="item in hc002f._seundaTabla">
+                                                                <td>
+                                                                    {{ _consultDescripMedicamento(item.cod_formu) }}
+                                                                </td>
+                                                                <td>
+                                                                    {{ item.cant_formu }}
+                                                                </td>
+                                                                <td>
+                                                                    {{ item.indi1_formu }}
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+
+    <transition name="modal_prosoft" v-if="modal_adm">
+        <div class="overlay_prosoft">
+            <div class="modal_prosoft">
+                <div class="container_prosoft">
+                    <div class="header_prosoft">
+                        <p style="padding: 15px 25px;margin: 0 auto;">Admnistrar medicamentos</p>
+                    </div>
+                    <div class="body_prosoft">
+                        <div class="col-md-12">
+                            <div class="portlet light no-padding">
+                                <div class="portlet-body">
+                                    <form class="form-horizontal" onsubmit="return false;">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                            <div class="form-group col-md-12 col-sm-12 col-xs-12"
+                                                style="margin-bottom: 5px;">
+                                                <label
+                                                    class="col-md-3 col-sm-3 col-xs-3 font-small">Administrar:</label>
+                                                <div class="col-md-3 col-sm-4 col-xs-4 " id="fase_cant_dosis">
+                                                    <input type="number" class="form-control text-center" maxlength="8"
+                                                        ref="cant_dosisf_formu"
+                                                        v-model="form.var_dosis_formu.cant_dosisf_formu" data-orden="1"
+                                                        required>
+                                                </div>
+                                                <!-- cant_dosis_formu -->
+                                                <div class="col-md-6 col-sm-5 col-xs-5">
+                                                    <input type="text" class="form-control"
+                                                        v-model="form_descrip.tipo_dosisf">
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-12 col-sm-12 col-xs-12"
+                                                style="margin-bottom: 5px;">
+                                                <label class="col-md-3 col-sm-3 col-xs-3 font-small">Cada:</label>
+                                                <div class="col-md-3 col-sm-4 col-xs-4" id="fase_cant_frec_dosis">
+                                                    <input type="number" class="form-control text-center" maxlength="2"
+                                                        ref="cant_frec_dosisf_formu"
+                                                        v-model="form.var_dosis_formu.cant_frec_dosisf_formu"
+                                                        data-orden="1" />
+                                                </div>
+                                                <div class="col-md-6 col-sm-5 col-xs-5">
+                                                    <input type="text" class="form-control"
+                                                        v-model="form_descrip.frec_dosisf">
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-12 col-sm-12 col-xs-12"
+                                                style="margin-bottom: 5px;">
+                                                <label class="col-md-3 col-sm-7 col-xs-7 font-small">Vias:</label>
+                                                <div class="col-md-offset-3 col-sm-offset-3 col-md-6 col-sm-6 col-xs-6">
+                                                    <input type="text" class="form-control"
+                                                        v-model="form_descrip.via_formu">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                    <div class="footer_prosoft hidden">
+                        <div class="footer_container">
+                            <button class="btn_acept_prosoft">Aceptar</button>
+                            <button class="btn_cancel_prosoft">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+    <transition name="modal_prosoft" v-if="modal_indic">
+        <div class="overlay_prosoft">
+            <div class="modal_prosoft">
+                <div class="container_prosoft">
+                    <div class="header_prosoft">
+                        <div class="head-textarea" style="display: flex; justify-content: center;">
+                            <div>
+                                <label for="title-textarea"> {{ _titleVentanaIndicaciones() }} </label>
+                            </div>
+                            <div>
+                                <div class="tooltip-proft bottom-text" style="top: 7px !important; left: 10px;">
+                                    <span class="icon-proft icon-info"></span>
+                                    <span class="tiptext">
+                                        <div style="text-transform: capitalize !important;">Presione F3 para pasar al
+                                            siguiente campo.</div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <p style="padding: 15px 25px;margin: 0 auto;">
+                            
+                        </p> -->
+                    </div>
+                    <div class="body_prosoft">
+                        <div class="col-md-12">
+                            <div class="portlet light no-padding">
+                                <div class="portlet-body">
+                                    <form class="form-horizontal" onsubmit="return false;">
+                                        <div class="form-group col-md-12 col-sm-12 col-xs-12 no-padding"
+                                            style="margin-bottom: 10px;" id="fase_indicaciones">
+                                            <textarea class="form-control col-md-12 col-sm-12 col-xs-12" :maxlength="maxlenght"
+                                                v-model="form.indic_formu.indic2_formu" rows="5" ref="indic2"
+                                                data-orden="1"></textarea>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+
+    <transition name="modal_prosoft" v-if="modal_revaloracion">
+        <div class="overlay_prosoft">
+            <div class="modal_prosoft">
+                <div class="container_prosoft">
+                    <div class="header_prosoft" hidden>
+                        <p style="padding: 15px 25px;margin: 0 auto;">
+                            Revaloracion
+                        </p>
+                    </div>
+                    <div class="body_prosoft">
+                        <div class="col-md-12">
+                            <div class="portlet light">
+                                <div class="portlet-body">
+
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12"
+                                        style="display: flex; justify-content: center;">
+                                        <div class="col-md-7 col-sm-7 col-xs-7">
+                                            <div class="inline-inputs">
+                                                <label class="col-md-12 col-sm-12 col-xs-12">Paciente para
+                                                    revaloración ?</label>
+                                                <div class="input-group col-md-4 col-sm-5 col-xs-6"
+                                                    id="fase_revaloracion">
+
+                                                    <input type="text"
+                                                        class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                                                        v-model="hc002f._revaloracion" maxlength="1" data-orden="1"
+                                                        required placeholder="S/N">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+
+    <transition name="modal_prosoft" v-if="modal_incapacidad">
+        <div class="overlay_prosoft">
+            <div class="modal_prosoft">
+                <div class="container_prosoft">
+                    <div class="header_prosoft">
+                        <p style="padding: 15px 25px;margin: 0 auto;">
+                            Inicio de la incapacidad
+                        </p>
+                    </div>
+                    <div class="body_prosoft">
+                        <div class="col-md-12">
+                            <div class="portlet light no-padding">
+                                <div class="portlet-body">
+                                    <form class="form-horizontal" onsubmit="return false;">
+                                        <div class="form-group col-md-12 col-sm-12 col-xs-12 no-padding"
+                                            style="margin-bottom: 10px;">
+                                            <div class="form-group col-md-12 col-sm-12 col-xs-12 no-padding"
+                                                style="margin-bottom: 15px;" id="fase_fecha_incap">
+                                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                                    <div class="inline-inputs">
+                                                        <label class="col-md-6 col-sm-6 col-xs-12">Año.</label>
+                                                        <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                                            <input type="number"
+                                                                class="form-control col-md-12 col-sm-12 col-xs-12"
+                                                                maxlength="4" data-orden="1"
+                                                                v-model="form.fecha_incap.ano" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                                    <div class="inline-inputs">
+                                                        <label class="col-md-6 col-sm-6 col-xs-12">Mes.</label>
+                                                        <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                                            <input type="number"
+                                                                class="form-control col-md-12 col-sm-12 col-xs-12"
+                                                                maxlength="2" data-orden="2"
+                                                                v-model="form.fecha_incap.mes" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                                    <div class="inline-inputs">
+                                                        <label class="col-md-6 col-sm-6 col-xs-12">Dia.</label>
+                                                        <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                                            <input type="number"
+                                                                class="form-control col-md-12 col-sm-12 col-xs-12"
+                                                                maxlength="2" data-orden="3"
+                                                                v-model="form.fecha_incap.dia" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-12 col-sm-12 no-padding">
+                                                <div class="col-md-4 col-sm-4 col-xs-4" id="fase_prorroga">
+                                                    <label>&nbsp;</label>
+                                                    <div class="inline-inputs">
+                                                        <label class="col-md-6 col-sm-6 col-xs-6">Prorroga.</label>
+                                                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                                            <input type="text" class="form-control text-cente uppercase"
+                                                                placeholder="S / N" data-orden="1"
+                                                                v-model="form.prorroga_formu" maxlength="1" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4" id="fase_grado_incap">
+                                                    <label>&nbsp;</label>
+                                                    <div class="inline-inputs">
+                                                        <label class="col-md-6 col-sm-6 col-xs-6">Grado Inc.</label>
+                                                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                                            <input type="text"
+                                                                class="form-control text-center uppercase"
+                                                                placeholder="T / P" data-orden="1"
+                                                                v-model="form.grado_incap_formu" maxlength="1" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                                    <label class="float-left">Tipo inc.</label>
+                                                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                                        <input type="text" class="form-control text-center"
+                                                            v-model="descrip_tipo_incap">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+</div>
+<script src="../../frameworks/pdf/hiclin/HCI01.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/AIEPI010.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/AIEPI020.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Barthel.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Depende.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI5414A.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Herida.formato.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Karnof.formato.js" type="text/javascript"></script>
+
+<script src="../../frameworks/pdf/hiclin/HCI02.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Patol.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI01I.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI-9010.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI-9011.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI9007.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI-8001.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI-8002.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI-8031.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI-9012.formato.js" disabled='disabled' type="text/javascript"></script>
+
+<script src="../../HICLIN/scripts/HC002F.js" type="text/javascript"></script>

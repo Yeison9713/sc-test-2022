@@ -1,0 +1,1545 @@
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    .actions {
+        padding-bottom: 0 !important;
+    }
+    
+    textarea {
+        resize: none;
+        text-align: justify;
+        margin-bottom: 8px;
+    }
+    
+    .input-group.text-descrip {
+        display: flex;
+        margin-bottom: 5px;
+    }
+    
+    .text-descrip input:nth-child(1) {
+        margin-right: 2px;
+        width: 30%;
+    }
+    
+    .text-descrip input:nth-child(2) {
+        margin-right: 2px;
+        background: #d0cece21 !important;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    .label-center {
+        position: relative;
+        top: 7px;
+    }
+    
+    .float-right {
+        float: right;
+    }
+    
+    .input-group-date {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+    
+    .input-group-date input {
+        text-align: center;
+    }
+    
+    .descrip_hc890d {
+        position: relative;
+        top: 7px;
+        margin-left: 10px !important;
+    }
+    
+    .border-left {
+        border-left: 1.5px solid #ececec
+    }
+</style>
+
+
+<div class="col-md-12" id="HC8001">
+    <div class="portlet light no-padding" style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <div class="form-horizontal">
+
+                <div class="col-md-12 no-padding">
+                    <div class="form-group col-md-12 box-center">
+
+                        <div class="col-md-3 no-padding" id="fechaEnc">
+                            <div class="col-md-4 col-sm-4 col-xs-4" style="padding-left: 0;">
+                                <label class="col-md-12">Año</label>
+                                <div class="input-group col-md-12">
+                                    <input v-model="iniciales.año" type="text" class="form-control col-md-12" maxlength="4" data-orden="1" required="true" style="text-align: center;">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4" style="padding-left: 0;">
+                                <label class="col-md-12">Mes</label>
+                                <div class="input-group col-md-12">
+                                    <input v-model="iniciales.mes" type="text" class="form-control col-md-12" maxlength="2" data-orden="2" required="true" style="text-align: center;">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4" style="padding-left: 0;">
+                                <label class="col-md-12">Dia</label>
+                                <div class="input-group col-md-12">
+                                    <input v-model="iniciales.dia" type="text" class="form-control col-md-12" maxlength="2" data-orden="3" required="true" style="text-align: center;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 no-padding" id="time">
+                            <div class="col-md-6" style="padding-left: 0;">
+                                <label class="col-md-12">Hora</label>
+                                <div class="input-group col-md-12">
+                                    <input v-model="iniciales.hr" type="text" class="form-control col-md-12" maxlength="4" data-orden="1" required="true" style="text-align: center;">
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="padding-left: 0;">
+                                <label class="col-md-12">Min</label>
+                                <div class="input-group col-md-12">
+                                    <input v-model="iniciales.mn" type="text" class="form-control col-md-12" maxlength="2" data-orden="2" required="true" style="text-align: center;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="col-md-12" style="text-align: center;">Medico</label>
+                            <div class="input-group col-md-12" id="validarMedico">
+                                <div class="inline-inputs">
+                                    <input v-model="hcprc.med" type="text" class="form-control col-md-4 uppercase" maxlength="10" data-orden="1" style="text-align: center;">
+                                    <input v-model="hcprc.descrip_med" type="text" class="form-control col-md-8 uppercase" maxlength="10" data-orden="" style="text-align: center;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="col-md-12">Consultando</label>
+                            <div class="input-group col-md-12">
+                                <input v-model="hcprc.descrip_serv" type="text" class="form-control col-md-12 uppercase" maxlength="10" data-orden="1" style="text-align: center;">
+                            </div>
+                        </div>
+
+                        <div class="col-md-1" style="padding-right: 0;">
+                            <label class="col-md-12">Folio</label>
+                            <div class="input-group col-md-12">
+                                <input v-model="iniciales.folio" type="text" class="form-control col-md-12 uppercase" maxlength="10" data-orden="1" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5 no-padding">
+
+                    <div class="col-md-12 no-padding">
+                        <div class="portlet light box-center box-title" style="display: flex; justify-content: space-between;">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Antecedentes Familiares</span>
+                                </div>
+                            </div>
+                            <div class="tooltip-proft bottom-text" style="margin-top: 9px; color: white;">
+                                <span class="icon-proft icon-info"></span>
+                                <span class="tiptext">
+                                        <div>1. Si, 2. No, 3. No Sabe</div>
+                                    </span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 no-padding">
+                            <div class="form-group col-md-12 box-center" style="margin-bottom: 13px !important">
+                                <div class="col-md-12 head-box" style="text-align: left;">
+                                    <label class="col-md-5"></label>
+                                    <label class="col-md-1"></label>
+                                    <label class="col-md-3" style="padding-left: 20px; text-align: center;">Respuesta</label>
+                                    <label class="col-md-3" style="padding-left: 13px; text-align: center;">Parentesco</label>
+                                </div>
+
+                                <div class="col-md-12 no-padding" style="text-align: center; padding-left: 13px;">
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-5" style="background: 0; text-align: left;">Hipertensión</label>
+                                        <div class="input-group col-md-1" id='hiper_fam'>
+                                            <input v-model="dato_8001.dato_fam.hiper_fam" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_fam('hiper_fam')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.hiper_fam }}</label>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            dato_8001.dato_fam.paren_hiper_fam }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-5" style="background: 0; text-align: left;">Diabetes</label>
+
+                                        <div class="input-group col-md-1" id='diabet_fam'>
+                                            <input v-model="dato_8001.dato_fam.diabet_fam" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_fam('diabet_fam')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.diabet_fam }}</label>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            dato_8001.dato_fam.paren_diabet_fam }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-5" style="background: 0; text-align: left;">Cardiopatias</label>
+                                        <div class="input-group col-md-1" id='cardiopat_fam'>
+                                            <input v-model="dato_8001.dato_fam.cardiopat_fam" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_fam('cardiopat_fam')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.cardiopat_fam }}</label>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            dato_8001.dato_fam.paren_cardiopat_fam }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-5" style="background: 0; text-align: left;">Cáncer
+                                            Cuello Uterino</label>
+                                        <div class="input-group col-md-1" id='can_cuell_fam'>
+                                            <input v-model="dato_8001.dato_fam.can_cuell_fam" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_fam('can_cuell_fam')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.can_cuell_fam }}</label>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            dato_8001.dato_fam.paren_can_cuell_fam }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-5" style="background: 0; text-align: left;">Cáncer de
+                                            Mama</label>
+                                        <div class="input-group col-md-1" id='can_mama_fam'>
+                                            <input v-model="dato_8001.dato_fam.can_mama_fam" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_fam('can_mama_fam')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.can_mama_fam }}</label>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            dato_8001.dato_fam.paren_can_mama_fam }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-5" style="background: 0; text-align: left;">Otro Tipo
+                                            de Cáncer</label>
+                                        <div class="input-group col-md-1" id='otro_can_fam'>
+                                            <input v-model="dato_8001.dato_fam.otro_can_fam" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_fam('otro_can_fam')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.otro_can_fam }}</label>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            dato_8001.dato_fam.paren_otro_can_fam }}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7" style="padding-right: 0;">
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="portlet light box-center box-title" style="display: flex; justify-content: space-between;">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Antecedentes Personales</span>
+                                </div>
+                            </div>
+                            <div class="tooltip-proft bottom-text" style="margin-top: 9px; color: white;">
+                                <span class="icon-proft icon-info"></span>
+                                <span class="tiptext">
+                                        <div>1. Si, 2. No, 3. No Sabe</div>
+                                    </span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="margin-bottom: 13px !important">
+
+                                <div class="col-md-6 no-padding" style="text-align: center;">
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Hipertensión</label>
+                                        <div class="input-group col-md-2" id='hiper_per'>
+                                            <input v-model="dato_8001.dato_per.hiper_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('hiper_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.hiper_per }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Diabetes</label>
+                                        <div class="input-group col-md-2" id='diabet_per'>
+                                            <input v-model="dato_8001.dato_per.diabet_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('diabet_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.diabet_per }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Tumores</label>
+                                        <div class="input-group col-md-2" id='tumores_per'>
+                                            <input v-model="dato_8001.dato_per.tumores_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('tumores_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.tumores_per }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Infecciones
+                                            Pélvicas</label>
+                                        <div class="input-group col-md-2" id='infec_pelvi_per'>
+                                            <input v-model="dato_8001.dato_per.infec_pelvi_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('infec_pelvi_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.infec_pelvi_per }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Infección
+                                            Cervical</label>
+                                        <div class="input-group col-md-2" id='infec_cervi_per'>
+                                            <input v-model="dato_8001.dato_per.infec_cervi_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('infec_cervi_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.infec_cervi_per }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Flujo
+                                            Vaginal</label>
+                                        <div class="input-group col-md-2" id='flujo_vag_per'>
+                                            <input v-model="dato_8001.dato_per.flujo_vag_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('flujo_vag_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.flujo_vag_per }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Cáncer
+                                            de Cuello</label>
+                                        <div class="input-group col-md-2" id='can_cuell_per'>
+                                            <input v-model="dato_8001.dato_per.can_cuell_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('can_cuell_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.can_cuell_per }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Cáncer
+                                            de Mama</label>
+                                        <div class="input-group col-md-2" id='can_mama_per'>
+                                            <input v-model="dato_8001.dato_per.can_mama_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('can_mama_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.can_mama_per }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Fuma</label>
+                                        <div class="input-group col-md-2" id='fuma_per'>
+                                            <input v-model="dato_8001.dato_per.fuma_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('fuma_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.fuma_per }}</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 no-padding border-left" style="text-align: center;">
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Violencia
+                                            de Género</label>
+                                        <div class="input-group col-md-2" id='viol_gen_per'>
+                                            <input v-model="dato_8001.dato_per.viol_gen_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('viol_gen_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.viol_gen_per }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Sangrados
+                                            Vaginales
+                                            Abdominales</label>
+                                        <div class="input-group col-md-2" id='sangrado_vag_per'>
+                                            <input v-model="dato_8001.dato_per.sangrado_vag_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('sangrado_vag_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.sangrado_vag_per }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Cirugia
+                                            Pélvica</label>
+                                        <div class="input-group col-md-2" id='cirug_pel_per'>
+                                            <input v-model="dato_8001.dato_per.cirug_pel_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('cirug_pel_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                                formats.cirug_pel_per }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Crioterapia</label>
+                                        <div class="input-group col-md-2" id='crioterapia_per'>
+                                            <input v-model="dato_8001.dato_per.crioterapia_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('crioterapia_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.crioterapia_per }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Radioterapia</label>
+                                        <div class="input-group col-md-2" id='radioterapia_per'>
+                                            <input v-model="dato_8001.dato_per.radioterapia_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('radioterapia_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.radioterapia_per }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Histerectomia</label>
+                                        <div class="input-group col-md-2" id='histerectomia_per'>
+                                            <input v-model="dato_8001.dato_per.histerectomia_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('histerectomia_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.histerectomia_per }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Conización</label>
+                                        <div class="input-group col-md-2" id='conizacion_per'>
+                                            <input v-model="dato_8001.dato_per.conizacion_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('conizacion_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.conizacion_per }}</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Exeresis</label>
+                                        <div class="input-group col-md-2" id='exeresis_per'>
+                                            <input v-model="dato_8001.dato_per.exeresis_per" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" min='1' max="3" maxlength="1" @keyup="validar_formato_per('exeresis_per')">
+                                        </div>
+                                        <label class="col-md-3" style="padding-left: 13px; background: 0;">{{
+                                            formats.exeresis_per }}</label>
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="inline-inputs col-md-12">
+                                    <label class="col-md-2" style="background: 0; text-align: left;">Otro</label>
+                                    <div class="input-group col-md-10" id='otros_antec_per'>
+                                        <input v-model="dato_8001.dato_per.otros_antec_per" type="text" class="form-control col-md-12" data-orden="1" required="true" maxlength="80">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div v-show="mostrarCovid">
+                    <div class="col-md-12 col-sm-12 no-padding">
+                        <div class="portlet light box-center box-title">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Preguntas COVID 19</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <covid19 :params="params_hc890h" @callback="recibirPreguntasCovid" @callback_esc="EscpreguntasCovid" :data="covid19"></covid19>
+                </div>
+
+                <div class="col-md-12 no-padding">
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="portlet light box-center box-title" style="display: flex; justify-content: space-between;">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Antecedentes Gineco-Obstetrico</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 col-sm-12 col-xs-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="margin-bottom: 13px !important">
+
+                                <div class="col-md-12 no-padding" style="text-align: center;">
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Gestac.
+                                            Previas</label>
+                                        <div class="input-group col-md-4" id='gestaciones_esq_w'>
+                                            <input v-model="dato_4040.gineco_esq_w.gestaciones_esq_w" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" maxlength="2">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Partos
+                                            Vaginales</label>
+                                        <div class="input-group col-md-4" id='partos_esq_w'>
+                                            <input v-model="dato_4040.gineco_esq_w.partos_esq_w" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" maxlength="2">
+                                        </div>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Partos
+                                            Abdominales</label>
+                                        <div class="input-group col-md-4" id='cesareas_esq_w'>
+                                            <input v-model="dato_4040.gineco_esq_w.cesareas_esq_w" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" maxlength="1">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Vivos</label>
+                                        <div class="input-group col-md-4" id='gine_vivos_esq_w'>
+                                            <input v-model="dato_4040.gineco_esq_w.gine_vivos_esq_w" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" maxlength="2">
+                                        </div>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Partos
+                                            a Termino</label>
+                                        <div class="input-group col-md-4" id='partos_termino_esq_w'>
+                                            <input v-model="dato_4040.gineco_esq_w.partos_termino_esq_w" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" maxlength="2">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Partos
+                                            Prematuros</label>
+                                        <div class="input-group col-md-4" id='partos_prematuro_esq_w'>
+                                            <input v-model="dato_4040.gineco_esq_w.partos_prematuro_esq_w" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" maxlength="2">
+                                        </div>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Abortos</label>
+                                        <div class="input-group col-md-4" id='abortos_esq_w'>
+                                            <input v-model="dato_4040.gineco_esq_w.abortos_esq_w" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" maxlength="2">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-7 col-sm-12 col-xs-12" style="padding-right: 0;">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="margin-bottom: 13px !important">
+
+                                <div class="col-md-12 no-padding" style="text-align: center;">
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Edad
+                                            Inicio de Relaciones Sexuales</label>
+                                        <div class="input-group col-md-2" id='inicio_rel_sex'>
+                                            <input v-model="dato_8001.dato_gineco.inicio_rel_sex" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" maxlength="2">
+                                        </div>
+                                        <label style="background: 0; padding-left: 12px;">Años</label>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-5" style="background: 0; text-align: left;">Esta
+                                            Embarazada</label>
+                                        <div class="input-group col-md-7">
+                                            <input :value="descrip_embarazo" type="text" class="form-control col-md-12 text-center" required="true" data-orden="1">
+                                        </div>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-4">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Planifica</label>
+                                        <div class="input-group col-md-4" id='planifica'>
+                                            <input v-model="dato_8001.dato_gineco.planifica" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-8">
+                                        <label class="col-md-3" style="background: 0; text-align: left;">Cuál
+                                            Método:</label>
+                                        <div class="input-group col-md-9">
+                                            <input :value="descrip_metodo_planif" type="text" class="form-control col-md-12 text-center" data-orden="1">
+                                        </div>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-4">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Lactancia
+                                            materna</label>
+                                        <div class="input-group col-md-4" id='lactancia_esq_w'>
+                                            <input v-model="dato_4040.obstetric_esq_w.lactancia_esq_w" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-4">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Posparto</label>
+                                        <div class="input-group col-md-4" id='posparto'>
+                                            <input v-model="dato_8001.dato_gineco.posparto" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-4">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Menopausia</label>
+                                        <div class="input-group col-md-4" id='menopausia'>
+                                            <input v-model="dato_8001.dato_gineco.menopausia" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-6" style="padding-right: 0;" id="fecha_regla">
+                                        <label class="col-md-6" style="background: 0; text-align: left;">Fecha
+                                            Última Menstruación</label>
+                                        <div class="input-group col-md-2">
+                                            <input v-model="fecha_regla_w.ano_w" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" maxlength="4" placeholder="AAAA">
+                                        </div>
+                                        <div class="input-group col-md-2" style="padding-left: 8px;">
+                                            <input v-model="fecha_regla_w.mes_w" type="number" class="form-control col-md-12 text-center" required="true" data-orden="2" maxlength="2" placeholder="MM">
+                                        </div>
+                                        <div class="input-group col-md-2" style="padding-left: 8px;">
+                                            <input v-model="fecha_regla_w.dia_w" type="number" class="form-control col-md-12 text-center" required="true" data-orden="3" maxlength="2" placeholder="DD">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="inline-inputs col-md-6" id="fecha_citol">
+                                        <label class="col-md-6" style="background: 0; text-align: left;">Fecha
+                                            Última Citologia</label>
+                                        <div class="input-group col-md-2">
+                                            <input v-model="fecha_citol_w.ano_w" type="number" class="form-control col-md-12 text-center" data-orden="1" maxlength="4" placeholder="AAAA">
+                                        </div>
+                                        <div class="input-group col-md-2" style="padding-left: 8px;">
+                                            <input v-model="fecha_citol_w.mes_w" type="number" class="form-control col-md-12 text-center" data-orden="2" maxlength="2" placeholder="MM">
+                                        </div>
+                                        <div class="input-group col-md-2" style="padding-left: 8px;">
+                                            <input v-model="fecha_citol_w.dia_w" type="number" class="form-control col-md-12 text-center" data-orden="3" maxlength="2" placeholder="DD">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 no-padding">
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="portlet light box-center box-title" style="display: flex; justify-content: space-between;">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Antecedentes Socio-Culturales</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 no-padding">
+                            <div class="form-group col-md-12 box-center">
+
+                                <div class="col-md-12 no-padding">
+                                    <div class="inline-inputs col-md-3">
+                                        <label class="col-md-9" style="background: 0; text-align: left;">Recibe
+                                            apoyo social o subsidios</label>
+                                        <div class="input-group col-md-3" id='reci_apoy_social'>
+                                            <input v-model="dato_8001.dato_soc_cul.reci_apoy_social" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-9">
+                                        <label class="col-md-1" style="background: 0; text-align: left;">Cuál</label>
+                                        <div class="input-group col-md-11" id='cual_apoy_social'>
+                                            <input v-model="dato_8001.dato_soc_cul.cual_apoy_social" type="text" class="form-control col-md-12" required="true" data-orden="1" maxlength="80">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 no-padding">
+                            <div class="form-group col-md-12 box-center">
+
+                                <div class="col-md-12 no-padding">
+
+                                    <div class="col-md-12 head-box" style="text-align: left;">
+                                        <label>VIVIENDA</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-4">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Propia</label>
+                                        <div class="input-group col-md-4" id='vivienda_propia'>
+                                            <input v-model="dato_8001.dato_soc_cul.vivienda_propia" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-4">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Hacinamiento</label>
+                                        <div class="input-group col-md-4" id='vivienda_hacina'>
+                                            <input v-model="dato_8001.dato_soc_cul.vivienda_hacina" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-4">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Casa</label>
+                                        <div class="input-group col-md-4" id='casa'>
+                                            <input v-model="dato_8001.dato_soc_cul.casa" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-4">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Apto</label>
+                                        <div class="input-group col-md-4" id='apto'>
+                                            <input v-model="dato_8001.dato_soc_cul.apto" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-4">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Invasión</label>
+                                        <div class="input-group col-md-4" id='invasion'>
+                                            <input v-model="dato_8001.dato_soc_cul.invasion" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-4">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Lote</label>
+                                        <div class="input-group col-md-4" id='lote'>
+                                            <input v-model="dato_8001.dato_soc_cul.lote" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 box-center">
+
+                                <div class="col-md-12 no-padding">
+
+                                    <div class="col-md-12 head-box" style="text-align: left;">
+                                        <label>ACTIVIDADES SOCIALES</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-9" style="background: 0; text-align: left;">Estudia
+                                            Actualmente</label>
+                                        <div class="input-group col-md-3" id='estudia_act'>
+                                            <input v-model="dato_8001.dato_soc_cul.estudia_act" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-9" style="background: 0; text-align: left;">Trabaja
+                                            Actualmente</label>
+                                        <div class="input-group col-md-3" id='trabaja_act'>
+                                            <input v-model="dato_8001.dato_soc_cul.trabaja_act" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-2" style="background: 0; text-align: left;">En
+                                            qué Trabaja</label>
+                                        <div class="input-group col-md-10" id='que_trabajo'>
+                                            <input v-model="dato_8001.dato_soc_cul.que_trabajo" type="text" class="form-control col-md-12" required="true" data-orden="1" maxlength="80">
+                                        </div>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-6" style="background: 0; text-align: left;">Actividad
+                                            Física</label>
+                                        <div class="input-group col-md-3" id='actividad_fisica'>
+                                            <input v-model="dato_8001.dato_soc_cul.actividad_fisica" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" maxlength="1">
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                        <label class="col-md-2" style="background: 0; text-align: left;">Horas</label>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-6" style="background: 0; text-align: left;">Actividad
+                                            Recreativa</label>
+                                        <div class="input-group col-md-3" id='actividad_recrea'>
+                                            <input v-model="dato_8001.dato_soc_cul.actividad_recrea" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" maxlength="1">
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                        <label class="col-md-2" style="background: 0; text-align: left;">Horas</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" style="padding-right: 0;">
+                            <div class="form-group col-md-12 box-center">
+
+                                <div class="col-md-12 no-padding">
+
+                                    <div class="col-md-12 head-box" style="text-align: left;">
+                                        <label>HÁBITOS</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-9" style="background: 0; text-align: left;">Alimentacion
+                                            Adecuada</label>
+                                        <div class="input-group col-md-3" id='alimentacion_adec'>
+                                            <input v-model="dato_8001.dato_soc_cul.alimentacion_adec" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-9" style="background: 0; text-align: left;">Cuantas por
+                                            Dia</label>
+                                        <div class="input-group col-md-3" id='cuantas_x_dia'>
+                                            <input v-model="dato_8001.dato_soc_cul.cuantas_x_dia" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" maxlength="1">
+                                        </div>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-9" style="background: 0; text-align: left;">Cuantos
+                                            con la Familia</label>
+                                        <div class="input-group col-md-3" id='cuantas_con_famil'>
+                                            <input v-model="dato_8001.dato_soc_cul.cuantas_con_famil" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" maxlength="1">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-9" style="background: 0; text-align: left;">Sueño
+                                            Normal</label>
+                                        <div class="input-group col-md-3" id='sueno_normal'>
+                                            <input v-model="dato_8001.dato_soc_cul.sueno_normal" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-9" style="background: 0; text-align: left;">Cuantas Horas
+                                            por Dia</label>
+                                        <div class="input-group col-md-3" id='horas_sueno'>
+                                            <input v-model="dato_8001.dato_soc_cul.horas_sueno" type="number" class="form-control col-md-12 text-center" required="true" data-orden="1" maxlength="2">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 box-center">
+
+                                <div class="col-md-12 no-padding">
+
+                                    <div class="col-md-12 head-box" style="text-align: left;">
+                                        <label>CONSUMO SUSTANCIAS PSICOACTIVA</label>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-9" style="background: 0; text-align: left;">Tabaco</label>
+                                        <div class="input-group col-md-3" id='tabaco'>
+                                            <input v-model="dato_8001.dato_soc_cul.tabaco" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-9" style="background: 0; text-align: left;">Alcohol</label>
+                                        <div class="input-group col-md-3" id='alcohol'>
+                                            <input v-model="dato_8001.dato_soc_cul.alcohol" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="salto-linea"></div>
+
+                                    <div class="inline-inputs col-md-4" style="padding-right: 0;">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Otras
+                                            Sustancias</label>
+                                        <div class="input-group col-md-4" id='otras_sustacias'>
+                                            <input v-model="dato_8001.dato_soc_cul.otras_sustacias" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-8">
+                                        <label class="col-md-3" style="background: 0; text-align: left; padding-left: 17px;">Cuál(es)</label>
+                                        <div class="input-group col-md-9" id='cual_sustacias'>
+                                            <input v-model="dato_8001.dato_soc_cul.cual_sustacias" type="text" class="form-control col-md-12" required="true" data-orden="1" maxlength="80">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portlet light box-center box-title" style="display: flex; justify-content: space-between;">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Especuloscopia</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 no-padding">
+                            <div class="form-group col-md-12 box-center">
+                                <div class="col-md-12 no-padding">
+                                    <div class="inline-inputs col-md-3">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Aspecto del cuello</label>
+                                        <div class="input-group col-md-5" id='aspecto_cuell'>
+                                            <input v-model="descrip_aspecto_cuell" type="text" class="form-control col-md-12 text-center">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-9">
+                                        <label class="col-md-1" style="background: 0; text-align: left;">Cuál</label>
+                                        <div class="input-group col-md-11" id='otro_aspecto'>
+                                            <input v-model="dato_8001.especuloscopia.otro_aspecto" type="text" class="form-control col-md-12" required="true" data-orden="1" maxlength="80">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 no-padding">
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="portlet light box-center box-title" style="display: flex; justify-content: space-between;">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Recepción y Entrega de Resultados</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 no-padding">
+                            <div class="form-group col-md-12 box-center">
+
+                                <div class="col-md-12 no-padding">
+                                    <div class="inline-inputs col-md-5">
+                                        <label class="col-md-9" style="background: 0; text-align: left;">Codigo de I.P.S que realiza la lectura</label>
+                                        <div class="input-group col-md-3" id='ips_lect'>
+                                            <input v-model="dato_8001.recepcion_entrega.ips_lect" type="text" @keydown.f8="_ventanaEntidades" class="form-control col-md-12 text-center ips_lect" data-orden="1" maxlength="12">
+                                        </div>
+                                        <button @click="_ventanaEntidades" type="button" class="btn f8-Btn col-md-1"> 
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-7">
+                                        <div class="input-group col-md-12">
+                                            <input v-model="descrip_ips_lect" type="text" class="form-control col-md-12" required="true" data-orden="1" maxlength="95">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 no-padding">
+                            <div class="form-group col-md-12 box-center">
+
+                                <div class="inline-inputs col-md-12" id="fecha_entre">
+                                    <label class="col-md-6" style="background: 0; text-align: left;">Fecha de entrega a la usuaria</label>
+                                    <div class="input-group col-md-2">
+                                        <input v-model="dato_8001.recepcion_entrega.ano_entre" type="number" class="form-control col-md-12 text-center" data-orden="1" maxlength="4" placeholder="AAAA">
+                                    </div>
+                                    <div class="input-group col-md-2" style="padding-left: 8px;">
+                                        <input v-model="dato_8001.recepcion_entrega.mes_entre" type="number" class="form-control col-md-12 text-center" data-orden="2" maxlength="2" placeholder="MM">
+                                    </div>
+                                    <div class="input-group col-md-2" style="padding-left: 8px;">
+                                        <input v-model="dato_8001.recepcion_entrega.dia_entre" type="number" class="form-control col-md-12 text-center" data-orden="3" maxlength="2" placeholder="DD">
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="inline-inputs col-md-12">
+                                    <label class="col-md-2" style="background: 0; text-align: left;">Resultado</label>
+                                    <div class="input-group col-md-10" id='resultado'>
+                                        <input v-model="dato_8001.recepcion_entrega.resultado" type="text" class="form-control col-md-12" data-orden="1" maxlength="95">
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="inline-inputs col-md-12">
+                                    <label class="col-md-6" style="background: 0; text-align: left;">Requiere atención del médico</label>
+                                    <div class="input-group col-md-2" id='aten_medico'>
+                                        <input v-model="dato_8001.recepcion_entrega.aten_medico" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1" placeholder="N">
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="inline-inputs col-md-12" id="fecha_consul">
+                                    <label class="col-md-6" style="background: 0; text-align: left;">Fecha de consulta</label>
+                                    <div class="input-group col-md-2">
+                                        <input v-model="dato_8001.recepcion_entrega.ano_consul" type="number" class="form-control col-md-12 text-center" data-orden="1" maxlength="4" placeholder="AAAA">
+                                    </div>
+                                    <div class="input-group col-md-2" style="padding-left: 8px;">
+                                        <input v-model="dato_8001.recepcion_entrega.mes_consul" type="number" class="form-control col-md-12 text-center" data-orden="2" maxlength="2" placeholder="MM">
+                                    </div>
+                                    <div class="input-group col-md-2" style="padding-left: 8px;">
+                                        <input v-model="dato_8001.recepcion_entrega.dia_consul" type="number" class="form-control col-md-12 text-center" data-orden="3" maxlength="2" placeholder="DD">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-7" style="padding-right: 0;">
+                            <div class="form-group col-md-12 box-center">
+                                <div class="inline-inputs col-md-12">
+                                    <label class="col-md-2" style="background: 0; text-align: left;">Educación</label>
+                                    <div class="input-group col-md-10" id='educacion'>
+                                        <input v-model="dato_8001.recepcion_entrega.educacion" type="text" class="form-control col-md-12" data-orden="1" maxlength="150">
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="inline-inputs col-md-12">
+                                    <label class="col-md-2" style="background: 0; text-align: left;">Seguimiento</label>
+                                    <div class="input-group col-md-10" id='seguimiento'>
+                                        <input v-model="dato_8001.recepcion_entrega.seguimiento" type="text" class="form-control col-md-12" data-orden="1" maxlength="150">
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="inline-inputs col-md-12">
+                                    <label class="col-md-2" style="background: 0; text-align: left;">Descripción</label>
+                                    <div class="input-group col-md-10" id='descripcion'>
+                                        <input v-model="dato_8001.recepcion_entrega.descripcion" type="text" class="form-control col-md-12" data-orden="1" maxlength="150">
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="inline-inputs col-md-12">
+                                    <label class="col-md-2" style="background: 0; text-align: left;">Realizado por</label>
+                                    <div class="input-group col-md-10">
+                                        <input v-model="info_profesional" type="text" class="form-control col-md-12" maxlength="150">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 no-padding" v-show="dato_8001.tipo == 2">
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="portlet light box-center box-title" style="display: flex; justify-content: space-between;">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Control de Citologia</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 no-padding">
+                            <div class="form-group col-md-12 box-center">
+
+                                <div class="inline-inputs col-md-4" id="fecha_toma">
+                                    <label class="col-md-6" style="background: 0; text-align: left;">Fecha Toma de Citologia</label>
+                                    <div class="input-group col-md-2">
+                                        <input v-model="dato_8001.control.ano_toma" type="number" class="form-control col-md-12 text-center" data-orden="1" maxlength="4" placeholder="AAAA">
+                                    </div>
+                                    <div class="input-group col-md-2" style="padding-left: 8px;">
+                                        <input v-model="dato_8001.control.mes_toma" type="number" class="form-control col-md-12 text-center" data-orden="2" maxlength="2" placeholder="MM">
+                                    </div>
+                                    <div class="input-group col-md-2" style="padding-left: 8px;">
+                                        <input v-model="dato_8001.control.dia_toma" type="number" class="form-control col-md-12 text-center" data-orden="3" maxlength="2" placeholder="DD">
+                                    </div>
+                                </div>
+
+                                <div class="inline-inputs col-md-4">
+                                    <label class="col-md-6" style="background: 0; text-align: left;">Fecha Última Citologia</label>
+                                    <div class="input-group col-md-2">
+                                        <input v-model="fecha_citol_w.ano_w" type="number" class="form-control col-md-12 text-center">
+                                    </div>
+                                    <div class="input-group col-md-2" style="padding-left: 8px;">
+                                        <input v-model="fecha_citol_w.mes_w" type="number" class="form-control col-md-12 text-center">
+                                    </div>
+                                    <div class="input-group col-md-2" style="padding-left: 8px;">
+                                        <input v-model="fecha_citol_w.dia_w" type="number" class="form-control col-md-12 text-center">
+                                    </div>
+                                </div>
+
+                                <div class="inline-inputs col-md-4">
+                                    <label class="col-md-6" style="background: 0; text-align: left;">Método de Planificación Actual</label>
+                                    <div class="input-group col-md-6">
+                                        <input :value="descrip_metodo_planif" type="text" class="form-control col-md-12 text-center" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6" style="padding-left: 0;">
+                                <div class="col-md-12 box-center" style="padding-left: 15px; padding-right: 10px;" id="conduc_manejo">
+                                    <div class="col-md-12 head-box" style="display: flex; justify-content:space-between;">
+                                        <label>Conducta de Manejo</label>
+                                        <div>
+                                            <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                                <span class="icon-proft icon-info"></span>
+                                                <span class="tiptext">
+                                                <div>Con F3 pasa de un campo a otro.</div>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <textarea v-model="dato_8001.control.conduc_manejo" class="form-control" rows="4" maxlength="240" data-orden="1" style="resize: none; text-align: justify"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6 no-padding">
+                                <div class="col-md-12 box-center" style="padding-left: 15px; padding-right: 10px;" id="aspect_geni">
+                                    <div class="col-md-12 head-box" style="display: flex; justify-content:space-between;">
+                                        <label>Aspectos Genitales Externos</label>
+                                        <div>
+                                            <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                                <span class="icon-proft icon-info"></span>
+                                                <span class="tiptext">
+                                                <div>Con F3 pasa de un campo a otro.</div>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <textarea v-model="dato_8001.control.aspect_geni" class="form-control" rows="4" maxlength="240" data-orden="1" style="resize: none; text-align: justify"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6" style="padding-left: 0;">
+                                <div class="col-md-12 box-center" style="padding-left: 15px; padding-right: 10px;" id="flujo_car">
+                                    <div class="col-md-12 head-box" style="display: flex; justify-content:space-between;">
+                                        <label>Flujo, Caracteristicas</label>
+                                        <div>
+                                            <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                                <span class="icon-proft icon-info"></span>
+                                                <span class="tiptext">
+                                                <div>Con F3 pasa de un campo a otro.</div>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <textarea v-model="dato_8001.control.flujo_car" class="form-control" rows="4" maxlength="240" data-orden="1" style="resize: none; text-align: justify"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6 no-padding">
+                                <div class="col-md-12 box-center" style="padding-left: 15px; padding-right: 10px;" id="educa_prev">
+                                    <div class="col-md-12 head-box" style="display: flex; justify-content:space-between;">
+                                        <label>Educación Prevención ITS</label>
+                                        <div>
+                                            <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                                <span class="icon-proft icon-info"></span>
+                                                <span class="tiptext">
+                                                <div>Con F3 pasa de un campo a otro.</div>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <textarea v-model="dato_8001.control.educa_prev" class="form-control" rows="4" maxlength="240" data-orden="1" style="resize: none; text-align: justify"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 no-padding">
+                            <div class="form-group col-md-12 box-center">
+                                <div class="col-md-7 no-padding">
+                                    <div class="inline-inputs col-md-4">
+                                        <label class="col-md-6" style="background: 0; text-align: left;">Remisión a</label>
+                                        <div class="input-group col-md-4" id='remision_cod'>
+                                            <input v-model="dato_8001.control.remision_cod" type="text" @keydown.f8="_ventanaEspecialidades" class="form-control col-md-12 text-center remision_cod" data-orden="1" maxlength="3">
+                                        </div>
+                                        <button @click="_ventanaEspecialidades" type="button" class="btn f8-Btn col-md-2"> 
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-8">
+                                        <div class="input-group col-md-12">
+                                            <input v-model="descrip_especialidad" type="text" class="form-control col-md-12">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-5 no-padding">
+                                    <div class="inline-inputs col-md-12" id="fecha_cuando">
+                                        <label class="col-md-6" style="background: 0; text-align: left;">Cuando Reclama Resultado</label>
+                                        <div class="input-group col-md-2">
+                                            <input v-model="dato_8001.control.ano_cuando" type="number" class="form-control col-md-12 text-center" data-orden="1" maxlength="4" placeholder="AAAA">
+                                        </div>
+                                        <div class="input-group col-md-2" style="padding-left: 8px;">
+                                            <input v-model="dato_8001.control.mes_cuando" type="number" class="form-control col-md-12 text-center" data-orden="2" maxlength="2" placeholder="MM">
+                                        </div>
+                                        <div class="input-group col-md-2" style="padding-left: 8px;">
+                                            <input v-model="dato_8001.control.dia_cuando" type="number" class="form-control col-md-12 text-center" data-orden="3" maxlength="2" placeholder="DD">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 no-padding">
+                                <div class="col-md-12 box-center" style="padding-left: 15px; padding-right: 10px;" id="observ_contr">
+                                    <div class="col-md-12 head-box" style="display: flex; justify-content:space-between;">
+                                        <label>Observaciones</label>
+                                        <div>
+                                            <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                                <span class="icon-proft icon-info"></span>
+                                                <span class="tiptext">
+                                                <div>Con F3 pasa de un campo a otro.</div>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <textarea v-model="dato_8001.control.observ_contr" class="form-control" rows="2" maxlength="240" data-orden="1" style="resize: none; text-align: justify"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5 no-padding">
+                    <div class="portlet light box-center box-title">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject bold">Diagnósticos</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12 box-center">
+                        <div class="col-md-12" v-for="(fila,index) in hcprc.rips.tabla_diagn" :key="index">
+
+                            <div class="col-md-4">
+                                <div class="inline-inputs">
+                                    <label class="col-md-3">{{ parseInt(index) + 1 }}</label>
+                                    <div class="input-group col-md-6" :id="`datoDiagn_${index}`">
+                                        <input @keydown.119="_ventanaDiagnosticos(index)" v-model="fila.cod_diagn" maxlength="4" :class="`cod_diagn_${index}`" class="form-control col-md-12 text-center" data-orden="1">
+                                    </div>
+                                    <button @click="_ventanaDiagnosticos(index)" type="button" class="btn f8-Btn col-md-3">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 no-padding">
+                                <div class="input-group col-md-12">
+                                    <input v-model="hcprc.rips.tabla_diagn[index].descrip_diagn" style="text-align: left;" class="form-control col-md-12" disabled="disabled">
+                                </div>
+                            </div>
+
+                            <div v-if="index != 9" class="salto-linea"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <transition v-if="mostrarSintomaticos">
+                    <div class="overlay_prosoft">
+                        <div class="modal_prosoft" style="width: 35%;">
+                            <div class="container_prosoft">
+                                <div class="form-group col-md-12 col-sm-12 no-padding">
+                                    <div class="portlet light box-center box-title" style="margin: 0 auto;">
+                                        <div class="portlet-title">
+                                            <div class="caption">
+                                                <span class="caption-subject bold">Sintomático</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <sintomaticos :params="params_hc890d" :data='hcprc.signos' @callback_esc="validarEsc_sintomatico" @callback="validarCallback_sintomatico"></sintomaticos>
+                            </div>
+                        </div>
+                    </div>
+                </transition>
+
+                <div class="col-12" v-if="params_creatinina.estado">
+                    <creatinina 
+                      :datos="datos_creatinina"
+                      @callback_esc="validarEsc_creatinina" 
+                      @callback="validarCallback_creatinina"
+                    ></creatinina>
+                </div>
+
+                <div class="col-md-7" style="padding-right: 0;">
+                    <div class="col-md-12 box-center" style="padding-left: 15px; padding-right: 10px;" id="analisis">
+                        <div class="col-md-12 head-box" style="display: flex; justify-content:space-between; padding-bottom: 0; padding-right: 5px;">
+                            <label style="font-weight: bold;">Análisis</label>
+                            <div>
+                                <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                    <span class="icon-proft icon-info"></span>
+                                    <span class="tiptext">
+                                    <div>Con F3 pasa de un campo a otro.</div>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <textarea v-model="analisis" class="form-control" rows="8" maxlength="15000" data-orden="1" style="resize: none; text-align: justify; padding-bottom: 16px;"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-md-7" style="padding-right: 0;">
+                    <div class="col-md-12 box-center" style="padding-left: 15px; padding-right: 10px;" id="plan">
+                        <div class="col-md-12 head-box" style="display: flex; justify-content:space-between; padding-bottom: 0; padding-right: 5px;">
+                            <label style="font-weight: bold;">Plan</label>
+                            <div>
+                                <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                    <span class="icon-proft icon-info"></span>
+                                    <span class="tiptext">
+                                    <div>Con F3 pasa de un campo a otro.</div>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <textarea v-model="plan" class="form-control" rows="8" maxlength="15000" data-orden="1" style="resize: none; text-align: justify; padding-bottom: 13px;"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-md-12 no-padding">
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="portlet light box-center box-title" style="display: flex; justify-content: space-between;">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">Actualizacion de Rips</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 no-padding">
+                            <div class="form-group col-md-12 box-center">
+                                <div class="col-md-4 no-padding">
+                                    <div class="inline-inputs col-md-5" style="padding-right: 0;">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Estado Gravidez</label>
+                                        <div class="input-group col-md-4" id='embarazo'>
+                                            <input v-model="hcprc.rips.embarazo" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-7">
+                                        <div class="input-group col-md-12">
+                                            <input v-model="descrip_embarazo" type="text" class="form-control col-md-12">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 no-padding">
+                                    <div class="inline-inputs col-md-5" style="padding-right: 0;">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Causa Externa</label>
+                                        <div class="input-group col-md-4" id='causa'>
+                                            <input v-model="hcprc.rips.causa" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="2">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-7">
+                                        <div class="input-group col-md-12">
+                                            <input v-model="descrip_causa" type="text" class="form-control col-md-12 text-center">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 no-padding">
+                                    <div class="inline-inputs col-md-5" style="padding-right: 0;">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Tipo Diagnóstico</label>
+                                        <div class="input-group col-md-4" id='tipo_diag'>
+                                            <input v-model="hcprc.rips.tipo_diag" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-7">
+                                        <div class="input-group col-md-12">
+                                            <input v-model="descrip_tipo_diag" type="text" class="form-control col-md-12 text-center">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 box-center">
+                                <div class="col-md-3 no-padding">
+                                    <div class="inline-inputs col-md-12" style="padding-right: 0;">
+                                        <label class="col-md-5" style="background: 0; text-align: left;">Finalidad Consulta</label>
+                                        <div class="input-group col-md-7" id='finalid'>
+                                            <input v-model="descrip_finalid" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="2">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 no-padding">
+                                    <div class="inline-inputs col-md-12" style="padding-right: 0;">
+                                        <label class="col-md-5" style="background: 0; text-align: left;">1ra Vez</label>
+                                        <div class="input-group col-md-6" id='primera_vez'>
+                                            <input v-model="hcprc.rips.primera_vez" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 no-padding">
+                                    <div class="inline-inputs col-md-12" style="padding-right: 0;">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Controles Prenatales</label>
+                                        <div class="input-group col-md-5" id='nro_contr'>
+                                            <input v-model="hcprc.rips.nro_contr" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="2">
+                                        </div>
+                                        <div>
+                                            <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                                <span class="icon-proft icon-info"></span>
+                                                <span class="tiptext">
+                                                <div>Nro controles que ha asistido (Incluyendo este)</div>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 no-padding">
+                                    <div class="inline-inputs col-md-12" style="padding-right: 0;">
+                                        <label class="col-md-7" style="background: 0; text-align: left;">Tanner Pubiano</label>
+                                        <div class="input-group col-md-4" id='tanner_pubico'>
+                                            <input v-model="hcprc.signos.tanner_pubico" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 no-padding">
+                                    <div class="inline-inputs col-md-12" style="padding-right: 0;">
+                                        <label v-if="reg_paci.SEXO=='F'" class="col-md-7" style="background: 0; text-align: left;">Estadio Mamario</label>
+                                        <label v-else="reg_paci.SEXO" class="col-md-7" style="background: 0; text-align: left;">Estadio Genital</label>
+                                        <div class="input-group col-md-4" id='tanner_genit'>
+                                            <input v-model="hcprc.signos.tanner_genit" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-12 box-center">
+                                <div class="col-md-4 no-padding">
+                                    <div class="inline-inputs col-md-12" id="fecha_prox_cita">
+                                        <label class="col-md-6" style="background: 0; text-align: left;">Fecha Próxima Cita</label>
+                                        <div class="input-group col-md-2">
+                                            <input v-model="iniciales.ano_prox_cita" type="number" class="form-control col-md-12 text-center" data-orden="1" maxlength="4" placeholder="AAAA">
+                                        </div>
+                                        <div class="input-group col-md-2" style="padding-left: 8px;">
+                                            <input v-model="iniciales.mes_prox_cita" type="number" class="form-control col-md-12 text-center" data-orden="2" maxlength="2" placeholder="MM">
+                                        </div>
+                                        <div class="input-group col-md-2" style="padding-left: 8px;">
+                                            <input v-model="iniciales.dia_prox_cita" type="number" class="form-control col-md-12 text-center" data-orden="3" maxlength="2" placeholder="DD">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 no-padding">
+                                    <div class="inline-inputs col-md-5" style="padding-right: 0;">
+                                        <label class="col-md-8" style="background: 0; text-align: left;">Estado Salida</label>
+                                        <div class="input-group col-md-4" id='estado_sal'>
+                                            <input v-model="hcprc.rips.estado_sal" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="1">
+                                        </div>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-7">
+                                        <div class="input-group col-md-12">
+                                            <input v-model="descrip_estado_sal" type="text" class="form-control col-md-12 text-center">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 no-padding">
+                                    <div class="inline-inputs col-md-12">
+                                        <label class="col-md-3" style="background: 0; text-align: left;">Remitido a</label>
+                                        <div class="input-group col-md-9" id='remitido'>
+                                            <input v-model="hcprc.rips.remitido" type="text" class="form-control col-md-12 text-center" data-orden="1" maxlength="20">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 no-padding">
+                                <div class="form-group col-md-12 box-center">
+                                    <div class="inline-inputs col-md-6">
+                                        <label class="col-md-6" style="background: 0; text-align: left;">Diagnóstico Muerte</label>
+                                        <div class="input-group col-md-4" id='diag_muer'>
+                                            <input v-model="hcprc.cierre.diag_muer" type="text" @keydown.f8="_ventanaDiagnosticosMuerte" class="form-control col-md-12 text-center diag_muer" data-orden="1" maxlength="4">
+                                        </div>
+                                        <button @click="_ventanaDiagnosticosMuerte" type="button" class="btn f8-Btn col-md-2"> 
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="inline-inputs col-md-6 no-padding">
+                                        <div class="input-group col-md-12">
+                                            <input v-model="descrip_diag_muer" type="text" class="form-control col-md-12">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div v-if="hcprc.rips.finalid==5" class="col-md-6" style="padding-right: 0;">
+                                <div class="form-group col-md-12 box-center">
+
+                                    <div class="col-md-6">
+                                        <div class="col-md-12" style="text-align: center; padding: 1rem 0 1rem 0;">
+                                            <label>Vello pubiano</label>
+                                        </div>
+                                        <img v-if="reg_paci.SEXO=='F'" src="../../frameworks/imagenes/hiclin/tanner_pubico_fem.png" alt="Tanner mamario">
+                                        <img v-else-if="reg_paci.SEXO=='M'" src="../../frameworks/imagenes/hiclin/tanner_pubico_mas.png" alt="Tanner genital">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12" style="text-align: center; padding: 1rem 0 1rem 0;">
+                                            <label>Estadio</label>
+                                        </div>
+                                        <img v-if="reg_paci.SEXO=='F'" src="../../frameworks/imagenes/hiclin/tanner_mamario.png" alt="Tanner mamario">
+                                        <img v-else-if="reg_paci.SEXO=='M'" src="../../frameworks/imagenes/hiclin/tanner_genital.png" alt="Tanner mamario">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../HICLIN/scripts/hc890h.vue.js "></script>
+<script src="../../HICLIN/scripts/hc890d.vue.js "></script>
+<script src="../../HICLIN/scripts/HC-8001.js "></script>

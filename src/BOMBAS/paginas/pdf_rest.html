@@ -1,0 +1,12 @@
+<script>
+    const { ipcRenderer } = require('electron')
+    const fs = require('fs')
+
+    ipcRenderer.on('ping', (e, m) => {
+        console.log(m);
+        document.write(m.estilo);
+        document.write(m.maqueta);
+        // document.write(m.extras);
+    })
+
+</script>

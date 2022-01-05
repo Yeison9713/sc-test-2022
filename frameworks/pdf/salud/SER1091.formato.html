@@ -1,0 +1,622 @@
+<script>
+    const {
+        ipcRenderer
+    } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+
+<html>
+
+<body>
+
+    <div class="page-header" style="text-align: center">
+        <div class="logo" style="position:absolute; width: 8%; height: 30%;"></div>
+        <div class="encabezado_SER1091">
+            <a class="nombre_SER1091"> </a>
+            <a class="nitusu_SER1091"></a>
+            <div class="datos_usu_SER1091">
+                <a class="direccionusu_SER1091"> </a>
+                <a class="telefonousu_SER1091"></a>
+                <a class="ciudadusu_SER1091"></a>
+            </div>
+            <a class="copiaoriginal_SER1091"></a>
+            <a class="paginacion_SER1091"></a>
+            <div class="primeralinea_SER1091">
+                <a class="titulo_SER1091">FECHA:</a>
+                <a class="fechafactura_SER1091"></a>
+                <a class="titulo_SER1091" style="width: 20%;">FACTURA DE VENTA No:</a>
+                <a class="facturaventa_SER1091"></a>
+            </div>
+            <div class="segundalinea_SER1091">
+                <a class="titulo_SER1091">CLIENTE:</a>
+                <a class="cliente_SER1091"></a>
+                <a class="titulo_SER1091">NIT:</a>
+                <a class="nitcliente_SER1091"></a>
+            </div>
+            <div class="terceralinea_SER1091">
+                <a class="titulo_SER1091">DIRECCION:</a>
+                <a class="direccion_SER1091"></a>
+                <a class="titulo_SER1091">TELEFONO:</a>
+                <a class="telefono_SER1091" style="width: 10%;"></a>
+                <a class="titulo_SER1091">CIUDAD:</a>
+                <a class="ciudad_SER1091" style="width: 10%;"></a>
+            </div>
+            <div class="quintalinea_SER1091">
+                <a class="convenio_SER1091"></a>
+            </div>
+            <div class="sextalinea_SER1091">
+                <a class="titulo_SER1091">OBSERVAC:</a>
+                <a class="observaciones_SER1091"></a>
+            </div>
+            <div class="septimalinea_SER1091">
+                <a class="titulo_SER1091">ANEXOS:</a>
+                <a class="anexos_SER1091"></a>
+            </div>
+            <div class="headertabla_SER1091">
+                <table class="tablaheader_SER1091">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%">Comp.</th>
+                            <th style="width: 5%"">Fecha</th>
+                            <th style=" width: 10%"">Descripcion</th>
+                            <th style="width: 3%"">Edad</th>
+                            <th style=" width: 2%"">Sx.</th>
+                            <th style="width: 20%"">Concepto</th>
+                            <th style=" width: 3%"">Cant</th>
+                            <th style="width: 7%"">Vlr Unit</th>
+                            <th style=" width: 7%"">Valor</th>
+                            <th style="width: 7%"">copago</th>
+                            <th style=" width: 7%"">autoriz.</th>
+                            <th style="width: 7%"">Cod.Servicio</th>
+                            <th style=" width: 2%"">Und</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <table>
+
+        <thead>
+            <tr>
+                <td>
+                    <!--place holder for the fixed-position header-->
+                    <div class="page-header-space">
+
+                    </div>
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <!--*** CONTENT GOES HERE ***-->
+                    <div class="page">
+                        <table class="tablacodservicio_SER1091">
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <table class="tablaresultado_SER1091">
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="totalenletras_SER1091" style="display: inline-flex; width: 100%; font-size: 10px;">
+                        </div>
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <div class="lineas"></div>
+                        <div>
+                            <a class="nombreusufinal_SER1091" style="float: left; width: 30%; font-size: 10px;"></a>
+                            <a class="factura_SER1091"
+                                style="display: inline-flex; width: 20%; font-size: 10px;">Aceptada</a>
+                            <a class="opercreado_SER1091"
+                                style="display: inline-flex; width: 14%; font-size: 10px;">CREO: DORA
+                                191121</a>
+                            <a class="opermodif_SER1091"
+                                style="display: inline-flex; width: 16%; font-size: 10px;">MODI:</a>
+                            <a class="operbloq_SER1091"
+                                style="display: inline-flex; width: 16%; font-size: 10px;">BLOQ:</a>
+                            <a class="operimp_SER1091"
+                                style="display: inline-flex; width: 14%; font-size: 10px;">IMP:</a>
+                        </div>
+                        <a style="font-size: 10px; font-weight: bolder; display: inline-flex; width: 100%;">FACTURA
+                            IMPRESA POR
+                            COMPUTADOR</a>
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <a class="autorizaciondian_SER1091"
+                            style="float: left; width: 100%; font-size: 10px;">AUTORIZACION DIAN:</a>
+                        <a class="nomiva_SER1091" style="float: left; width: 100%; font-size: 10px;">No somos
+                            responsables de IVA</a>
+                        <a class="presentefactura_SER1091" style="float: left; width: 100%; font-size: 10px;">LA
+                            PRESENTE FACTURA SE ASIMILA EN SUS EFECTOS A UNA LETRA DE CAMBIO ART 779 CODIGO DE
+                            COMERCIO</a>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>
+
+<style>
+    body {
+        font-family: Tahoma;
+    }
+
+    .page-header,
+    .page-header-space {
+        height: 160px;
+    }
+
+    .page-header {
+        position: fixed;
+        top: 0mm;
+        width: 100%;
+    }
+
+    .page {
+        page-break-after: always;
+        width: 100%;
+    }
+
+    .paginacion_SER1091 {
+        position: absolute;
+        margin-top: -15px;
+        display: table-footer-group;
+    }
+
+    .paginacion_SER1091:after {
+        font-size: 11px;
+        counter-increment: page;
+        content: 'Pagina ' counter(page);
+    }
+
+    @page {
+        counter-increment: page;
+        margin: 20mm;
+    }
+
+    @media print {
+        thead {
+            display: table-header-group;
+        }
+
+        tfoot {
+            display: table-footer-group;
+        }
+
+        button {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+        }
+    }
+
+    .logo img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .tablacodservicio_SER1091 {
+        width: 99%;
+        border-spacing: 0;
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+
+    .nombre_SER1091 {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .nitusu_SER1091 {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .datos_usu_SER1091 {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        margin: 0 auto;
+        font-size: 11px;
+    }
+
+    .copiaoriginal_SER1091 {
+        position: absolute;
+        width: 85%;
+        font-size: 10px;
+        font-weight: bolder;
+        margin-top: -15px;
+    }
+
+    .primeralinea_SER1091 {
+        display: flex;
+        width: 99%;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-top: black solid 0.1px;
+        font-size: 10px;
+    }
+
+    .fechafactura_SER1091,
+    .facturaventa_SER1091,
+    .cliente_SER1091,
+    .nitcliente_SER1091,
+    .direccion_SER1091,
+    .telefono_SER1091,
+    .ciudad_SER1091 {
+        display: inline-flex;
+        width: 35%;
+    }
+
+    .observaciones_SER1091,
+    .anexos_SER1091 {
+        display: inline-flex;
+        width: 90%;
+    }
+
+    .segundalinea_SER1091 {
+        display: flex;
+        width: 99%;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        font-size: 10px;
+    }
+
+    .terceralinea_SER1091 {
+        display: flex;
+        width: 99%;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        font-size: 10px;
+    }
+
+    .cuartalinea_SER1091 {
+        display: flex;
+        width: 99%;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        font-size: 10px;
+    }
+
+    .quintalinea_SER1091 {
+        display: flex;
+        width: 99%;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        font-size: 10px;
+    }
+
+    .sextalinea_SER1091 {
+        display: flex;
+        width: 99%;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        font-size: 10px;
+    }
+
+    .septimalinea_SER1091 {
+        display: flex;
+        width: 99%;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+        font-size: 10px;
+    }
+
+    .remite_SER1091 {
+        display: flex;
+        width: 99%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 10px;
+    }
+
+    .headertabla_SER1091 {
+        width: 99%;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+        font-size: 8px;
+    }
+
+    .tablaheader_SER1091 {
+        width: 99%;
+        border-spacing: 0;
+        font-size: 8px;
+    }
+
+    .salto-linea {
+        padding-top: 20px;
+    }
+
+    .titulo_SER1091 {
+        width: 10%;
+        display: inline-flex;
+        font-size: 10px;
+        font-weight: bolder;
+    }
+
+    .tablacodservicio_SER1091 tr td {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        font-size: 8px;
+    }
+
+    .tablacodservicio_SER1091 tr th {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        font-size: 8px;
+    }
+</style>
+
+
+
+<script>
+    var SER1091 = [];
+    ipcRenderer.on('ping', (e, data) => {
+        SER1091 = data.datos;
+        $('.nombre_SER1091').text(SER1091.NOMBREUSU);
+        $('.nitusu_SER1091').text('NIT: ' + SER1091.NITUSU + '-' + SER1091.DVUSU);
+        $('.direccionusu_SER1091').text(SER1091.DIRECCUSU);
+        $('.telefonousu_SER1091').text('TEL. ' + SER1091.TELUSU);
+        $('.ciudadusu_SER1091').text(SER1091.CIUDADUSU);
+        $('.fechafactura_SER1091').text(SER1091.FECHA);
+        $('.facturaventa_SER1091').text(SER1091.LLAVE.substring(0, 1) + ' ' + parseInt(SER1091.LLAVE.substring(1, 7)).toString());
+        $('.cliente_SER1091').text(SER1091.NOMTER);
+        $('.nitcliente_SER1091').text(SER1091.NIT + ' - ' + SER1091.DVTER);
+        $('.direccion_SER1091').text(SER1091.DIRECCTER);
+        $('.telefono_SER1091').text(SER1091.TELTER);
+        $('.ciudad_SER1091').text(SER1091.CIUDADTER);
+        $('.paciente_SER1091').text('PACIENTE: ' + 'RESVISAR');
+        $('.idpaceinte_SER1091').text(SER1091.IDPACTEM);
+        $('.edad_SER1091').text(SER1091.EDADTEM);
+        $('.convenio_SER1091').text(SER1091.DESCRIPTAR);
+        $('.observaciones_SER1091').text(SER1091.OBSERVNUM);
+        $('.anexos_SER1091').text(SER1091.ANEXOSNUM);
+        $('.opercreado_SER1091').text('CREO: ' + SER1091.OPERNUM + ' ' + SER1091.FECHAOPER);
+        if (SER1091.FECHAMODOPER.trim() == 'Invalid date') SER1091.FECHAMODOPER = '000000';
+        if (SER1091.FECHARETOPER.trim() == 'Invalid date') SER1091.FECHARETOPER = '000000';
+        $('.opermodif_SER1091').text('MODI: ' + SER1091.OPERMODNUM + ' ' + SER1091.FECHAMODOPER);
+        $('.operbloq_SER1091').text('BLOQ: ' + SER1091.OPERBLOQNUM + ' ' + SER1091.FECHARETOPER);
+        $('.operimp_SER1091').text('IMP: ' + SER1091.ADMIN + ' ' + SER1091.FECHAIMPRESION);
+        $('.totalenletras_SER1091').text('SON: ' + SER1091.NUMEROENLETRAS);
+        $('.copiaoriginal_SER1091').text(SER1091.ORIGINAL)
+        SER1091.FACTURAS.forEach((element) => {
+            if (element.FECHA.trim() != '') {
+                $('.tablacodservicio_SER1091').append(
+                    '<tr>' +
+                    '<th style="width: 5%">' + element.NRO_COMP + '</th>' +
+                    '<td style="width: 5%">' + element.FECHA.substring(2, 8) + '</td>' +
+                    '<td style="width: 10%">' + element.NOMBRE + '</td>' +
+                    '<td style="width: 3%">' + element.EDAD + '</td>' +
+                    '<td style="width: 2%">' + element.SEXO + '</td>' +
+                    '<td style="width: 20%">' + element.CONCEPTO.substring(0, 30) + '</td>' +
+                    '<td style="width: 3%">' + element.CANTIDAD + '</td>' +
+                    '<td style="width: 7%">' + element.VALOR_UNIT + '</td>' +
+                    '<td style="width: 7%">' + element.VALOR + '</td>' +
+                    '<td style="width: 7%"> </td>' +
+                    '<td style="width: 7%">' + element.NRO_AUTOR + '</td>' +
+                    '<td style="width: 7%">' + element.ARTICULO + '</td>' +
+                    '<td style="width: 2%">' + element.UNID_SERV + '</td>' +
+                    '</tr>'
+                )
+            }
+        });
+
+        if (SER1091.TOTALIVA != 0) {
+            $('.tablacodservicio_SER1091').append(
+                '<tr>' +
+                '<th style="width: 15px;font-size:9px;"></th>' +
+                '<td style="width: 15px;font-size:9px;"></td>' +
+                '<td style="width: 75px;font-size:9px;"></td>' +
+                '<td style="width: 10px;font-size:9px;"></td>' +
+                '<td style="width: 10px;font-size:9px;"></td>' +
+                '<td style="width: 75px;font-size:9px;font-weight: bolder;">' + 'Impuesto a las ventas IVA' + '</td>' +
+                '<td style="width: 10px;font-size:9px;"></td>' +
+                '<td style="width: 20px;font-size:9px;"></td>' +
+                '<td style="width: 15px;font-size:9px;">' + SER1091.TOTALIVA + '</td>' +
+                '<td style="width: 25px;font-size:9px;"></td>' +
+                '<td style="width: 20px;font-size:9px;"></td>' +
+                '<td style="width: 15px;font-size:9px;"></td>' +
+                '<td style="width: 1%;font-size:9px;"></td>' +
+                '</tr>'
+            )
+        }
+        for (var i in SER1091.TABLARBOS_NUM){
+            if (SER1091.TABLARBOS_NUM[i].LOTEABON_NUM.trim() != ''){
+                if (SER1091.TABLARBOS_NUM[i].LOTEABON_NUM.trim() == '1R' || SER1091.TABLARBOS_NUM[i].LOTEABON_NUM.trim() == '2R' || SER1091.TABLARBOS_NUM[i].LOTEABON_NUM.trim() == '3R' || SER1091.TABLARBOS_NUM[i].LOTEABON_NUM.trim() == '4R' || SER1091.TABLARBOS_NUM[i].LOTEABON_NUM.trim() == '5R' || SER1091.TABLARBOS_NUM[i].LOTEABON_NUM.trim() == '6R' || SER1091.TABLARBOS_NUM[i].LOTEABON_NUM.trim() == '7R'){
+                    $('.tablacodservicio_SER1091').append(
+                    '<tr>' +
+                    '<th style="width: 5%;"></th>' +
+                    '<td style="width: 5%;"></td>' +
+                    '<td style="width: 10%;"></td>' +
+                    '<td style="width: 3%;"></td>' +
+                    '<td style="width: 2%;"></td>' +
+                    '<td style="width: 20%;font-weight: bolder;">' + 'Total Abonos Recibidos' + '</td>' +
+                    '<td style="width: 3%;"></td>' +
+                    '<td style="width: 7%;"></td>' +
+                    '<td style="width: 7%;">' + SER1091.TABLARBOS_NUM[i].VLRABON_NUM + '</td>' +
+                    '<td style="width: 7%;"></td>' +
+                    '<td style="width: 7%;"></td>' +
+                    '<td style="width: 2%;"></td>' +
+                    '</tr>'
+                    )
+                } else if (SER1091.TABLARBOS_NUM[i].LOTEABON_NUM.trim() == 'GP' || SER1091.TABLARBOS_NUM[i].LOTEABON_NUM.trim() == 'GT' || SER1091.TABLARBOS_NUM[i].LOTEABON_NUM.trim() == 'GA'){
+                    $('.tablacodservicio_SER1091').append(
+                    '<tr>' +
+                    '<th style="width: 5%;"></th>' +
+                    '<td style="width: 5%;"></td>' +
+                    '<td style="width: 10%;"></td>' +
+                    '<td style="width: 3%;"></td>' +
+                    '<td style="width: 2%;"></td>' +
+                    '<td style="width: 20%;font-weight: bolder;">' + 'Total glosas aceptadas' + '</td>' +
+                    '<td style="width: 3%;"></td>' +
+                    '<td style="width: 7%;"></td>' +
+                    '<td style="width: 7%;">' + SER1091.TABLARBOS_NUM[i].VLRABON_NUM + '</td>' +
+                    '<td style="width: 7%;"></td>' +
+                    '<td style="width: 7%;"></td>' +
+                    '<td style="width: 2%;"></td>' +
+                    '</tr>'
+                    )
+                } else {
+                    $('.tablacodservicio_SER1091').append(
+                    '<tr>' +
+                    '<th style="width: 5%;"></th>' +
+                    '<td style="width: 5%;"></td>' +
+                    '<td style="width: 10%;"></td>' +
+                    '<td style="width: 3%;"></td>' +
+                    '<td style="width: 2%;"></td>' +
+                    '<td style="width: 20%;font-weight: bolder;">' + 'Total glosas aceptadas' + '</td>' +
+                    '<td style="width: 3%;"></td>' +
+                    '<td style="width: 7%;"></td>' +
+                    '<td style="width: 7%;">' + SER1091.TABLARBOS_NUM[i].VLRABON_NUM + '</td>' +
+                    '<td style="width: 7%;"></td>' +
+                    '<td style="width: 7%;"></td>' +
+                    '<td style="width: 2%;"></td>' +
+                    '</tr>'
+                    )
+                }
+            }
+        }
+        // if (SER1091.TOTALCOPAGO != 0) {
+        //     $('.tablacodservicio_SER1091').append(
+        //         '<tr>' +
+        //         '<th style="width: 15px;"></th>' +
+        //         '<td style="width: 15px;"></td>' +
+        //         '<td style="width: 75px;"></td>' +
+        //         '<td style="width: 10px;"></td>' +
+        //         '<td style="width: 10px;"></td>' +
+        //         '<td style="width: 75px;font-weight: bolder;">' + 'Copago pendiente de pago' + '</td>' +
+        //         '<td style="width: 10px;"></td>' +
+        //         '<td style="width: 20px;"></td>' +
+        //         '<td style="width: 15px;">' + SER1091.TOTALCOPAGO + '</td>' +
+        //         '<td style="width: 25px;"></td>' +
+        //         '<td style="width: 20px;"></td>' +
+        //         '<td style="width: 15px;"></td>' +
+        //         '<td style="width: 1%;"></td>' +
+        //         '</tr>'
+        //     )
+        // }
+        if (SER1091.PREFIJOW == 'A' || SER1091.PREFIJOW == 'P' || SER1091.PREFIJOW == 'B' || SER1091.PREFIJOW == 'D' || SER1091.PREFIJOW == 'F' || SER1091.PREFIJOW == 'G' || SER1091.PREFIJOW == 'H' || SER1091.PREFIJOW == 'I' || SER1091.PREFIJOW == 'J' || SER1091.PREFIJOW == 'K' || SER1091.PREFIJOW == 'L' || SER1091.PREFIJOW == 'M' || SER1091.PREFIJOW == 'N') {
+            if (SER1091.COPAGONUM == '2' || SER1091.COPAGONUM == '3') {
+                $('.tablacodservicio_SER1091').append(
+                    '<tr>' +
+                    '<th style="width: 5%; border-top: solid 0.2px black;"></th>' +
+                    '<td style="width: 5%; border-top: solid 0.2px black;"></td>' +
+                    '<td style="width: 10%; border-top: solid 0.2px black;"></td>' +
+                    '<td style="width: 3%; border-top: solid 0.2px black;"></td>' +
+                    '<td style="width: 2%; border-top: solid 0.2px black;"></td>' +
+                    '<td style="width: 20%;font-weight: bolder; border-top: solid 0.2px black;">' + 'Total cuotas moderadoras' + '</td>' +
+                    '<td style="width: 3%; border-top: solid 0.2px black;"></td>' +
+                    '<td style="width: 7%; border-top: solid 0.2px black;"></td>' +
+                    '<td style="width: 7%; border-top: solid 0.2px black;">' + SER1091.TOTALCOPAGO + '</td>' +
+                    '<td style="width: 7%; border-top: solid 0.2px black;"></td>' +
+                    '<td style="width: 7%; border-top: solid 0.2px black;"></td>' +
+                    '<td style="width: 2%; border-top: solid 0.2px black;"></td>' +
+                    '</tr>'
+                );
+                $('.tablacodservicio_SER1091').append(
+                    '<tr>' +
+                    '<th style="width: 5%;"></th>' +
+                    '<td style="width: 5%;"></td>' +
+                    '<td style="width: 10%;"></td>' +
+                    '<td style="width: 3%;"></td>' +
+                    '<td style="width: 2%;"></td>' +
+                    '<td style="width: 20%;font-weight: bolder;">' + 'Total copagos recibidos' + '</td>' +
+                    '<td style="width: 3%;"></td>' +
+                    '<td style="width: 7%;"></td>' +
+                    '<td style="width: 7%;">' + SER1091.TOTALCOPAGO + '</td>' +
+                    '<td style="width: 7%;"></td>' +
+                    '<td style="width: 7%;"></td>' +
+                    '<td style="width: 2%;"></td>' +
+                    '</tr>'
+                )
+            } else {
+                $('.tablacodservicio_SER1091').append(
+                    '<tr>' +
+                    '<th style="width: 5%; border-top: solid 0.2px black;"></th>' +
+                    '<td style="width: 5%; border-top: solid 0.2px black;"></td>' +
+                    '<td style="width: 10%; border-top: solid 0.2px black;"></td>' +
+                    '<td style="width: 3%; border-top: solid 0.2px black;"></td>' +
+                    '<td style="width: 2%; border-top: solid 0.2px black;"></td>' +
+                    '<td style="width: 20%;font-weight: bolder; border-top: solid 0.2px black;">' + 'Total cuotas moderadoras' + '</td>' +
+                    '<td style="width: 3%; border-top: solid 0.2px black;"></td>' +
+                    '<td style="width: 7%; border-top: solid 0.2px black;"></td>' +
+                    '<td style="width: 7%; border-top: solid 0.2px black;">' + SER1091.TOTALCOPAGO + '</td>' +
+                    '<td style="width: 7%; border-top: solid 0.2px black;"></td>' +
+                    '<td style="width: 7%; border-top: solid 0.2px black;"></td>' +
+                    '<td style="width: 2%; border-top: solid 0.2px black;"></td>' +
+                    '</tr>'
+                );
+                $('.tablacodservicio_SER1091').append(
+                    '<tr>' +
+                    '<th style="width: 5%;"></th>' +
+                    '<td style="width: 5%;"></td>' +
+                    '<td style="width: 10%;"></td>' +
+                    '<td style="width: 3%;"></td>' +
+                    '<td style="width: 2%;"></td>' +
+                    '<td style="width: 20%;font-weight: bolder;">' + 'Total copagos recibidos' + '</td>' +
+                    '<td style="width: 3%;"></td>' +
+                    '<td style="width: 7%;"></td>' +
+                    '<td style="width: 7%;">' + SER1091.TOTALCOPAGO + '</td>' +
+                    '<td style="width: 7%;"></td>' +
+                    '<td style="width: 7%;"></td>' +
+                    '<td style="width: 2%;"></td>' +
+                    '</tr>'
+                )
+            }
+        }
+
+        $('.tablacodservicio_SER1091').append(
+            '<tr>' +
+            '<th style="width: 5%;"></th>' +
+            '<td style="width: 5%;"></td>' +
+            '<td style="width: 10%;"></td>' +
+            '<td style="width: 3%;"></td>' +
+            '<td style="width: 2%;"></td>' +
+            '<td style="width: 20%;font-weight: bolder;">' + 'Saldo neto factura' + '</td>' +
+            '<td style="width: 3%;"></td>' +
+            '<td style="width: 7%;"></td>' +
+            '<td style="width: 7%;">' + SER1091.TOTAL + '</td>' +
+            '<td style="width: 7%;"></td>' +
+            '<td style="width: 7%;"></td>' +
+            '<td style="width: 2%;"></td>' +
+            '</tr>'
+        )
+
+        var nit = SER1091.LOGO;
+        var url = path.join(`P:\\PROG\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('.logo')
+        });
+    })
+</script>

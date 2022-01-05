@@ -1,0 +1,428 @@
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<div class="col-md-12" id="PUB101">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="col-md-12 no-padding">
+          <div class="col-md-12 no-padding">
+            <div class="col-md-12 no-padding">
+              <div class="col-md-4" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center inline-inputs">
+                  <label class="col-md-3 lbl_left">Razón Social</label>
+                  <div class="input-group col-md-9" id="nombre">
+                    <input
+                      v-model="reg_emp.nombre"
+                      type="text"
+                      class="form-control nombre text-center"
+                      data-orden="1"
+                      maxlength="60"
+                      required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center inline-inputs">
+                  <label class="col-md-3 lbl_left">N.I.T</label>
+                  <div class="input-group col-md-9" id="nit">
+                    <input
+                      v-model="reg_emp.nit"
+                      type="text"
+                      class="form-control nit text-center"
+                      data-orden="1"
+                      maxlength="10"
+                      required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center inline-inputs">
+                  <label class="col-md-3 lbl_left">DV</label>
+                  <div class="input-group col-md-9" id="dv">
+                    <input
+                      v-model="reg_emp.dv"
+                      type="text"
+                      class="form-control nombre text-center"
+                      data-orden="1"
+                      maxlength="1"
+                      required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center inline-inputs">
+                  <label class="col-md-4 lbl_left">NUIR</label>
+                  <div class="input-group col-md-8" id="nuir">
+                    <input
+                      v-model="reg_emp.nuir"
+                      type="number"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="12"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2 no-padding">
+                <div class="col-md-12 form-group box-center inline-inputs">
+                  <label class="col-md-4 lbl_left">Teléfono</label>
+                  <div class="input-group col-md-8" id="tel">
+                    <input
+                      v-model="reg_emp.tel"
+                      type="number"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="10"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="col-md-4" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center inline-inputs">
+                  <label class="col-md-3 lbl_left">Dirección</label>
+                  <div class="input-group col-md-9" id="direcc">
+                    <input
+                      v-model="reg_emp.direcc"
+                      type="text"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="60"
+                      required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center inline-inputs">
+                  <label class="col-md-3 lbl_left">Código Ciudad</label>
+                  <div class="input-group col-md-2" id="cod_ciu">
+                    <input
+                      v-model="reg_emp.cod_ciu"
+                      type="text"
+                      class="form-control cod_ciu text-center"
+                      data-orden="1"
+                      maxlength="5"
+                      required="true"
+                      @keydown.f8="_ventanaCiudades"
+                    />
+                  </div>
+                  <button @click="_ventanaCiudades" type="button" class="btn col-md-1 f8-Btn">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                  <label class="col-md-6 lbl_left" style="padding-left: 12px !important; text-align: center !important">{{ nombre_ciu }}</label>
+                </div>
+              </div>
+
+              <div class="col-md-2" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center inline-inputs">
+                  <label class="col-md-12 lbl_left" style="padding-left: 12px !important; text-align: center !important"
+                    >{{ nombre_dep }}</label
+                  >
+                </div>
+              </div>
+
+              <div class="col-md-2 no-padding">
+                <div class="col-md-12 form-group box-center inline-inputs">
+                  <label class="col-md-4 lbl_left">NUAP</label>
+                  <div class="input-group col-md-8" id="nuap">
+                    <input
+                      v-model="reg_emp.nuap"
+                      type="text"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="5"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="col-md-2" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center">
+                  <div class="col-md-12 head-box no-padding" style="padding-bottom: 0 !important">
+                    <label class="lbl_vertical">Retención en fuente</label>
+                  </div>
+                  <label class="col-md-12 lbl" style="padding-top: 8px !important; padding-bottom: 5px !important"
+                    >{{ autoret_edit }}</label
+                  >
+                </div>
+              </div>
+
+              <div class="col-md-2" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center inline-inputs">
+                  <label class="col-md-9 lbl_left">Cambiar Claves?</label>
+                  <div class="input-group col-md-3" id="cambio_clave">
+                    <input
+                      v-model="cambio_clave"
+                      type="text"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="1"
+                      placeholder="N"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-12 form-group box-center inline-inputs" style="margin-top: -8px !important">
+                  <label class="col-md-6 lbl_left">Clave Correc</label>
+                  <div class="input-group col-md-6" id="clave1">
+                    <input
+                      v-model="reg_emp.clave1"
+                      type="password"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="6"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center inline-inputs">
+                  <label class="col-md-6 lbl_left">Clave Bloqueo</label>
+                  <div class="input-group col-md-6" id="clave2">
+                    <input
+                      v-model="reg_emp.clave2"
+                      type="password"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="6"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-12 form-group box-center inline-inputs" style="margin-top: -8px !important">
+                  <label class="col-md-6 lbl_left">Confirmación</label>
+                  <div class="input-group col-md-6" id="clave_conf">
+                    <input
+                      v-model="clave_conf"
+                      type="password"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="6"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center">
+                  <div class="col-md-12 head-box no-padding" style="padding-bottom: 0 !important">
+                    <label class="lbl_vertical">Aproximación</label>
+                  </div>
+                  <label class="col-md-12 lbl" style="padding-top: 8px !important; padding-bottom: 5px !important"
+                    >{{ aprox_edit }}</label
+                  >
+                </div>
+              </div>
+
+              <div class="col-md-3 no-padding">
+                <div class="col-md-12 form-group box-center inline-inputs">
+                  <label class="col-md-8 lbl_left">% Interes Mensual por Mora</label>
+                  <div class="input-group col-md-4" id="int">
+                    <input
+                      v-model="reg_emp.int"
+                      type="text"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="5"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-12 form-group box-center inline-inputs" style="margin-top: -8px !important">
+                  <label class="col-md-8 lbl_left">% Interes refinanciación</label>
+                  <div class="input-group col-md-4" id="int_ref">
+                    <input
+                      v-model="reg_emp.int_ref"
+                      type="text"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="5"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="col-md-2" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center">
+                  <div class="col-md-12 head-box no-padding" style="padding-bottom: 0 !important">
+                    <label class="no-padding">Fecha Última Facturación</label>
+                  </div>
+                  <div
+                    class="col-md-12 head-box no-padding inline-inputs"
+                    style="padding-bottom: 0 !important; margin-top: -3px"
+                  >
+                    <label class="col-md-6 lbl no-padding">Año</label>
+                    <label class="col-md-6 lbl no-padding">Mes</label>
+                  </div>
+                  <div class="col-md-12 no-padding inline-inputs" id="ult_per">
+                    <div class="input-group col-md-6" id="ano">
+                      <input
+                        v-model="reg_emp.ult_per.ano"
+                        type="number"
+                        class="form-control text-center"
+                        data-orden="1"
+                        maxlength="4"
+                      />
+                    </div>
+
+                    <div class="input-group col-md-6" id="mes">
+                      <input
+                        v-model="reg_emp.ult_per.mes"
+                        type="number"
+                        class="form-control text-center"
+                        data-orden="2"
+                        maxlength="2"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center">
+                  <div class="col-md-12 head-box no-padding" style="padding-bottom: 0 !important">
+                    <label class="lbl_vertical">Última Factura</label>
+                  </div>
+                  <div class="input-group col-md-12" id="ult_fact">
+                    <input
+                      v-model="reg_emp.ult_fact"
+                      type="number"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="9"
+                      style="margin-top: 3px"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center">
+                  <div class="col-md-12 head-box no-padding" style="padding-bottom: 0 !important">
+                    <label class="lbl_vertical">Orden de Generación de Fact.</label>
+                  </div>
+                  <label class="col-md-12 lbl" style="padding-top: 9px !important; padding-bottom: 8px !important"
+                    >{{ orden_edit }}</label
+                  >
+                </div>
+              </div>
+
+              <div class="col-md-6 no-padding">
+                <div class="col-md-12 form-group box-center inline-inputs">
+                  <label class="col-md-11 lbl_left"
+                    >Se requiere diligenciar previamente un formulario para recibir abonos parciales?</label
+                  >
+                  <div class="input-group col-md-1" id="formato_abo">
+                    <input
+                      v-model="reg_emp.formato_abo"
+                      type="text"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="1"
+                      placeholder="N"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="col-md-12 form-group box-center inline-inputs"
+                  style="margin-top: -8px !important; padding-top: 8px; padding-bottom: 6px"
+                >
+                  <div class="col-md-6 no-padding">
+                    <label class="col-md-9 lbl_left">Valor de la Copia Adicional por Fact.</label>
+                    <div class="input-group col-md-3" id="vlr_dup">
+                      <input
+                        v-model="reg_emp.vlr_dup"
+                        type="text"
+                        class="form-control text-center"
+                        data-orden="1"
+                        maxlength="6"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 no-padding">
+                    <label class="col-md-5 lbl_left" style="padding-left: 10px !important">Directorio Contab</label>
+                    <div class="input-group col-md-7" id="dir_cont">
+                      <input
+                        v-model="reg_emp.dir_cont"
+                        type="text"
+                        class="form-control text-center"
+                        data-orden="1"
+                        maxlength="20"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="col-md-4" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center inline-inputs">
+                  <label class="col-md-10 lbl_left">Contabilizar Factura Individualmente</label>
+                  <div class="input-group col-md-2" id="contab_nit">
+                    <input
+                      v-model="reg_emp.contab_nit"
+                      type="text"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="1"
+                      placeholder="N"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12 no-padding" v-if="mostrar_CLAVE">
+    <clave :params="params_CLAVE" @callback="callback_clave" @callback_esc="esc_clave"> </clave>
+  </div>
+</div>
+
+<script src="../../SERVDOM/scripts/PUB101.js" type="text/javascript"></script>
+
+<style>
+  .lbl_left {
+    background: 0 !important;
+    text-align: left !important;
+    padding-left: 4px !important;
+  }
+
+  .lbl {
+    background: 0 !important;
+  }
+
+  .lbl_vertical {
+    background: 0 !important;
+    padding-bottom: 10px !important;
+    padding-top: 9px !important;
+  }
+</style>

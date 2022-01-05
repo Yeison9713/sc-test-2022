@@ -1,0 +1,219 @@
+{
+  "Menu": [
+    {
+      "Id": "01",
+      "Descripcion": "Archivos maestros",
+      "Opc-segu": "R1",
+      "Sub": [
+        {
+          "Id": "011",
+          "Descripcion": "Actualiza Dptos o Servicios",
+          "Opc-segu": "R11",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR101_v2.html"
+        },
+        {
+          "Id": "012",
+          "Descripcion": "Actualiza Funcionarios",
+          "Opc-segu": "R12",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR102.html"
+        },
+        {
+          "Id": "013",
+          "Descripcion": "Actualiza tipo correspon",
+          "Opc-segu": "R13",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR103.html"
+        },
+        {
+          "Id": "014",
+          "Descripcion": "Actualiza Aux correspon",
+          "Opc-segu": "R14",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR104.html"
+        },
+        {
+          "Id": "015",
+          "Descripcion": "Crear unidad funcional",
+          "Opc-segu": "R15",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR105.html"
+        },
+        {
+          "Id": "016",
+          "Descripcion": "Crear Dependencia Remitente",
+          "Opc-segu": "R16",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR106.html"
+        },
+        {
+          "Id": "017",
+          "Descripcion": "Activar Holding Empresarial",
+          "Opc-segu": "R17",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR107.html"
+        },
+        {
+          "Id": "018",
+          "Descripcion": "Actualizar cargos OPS",
+          "Opc-segu": "R18",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR108.html"
+        }
+      ]
+    },
+    {
+      "Id": "02",
+      "Descripcion": "Correspondencia",
+      "Opc-segu": "R2",
+      "Sub": [
+        {
+          "Id": "021",
+          "Descripcion": "Recepcion Correspondencia",
+          "Opc-segu": "R21",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR201.html"
+        },
+        {
+          "Id": "022",
+          "Descripcion": "Reimprimir Correspondencia",
+          "Opc-segu": "R22",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR202.html"
+        },
+        {
+          "Id": "023",
+          "Descripcion": "Traslado de Correspondencia",
+          "Opc-segu": "R33",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR203.html"
+        },
+        {
+          "Id": "024",
+          "Descripcion": "Imprimir Carta Rips",
+          "Opc-segu": "R34",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "OLI135A",
+              "dll": "BAR-REST\\OLI135A.dll"
+            }
+          ]
+        },
+        {
+          "Id": "025",
+          "Descripcion": "Envio E-Mail pendiente",
+          "Opc-segu": "R35",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR205.html"
+        }
+      ]
+    },
+    {
+      "Id": "03",
+      "Descripcion": "Informes",
+      "Opc-segu": "R3",
+      "Sub": [
+        {
+          "Id": "031",
+          "Descripcion": "Informe de Correspondencia",
+          "Opc-segu": "R31",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR301.html"
+        },
+        {
+          "Id": "032",
+          "Descripcion": "Informe Corres Dcartar",
+          "Opc-segu": "R32",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR301.html"
+        },
+        {
+          "Id": "033",
+          "Descripcion": "Informe Corres General",
+          "Opc-segu": "R33",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR301.html"
+        },
+        {
+          "Id": "034",
+          "Descripcion": "Informe Corres Respuestas",
+          "Opc-segu": "R34",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR304.html"
+        },
+        {
+          "Id": "035",
+          "Descripcion": "Distribución interna",
+          "Opc-segu": "R35",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR305.html"
+        },
+        {
+          "Id": "036",
+          "Descripcion": "Distribución externa",
+          "Opc-segu": "R36",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR306.html"
+        },
+        {
+          "Id": "037",
+          "Descripcion": "Informe trimestral",
+          "Opc-segu": "R37",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR307.html"
+        }
+      ]
+    },
+    {
+      "Id": "04",
+      "Descripcion": "Citar Correspondencia",
+      "Opc-segu": "R4",
+      "Sub": [
+        {
+          "Id": "041",
+          "Descripcion": "Imprime Correspondencia",
+          "Opc-segu": "R41",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR401.html"
+        },
+        {
+          "Id": "042",
+          "Descripcion": "Macro respuesta Corresp",
+          "Opc-segu": "R42",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR402.html"
+        },
+        {
+          "Id": "043",
+          "Descripcion": "Respuesta Corresponden",
+          "Opc-segu": "R43",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR405.html"
+        },
+        {
+          "Id": "044",
+          "Descripcion": "Reimprime respuesta",
+          "Opc-segu": "R44",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR404.html"
+        },
+        {
+          "Id": "045",
+          "Descripcion": "Respuesta corres manual",
+          "Opc-segu": "R45",
+          "Tipo": "HTML",
+          "Href": "../../COR/paginas/COR405.html"
+        }
+      ]
+    },
+    {
+      "Id": "05",
+      "Descripcion": "Correspondencia pendiente",
+      "Opc-segu": "R4",
+      "Tipo": "HTML",
+      "Href": "../../COR/paginas/COR501.html"
+    }
+  ]
+}

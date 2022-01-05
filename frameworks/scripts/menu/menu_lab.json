@@ -1,0 +1,101 @@
+{
+    "Menu": [
+        {
+            "Id": "01",
+            "Descripcion": "Actualizar Maestros",
+            "Tipo": "HTML",
+            "Sub": [
+                {
+                    "Id": "011",
+                    "Descripcion": "Actualizar componentes",
+                    "Tipo": "HTML",
+                    "Href": "../../LAB/paginas/LABCOMP.html"
+                },
+                {
+                    "Id": "012",
+                    "Descripcion": "Actualizar macros",
+                    "Tipo": "HTML",
+                    "Href": "../../LAB/paginas/LAB101.html"
+                },
+                {
+                    "Id": "013",
+                    "Descripcion": "Actualizar plantillas",
+                    "Tipo": "HTML",
+                    "Href": "../../LAB/paginas/LAB104.html"
+                }
+            ]
+        },
+        {
+            "Id": "02",
+            "Descripcion": "Actualizar resultados",
+            "Tipo": "JS",
+            "JS": "../../frameworks/scripts/valMenus/VAL_RXLAB.js"
+        },
+        {
+            "Id": "03",
+            "Descripcion": "Consentimientos",
+            "Sub": [
+                {
+                    "Id": "031",
+                    "Descripcion": "Maestro Consentimientos",
+                    "Tipo": "HTML",
+                    "Href": "../../RX/paginas/RX-44.html"
+                },
+                {
+                    "Id": "032",
+                    "Descripcion": "Aprobar Consentimientos",
+                    "Tipo": "JS",
+                    "JS": "../../frameworks/scripts/valMenus/VAL_RXLAB.js"
+                },
+                {
+                    "Id": "033",
+                    "Descripcion": "Reimprimir Consentimientos",
+                    "Tipo": "JS",
+                    "JS": "../../frameworks/scripts/valMenus/VAL_RXLAB.js"
+                }
+            ]
+        },
+        {
+            "Id": "04",
+            "Descripcion": "Consultar resultados",
+            "Tipo": "HTML",
+            "Href": "../../frameworks/scripts/valMenus/VAL_RXLAB.html"
+        },
+        {
+            "Id": "05",
+            "Descripcion": "Listados",
+            "Sub": [
+                {
+                    "Id": "051",
+                    "Descripcion": "Listado por cups",
+                    "Tipo": "HTML",
+                    "Href": "../../SALUD/paginas/LAB548.html"
+                },
+                {
+                    "Id": "052",
+                    "Descripcion": "Listado por mes",
+                    "Tipo": "HTML",
+                    "Href": "../../LAB/paginas/LABLIS.html"
+                }
+            ]
+        },
+        {
+            "Id": "06",
+            "Descripcion": "Recargar resultados desde facturacion",
+            "Tipo": "JS",
+            "JS": "../../LAB/scripts/LAB_FACT.js"
+        },
+        {
+            "Id": "07",
+            "Descripcion": "Corrección de resultados",
+            "Tipo": "JS",
+            "JS": "../../frameworks/scripts/valMenus/VAL_RXLAB.js"
+        },
+        {
+            "Id": "08",
+            "Descripcion": "Envio de correo",
+            "Tipo": "HTML",
+            "Href": "../../frameworks/scripts/valMenus/VAL_RXLAB.html"
+        }
+    ]
+}

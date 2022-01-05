@@ -1,0 +1,722 @@
+<style>
+    .form-horizontal .form-group {
+        float: left;
+    }
+
+    .box-center {
+        padding: 5px;
+        margin-bottom: 9px !important;
+    }
+
+    #TABLA_401 td {
+        /* text-align: center; */
+        text-align: left;
+    }
+
+    .salto-linea {
+        margin: 3px 0;
+    }
+
+    #body_main {
+        margin: 0px 0px;
+    }
+    #body_main {
+        text-align: left!important;
+    }
+    .ui-datepicker .ui-datepicker-header {
+        background: #476fad;
+        border: 1px solid #476fad;
+    }
+</style>
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SAL450G">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-1 col-sm-1 col-xs-12" id="VALIDAR1_SAL450G">
+                        <label>Sucursal:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.sucursal_SAL450G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="2">
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="VALIDAR2_SAL450G">
+                        <label>Clase servicio:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12">
+                                <input v-model="form.clasedeservicio_SAL450G" type="text" @Keyup.F8='_ventanaclases_SAL450G'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1" @click='_ventanaclases_SAL450G'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-12">
+                                <input v-model="form.clasedeserviciod_SAL450G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" id="VALIDAR3_SAL450G">
+                        <label>Comprobante:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                <input v-model="form.comprobante_SAL450G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" @Keyup.F8='_ventanacomprobantes_SAL450G'>
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2" @click='_ventanacomprobantes_SAL450G'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" id="VALIDAR4_SAL450G">
+                        <label>Fecha:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.fecha_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                maxlength="12">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <label>Factura:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="VALIDAR5_SAL450G">
+                                <input v-model="form.prefijofactura_SAL450G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="1" @Keyup.F8='_ventanaformasdepago_SAL450G'>
+                            </div>
+                            <button type="button" id="facturaBtn_SAL450G" class="btn f8-Btn col-md-2 col-sm-2 col-xs-1" @click='_ventanaformasdepago_SAL450G'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" id="VALIDAR6_SAL450G">
+                                <input v-model="form.numerofactura_SAL450G" data-orden="1" maxlength="6" @Keyup.F8='_ventananumerodefactura_SAL450G'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <label>Puerta de ingreso:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.puertaingreso_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <label>Cliente (Entidad):</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="VALIDAR7_SAL450G">
+                                <input v-model="form.cliente_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="12" @Keyup.F8='_ventanaclientes_SAL450G'>
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1" @click='_ventanaclientes_SAL450G'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                <input v-model="form.cliented_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12">
+                        <label>Paciente:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="VALIDAR8_SAL450G">
+                                <input v-model="form.paciente_SAL450G" type="text" 
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="15">
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-12">
+                                <input v-model="form.paciented_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-6">
+                        <label>Sexo:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.sexo_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-6">
+                        <label>Edad:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.edad_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="elementos-tabla">
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="primer-elemento">
+                        <label>Cod.Servicio:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4" id="VALIDAR9_SAL450G">
+                                <input v-model="form.codigodeservicio_SAL450G" type="text" 
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 codigodeservicio_SAL450G" data-orden="1" maxlength="18">
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1" >
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                                <input v-model="form.codigodeserviciod_SAL450G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 codigodeserviciod_SAL450G">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12">
+                        <label>Almac:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-10 col-sm-10 col-xs-10" id="VALIDAR10_SAL450G">
+                                <input v-model="form.almacen_SAL450G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 almacen_SAL450G"
+                                    data-orden="1" @Keyup.F8='_ventanaalmacenes_SAL450G'>
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2" @click='_ventanaalmacenes_SAL450G'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12" id="VALIDAR11_SAL450G">
+                        <label>Cant:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="cantidad_SAL450G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="15">
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12">
+                        <label>Und:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.unidad_SAL450G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12">
+                        <label>Vlr Unit:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDAR12_SAL450G">
+                                <input v-model="form.vlrunit_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="15">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <label>Vlr Total:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VLRTOTAL_41">
+                                <input v-model="form.vlrtotal_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="11">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-1 col-xs-12 hidden" id="CLASEARTICULO_SAL450G">
+                        <label>Clase Art:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.clasearticulo_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                maxlength="2">
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-1 col-xs-12 hidden" id="CODMACRO_SAL450G">
+                        <label>Macro:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="MACRO_SAL450G">
+                                <input v-model="form.macro_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-1 col-xs-12 hidden" id="PAQUETE_SAL450G">
+                        <label>Paquete integral:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.paquete_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-1 col-xs-12 hidden" id="CODIGOPAQUETE_SAL450G">
+                        <label>Codigo paquete:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.paqueteint_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12 hidden" id="CRONICO_SAL450G">
+                        <label>Patol. cronica:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" id="CRONICO_41">
+                                <input v-model="form.cronico_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="3">
+                            </div>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input v-model="form.cronicod_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                    </div>
+
+                    <div class="col-md-1 col-sm-1 col-xs-12 hidden" id="CODLOTEFACT_SAL450G">
+                        <label>Lote farmaceutico:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-11 col-sm-11 col-xs-11" id="LOTE_SAL450G">
+                                <input v-model="form.codlotefarmaceutico_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="4">
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-1 col-xs-12 hidden" id="DIASTRATAMIENTO_SAL450G">
+                        <label>Dias tratamiento:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-11 col-sm-11 col-xs-11" id="TRATAMIENTO_SAL450G">
+                                <input id="diastratamiento_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="3">
+                            </div>
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                    </div>
+
+                    <!-- <div id="EVALUARCIRUGIA_SAL450G" class="hidden">
+                        <div class="col-md-4 col-sm-4 col-xs-12 hidden" id="MEDICOCIRUGIA_SAL450G">
+                            <label>MEDICO CIRUGIA:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                    <input id="nitmedicocirugia_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                    maxlength="12" @Keyup.F8='_ventanaprofesionalescirugia_SAL450G'>
+                                </div>
+                                <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1" @click='_ventanaprofesionalescirugia_SAL450G'>
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                                <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                    <input v-model="form.nitmedicocirugiad_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="PRECIOCIRUGIA_SAL450G">
+                            <label>VALOR:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="vlrcirugia_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="15">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 hidden" id="AYUDANTE_SAL450G">
+                            <label>AYUDANTE:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                    <input id="ayudantia_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                    maxlength="12" @Keyup.F8='_ventanaprofesionalesayudante_SAL450G'>
+                                </div>
+                                <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1" @click='_ventanaprofesionalesayudante_SAL450G'>
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                                <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                    <input v-model="form.ayudantiad_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-12 hidden" id="PRECIOAYUDANTE_SAL450G">
+                            <label>VALOR:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="vlrayudante_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="15">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 hidden" id="ANESTESIOLOGO_SAL450G">
+                            <label>ANESTESIOLOGO:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                    <input id="anestesia_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                    maxlength="12" @Keyup.F8='_ventanaprofesionalesanestesiologo_SAL450G'>
+                                </div>
+                                <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1" @click='_ventanaprofesionalesanestesiologo_SAL450G'>
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                                <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                    <input v-model="form.anestesiad_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-12 hidden" id="PRECIOANESTESIOLOGO_SAL450G">
+                            <label>VALOR:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="vlranestesia_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="15">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="MATQUIRURG_SAL450G">
+                            <label>MAT.QUIRURG.:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="matquirurgico_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                            maxlength="12" @Keyup.F8='_ventanaprofesionalescirugia_SAL450G'>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="DERECHSALA_SAL450G">
+                            <label>DERECH.SALA:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="derechosala_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                maxlength="12" @Keyup.F8='_ventanaprofesionalescirugia_SAL450G'>
+                            </div>
+                        </div>
+                   </div> -->
+                </div>
+            </div>
+
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <table class="table table-light table-striped" style="width: 99%;">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;">#</th>
+                            <th style="width: 10%;">Cod.servicio</th>
+                            <th style="width: 30%;">Detalle</th>
+                            <th style="width: 10%;">Almac</th>
+                            <th style="width: 10%;">Cant</th>
+                            <th style="width: 10%;">Und</th>
+                            <th style="width: 10%;">Valor Unit</th>
+                            <th style="width: 15%;">Valor Total</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div style="width: 100%; max-height: 120px; overflow-y: auto;">
+                    <table id="TABLA_401" class="table table-light table-striped">
+                        <tbody>
+                            <tr v-for="(row, index) in FACTURACION">
+                                <td style="width: 5%;">
+                                    {{index}}
+                                </td>
+                                <td style="width: 10%;">
+                                    {{row.ARTICULO}}
+                                </td>
+                                <td style="width: 30%;">
+                                    {{row.DESCRIPCIONART}}
+                                </td>
+                                <td style="width: 10%;">
+                                    {{row.ALMACEN}}
+                                </td>
+                                <td style="width: 10%;">
+                                    {{row.CANTIDAD}}
+                                </td>
+                                <td style="width: 10%;">
+                                    {{row.UNIDAD}}
+                                </td>
+                                <td style="width: 10%;">
+                                    {{row.VALORUNIT}}
+                                </td>
+                                <td style="width: 15%;">
+                                    {{row.VALORTOTAL}}
+                                </td>
+                              </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label></label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.valortotalcomprobante_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-1 col-xs-12">
+                    <label>Valor Iva:</label>
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input v-model="form.valoriva_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-1 col-xs-12">
+                    <label>% Copago:</label>
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDAR13_SAL450G">
+                        <input v-model="form.porcentcopago_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12"
+                            data-orden="1" maxlength="4">
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label>Copago:</label>
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDAR14_SAL450G">
+                        <input v-model="form.copagoestimfact_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12"
+                            data-orden="1">
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label>Neto Factura:</label>
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input v-model="form.netofact_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="FORMACOPAGO_SAL450G">
+                    <label>F. de copago:</label>
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input v-model="form.formacopago_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="TIPOCOPAGO_SAL450G">
+                    <label>T. de copago:</label>
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input v-model="form.tipopago_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="ADICIONALES_SAL450G">
+                <div class="col-md-4 col-sm-4 col-xs-12" id="VALIDAR15_SAL450G">
+                    <label>Especialidad:</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                            <input v-model="form.especialidad_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12 especialidad_SAL450G" data-orden="1"
+                                maxlength="3" @Keyup.F8='_ventanaespecialidades_SAL450G'>
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"  @click='_ventanaespecialidades_SAL450G'>
+                            <i class="icon-magnifier"></i></button>
+                        <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                            <input v-model="form.especialidadd_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-8 col-xs-12">
+                    <label>Centro de costos:</label>
+                    <div class="inline-inputs" id="VALIDAR16_SAL450G">
+                        <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                            <input v-model="form.centrocostos_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12 centrocostos_SAL450G" data-orden="1"
+                                maxlength="4">
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i></button>
+                        <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                            <input v-model="form.centroccostosd_SAL450G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <label>Convenio:</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.convenio_SAL450G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-1 col-xs-12">
+                    <label>Estrato:</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.estrato_SAL450G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-1 col-xs-12">
+                    <label>Ciudad</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.ciudad_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12" id="VALIDAR17_SAL450G">
+                    <label>Atendido por:</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                            <input v-model="form.atendido_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12 atendido_SAL450G" data-orden="1" maxlength="13"
+                            @Keyup.F8='_ventanaprofesionales_SAL450G'>
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1" @click='_ventanaprofesionales_SAL450G'>
+                            <i class="icon-magnifier"></i></button>
+                        <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                            <input v-model="form.atendidod_SAL450G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <label>Solicitante:</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-4 col-sm-4 col-xs-4" id="VALIDAR18_SAL450G">
+                            <input v-model="form.solic_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12 solic_SAL450G" data-orden="1" maxlength="13"
+                            @Keyup.F8='_ventanaprofesionalesremite_SAL450G'>
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1" @click='_ventanaprofesionalesremite_SAL450G'>
+                            <i class="icon-magnifier"></i></button>
+                        <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                            <input v-model="form.solicd_SAL450G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label>Tipo Afiliacion</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.tipoafiliacion_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label>Divis. fact.</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12" id="CAP_SAL450G">
+                            <input v-model="form.cap_SAL450G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="5" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4 col-xs-4 hidden" id="CLASSERV_450">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Clase serv</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input v-model="form.claseserv_SAL450" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-3 col-sm-3 col-xs-12 hidden" id="CODIGODIAG_SAL450G">
+                    <label>Codigo Diag:</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-4 col-sm-4 col-xs-12" id="DIAGTIPO_41">
+                            <input id="diagtipo_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1">
+                        </div>
+                        <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                            <input id="diagtipod_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-12 hidden" id="ESPECIALIDADREMITE_SAL450G">
+                    <label>Especialidad que remite:</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-4 col-sm-4 col-xs-12" id="ESPECREMITE_41">
+                            <input id="especremite_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3" data-orden="1">
+                        </div>
+                        <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                            <input id="especremited_SAL450G" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="INGRESO_SAL450G">
+                    <div class="inline-inputs">
+                        <label class="col-md-12 col-sm-12 col-xs-12" id="ingreso_SAL450G"></label>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="CLASEPROCE_SAL450G">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.claseprocedimiento_SAL450G"></input>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="EMBARAZO_SAL450G">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.embarestado_SAL450G"></input>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="TIPOPROCEDIMIENTO_SAL450G">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.tipoprocedimiento_SAL450G"></input>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-2 col-xs-12 hidden" id="MOTIVOANUL_SAL450G">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-8 col-xs-12">Motivo anulación:</label>
+                        <div class="input-group col-md-10 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.motivoanulacion_SAL450G"></input>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.unidaddeservicio_SAL450G"></input>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="FINALIDADESTADO_SAL450G">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.finalidadestado_SAL450G"></input>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="INGRESO_SAL450G">
+                    <label>Ingreso:</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.ingreso_SAL450G"></input>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="FACTURADO_SAL450G">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.facturado_SAL450G"></input>
+                        </div>
+                    </div>
+                </div>
+                <div id="CIRUGIA_SAL450G" class="hidden">
+                    <div class="salto-linea"></div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <label>VIA:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.viaacceso_SAL450G"></input>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <label>CRUENTA:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.cruenta_SAL450G"></input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SAL450G.js" type="text/javascript"></script>

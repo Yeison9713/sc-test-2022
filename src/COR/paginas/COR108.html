@@ -1,0 +1,43 @@
+<div class="col-md-12" id="COR108">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <form class="form-horizontal">
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-8 col-sm-8 col-xs-12 box-center">
+            <div class="col-md-5 col-sm-5 col-xs-12">
+              <div class="inline-inputs">
+                <label class="col-md-6 col-sm-6 col-xs-12">Novedad:</label>
+                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                  <input v-model="form.novedad" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7 col-sm-7 col-xs-12" style="padding-right: 0;">
+              <div class="inline-inputs">
+                <label class="col-md-5 col-sm-5 col-xs-12">Codigo:</label>
+                <div class="input-group col-md-7 col-sm-7 col-xs-12" id="codigo_cor108">
+                  <input v-model="form.codigo" type="text" maxlength="10" data-orden="1" id="input_codigo_cor108"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" @keydown.119="ventana_cargos_ops()" />
+                </div>
+                <button type="button" disabled="disabled" v-on:click="ventana_cargos_ops()"
+                  class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                  <i class="icon-magnifier"></i>
+                </button>
+              </div>
+            </div>
+            <div class="salto-linea"></div>
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding-right:0">
+              <div class="inline-inputs">
+                <label class="col-md-6 col-sm-6 col-xs-12">Descripción:</label>
+                <div class="input-group col-md-6 col-sm-6 col-xs-12" id="descripcion_cor108">
+                  <input v-model="form.descripcion" type="text" data-orden="1" maxlength="30"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<script src="../../COR/scripts/COR108.js"></script>

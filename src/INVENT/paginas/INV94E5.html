@@ -1,0 +1,165 @@
+<div class="portlet light no-padding" id="INV94E5">
+  <div class="portlet-body no-padding">
+    <div class="form-horizontal no-padding">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+          <div
+            class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding form-group sc-flex-container"
+            style="justify-content: center;"
+          >
+            <div class="col-xs-10 col-sm-12 col-md-9 col-lg-9">
+              <div
+                class="no-padding box-center sc-flex-container"
+                style="justify-content: center;"
+              >
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 30%;">
+                      Listar
+                    </label>
+                    <div style="flex: 1 1 70%;">
+                      <input
+                        :value="descripTipoNota"
+                        type="text"
+                        data-orden="1"
+                        disabled="disabled"
+                        class="form-control text-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 30%;">
+                      Fecha Inicio
+                    </label>
+                    <div class="d-flex no-padding" style="flex: 1 1 70%;">
+                      <div
+                        id="datoAnioIni"
+                        class="input-group"
+                        style="flex: 1 1 40%;"
+                      >
+                        <input
+                          v-model="fecha_ini.anio"
+                          type="number"
+                          data-orden="1"
+                          maxlength="4"
+                          placeholder="AAAA"
+                          disabled="disabled"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                      <div
+                        id="datoMesIni"
+                        class="input-group"
+                        style="
+                          flex: 1 1 30%;
+                          padding-right: 0.2rem;
+                          padding-left: 0.2rem;
+                        "
+                      >
+                        <input
+                          v-model="fecha_ini.mes"
+                          type="number"
+                          data-orden="1"
+                          maxlength="2"
+                          placeholder="MM"
+                          disabled="disabled"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                      <div
+                        id="datoDiaIni"
+                        class="input-group"
+                        style="flex: 1 1 30%;"
+                      >
+                        <input
+                          v-model="fecha_ini.dia"
+                          type="number"
+                          data-orden="1"
+                          maxlength="2"
+                          placeholder="DD"
+                          disabled="disabled"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label style="flex: 1 1 30%;">
+                      Fecha Fin
+                    </label>
+                    <div class="d-flex no-padding" style="flex: 1 1 70%;">
+                      <div
+                        id="datoAnioFin"
+                        class="input-group"
+                        style="flex: 1 1 40%;"
+                      >
+                        <input
+                          v-model="fecha_fin.anio"
+                          type="number"
+                          data-orden="1"
+                          maxlength="4"
+                          placeholder="AAAA"
+                          disabled="disabled"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                      <div
+                        id="datoMesFin"
+                        class="input-group"
+                        style="
+                          flex: 1 1 30%;
+                          padding-right: 0.2rem;
+                          padding-left: 0.2rem;
+                        "
+                      >
+                        <input
+                          v-model="fecha_fin.mes"
+                          type="number"
+                          data-orden="1"
+                          maxlength="2"
+                          placeholder="MM"
+                          disabled="disabled"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                      <div
+                        id="datoDiaFin"
+                        class="input-group"
+                        style="flex: 1 1 30%;"
+                      >
+                        <input
+                          v-model="fecha_fin.dia"
+                          type="number"
+                          data-orden="1"
+                          maxlength="2"
+                          placeholder="DD"
+                          disabled="disabled"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .sc-flex-inputs > label {
+    padding-left: 0.3rem;
+  }
+
+  .box-center {
+    margin-bottom: 0 !important;
+  }
+</style>
+
+<script src="../../INVENT/scripts/INV94E5.js"></script>

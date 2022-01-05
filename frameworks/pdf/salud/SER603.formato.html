@@ -1,0 +1,464 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="page-header" style="text-align: center">
+        <div class="encabezado_SER603">
+            <a class="nombre_SER603"> HOSPITAL LOCAL SAN MARTIN ESE</a>
+            <a class="nitusu_SER603">NIT 892,000,458</a>
+            <div class="datos_usu_SER603">
+                <a class="direccionusu_SER603"> CL 4 7 34</a>
+                <a class="telefonousu_SER603">Tel: 6483035</a>
+                <a class="ciudadusu_SER603">SAN MARTIN</a>
+            </div>
+            <div class="paginacion_SER603"> <a style="font-size: 12px;">Pag.</a><a class="paginas_SER603" style="font-size: 12px;"></a></div>
+            <a class="copiaoriginal_SER603">*** COPIA ***</a>
+            <div class="primeralinea_SER603">
+                <a class="fechafactura_SER603"> FECHA: Noviembre 22 de 2019</a>
+                <a class="facturaventa_SER603"> FACTURA DE VENTA No: P27040</a>
+            </div>
+            <div class="segundalinea_SER603">
+                <a class="cliente_SER603">CLIENTE: CAPITAL SALUD EPSS</a>
+                <a class="nitcliente_SER603">NIT: 900,298,372 9</a>
+            </div>
+            <div class="quintalinea_SER603">
+                <a class="convenio_SER603">SOAT MAS INCREMENTO 2423</a>
+            </div>
+            <div class="sextalinea_SER603">
+                <a class="observaciones_SER603"> Observac: ANEXO</a>
+            </div>
+            <div class="septimalinea_SER603">
+                <a class="anexos_SER603">Anexos:</a>
+            </div>
+            <div class="salto-linea"></div>
+            <div class="headertabla_SER603">
+                <table class="tablaheader_SER603">
+                    <thead>
+                        <tr>
+                            <th style="width: 1%;font-size:9px;">Comp.</th>
+                            <th style="width: 2%;font-size:9px;">Fecha</th>
+                            <th style="width: 8%;font-size:9px;">Descripcion</th>
+                            <th style="width: 1%;font-size:9px;">Edad</th>
+                            <th style="width: 1%;font-size:9px;">Sx.</th>
+                            <th style="width: 6%;font-size:9px;">Concepto</th>
+                            <th style="width: 1%;font-size:9px;">Cant</th>
+                            <th style="width: 2%;font-size:9px;">Valor</th>
+                            <th style="width: 1%;font-size:9px;">cod.serv.</th>
+                            <th style="width: 3%;font-size:9px;">esp</th>
+                            <th style="width: 1%;font-size:9px;">autoriz.</th>
+                            <th style="width: 1%;font-size:9px;">Copagos</th>
+                            <th style="width: 1%;font-size:9px;">Diag</th>
+                            <th style="width: 1%;font-size:9px;">Medico</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <table>
+
+        <thead>
+            <tr>
+                <td>
+                    <!--place holder for the fixed-position header-->
+                    <div class="page-header-space">
+
+                    </div>
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <!--*** CONTENT GOES HERE ***-->
+                    <div class="page">
+                        <table class="tablacodservicio_SER603">
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <table class="tablaresultado_SER603">
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="totalenletras_SER603" style="float: left; width: 100%; font-size: 12px;">
+                            SON CIENTO DIECIOCHO MIL CUATROCIENTOS PESOS M/CTE
+                        </div>
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <div class="lineas"></div>
+                        <div>
+                            <a class="nombreusufinal_SER603" style="float: left; width: 30%; font-size: 10px;">ESE HOSPITAL MPAL DE EL DORADO</a>
+                            <a class="factura_SER603" style="float: left; width: 20%; font-size: 10px;">Aceptada</a>
+                            <a class="opercreado_SER603" style="float: left; width: 12%; font-size: 10px;">CREO: DORA 191121</a>
+                            <a class="opermodif_SER603" style="float: left; width: 12%; font-size: 10px;">MODI:</a>
+                            <a class="operbloq_SER603" style="float: left; width: 12%; font-size: 10px;">BLOQ:</a>
+                            <a class="operimp_SER603" style="float: left; width: 12%; font-size: 10px;">IMP:</a>
+                        </div>
+                        <a style="font-size: 10px; float: left; width: 100%;">FACTURA IMPRESA POR COMPUTADOR</a>
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <a class="autorizaciondian_SER603" style="float: left; width: 100%; font-size: 12px;">AUTORIZACION DIAN:</a>
+                        <a class="nomiva_SER603" style="float: left; width: 100%; font-size: 12px;">No somos responsables de IVA</a>
+                        <a class="presentefactura_SER603" style="float: left; width: 100%; font-size: 12px;">LA PRESENTE FACTURA SE ASIMILA EN SUS EFECTOS A UNA LETRA DE CAMBIO ART 779 CODIGO DE COMERCIO</a>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>
+
+<style>
+    .page-header,
+    .page-header-space {
+        height: 160px;
+    }
+
+    .page-header {
+        position: fixed;
+        top: 0mm;
+        width: 100%;
+    }
+
+    .page {
+        page-break-after: always;
+        width: 100%;
+    }
+
+    @page {
+        margin: 20mm;
+        size: A4 landscape;
+    }
+
+    @media print {
+        thead {
+            display: table-header-group;
+        }
+
+        tfoot {
+            display: table-footer-group;
+        }
+
+        button {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+        }
+    }
+
+    .tablacodservicio_SER603 {
+        margin: 0 auto;
+        width: 100%;
+        font-size: 10px;
+    }
+
+    .nombre_SER603 {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .nitusu_SER603 {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .datos_usu_SER603 {
+        display: flex;
+        justify-content: space-around;
+        width: 40%;
+        margin: 0 auto;
+        font-size: 10px;
+    }
+
+    .paginacion_SER603 {
+        page-break-before: always;
+        position: fixed;
+        display: flex;
+        margin-top: -2%;
+        width: 99%;
+        justify-content: flex-end;
+    }
+
+    .paginas_SER603::before {
+        content: counter(page, upper-roman) " ";
+    }
+
+    .copiaoriginal_SER603 {
+        float: left;
+        width: 99%;
+        text-align: right;
+        font-size: 11px;
+        font-weight: bolder;
+    }
+
+    .primeralinea_SER603 {
+        display: flex;
+        width: 99%;
+        justify-content: space-between;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-top: black solid 0.1px;
+        font-size: 10px;
+    }
+
+    .facturaventa_SER603 {
+        font-size: larger;
+        font-weight: bolder;
+        font-size: 10px;
+    }
+
+    .segundalinea_SER603 {
+        display: flex;
+        width: 99%;
+        justify-content: space-between;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        font-size: 10px;
+    }
+
+    .cuartalinea_SER603 {
+        display: flex;
+        width: 99%;
+        justify-content: space-between;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        font-size: 10px;
+    }
+
+    .quintalinea_SER603 {
+        display: flex;
+        width: 99%;
+        justify-content: space-between;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        font-size: 10px;
+    }
+
+    .sextalinea_SER603 {
+        display: flex;
+        width: 99%;
+        justify-content: space-between;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        font-size: 10px;
+    }
+
+    .septimalinea_SER603 {
+        display: flex;
+        width: 99%;
+        justify-content: space-between;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+        font-size: 10px;
+    }
+
+    .remite_SER603 {
+        margin: 0 auto;
+        display: flex;
+        width: 99%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 10px;
+    }
+
+    .headertabla_SER603 {
+        margin: 0 auto;
+        width: 99%;
+        border-top: black solid 0.1px;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+        font-size: 10px;
+    }
+
+    .tablaheader_SER603 {
+        margin: 0 auto;
+        width: 99%;
+        font-size: 10px;
+    }
+
+    .salto-linea {
+        padding-top: 20px;
+    }
+</style>
+
+
+<script>
+    var SER603 = [];
+    ipcRenderer.on('ping', (e, data) => {
+        SER603 = data.datos;
+        $('.nombre_SER603').text(SER603.NOMBREUSU);
+        $('.nitusu_SER603').text('NIT: ' + SER603.NITUSU + '-' + SER603.DVUSU);
+        $('.direccionusu_SER603').text(SER603.DIRECCUSU);
+        $('.telefonousu_SER603').text('Tel: ' + SER603.TELUSU);
+        $('.ciudadusu_SER603').text(SER603.CIUDADUSU);
+        $('.fechafactura_SER603').text('FECHA: ' + SER603.FECHA);
+        $('.facturaventa_SER603').text('FACTURA DE VENTA No: ' + SER603.LLAVEW);
+        $('.cliente_SER603').text('CLIENTE: ' + SER603.NOMTER);
+        $('.nitcliente_SER603').text('NIT: ' + SER603.NIT + ' ' + SER603.DVTER);
+        $('.direccion_SER603').text('Direccion: ' + SER603.DIRECCTER);
+        $('.telefono_SER603').text('TEL: ' + SER603.TELTER);
+        $('.ciudad_SER603').text('CIUDAD: ' + SER603.CIUDADTER);
+        $('.paciente_SER603').text('PACIENTE: ' + 'RESVISAR');
+        $('.idpaceinte_SER603').text(SER603.IDPACTEM);
+        $('.edad_SER603').text(SER603.EDADTEM);
+        $('.convenio_SER603').text(SER603.DESCRIPTAR);
+        $('.observaciones_SER603').text('Observac: ' + SER603.ONSERV);
+        $('.anexos_SER603').text('Anexos: ' + SER603.ANEXOS);
+        SER603.FACTURASIMPRIMIR.forEach((element, index) => {
+            if (index < 1) {
+                element.TABLA.forEach(element2 => {
+                    if (element2.CODIGO_TEM.trim() != '') {
+                        $('.tablacodservicio_SER603').append(
+                            '<tr>' +
+                            '<th style="width: 1%;font-size:9px;">' + element.LLAVEFACT_TEM.substring(3, 9) + '</th>' +
+                            '<td style="width: 2%;font-size:9px;">' + element.FECHA_TEM + '</td>' +
+                            '<td style="width: 160px;font-size:9px;">' + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + element.EDAD_TEM + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + element.SEXO_TEM + '</td>' +
+                            '<td style="width: 10%;font-size:9px;">' + element2.CONCEPTO_TEM + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + parseInt(element2.CANT_TEM) + '</td>' +
+                            '<td style="width: 2%;font-size:9px;">' + parseInt(element2.VALOR_TEM.replace(/,/g, '')) + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + element.COPAGO_TEM + '</td>' +
+                            '<td style="width: 3%;font-size:9px;">' + element.AUTOR_TEM + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + element2.CONCEPTO_TEM.substring(32, 40) + '</td>' +
+                            '</tr>'
+                        )
+                    }
+                });
+            } else {
+                element.TABLA.forEach(element2 => {
+                    if (element2.CODIGO_TEM.trim() != '') {
+                        $('.tablacodservicio_SER603').append(
+                            '<tr>' +
+                            '<th style="width: 1%;font-size:9px;">' + element.LLAVEFACT_TEM.substring(3, 9) + '</th>' +
+                            '<td style="width: 2%;font-size:9px;">' + element.FECHA_TEM + '</td>' +
+                            '<td style="width: 160px;font-size:9px;">' + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + element.EDAD_TEM + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + element.SEXO_TEM + '</td>' +
+                            '<td style="width: 10%;font-size:9px;">' + element2.CONCEPTO_TEM + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + parseFloat(element2.CANT_TEM) + '</td>' +
+                            '<td style="width: 2%;font-size:9px;">' + parseFloat(element2.VALOR_TEM.replace(/,/g, '')) + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+                            '<td style="width: 3%;font-size:9px;">' + element.AUTOR_TEM + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + element2.CONCEPTO_TEM.substring(32, 40) + '</td>' +
+                            '</tr>'
+                        )
+                    }
+                });
+            }
+            $('.tablacodservicio_SER603').append(
+                '<tr>' +
+                '<th style="width: 1%;font-size:9px;">' + '</th>' +
+                '<td style="width: 2%;font-size:9px;">' + '</td>' +
+                '<td style="width: 12%;font-size:9px;">' + '</td>' +
+                '<td style="width: 1%;font-size:9px;">' + '</td>' +
+                '<td style="width: 1%;font-size:9px;">' + '</td>' +
+                '<td style="width: 10%;font-size:9px;"> Total comprobante </td>' +
+                '<td style="width: 1%;font-size:9px;">' + '</td>' +
+                '<td style="width: 2%;font-size:9px;">' + element.VALORCOMPROBANTE + '</td>' +
+                '<td style="width: 1%;font-size:9px;">' + '</td>' +
+                '<td style="width: 3%;font-size:9px;">' + '</td>' +
+                '<td style="width: 1%;font-size:9px;">' + '</td>' +
+                '</tr>'
+            )
+        });
+
+        $('.tablacodservicio_SER603').append(
+            '<tr>' +
+            '<th style="width: 1%;font-size:9px;">' + '</th>' +
+            '<td style="width: 2%;font-size:9px;">' + '</td>' +
+            '<td style="width: 12%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 10%;font-size:9px;"> Total Fact </td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 2%;font-size:9px;">' + SER603.VALORFACT + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 3%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '</tr>'
+        )
+
+        $('.tablacodservicio_SER603').append(
+            '<tr>' +
+            '<th style="width: 1%;font-size:9px;">' + '</th>' +
+            '<td style="width: 2%;font-size:9px;">' + '</td>' +
+            '<td style="width: 12%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 10%;font-size:9px;"> Total copagos recibidos </td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 2%;font-size:9px;">' + SER603.VALORTOTALCOPAGOS + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 3%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '</tr>'
+        )
+
+        $('.tablacodservicio_SER603').append(
+            '<tr>' +
+            '<th style="width: 1%;font-size:9px;">' + '</th>' +
+            '<td style="width: 2%;font-size:9px;">' + '</td>' +
+            '<td style="width: 12%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 10%;font-size:9px;"> Saldo neto factura </td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 2%;font-size:9px;">' + SER603.VALORNETOFACTURA + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 3%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '</tr>'
+        )
+
+
+        var nit = RXI02A.NIT;
+        var url = path.join(`P:\\PROG\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('.logo')
+        });
+
+        var nitprofe = parseInt(RXI02A.IDRADIOLOGO_RX);
+        var urlprofe = path.join(`P:\\PROG\\DATOS\\17329215.bmp`);
+        fs.readFile(urlprofe, function (err, data) {
+            if (err) throw err;
+            var dataImg2 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg2}`).appendTo('.firmaprofe')
+        });
+    })
+</script>

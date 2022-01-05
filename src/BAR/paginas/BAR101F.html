@@ -1,0 +1,67 @@
+<div id='tabla'>
+<form id="form_listado_art_BAR104">
+    <div class="table-scrollable">
+        <table class="table table-striped table-bordered table-hover table-responsive" cellspacing="0" width="100%" id="tabla_articulos_BAR104">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Acc</th>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>Cant.</th>
+                    <th>V Unit.</th>
+                    <th>Impto</th>
+                    <th> % </th>
+                    <th>V Total</th>
+                    <th>Observaciones</th>
+                </tr>
+            </thead>
+            <tbody id='cuerpo_tabla'>
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="actions col-md-12 col-sm-12 col-xs-12">
+        <div class="inline-inputs col-md-12 col-sm-12 col-xs-12">
+            <label class="col-md-6 col-sm-6 col-xs-6"></label>
+            <label class="col-md-3 col-sm-3 col-xs-3">Total de la Factura:</label>
+            <div class="input-group col-md-3 col-sm-3 col-xs-3">                
+                <a id="tot_fact_bar101f"></a>
+            </div>        
+        </div>
+    </div>
+    <div class="form-actions noborder">
+        <div class="btn-group btn-group-justified">
+            <a id="btn_guardar_BAR104" class="btn blue font-medium" onclick="agregarTablaRegrabar(1)"><i class="fa fa-save"></i><span class="hideText"> Guardar y Volver</span></a>
+            <!--<a id="btn_comanda_BAR104" class="btn green-jungle font-medium" data-toggle="modal" href="#panelComanda"><i class="font-white icon-food">j</i><span class="hideText" > Comanda</span></a>
+            <a id="btn_impcuenta_BAR104" class="btn yellow-crusta font-medium" onclick="PreguntaPropina()"><i class="fa fa-print"></i><span class="hideText"> Imp Cuenta</span></a>-->
+            <!--<a id="crrar_fact_BAR104" class="btn blue-sharp font-medium"><i class="fa fa-close"></i> Cerrar factura</a>-->
+            <a id="btn_menu_factura_BAR104" class="btn blue-soft font-medium" onclick="agregarTablaRegrabar(2)"><i class="fa fa-dollar" ></i><span class="hideText"> Facturar</span></a>
+        </div>
+    </div>
+</form>
+</div>
+
+<script id="plantilla_articulos" type="text/x-handlebars-template">
+    <tr>
+        <td>{{item_art}}</td>
+        <td class="column-actions">
+            <div class="btn-group">
+                <button id="modificar_{{item_art}}" type="button" class="btn green-jungle" onclick="modificar_item(this.id)">
+                    <i class="fa fa-edit"></i>
+                </button>
+                <button id="borrar_{{item_art}}"type="button" class="btn btn-danger" onclick = "borrar_item(this.id)">
+                    <i class="fa fa-close"></i>
+                </button>                
+            </div>            
+        </td>
+        <td id="cod_{{item_art}}"class="text-right">{{cod_art}}</td>
+        <td ><i id="descrip_{{item_art}}">{{descrip_art}}</i></td>
+        <td id="cant_{{item_art}}" class="text-right">{{cant_art}}</td>
+        <td class="text-right">{{vunit_art}}</td>
+        <td class="text-right">{{impto_art}}</td>
+        <td class="text-right">{{porc_art}}</td>
+        <td class="text-right">{{vtotal_art}}</td>
+        <td id="obs_{{item_art}}">{{obs_art}}</td>
+    </tr>
+</script>

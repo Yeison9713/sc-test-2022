@@ -1,0 +1,255 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+
+<body>
+    <div id="encabezado">
+        <div class="enc-logo">
+            <div id="logo">
+            </div>
+        </div>
+        <div class="enc-izq">
+            <div>
+                <a id="nombreEmpresa" style="font-weight: 600;font-size: 24px;"></a>
+                <br>
+                <a style="font-size: 12px;font-weight: 600;">Informe de producción por vehiculo</a>
+                <br>
+                <a style="font-size: 12px;font-weight: 600;">Fecha: </a><a id="fecha_TAX908G"
+                    style="font-size: 12px;"></a>
+            </div>
+        </div>
+    </div>
+    <div id="contenido">
+        <table id="tabla_TAX908G">
+            <thead>
+                <tr width="100%">
+
+                    <th colspan="2" style="text-align:center;">ENERO</th>
+                    <th colspan="2" style="text-align:center;">FEBRERO</th>
+                    <th colspan="2" style="text-align:center;">MARZO</th>
+                    <th colspan="2" style="text-align:center;">ABRIL</th>
+                    <th colspan="2" style="text-align:center;">MAYO</th>
+                    <th colspan="2" style="text-align:center;">JUNIO</th>
+                    <th colspan="2" style="text-align:center;">JULIO</th>
+                    <th colspan="2" style="text-align:center;">AGOSTO</th>
+                    <th colspan="2" style="text-align:center;">SEPTIEMBRE</th>
+                    <th colspan="2" style="text-align:center;">OCTUBRE</th>
+                    <th colspan="2" style="text-align:center;">NOVIEMBRE</th>
+                    <th colspan="2" style="text-align:center;">DICIEMBRE</th>
+                </tr>
+                <tr>
+                    <th style="text-align:center;">FECHA</th>
+                    <th style="text-align:center;">PRODUCIDO</th>
+                    <th style="text-align:center;">FECHA</th>
+                    <th style="text-align:center;">PRODUCIDO</th>
+                    <th style="text-align:center;">FECHA</th>
+                    <th style="text-align:center;">PRODUCIDO</th>
+                    <th style="text-align:center;">FECHA</th>
+                    <th style="text-align:center;">PRODUCIDO</th>
+                    <th style="text-align:center;">FECHA</th>
+                    <th style="text-align:center;">PRODUCIDO</th>
+                    <th style="text-align:center;">FECHA</th>
+                    <th style="text-align:center;">PRODUCIDO</th>
+                    <th style="text-align:center;">FECHA</th>
+                    <th style="text-align:center;">PRODUCIDO</th>
+                    <th style="text-align:center;">FECHA</th>
+                    <th style="text-align:center;">PRODUCIDO</th>
+                    <th style="text-align:center;">FECHA</th>
+                    <th style="text-align:center;">PRODUCIDO</th>
+                    <th style="text-align:center;">FECHA</th>
+                    <th style="text-align:center;">PRODUCIDO</th>
+                    <th style="text-align:center;">FECHA</th>
+                    <th style="text-align:center;">PRODUCIDO</th>
+                    <th style="text-align:center;">FECHA</th>
+                    <th style="text-align:center;">PRODUCIDO</th>
+                </tr>
+            </thead>
+            <tbody id="bodyTable">
+            </tbody>
+        </table>
+    </div>
+</body>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+    @page {
+        margin: 5mm;
+        size: A4 landscape;
+    }
+
+    html,
+    body,
+    #documento,
+    #impresion {
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: 'Roboto', sans-serif;
+        box-sizing: border-box;
+    }
+
+    #encabezado {
+        width: 100%;
+        height: 100px;
+        border: 1px solid #000;
+        border-bottom: none;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        position: fixed;
+        top: 0;
+    }
+
+    .enc-logo,
+    .enc-izq,
+    .enc-der {
+        display: flex;
+        align-items: center;
+    }
+
+    .enc-izq div a {
+        text-transform: uppercase;
+    }
+
+    .enc-logo #logo {
+        width: 70%;
+        height: 60%;
+        margin: 0 auto;
+    }
+
+    .enc-logo #logo img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #contenido {
+        padding: 0 1px 0 0;
+        /* margin-top: 10%; */
+    }
+
+    #contenido table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table thead tr {
+        border: 1px solid #000;
+    }
+
+    table thead tr th {
+        padding: 10px 0;
+        font-size: 8px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    table tbody tr td {
+        padding: 2px 0;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    table thead:before {
+        content: " ";
+        display: block;
+        margin-top: 100px;
+    }
+
+
+    table#tabla_TAX908G tbody tr td {
+        padding: 2px 10px;
+        font-size: 8px;
+    }
+</style>
+<script>
+    var TAX908G = [];
+    var $_TIPO = null
+    var $_URL = null;
+
+    ipcRenderer.on('ping', (e, data) => {
+        TAX908G = data.datos;
+        var $_TIPO = data.tipo
+        $_URL = data.url
+
+        $('#nombreEmpresa').text(TAX908G.TOTALES[0]);
+        $('#fecha_TAX908G').text(TAX908G.TOTALES[2]);
+
+        var meses = TAX908G.Listado
+        var filas = []
+        for (var i = 0; i < 32; i++) {
+            filas[i] = []
+            for (var j = 0; j < 12; j++) {
+                var mes = meses[j]
+                let idx = (j + 1).toString().padStart(2, "0")
+                var dia = mes[idx]
+                var dia_current = dia[i]
+                filas[i].push(dia_current)
+            }
+        }
+
+        filas.forEach((mes, index) => {
+            var table = document.getElementById("bodyTable")
+            var tr = document.createElement('TR');
+
+            mes.forEach((el) => {
+                var td = document.createElement('TD')
+                td.appendChild(document.createTextNode(el.FECHA));
+                tr.appendChild(td)
+
+                var td = document.createElement('TD')
+                td.appendChild(document.createTextNode(el.PRODUC));
+                tr.appendChild(td)
+            })
+
+            table.appendChild(tr);
+        })
+
+        var nit = TAX908G.TOTALES[1];
+        var url = path.join(`P:\\PROG\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('#logo')
+        });
+
+        if ($_TIPO == 'csv') imprimirCsv();
+    })
+
+
+    function imprimirCsv() {
+        var csv = [];
+        var rows = document.querySelectorAll("table tr");
+
+
+        for (var i = 0; i < rows.length; i++) {
+            var row = [], cols = rows[i].querySelectorAll("td, th");
+            for (var j = 0; j < cols.length; j++) row.push(cols[j].innerText.replace(/,/g, ''));
+            csv.push(row.join(","));
+        }
+
+        var head_csv = [$('.nombreusu_TAX908A').text(), "Producido del carro", $('#fecha_TAX908A').text()]
+        csv.unshift(head_csv.join(","))
+
+        _formatoCsv(csv.join("\n"));
+    }
+
+    function _formatoCsv(csv) {
+        var urlCsv = $_URL + '.csv';
+        try {
+            fs.writeFile(urlCsv, csv, 'utf-8', function (e) {
+                var window = remote.getCurrentWindow();
+                window.close();
+            });
+        } catch (e) {
+            alert('Ha ocurrido un error escribiendo el archivo: ' + urlCsv);
+        }
+    }
+</script>

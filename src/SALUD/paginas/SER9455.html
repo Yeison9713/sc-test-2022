@@ -1,0 +1,170 @@
+<div id="ser9455">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <div class="form-horizontal">
+                <div class="col-md-7 no-padding" style="float: none; margin: 0 auto;">
+                    <div class="form-group box-center" id="faseFechaIni">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label>Fecha inicial.</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Año:</label>
+                                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                    <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="4" v-model="form.fecha_ini.anio" required data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                    <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="2" v-model="form.fecha_ini.mes" required data-orden="2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                    <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="2" v-model="form.fecha_ini.dia" required data-orden="3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7 no-padding" style="float: none; margin: 0 auto;">
+                    <div class="form-group box-center" id="faseFechaFin">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label>Fecha fin.</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Año:</label>
+                                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                    <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="4" v-model="form.fecha_fin.anio" required data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                    <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="2" v-model="form.fecha_fin.mes" required data-orden="2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                    <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="2" v-model="form.fecha_fin.dia" required data-orden="3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7 no-padding" style="float: none; margin: 0 auto;">
+                    <div class="form-group box-center">
+                        <div class="col-md-3 col-sm-3 col-xs-3" id="fasePaciente">
+                            <label class="float-left">Paciente.</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15"
+                                    v-model="form.id_paciente" required data-orden="1"
+                                    v-on:keyup.119="_ventanaPacientes" ref="id_paciente" placeholder="99 - Todos">
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-5">
+                            <label class="float-left">&nbsp;</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    v-model="descrpcion.paciente" style="text-overflow: ellipsis;">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-4" id="_validarHcSinFact">
+                            <label class="float-left">Historia sin factura</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                    v-model="form.filtrarHcSinFact" required data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-7 no-padding" style="float: none; margin: 0 auto;">
+                    <div class="form-group box-center">
+                        <div class="col-md-2 col-sm-2 col-xs-2" id="faseUnserv">
+                            <label class="float-left">Unid.Serv.</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                    v-model="form.unserv" required data-orden="1" v-on:keyup.119="_ventanaUnidades"
+                                    ref="unserv" placeholder="** - Todos">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <label class="float-left">&nbsp;</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    v-model="descrpcion.unserv" style="text-overflow: ellipsis;">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3 col-sm-3 col-xs-3" id="faseProfesional">
+                            <label class="float-left">Personal atiende.</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                    v-model="form.id_profesional" required data-orden="1"
+                                    v-on:keyup.119="_ventanaProfesionales" ref="id_profesional"
+                                    placeholder="99 - Todos">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <label class="float-left">&nbsp;</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    v-model="descrpcion.profesional" style="text-overflow: ellipsis;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7 no-padding" style="float: none; margin: 0 auto;">
+                    <div class="form-group box-center">
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <label class="float-left">Tipo formu.</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    v-model="descrpcion.tipo_formu" style="text-overflow: ellipsis;"
+                                    placeholder="* - Todos">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-2" id="faseDiscriminar">
+                            <label class="float-left">Discriminar.</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                                    maxlength="1" v-model="form.discriminar" required data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <loader_modal :estado="estado_loader" :progreso="progreso" :loader="loader" :label="label_loader"></loader_modal>
+</div>
+
+<script src="../../SALUD/scripts/SER9455.js"></script>

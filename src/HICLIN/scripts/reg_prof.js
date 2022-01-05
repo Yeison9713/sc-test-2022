@@ -1,0 +1,42 @@
+function getObjRegProf() {
+  return {
+    cod: "",
+    descrip: "",
+    reg_med: "",
+    tabla_cl: Array(7).fill(""),
+    tabla_esp: Array(10).fill({ esp: "", descrip: "" }),
+    oper_aut: "",
+    oper_aut_ciru: "",
+    oper_aut_otro: "",
+    rango_bloq: "",
+    cta_ret: "",
+    cantd_citas: "",
+    div2: "",
+    int_min: "",
+    tabla_turnos: Array(7).fill(Array(4).fill({ sucu_ini: "", hora_ini: "", hora_fin: "", int_min: "" })),
+    deshabil: { fecha_ini_des: "", hora_ini_des: "", fecha_fin_des: "", hora_fin_des: "" },
+    sobreage: "",
+    asoc: "",
+    forma_age: "",
+    estado: "",
+    div: "",
+    atiende: "",
+    descrip_atiende: "",
+    contrato: "",
+    porcent: "00",
+    imp_birad: "",
+    imp_norm: "",
+    imp_dvd: "",
+    oper_aut_4: "",
+    oper_aut_5: "",
+    operador_asigna: "",
+    detalle: "",
+    sucursal: { sucur: "", ciud_sucu: "" },
+    oper: "",
+    fecha: "",
+  };
+}
+
+module.exports = {
+  getObjRegProf,
+};

@@ -1,0 +1,116 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER8908">
+  <div class="portlet-body">
+    <form class="form-horizontal">
+      <div class="form-group col-md-6 col-sm-12 col-xs-12 box-center">
+        <div class="col-md-12 col-sm-12 col-xs-12" id="VALIDAR1_SER8908">
+          <div class="inline-inputs">
+            <label class="col-md-4 col-sm-8 col-xs-12">Medico:</label>
+            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+              <input @Keyup.F8="_f8Profesionales_SER809AA" id="medico_SER8908"
+                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="13" data-orden="1" />
+            </div>
+            <button type="button" @click="_f8Profesionales_SER809AA"
+              class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+              <i class="icon-magnifier"></i>
+            </button>
+            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+              <input id="descripmedico_SER8908" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                v-model="form.descripmedi_SER8908" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+        <div class="col-md-2 col-sm-2 col-xs-12 head-box">
+          <label>Fecha Cita</label>
+        </div>
+        <div>
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="inline-inputs">
+              <label class="col-md-6 col-sm-6 col-xs-6">Año:</label>
+              <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR2_SER8908">
+                <input type="number" id="ano_SER8908" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                  data-orden="1" required="true" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="inline-inputs">
+              <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+              <div class="input-group col-md-6 col-sm-5 col-xs-5" id="VALIDAR3_SER8908">
+                <input type="number" id="mes_SER8908" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                  data-orden="1" required="true" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="inline-inputs">
+              <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+              <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR4_SER8908">
+                <input type="number" id="dia_SER8908" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                  data-orden="1" required="true" />
+              </div>
+            </div>
+          </div>
+          <div class="salto-linea"></div>
+          <div class="col-md-2 col-sm-2 col-xs-12 head-box">
+            <label>Hora cita</label>
+          </div>
+          <div>
+            <div class="col-md-3 col-sm-4 col-xs-12">
+              <div class="inline-inputs">
+                <label class="col-md-6 col-sm-6 col-xs-6">Hora inicial:</label>
+                <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR5_SER8908">
+                  <input type="number" id="horainicial_SER8908" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="4" data-orden="1" required="true" />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-12">
+              <div class="inline-inputs">
+                <label class="col-md-6 col-sm-6 col-xs-6">Hora final:</label>
+                <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VALIDAR6_SER8908">
+                  <input type="number" id="horafinal_SER8908" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="2" data-orden="1" required="true" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="width: 100%; max-height: 420px; overflow-y: auto;">
+            <table id="TABLA_SER8908" class="table table-light table-striped">
+              <tbody>
+                <tr v-for="(row, index) in tablacitasmedico_SER8908">
+                  <td style="width: 5%;">
+                    {{index + 1}}
+                  </td>
+                  <td style="width: 10%;">
+                    {{row.HORA}}
+                  </td>
+                  <td style="width: 15%;">
+                    {{row.APELLIDO}}
+                  </td>
+                  <td style="width: 15%;">
+                    {{row.NOMBRE}}
+                  </td>
+                  <td style="width: 10%;">
+                    {{row.TIPOFACT}}
+                  </td>
+                  <td style="width: 5%;">
+                    {{row.EPS}}
+                  </td>
+                  <td style="width: 25%;">
+                    {{row.NOMBREENT}}
+                  </td>
+                  <td style="width: 15%;">
+                    {{row.ID}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="../../SALUD/scripts/SER8908.js" type="text/javascript"></script>

@@ -1,0 +1,126 @@
+<style>
+    #TABLA_INV022 th {
+        text-align: center;
+    }
+
+    #TABLA_INV022 td {
+        padding: 1px;
+    }
+
+
+    #divTabla {
+        overflow: scroll;
+        height: 460px;
+    }
+</style>
+
+<div class="col-md-12">
+    <div class="salto-linea"></div>
+    <div class="container" style="height: 110px; text-align: center;">
+        <h3 id="usuario_L">EMPRESA</h3>
+        <h4>RECONSOLIDA DEVOLUCIONES</h4>
+        <h5>Contabilizando transaccion 101<input id="transMSG1_INV022" style="width: 40px; " disabled><input
+                id="nroMSG1_INV022" style="width: 60px;" disabled>
+        </h5>
+    </div>
+    <div class="portlet-body no-padding">
+        <form class="form-horizontal">
+            <div class="salto-linea"></div>
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-5 col-sm-9 col-xs-9">Proveedor:</label>
+                        <div class="input-group col-md-7 col-sm-3 col-xs-3" id="proveedor">
+                            <input id="proveedor_INV022" type="text" maxlength="3" data-orden="1"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" style="border: 1px solid #4290D1;">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6 col-xs-6">
+                    <div class="inline-inputs">
+                        <label class="col-md-3 col-sm-9 col-xs-9">Nit</label>
+                        <div class="input-group col-md-9 col-sm-3 col-xs-3" id="nit">
+                            <input id="nit_INV022" type="text" maxlength="6" data-orden="1"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" style="border: 1px solid #4290D1;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="divTabla">
+                <div style="clear:both;"></div>
+                <!-- <hr> -->
+                <table id="TABLA_INV022" class="table table-light table-striped" data-orden="1">
+                    <thead>
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Valor</th>
+                            <th>Cuenta</th>
+                            <th>Descripcion</th>
+                            <th>Tercero</th>
+                            <th>Base Gravable</th>
+                            <th>Com</th>
+                            <th>Año</th>
+                            <th>Mes</th>
+                            <th>Dia</th>
+                            <th></th>
+                            <th>Centro de costo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <div class="col-md-1 col-sm-6 col-xs-6" style="visibility: hidden">
+                    <div class="inline-inputs" id='remisiones'>
+                        <div class="input-group col-md-12 col-sm-3 col-xs-3" id="vacio">
+                            <input id="vacio_INV022" type="text" maxlength="4" data-orden="1"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <input id="display1-L" type="text" data-orden="1"
+                    class="form-control input-sm col-md-7 col-sm-7 col-xs-7" style="width: 700px; padding: 7px; border: 1px solid #4290D1;">
+            </div>
+            <button type="button" class="btn btn-primary" style="padding: 8px; float: right; margin-right: 40px;"
+                id="btnResumen">RESUMEN POR GRUPO</button>
+
+            <div><a id="imprimir_SAL71G" class="float_SAL71G" style="left: 21px;">
+                    <span>F3 tabla</span>
+                    <i class="glyphicon glyphicon-floppy-save my-float-SAL71G"></i>
+                </a>
+            </div>
+    </div>
+</div>
+<style>
+    .float_SAL71G {
+        position: fixed;
+        width: 65px;
+        height: 60px;
+        bottom: 20px;
+        background-color: #476fad;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 1px 1px 1px #999;
+        overflow: hidden;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .float_SAL71G:hover {
+        box-shadow: 2px 2px 2px #999;
+        transition: padding .5s ease, background-position .5s ease, transform .8s ease;
+        text-decoration: none;
+        color: #FFF;
+    }
+
+    .my-float-SAL71G {
+        margin-left: 5px;
+    }
+</style>
+
+<script src="../../INVENT/scripts/INV022.js" type="text/javascript"></script>

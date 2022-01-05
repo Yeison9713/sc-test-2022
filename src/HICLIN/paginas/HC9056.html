@@ -1,0 +1,37 @@
+<div class="col-md-12" id="HC9056">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <form class="form-horizontal" onsubmit="return false;">
+                <div>
+
+                    <div class="form-group col-md-6 col-sm-6 col-xs-6 box-center">
+
+                        <div class="inline-inputs col-md-12">
+                            <label class="col-md-4" style="text-align: center">Fecha inicial:</label>
+                            <div class="input-group col-md-4" id="anoInicial">
+                                <input v-model="form.ano_inicial" type="number" placeholder="AAAA"
+                                    class="form-control col-md-12 text-center" required="true" data-orden="1"
+                                    maxlength="4" />
+                            </div>
+                            <div class="input-group col-md-4" id="mesInicial">
+                                <input v-model="form.mes_inicial" type="number" placeholder="MM"
+                                    class="form-control col-md-12 text-center" required="true" data-orden="1"
+                                    maxlength="2" />
+                            </div>
+                            <div class="input-group col-md-4" id="diaInicial">
+                                <input v-model="form.dia_inicial" type="number" placeholder="DD"
+                                    class="form-control col-md-12 text-center" required="true" data-orden="1"
+                                    maxlength="2" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <loader_modal :estado="estado_loader" :progreso="progreso" :loader="loader" :label="label_loader"></loader_modal>
+</div>
+
+<script src="../../HICLIN/scripts/HC9056.js" disabled='disabled' type="text/javascript"></script>

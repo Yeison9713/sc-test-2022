@@ -1,0 +1,300 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+<style id="estiloImpresion">
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+    html,
+    body,
+    #documento,
+    #impresion {
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: 'Roboto', sans-serif;
+        box-sizing: border-box;
+    }
+
+    /* #impresion,
+    #documento {
+        display: none;
+    } */
+
+    #encabezado {
+        width: 100%;
+        height: 100px;
+        border: 1px solid #000;
+        border-bottom: none;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        position: fixed;
+        top: 0;
+    }
+
+    .enc-logo,
+    .enc-izq,
+    .enc-der {
+        display: flex;
+        align-items: center;
+    }
+
+    .enc-izq div a {
+        text-transform: uppercase;
+    }
+
+    .enc-logo #logo {
+        width: 70%;
+        height: 60%;
+        margin: 0 auto;
+    }
+
+    .enc-logo #logo img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #contenido {
+        padding: 0 1px 0 0;
+        /* margin-top: 10%; */
+    }
+
+    #contenido table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table thead tr,
+    table tfoot tr {
+        border: 1px solid #000;
+    }
+
+    table thead tr th {
+        padding: 10px 0;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+    table tbody tr td,
+    table tfoot tr td {
+        padding: 2px 0;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    table#tabla-head thead:before {
+        content: " ";
+        display: block;
+        margin-top: 100px;
+    }
+
+    table#tablaComprobantes thead:before {
+        content: " ";
+        display: block;
+        margin-top: 20px;
+    }
+
+    table#tablaDetalle tfoot:before {
+        content: " ";
+        display: block;
+        margin-top: 40px;
+    }
+
+    table#tabla-head thead:after {
+        content: " ";
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    @media print {
+        #impresion {
+            display: block;
+        }
+    }
+</style>
+<div id="impresion">
+    <div id="encabezado">
+        <div class="enc-logo">
+            <div id="logo">
+                <!-- <img id="logo_url" /> -->
+            </div>
+        </div>
+        <div class="enc-izq">
+            <div>
+                <a id="nombreEmpresa" style="font-weight: 600;font-size: 24px;"></a>
+                <br>
+                <a style="font-size: 12px;font-weight: 600;" id="nitEmpresa">Nit. </a>
+                <br>
+                <a style="font-size: 12px;font-weight: 600;text-transform: uppercase;">Planilla intermunicipal </a>
+            </div>
+        </div>
+    </div>
+    <div id="contenido">
+        <table id="tabla-head">
+            <thead>
+                <tr>
+                    <th id="consecutivo">Comprobante intermunicipal nro: </th>
+                    <th>Fecha comprobante: <a id="fechaComprobante"></a></th>
+                </tr>
+                <tr>
+                    <th id="agencia">Agencia: </th>
+                    <th>Fecha planilla: <a id="fechaPlanilla"></a></th>
+                </tr>
+            </thead>
+        </table>
+
+        <table id="tablaDetalle">
+            <thead>
+                <tr>
+                    <th>Libro</th>
+                    <th>Placas</th>
+                    <th>Valor bruto</th>
+                    <th>Seguro</th>
+                    <th>Remesesas</th>
+                    <th>Avances</th>
+                    <th>Abonos</th>
+                    <th>Neto</th>
+                </tr>
+            </thead>
+            <tbody id="bodyTable"></tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2" style="text-align: right;">
+                        <b>Total: </b>
+                    </td>
+                    <td id="totalBruto">
+                    </td>
+                    <td id="totalSeguro">
+                    </td>
+                    <td id="totalRemesas">
+                    </td>
+                    <td id="totalAvances">
+                    </td>
+                    <td id="totalAbonos">
+                    </td>
+                    <td id="totalNeto">
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <table id="tablaComprobantes">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nit</th>
+                    <th>Valor débito</th>
+                    <th>Valor crédito</th>
+                    <th>Secuencia</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+<script>
+    ipcRenderer.on('ping', (e, data) => {
+        var url = path.join(`P:\\PROG\\LOGOS\\${data.extra.nit}.bmp`);
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg}`).appendTo('#logo')
+        });
+
+        console.log(data)
+        document.getElementById("nombreEmpresa").innerHTML = data.extra.empresa
+        document.getElementById("nitEmpresa").innerHTML += data.extra.nit
+        document.getElementById("consecutivo").innerHTML += data.extra.consecutivo
+
+        var formulario = data.datos.IMPRESION[2].DATOS[0]
+        console.log('Formulario', formulario)
+        document.getElementById("agencia").innerHTML += formulario.AGENCIA + " - " + formulario.DESCRIP
+        document.getElementById("fechaComprobante").innerHTML += `${formulario["FECHA-COMP"]}`
+        document.getElementById("fechaPlanilla").innerHTML += `${formulario["FECHA-PLACA"]}`
+
+        document.getElementById("totalBruto").innerHTML = formulario["T-VR-BRUTO"].trim()
+        document.getElementById("totalSeguro").innerHTML = formulario["T-VR-SEGURO"].trim()
+        document.getElementById("totalRemesas").innerHTML = formulario["T-VR-REMESAS"].trim()
+        document.getElementById("totalAvances").innerHTML = formulario["T-VR-AVANCE"].trim()
+        document.getElementById("totalAbonos").innerHTML = formulario["T-VR-ABONOS"].trim()
+        document.getElementById("totalNeto").innerHTML = formulario["VR-TOTAL"].trim()
+
+        var parent = document
+            .getElementById("tablaDetalle")
+            .getElementsByTagName("tbody")[0];
+
+        var tabla = data.datos.IMPRESION[0].TABLA
+        tabla.pop()
+
+        tabla.forEach(item => {
+            var actual_row = parent.rows.length;
+            var row = parent.insertRow(actual_row);
+            // var bruto = parseFloat(item["VR-BRUTO"].replace(/\,/g, "")) || 0;
+            // var seguro = parseFloat(item["VR-SEGURO"].replace(/\,/g, "")) || 0;
+            // var remesas = parseFloat(item["VR-REMESAS"].replace(/\,/g, "")) || 0;
+            // var avance = parseFloat(item["VR-AVANCE"].replace(/\,/g, "")) || 0;
+            // var abonos = parseFloat(item["VR-ABONOS"].replace(/\,/g, "")) || 0;
+            // var descuadre = parseFloat(item["VR-DESCUADRE"].replace(/\,/g, "")) || 0;
+            // var neto = bruto + seguro - remesas - avance - abonos
+
+            row
+                .insertCell(0)
+                .appendChild(document.createTextNode(item.LIBRO));
+            row
+                .insertCell(1)
+                .appendChild(document.createTextNode(item.PLACA));
+            row
+                .insertCell(2)
+                .appendChild(document.createTextNode(item["VR-BRUTO"].trim()));
+            row
+                .insertCell(3)
+                .appendChild(document.createTextNode(item["VR-SEGURO"].trim()));
+            row
+                .insertCell(4)
+                .appendChild(document.createTextNode(item["VR-REMESAS"].trim()));
+            row
+                .insertCell(5)
+                .appendChild(document.createTextNode(item["VR-AVANCE"].trim()));
+            row
+                .insertCell(6)
+                .appendChild(document.createTextNode(item["VR-ABONOS"].trim()));
+            row
+                .insertCell(7)
+                .appendChild(document.createTextNode(item["VR-TOTAL"].trim()));
+        })
+
+
+        var parent = document
+            .getElementById("tablaComprobantes")
+            .getElementsByTagName("tbody")[0];
+
+        var comprobantes = data.datos.IMPRESION[1].IMPUTACION
+        comprobantes.pop()
+        comprobantes.forEach(item => {
+            var actual_row = parent.rows.length;
+            var row = parent.insertRow(actual_row);
+
+            row
+                .insertCell(0)
+                .appendChild(document.createTextNode(item.CUENTA.trim()));
+            row
+                .insertCell(1)
+                .appendChild(document.createTextNode(item.ID.trim()));
+            row
+                .insertCell(2)
+                .appendChild(document.createTextNode(item.DEBITO.trim()));
+            row
+                .insertCell(3)
+                .appendChild(document.createTextNode(item.CREDITO.trim()));
+            row
+                .insertCell(4)
+                .appendChild(document.createTextNode(item.SECUENCIA.trim()));
+        })
+    })
+</script>

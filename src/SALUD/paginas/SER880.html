@@ -1,0 +1,304 @@
+<div class="col-md-12 col-sm-12" style="float: none; margin: 0 auto;">
+    <div class="portlet light box-center box-title" style="margin: 0 auto;">
+        <div class="portlet-title">
+            <div class="caption" style="text-align:center">
+                <span class="caption-subject bold" style="text-align: center;">Creación Cita Triage</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12" id="SER880">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <form class="form-horizontal">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="margin: 0 auto;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex">
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-7 col-sm-7 col-xs-12">FECHA:</label>
+                                    <div class="input-group col-md-9 col-sm-9 col-xs-12">
+                                        <input v-model="descripcion.fecha" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-7 col-sm-7 col-xs-12">HORA:</label>
+                                    <div class="input-group col-md-9 col-sm-9 col-xs-12">
+                                        <input v-model="form.hora" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inline-inputs col-md-6 col-sm-6 col-xs-12">
+                                <label class="col-md-6 col-sm-6 col-xs-12">PACIENTE:</label>
+                                <div class="input-group col-md-9 col-sm-9 col-xs-12" id="paciSER880">
+                                    <input v-model="form.paci_SER880" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 paci_SER880"
+                                        @Keyup.F8='FNFPacientes_SER880' @Keyup.F2='FNFPacientes_SER880'>
+                                </div>
+                                <button type="button" id="paciBtn_SER880"
+                                    class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12" style="margin: 0 auto;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <div class="inline-inputs col-md-2 col-sm-2 col-xs-12">
+                                <label class="col-md-8 col-sm-8 col-xs-8">SEXO:</label>
+                                <div class="input-group col-md-9 col-sm-9 col-xs-12">
+                                    <input v-model="form.sexopaci_SER880" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                            <div class="inline-inputs col-md-2 col-sm-2 col-xs-12">
+                                <label class="col-md-8 col-sm-8 col-xs-8">EDAD:</label>
+                                <div class="input-group col-md-9 col-sm-9 col-xs-12">
+                                    <input v-model="form.edadpaci_SER880" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                            <div class="inline-inputs col-md-2 col-sm-2 col-xs-12">
+                                <label class="col-md-8 col-sm-8 col-xs-8">ESTADO:</label>
+                                <div class="input-group col-md-9 col-sm-9 col-xs-12">
+                                    <input v-model="form.estadopaci_SER880" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                            <div class="inline-inputs col-md-3 col-sm-2 col-xs-12">
+                                <label class="col-md-8 col-sm-8 col-xs-8">EMBARAZO:</label>
+                                <div class="input-group col-md-9 col-sm-9 col-xs-12">
+                                    <input v-model="form.embarazo_SER880" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="inline-inputs col-md-12 col-sm-12 col-xs-12">
+                                <label class="col-md-4 col-sm-4 col-xs-4">1ER APELLIDO</label>
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.apell1_SER880"
+                                    type="text" data-orden="1">
+                            </div>
+                            <div class="salto-linea"></div>
+                            <div class="inline-inputs col-md-12 col-sm-12 col-xs-12">
+                                <label class="col-md-4 col-sm-4 col-xs-4">1ER NOMBRE</label>
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.nomb1_SER880"
+                                    type="text" data-orden="1">
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="inline-inputs col-md-12 col-sm-12 col-xs-12">
+                                <label class="col-md-4 col-sm-4 col-xs-4">2DO APELLIDO</label>
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.apell2_SER880"
+                                    type="text" data-orden="1">
+                            </div>
+                            <div class="salto-linea"></div>
+                            <div class="inline-inputs col-md-12 col-sm-12 col-xs-12">
+                                <label class="col-md-4 col-sm-4 col-xs-4">2DO NOMBRE</label>
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.nomb2_SER880"
+                                    type="text" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="inline-inputs col-md-12 col-sm-12 col-xs-12">
+                                <label class="col-md-8 col-sm-8 col-xs-8">ENTIDAD AFILIACIÓN</label>
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12" id="entidafil_SER880"
+                                    type="text" data-orden="1">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="inline-inputs col-md-12 col-sm-12 col-xs-12">
+                                <label class="col-md-8 col-sm-8 col-xs-8">ENTIDAD FACTURACIÓN</label>
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    v-model="form.entidafact_SER880" type="text" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <strong>
+                                Estados de ingreso
+                            </strong>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-12">TRAUMA?</label>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-12" id="traumSER880">
+                                    <input class="form-control col-md-12 col-sm-12 col-xs-12" id="traum_SER880"
+                                        type="text" data-orden="1" maxlength="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">REMITIDO?</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="remitidoSER880">
+                                    <input class="form-control col-md-12 col-sm-12 col-xs-12" id="remitido_SER880"
+                                        type="text" data-orden="1" maxlength="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">MÉDICO LEGAL?</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="medlegalSER880">
+                                    <input class="form-control col-md-12 col-sm-12 col-xs-12" id="medlegal_SER880"
+                                        type="text" data-orden="1" maxlength="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">SINTOMAS.ERA?</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12" id="sintomasiraSER880">
+                                    <input class="form-control col-md-12 col-sm-12 col-xs-12" id="sintomasira_SER880"
+                                        type="text" data-orden="1" maxlength="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-12">REINGRESO?</label>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-12" id="reingrSER880">
+                                    <input class="form-control col-md-12 col-sm-12 col-xs-12" id="reingr_SER880"
+                                        type="text" data-orden="1" maxlength="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-12">PRIORIDAD?</label>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-12" id="prioridadSER880">
+                                    <input class="form-control col-md-12 col-sm-12 col-xs-12" id="prioridad_SER880"
+                                        type="text" data-orden="1" maxlength="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="salto-linea"></div>
+                        <div class="col-md-2 col-sm-2 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-4 col-xs-12">TURNO?</label>
+                                <div class="input-group col-md-8 col-sm-8 col-xs-12" id="turnoSER880">
+                                    <input class="form-control col-md-12 col-sm-12 col-xs-12" id="turno_SER880"
+                                        type="text" data-orden="1" maxlength="3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-4 col-xs-12">OBSERVACION</label>
+                                <div class="input-group col-md-8 col-sm-8 col-xs-12" id="observSER880">
+                                    <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        v-model="form.observ_SER880" type="text" data-orden="1" maxlength="30">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="salto-linea"></div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 hidden" style="text-align: center;"
+                            id="TURNOSTRIAGE_SER880">
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-7 col-sm-7 col-xs-12">FECHA INGRESO</label>
+                                    <div class="input-group col-md-5 col-sm-5 col-xs-12">
+                                        <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            v-model="form.fecharepetida_SER880" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-7 col-sm-7 col-xs-12">HORA ATENDIDA</label>
+                                    <div class="input-group col-md-5 col-sm-5 col-xs-12">
+                                        <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            v-model="form.horaatendida_SER880" type="text" data-orden="1" maxlength="3">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-6 col-sm-6 col-xs-12">PRIORIDAD</label>
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                        <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            v-model="form.prioridadrepetida_SER880" type="text" data-orden="1"
+                                            maxlength="3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12"
+                            style="display: flex; align-items: center; border: 1px solid #ccc;">
+                            <div class="col-md-4 col-sm-4 col-xs-4 no-padding" style="border-right: 1px solid #ccc;">
+                                <strong class="col-md-12 col-sm-12 col-xs-12"
+                                    style="padding: 6px; border-bottom: 1px solid #ccc;">
+                                    Tabla conversion - estado
+                                </strong>
+                                <table class="table table-light table-striped" style="margin: 0;">
+                                    <thead>
+                                        <tr>
+                                            <th>Estado </th>
+                                            <th>Descripcion</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td> T</td>
+                                            <td> Trauma</td>
+                                        </tr>
+                                        <tr>
+                                            <td> R</td>
+                                            <td> Remitido</td>
+                                        </tr>
+                                        <tr>
+                                            <td> L</td>
+                                            <td> Médico legal</td>
+                                        </tr>
+                                        <tr>
+                                            <td> S</td>
+                                            <td> Sintomas.ERA</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-8 col-sm-8 col-xs-8 no-padding" style="text-align: center;">
+                                <label class="col-md-12 col-sm-12 col-xs-12" id="info1_SER880"><strong>PRESIONE
+                                        F2 -</strong> PARA MOSTRAR TURNOS TRIAGE</label>
+                                <label class="col-md-12 col-sm-12 col-xs-12" id="info2_SER880"> <strong>PRESIONE
+                                        F4 - </strong> PARA CONSULTAR BASE DE DATOS CONTROL</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <transition v-if="mostrarpacientes">
+            <div class="overlay_prosoft">
+                <div class="modal_prosoft" style="width: 90%">
+                    <div class="container_prosoft">
+                        <div class="col-md-12 no-padding">
+                            <ventanapacientes :data="datos_pacientes" :params="params_pacientes"
+                                @callback_esc="validarEsc_pacientes" @callback="validarCallback_pacientes">
+                            </ventanapacientes>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SER880.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HC810.js"></script>

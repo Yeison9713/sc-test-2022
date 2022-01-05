@@ -1,0 +1,1137 @@
+{
+  "Menu": [
+    {
+      "Id": "01",
+      "Descripcion": "Archivos maestros",
+      "Opc-segu": "N1",
+      "Sub": [
+        {
+          "Id": "011",
+          "Descripcion": "Actualizar cargos",
+          "Opc-segu": "N11",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM101",
+              "dll": "NOMINA\\NOM101.dll"
+            }
+          ]
+        },
+        {
+          "Id": "012",
+          "Descripcion": "Actualizar empleados",
+          "Opc-segu": "N12",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM102",
+              "dll": "NOMINA\\NOM102.dll"
+            }
+          ]
+        },
+        {
+          "Id": "013",
+          "Descripcion": "Actualizar conceptos",
+          "Opc-segu": "N13",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM103",
+              "dll": "NOMINA\\NOM103.dll"
+            }
+          ]
+        },
+        {
+          "Id": "014",
+          "Descripcion": "Datos de la empresa",
+          "Opc-segu": "N14",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM104",
+              "dll": "NOMINA\\NOM104.dll"
+            }
+          ]
+        },
+        {
+          "Id": "015",
+          "Descripcion": "Actualiza novedades basicas",
+          "Opc-segu": "N15",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM105",
+              "dll": "NOMINA\\NOM105.dll"
+            }
+          ]
+        },
+        {
+          "Id": "016",
+          "Descripcion": "Actualiza archivos terceros",
+          "Opc-segu": "N16",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CON110C",
+              "dll": "CONTAB\\CON110C.dll"
+            }
+          ]
+        },
+        {
+          "Id": "017",
+          "Descripcion": "Actualizar encabezado nomina",
+          "Opc-segu": "N17",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM107",
+              "dll": "NOMINA\\NOM107.dll"
+            }
+          ]
+        },
+        {
+          "Id": "018",
+          "Descripcion": "Directorios nomina dispersa",
+          "Opc-segu": "N18",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM108",
+              "dll": "NOMINA\\NOM108.dll"
+            }
+          ]
+        },
+        {
+          "Id": "019",
+          "Descripcion": "Tablas secretaria de educacion",
+          "Opc-segu": "N19",
+          "Sub": [
+            {
+              "Id": "0191",
+              "Descripcion": "Establecimientos educativos",
+              "Opc-segu": "Q81",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM109A",
+                  "dll": "NOMINA\\NOM109A.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0192",
+              "Descripcion": "Cargos educacion",
+              "Opc-segu": "Q82",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM109B",
+                  "dll": "NOMINA\\NOM109B.dll"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "01A",
+          "Descripcion": "Actualiza actividades",
+          "Opc-segu": "N10",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CON110F",
+              "dll": "CONTAB\\CON110F.dll"
+            }
+          ]
+        },
+        {
+          "Id": "01B",
+          "Descripcion": "Actualiza motivos corresponsalia",
+          "Opc-segu": "N11",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM10A",
+              "dll": "NOMINA\\NOM10A.dll"
+            }
+          ]
+        },
+        {
+          "Id": "01C",
+          "Descripcion": "Tablas DIAN U.V.T",
+          "Opc-segu": "C1212",
+          "Sub": [
+            {
+              "Id": "01C1",
+              "Descripcion": "Actualizar interes mora mes",
+              "Opc-segu": "N11",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "DIAN01",
+                  "dll": "CONTAB\\DIAN01.dll"
+                }
+              ]
+            },
+            {
+              "Id": "01C2",
+              "Descripcion": "Actualizar valor Y.V.T anual",
+              "Opc-segu": "N12",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "DIAN02",
+                  "dll": "CONTAB\\DIAN02.dll"
+                }
+              ]
+            },
+            {
+              "Id": "01C3",
+              "Descripcion": "Tablas impuesto sobre renta",
+              "Opc-segu": "N13",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "DIAN03",
+                  "dll": "CONTAB\\DIAN03.dll"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "02",
+      "Descripcion": "Movimiento",
+      "Opc-segu": "N2",
+      "Sub": [
+        {
+          "Id": "021",
+          "Descripcion": "Actualiza datos nomina",
+          "Opc-segu": "N21",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM201",
+              "dll": "NOMINA\\NOM201.dll"
+            }
+          ]
+        },
+        {
+          "Id": "022",
+          "Descripcion": "Imprime formato de nomina",
+          "Opc-segu": "N22",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM202",
+              "dll": "NOMINA\\NOM202.dll"
+            }
+          ]
+        },
+        {
+          "Id": "023",
+          "Descripcion": "Listado anexos de nomina",
+          "Opc-segu": "N23",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM203",
+              "dll": "NOMINA\\NOM203.dll"
+            }
+          ]
+        },
+        {
+          "Id": "024",
+          "Descripcion": "Imprime cupones de pago",
+          "Opc-segu": "N24",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM204",
+              "dll": "NOMINA\\NOM204.dll"
+            }
+          ]
+        },
+        {
+          "Id": "025",
+          "Descripcion": "Formato nomina basico",
+          "Opc-segu": "N25",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM205",
+              "dll": "NOMINA\\NOM205.dll"
+            }
+          ]
+        },
+        {
+          "Id": "026",
+          "Descripcion": "Capturar horas laboradas",
+          "Opc-segu": "N26",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM206",
+              "dll": "NOMINA\\NOM206.dll"
+            }
+          ]
+        },
+        {
+          "Id": "027",
+          "Descripcion": "Formato nomina X dependencia",
+          "Opc-segu": "N27",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM207",
+              "dll": "NOMINA\\NOM207.dll"
+            }
+          ]
+        },
+        {
+          "Id": "028",
+          "Descripcion": "Nomina dispersa consolidada",
+          "Opc-segu": "N28",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM208",
+              "dll": "NOMINA\\NOM208.dll"
+            }
+          ]
+        },
+        {
+          "Id": "029",
+          "Descripcion": "Corresponsalia empleado",
+          "Opc-segu": "N29",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM209",
+              "dll": "NOMINA\\NOM209.dll"
+            }
+          ]
+        },
+        {
+          "Id": "02A",
+          "Descripcion": "Cupon de pago via e-mail",
+          "Opc-segu": "N2A",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM210",
+              "dll": "NOMINA\\NOM210.dll"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "03",
+      "Descripcion": "Consultas",
+      "Opc-segu": "N3",
+      "Sub": [
+        {
+          "Id": "031",
+          "Descripcion": "Nomina por empleado",
+          "Opc-segu": "N31",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM301",
+              "dll": "NOMINA\\NOM301.dll"
+            }
+          ]
+        },
+        {
+          "Id": "032",
+          "Descripcion": "Kardex de mov. por empleado",
+          "Opc-segu": "N32",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM302",
+              "dll": "NOMINA\\NOM302.dll"
+            }
+          ]
+        },
+        {
+          "Id": "033",
+          "Descripcion": "Constancia ordenes de servicio",
+          "Opc-segu": "N33",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM303",
+              "dll": "NOMINA\\NOM303.dll"
+            }
+          ]
+        },
+        {
+          "Id": "034",
+          "Descripcion": "Consulta doc. escaneados",
+          "Opc-segu": "N34",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM304",
+              "dll": "NOMINA\\NOM304.dll"
+            }
+          ]
+        },
+        {
+          "Id": "035",
+          "Descripcion": "Corresponsalia empleado",
+          "Opc-segu": "N35",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM305",
+              "dll": "NOMINA\\NOM305.dll"
+            }
+          ]
+        },
+        {
+          "Id": "036",
+          "Descripcion": "Consulta comprob. contable",
+          "Opc-segu": "N36",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM306",
+              "dll": "NOMINA\\NOM306.dll"
+            }
+          ]
+        },
+        {
+          "Id": "037",
+          "Descripcion": "Resumen contabilizacion",
+          "Opc-segu": "N37",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM307",
+              "dll": "NOMINA\\NOM307.dll"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "04",
+      "Descripcion": "Catalogos",
+      "Opc-segu": "N4",
+      "Sub": [
+        {
+          "Id": "041",
+          "Descripcion": "Catalogo de cargos",
+          "Opc-segu": "Q11",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM401",
+              "dll": "NOMINA\\NOM401.dll"
+            }
+          ]
+        },
+        {
+          "Id": "042",
+          "Descripcion": "Catalogo de empleados",
+          "Opc-segu": "Q12",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM402",
+              "dll": "NOMINA\\NOM402.dll"
+            }
+          ]
+        },
+        {
+          "Id": "043",
+          "Descripcion": "Catalogo de conceptos",
+          "Opc-segu": "Q13",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM403",
+              "dll": "NOMINA\\NOM403.dll"
+            }
+          ]
+        },
+        {
+          "Id": "044",
+          "Descripcion": "Catalogo para dotacion",
+          "Opc-segu": "Q14",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM404",
+              "dll": "NOMINA\\NOM404.dll"
+            }
+          ]
+        },
+        {
+          "Id": "045",
+          "Descripcion": "Catalogo de empleados",
+          "Opc-segu": "Q15",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM405",
+              "dll": "NOMINA\\NOM405.dll"
+            }
+          ]
+        },
+        {
+          "Id": "046",
+          "Descripcion": "Catalogo de vacaciones",
+          "Opc-segu": "Q16",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM406",
+              "dll": "NOMINA\\NOM406.dll"
+            }
+          ]
+        },
+        {
+          "Id": "047",
+          "Descripcion": "Catalogo de novedades basicas",
+          "Opc-segu": "Q17",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM407",
+              "dll": "NOMINA\\NOM407.dll"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "05",
+      "Descripcion": "Informes",
+      "Opc-segu": "N5",
+      "Sub": [
+        {
+          "Id": "051",
+          "Descripcion": "Planilla de devengos",
+          "Opc-segu": "Q11",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM504",
+              "dll": "NOMINA\\NOM504.dll"
+            }
+          ]
+        },
+        {
+          "Id": "052",
+          "Descripcion": "Planilla de descuentos",
+          "Opc-segu": "Q12",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM505",
+              "dll": "NOMINA\\NOM505.dll"
+            }
+          ]
+        },
+        {
+          "Id": "053",
+          "Descripcion": "Pago en bancos",
+          "Opc-segu": "Q13",
+          "Sub": [
+            {
+              "Id": "0531",
+              "Descripcion": "Dispersion de fondos",
+              "Opc-segu": "Q31",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM701A",
+                  "dll": "NOMINA\\NOM701A.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0532",
+              "Descripcion": "Planilla pago de bancos",
+              "Opc-segu": "Q32",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM506",
+                  "dll": "NOMINA\\NOM506.dll"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "054",
+          "Descripcion": "Cuadro calculo provisiones",
+          "Opc-segu": "Q14",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM518",
+              "dll": "NOMINA\\NOM518.dll"
+            }
+          ]
+        },
+        {
+          "Id": "055",
+          "Descripcion": "Planilla de cesantias e int",
+          "Opc-segu": "Q15",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM502C",
+              "dll": "NOMINA\\NOM502C.dll"
+            }
+          ]
+        },
+        {
+          "Id": "056",
+          "Descripcion": "Planilla acumulados anuales",
+          "Opc-segu": "Q16",
+          "Sub": [
+            {
+              "Id": "0561",
+              "Descripcion": "Planilla acumulados anuales",
+              "Opc-segu": "Q31",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM508",
+                  "dll": "NOMINA\\NOM508.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0562",
+              "Descripcion": "Planilla acumulados cantid",
+              "Opc-segu": "Q32",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM508C",
+                  "dll": "NOMINA\\NOM508C.dll"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "057",
+          "Descripcion": "Informe fondo nac. ahorro",
+          "Opc-segu": "Q17",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM510A",
+              "dll": "NOMINA\\NOM510A.dll"
+            }
+          ]
+        },
+        {
+          "Id": "058",
+          "Descripcion": "Cuadro aportes parafiscales",
+          "Opc-segu": "Q18",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM507",
+              "dll": "NOMINA\\NOM507.dll"
+            }
+          ]
+        },
+        {
+          "Id": "059",
+          "Descripcion": "Archivos planos sec. educac",
+          "Opc-segu": "C1P",
+          "Sub": [
+            {
+              "Id": "0591",
+              "Descripcion": "Detallado por institucion",
+              "Opc-segu": "Q31",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM511",
+                  "dll": "NOMINA\\NOM511.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0592",
+              "Descripcion": "Consolidado por cargo",
+              "Opc-segu": "Q32",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM512",
+                  "dll": "NOMINA\\NOM512.dll"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "05A",
+          "Descripcion": "Planilla de horas laboradas",
+          "Opc-segu": "C1A",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM526",
+              "dll": "NOMINA\\NOM526.dll"
+            }
+          ]
+        },
+        {
+          "Id": "05B",
+          "Descripcion": "Cuadro aportes por empleados",
+          "Opc-segu": "C1B",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM513",
+              "dll": "NOMINA\\NOM513.dll"
+            }
+          ]
+        },
+        {
+          "Id": "05C",
+          "Descripcion": "Cuadro aportes por empleados",
+          "Opc-segu": "C1C",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM514A",
+              "dll": "NOMINA\\NOM514A.dll"
+            }
+          ]
+        },
+        {
+          "Id": "05D",
+          "Descripcion": "Informacion de devengado",
+          "Opc-segu": "C1D",
+          "Sub": [
+            {
+              "Id": "05D1",
+              "Descripcion": "Detallado por institucion",
+              "Opc-segu": "QD1",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM515",
+                  "dll": "NOMINA\\NOM515.dll"
+                }
+              ]
+            },
+            {
+              "Id": "05D2",
+              "Descripcion": "Detallado por institucion",
+              "Opc-segu": "QD1",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM515",
+                  "dll": "NOMINA\\NOM515.dll"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "05E",
+          "Descripcion": "Certificado ing. y retenc.",
+          "Opc-segu": "C1E",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM516",
+              "dll": "NOMINA\\NOM516.dll"
+            }
+          ]
+        },
+        {
+          "Id": "05G",
+          "Descripcion": "Certificado laboral",
+          "Opc-segu": "C1G",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM515GA",
+              "dll": "NOMINA\\NOM515GA.dll"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "06",
+      "Descripcion": "Ayudas",
+      "Opc-segu": "N6",
+      "Sub": [
+        {
+          "Id": "061",
+          "Descripcion": "Anular nominas",
+          "Opc-segu": "Q61",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM601",
+              "dll": "NOMINA\\NOM601.dll"
+            }
+          ]
+        },
+        {
+          "Id": "062",
+          "Descripcion": "Contabilizar nominas",
+          "Opc-segu": "Q62",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM602",
+              "dll": "NOMINA\\NOM602.dll"
+            }
+          ]
+        },
+        {
+          "Id": "063",
+          "Descripcion": "Nota contabilidad del pago",
+          "Opc-segu": "Q63",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM603",
+              "dll": "NOMINA\\NOM603.dll"
+            }
+          ]
+        },
+        {
+          "Id": "064",
+          "Descripcion": "Autoliquidacion I.S.S",
+          "Opc-segu": "Q64",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM604A",
+              "dll": "NOMINA\\NOM604A.dll"
+            }
+          ]
+        },
+        {
+          "Id": "065",
+          "Descripcion": "Cancela cuentas de provis.",
+          "Opc-segu": "Q65",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM605",
+              "dll": "NOMINA\\NOM605.dll"
+            }
+          ]
+        },
+        {
+          "Id": "066",
+          "Descripcion": "Trasl. saldos novedad dscto",
+          "Opc-segu": "Q66",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM606",
+              "dll": "NOMINA\\NOM606.dll"
+            }
+          ]
+        },
+        {
+          "Id": "067",
+          "Descripcion": "Trasl. movimientos nomina",
+          "Opc-segu": "Q67",
+          "Sub": [
+            {
+              "Id": "0671",
+              "Descripcion": "Trasl. nomina otro directorio",
+              "Opc-segu": "Q71",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM671",
+                  "dll": "NOMINA\\NOM671.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0672",
+              "Descripcion": "Trasl. nomina empleado conc.",
+              "Opc-segu": "Q72",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM672",
+                  "dll": "NOMINA\\NOM672.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0673",
+              "Descripcion": "Trasl. concepto novedades",
+              "Opc-segu": "Q73",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM673",
+                  "dll": "NOMINA\\NOM673.dll"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "068",
+          "Descripcion": "Bloqueos de nomina",
+          "Opc-segu": "Q18",
+          "Sub": [
+            {
+              "Id": "0681",
+              "Descripcion": "Bloqueo de nomina",
+              "Opc-segu": "Q81",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM608",
+                  "dll": "NOMINA\\NOM608.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0682",
+              "Descripcion": "Bloqueo de pagos",
+              "Opc-segu": "Q82",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM608A",
+                  "dll": "NOMINA\\NOM608A.dll"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "069",
+          "Descripcion": "Ajustes inf. fondo nac ahor",
+          "Opc-segu": "C69",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM609",
+              "dll": "NOMINA\\NOM609.dll"
+            }
+          ]
+        },
+        {
+          "Id": "06A",
+          "Descripcion": "Incrementar salario cargos",
+          "Opc-segu": "C6A",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM610",
+              "dll": "NOMINA\\NOM610.dll"
+            }
+          ]
+        },
+        {
+          "Id": "06B",
+          "Descripcion": "Reliquida aportes nomina",
+          "Opc-segu": "C6B",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM611",
+              "dll": "NOMINA\\NOM611.dll"
+            }
+          ]
+        },
+        {
+          "Id": "06C",
+          "Descripcion": "Planilla unica aportes SOI",
+          "Opc-segu": "C6C",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM612A",
+              "dll": "NOMINA\\NOM612A.dll"
+            }
+          ]
+        },
+        {
+          "Id": "06D",
+          "Descripcion": "Importar novedad de contab",
+          "Opc-segu": "C6D",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM613",
+              "dll": "NOMINA\\NOM613.dll"
+            }
+          ]
+        },
+        {
+          "Id": "06E",
+          "Descripcion": "Importar novedad de plano",
+          "Opc-segu": "C6E",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM614",
+              "dll": "NOMINA\\NOM614.dll"
+            }
+          ]
+        },
+        {
+          "Id": "06G",
+          "Descripcion": "Importar extras desde plano",
+          "Opc-segu": "C6G",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM615A",
+              "dll": "NOMINA\\NOM615A.dll"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "07",
+      "Descripcion": "Liquidaciones",
+      "Opc-segu": "N7",
+      "Sub": [
+        {
+          "Id": "071",
+          "Descripcion": "Liquidacion de primas",
+          "Opc-segu": "Q11",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM701",
+              "dll": "NOMINA\\NOM701.dll"
+            }
+          ]
+        },
+        {
+          "Id": "072",
+          "Descripcion": "Liquidacion de cesantias",
+          "Opc-segu": "Q12",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM702",
+              "dll": "NOMINA\\NOM702.dll"
+            }
+          ]
+        },
+        {
+          "Id": "073",
+          "Descripcion": "Consolidacion de vacaciones",
+          "Opc-segu": "Q13",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM703",
+              "dll": "NOMINA\\NOM703.dll"
+            }
+          ]
+        },
+        {
+          "Id": "074",
+          "Descripcion": "Liquid. contrato de trabajo",
+          "Opc-segu": "Q14",
+          "Sub": [
+            {
+              "Id": "0741",
+              "Descripcion": "Liquid. contrato de trabajo",
+              "Opc-segu": "Q11",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM704",
+                  "dll": "NOMINA\\NOM704.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0742",
+              "Descripcion": "Imprimir liquid. contrato",
+              "Opc-segu": "Q12",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM704A",
+                  "dll": "NOMINA\\NOM704A.dll"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "075",
+          "Descripcion": "Liquid. retroactivo",
+          "Opc-segu": "Q15",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "NOM705",
+              "dll": "NOMINA\\NOM705.dll"
+            }
+          ]
+        },
+        {
+          "Id": "076",
+          "Descripcion": "Liquidacion vacaciones",
+          "Opc-segu": "Q16",
+          "Sub": [
+            {
+              "Id": "0761",
+              "Descripcion": "Liquidacion vacaciones",
+              "Opc-segu": "Q11",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM706",
+                  "dll": "NOMINA\\NOM706.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0762",
+              "Descripcion": "Imprimir liquid. vacaciones",
+              "Opc-segu": "Q12",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "NOM706A",
+                  "dll": "NOMINA\\NOM706A.dll"
+                }
+              ]
+            }
+
+
+
+          ]
+        }
+      ]
+    }
+
+
+
+  ]
+}

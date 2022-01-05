@@ -1,0 +1,707 @@
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<div class="col-md-12" id="PUB203">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="col-md-12 no-padding">
+          <div class="col-md-4" style="padding-left: 0">
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 no-padding inline-inputs" id="fecha_gen">
+                  <label class="col-md-4 lbl_left">Fecha generación</label>
+                  <label class="col-md-2">Año</label>
+                  <div class="input-group col-md-2">
+                    <input
+                      v-model="ano_gen"
+                      type="number"
+                      class="form-control text-center"
+                      maxlength="4"
+                      data-orden="1"
+                      required="true"
+                    />
+                  </div>
+                  <label class="col-md-2">Mes</label>
+                  <div class="input-group col-md-2">
+                    <input
+                      v-model="mes_gen"
+                      type="number"
+                      class="form-control text-center"
+                      maxlength="2"
+                      data-orden="2"
+                      required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding" style="margin-top: -6px">
+              <div class="col-md-4" style="padding-left: 0">
+                <div class="form-group col-md-12 box-center">
+                  <div class="col-md-12 no-padding inline-inputs" style="text-align: left">
+                    <label class="col-md-7 lbl_left">Novedad</label>
+                    <label class="col-md-5">{{ novedad }}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-8 no-padding">
+                <div class="form-group col-md-12 box-center">
+                  <div class="col-md-12 no-padding inline-inputs" style="text-align: left">
+                    <label class="col-md-6 lbl_left">Numero factura</label>
+                    <div class="input-group col-md-6" id="llave">
+                      <input
+                        v-model="reg_fact.llave"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="9"
+                        data-orden="1"
+                        required="true"
+                        @keydown.f8='_ventanaUsuarSer("datoFact", "leerFact")'
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding" style="margin-top: -6px">
+              <div class="col-md-8" style="padding-left: 0">
+                <div class="form-group col-md-12 box-center">
+                  <div class="col-md-12 no-padding inline-inputs" style="text-align: left">
+                    <label class="col-md-6 lbl_left">Ruteo</label>
+                    <label class="col-md-6">{{ reg_fact.rut }}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 no-padding">
+                <div class="form-group col-md-12 box-center">
+                  <div class="col-md-12 no-padding inline-inputs" style="text-align: left">
+                    <label class="col-md-7 lbl_left">Estrato</label>
+                    <div class="input-group col-md-5" id="est">
+                      <input
+                        v-model="reg_fact.est"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="1"
+                        data-orden="1"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding" style="margin-top: -6px">
+              <div class="col-md-12 form-group box-center no-padding">
+                <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%">
+                  <tbody>
+                    <tr v-for="(registro, index) in tabla_serv">
+                      <td class="text-center" style="width: 10%; padding-top: 0; padding-bottom: 0">
+                        <label class="col-md-12 lbl_left">{{ registro.serv }}</label>
+                      </td>
+                      <td class="text-right" style="width: 50%; padding-top: 0; padding-bottom: 0">
+                        <label class="col-md-12 lbl_left">{{ registro.descrip_serv }}</label>
+                      </td>
+                      <td class="text-right" style="width: 40%; padding-top: 0; padding-bottom: 0">
+                        <label class="col-md-12 lbl_right">{{ registro.valor }}</label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="text-left" style="width: 60%; padding-top: 0; padding-bottom: 0">
+                        <label class="col-md-12 lbl_left">Total Factura</label>
+                      </td>
+                      <td class="text-right" style="width: 15%; padding-top: 0; padding-bottom: 0">
+                        <label class="col-md-12 lbl_right">{{ total_fac_tabla_serv }}</label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="text-left" style="width: 60%; padding-top: 0; padding-bottom: 0">
+                        <label class="col-md-12 lbl_left">Menos Abonos</label>
+                      </td>
+                      <td class="text-right" style="width: 15%; padding-top: 0; padding-bottom: 0">
+                        <label class="col-md-12 lbl_right">{{ menos_abo_tabla_serv }}</label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="text-left" style="width: 60%; padding-top: 0; padding-bottom: 0">
+                        <label class="col-md-12 lbl_left">Nuevo Saldo</label>
+                      </td>
+                      <td class="text-right" style="width: 15%; padding-top: 0; padding-bottom: 0">
+                        <label class="col-md-12 lbl_right">{{ nuevo_sdo_tabla_serv }}</label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding" style="margin-top: -6px">
+              <div class="col-md-12 form-group box-center no-padding">
+                <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%">
+                  <thead>
+                    <tr>
+                      <th colspan="5" class="text-center" style="width: 100%">Relacion de abonos</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(registro, index) in reg_fact.tabla.datos_abon">
+                      <td class="text-center" style="width: 10%; padding-top: 0; padding-bottom: 0">
+                        <label class="col-md-12 lbl_left">{{ parseInt(index) + 1 }}</label>
+                      </td>
+                      <td class="text-center" style="width: 25%; padding-top: 0; padding-bottom: 0">
+                        <label class="col-md-12 lbl_left"
+                          >{{ registro.tot_abon.replace(/\,/g, "") > 0 ? registro.fecha_pag : "" }}</label
+                        >
+                      </td>
+                      <td class="text-right" style="width: 20%; padding-top: 0; padding-bottom: 0">
+                        <label class="col-md-12 lbl_left"
+                          >{{ registro.tot_abon.replace(/\,/g, "") > 0 ? registro.cod_pag : "" }}</label
+                        >
+                      </td>
+                      <td class="text-right" style="width: 15%; padding-top: 0; padding-bottom: 0">
+                        <label class="col-md-12 lbl_left"
+                          >{{ registro.tot_abon.replace(/\,/g, "") > 0 ? registro.sec_pag : "" }}</label
+                        >
+                      </td>
+                      <td class="text-right" style="width: 30%; padding-top: 0; padding-bottom: 0">
+                        <label class="col-md-12 lbl_right"
+                          >{{ registro.tot_abon.replace(/\,/g, "") > 0 ? registro.tot_abon : "" }}</label
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="4" class="text-left" style="width: 70%; padding-top: 0; padding-bottom: 0">
+                        <label class="col-md-12 lbl_left">Total Abonos</label>
+                      </td>
+                      <td class="text-right" style="width: 30%; padding-top: 0; padding-bottom: 0">
+                        <label class="col-md-12 lbl_right">{{ valor_tabla_abonos }}</label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding" style="margin-top: -6px">
+              <div class="col-md-12 no-padding">
+                <div class="form-group col-md-12 box-center">
+                  <div class="col-md-12 no-padding" style="text-align: left">
+                    <div class="col-md-12 head-box no-padding">
+                      <label class="lbl_left">Observaciones</label>
+                    </div>
+                    <div class="input-group col-md-12" id="observ">
+                      <input
+                        v-model="reg_fact.observ"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="50"
+                        data-orden="1"
+                      />
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <label class="col-md-2 lbl_left">{{ reg_fact.oper_cor }}</label>
+                    <label class="col-md-10 lbl_left">{{ reg_fact.fech_cor }}</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-8 no-padding">
+            <div class="col-md-12 no-padding">
+              <div class="col-md-12 form-group box-center inline-inputs">
+                <label class="col-md-2 lbl_left">Código Usuario</label>
+                <div class="input-group col-md-3" id="cat">
+                  <input
+                    v-model="reg_fact.cat"
+                    type="number"
+                    class="form-control cat text-center"
+                    data-orden="1"
+                    maxlength="15"
+                    required="true"
+                    @keydown.f8='_ventanaUsuarSer("datoCat", "leerCat")'
+                  />
+                </div>
+                <button
+                  @click='_ventanaUsuarSer("datoCat", "leerCat")'
+                  type="button"
+                  class="btn col-md-1 f8-Btn"
+                  style="width: 5%"
+                >
+                  <i class="icon-magnifier"></i>
+                </button>
+                <label class="col-md-6 lbl_left" style="padding-left: 15px !important">{{ nombre_cat }}</label>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding" style="margin-top: -6px">
+              <div class="col-md-6" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center">
+                  <div class="col-md-12 no-padding inline-inputs">
+                    <label class="col-md-2 lbl_left">Dirección</label>
+                    <label class="col-md-10 lbl_left">{{ reg_fact.direcc }}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center">
+                  <div class="col-md-12 no-padding inline-inputs">
+                    <label class="col-md-3 lbl_left">Servicio</label>
+                    <div class="input-group col-md-2" id="serv_w">
+                      <input
+                        v-model="serv_w"
+                        type="number"
+                        class="form-control serv_w text-center"
+                        data-orden="1"
+                        maxlength="1"
+                        required="true"
+                        min="1"
+                        max="6"
+                        @keydown.f8="_ventanaServicios"
+                      />
+                    </div>
+                    <label class="col-md-7 lbl_left">{{ descrip_serv }}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2 no-padding">
+                <div class="col-md-12 form-group box-center">
+                  <div class="col-md-12 no-padding inline-inputs">
+                    <label class="col-md-12" style="color: #476fad; text-align: center">F3 - GRABA</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding" style="margin-top: -6px">
+              <div class="col-md-5" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center">
+                  <div class="col-md-12 no-padding inline-inputs">
+                    <label class="col-md-5 lbl_left">Cons. Básico</label>
+                    <div class="input-group col-md-7" id="basico">
+                      <input
+                        v-model="reg_fact.tabla.serv_tab[indice_k].basico"
+                        type="text"
+                        class="form-control text-center"
+                        data-orden="1"
+                        maxlength="11"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4" style="padding-left: 0">
+                <div class="col-md-12 form-group box-center">
+                  <div class="col-md-12 no-padding inline-inputs">
+                    <label class="col-md-5 lbl_left">Complem.</label>
+                    <div class="input-group col-md-7" id="complem">
+                      <input
+                        v-model="reg_fact.tabla.serv_tab[indice_k].complem"
+                        type="text"
+                        class="form-control text-center"
+                        data-orden="1"
+                        maxlength="11"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 no-padding">
+                <div class="col-md-12 form-group box-center">
+                  <div class="col-md-12 no-padding inline-inputs">
+                    <label class="col-md-5 lbl_left">Sunt.</label>
+                    <div class="input-group col-md-7" id="suntuar">
+                      <input
+                        v-model="reg_fact.tabla.serv_tab[indice_k].suntuar"
+                        type="text"
+                        class="form-control text-center"
+                        data-orden="1"
+                        maxlength="11"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding" style="margin-top: -6px">
+              <div class="col-md-12 form-group box-center no-padding">
+                <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%">
+                  <thead>
+                    <tr>
+                      <th class="text-center" style="width: 4%; padding-top: 0; padding-bottom: 0">Item</th>
+                      <th class="text-center" style="width: 30%; padding-top: 0; padding-bottom: 0">Tar</th>
+                      <th class="text-center" style="width: 10%; padding-top: 0; padding-bottom: 0">Año</th>
+                      <th class="text-center" style="width: 10%; padding-top: 0; padding-bottom: 0">Mes</th>
+                      <th class="text-center" style="width: 18%; padding-top: 0; padding-bottom: 0">Cantidad</th>
+                      <th class="text-center" style="width: 18%; padding-top: 0; padding-bottom: 0">Valor</th>
+                      <th class="text-center" style="width: 10%; padding-top: 0; padding-bottom: 0">CT</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(registro, index) in reg_fact.tabla.serv_tab[indice_k].datos_tab">
+                      <td class="text-center" style="width: 4%; height: 20px">
+                        <label class="col-md-12 lbl_left">{{ parseInt(index) + 1 }}</label>
+                      </td>
+                      <td style="width: 30%">
+                        <div class="col-md-12 no-padding inline-inputs">
+                          <div class="input-group col-md-3" :id="`conc_${index}`">
+                            <input
+                              v-model="registro.conc"
+                              type="text"
+                              :class="`conc_${index}`"
+                              class="form-control text-center"
+                              maxlength="3"
+                              data-orden="1"
+                              @keydown.f8="_ventanaTarifas"
+                              @keydown.38="flecha_arriba"
+                              @keydown.40="flecha_abajo"
+                              style="height: 20px"
+                            />
+                          </div>
+                          <label
+                            class="col-md-9 lbl_left"
+                            style="padding-left: 15px !important; height: 20px !important; line-height: 0.5"
+                            >{{ descripciones_tar[`descrip_tar_${index}`] }}</label
+                          >
+                        </div>
+                      </td>
+                      <td style="width: 10%">
+                        <div class="input-group col-md-12" :id="`ano_${index}`">
+                          <input
+                            v-model="registro.ano"
+                            type="text"
+                            class="form-control text-center"
+                            maxlength="4"
+                            data-orden="1"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 10%">
+                        <div class="input-group col-md-12" :id="`mes_${index}`">
+                          <input
+                            v-model="registro.mes"
+                            type="number"
+                            class="form-control text-center"
+                            maxlength="2"
+                            data-orden="1"
+                            required="true"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 18%">
+                        <div class="input-group col-md-12" :id="`cant_${index}`">
+                          <input
+                            v-model="registro.cant"
+                            type="text"
+                            class="form-control text-right"
+                            maxlength="11"
+                            data-orden="1"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 18%">
+                        <div class="input-group col-md-12" :id="`vlr_${index}`">
+                          <input
+                            v-model="registro.vlr"
+                            type="text"
+                            class="form-control text-right"
+                            maxlength="13"
+                            data-orden="1"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 10%">
+                        <div class="input-group col-md-12" :id="`cuota_${index}`">
+                          <input
+                            v-model="registro.cuota"
+                            type="text"
+                            class="form-control text-right"
+                            maxlength="2"
+                            data-orden="1"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding" style="margin-top: -6px">
+              <div
+                class="col-md-12 form-group box-center no-padding"
+              >
+                <table
+                  id="tabla_totales"
+                  class="table table-light table-striped"
+                  style="margin-bottom: 0px; width: 100%"
+                >
+                  <tbody>
+                    <tr>
+                      <td style="width: 72%; height: 20px">
+                        <label class="col-md-12 lbl_left">Subtotal cargos del mes</label>
+                      </td>
+                      <td style="width: 18%">
+                        <div class="input-group col-md-12" id="sub_tot">
+                          <input
+                            v-model="reg_fact.tabla.serv_tab[indice_k].sub_tot"
+                            type="text"
+                            class="form-control text-right"
+                            maxlength="13"
+                            data-orden="1"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 10%"></td>
+                    </tr>
+                    <tr>
+                      <td style="width: 72%; height: 20px">
+                        <label class="col-md-12 lbl_left">Saldo anterior</label>
+                      </td>
+                      <td style="width: 18%">
+                        <div class="input-group col-md-12" id="sdo_ant">
+                          <input
+                            v-model="reg_fact.tabla.serv_tab[indice_k].sdo_ant"
+                            type="text"
+                            class="form-control text-right"
+                            maxlength="13"
+                            data-orden="1"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 10%"></td>
+                    </tr>
+                    <tr>
+                      <td style="width: 72%; height: 20px">
+                        <label class="col-md-12 lbl_left">Int. anterior</label>
+                      </td>
+                      <td style="width: 18%">
+                        <div class="input-group col-md-12" id="int_ant">
+                          <input
+                            v-model="reg_fact.tabla.serv_tab[indice_k].int_ant"
+                            type="text"
+                            class="form-control text-right"
+                            maxlength="13"
+                            data-orden="1"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 10%"></td>
+                    </tr>
+                    <tr>
+                      <td style="width: 72%; height: 20px">
+                        <label class="col-md-12 lbl_left">Int. mes</label>
+                      </td>
+                      <td style="width: 18%">
+                        <div class="input-group col-md-12" id="int_mes">
+                          <input
+                            v-model="reg_fact.tabla.serv_tab[indice_k].int_mes"
+                            type="text"
+                            class="form-control text-right"
+                            maxlength="13"
+                            data-orden="1"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 10%"></td>
+                    </tr>
+                    <tr>
+                      <td style="width: 72%; height: 20px">
+                        <label class="col-md-12 lbl_left">Ajustes</label>
+                      </td>
+                      <td style="width: 18%">
+                        <div class="input-group col-md-12" id="ajustes">
+                          <input
+                            v-model="reg_fact.tabla.serv_tab[indice_k].ajustes"
+                            type="text"
+                            class="form-control text-right"
+                            maxlength="13"
+                            data-orden="1"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 10%"></td>
+                    </tr>
+                    <tr>
+                      <td style="width: 72%; height: 20px">
+                        <label class="col-md-12 lbl_left">Cuota refinanciación</label>
+                      </td>
+                      <td style="width: 18%">
+                        <div class="input-group col-md-12" id="refinanc_mes">
+                          <input
+                            v-model="reg_fact.tabla.serv_tab[indice_k].refinanc_mes"
+                            type="text"
+                            class="form-control text-right"
+                            maxlength="13"
+                            data-orden="1"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 10%">
+                        <div class="input-group col-md-12" id="nro_cta">
+                          <input
+                            v-model="reg_fact.tabla.serv_tab[indice_k].nro_cta"
+                            type="text"
+                            class="form-control text-right"
+                            maxlength="2"
+                            data-orden="1"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 72%; height: 20px">
+                        <label class="col-md-12 lbl_left">Total servicio</label>
+                      </td>
+                      <td style="width: 18%">
+                        <div class="input-group col-md-12">
+                          <input
+                            v-model="total_serv_w"
+                            type="text"
+                            class="form-control text-right"
+                            maxlength="13"
+                            data-orden="1"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 10%"></td>
+                    </tr>
+                    <tr>
+                      <td style="width: 72%; height: 20px">
+                        <label class="col-md-12 lbl_left">Menos abonos a este servicio</label>
+                      </td>
+                      <td style="width: 18%">
+                        <div class="input-group col-md-12">
+                          <input
+                            v-model="menos_abonos_serv_w"
+                            type="text"
+                            class="form-control text-right"
+                            maxlength="13"
+                            data-orden="1"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 10%"></td>
+                    </tr>
+                    <tr>
+                      <td style="width: 72%; height: 20px">
+                        <label class="col-md-12 lbl_left">Nuevo saldo</label>
+                      </td>
+                      <td style="width: 18%">
+                        <div class="input-group col-md-12">
+                          <input
+                            v-model="nuevo_saldo_serv_w"
+                            type="text"
+                            class="form-control text-right"
+                            maxlength="13"
+                            data-orden="1"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 10%"></td>
+                    </tr>
+                    <tr>
+                      <td style="width: 72%; height: 20px">
+                        <label class="col-md-12 lbl_left">Saldo por refinanciar</label>
+                      </td>
+                      <td style="width: 18%">
+                        <div class="input-group col-md-12">
+                          <input
+                            v-model="reg_fact.tabla.serv_tab[indice_k].sdo_ref_serv"
+                            type="text"
+                            class="form-control text-right"
+                            maxlength="13"
+                            data-orden="1"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                      <td style="width: 10%">
+                        <div class="input-group col-md-12">
+                          <input
+                            v-model="reg_fact.tabla.serv_tab[indice_k].nro_cta"
+                            type="text"
+                            class="form-control text-right"
+                            maxlength="2"
+                            data-orden="1"
+                            style="height: 20px"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12 no-padding" v-if="mostrar_CLAVE">
+    <clave :params="params_CLAVE" @callback="callback_clave" @callback_esc="esc_clave"> </clave>
+  </div>
+</div>
+
+<script src="../../SERVDOM/scripts/PUB203.js" type="text/javascript"></script>
+
+<style>
+  label {
+    background: 0 !important;
+  }
+
+  .lbl_left {
+    text-align: left !important;
+    padding-left: 5px !important;
+  }
+
+  .lbl_right {
+    text-align: right !important;
+  }
+
+  #tabla_fact tbody tr {
+    height: 25px;
+  }
+
+  #tabla_fact tbody tr td {
+    padding: 0;
+  }
+
+  #tabla_totales tbody tr td {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+</style>

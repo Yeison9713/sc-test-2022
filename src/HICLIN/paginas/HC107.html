@@ -1,0 +1,358 @@
+<div class="col-md-12" id="HC107">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <div class="form-horizontal">
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                        style="display: flex; justify-content: space-around;">
+
+                        <div class="col-md-1 col-sm-2 col-xs-12">
+                            <label>Novedad</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="descrip_novedad" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-2 col-xs-12">
+                            <label>Clase</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="descrip_clase" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-xs-12" id="ValidarCodigo_HC107">
+                            <label>Código</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                    <input v-model="llave.codigo" id="codigo_HC107" type="number"
+                                        @keydown.119="ventana_macros" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="6" data-orden="1" required="true">
+                                </div>
+                                <button type="button" @click="ventana_macros"
+                                    class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 col-sm-8 col-xs-12" id="ValidarDetalle_HC107">
+                            <label>Detalle</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HC107.DETALLE" type="text" maxlength="40" data-orden="1"
+                                        required="true" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        style="text-align: left;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 no-padding">
+
+                    <div class="col-md-7 col-sm-12 col-xs-12 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarContenido_HC107">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Contenido</label>
+                                    <label>(25,000 caracteres máximo)</label>
+                                </div>
+                                <textarea v-model="global_HC107.CONTENIDO" class="form-control" disabled="disabled"
+                                    rows="24" maxlength="25000" data-orden="1" required="true"
+                                    style="resize: none; text-align: justify"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 col-sm-12 col-xs-12" style="padding-right: 0;">
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                            style="margin-bottom: 13px !important">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                                <label>Vias de acceso</label>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-4 col-sm-4 col-xs-4">1.</label>
+                                    <div class="input-group col-md-5 col-sm-5 col-xs-5" id="validarViaAcceso_1_HC107">
+                                        <input id="viaAccess_1" v-model="global_HC107.VIAS_ACCESO[0].VIA"
+                                            @keydown.119="ventanaViasAcceso('1')" maxlength="2" data-orden="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                    <button @click="ventanaViasAcceso('1')" type="button"
+                                        class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HC107.VIAS_ACCESO[0].DESCRIP" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-4 col-sm-4 col-xs-4">2.</label>
+                                    <div class="input-group col-md-5 col-sm-5 col-xs-5" id="validarViaAcceso_2_HC107">
+                                        <input id="viaAccess_2" v-model="global_HC107.VIAS_ACCESO[1].VIA"
+                                            @keydown.119="ventanaViasAcceso('2')" maxlength="2" data-orden="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                    <button @click="ventanaViasAcceso('2')" type="button"
+                                        class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HC107.VIAS_ACCESO[1].DESCRIP" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-4 col-sm-4 col-xs-4">3.</label>
+                                    <div class="input-group col-md-5 col-sm-5 col-xs-5" id="validarViaAcceso_3_HC107">
+                                        <input id="viaAccess_3" v-model="global_HC107.VIAS_ACCESO[2].VIA"
+                                            @keydown.119="ventanaViasAcceso('3')" maxlength="2" data-orden="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                    <button @click="ventanaViasAcceso('3')" type="button"
+                                        class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HC107.VIAS_ACCESO[2].DESCRIP" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-4 col-sm-4 col-xs-4">4.</label>
+                                    <div class="input-group col-md-5 col-sm-5 col-xs-5" id="validarViaAcceso_4_HC107">
+                                        <input id="viaAccess_4" v-model="global_HC107.VIAS_ACCESO[3].VIA"
+                                            @keydown.119="ventanaViasAcceso('4')" maxlength="2" data-orden="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                    <button @click="ventanaViasAcceso('4')" type="button"
+                                        class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HC107.VIAS_ACCESO[3].DESCRIP" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-4 col-sm-4 col-xs-4">5.</label>
+                                    <div class="input-group col-md-5 col-sm-5 col-xs-5" id="validarViaAcceso_5_HC107">
+                                        <input id="viaAccess_5" v-model="global_HC107.VIAS_ACCESO[4].VIA"
+                                            @keydown.119="ventanaViasAcceso('5')" maxlength="2" data-orden="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                    <button @click="ventanaViasAcceso('5')" type="button"
+                                        class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HC107.VIAS_ACCESO[4].DESCRIP" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-4 col-sm-4 col-xs-4">6.</label>
+                                    <div class="input-group col-md-5 col-sm-5 col-xs-5" id="validarViaAcceso_6_HC107">
+                                        <input id="viaAccess_6" v-model="global_HC107.VIAS_ACCESO[5].VIA"
+                                            @keydown.119="ventanaViasAcceso('6')" maxlength="2" data-orden="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                    <button @click="ventanaViasAcceso('6')" type="button"
+                                        class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HC107.VIAS_ACCESO[5].DESCRIP" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                            style="margin-bottom: 14px !important">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                                <label>Macros formulación</label>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-4 col-sm-4 col-xs-4">Drog</label>
+                                    <div class="input-group col-md-5 col-sm-5 col-xs-5" id="validarMacrosFormu_1_HC107">
+                                        <input id="drog_formu" v-model="global_HC107.MACROS_FORMU[0].CODIGO"
+                                            @keydown.119="ventanaMacrosHis('1')" maxlength="2" data-orden="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                    <button @click="ventanaMacrosHis('1')" type="button"
+                                        class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HC107.MACROS_FORMU[0].NOMBRE" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-4 col-sm-4 col-xs-4">Lab</label>
+                                    <div class="input-group col-md-5 col-sm-5 col-xs-5" id="validarMacrosFormu_2_HC107">
+                                        <input id="lab_formu" v-model="global_HC107.MACROS_FORMU[1].CODIGO"
+                                            @keydown.119="ventanaMacrosHis('2')" maxlength="2" data-orden="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                    <button @click="ventanaMacrosHis('2')" type="button"
+                                        class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HC107.MACROS_FORMU[1].NOMBRE" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-4 col-sm-4 col-xs-4">Imag</label>
+                                    <div class="input-group col-md-5 col-sm-5 col-xs-5" id="validarMacrosFormu_3_HC107">
+                                        <input id="imag_formu" v-model="global_HC107.MACROS_FORMU[2].CODIGO"
+                                            @keydown.119="ventanaMacrosHis('3')" maxlength="2" data-orden="1"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                    <button @click="ventanaMacrosHis('3')" type="button"
+                                        class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HC107.MACROS_FORMU[2].NOMBRE" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                <label>Creación</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                        <input v-model="global_HC107.ADMI_CREA" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            style="text-align: center">
+                                    </div>
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                        <input v-model="global_HC107.FECHA_CREA"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                <label>Modificación</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                        <input v-model="global_HC107.ADMI_MODIF" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            style="text-align: center">
+                                    </div>
+                                    <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                        <input v-model="global_HC107.FECHA_MODIF"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    input {
+        text-align: center
+    }
+</style>
+<script src="../../HICLIN/scripts/HC107.js" type="text/javascript"></script>

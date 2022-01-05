@@ -1,0 +1,32 @@
+<div class="col-md-12" id="SAL77424">
+    <div class="portlet light no-padding">
+      <div class="portlet-body no-padding">
+        <form class="form-horizontal" onSubmit="return false;">
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div class="form-group col-md-4 col-sm-4 col-xs-12 box-center">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="inline-inputs">
+                  <label class="col-md-6 col-sm-6 col-xs-6">Numero del envio:</label>
+                  <div class="input-group col-md-5 col-sm-5 col-xs-5" id="VALIDAR1_SAL77424">
+                    <input
+                    v-model="form.numeroenvio_SAL77424"
+                    class="form-control col-md-12 col-sm-12 col-xs-12 numeroenvio_SAL77424"
+                    data-orden="1"
+                    @Keyup.F8='_ventanaenvios_SAL77424'
+                    />
+                  </div>
+                  <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                      @click='_ventanaenvios_SAL77424'>
+                      <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <script src="../../SALUD/scripts/SAL77424.js" type="text/javascript"></script>
+  

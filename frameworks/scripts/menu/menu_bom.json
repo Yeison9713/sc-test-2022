@@ -1,0 +1,242 @@
+{
+    "Menu": [
+        {
+            "Id": "01",
+            "Descripcion": "Archivos maestros",
+            "Sub": [
+                {
+                    "Id": "011",
+                    "Descripcion": "Actualizar surtidores",
+                    "Opc-segu": "O1",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bom101.html"
+                },
+                {
+                    "Id": "012",
+                    "Descripcion": "Actualizar sobretasas",
+                    "Opc-segu": "O2",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bom103.html"
+                },
+                {
+                    "Id": "013",
+                    "Descripcion": "Validacion archivos combustibles",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bom113.html"
+                },
+                {
+                    "Id": "014",
+                    "Descripcion": "Conversion archivo combustible",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bom114.html"
+                },
+                {
+                    "Id": "015",
+                    "Descripcion": "Arre - Placas de combustibles",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/arre-placas.html"
+                }
+            ]
+        },
+        {
+            "Id": "02",
+            "Descripcion": "Comprobante combustibles",
+            "Sub": [
+                {
+                    "Id": "021",
+                    "Descripcion": "Elaborar comprobante",
+                    "Opc-segu": "O3",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bom104.html"
+                },
+                {
+                    "Id": "022",
+                    "Descripcion": "Re-imprimir comprobante",
+                    "Opc-segu": "O4",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bom105.html"
+                },
+                {
+                    "Id": "023",
+                    "Descripcion": "Anular comprobante",
+                    "Opc-segu": "O5",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bom106.html"
+                },
+                {
+                    "Id": "024",
+                    "Descripcion": "Re-consolidar comprobante",
+                    "Opc-segu": "O6",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bom107.html"
+                },
+                {
+                    "Id": "025",
+                    "Descripcion": "Correcion de comprobantes",
+                    "Opc-segu": "O8",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bom104e.html"
+                },
+                {
+                    "Id": "026",
+                    "Descripcion": "Generar fact. de combustible",
+                    "Opc-segu": "OC",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bomb11.html"
+                }
+            ]
+        },
+        {
+            "Id": "03",
+            "Descripcion": "Informes",
+            "Sub": [
+                {
+                    "Id": "031",
+                    "Descripcion": "Listado de galones",
+                    "Opc-segu": "O7",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bom108.html"
+                },
+                
+                {
+                    "Id": "032",
+                    "Descripcion": "Re-imprimir varios comprobantes",
+                    "Opc-segu": "O9",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bom109.html"
+                },
+                {
+                    "Id": "033",
+                    "Descripcion": "Resumen diario por turno",
+                    "Opc-segu": "OA",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bom110.html"
+                },
+                {
+                    "Id": "034",
+                    "Descripcion": "Informe de vales por cliente",
+                    "Opc-segu": "OD",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bomb13.html"
+                },
+                {
+                    "Id": "035",
+                    "Descripcion": "Informe de galonaje por vendedor",
+                    "Opc-segu": "OD",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bomb14.html"
+                },
+                {
+                    "Id": "036",
+                    "Descripcion": "Informe de vales facturados",
+                    "Opc-segu": "OD",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bom306.html"
+                }
+            ]
+        },
+        {
+            "Id": "04",
+            "Descripcion": "Medicion de tanques",
+            "Opc-segu": "",
+            "Sub": [
+                {
+                    "Id": "041",
+                    "Descripcion": "Config. clases de tanque",
+                    "Opc-segu": "OB1",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bomb01.html"
+                },
+                {
+                    "Id": "042",
+                    "Descripcion": "Actualizar tanques",
+                    "Opc-segu": "OB2",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bomb02.html"
+                },
+                {
+                    "Id": "043",
+                    "Descripcion": "Medición de tanques",
+                    "Opc-segu": "OB3",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/bomb03.html"
+                }
+            ]
+        },
+        {
+            "Id": "05",
+            "Descripcion": "Facturas",
+            "Sub": [
+                {
+                    "Id": "051",
+                    "Descripcion": "Elaborar facturas",
+                    "Opc-segu": "I41",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/INV421.html"
+                },
+                {
+                    "Id": "052",
+                    "Descripcion": "Re-imprimir facturas",
+                    "Opc-segu": "I42",
+                    "Tipo": "POWER",
+                    "Params": [
+                        {
+                            "formulario": "INV401",
+                            "dll": "INVENT\\INV401.dll",
+                            "Sucursal": "1",
+                            "Tipo-Opcion": "2",
+                            "NomFact": "FACT"
+                        }
+                    ]
+                },
+                {
+                    "Id": "053",
+                    "Descripcion": "Venta diaria de caja",
+                    "Opc-segu": "I48",
+                    "Tipo": "POWER",
+                    "Params": [
+                        {
+                            "formulario": "INV408",
+                            "dll": "INVENT\\INV408.dll",
+                            "sucursal": "1"
+                        }
+                    ]
+                },
+                {
+                    "Id": "054",
+                    "Descripcion": "Cuadre diario de caja",
+                    "Opc-segu": "C362",
+                    "Tipo": "POWER",
+                    "Params": [
+                        {
+                            "formulario": "CON135A",
+                            "dll": "CONTAB\\CON135A.dll",
+                            "sucursal": "1"
+                        }
+                    ]
+                },
+                {
+                    "Id": "055",
+                    "Descripcion": "Lista de precios",
+                    "Opc-segu": "I45",
+                    "Tipo": "POWER",
+                    "Params": [
+                        {
+                            "formulario": "MENU-I04-5",
+                            "dll": "INVENT\\MENU-I04-5.dll",
+                            "sucursal": "1"
+                        }
+                    ]
+                },
+                {
+                    "Id": "056",
+                    "Descripcion": "Reconsolidar facturas",
+                    "Opc-segu": "I44",
+                    "Tipo": "HTML",
+                    "Href": "/BOMBAS/paginas/INV404.html"
+                }
+            ]
+        }
+        
+    ]
+}

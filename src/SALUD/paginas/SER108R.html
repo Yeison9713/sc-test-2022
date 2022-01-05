@@ -1,0 +1,176 @@
+<style>
+    #TABLAPAQUETEINT_71G th {
+                text-align: center;
+            }
+</style>
+<!-- <div class="col-md-12 col-sm-12" style="float: none; margin: 0 auto;">
+    <div class="portlet light box-center box-title" style="margin: 0 auto;">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject bold"> 9,7,1,G -Actualiza maestro paquete integrales</span>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="col-md-12">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <form class="form-horizontal">
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-2 col-sm-3 col-xs-12">
+                        <div class="inline-inputs" id='GRUPO_71G'>
+                            <label class="col-md-6 col-sm-9 col-xs-9">Cod. Transaccion:</label>
+                            <div class="input-group col-md-8 col-sm-3 col-xs-3">
+                                <input id="grupos_71G" type="text" maxlength="2" data-orden="1" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                            <button type="button" id="gruposBtn_71G" class="btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="inline-inputs" id='CUPS_71G'>
+                            <label class="col-md-5 col-sm-9 col-xs-9">Compr a Fac:</label>
+                            <div class="input-group col-md-6 col-sm-3 col-xs-3">
+                                <input id="cups_71G" type="text" maxlength="4" data-orden="1" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <button type="button" id="cupsBtn_71G" class="btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="descripcups_71G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4" id="OSERV_71G">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-6 col-xs-6 text-label">Observac:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="observ_71G" type="text" maxlength="50" data-orden="1" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2" id="VALOR_71G">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6 text-label">Valor:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="valor_71G" maxlength="14" data-orden="1" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex">
+                        <div class="col-md-12 col-sm-12 col-xs-12 inline-inputs">
+
+                            <div class="col-md-2 col-sm-4 col-xs-4" id="ITEM_71G">
+                                <div class="inline-inputs">
+                                    <label class="col-md-4 col-sm-5 col-xs-5">Item</label>
+                                    <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                        <input id="item_71G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            maxlength="3" data-orden="1" required="true" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-xs-4" id="CL_71G">
+                                <div class="inline-inputs">
+                                    <label class="col-md-3 col-sm-5 col-xs-5">Cl</label>
+                                    <div class="input-group col-md-4 col-sm-5 col-xs-5">
+                                        <input id="cl_71G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            maxlength="1" data-orden="1" >
+                                    </div>
+                                    <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                        <input id="cldescrip_71G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-4 col-xs-4">
+                                <div class="inline-inputs">
+                                    <label class="col-md-3 col-sm-5 col-xs-5">Codigo</label>
+                                    <div class="input-group col-md-5 col-sm-5 col-xs-5" id="CODIGO_71C">
+                                        <input id="codigo_71G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            maxlength="17" data-orden="1" onkeyup="this.value = this.value.toUpperCase();">
+                                    </div>
+                                    <button type="button" id="codigoBtn_71G" class="btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                    <div class="input-group col-md-10 col-sm-5 col-xs-5">
+                                        <input id="descripcod_71G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-4 col-xs-4" id="CANTIDAD_71G">
+                                <div class="inline-inputs">
+                                    <label class="col-md-4 col-sm-6 col-xs-6">Cantidad</label>
+                                    <div class="input-group col-md-8 col-sm-6 col-xs-6">
+                                        <input id="cantidad_71G" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            maxlength="3" data-orden="1" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="clear:both;"></div>
+                    <hr>
+                    <div class="salto-linea"></div>
+                    <table id="TABLAPAQUETEINT_71G" class="table table-light table-striped">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Cl</th>
+                                <th></th>
+                                <th>Codigo</th>
+                                <th>Descripcion</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+
+                </div>
+                <a id="imprimir_SAL71G" class="float_SAL71G" style="left: 21px;">
+                    <span>F3 tabla</span>
+                    <i class="glyphicon glyphicon-floppy-save my-float-SAL71G"></i>
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+    .float_SAL71G {
+        position: fixed;
+        width: 65px;
+        height: 60px;
+        bottom: 20px;
+        background-color: #476fad;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 1px 1px 1px #999;
+        overflow: hidden;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .float_SAL71G:hover {
+        box-shadow: 2px 2px 2px #999;
+        transition: padding .5s ease, background-position .5s ease, transform .8s ease;
+        text-decoration: none;
+        color: #FFF;
+    }
+
+    .my-float-SAL71G {
+        margin-left: 5px;
+    }
+</style>
+
+<script src="../../SALUD/scripts/SER115.js" type="text/javascript"></script>

@@ -1,0 +1,120 @@
+<div class="col-md-12" id="MANT501">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <form class="form-horizontal">
+                <div class="col-md-1 col-sm-1 col-xs-1 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <label>Novedad :</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="novedad_mant501" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="salto-linea"></div>
+                <div class="col-md-11 col-sm-11 col-xs-11" style="padding-right: 0">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <label>Ciudad :</label>
+                            <div class="inline-inputs" id="validarCiudad_mant501">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="ciudad_mant501" id="ciudad_mant501"
+                                        @keydown.119="_ventanCiudmant501" type="text" maxlength="5" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        onkeyup="this.value = this.value.toUpperCase();" />
+                                </div>
+                                <button @click="_ventanCiudmant501" type="button"
+                                    class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-6">
+                            <label>Destino :</label>
+                            <div class="inline-inputs" id="validarDestino_mant501"style="text-align=center !important">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="destino_mant501" id="destino_mant501"
+                                        @keydown.119="_ventanDestmant501" type="text" maxlength="3" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        onkeyup="this.value = this.value.toUpperCase();" />
+                                </div>
+                                <button @click="_ventanDestmant501" type="button"
+                                    class="btn f8-Btn btn-default col-md-3 col-sm-3 col-xs-2">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <label>Nombre :</label>
+                            <div class="inline-inputs" id="validarDescrip_mant501">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="descrip_mant501" id="descrip_mant501"
+                                        type="text" maxlength="30" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        onkeyup="this.value = this.value.toUpperCase();" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <label>Distancia Km :</label>
+                            <div class="inline-inputs" id="validarDistancia_mant501">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="distancia_mant501" id="distancia_mant501"
+                                        type="text" maxlength="4" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        onkeyup="this.value = this.value.toUpperCase();" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+    .float_mant102 {
+        position: fixed;
+        width: 65px;
+        height: 60px;
+        bottom: 16px;
+        background-color: #476fad;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 1px 1px 1px #999;
+        overflow: hidden;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .float_mant102:hover {
+        box-shadow: 2px 2px 2px #999;
+        transition: padding .5s ease, background-position .5s ease, transform .8s ease;
+        text-decoration: none;
+        color: #FFF;
+    }
+
+    .my-float-mant102 {
+        margin-left: 5px;
+    }
+
+    input {
+        text-align: left;
+    }
+
+    input[type=text] {
+        text-transform: uppercase;
+    }
+</style>
+<script src="../../MANT/scripts/mant501.js" type="text/javascript"></script>

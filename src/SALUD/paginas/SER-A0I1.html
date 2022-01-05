@@ -1,0 +1,147 @@
+<div class="col-md-12" id="SER_A0I1">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <form class="form-horizontal">
+
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-8 col-sm-10 col-xs-12 box-center">
+
+                        <div class="col-md-12 no-padding" style="display: flex;justify-content: center;">
+                            <div class="col-md-4 col-sm-6 col-xs-12" id="validarTercero" style="text-align: left;">
+                                <label>Entidad</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                        <input id="tercero_sera0i1" v-model="tercero" data-orden="1" maxlength="10"
+                                            @keydown.119="ventanaTerceros" type="number"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                    <button type="button" @click="ventanaTerceros"
+                                        class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 col-sm-12 col-xs-12" style="text-align: left;">
+                                <label>Descripción</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input v-model="descrip_tercero" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div v-if="seleccionar_archivo" class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-10 col-xs-12 box-center"
+                        style="padding: 16px 0px 16px 16px; display: flex; justify-content: space-around;">
+
+                        <div class="col-md-2">
+                            <button v-on:click="atrasArchivo" class="col-md-12 btn" type="button"
+                                style="color: white; background-color: #da2c2c; border-color: #da2c2c">Atrás</button>
+                        </div>
+
+                        '<div class="col-md-6">
+                            <label class="col-md-12 btn btn-default btn-file">
+                                <input type="file" id="archivo_ser_ai01"
+                                    accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                            </label>
+                        </div>
+
+                        <div class="col-md-2">
+                            <button v-on:click="verificarArchivo" class="col-md-12 btn btn-primary"
+                                type="button">Procesar archivo</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div v-if="control.errores" class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-10 col-xs-12 box-center">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: center;">
+                            <label style="color: #476fad">Glosas no procesadas: {{ totalErrores }}</label>
+                        </div>
+
+                        <table class="table table-light table-striped" style="margin-bottom: 0px; width: 99%;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center" class="col-md-1">Factura</th>
+                                    <th style="text-align: center" class="col-md-2">Paciente</th>
+                                    <th style="text-align: center" class="col-md-1">Valor</th>
+                                    <th style="text-align: center" class="col-md-2">Fecha</th>
+                                    <th style="text-align: center" class="col-md-1">Motivo</th>
+                                    <th style="text-align: center" class="col-md-5">Error</th>
+                                </tr>
+                            </thead>
+                        </table>
+
+                        <div style="max-height: 452px; overflow-y: scroll; display: inline-block;width: 100%">
+                            <table class="table table-light table-striped" style="margin-bottom: 0px">
+                                <tbody>
+                                    <tr v-for="item in errores">
+                                        <td style="text-align: center" class="col-md-1">{{ item.FACTURA }}</td>
+                                        <td style="text-align: center" class="col-md-2">{{ item.PACIENTE }}</td>
+                                        <td style="text-align: center" class="col-md-1">{{ parseFloat(item.VALOR) }}</td>
+                                        <td style="text-align: center" class="col-md-2">{{ item.FECHA }}</td>
+                                        <td style="text-align: center" class="col-md-1">{{ item.MOTIVO }}</td>
+                                        <td style="text-align: left" class="col-md-5">{{ item.MENSAJE_ERROR }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div v-else-if="control.respuesta" class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-10 col-xs-12 box-center">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: center;">
+                            <label>Glosas que YA tenian respuesta: {{ totalConRespuesta }}</label>
+                        </div>
+
+                        <table class="table table-light table-striped" style="margin-bottom: 0px; width: 99%;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center" class="col-md-3">Factura</th>
+                                    <th style="text-align: center" class="col-md-3">Paciente</th>
+                                    <th style="text-align: center" class="col-md-3">Glosa</th>
+                                    <th style="text-align: center" class="col-md-3">Fecha</th>
+                                </tr>
+                            </thead>
+                        </table>
+
+                        <div style="max-height: 452px; overflow-y: scroll; display: inline-block;width: 100%">
+                            <table class="table table-light table-striped" style="margin-bottom: 0px">
+                                <tbody>
+                                    <tr v-for="item in glosasConRespuesta">
+                                        <td style="text-align: center" class="col-md-3">{{ item.FACTURA }}</td>
+                                        <td style="text-align: center" class="col-md-3">{{ item.PACIENTE }}</td>
+                                        <td style="text-align: center" class="col-md-3">{{ item.LLAVE }}</td>
+                                        <td style="text-align: center" class="col-md-3">{{ item.FECHA }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../../SALUD/scripts/SER-A0I1.js" type="text/javascript"></script>

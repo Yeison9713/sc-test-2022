@@ -1,0 +1,132 @@
+
+<div class="col-md-12">
+    <div class="portlet light">
+        <div class="portlet-body">
+            <form class="form-horizontal">
+                <!-- <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4">Formato de impresion: </label>
+                            <div class="col-md-8">
+                                <select id="formatoimpresion_103" class="form-control select2 col-md-12">
+                                    <option value="0" selected>Seleccione</option>
+                                    <option value="1">En formato .PDF</option>
+                                    <option value="2">En formato .CSV</option>
+                                    <option value="3">Salir</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-12 col-xs-12">** Proceso total</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-6" id="validarTarifa_103">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Tarifa a procesar:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-6">
+                                <input id="tarifa_SER103" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="2"
+                                    data-orden="1">
+                            </div>
+                            <button id="tarifaBtn_SER103" type="button"
+                                class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="descripTarifa_SER103" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="12"
+                                    data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-12 col-xs-12">**** Todos</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-4 col-xs-6" id="validarListaCod_103">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Codígos que afecten el codígo contable:</label>
+                            <div class="input-group col-md-3 col-sm-4 col-xs-6">
+                                <input id="listaCod_SER103" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="11"
+                                    data-orden="1">
+                            </div>
+                            <button id="listaCodBtn_SER103" type="button" class="btn col-md-1 col-sm-1 col-xs-1 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="descripListaCod_SER103" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="12"
+                                    data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-12 col-xs-12">** Todos los grupos</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-6" id="validarGrupo_103">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Grupo a listar:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-6">
+                                <input id="grupo_SER103" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="2"
+                                    data-orden="1">
+                            </div>
+                            <button id="grupoBtn_SER103" type="button"
+                                class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="descripGrupo_SER103" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="12"
+                                    data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-12 col-xs-12">Nivel a listar:</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-4" id="validarNivel_103">
+                        <div class="inline-inputs">
+                            <!-- <label class="col-md-8 col-sm-8 col-xs-12">Tipo a procesar:</label> -->
+                            <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                <input id="nivel_SER103" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                    data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SER103.js" type="text/javascript"></script>

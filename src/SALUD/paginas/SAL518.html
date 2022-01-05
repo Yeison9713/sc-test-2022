@@ -1,0 +1,323 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SAL518">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="col-md-6 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>.....</label>
+                    </div>
+                    <div class="col-md-12 col-sm-3 col-xs-7" id='VALIDAR1_SAL518'>
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Almacen:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                <input v-model='form.almacen_SAL518' type="text" @Keyup.F8='_f8almacen_SAL518'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 almacen_SAL518" data-orden="1" maxlength="5">
+                            </div>
+                            <button type="button" @click='_f8almacen_SAL518'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model='form.descripalmac_SAL518' type="text" 
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7" id='VALIDAR2_SAL518'>
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Nit:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                <input v-model='form.nit_SAL518' type="text" @Keyup.F8='_f8nit_SAL518'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 tercero_SAL518" data-orden="1" maxlength="10">
+                            </div>
+                            <button type="button" @click='_f8nit_SAL518'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model='form.descripnit_SAL518' type="text" 
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7" id='VALIDAR3_SAL518'>
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Vendedor:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                <input v-model='form.vendedor_SAL518' type="text" @Keyup.F8='_f8vendedor_SAL518'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 vendedor_SAL518" data-orden="1" maxlength="5">
+                            </div>
+                            <button type="button" @click='_f8vendedor_SAL518'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model='form.descripvend_SAL518' type="text" 
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7" id='VALIDAR4_SAL518'>
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Grupo:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                <input v-model='form.grupo_SAL518' type="text" @Keyup.F8='_f8grupo_SAL518'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 grupo_SAL518" data-orden="1" maxlength="3">
+                            </div>
+                            <button type="button" @click='_f8grupo_SAL518'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model='form.descripgrupo_SAL518' type="text" 
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7" id='VALIDAR5_SAL518'>
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Clase:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                <input v-model='form.clase_SAL518' type="text" @Keyup.F8='_f8clase_SAL518'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 clase_SAL518" data-orden="1" maxlength="2">
+                            </div>
+                            <button type="button" @click='_f8clase_SAL518'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model='form.descripclase_SAL518' type="text" 
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-3 col-xs-7 hidden" id='VALIDAR4_1_SAL518'>
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-9 col-xs-12">Solo compras:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input id='compras_SAL518' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7" >
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-9 col-xs-12">Trasacciones:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id='VALIDAR6_1_SAL518'>
+                                <input v-model='form.trasaccion1_SAL518' type="text" @Keyup.F8='_f8trasaccion1_SAL518'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 trasaccion1_SAL518" data-orden="1" maxlength="3">
+                            </div>
+                            <button type="button" @click='_f8trasaccion1_SAL518'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id='VALIDAR6_2_SAL518'>
+                                <input v-model='form.trasaccion2_SAL518' type="text" @Keyup.F8='_f8trasaccion2_SAL518'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 trasaccion2_SAL518" data-orden="1" maxlength="3">
+                            </div>
+                            <button type="button" @click='_f8trasaccion2_SAL518'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id='VALIDAR6_3_SAL518'>
+                                <input v-model='form.trasaccion3_SAL518' type="text" @Keyup.F8='_f8trasaccion3_SAL518'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 trasaccion3_SAL518" data-orden="1" maxlength="3">
+                            </div>
+                            <button type="button" @click='_f8trasaccion3_SAL518'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id='VALIDAR6_4_SAL518'>
+                                <input v-model='form.trasaccion4_SAL518' type="text" @Keyup.F8='_f8trasaccion4_SAL518'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 trasaccion4_SAL518" data-orden="1" maxlength="3">
+                            </div>
+                            <button type="button" @click='_f8trasaccion4_SAL518'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-3 col-xs-7" id='VALIDAR7_SAL518'>
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-9 col-xs-12">Division</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                <input v-model='form.division_SAL518' type="text" @Keyup.F8='_f8division_SAL518'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 division_SAL518" data-orden="1" maxlength="2">
+                            </div>
+                            <button type="button" @click='_f8division_SAL518'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model='form.descripdiv_SAL518' type="text" 
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-3 col-xs-7" id='VALIDAR8_SAL518'>
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-9 col-xs-12">Mostrar detalle:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                <input id='detalle_SAL518' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-3 col-xs-7 hidden" id='VALIDAR9_SAL518'>
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-9 col-xs-12">Reporte SISDIS:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                <input id='sisdis_SAL518' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1"
+                                    placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                        <label>Fecha inicio</label>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                        <label>Fecha Final</label>
+                    </div>
+                    <div id="fechaInicial_SAL518">
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.anoini_SAL518'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1" placeholder="AAAA"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.mesini_SAL518' 
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2" placeholder="MM"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.diaini_SAL518'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3" placeholder="DD"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fechaFinal_SAL518">
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.anofin_SAL518'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1" placeholder="AAAA"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.mesfin_SAL518'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2" placeholder="MM"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.diafin_SAL518'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3" placeholder="DD"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12" style="padding-right: 0; padding-left: 10px;">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Listado de inventarios de varios meses</label>
+                    </div>
+                    <div class="col-md-1 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-3 col-xs-3" id="ITEM_SAL518">
+                                <input v-model="form.itemtabla_SAL518" type="text" maxlength="4" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-3 col-xs-3" id="DIRECTORIO_SAL518">
+                                <input v-model="form.directoriotabla_SAL518" type="text" maxlength="1" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="MES_SAL518" >
+                                <input v-model="form.mestabla_SAL518" maxlength="3" 
+                                data-orden="1" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 numeracion_SAL518">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-2 col-xs-2">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="RUTA_SAL518">
+                                <input v-model="form.rutatabla_SAL518" type="text" maxlength="1" data-orden="1" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <table id="TITULOTABLA_SAL518" class="table table-light table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 2%; text-align: center;">#</th>
+                                <th style="width: 5%; text-align: center;">Directorio</th>
+                                <th style="width: 5%; text-align: center;">Mes</th>
+                                <th style="width: 5%; text-align: center;">Ruta</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div style="height: 288px; overflow-y: auto;">
+                        <table id="TABLAINVENTARIOS_SAL518" class="table table-light table-striped">
+                            <tbody>
+                                <tr v-for="(row, index) in tablainventarios_SAL518">
+                                    <td style="width: 1%; text-align: center;">
+                                        {{index + 1}}
+                                    </td>
+                                    <td style="width: 5%; text-align: center;">
+                                        {{row.Directorio}}
+                                    </td>
+                                    <td style="width: 5%; text-align: center;">
+                                        {{row.Mes}}
+                                    </td>
+                                    <td style="width: 5%; text-align: center;">
+                                        {{row.Ruta}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SAL518.js" type="text/javascript"></script>

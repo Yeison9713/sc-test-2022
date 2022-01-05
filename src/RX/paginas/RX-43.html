@@ -1,0 +1,564 @@
+<div class="col-md-12">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <form class="form-horizontal">
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-2 col-sm-2 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-7 col-sm-7 col-xs-7">Sucursal:</label>
+                                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                    <input id="suc_rx43" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-8">Tipo de servicio:</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                                    <input id="tipoComprob_rx43" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-6" id="validarComprob_rx43">
+                            <div class="inline-inputs">
+                                <label class="col-md-7 col-sm-7 col-xs-7">Comprobante:</label>
+                                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                    <input id="Comprob_rx43" type="text" data-orden="1" maxlength="6" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-5">Codigo Cup:</label>
+                                <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                    <input id="cup_rx43" type="text" data-orden="1" maxlength="12" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-5">Fecha:</label>
+                                <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                    <input id="fecha_rx43" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <label>Descrip Cup:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="descripCup_rx43" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <label>Paciente:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="paciente_rx43" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                            <label>Nombre Paciente:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="descripPaciente_rx43" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-3 col-sm-3 col-xs-3" id="validarRadiologo_rx43">
+                            <label>Radiologo:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                    <input id="radiologo_rx43" required="true" maxlength="10" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <button type="button" id="radiologoBtn_rx43"
+                                    class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <label></label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="descrip1Radiologo_rx43" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <label></label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="descrip2Radiologo_rx43" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-3" id="validarTecnologo_rx43">
+                            <label>Tecnologo:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-11 col-sm-11 col-xs-11">
+                                    <input id="tecnologo_rx43" data-orden="1" maxlength="10"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <button type="button" id="tecnologoBtn_rx43"
+                                    class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-sm-9 col-xs-9">
+                            <label></label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="descripTecnologo_rx43" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-5 col-sm-12 col-xs-12 no-padding">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Cuenta:</label>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                    <input id="cuenta_rx43" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-3 col-sm-3 col-xs-3">Nit:</label>
+                                <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                    <input id="nit_rx43" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-4 col-xs-4">Sala:</label>
+                                <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                                    <input id="sala_rx43" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-4 col-sm-4 col-xs-12" id="validarEstatUsu_rx43">
+                            <label>Estatura usual:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="estatUsu_rx43" type="text" maxlength="3" data-orden="1" required="true"
+                                    placeholder="CM" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12" id="validarEstatAct_rx43">
+                            <label>Estatura actual:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="estatAct_rx43" type="text" maxlength="3" data-orden="1" required="true"
+                                        placeholder="CM" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12" id="validarPeso_rx43">
+                            <label>Peso:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="peso_rx43" placeholder="KG" maxlength="5" data-orden="1" required="true"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding: 0 0 6px 0;">
+                            <div class="col-md-4 col-sm-3 col-xs-3"
+                                style="display: flex; justify-content:center; align-items: center;">
+                                <label style="margin-top: 9px;">Medicion</label>
+                            </div>
+                            <div class="col-md-4 col-sm-3 col-xs-12" id="validarTextoBmd_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="textoBmd_rx43" maxlength="15" data-orden="1" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-3 col-xs-3"
+                                style="display: flex; justify-content:center; align-items: center;">
+                                <label style="margin-top: 9px;">T-score </label>
+                            </div>
+                            <div class="col-md-2 col-sm-3 col-xs-3"
+                                style="display: flex; justify-content:center; align-items: center;">
+                                <label style="margin-top: 9px;">Z-score </label>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+
+                            <div class="col-md-4 col-sm-12 col-xs-12" id="columna1_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="textoColumna1_rx43" maxlength="30" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xs-4" id="validarBmd1_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="bmd1_rx43" maxlength="5" data-orden="1" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 col-sm-4 col-xs-4" id="validarTscore1_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="tscore1_rx43" maxlength="4" data-orden="1" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 col-sm-4 col-xs-4" id="validarZscore1_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="zscore1_rx43" maxlength="4" data-orden="1" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+
+                            <div class="col-md-4 col-sm-12 col-xs-12" id="columna2_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="textoColumna2_rx43" maxlength="30" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xs-4" id="validarBmd2_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="bmd2_rx43" maxlength="5" data-orden="1" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 col-sm-4 col-xs-4" id="validarTscore2_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="tscore2_rx43" maxlength="4" data-orden="1" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 col-sm-4 col-xs-4" id="validarZscore2_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="zscore2_rx43" maxlength="4" data-orden="1" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+
+                            <div class="col-md-4 col-sm-12 col-xs-12" id="columna3_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="textoColumna3_rx43" maxlength="30" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xs-4" id="validarBmd3_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="bmd3_rx43" maxlength="5" data-orden="1" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 col-sm-4 col-xs-4" id="validarTscore3_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="tscore3_rx43" maxlength="4" data-orden="1" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 col-sm-4 col-xs-4" id="validarZscore3_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="zscore3_rx43" maxlength="4" data-orden="1" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+
+                            <div class="col-md-4 col-sm-12 col-xs-12" id="columna4_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="textoColumna4_rx43" maxlength="30" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xs-4" id="validarBmd4_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="bmd4_rx43" maxlength="5" data-orden="1" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 col-sm-4 col-xs-4" id="validarTscore4_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="tscore4_rx43" maxlength="4" data-orden="1" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 col-sm-4 col-xs-4" id="validarZscore4_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="zscore4_rx43" maxlength="4" data-orden="1" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+
+                            <div class="col-md-4 col-sm-12 col-xs-12" id="columna5_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="textoColumna5_rx43" maxlength="30" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xs-4" id="validarBmd5_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="bmd5_rx43" maxlength="5" data-orden="1" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 col-sm-4 col-xs-4" id="validarTscore5_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="tscore5_rx43" maxlength="4" data-orden="1" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 col-sm-4 col-xs-4" id="validarZscore5_rx43">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="zscore5_rx43" maxlength="4" data-orden="1" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-2 col-sm-2 col-xs-2">Email:</label>
+                                <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                    <input id="email_rx43" type="text" style="text-align: left"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <label>Actualizo:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                    <input id="actualizo_rx43" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                    <input id="fecha_modif_rx43" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <label>Transcribio:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                    <input id="transcribio_rx43" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                    <input id="fecha_transc_rx43" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-7 col-sm-12 col-xs-12 scrolling-wrapper_rx43 form-group" style="padding-right: 0">
+                    <div class="col-md-12 boxInScroll box-center" style="height: 503px">
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarAntecedente_rx43">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                style="display: flex; justify-content:space-between">
+                                <label>Antecedentes :</label>
+                                <label>(250 caracteres maximo)</label>
+                            </div>
+                            <textarea id="antecedentes_rx43" class="form-control" disabled="disabled" rows="3"
+                                maxlength="250" data-orden="1" style="resize: none; text-align: justify"></textarea>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarTratamiento_rx43">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                style="display: flex; justify-content:space-between">
+                                <label>Tratamientos :</label>
+                                <label>(400 caracteres maximo)</label>
+                            </div>
+                            <textarea id="tratamientos_rx43" class="form-control" disabled="disabled" rows="5"
+                                maxlength="400" data-orden="1" style="resize: none; text-align: justify"></textarea>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarHallazgo_rx43">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                style="display: flex; justify-content:space-between">
+                                <label>Hallazgos :</label>
+                                <label>(800 caracteres maximo)</label>
+                            </div>
+                            <textarea id="hallazgos_rx43" class="form-control" disabled="disabled" rows="9"
+                                maxlength="800" data-orden="1" style="resize: none; text-align: justify"></textarea>
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarConclusion_rx43">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                style="display: flex; justify-content:space-between">
+                                <label>Conclusiones :</label>
+                                <label>(800 caracteres maximo)</label>
+                            </div>
+                            <textarea id="conclusiones_rx43" class="form-control" disabled="disabled" rows="9"
+                                maxlength="800" data-orden="1" style="resize: none; text-align: justify"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <a id="imprimir_rx43" class="float_rx43" style="right: 91px;">
+                    <span>F3 </span>
+                    <i class="glyphicon glyphicon-print my-float-rx43"></i>
+                </a>
+
+                <a id="Boton_email_rx43" class="float_rx43" style="right: 21px">
+                    <span>F5 </span>
+                    <i class="glyphicon glyphicon-envelope my-float-rx43"></i>
+                </a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .float_rx43 {
+        position: fixed;
+        width: 65px;
+        height: 60px;
+        bottom: 16px;
+        background-color: #476fad;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 1px 1px 1px #999;
+        overflow: hidden;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .float_rx43:hover {
+        box-shadow: 2px 2px 2px #999;
+        transition: padding .5s ease, background-position .5s ease, transform .8s ease;
+        text-decoration: none;
+        color: #FFF;
+    }
+
+    .my-float-rx43 {
+        margin-left: 5px;
+    }
+
+    input {
+        text-align: center
+    }
+</style>
+
+<script src="../../RX/scripts/impresiones_rx.js" type="text/javascript"></script>
+<script src="../../RX/scripts/RX-43.js" type="text/javascript"></script>

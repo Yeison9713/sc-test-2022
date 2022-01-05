@@ -1,0 +1,359 @@
+<script src="../../HICLIN/scripts/HCI02.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/PATOL.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI01I.js" disabled='disabled' type="text/javascript"></script>
+
+<div class="col-md-12" id="HC705">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <form class="form-horizontal" onsubmit="return false;">
+                <div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-xs-12 col-sm-12" style="padding-left:18px;text-align: left;">
+                            <label>Evolución Seleccionada</label>
+                        </div>
+                        <div class="salto-linea head-box"></div>
+                        <div class="col-md-3">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="form.año_705" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 ">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="form.mes_705" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 ">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-12 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="form.dia_705" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 ">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="time_705">
+                                <div class="col-md-6 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Hr:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="form.hr_705" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 hr_705" maxlength="4"
+                                            data-orden="1" required="true">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-4 col-xs-4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Mn:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="form.min_705" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 mn_705" maxlength="2"
+                                            data-orden="2" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <label class="col-md-12" style="text-align: left;">Medico Evolucionó:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarMedico_705">
+                                <div class="inline-inputs">
+                                    <input v-model="form.medico_705" type="text"
+                                        class="form-control col-md-10 col-sm-12 col-xs-12 uppercase medico_HC705"
+                                        maxlength="10" data-orden="1" style="width:107px">
+                                    <input v-model="form.descripMedico_705" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase descripMedico_HC705"
+                                        maxlength="10" data-orden="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="col-md-12">Tipo Consulta:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.consulta_705" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase consultando_HC705"
+                                    maxlength="10" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-xs-6 col-sm-6"></div>
+                        <div class="col-md-12">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <label class="col-md-12 col-sm-6 col-xs-6" style="text-align:left;">Nro.
+                                        &nbsp;&nbsp; Evolución:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="evo_select.llave" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <label class="col-md-12 col-sm-6 col-xs-6" style="text-align:left;">Macro
+                                        &nbsp;&nbsp; Evolución:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="evo_select.macro" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <label class="col-md-12 col-sm-6 col-xs-6" style="text-align:left;">Tipo
+                                        &nbsp;&nbsp;Evolución:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="evo_select.tipo" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <label class="col-md-12 col-sm-6 col-xs-6" style="text-align:left;">Und
+                                        &nbsp;Servicio&nbsp; Evolución:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="evo_select.unser" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="salto-linea"></div>
+                    </div>
+                </div>
+                <div class="col-md-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left;">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5" style="text-align: center;" id='rangoDesde_705'>
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>Desde:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-4 col-sm-4 col-xs-4" id="validarFecha_1">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input id="form.añoDesde_705" v-model="form.añoDesde_705" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                            data-orden="1" required="true" @keydown.119="ocultar">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4" id="validarFecha_2">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input id="form.mesDesde_705" v-model="form.mesDesde_705" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="1" required="true" @keydown.119="ocultar">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4" id="validarFecha_3">
+                                    <label class="col-md-12 col-sm-12 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input id="form.diaDesde_705" v-model="form.diaDesde_705" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="1" required="true" @keydown.119="ocultar">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5" style="text-align: center;" id='rangoHasta_705'>
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>Hasta:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-4 col-sm-4 col-xs-4" id="validarFecha_4">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input id="form.añoHasta_705" v-model="form.añoHasta_705" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                            data-orden="1" required="true" @keydown.119="ocultar">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4" id="validarFecha_5">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input id="form.mesHasta_705" v-model="form.mesHasta_705" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="1" required="true" @keydown.119="ocultar">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4" id="validarFecha_6">
+                                    <label class="col-md-12 col-sm-12 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input id="form.diaHasta_705" v-model="form.diaHasta_705" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="1" required="true" @keydown.119="ocultar">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12" style="text-align: center;" hidden>
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>Procesando la evolucion:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-4 col-sm-4 col-xs-4" id="validarFecha_7">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input id="form.añoHasta_705" v-model="form.añoHasta_705" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                            data-orden="1" required="true">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4" id="validarFecha_8">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="form.mesHasta_705" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="1" required="true">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4" id="validarFecha_9">
+                                    <label class="col-md-12 col-sm-12 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="form.diaHasta_705" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="1" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea col-md-12"></div>
+
+                        <div class="col-md-12 head-box"></div>
+                        <div class="col-md-4" id='validarOpcImp_1'>
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <div class="inline-inputs">
+                                    <label class="col-md-10 col-sm-10 col-xs-12">Imprimir Evolución medica.?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6">
+                                        <input v-model="form.opc_evo" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" id='validarOpcImp_2'>
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <div class="inline-inputs">
+                                    <label class="col-md-10 col-sm-8 col-xs-12">Imprimir Notas enfermería.?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6">
+                                        <input v-model="form.opc_enf" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" id='validarOpcImp_3'>
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <div class="inline-inputs">
+                                    <label class="col-md-10 col-sm-8 col-xs-12">Imprimir Notas terapeutas?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6">
+                                        <input v-model="form.opc_ter" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="salto-linea col-md-12"></div>
+                        <div class="col-md-4" id='validarOpcImp_4'>
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <div class="inline-inputs">
+                                    <label class="col-md-10 col-sm-10 col-xs-12">Imprimir Formulacion MED?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6">
+                                        <input v-model="form.opc_for" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" id='validarOpcImp_5'>
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <div class="inline-inputs">
+                                    <label class="col-md-10 col-sm-8 col-xs-12">Imprimir solicitud labor?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6">
+                                        <input v-model="form.opc_lab" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4" id='validarOpcImp_6'>
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <div class="inline-inputs">
+                                    <label class="col-md-10 col-sm-10 col-xs-12">Imprimir Solicitud imag.?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6">
+                                        <input v-model="form.opc_ima" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="salto-linea col-md-12"></div>
+                        <div class="col-md-4" id='validarOpcImp_7'>
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <div class="inline-inputs">
+                                    <label class="col-md-10 col-sm-8 col-xs-12">Imprimir Solicitud Ord md?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6">
+                                        <input v-model="form.opc_ord" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" id='validarOpcImp_8'>
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <div class="inline-inputs">
+                                    <label class="col-md-10 col-sm-8 col-xs-12">Imprimir Solicitud consul.?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6">
+                                        <input v-model="form.opc_con" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4" id='validarOpcImp_9'>
+                            <div class="col-md-12 col-sm-4 col-xs-6">
+                                <div class="inline-inputs">
+                                    <label class="col-md-10 col-sm-10 col-xs-12">Imprimir Incapacidad Med?</label>
+                                    <div class="input-group col-md-2 col-sm-4 col-xs-6">
+                                        <input v-model="form.opc_inc" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="salto-linea col-md-12"></div>
+                        <div class="salto-linea col-md-12"></div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="../../frameworks/pdf/hiclin/HCI02.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/Patol.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI01I.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HC705.js" disabled='disabled' type="text/javascript"></script>

@@ -1,0 +1,293 @@
+<div class="col-md-12" id="COR203">
+  <div class="portlet-body no-padding">
+    <div class="form-horizontal">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+          <div class="col-md-5 col-sm-5 col-xs-5">
+            <div class="inline-inputs">
+              <label class="col-md-4 col-sm-4 col-xs-4">
+                Nro Radicado:
+              </label>
+              <div
+                class="input-group col-md-3 col-sm-3 col-xs-3"
+                id="validar_anio_rad_COR203"
+              >
+                <input
+                  type="number"
+                  maxlength="4"
+                  data-orden="1"
+                  class="uppercase form-control col-md-12 col-sm-12 col-xs-12"
+                  required="true"
+                  v-model="reg.ano_llave_w"
+                />
+              </div>
+              <div
+                class="input-group col-md-4 col-sm-4 col-xs-4"
+                id="validar_radicado_COR203"
+              >
+                <input
+                  id="radicado_COR203"
+                  type="text"
+                  maxlength="9"
+                  data-orden="1"
+                  class="uppercase form-control col-md-12 col-sm-12 col-xs-12"
+                  required="true"
+                  v-model="reg.cont_w"
+                  @keydown.f8="ventana_correspondencia"
+                />
+              </div>
+              <button
+                type="button"
+                class="btn btn-default f8-Btn col-md-1 col-sm-1 col-xs-1"
+                @click="ventana_correspondencia"
+              >
+                <i class="icon-magnifier"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-sm-2 col-xs-2">
+            <div class="inline-inputs">
+              <label class="col-md-6 col-sm-6 col-xs-6">Fecha:</label>
+              <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  :value="reg.datos_w.fecha_w"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-sm-2 col-xs-2">
+            <div class="inline-inputs">
+              <label class="col-md-6 col-sm-6 col-xs-6">Hora:</label>
+              <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  :value="reg.datos_w.hora_w"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
+            <div class="inline-inputs">
+              <label class="col-md-6 col-sm-6 col-xs-6">Proc:</label>
+              <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  :value="reg.datos_w.proceden_w"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+          <div class="col-md-7 col-sm-7 col-xs-7">
+            <div class="inline-inputs">
+              <label class="col-md-6 col-sm-6 col-xs-6">Tercero:</label>
+              <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  :value="reg.datos_w.tercero_w"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-sm-5 col-xs-5 no-padding">
+            <div class="inline-inputs">
+              <label class="col-md-6 col-sm-6 col-xs-6">Tipo:</label>
+              <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  :value="reg.datos_w.tipo_corres_w"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-6" style="padding-top: 10px;">
+            <div class="inline-inputs">
+              <label class="col-md-6 col-sm-6 col-xs-6">Descripcion:</label>
+              <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  :value="reg.datos_w.descrip_w"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-sm-6 col-xs-6"
+            style="padding-top: 10px; padding-right: 0;"
+          >
+            <div class="inline-inputs">
+              <label class="col-md-6 col-sm-6 col-xs-6">Drig dpto.:</label>
+              <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  :value="reg.datos_w.serv_w"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-sm-5 col-xs-5" style="padding-top: 10px;">
+            <div class="inline-inputs">
+              <label class="col-md-5 col-sm-5 col-xs-5">Personal actual:</label>
+              <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  :value="reg.datos_w.dep_w"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-sm-2 col-xs-2" style="padding-top: 10px;">
+            <div class="inline-inputs">
+              <label class="col-md-6 col-sm-6 col-xs-6">Folios:</label>
+              <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  :value="reg.datos_w.folio_w"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-sm-2 col-xs-2" style="padding-top: 10px;">
+            <div class="inline-inputs">
+              <label class="col-md-6 col-sm-6 col-xs-6">de:</label>
+              <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  :value="reg.datos_w.folio_d_w"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-3 col-sm-3 col-xs-3"
+            style="padding-top: 10px; padding-right: 0;"
+          >
+            <div class="inline-inputs">
+              <label class="col-md-5 col-sm-5 col-xs-5">Anexos:</label>
+              <div class="input-group col-md-2 col-sm-2 col-xs-2">
+                <input
+                  type="number"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  v-model="reg.datos_w.anex_w"
+                />
+              </div>
+              <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  :value="reg.datos_w.tipo_anexo_w"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" v-for="item in 5">
+          <div class="col-md-5 col-sm-5 col-xs-5">
+            <div class="inline-inputs">
+              <label class="col-md-5 col-sm-5 col-xs-5">
+                Personal traslado:
+              </label>
+              <div class="input-group col-md-2 col-sm-2 col-xs-2" :id="`personal_${item}`">
+                <input
+                :id="`inpt_personal_${item}`"
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  data-orden="1"
+                  maxlength="3"
+                  v-model="personal_tabla[`personal_${item}`]"
+                  @keydown.f8="ventana_personal_dest(item)"
+                />
+              </div>
+              <button
+                type="button"
+                class="btn btn-default f8-Btn col-md-1 col-sm-1 col-xs-1"
+                @click="ventana_personal_dest(item)"
+              >
+                <i class="icon-magnifier"></i>
+              </button>
+              <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  :value="per_desc_tabla[`personal_${item}`]"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-sm-2 col-xs-2">
+            <div class="inline-inputs">
+              <label class="col-md-6 col-sm-6 col-xs-6">
+                Oper:
+              </label>
+              <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  :value="per_oper_tabla[`personal_${item}`]"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-3 col-xs-3">
+            <div class="inline-inputs">
+              <label class="col-md-4 col-sm-4 col-xs-4">
+                Tramite:
+              </label>
+              <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  :value="tramite_tabla[`personal_${item}`]"
+                />
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="col-md-2 col-sm-2 col-xs-2 no-padding">
+            <div class="inline-inputs">
+              <label class="col-md-8 col-sm-8 col-xs-8">
+                Enviar Correo:
+              </label>
+              <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  :value="email_tabla[`personal_${item}`]"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../../COR/scripts/COR203.js" type="text/javascript"></script>

@@ -1,0 +1,171 @@
+<div class="col-md-12" id="CSV-MOVIM" style="padding-top: 1rem;">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal no-padding">
+        <div class="col-md-12 no-padding">
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div
+              class="form-group col-lg-10 col-md-12 col-sm-12 col-xs-12 box-center"
+            >
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+                <div
+                  class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding"
+                  style="
+                    padding-top: 1rem !important;
+                    padding-bottom: 1rem !important;
+                  "
+                >
+                  <label class="col-md-12 col-sm-12 col-xs-12">
+                    Cargue el archivo plano .CSV (texto delimitado por comas),
+                    con los datos a procesar. Debe contener 3 columnas (PREFIJO,
+                    NRO FACTURA, VALOR RECIBO).
+                  </label>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+                  <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
+                    <div
+                      class="d-flex inline-inputs"
+                      style="align-items: center;"
+                    >
+                      <label class="col-md-4 col-sm-4 col-xs-12">
+                        Seleccionar archivo .CSV
+                      </label>
+                      <input
+                        @keydown.esc="callbackEscBtn"
+                        type="file"
+                        id="archivo_lect"
+                        accept=".csv"
+                        ref="btn_adj"
+                        class="btn f8-Btn col-md-12 col-sm-12 col-xs-12"
+                        style="max-width: 100%;"
+                        @change="callbackBtn"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                    <div
+                      class="d-flex inline-inputs"
+                      style="align-items: center;"
+                    >
+                      <label class="col-xs-12 col-md-4 col-lg-4">
+                        FECHA DE RECIBOS
+                      </label>
+                      <div
+                        class="inline-inputs col-xs-12 col-md-8 col-lg-8 no-padding flex-date"
+                      >
+                        <div id="datoAnioRecibo" class="date-anio">
+                          <input
+                            v-model="fecha_recibo.anio"
+                            type="number"
+                            class="form-control no-spin-button center text-center"
+                            data-orden="1"
+                            maxlength="4"
+                            required
+                            disabled
+                            placeholder="AAAA"
+                          />
+                        </div>
+                        <div id="datoMesRecibo" class="date-mes">
+                          <input
+                            v-model="fecha_recibo.mes"
+                            type="number"
+                            class="form-control no-spin-button center text-center"
+                            data-orden="1"
+                            maxlength="2"
+                            disabled
+                            required
+                            placeholder="MM"
+                          />
+                        </div>
+                        <div id="datoDiaRecibo" class="date-dia">
+                          <input
+                            v-model="fecha_recibo.dia"
+                            type="number"
+                            class="form-control no-spin-button center text-center"
+                            data-orden="1"
+                            maxlength="2"
+                            disabled
+                            required
+                            placeholder="DD"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="salto-linea"></div>
+                  <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
+                    <div
+                      class="d-flex inline-inputs"
+                      style="align-items: center;"
+                      id="datoDetalleRecibo"
+                    >
+                      <label class="col-md-4 col-sm-4 col-xs-12">
+                        DETALLE DE RECIBOS:
+                      </label>
+                      <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                        <input
+                          v-model="detalle"
+                          maxlength="50"
+                          data-orden="1"
+                          disabled
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                    <div
+                      class="d-flex inline-inputs"
+                      style="align-items: center;"
+                      id="datoCtaContable"
+                    >
+                      <label class="col-md-4 col-sm-4 col-xs-4">
+                        CTA CONTABLE:
+                      </label>
+                      <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                        <input
+                          v-model="cta_contable"
+                          @keyup.119="ventanaCtaContable"
+                          maxlength="11"
+                          data-orden="1"
+                          required
+                          disabled
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                        />
+                      </div>
+                      <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                        <input
+                          :value="descripCuenta"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          disabled
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .flex-date {
+    display: flex;
+  }
+
+  .flex-date .date-anio {
+    flex: 2 1 auto;
+  }
+
+  .flex-date > .date-mes,
+  .date-dia {
+    flex: 1 2 auto;
+  }
+</style>
+
+<script src="../../SALUD/scripts/CSV-MOVIM.js"></script>

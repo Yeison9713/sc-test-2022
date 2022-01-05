@@ -1,0 +1,210 @@
+<style>
+    #TABLA_HC522 th {
+        text-align: center;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
+
+<div class="col-md-12" id="HC522">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <form class="form-horizontal" onsubmit="return false;">
+                <div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-2">
+                            <label class="col-md-12 head-box" style="margin-top: 3px;">PROCESOS DE ENFERMERIA</label>
+                            <label class="col-md-12" style="margin-top: 6px;">SIGNOS VITALES</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="col-md-3" style="text-align: center;">Medico:</label>
+                            <div class="input-group inline-inputs col-md-12 col-sm-12 col-xs-12" id="validarMedico_522">
+                                <input v-model="datosIni.medico_HC522" type="text"
+                                    class="form-control col-md-4 col-sm-12 col-xs-12 uppercase medico_HC522"
+                                    maxlength="10" data-orden="1" style="text-align: center; width: 60%;">
+                                <input v-model="datosIni.descripMedico_HC522" type="text"
+                                    class="form-control col-md-6 col-sm-12 col-xs-12 uppercase descripMedico_HC522"
+                                    maxlength="50" data-orden="" style="text-align: center;">
+                                <input v-model="datosIni.especMedico_HC522" type="text"
+                                    class="form-control col-md-8 col-sm-12 col-xs-12 uppercase especMedico_HC522"
+                                    maxlength="50" data-orden="" style="text-align: center;">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="col-md-12">Consultando:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="datosIni.consultando_HC522" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase consultando_HC522"
+                                    maxlength="10" data-orden="1" style="text-align: center;">
+                            </div>
+                        </div>
+
+                        <div class="col-md-1">
+                            <label class="col-md-12">Folio:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="datosIni.folio_HC522" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase folio_HC522"
+                                    maxlength="10" data-orden="1" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="divTabla">
+                        <div style="clear:both;"></div>
+                        <!-- <hr> -->
+                        <table id="TABLA_HC522" class="table table-light table-striped" data-orden="1">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Año</th>
+                                    <th>Mes</th>
+                                    <th>Dia</th>
+                                    <th>Hora</th>
+                                    <th>Min</th>
+                                    <th>Temp</th>
+                                    <th>F.C.</th>
+                                    <th>F.R</th>
+                                    <th>T. Art.</th>
+                                    <th>PVC</th>
+                                    <th>SPO2</th>
+                                    <th>FC. FETAL</th>
+                                    <th>Usuario</th>
+                                </tr>
+                                <tr>
+                                    <td style="width: 80px">
+                                    </td>
+                                    <td style="width: 85px">
+                                        <div class="input-group col-md-12 col-sm-5 col-xs-5" id='año_HC522'>
+                                            <input v-model="form.año_HC522" type="number"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                                data-orden="1" required="true" style="text-align: center;">
+                                        </div>
+                                    </td>
+                                    <td style="width: 70px">
+                                        <div class="input-group col-md-12 col-sm-5 col-xs-5" id='mes_HC522'>
+                                            <input v-model="form.mes_HC522" type="number"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                                data-orden="1" required="true" style="text-align: center;">
+                                        </div>
+                                    </td>
+                                    <td style="width: 70px">
+                                        <div class="input-group col-md-12 col-sm-5 col-xs-5" id='dia_HC522'>
+                                            <input v-model="form.dia_HC522" type="number"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" min="0"
+                                                data-orden="1" required="true" style="text-align: center;">
+                                        </div>
+                                    </td>
+                                    <td style="width: 70px">
+                                        <div class="input-group col-md-12 col-sm-5 col-xs-5" id='hora_HC522'>
+                                            <input v-model="form.hora_HC522" type="number"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" min="0"
+                                                data-orden="1" required="true" style="text-align: center;">
+                                        </div>
+                                    </td>
+                                    <td style="width: 70px">
+                                        <div class="input-group col-md-12 col-sm-5 col-xs-5" id='min_HC522'>
+                                            <input v-model="form.min_HC522" type="number"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" min="0"
+                                                data-orden="1" required="true" style="text-align: center;">
+                                        </div>
+                                    </td>
+                                    <td style="width: 100px">
+                                        <div class="input-group col-md-12 col-sm-5 col-xs-5" id='temp_HC522'>
+                                            <input v-model="form.temp_HC522" type="number"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5" min="0"
+                                                data-orden="1" style="text-align: center;">
+                                        </div>
+                                    </td>
+                                    <td style="width: 80px">
+                                        <div class="input-group col-md-12 col-sm-5 col-xs-5" id='fcard_HC522'>
+                                            <input v-model="form.fcard_HC522" type="number"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3"
+                                                data-orden="1" style="text-align: center;">
+                                        </div>
+                                    </td>
+                                    <td style="width: 80px">
+                                        <div class="input-group col-md-12 col-sm-5 col-xs-5" id='fresp_HC522'>
+                                            <input v-model="form.fresp_HC522" type="number"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3"
+                                                data-orden="1" style="text-align: center;">
+                                        </div>
+                                    </td>
+                                    <td style="width: 145px">
+                                        <div class="input-group inline-inputs col-md-12 col-sm-5 col-xs-5"
+                                            id='tens_HC522'>
+                                            <input v-model="form.tens1_HC522" type="number"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3"
+                                                data-orden="1" style="text-align: center;">
+                                            <input v-model="form.tens2_HC522" type="number"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3"
+                                                data-orden="2" style="text-align: center;">
+                                        </div>
+                                    </td>
+                                    <td style="width: 70px">
+                                        <div class="input-group col-md-12 col-sm-5 col-xs-5" id='pvc_HC522'>
+                                            <input v-model="form.pvc_HC522" type="number"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                                data-orden="1" style="text-align: center;">
+                                        </div>
+                                    </td>
+                                    <td style="width: 80px">
+                                        <div class="input-group col-md-12 col-sm-5 col-xs-5" id='oxi_HC522'>
+                                            <input v-model="form.oxi_HC522" type="number"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3"
+                                                data-orden="1" style="text-align: center;">
+                                        </div>
+                                    </td>
+                                    <td style="width: 100px">
+                                        <div class="input-group col-md-12 col-sm-5 col-xs-5" id='fc_fet_HC522'>
+                                            <input v-model="form.fc_fet_HC522" type="number"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5"
+                                                data-orden="1" style="text-align: center;">
+                                        </div>
+                                    </td>
+                                    <td style="width: 100px">
+                                        <div class="input-group col-md-12 col-sm-5 col-xs-5" id='oper_HC522'>
+                                            <input v-model="form.oper_HC522" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                                data-orden="1" style="text-align: center;">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="item in signos_vitales">
+                                    <td>{{item.item}}</td>
+                                    <td>{{item.año}}</td>
+                                    <td>{{item.mes}}</td>
+                                    <td>{{item.dia}}</td>
+                                    <td>{{item.hora}}</td>
+                                    <td>{{item.min}}</td>
+                                    <td>{{item.temp}}</td>
+                                    <td>{{item.fcard}}</td>
+                                    <td>{{item.fresp}}</td>
+                                    <td>{{item.tens}}</td>
+                                    <td>{{item.pvc}}</td>
+                                    <td>{{item.oxi}}</td>
+                                    <td>{{item.fc_fet}}</td>
+                                    <td>{{item.oper}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="text-align: center;">
+                    <label>F5 - Salir  &nbsp&nbsp&nbsp&nbsp&nbsp F11 - Imprimir</label>
+                </div>
+        </div>
+    </div>
+</div>
+<script src="../../HICLIN/scripts/HC522.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI522.formato.js" type="text/javascript"></script>

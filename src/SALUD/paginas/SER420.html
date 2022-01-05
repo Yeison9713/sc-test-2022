@@ -1,0 +1,76 @@
+<div class="col-md-12">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <form class="form-horizontal">
+                <div class="form-group col-md-7 col-sm-7 col-xs-7 box-center">
+                    <div class="col-md-6 col-sm-4 col-xs-4">
+                        <div class="inline-inputs" id="PREFIJO_SER420">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Prefijo:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="prefijo_420" type="text" maxlength="1" data-orden="1" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12"  onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-4 col-xs-4">
+                        <div class="inline-inputs" id="FACTURA_SER420">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Numero de factura:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="factura_420" type="text" maxlength="6" data-orden="1" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <button type="button" id="facturaBtn_420" class="btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-7 col-xs-7">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-5 col-xs-5">Paciente:</label>
+                            <div class="input-group col-md-5 col-sm-9 col-xs-9">
+                                <input id="numeropaciente_420" type="text"  
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-7 col-sm-9 col-xs-9">
+                                <input id="paciente_420" type="text"  
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-group col-md-7 col-sm-7 col-xs-7 box-center" >
+                    <div class="col-md-6 col-sm-7 col-xs-7">
+                        <div class="inline-inputs" id="EXPEDICION_SER420">
+                            <label class="col-md-9 col-sm-5 col-xs-5">Lugar de Expedicion del Doc:</label>
+                            <div class="input-group col-md-7 col-sm-9 col-xs-9">
+                                <input id="expedicion_420" type="text" maxlength="30" data-orden="1" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-5 col-xs-5">
+                        <div class="inline-inputs" >
+                            <label class="col-md-8 col-sm-8 col-xs-8 text-label">Fecha de impresión:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4" id="ANOIM_SER420">
+                                <input id="ano_420" type="text" maxlength="4" data-orden="1" placeholder="AAAA"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4" id="MESIM_SER420">
+                                <input id="mes_420" type="text" maxlength="2" data-orden="1" placeholder="MM"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4" id="DIAIM_SER420">
+                                <input id="dia_420" type="text" maxlength="2" data-orden="1" placeholder="DD"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../../SALUD/scripts/SER420.js" type="text/javascript"></script>

@@ -1,0 +1,70 @@
+  /* sarabun-200 - latin-ext_vietnamese_latin_thai */
+  @font-face {
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 200;
+    src: url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-200.eot'); /* IE9 Compat Modes */
+    src: local('Sarabun ExtraLight'), local('Sarabun-ExtraLight'),
+         url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-200.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-200.woff') format('woff'), /* Modern Browsers */
+  }
+  /* sarabun-300 - latin-ext_vietnamese_latin_thai */
+  @font-face {
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-300.eot'); /* IE9 Compat Modes */
+    src: local('Sarabun Light'), local('Sarabun-Light'),
+         url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-300.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-300.woff') format('woff'), /* Modern Browsers */
+  }
+  /* sarabun-regular - latin-ext_vietnamese_latin_thai */
+  @font-face {
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-regular.eot'); /* IE9 Compat Modes */
+    src: local('Sarabun Regular'), local('Sarabun-Regular'),
+         url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-regular.woff') format('woff'), /* Modern Browsers */
+  }
+  /* sarabun-500 - latin-ext_vietnamese_latin_thai */
+  @font-face {
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-500.eot'); /* IE9 Compat Modes */
+    src: local('Sarabun Medium'), local('Sarabun-Medium'),
+         url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-500.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-500.woff') format('woff'), /* Modern Browsers */
+  }
+  /* sarabun-600 - latin-ext_vietnamese_latin_thai */
+  @font-face {
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-600.eot'); /* IE9 Compat Modes */
+    src: local('Sarabun SemiBold'), local('Sarabun-SemiBold'),
+         url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-600.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-600.woff') format('woff'), /* Modern Browsers */
+  }
+  /* sarabun-700 - latin-ext_vietnamese_latin_thai */
+  @font-face {
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-700.eot'); /* IE9 Compat Modes */
+    src: local('Sarabun Bold'), local('Sarabun-Bold'),
+         url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-700.woff') format('woff'), /* Modern Browsers */
+  }
+  /* sarabun-800 - latin-ext_vietnamese_latin_thai */
+  @font-face {
+    font-family: 'Sarabun';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-800.eot'); /* IE9 Compat Modes */
+    src: local('Sarabun ExtraBold'), local('Sarabun-ExtraBold'),
+         url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-800.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/sarabun-v7-latin-ext_vietnamese_latin_thai-800.woff') format('woff'), /* Modern Browsers */
+  }

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title></title>
+    <!-- <link href="//fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css" /> -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/css/components-rounded.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/layouts/layout6/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/layouts/layout6/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../style/style_v2.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+
+<body class="">
+    <div class="container-fluid">
+        <div class="page-content page-content-popup">
+            <div class="page-sidebar-wrapper">
+                <div class="page-sidebar navbar-collapse collapse">
+                    <div class="titulo">Menu</div>
+                    <ul id="navegacion" class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false"
+                        data-auto-scroll="true" data-slide-speed="200">
+                    </ul>
+                </div>
+            </div>
+            <div class="page-fixed-main-content">
+                <header class="header-v2">
+                    <div class="nom-modulo">
+                        <!-- Módulo de salud -->
+                    </div>
+                    <div class="logo">
+                        <img src="../imagenes/logo.png" />
+                    </div>
+                </header>
+
+                <div class="page-content-fixed-header">
+                    <button type="button" class="menuToggle" style="display: block">
+                        <span class="toggle-icon">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </span>
+                    </button>
+                    <ul class="page-breadcrumb">
+                        <li>
+                            <a id="razonSocial" href="#"></a>
+                        </li>
+                    </ul>
+
+
+                    <div class="content-header-menu">
+                        <div class="dropdown-ajax-menu btn-group">
+                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                                data-close-others="true">
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                                <i class="fa fa-circle"></i>
+                            </button>
+                            <ul class="dropdown-menu-v2">
+                                <li>
+                                    <a id="user_menu_user" href="#">User</a>
+                                </li>
+                                <li>
+                                    <a id="cerrar_menu_user" href="#">Cerrar Sesion</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="body_bomb" style="text-align: center;">
+                    <img src="../imagenes/PENSADOR SUELTO-slim.png" style="width: 400px;">
+                    <!-- cuerpo -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="javascript:;" class="page-quick-sidebar-toggler">
+        <i class="icon-login"></i>
+    </a>
+    <div id="loader_content">
+        <div class="wrapper">
+            <div class="loader">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+    <script src="../assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
+    <script src="../assets/layouts/layout6/scripts/layout.min.js" type="text/javascript"></script>
+    <script src="../assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+    <script src="../scripts/js/ajax.js" type="text/javascript"></script>
+
+    <script src="../assets/global/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
+    <script src="../assets/pages/scripts/ui-bootbox.min.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+    <script src="../assets/global/scripts/datatable.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/moment.js" type="text/javascript"></script>
+
+    <script src="../scripts/js/menu_user.js" type="text/javascript"></script>
+    <script src="../scripts/js/_navegacion.js" type="text/javascript"></script>
+    <script src="../scripts/js/_alerts_prosoft.js" type="text/javascript"></script>
+    <script src="../scripts/js/_CON850.js" type="text/javascript"></script>
+    <script src="../scripts/js/_CON850_P.js" type="text/javascript"></script>
+    <script src="../scripts/js/_CON851P.js" type="text/javascript"></script>
+    <script src="../scripts/js/_CON850_P_MSG.js" type="text/javascript"></script>
+    <script src="../scripts/js/_CON851.js" type="text/javascript"></script>
+    <script src="../scripts/js/_validarInputs.js" type="text/javascript"></script>
+    <script src="../scripts/js/_F8Prosoft_v3.js" type="text/javascript"></script>
+    <script src="../scripts/js/_validarTabla.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/bootstrap-toastr/toastr.js" type="text/javascript"></script>
+    <script src="../scripts/js/Notificaciones.js" type="text/javascript"></script>
+    <script src="../scripts/js/_F8Prosoft_lite.js" type="text/javascript"></script>
+    <script src="../scripts/js/_impresion.js" type="text/javascript"></script>
+</body>
+
+</html>

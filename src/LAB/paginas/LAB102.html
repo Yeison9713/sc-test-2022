@@ -1,0 +1,813 @@
+<div class="col-md-12" id="lab102">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <form class="form-horizontal">
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-2 col-sm-2 col-xs-6">
+              <div class="inline-inputs">
+                <label class="col-md-7 col-sm-7 col-xs-7">Sucursal:</label>
+                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                  <input v-model="global_lab102.SUC" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 col-sm-2 col-xs-6">
+              <div class="inline-inputs">
+                <label class="col-md-8 col-sm-8 col-xs-8">Tipo de servicio:</label>
+                <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                  <input v-model="global_lab102.CL" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 col-sm-2 col-xs-6" id="validarComprob_lab102">
+              <div class="inline-inputs">
+                <label class="col-md-7 col-sm-7 col-xs-7">Comprobante:</label>
+                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                  <input
+                    v-model="global_lab102.COMPROB"
+                    type="text"
+                    data-orden="1"
+                    maxlength="6"
+                    required="true"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <div class="inline-inputs">
+                <label class="col-md-5 col-sm-5 col-xs-5">Codigo Cup:</label>
+                <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                  <input
+                    v-model="global_lab102.CUP"
+                    type="text"
+                    data-orden="1"
+                    maxlength="12"
+                    required="true"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <div class="inline-inputs">
+                <label class="col-md-5 col-sm-5 col-xs-5">Fecha:</label>
+                <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                  <input v-model="global_lab102.FECHA" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <label>Descrip Cup</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="global_lab102.DESCRIP_CUP" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+
+            <div class="salto-linea"></div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <label>Paciente</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="global_lab102.ID_HISTORIA"
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-8 col-sm-8 col-xs-12 no-padding">
+              <label>Nombre Paciente</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="global_lab102.DESCRIP_PACI" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-3 col-sm-3 col-xs-3">
+              <label>Factura</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="global_lab102.CTA" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-3">
+              <label>Entidad</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="global_lab102.ID_ENTIDAD" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-6">
+              <label></label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input v-model="global_lab102.NOM_ENTIDAD" class="form-control col-md-12 col-sm-12 col-xs-12" />
+              </div>
+            </div>
+
+            <div class="salto-linea"></div>
+
+            <div class="col-md-3 col-sm-3 col-xs-3" id="validarMedico_lab102">
+              <label>Médico</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                  <input
+                    id="medico_lab102"
+                    v-model="global_lab102.ID_MEDICO"
+                    required="true"
+                    maxlength="10"
+                    data-orden="1"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    @keydown.119="ventanaMedico"
+                  />
+                </div>
+                <button type="button" @click="ventanaMedico" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                  <i class="icon-magnifier"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-3">
+              <label></label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input v-model="global_lab102.REG_MEDICO" class="form-control col-md-12 col-sm-12 col-xs-12" />
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-6">
+              <label></label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input v-model="global_lab102.NOMBRE_MEDICO" class="form-control col-md-12 col-sm-12 col-xs-12" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="cardioriente" class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarQuienRefiere" style="text-align: left">
+              <label>Quien refiere?</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input
+                  v-model="global_lab102.QUIEN_REFIERE"
+                  type="text"
+                  maxlength="50"
+                  data-orden="1"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: left"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding" v-if="global_lab102.TIENE_PARRAFO_INI == 'S'">
+          <div class="col-md-6 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="text-align: left">
+                <label>Título párrafo</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarTituloParrafo">
+                    <input
+                      v-model="global_lab102.TITULO_PARRAFO_INI"
+                      type="text"
+                      disabled="disabled"
+                      maxlength="100"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" style="padding-right: 0">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarParrafo">
+              <div
+                class="col-md-12 col-sm-12 col-xs-12 head-box"
+                style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+              >
+                <label>Digite contenido del párrafo:</label>
+                <label>(1000 caracteres máximo)</label>
+              </div>
+              <textarea
+                v-model="global_lab102.PARRAFO_INI"
+                class="form-control"
+                disabled="disabled"
+                rows="10"
+                maxlength="1000"
+                data-orden="1"
+                style="resize: none; text-align: justify"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="!ES_LAB" class="form-group col-md-12 col-sm-12 no-padding">
+          <div class="portlet light box-center box-title" style="margin: 0 auto">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Primera tabla</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-1 col-sm-2 col-xs-4" id="validarItem_LAB102">
+              <label>Item</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input
+                  v-model="fila_temp.ITEM"
+                  required="true"
+                  type="number"
+                  data-orden="1"
+                  disabled="disabled"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  maxlength="3"
+                  min="1"
+                  max="40"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-2 col-xs-4">
+              <label>Componente</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="fila_temp.COMPONENTE"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                    style="text-align: left"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-6" id="validarResultado_lab102">
+              <label>Resultado</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="fila_temp.RESULTADO"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="80"
+                    data-orden="1"
+                    disabled="disabled"
+                    style="text-align: left"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 col-sm-2 col-xs-2">
+              <label>Unidad Medida</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input
+                  v-model="fila_temp.UNID_MEDIDA"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  disabled="disabled"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-1 col-sm-2 col-xs-4" style="padding-right: 0">
+              <label>Plantilla</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="fila_temp.PLANTILLA"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%">
+              <thead>
+                <tr>
+                  <th style="text-align: center" class="col-md-1">Item</th>
+                  <th style="text-align: center" class="col-md-4">Componente</th>
+                  <th style="text-align: center" class="col-md-4">Resultado</th>
+                  <th style="text-align: center" class="col-md-2">Unidad Medida</th>
+                  <th style="text-align: center" class="col-md-1">Plantilla</th>
+                </tr>
+              </thead>
+            </table>
+
+            <div>
+              <table
+                class="table table-light table-striped"
+                style="margin-bottom: 0px; width: 100%"
+                id="validarTabla_LAB102"
+              >
+                <tbody>
+                  <tr
+                    v-for="(fila,index) in global_lab102.TABLA"
+                    :key="index"
+                    style="display: flex; justify-content: space-around"
+                  >
+                    <td class="col-md-1" style="text-align: center">{{ fila.ITEM }}</td>
+
+                    <td class="col-md-4" style="text-align: left">{{ fila.COMPONENTE_FULL }}</td>
+
+                    <td class="col-md-4" style="text-align: left">{{ fila.RESULTADO }}</td>
+
+                    <td class="col-md-2" style="text-align: center">{{ fila.MEDIDA }}</td>
+
+                    <td class="col-md-1" style="text-align: center">{{ fila.PLANTILLA }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="ES_LAB">
+          <div class="col-md-6 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div
+                class="col-md-12 col-sm-12 col-xs-12 head-box"
+                style="text-align: center; padding-right: 0; padding-left: 0"
+              >
+                <label>Fecha y hora del laboratorio</label>
+              </div>
+
+              <div class="col-md-12 no-padding" style="display: flex; justify-content: space-around">
+                <div class="col-md-3 col-sm-2 col-xs-4" id="validarAno_LAB102">
+                  <label>Año</label>
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="global_lab102.FECHA_REALIZO_LAB.ANO"
+                      required="true"
+                      type="number"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      maxlength="4"
+                      min="1"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-4" id="validarMes_LAB102">
+                  <label>Mes</label>
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="global_lab102.FECHA_REALIZO_LAB.MES"
+                      required="true"
+                      type="number"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      maxlength="2"
+                      min="1"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-4" id="validarDia_LAB102">
+                  <label>Día</label>
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="global_lab102.FECHA_REALIZO_LAB.DIA"
+                      required="true"
+                      type="number"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      maxlength="2"
+                      min="1"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-4" id="validarHora_LAB102">
+                  <label>Hora</label>
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="global_lab102.FECHA_REALIZO_LAB.HORA"
+                      required="true"
+                      type="number"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      maxlength="2"
+                      min="1"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-4" id="validarMinuto_LAB102">
+                  <label>Minuto</label>
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="global_lab102.FECHA_REALIZO_LAB.MINUTO"
+                      required="true"
+                      type="number"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      maxlength="2"
+                      min="1"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-else>
+          <div class="col-md-6 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="text-align: left">
+                <label>Título párrafo</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="global_lab102.TITULO_HALLAZGOS"
+                      type="text"
+                      disabled="disabled"
+                      maxlength="100"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: left"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" style="padding-right: 0">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarHallazgos_lab102">
+              <div
+                class="col-md-12 col-sm-12 col-xs-12 head-box"
+                style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+              >
+                <label>Digite :</label>
+                <label>(4000 caracteres máximo)</label>
+              </div>
+              <textarea
+                v-model="global_lab102.HALLAZGOS"
+                class="form-control"
+                disabled="disabled"
+                rows="10"
+                maxlength="4000"
+                data-orden="1"
+                style="resize: none; text-align: justify"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="!ES_LAB">
+          <div class="form-group col-md-12 col-sm-12 no-padding">
+            <div class="portlet light box-center box-title" style="margin: 0 auto">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Segunda tabla</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div class="col-md-1 col-sm-2 col-xs-4" id="validarItem_2_LAB102">
+                <label>Item</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="fila_temp_2.ITEM"
+                    required="true"
+                    type="number"
+                    data-orden="1"
+                    disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="3"
+                    min="1"
+                    max="40"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-2 col-xs-4">
+                <label>Componente</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="fila_temp_2.COMPONENTE"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                      style="text-align: left"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-6 col-xs-6" id="validarResultado_2_lab102">
+                <label>Resultado</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="fila_temp_2.RESULTADO"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      maxlength="80"
+                      data-orden="1"
+                      disabled="disabled"
+                      style="text-align: left"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <label>Unidad Medida</label>
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="fila_temp_2.UNID_MEDIDA"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-1 col-sm-2 col-xs-4" style="padding-right: 0">
+                <label>Plantilla</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="fila_temp_2.PLANTILLA"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%">
+                <thead>
+                  <tr>
+                    <th style="text-align: center" class="col-md-1">Item</th>
+                    <th style="text-align: center" class="col-md-4">Componente</th>
+                    <th style="text-align: center" class="col-md-4">Resultado</th>
+                    <th style="text-align: center" class="col-md-2">Unidad Medida</th>
+                    <th style="text-align: center" class="col-md-1">Plantilla</th>
+                  </tr>
+                </thead>
+              </table>
+
+              <div>
+                <table
+                  class="table table-light table-striped"
+                  style="margin-bottom: 0px; width: 100%"
+                  id="validarTabla_LAB102"
+                >
+                  <tbody>
+                    <tr
+                      v-for="(fila,index) in global_lab102.TABLA_2"
+                      :key="index"
+                      style="display: flex; justify-content: space-around"
+                    >
+                      <td class="col-md-1" style="text-align: center">{{ fila.ITEM }}</td>
+
+                      <td class="col-md-4" style="text-align: left">{{ fila.COMPONENTE_FULL }}</td>
+
+                      <td class="col-md-4" style="text-align: left">{{ fila.RESULTADO }}</td>
+
+                      <td class="col-md-2" style="text-align: center">{{ fila.MEDIDA }}</td>
+
+                      <td class="col-md-1" style="text-align: center">{{ fila.PLANTILLA }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="!ES_LAB" class="col-md-6 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="text-align: left">
+              <label>Título párrafo</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="global_lab102.TITULO_CONCLUSIONES"
+                    type="text"
+                    disabled="disabled"
+                    maxlength="100"
+                    data-orden="1"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6" style="padding-right: 0">
+          <div v-if="ES_LAB" class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="text-align: left">
+              <label>Título párrafo</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="global_lab102.TITULO_CONCLUSIONES"
+                    type="text"
+                    disabled="disabled"
+                    maxlength="100"
+                    data-orden="1"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: left"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarConclusiones_lab102">
+            <div
+              class="col-md-12 col-sm-12 col-xs-12 head-box"
+              style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+            >
+              <label>Digite :</label>
+              <label>(2500 caracteres máximo)</label>
+            </div>
+            <textarea
+              v-model="global_lab102.CONCLUSIONES"
+              class="form-control"
+              disabled="disabled"
+              rows="10"
+              maxlength="2500"
+              data-orden="1"
+              style="resize: none; text-align: justify"
+            ></textarea>
+          </div>
+        </div>
+
+        <div v-show="CONSULTA" class="col-md-6 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+            <label>Creación:</label>
+            <div class="inline-inputs">
+              <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                <input
+                  v-model="global_lab102.ADMI_CREA"
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: center"
+                />
+              </div>
+              <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                <input
+                  v-model="global_lab102.HORA_CREA"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: center"
+                />
+              </div>
+              <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                <input
+                  v-model="global_lab102.FECHA_CREA"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: center"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+            <label>Modificación</label>
+            <div class="inline-inputs">
+              <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                <input
+                  v-model="global_lab102.ADMI_MODIF"
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: center"
+                />
+              </div>
+              <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                <input
+                  v-model="global_lab102.HORA_MODIF"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: center"
+                />
+              </div>
+              <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                <input
+                  v-model="global_lab102.FECHA_MODIF"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  style="text-align: center"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div v-show="CONSULTA" class="col-md-6 col-sm-12 col-xs-12" style="padding-right: 0">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="display: flex; justify-content: left">
+              <label>Archivos adjuntos :</label>
+            </div>
+
+            <div v-for="item in global_lab102.ADJUNTOS">
+              <a a @click="aperturaAdjunto_lab102(item)">{{ item }}</a><br />
+            </div>
+          </div>
+        </div>
+
+        <a v-show="CONSULTA" class="float_lab102 btn_imprimir" v-on:click="_envioImpresion" style="right: 21px">
+          <i class="glyphicon glyphicon-print my-float-lab105"></i>
+        </a>
+
+        <a
+          v-show="CONSULTA"
+          @click="salir_lab102"
+          class="float_lab102"
+          style="left: 21px; background-color: #da2c2c; border-color: #da2c2c"
+        >
+          <span>Salir </span>
+        </a>
+      </form>
+    </div>
+  </div>
+  <div v-if="ventanaProfesionales">
+    <ser819
+      :filtro_atiende="paramsAtiende"
+      :filtro_espec="paramsEspec"
+      @callback="successVentanaProfe"
+      @callback_esc="escVentanaProfe"
+    ></ser819>
+  </div>
+</div>
+
+<style>
+  .float_lab102 {
+    z-index: 2;
+    position: fixed;
+    width: 65px;
+    height: 60px;
+    bottom: 16px;
+    background-color: #476fad;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 1px 1px 1px #999;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .float_lab102:hover {
+    box-shadow: 2px 2px 2px #999;
+    transition: padding 0.5s ease, background-position 0.5s ease, transform 0.8s ease;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  input {
+    text-align: center;
+  }
+</style>
+
+<script src="../../LAB/scripts/_impresionesLab.js" type="text/javascript"></script>
+<script src="../../LAB/scripts/LAB102.js" type="text/javascript"></script>

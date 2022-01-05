@@ -1,0 +1,204 @@
+<style>
+    .footer {
+        position: relative;
+        bottom: 0;
+        margin: 20px 0;
+        background-color: #fff;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        width: 100%;
+        box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
+        border-radius: 3px;
+        float: left;
+    }
+</style> 
+
+<div class="col-md-12" id="app">
+    <div class="portlet light no-padding">
+        <div class="portlet-body">
+            <form class="form-horizontal">
+                <div class="form-group col-md-6 col-sm-12 col-xs-12 box-center" id="formConsult_his">
+                    <label>&nbsp;</label>
+                    <div class="inline-inputs">
+                        <label class="col-md-3 col-sm-6 col-xs-12">Documento paciente:</label>
+                        <div class="input-group col-md-8 col-sm-6 col-xs-12">
+                            <input id="busqpaci_his" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="15" data-orden="1" autofocus v-model="form_his.identificacion">
+                        </div>
+                        <button id="busqpaciBtn_his" type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-3 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6" for="doc_paci_his">Documento:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="doc_paci_his" type="text" class="form-control  font-small " disabled />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6" for="cod_ent_his">Entidad:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="cod_ent_his" type="text" class="form-control  font-small " disabled />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6" for="descrip_ent_his">Descripcion:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="descrip_ent_his" type="text" class="form-control font-small " disabled />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6" for="suc_paci_his">Sucursal:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="suc_paci_his" class="form-control font-small " disabled />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6" for="fol_paci_his">Folio:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="fol_paci_his" class="form-control font-small " disabled />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-8 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-4 col-xs-4" for="nom_paci_his">Nombre:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="nom_paci_his" class="form-control font-small " disabled
+                                        style="text-transform: capitalize;" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-4" for="sex_paci_his">Sexo:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="sex_paci_his" class="form-control font-small " disabled />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-4" for="edad_paci_his">Edad:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="edad_paci_his" class="form-control font-small " disabled />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="float: none; margin: 0 auto">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12" style="float: none; margin: 0 auto">
+                        <div class="col-md-3 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-2 col-xs-4" for="cod_ocu_his">Ocupacion:</label>
+                                <div class="input-group col-md-7 col-sm-12 col-xs-12">
+                                    <input id="cod_ocu_his" class="form-control font-small" disabled />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-4 col-xs-12" for="descrip_ocu_his">Descripcion:</label>
+                                <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                    <input id="descrip_ocu_his" class="form-control font-small " disabled />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col">
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="descrip_hc_his" class="form-control font-small " disabled
+                                        style="text-align: center;" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <button id="ventana_citas_ODO" type="button" class="btn blue-madison button-footer">F1 - Ver citas</button>
+            <button id="busquedaF8_his" type="button" class="btn blue-madison button-footer">F8 -Busca por nombre</button>
+            <button id="busquedaF10_his" type="button" class="btn blue-madison button-footer">F10 -Abiertas</button>
+        </div>
+    </div>
+</div>
+
+<div class="f1_his hidden">
+    <div class="col-md-12 col-sm-12 col-xs-12" id="fase_cit_his">
+        <div class="col-md-4 col-sm-4 col-xs-4">
+            <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                <label>Año:</label>
+                <div class="input-group col-md-9 col-sm-9 col-xs-9 ">
+                    <input class="form-control font-xsmall number" type="number" data-orden="1"
+                        maxlength="4" id="ano_cit_his" required/>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4">
+            <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                <label>Mes: </label>
+                <div class="input-group col-md-9 col-sm-9 col-xs-9 ">
+                    <input class="form-control font-xsmall number" type="number" data-orden="2"
+                        maxlength="2" id="mes_cit_his" required/>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4">
+            <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+                <label>Dia:</label>
+                <div class="input-group col-md-9 col-sm-9 col-xs-9 ">
+                    <input class="form-control font-xsmall number" type="number" data-orden="3"
+                        maxlength="2" id="dia_cit_his" required/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+
+<style>
+    /* .details-control::before {
+        left: 4px;
+        height: 14px;
+        width: 14px;
+        display: block;
+        position: absolute;
+        color: white;
+        border: 2px solid white;
+        border-radius: 14px;
+        box-shadow: 0 0 3px #444;
+        box-sizing: content-box;
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        line-height: 14px;
+        content: '+';
+        background-color: #31b131;
+    } */
+</style>
+
+<script src="../../HICLIN/scripts/HC817.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HC818.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI00.formato.js" type="text/javascript"></script>
+<script src="../../ODONTO/scripts/_mainOd.js" type="text/javascript"></script>
+<script src="../../ODONTO/scripts/menu-odo.js" type="text/javascript"></script>

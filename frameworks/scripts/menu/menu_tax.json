@@ -1,0 +1,152 @@
+{
+  "Menu": [
+    {
+      "Id": "01",
+      "Descripcion": "Actualizar modalidades",
+      "Tipo": "HTML",
+      "Href": "../../TAX/paginas/tax011.html"
+    },
+    {
+      "Id": "02",
+      "Descripcion": "Actualizar agencias",
+      "Tipo": "HTML",
+      "Href": "../../TAX/paginas/tax012.html"
+    },
+    {
+      "Id": "03",
+      "Descripcion": "Actualizar vehiculos",
+      "Tipo": "HTML",
+      "Href": "../../TAX/paginas/tax015.html"
+    },
+    {
+      "Id": "04",
+      "Descripcion": "Listado parque automotor",
+      "Sub": [
+        {
+          "Id": "041",
+          "Descripcion": "Listado por modalidad",
+          "Tipo": "HTML",
+          "Href": "../../TAX/paginas/tax903.html"
+        },
+        {
+          "Id": "042",
+          "Descripcion": "Listado por propietario",
+          "Tipo": "HTML",
+          "Href": "../../TAX/paginas/tax904.html"
+        },
+        {
+          "Id": "043",
+          "Descripcion": "Listado por orden de placa",
+          "Tipo": "HTML",
+          "Href": "../../TAX/paginas/tax905.html"
+        }
+      ]
+    },
+    {
+      "Id": "05",
+      "Descripcion": "Facturacion intermunicipal",
+      "Tipo": "HTML",
+      "Href": "../../TAX/paginas/tax132.html"
+    },
+    {
+      "Id": "06",
+      "Descripcion": "Re-imprimir comprobantes",
+      "Tipo": "HTML",
+      "Href": "../../TAX/paginas/tax143.html"
+    },
+    {
+      "Id": "07",
+      "Descripcion": "Anular comprobantes",
+      "Tipo": "HTML",
+      "Href": "../../TAX/paginas/tax152.html"
+    },
+    {
+      "Id": "08",
+      "Descripcion": "Coreccion de libros",
+      "Tipo": "HTML",
+      "Href": "../../TAX/paginas/tax154.html"
+    },
+    {
+      "Id": "09",
+      "Descripcion": "Listado de acumulados",
+      "Sub": [
+        {
+          "Id": "091",
+          "Descripcion": "Listado por agencias",
+          "Tipo": "HTML",
+          "Href": "../../TAX/paginas/tax908.html"
+        },
+        {
+          "Id": "092",
+          "Descripcion": "Listado por vehiculos",
+          "Tipo": "HTML",
+          "Href": "../../TAX/paginas/tax908a.html"
+        },
+        {
+          "Id": "093",
+          "Descripcion": "Listado totales por carro",
+          "Tipo": "HTML",
+          "Href": "../../TAX/paginas/tax908b.html"
+        },
+        {
+          "Id": "094",
+          "Descripcion": "Listado acumulado x carro",
+          "Tipo": "HTML",
+          "Href": "../../TAX/paginas/tax908g.html"
+        }
+      ]
+    },
+    {
+      "Id": "0A",
+      "Descripcion": "Contabilizar fondos iterm.",
+      "Tipo": "HTML",
+      "Href": "../../TAX/paginas/tax909.html"
+    },
+    {
+      "Id": "0B",
+      "Descripcion": "Contabilizar cuotas sosten.",
+      "Tipo": "HTML",
+      "Href": "../../TAX/paginas/tax911.html"
+    },
+    {
+      "Id": "0C",
+      "Descripcion": "Recontabilizar intermunicip",
+      "Tipo": "HTML",
+      "Href": "../../TAX/paginas/tax910.html"
+    },
+    {
+      "Id": "0D",
+      "Descripcion": "Interfase con facturacion",
+      "Sub":[
+        {
+          "Id": "0D1",
+          "Descripcion": "Importar archivo plano"
+        },
+        {
+          "Id": "0D2",
+          "Descripcion": "Anular movimiento por fecha",
+          "Tipo": "HTML",
+          "Href": "../../TAX/paginas/tax152a.html"
+        }
+      ]
+    },
+    {
+      "Id": "0E",
+      "Descripcion": "Listado de auditoria correc.",
+      "Tipo": "HTML",
+      "Href": "../../TAX/paginas/tax913.html"
+    },
+    {
+      "Id": "0G",
+      "Descripcion": "Exportar informacion interm",
+      "Tipo": "HTML",
+      "Href": "../../TAX/paginas/expo-int.html"
+    },
+    {
+      "Id": "0H",
+      "Descripcion": "Importar informacion interm",
+      "Tipo": "HTML",
+      "Href": "../../TAX/paginas/impo-int.html"
+    }
+  ]
+}

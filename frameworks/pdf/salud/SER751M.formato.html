@@ -1,0 +1,418 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+    @page {
+        margin: 5mm;
+        size: A4 landscape;
+    }
+
+    html,
+    body,
+    #documento,
+    #impresion {
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: 'Roboto', sans-serif;
+        box-sizing: border-box;
+    }
+
+    #encabezado {
+        width: 100%;
+        height: 100px;
+        border: 1px solid #000;
+        /* border-bottom: none; */
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        position: fixed;
+        top: 0;
+    }
+
+    .enc-logo,
+    .enc-izq,
+    .enc-der {
+        display: flex;
+        align-items: center;
+    }
+
+    .enc-izq div a {
+        text-transform: uppercase;
+    }
+
+    .enc-logo #logo {
+        width: 70%;
+        /* max-width: 70%; */
+        height: 60%;
+        margin: 0 auto;
+        align-items: center;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .enc-logo #logo img {
+        width: auto;
+        max-width: 100%;
+        height: 100%;
+        display: block;
+        margin: auto;
+    }
+
+    #contenido::before {
+        /* padding: 0 1px 0 0; */
+        margin-top: 100px;
+    }
+
+    #contenido #tablaListado {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table#tablaListado tfoot tr {
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+
+    table#tablaListado thead #header1 {
+        border-top: 1px solid #000;
+    }
+
+    table#tablaListado thead #header1 th:nth-child(1),
+    #header1 th:nth-child(2),
+    #header1 th:nth-child(3),
+    table#tablaListado thead #header2 {
+        border-bottom: 1px solid #000;
+
+    }
+
+    table#tablaListado thead tr th {
+        padding: 10px 2px;
+        font-size: 10px;
+        text-transform: uppercase;
+        text-align: left;
+        /* width: 20%; */
+    }
+
+    #tablaListado thead tr th {
+        text-align: center !important;
+    }
+
+    table#tablaListado tbody tr td {
+        padding: 2px 3px;
+        font-size: 10px;
+        text-align: left;
+        /* width: 20%; */
+    }
+
+    #tablaListado tbody tr td:nth-child(4),
+    td:nth-child(5),
+    td:nth-child(6),
+    td:nth-child(7),
+    td:nth-child(8),
+    td:nth-child(9),
+    td:nth-child(10),
+    td:nth-child(11),
+    td:nth-child(12),
+    td:nth-child(13),
+    td:nth-child(14),
+    td:nth-child(15),
+    td:nth-child(16),
+    td:nth-child(17),
+    td:nth-child(18),
+    td:nth-child(19),
+    td:nth-child(20) {
+        text-align: right !important;
+    }
+
+    table#tablaListado thead:after {
+        content: " ";
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    table#tablaListado thead:before {
+        content: " ";
+        display: block;
+        margin-top: 5px;
+    }
+
+    #titular {
+        font-size: 11px;
+        width: 100%;
+    }
+
+    #titular th {
+        text-align: left !important;
+    }
+
+    #titular td {
+        text-align: left !important;
+        font-weight: bold;
+    }
+
+    .paginacion::after {
+        counter-increment: page;
+        content: counter(page);
+    }
+
+    @media print {
+        #impresion {
+            display: block;
+        }
+    }
+
+    .page-header-space {
+        height: 100px;
+    }
+
+    .page-header {
+        height: 50px;
+    }
+
+    .page-header {
+        position: fixed;
+        top: 0mm;
+        width: 99%;
+    }
+
+    .page {
+        page-break-after: always;
+        width: 100%;
+    }
+</style>
+
+<div id="impresion">
+    <div id="encabezado">
+        <div class="enc-logo">
+            <div id="logo">
+            </div>
+        </div>
+        <div class="enc-izq">
+            <div>
+                <a id="nombreEmpresa" style="font-weight: 600;font-size: 24px;"></a>
+                <br>
+                <a id="nit" style="font-size: 16px;font-weight: 600;"></a>
+                <br>
+                <a style="font-size: 16px;font-weight: 600;">ESTADISTICA DE MORBILIDAD EN CONSULTAS POR TIPO DE PACIENTE</a>
+                <br>
+                <a id="fecha" style="font-size: 12px;font-weight: 600;"></a>
+            </div>
+        </div>
+    </div>
+
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <td>
+                    <div class="page-header-space"></div>
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <div class="page">
+                        <div id="tabla1">
+                            <table id="titular">
+                                <thead>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div id="contenido">
+                            <table id="tablaListado">
+                                <thead>
+                                    <tr id="header1">
+                                        <!-- filas unidas -->
+                                        <th rowspan="2">COD</th>
+                                        <th rowspan="2">DESCRIPCIÓN</th>
+                                        <!-- con encabezados -->
+                                        <th colspan="2">MENOR A 1 AÑO</th>
+                                        <th colspan="2">DE 1 A 5 AÑOS</th>
+                                        <th colspan="2">DE 6 A 11 AÑOS</th>
+                                        <th colspan="2">DE 12 A 17 AÑOS</th>
+                                        <th colspan="2">DE 18 A 30 AÑOS</th>
+                                        <th colspan="2">DE 31 A 41 AÑOS</th>
+                                        <th colspan="2">DE 46 A 80 AÑOS</th>
+                                        <th colspan="2">MAYORES DE 80 AÑOS</th>
+                                        <th>ACUMULADOS</th>
+                                    </tr>
+                                    <tr id="header2">
+                                        <th>MASCUL</th>
+                                        <th>FEMIN</th>
+                                        <th>MASCUL</th>
+                                        <th>FEMIN</th>
+                                        <th>MASCUL</th>
+                                        <th>FEMIN</th>
+                                        <th>MASCUL</th>
+                                        <th>FEMIN</th>
+                                        <th>MASCUL</th>
+                                        <th>FEMIN</th>
+                                        <th>MASCUL</th>
+                                        <th>FEMIN</th>
+                                        <th>MASCUL</th>
+                                        <th>FEMIN</th>
+                                        <th>MASCUL</th>
+                                        <th>FEMIN</th>
+                                        <th>TOTAL</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<script>
+    var $_DATOS, $_TIPO, $_URL;
+    ipcRenderer.on('ping', (e, data) => {
+
+        $_DATOS = data.datos;
+        $_TIPO = data.tipo;
+        $_URL = data.url;
+
+        // var nit = "00004059";
+        var nit = $_DATOS.ENCABEZADO[1].slice(2),
+        url = path.join(`P:\\PROG\\LOGOS\\${nit}.bmp`);
+
+        console.log(nit, "nit");
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg}`).appendTo('#logo')
+        });
+
+        montar_impresion();
+    })
+
+    function montar_impresion() {
+        document.getElementById('nombreEmpresa').innerHTML = $_DATOS.ENCABEZADO[0];
+        document.getElementById('nit').innerHTML = new Intl.NumberFormat("ja-JP").format($_DATOS.ENCABEZADO[1]);
+        document.getElementById('fecha').innerHTML = $_DATOS.ENCABEZADO[2];
+
+        var tabla = $_DATOS['LISTADO'];
+        console.log(tabla, "tabla");
+
+        // SEGUNDO ENCABEZADO
+            $('#titular tbody').append(''
+            + '<tr style="border-top: 1px solid #000">'
+            + ` <td> PERIODO SELECCIONADO: ${$_DATOS.ENCABEZADO[3]} - ${$_DATOS.ENCABEZADO[4]}</td>`
+            + ` <td>HORA: ${$_DATOS.ENCABEZADO[6]} </td>`
+            + ` <td>FACTURA ${$_DATOS.ENCABEZADO[5]}</td>`
+            + ` <td>${$_DATOS.ENCABEZADO[7]}</td>`
+            + ` <td>${$_DATOS.ENCABEZADO[8]}</td>`
+            + ` <td>${$_DATOS.ENCABEZADO[9]}</td>`
+            + '</tr>'
+        );
+
+
+        // TABLA
+        for (var i in tabla) {
+            var item = tabla[i];
+            var parent = document.getElementById("tablaListado").getElementsByTagName("tbody")[0];
+            var actual_row = parent.rows.length;
+            var row = parent.insertRow(actual_row);
+
+            var array1 = (item.TABLA_LN.split(','))
+
+            console.log(array1[9], 'pos')
+
+            row.insertCell(0).appendChild(document.createTextNode(item.COD_LN.trim()));
+            row.insertCell(1).appendChild(document.createTextNode(item.ENFER_LN.trim()));
+            row.insertCell(2).appendChild(document.createTextNode(array1[0].trim()));
+            row.insertCell(3).appendChild(document.createTextNode(array1[1].trim()));
+            row.insertCell(4).appendChild(document.createTextNode(array1[2].trim()));
+            row.insertCell(5).appendChild(document.createTextNode(array1[3].trim()));
+            row.insertCell(6).appendChild(document.createTextNode(array1[4].trim()));
+            row.insertCell(7).appendChild(document.createTextNode(array1[5].trim()));
+            row.insertCell(8).appendChild(document.createTextNode(array1[6].trim()));
+            row.insertCell(9).appendChild(document.createTextNode(array1[7].trim()));
+            row.insertCell(10).appendChild(document.createTextNode(array1[8].trim()));
+            row.insertCell(11).appendChild(document.createTextNode(array1[9].trim()));
+            row.insertCell(12).appendChild(document.createTextNode(array1[10].trim()));
+            row.insertCell(13).appendChild(document.createTextNode(array1[11].trim()));
+            row.insertCell(14).appendChild(document.createTextNode(array1[12].trim()));
+            row.insertCell(15).appendChild(document.createTextNode(array1[13].trim()));
+            row.insertCell(16).appendChild(document.createTextNode(array1[14].trim()));
+            row.insertCell(17).appendChild(document.createTextNode(array1[15].trim()));
+            row.insertCell(18).appendChild(document.createTextNode(item.TOTAL_LN.trim()));
+        }
+
+        $('#tablaListado tbody').append(''
+            + '<tr style="border-top: 1px solid #000">'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td></td>'
+            + ' <td><b>TOTAL ACUMULADOS:</b></td>'
+            + ' <td>' + parseFloat(tabla.length - 1) + '</td>'
+            + ' <td></td>'
+            + ' <td>IMPRESION:</td>'
+            + ' <td>' + $_DATOS.ENCABEZADO[2] + '</td>'
+            + '</tr>'
+        );
+
+        if ($_TIPO == 'csv') imprimirCsv();
+    }
+
+    function imprimirCsv() {
+        var csv = [];
+
+        var rows = document.querySelectorAll("#tablaListado tbody tr");
+
+        for (var i = 0; i < rows.length; i++) {
+            var row = [], cols = rows[i].querySelectorAll("td, th");
+            for (var j  = 0; j < cols.length; j++) row.push(cols[j].innerText.replace(/,/g, ''));
+            csv.push(row.join(","));
+        }
+
+        var head_csv = ['COD', 'ENFERMEDAD','MASCUL', 'FEMEN', 'MASCUL', 'FEMEN', 'MASCUL', 'FEMEN', 'MASCUL', 'FEMEN', 'MASCUL', 'FEMEN', 'MASCUL', 'FEMEN', 'MASCUL', 'FEMEN', 'MASCUL', 'FEMEN', 'TOTAL']
+        csv.unshift(head_csv.join(","))
+
+        var head_csv = [$('#nombreEmpresa').text(), $_DATOS.ENCABEZADO[1], "LISTADO MORBILIDAD POR CONSULTA POR TIPO DE PACIENTE", document.getElementById("fecha").innerHTML]
+        csv.unshift(head_csv.join(","))
+        _formatoCsv(csv.join("\n"));
+    }
+
+    function _formatoCsv(csv) {
+        var urlCsv = $_URL + '.csv';
+        try {
+            fs.writeFile(urlCsv, csv, 'utf-8', function (e) {
+                var window = remote.getCurrentWindow();
+                window.close();
+            });
+        } catch (e) {
+            alert('Ha ocurrido un error escribiendo el archivo: ' + urlCsv);
+        }
+    }
+</script>

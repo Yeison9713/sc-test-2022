@@ -1,0 +1,316 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="page-header" style="text-align: center">
+        <div class="encabezado_SER604P">
+            <div class="usu_SER604P">
+                <a class="nombre_SER604P"> HOSPITAL LOCAL SAN MARTIN ESE</a>
+                <a class="nitusu_SER604P">NIT 892,000,458</a>
+            </div>
+            <div class="datos_usu1_SER604P">
+                <a class="direccionusu_SER604P"> CLIENTE: CAFESALUD EPS </a>
+                <a class="telefonousu_SER604P">FACTURA NRO: A004482</a>
+            </div>
+            <div class="datos_usu2_SER604P">
+                <a class="direccionusu_SER604P"> PACIENTE: ACOSTA HERNANDEZ YEINER ARTURO</a>
+                <a class="telefonousu_SER604P">FECHA: Imp: 200521 08:53</a>
+            </div>
+            <div style="padding-top: 14px;"></div>
+            <div class="headertabla_SER604P">
+                <table class="tablaheader_SER604P">
+                    <thead>
+                        <tr>
+                            <th style="width: 10%;font-size:9px;">Codigo</th>
+                            <th style="width: 15%;font-size:9px;">Descripcion</th>
+                            <th style="width: 8%;font-size:9px;">Vlr Unitario</th>
+                            <th style="width: 8%;font-size:9px;">Cantidad</th>
+                            <th style="width: 8%;font-size:9px;">Valor venta</th>
+                            <th style="width: 8%;font-size:9px;"></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    <div class="page-header-space">
+                    </div>
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <div class="page" >
+                        <table class="tablacodservicio_SER604P">
+                            <tbody>
+                            </tbody>
+                            <tfoot style="text-align:center; border-top: 0.2px solid black">  
+                                <tr>
+                                 <td>Sum</td>
+                                 <td>$180</td>
+                               </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+          
+
+    </table>
+
+</body>
+
+</html>
+
+<style>
+    .page-header,
+    .page-header-space {
+        height: 160px;
+    }
+
+    .page-header {
+        position: fixed;
+        top: 0mm;
+        width: 100%;
+    }
+
+    .page {
+        page-break-after: always;
+        width: 100%;
+    }
+
+    @page {
+        margin: 20mm
+    }
+
+    @media print {
+        thead {
+            display: table-header-group;
+        }
+
+        tfoot {
+            display: table-footer-group;
+        }
+
+        button {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+        }
+    }
+    .usu_SER604P {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        width: 41%;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .datos_usu1_SER604P {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        margin: 0 auto;
+        font-size: 12px;
+    }
+
+    .datos_usu2_SER604P {
+        display: flex;
+        justify-content: space-around;
+        width: 40%;
+        margin: 0 auto;
+        font-size: 12px;
+    }
+
+    .headertabla_SER604P {
+        margin: 0 auto;
+        width: 100%;
+        border-top: black solid 0.1px;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+        font-size: 12px;
+    }
+
+    .tablaheader_SER604P {
+        margin: 0 auto;
+        width: 100%;
+        font-size: 12px;
+    }
+    .salto-linea {
+        padding-top: 20px;
+    }
+</style>
+
+
+<script>
+    var SER604P = [];
+    ipcRenderer.on('ping', (e, data) => {
+        SER604P = data.datos;
+        $('.nombre_SER09E').text(SER604P.NOMBREUSU);
+        $('.nitusu_SER604P').text('Nit: ' + SER604P.NITUSU + '-' + SER604P.DVUSU);
+        $('.direccionusu_SER604P').text(SER604P.DIRECUSU);
+        $('.telefonousu_SER604P').text('Tel: ' + SER604P.TELUSU);
+        $('.ciudadusu_SER604P').text(SER604P.CIUDADUSU);
+        $('.fechafactura_SER604P').text('FECHA: ' + SER604P.FECHAIMP);
+        $('.facturaventa_SER604P').text('FACTURA DE VENTA No: ' + SER604P.PREFIJOFACT + SER604P.NUMEROFACT);
+        $('.cliente_SER604P').text('CLIENTE: ' + SER604P.DESCRIPNUM);
+        $('.nitcliente_SER604P').text('NIT: ' + SER604P.NIT + ' ' + SER604P.DVTER);
+        $('.direccion_SER604P').text('Direccion: ' + SER604P.DIRECCTER);
+        $('.telefono_SER604P').text('TEL: ' + SER604P.TELTER);
+        $('.ciudad_SER604P').text('CIUDAD: ' + SER604P.CIUDADTER);
+        $('.paciente_SER604P').text('PACIENTE: ' + 'RESVISAR');
+        $('.idpaceinte_SER604P').text(SER604P.IDPACTEM);
+        $('.edad_SER604P').text(SER604P.EDADTEM);
+        $('.convenio_SER604P').text(SER604P.DESCRIPTAR);
+        $('.observaciones_SER604P').text(SER604P.ONSERV);
+        $('.anexos_SER604P').text(SER604P.ANEXOS);
+        SER604P.FACTURASIMPRIMIR.forEach((element, index) => {
+            if (index < 1) {
+                element.TABLA.forEach(element2 => {
+                    if (element2.CODIGO_TEM.trim() != '') {
+                        $('.tablacodservicio_SER604P').append(
+                            '<tr>' +
+                            '<th style="width: 1%;font-size:9px;">' + element.LLAVEFACT_TEM.substring(3, 9) + '</th>' +
+                            '<td style="width: 2%;font-size:9px;">' + element.FECHA_TEM + '</td>' +
+                            '<td style="width: 160px;font-size:9px;">' + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + element.EDAD_TEM + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + element.SEXO_TEM + '</td>' +
+                            '<td style="width: 10%;font-size:9px;">' + element2.CONCEPTO_TEM + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + parseInt(element2.CANT_TEM) + '</td>' +
+                            '<td style="width: 2%;font-size:9px;">' + parseInt(element2.VALOR_TEM.replace(/,/g, '')) + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + element.COPAGO_TEM + '</td>' +
+                            '<td style="width: 3%;font-size:9px;">' + element.AUTOR_TEM + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + element2.CONCEPTO_TEM.substring(32, 40) + '</td>' +
+                            '</tr>'
+                        )
+                    }
+                });
+            } else {
+                element.TABLA.forEach(element2 => {
+                    if (element2.CODIGO_TEM.trim() != '') {
+                        $('.tablacodservicio_SER604P').append(
+                            '<tr>' +
+                            '<th style="width: 1%;font-size:9px;">' + element.LLAVEFACT_TEM.substring(3, 9) + '</th>' +
+                            '<td style="width: 2%;font-size:9px;">' + element.FECHA_TEM + '</td>' +
+                            '<td style="width: 160px;font-size:9px;">' + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + element.EDAD_TEM + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + element.SEXO_TEM + '</td>' +
+                            '<td style="width: 10%;font-size:9px;">' + element2.CONCEPTO_TEM + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + parseFloat(element2.CANT_TEM) + '</td>' +
+                            '<td style="width: 2%;font-size:9px;">' + parseFloat(element2.VALOR_TEM.replace(/,/g, '')) + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+                            '<td style="width: 3%;font-size:9px;">' + element.AUTOR_TEM + '</td>' +
+                            '<td style="width: 1%;font-size:9px;">' + element2.CONCEPTO_TEM.substring(32, 40) + '</td>' +
+                            '</tr>'
+                        )
+                    }
+                });
+            }
+            $('.tablacodservicio_SER604P').append(
+                '<tr>' +
+                '<th style="width: 1%;font-size:9px;">' + '</th>' +
+                '<td style="width: 2%;font-size:9px;">' + '</td>' +
+                '<td style="width: 12%;font-size:9px;">' + '</td>' +
+                '<td style="width: 1%;font-size:9px;">' + '</td>' +
+                '<td style="width: 1%;font-size:9px;">' + '</td>' +
+                '<td style="width: 10%;font-size:9px;"> Total comprobante </td>' +
+                '<td style="width: 1%;font-size:9px;">' + '</td>' +
+                '<td style="width: 2%;font-size:9px;">' + element.VALORCOMPROBANTE + '</td>' +
+                '<td style="width: 1%;font-size:9px;">' + '</td>' +
+                '<td style="width: 3%;font-size:9px;">' + '</td>' +
+                '<td style="width: 1%;font-size:9px;">' + '</td>' +
+                '</tr>'
+            )
+        });
+
+        $('.tablacodservicio_SER604P').append(
+            '<tr>' +
+            '<th style="width: 1%;font-size:9px;">' + '</th>' +
+            '<td style="width: 2%;font-size:9px;">' + '</td>' +
+            '<td style="width: 12%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 10%;font-size:9px;"> Total Fact </td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 2%;font-size:9px;">' + SER604P.VALORFACT + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 3%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '</tr>'
+        )
+
+        $('.tablacodservicio_SER604P').append(
+            '<tr>' +
+            '<th style="width: 1%;font-size:9px;">' + '</th>' +
+            '<td style="width: 2%;font-size:9px;">' + '</td>' +
+            '<td style="width: 12%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 10%;font-size:9px;"> Total copagos recibidos </td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 2%;font-size:9px;">' + SER604P.VALORTOTALCOPAGOS + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 3%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '</tr>'
+        )
+
+        $('.tablacodservicio_SER604P').append(
+            '<tr>' +
+            '<th style="width: 1%;font-size:9px;">' + '</th>' +
+            '<td style="width: 2%;font-size:9px;">' + '</td>' +
+            '<td style="width: 12%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 10%;font-size:9px;"> Saldo neto factura </td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 2%;font-size:9px;">' + SER604P.VALORNETOFACTURA + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '<td style="width: 3%;font-size:9px;">' + '</td>' +
+            '<td style="width: 1%;font-size:9px;">' + '</td>' +
+            '</tr>'
+        )
+
+
+        var nit = RXI02A.NIT;
+        var url = path.join(`P:\\PROG\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('.logo')
+        });
+
+        var nitprofe = parseInt(RXI02A.IDRADIOLOGO_RX);
+        var urlprofe = path.join(`P:\\PROG\\DATOS\\17329215.bmp`);
+        fs.readFile(urlprofe, function (err, data) {
+            if (err) throw err;
+            var dataImg2 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg2}`).appendTo('.firmaprofe')
+        });
+    })
+</script>

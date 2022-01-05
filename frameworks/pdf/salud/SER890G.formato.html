@@ -1,0 +1,214 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+
+<body>
+    <div class="page-header">
+        <div class="encabezado_SER890G">
+            <div class="imageusu_SER890G">
+            </div>
+            <div class="caja_SER890G" style="width: 80%!important;">
+                <a class="tituloencabezado_SER890G">ASIGNACION DE CITA</a>
+                <a class="nombreusu_SER890G">N1N1N1N1N1N1N1N1N1N1</a>
+            </div>
+            <div class="caja_SER890G" style="width: 19%!important; border-left: black solid 0.1px; display: flex; align-items: center;">
+                <a class="tituloencabezado_SER890G" style="font-size: 6px;">GF-P5-PR4-F2</a>
+            </div>
+        </div>
+    </div>
+
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <td>
+                    <!--place holder for the fixed-position header-->
+                    <div class="page-header-space"></div>
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <!--*** CONTENT GOES HERE ***-->
+                    <div class="page">
+                        <div class="cita_SER890G">
+                            <a class="titulos_SER890G">Fecha de la Cita : </a>
+                            <a class="fechacita_SER890G">F1F1F1F1F1F1F1</a>
+                            <a class="titulos_SER890G">Hora : </a>
+                            <a class="horacita_SER890G">H1:H1</a>
+                            <a class="titulos_SER890G">Medico : </a>
+                            <a class="medicocita_SER890G">e1e1e1e1e1e1e1e1</a>
+                            <a class="titulos_SER890G" style="width: 20%;">Motivo : </a>
+                            <a class="titulos_SER890G" style="width: 23%;">Codigo : </a>
+                            <a class="codigo_SER890G">T1T</a>
+                            <a class="descripcup_SER890G" style="width: 45%; padding-left: 47%;">E1E1E1E1E1E1E1E1E1E1E1E1E1E1E</a>
+                            <a class="titulos_SER890G">Entidad : </a>
+                            <a class="entidad_SER890G">E1E1E1E1E1E1E1E1E1E1E1E1E1E1E</a>
+                            <a class="titulos_SER890G">Paciente : </a>
+                            <a class="pacienteapellidos_SER890G">E1E1E1E1E1E1E1E1E1E1E1E1E1E1E</a>
+                            <a class="pacientenombres_SER890G" style="width: 45%; padding-left: 47%;">N1N1N1N1N1N1N1N1N1N1N1</a>
+                            <a class="titulos_SER890G">CC : </a>
+                            <a class="cedula_SER890G">C1C1C1C1C1C1C1C1C1C1C1C1C1</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+<style>
+    body {
+        font-family: Tahoma;
+    }
+    
+    .page-header,
+    .page-header-space {
+        height: 80px;
+    }
+
+    .page-header {
+        position: fixed;
+        top: 0mm;
+        width: 99%;
+    }
+
+    .page {
+        page-break-after: always;
+        width: 100%;
+    }
+
+    @page {
+        margin: 20mm
+    }
+
+    @media print {
+        thead {
+            display: table-header-group;
+        }
+
+        tfoot {
+            display: table-footer-group;
+        }
+
+        button {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+        }
+    }
+
+    .salto-linea {
+        padding-top: 10px;
+    }
+
+    .encabezado_SER890G {
+        width: 30%;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-top: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+        display: flex;
+    }
+
+    .caja_SER890G{
+        width: 100%;
+    }
+
+    .tituloencabezado_SER890G{
+        width: 100%;
+        font-weight: bold;
+        font-size: 10px;
+        display: inline-flex;
+        justify-content: center;
+    }
+
+    .nombreusu_SER890G{
+        width: 100%;
+        font-weight: bold;
+        font-size: 8px;
+        display: inline-flex;
+        justify-content: center;
+    }
+
+    .cita_SER890G{
+        width: 29%;
+        padding: 5px;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-top: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+    }
+
+    .titulos_SER890G{
+        width: 45%;
+        font-size: 9px;
+        font-weight: bold;
+        display: inline-flex;
+    }
+
+    .fechacita_SER890G,
+    .horacita_SER890G,
+    .codigo_SER890G,
+    .descripcup_SER890G{
+        display: inline-flex;
+        width: 24%;
+        font-size: 9px;
+    }
+
+    .medicocita_SER890G,
+    .entidad_SER890G,
+    .horacita_SER890G,
+    .fechacita_SER890G{
+        display: inline-flex;
+        width: 50%;
+        font-size: 9px;
+    }
+
+    .pacienteapellidos_SER890G,
+    .pacientenombres_SER890G{
+        display: inline-flex;
+        width: 50%;
+        font-size: 9px;
+    }
+
+    .cedula_SER890G{
+        display: inline-flex;
+        width: 50%;
+        font-size: 9px;
+    }
+
+</style>
+<script>
+    var SER890G = [];
+    ipcRenderer.on('ping', (e, data) => {
+        SER890G = data.datos;
+        $('.nombreusu_SER890G').text(SER890G.NOMBREUSU);
+        $('.fechacita_SER890G').text(SER890G.FECHACITA);
+        $('.horacita_SER890G').text(SER890G.HORACITA);
+        $('.medicocita_SER890G').text(SER890G.MEDICOCITA);
+        $('.codigo_SER890G').text(SER890G.CUP)
+        $('.descripcup_SER890G').text(SER890G.DESCRIPCUP);
+        $('.entidad_SER890G').text(SER890G.ENTIDAD);
+        $('.pacienteapellidos_SER890G').text(SER890G.APELLIDO1 + SER890G.APELLIDO2);
+        $('.pacientenombres_SER890G').text(SER890G.NOMBRE1 + SER890G.NOMBRE2);
+        $('.cedula_SER890G').text(SER890G.CC);
+
+        var nit = SER890G.NIT;
+        var url = path.join(`P:\\PROG\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('.logo')
+        });
+    })
+</script>

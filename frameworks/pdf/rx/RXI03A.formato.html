@@ -1,0 +1,382 @@
+<script>
+    const {
+        ipcRenderer
+    } = require("electron"),
+        fs = require("fs"),
+        exec = require("child_process").exec,
+        path = require("path"),
+        remote = require("electron").remote;
+    window.$ = window.jQuery = require("jquery");
+</script>
+
+<body>
+
+    <div class="page-header">
+        <div class="logo"></div>
+        <a class="nombreusu_RXI03A"></a>
+        <a class="comprobante_RXI03A"></a>
+        <div class="salto-linea"></div>
+        <div style="width: 100%; border-top: black solid 0.1px;">
+            <a style="width: 10%; font-weight: bolder; display: inline-flex; font-size: 12px;">Paciente: </a>
+            <a class="paciente_RXI03A"></a>
+            <a class="fechafact_RXI03A"></a>
+        </div>
+        <a style="width: 5%; font-weight: bolder; display: inline-flex;font-size: 12px;">ID: </a>
+        <a class="idpaciente_RXI03A"></a>
+        <a style="width: 6%; font-weight: bolder; display: inline-flex;font-size: 12px;">Sexo: </a>
+        <a class="sexo_RXI03A"></a>
+        <a style="width: 6%; font-weight: bolder; display: inline-flex;font-size: 12px;">Edad: </a>
+        <a class="edad_RXI03A"></a>
+        <a style="width: 5%; font-weight: bolder; display: inline-flex;font-size: 12px;">Peso: </a>
+        <a class="peso_RXI03A" style="width: 20%!important; display: inline-flex;font-size: 12px;"></a>
+        <a style="width: 14%; font-weight: bolder; display: inline-flex;font-size: 12px;">Estatura Usual: </a>
+        <a class="estaturausua_RXI03A"></a>
+        <a style="width: 14%; font-weight: bolder; display: inline-flex;font-size: 12px;">Estatura Actual: </a>
+        <a class="estaturaactual_RXI03A"></a>
+        <a style="width: 20%; font-weight: bolder; display: inline-flex;font-size: 12px;">Perdida De Estatura: </a>
+        <a class="perdidadeestatura_RXI03A" style="width: 14%!important;display: inline-flex;font-size: 12px;"></a>
+        <a style="width: 11%; font-weight: bolder; display: inline-flex;font-size: 12px;">Antecedentes: </a>
+        <a class="antecedentes_RXI03A"></a>
+        <a style="width: 11%; font-weight: bolder; display: inline-flex;font-size: 12px;">Tratamiento: </a>
+        <a class="tratamiento_RXI03A"></a>
+        <div style="width: 100%; border-bottom: black solid 0.1px; display: inline-flex;">
+            <a style="width: 11%; font-weight: bolder; display: inline-flex;font-size: 12px;">Estudio: </a>
+            <a class="estudio_RXI03A" style="font-weight: bolder;"></a>
+        </div>
+    </div>
+
+    <table style="width: 100%;">
+
+        <thead>
+            <tr>
+                <td>
+                    <!--place holder for the fixed-position header-->
+                    <div class="page-header-space"></div>
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <!--*** CONTENT GOES HERE ***-->
+                    <div class="page">
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <a style="display: flex; text-align: justify;">Este estudio de imágenes diagnósticas se realizó teniendo en cuenta los protocolos de 
+                            bioseguridad institucionales que garantizan una atención segura y se guían por las normas recomendadas por la OMS, con el objetivo 
+                            de limitar el riesgo de expansión del virus SARS-CoV-2 (COVID 19) y ofrecer niveles óptimos de protección a los pacientes, a 
+                            nuestros colaboradores altamente entrenados y al público en general.
+                        </a>
+                        <div class="salto-linea"></div>
+                        <div style="width: 100%; display: flex; justify-content: center;">
+                            <a
+                                style="display: flex; border:black solid 0.1px;width: 20%; justify-content: center; font-size: 12px;">
+                                RESULTADO: </a>
+                        </div>
+                        <table class="tablaresultado_RXI03A">
+                            <thead>
+                                <tr>
+                                    <th colspan="4" style="font-size: 12px; padding-top: 15px; padding-bottom: 15px;">
+                                        Enviamos el resultado de la densitometria ósea por método DXA
+                                        realizada por nosotros a su paciente en equipo GE Lunar Prodigy Advance.</th>
+                                </tr>
+                                <tr>
+                                    <th style="width: 20%;font-size:12px;text-align: center;">MEDICION</th>
+                                    <th style="width: 20%;font-size:12px;text-align: center;" id='tablaHeadCol2'></th>
+                                    <th style="width: 20%;font-size:12px;text-align: center;">T-Score</th>
+                                    <th style="width: 20%;font-size:12px;text-align: center;">Z-Score</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <div class="salto-linea"></div>
+                        <a style="font-size: 11px; font-weight: bolder; display: inline-flex; width: 16%;">HALLAZGOS:
+                        </a>
+                        <a class="hallazgos_RXI03A"></a>
+                        <div class="salto-linea"></div>
+                        <a style="font-size: 11px; font-weight: bolder; display: flex; width: 100%;">ESTUDIO
+                            DENSITOMETRICO BAJO PARAMETROS DE LA OMS SE ENCUENTRA EN: </a>
+                        <div class="borderconclusion_RXI03A">
+                            <a style="font-size: 11px; font-weight: bolder; display: inline-flex; width: 15%;">CONCLUSIÓN:
+                            </a>
+                            <a class="conclusiondensitometria_RXI03A"></a>
+                        </div>
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <div>
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="firmaprofesiona_RXI03A"></div>
+                            <a class="nombreprofesional_RXI03A"></a>
+                            <a class="idprofesional_RXI03A"></a>
+                            <a class="regmedico_RXI03A"></a>
+                            <a style="font-size: 12px;width: 100%; display: flex;">Firmado Electrónicamente</a>
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>
+                    <div class="footer">
+                        <table class="tablafooter">
+                        </table>
+                    </div>
+                    <table>
+
+                    </table>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+<style>
+    .page-header,
+    .page-header-space {
+        height: 230px;
+    }
+
+    .page-header {
+        position: fixed;
+        top: 0mm;
+        width: 99%;
+    }
+
+    .page {
+        page-break-after: always;
+        width: 100%;
+    }
+
+    .footer {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+
+    @page {
+        margin: 20mm
+    }
+
+    .paginas_RXCONSEM::after {
+        counter-increment: page;
+        content: counter(page);
+    }
+
+    @media print {
+        thead {
+            display: table-header-group;
+        }
+
+        tfoot {
+            display: table-footer-group;
+        }
+
+        button {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        div {
+            page-break-inside: avoid;
+        }
+    }
+
+    .salto-linea {
+        padding-top: 10px;
+    }
+
+    .nombreusu_RXI03A,
+    .comprobante_RXI03A {
+        font-size: 16px;
+        font-weight: bolder;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .fechafact_RXI03A {
+        font-size: 12px;
+        width: 35%;
+        display: inline-flex;
+        justify-content: center;
+    }
+
+    .paciente_RXI03A {
+        font-size: 12px;
+        width: 50%;
+        display: inline-flex;
+    }
+
+    .idpaciente_RXI03A {
+        display: inline-flex;
+        width: 20%;
+        font-size: 12px;
+    }
+
+    .sexo_RXI03A,
+    .edad_RXI03A,
+    .peso_RXI03A {
+        font-size: 12px;
+        width: 14%;
+        display: inline-flex;
+    }
+
+    .estaturausua_RXI03A,
+    .estaturaactual_RXI03A,
+    .perdidadeestatura_RXI03A {
+        font-size: 12px;
+        width: 15%;
+        display: inline-flex;
+    }
+
+    .antecedentes_RXI03A {
+        white-space: initial;
+        font-size: 11px;
+        width: 78%;
+        height: 40px;
+        display: inline-flex;
+    }
+
+    .tratamiento_RXI03A {
+        white-space: initial;
+        font-size: 11px;
+        width: 78%;
+        height: 90px;
+        display: inline-flex;
+    }
+
+    .hallazgos_RXI03A {
+        white-space: normal;
+        font-size: 11px;
+        width: 78%;
+        display: inline-flex;
+    }
+
+    .estudio_RXI03A,
+    .nombreprofesional_RXI03A,
+    .idprofesional_RXI03A,
+    .regmedico_RXI03A,
+    .conclusiondensitometria_RXI03A {
+        white-space: normal;
+        font-size: 11px;
+        width: 80%;
+        display: inline-flex;
+    }
+
+    .tablaresultado_RXI03A {
+        width: 80%;
+        font-size: 10px;
+        border-spacing: 0;
+        margin: 0 auto;
+    }
+
+    .tablaresultado_RXI03A tr td {
+        border-bottom: black solid 0.1px;
+    }
+
+    .borderconclusion_RXI03A {
+        display: flex;
+        padding: 10px;
+        border: black solid 0.1px;
+        flex-flow: row wrap;
+    }
+
+    .logo {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    .logo img {
+        width: 10%;
+    }
+
+    .firmaprofesiona_RXI03A {
+        width: 100%;
+        height: 100%;
+    }
+
+    .firmaprofesiona_RXI03A img {
+        width: 20%;
+    }
+</style>
+<script>
+    var RXI03A = [];
+    ipcRenderer.on("ping", (e, data) => {
+        RXI03A = data.datos;
+        // if (RXI03A.ENTERS > 0) {
+        //     let tamano = (RXI03A.ENTERS * 25 + 120).toString() + 'px';
+        //     $('.page-header, .page-header-space').css('height', tamano);
+        // }
+        $(".nombreusu_RXI03A").text(RXI03A.USU);
+        $(".comprobante_RXI03A").text('COMPROBANTE DE PRESTACION DE SERVICIOS: ' + RXI03A.COMPROBANTE);
+        $(".fechafact_RXI03A").text('FECHA : ' + RXI03A.FECHAFACT_RX);
+        $(".paciente_RXI03A").text(RXI03A.DESCRIPPACI_RX);
+        $(".idpaciente_RXI03A").text(RXI03A.IDHISFACT_RX);
+        $(".sexo_RXI03A").text(RXI03A.SEXO_RX);
+        $(".edad_RXI03A").text(RXI03A.EDAD_RX);
+        $(".peso_RXI03A").text(RXI03A.PESO_RX + 'KG');
+        $(".estaturausua_RXI03A").text(RXI03A.ESTATURAUSUAL_RX + 'CM');
+        $(".estaturaactual_RXI03A").text(RXI03A.ESTATURAACTUAL_RX + 'CM');
+        $(".perdidadeestatura_RXI03A").text(RXI03A.PERDIDAPESO_RX.toString() + 'CM');
+        $(".antecedentes_RXI03A").html(RXI03A.ANTECEDENTES_RX.replace(/&/g, "<br>"));
+        $(".tratamiento_RXI03A").html(RXI03A.TRATAMIENTO_RX.replace(/&/g, "<br>"));
+        $(".estudio_RXI03A").text(RXI03A.DESCRIPCUP_RX);
+        $("#tablaHeadCol2").text(RXI03A.TEXTO_BMD);
+        console.log(RXI03A, 'tabla')
+
+        for (var i in RXI03A.TABLARESULTADO) {
+            var ancho = '20%';
+            if(RXI03A.TABLARESULTADO[i].COLUMNA.trim() != '') {
+                RXI03A.TABLARESULTADO[i].COLUMNA.trim().length > 15 ? ancho = '40%' : false;
+                $('.tablaresultado_RXI03A tbody').append(
+                    '<tr>' +
+                    `<td style="width: ${ancho};` +'font-size:10px;text-align: center;">' + RXI03A.TABLARESULTADO[i].COLUMNA + '</td>' +
+                    '<td style="width: 20%;font-size:12px;text-align: center; border-rigth: black solid 0.1px">' + RXI03A.TABLARESULTADO[i].BMD + '</td>' +
+                    '<td style="width: 20%;font-size:12px;text-align: center; font-weight: bolder; border-rigth: black solid 0.1px">' + RXI03A.TABLARESULTADO[i].T_SCORE + '</td>' +
+                    '<td style="width: 20%;font-size:12px;text-align: center;">' + RXI03A.TABLARESULTADO[i].Z_SCORE + '</td>' +
+                    '</tr>'
+                )
+            } 
+        }
+        $('.conclusiondensitometria_RXI03A').html(RXI03A.CONCLUSIONESDENSITOMETRIA_RX.replace(/&/g, "<br>"));
+        $('.hallazgos_RXI03A').html(RXI03A.HALLAZGOS_RX.replace(/&/g, "<br>"));
+        if (parseInt(RXI03A.IDRADIOLOGO_RX) > 0) {
+            $(".nombreprofesional_RXI03A").text(RXI03A.NOMMEDICO_RX);
+            $('.idprofesional_RXI03A').text(RXI03A.IDRADIOLOGO_RX);
+            $(".regmedico_RXI03A").text(RXI03A.REGMEDICO_RX);
+        } else if (parseInt(RXI03A.IDRADIOLOGO_RX) == 0) {
+            $(".nombreprofesional_RXI03A").text("");
+            $('.idprofesional_RXI03A').text('');
+            $(".regmedico_RXI03A").text("");
+        }
+
+        var nit = parseInt(RXI03A.NIT);
+        var url = `D:\\SC\\newcobol\\LOGOS\\${nit}.bmp`;
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString("base64");
+            $("<img/>")
+                .attr("src", `data:image/jpeg;base64,${dataImg1}`)
+                .appendTo(".logo");
+        });
+
+        var nitprofe = parseInt(RXI03A.IDRADIOLOGO_RX);
+        var urlprofe = path.join(`D:\\SC\\newcobol\\HC\\DATOS\\${nitprofe}.bmp`);
+        fs.readFile(urlprofe, function (err, data) {
+            if (err) throw err;
+            var dataImg2 = Buffer.from(data).toString("base64");
+            $("<img/>")
+                .attr("src", `data:image/jpeg;base64,${dataImg2}`)
+                .appendTo(".firmaprofesiona_RXI03A");
+        });
+    });
+</script>

@@ -1,0 +1,218 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+
+<body>
+    <div id="encabezado">
+        <div class="enc-logo">
+            <div id="logo">
+            </div>
+        </div>
+        <div class="enc-izq">
+            <div>
+                <a id="nombreEmpresa" style="font-weight: 600;font-size: 24px;"></a>
+                <br>
+                <a style="font-size: 12px;font-weight: 600;">Resumen de producidos</a>
+                <br>
+                <a style="font-size: 12px;font-weight: 600;">Fecha: </a><a id="fecha_TAX908A"
+                    style="font-size: 12px;"></a>
+                <br>
+                <a style="font-size: 12px;font-weight: 600;">Placa: </a><a id="placa_TAX908A"
+                    style="font-size: 12px;"></a>
+            </div>
+        </div>
+    </div>
+    <div id="contenido">
+        <table style="width: 100%;" id="tabla_TAX908A">
+            <thead>
+                <tr>
+                    <th style="width: 3%;font-size:9px;text-align:center;">AGENCIA</th>
+                    <th style="width: 3%;font-size:9px;text-align:center;">LIBRO</th>
+                    <th style="width: 3%;font-size:9px;text-align:center;">FECHA</th>
+                    <th style="width: 3%;font-size:9px;text-align:center;">PRODUCIDO</th>
+                    <th style="width: 3%;font-size:9px;text-align:center;">SEGURO</th>
+                    <th style="width: 3%;font-size:9px;text-align:center;">REMESAS</th>
+                    <th style="width: 3%;font-size:9px;text-align:center;">AVANCES</th>
+                    <th style="width: 3%;font-size:9px;text-align:center;">ABONOS</th>
+                    <th style="width: 4%;font-size:9px;text-align:center;">NETO</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+    html,
+    body,
+    #documento,
+    #impresion {
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: 'Roboto', sans-serif;
+        box-sizing: border-box;
+    }
+
+    @page {
+        margin: 5mm;
+        size: A4 portrait;
+    }
+
+    @media print {
+        #impresion {
+            display: block;
+        }
+    }
+
+    #encabezado {
+        width: 100%;
+        height: 100px;
+        border: 1px solid #000;
+        border-bottom: none;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        position: fixed;
+        top: 0;
+    }
+
+    .enc-logo,
+    .enc-izq,
+    .enc-der {
+        display: flex;
+        align-items: center;
+    }
+
+    .enc-izq div a {
+        text-transform: uppercase;
+    }
+
+    .enc-logo #logo {
+        width: 70%;
+        height: 60%;
+        margin: 0 auto;
+    }
+
+    .enc-logo #logo img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .tabla_TAX908A {
+        border-spacing: 0;
+    }
+
+    #contenido table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table thead tr,
+    table tfoot tr {
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+
+    table thead tr th {
+        padding: 10px 2px;
+        font-size: 12px;
+        text-transform: uppercase;
+        text-align: left;
+    }
+
+    table#tabla_TAX908A thead:before {
+        content: " ";
+        display: block;
+        margin-top: 100px;
+    }
+
+    table#tabla_TAX908A tbody tr td {
+        padding: 2px 10px;
+        font-size: 12px;
+        text-align: left;
+    }
+</style>
+<script>
+    var $_URL = null;
+    ipcRenderer.on('ping', (e, data) => {
+        var TAX908A = data.datos.TOTALES;
+        var $_TIPO = data.tipo
+        $_URL = data.url
+
+        $('#nombreEmpresa').text(TAX908A[0]);
+        $('#fecha_TAX908A').text(TAX908A[2]);
+        $('#placa_TAX908A').text(TAX908A[3]);
+
+        var DATOS = data.datos.Listado
+        for (var i in DATOS) {
+            let fecha = DATOS[i].FECHA
+            fecha = `${fecha.substr(6,2)}/${fecha.substr(4,2)}/${fecha.substr(0,4)}`
+
+            $('#tabla_TAX908A tbody').append(
+                '<tr>' +
+                '<td style="text-align:center;">' + DATOS[i].AGENCIA + '</td>' +
+                '<td style="text-align:center;">' + DATOS[i].LIBRO + '</td>' +
+                '<td style="text-align:center;">' + fecha + '</td>' +
+                '<td style="text-align:right;">' + DATOS[i].PRODUC + '</td>' +
+                '<td style="text-align:right;">' + DATOS[i]['SEGURO-P'] + '</td>' +
+                '<td style="text-align:center;">' + DATOS[i].REMESAS + '</td>' +
+                '<td style="text-align:right;">' + DATOS[i].ANTICIPOS + '</td>' +
+                '<td style="text-align:right;">' + DATOS[i].ABOBOS + '</td>' +
+                '<td style="text-align:right;">' + DATOS[i].TOTAL + '</td>' +
+                '</tr>'
+            )
+        }
+
+        var nit = TAX908A[1];
+        var url = path.join(`P:\\PROG\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('#logo')
+        });
+
+        if ($_TIPO == 'csv') imprimirCsv();
+
+    })
+
+    function imprimirCsv() {
+        var csv = [];
+        var rows = document.querySelectorAll("table tr");
+
+
+        for (var i = 0; i < rows.length; i++) {
+            var row = [], cols = rows[i].querySelectorAll("td, th");
+            for (var j = 0; j < cols.length; j++) row.push(cols[j].innerText.replace(/,/g, ''));
+            csv.push(row.join(","));
+        }
+
+        var head_csv = [$('.nombreusu_TAX908A').text(), "Producido del carro", $('#fecha_TAX908A').text()]
+        csv.unshift(head_csv.join(","))
+
+        _formatoCsv(csv.join("\n"));
+    }
+
+    function _formatoCsv(csv) {
+        var urlCsv = $_URL + '.csv';
+        try {
+            fs.writeFile(urlCsv, csv, 'utf-8', function (e) {
+                var window = remote.getCurrentWindow();
+                window.close();
+            });
+        } catch (e) {
+            alert('Ha ocurrido un error escribiendo el archivo: ' + urlCsv);
+        }
+    }
+</script>

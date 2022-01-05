@@ -1,0 +1,60 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER890AA">
+  <div class="portlet-body">
+    <form class="form-horizontal">
+      <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+        <div class="col-md-12 col-sm-12 col-xs-12" id="VALIDAR1_SER890AA">
+          <div class="inline-inputs">
+            <label class="col-md-4 col-sm-8 col-xs-12">Medico:</label>
+            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+              <input @Keyup.F8="_f8Profesionales_SER809AA" id="medico_SER890AA"
+                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="13" data-orden="1" />
+            </div>
+            <button type="button" @click="_f8Profesionales_SER809AA"
+              class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+              <i class="icon-magnifier"></i>
+            </button>
+            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+              <input id="descripmedico_SER890AA" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                v-model="form.descripmedi_SER890AA" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+        <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+          <label>Fecha cita</label>
+        </div>
+        <div>
+          <div class="col-md-2 col-sm-4 col-xs-4 ">
+            <div class="inline-inputs">
+              <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+              <div class="input-group col-md-8 col-sm-5 col-xs-5" id="VALIDAR2_SER890AA">
+                <input type="number" id="ano_SER890AA" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                  data-orden="1" required="true" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-4">
+            <div class="inline-inputs">
+              <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+              <div class="input-group col-md-6 col-sm-5 col-xs-5" id="VALIDAR3_SER890AA">
+                <input type="number" id="mes_SER890AA" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                  data-orden="1" required="true" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-4">
+            <div class="inline-inputs">
+              <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+              <div class="input-group col-md-6 col-sm-5 col-xs-5" id="VALIDAR4_SER890AA">
+                <input type="number" id="dia_SER890AA" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                  data-orden="1" required="true" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="../../SALUD/scripts/SER890AA.js" type="text/javascript"></script>

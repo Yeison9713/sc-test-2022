@@ -1,0 +1,350 @@
+<div class="col-md-12" id="COR403">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <form class="form-horizontal">
+
+        <div class="col-md-2 col-sm-2 col-xs-2 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="inline-inputs">
+                <label class="col-md-6 col-sm-6 col-xs-6">Novedad:</label>
+                <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                  <input id="novedad_cor403" v-model="form.novedad" type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- SECCION RADICADO -->
+        <div class="col-md-10 col-sm-10 col-xs-10" style="padding-right: 0;">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 inline-inputs no-padding"
+              style="display: flex; justify-content: space-around;">
+              <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
+                <div class="inline-inputs">
+                  <label class="col-md-10 col-sm-10 col-xs-10">
+                    Tiene radicado?
+                  </label>
+                  <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validar_swradicado_cor403">
+                    <input class="uppercase form-control col-md-12 col-sm-12 col-xs-12" required="true" type="text"
+                      maxlength="1" v-model="reg.swradic_w" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12 no-padding" >
+                    <input class="uppercase form-control" type="text" value="OFICIOS"id="tipo_documento_cor403">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+                <div class="inline-inputs">
+                  <label class="col-md-7 col-sm-7 col-xs-7">
+                    Nro Respuesta:
+                  </label>
+                  <div class="input-group col-md-6 col-sm-6 col-xs-6" id="validar_anio_rad_cor403">
+                    <input type="number" maxlength="4" data-orden="1"
+                      class="uppercase form-control col-md-12 col-sm-12 col-xs-12" required="true"
+                      v-model="reg.ano_llave_w" />
+                  </div>
+                  <div class="input-group col-md-4 col-sm-4 col-xs-4" id="validar_radicado_cor403">
+                    <input id="res_radicado_cor403" type="text" maxlength="9" data-orden="1"
+                      class="uppercase form-control col-md-12 col-sm-12 col-xs-12" required="true"
+                      v-model="reg.cont_llave_w" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="padding-left: 0;">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-6 col-sm-6 col-xs-6 ">
+              <div class="inline-inputs">
+                <label class="col-md-8 col-sm-8 col-xs-8">
+                  Nro Radicado Res:
+                </label>
+                <div class="input-group col-md-6 col-sm-6 col-xs-6" id="validar_anio_rad">
+                  <input type="number" maxlength="4" data-orden="1"
+                    class="uppercase form-control col-md-12 col-sm-12 col-xs-12" required="true"
+                    v-model="reg_radicado.anio" />
+                </div>
+                <div class="input-group col-md-4 col-sm-4 col-xs-4" id="validar_radicado">
+                  <input id="radicado_cor403" type="text" maxlength="9" data-orden="1"
+                    class="uppercase form-control col-md-12 col-sm-12 col-xs-12" required="true"
+                    v-model="reg_radicado.llave" @keydown.f8="ventana_correspondencia" />
+                </div>
+                <button type="button" class="btn btn-default f8-Btn col-md-2 col-sm-2 col-xs-2"
+                  @click="ventana_correspondencia">
+                  <i class="icon-magnifier"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
+              <div class="inline-inputs">
+                <label class="col-md-3 col-sm-3 col-xs-3">Fecha:</label>
+                <div class="input-group col-md-3 col-sm-3 col-xs-3" id="validar_anio">
+                  <input type="number" maxlength="2" data-orden="1" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    v-model="reg_radicado.anio" />
+                </div>
+
+                <div class="input-group col-md-3 col-sm-3 col-xs-3" id="validar_mes">
+                  <input type="number" maxlength="2" data-orden="1" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    v-model="reg_radicado.mes" />
+                </div>
+
+                <div class="input-group col-md-3 col-sm-3 col-xs-3" id="validar_dia">
+                  <input type="number" maxlength="2" data-orden="1" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    v-model="reg_radicado.dia" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
+              <div class="inline-inputs">
+                <label class="col-md-5 col-sm-5 col-xs-5">Hora:</label>
+                <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                  <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12" v-model="reg_radicado.hora" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+              <div class="inline-inputs">
+                <label class="col-md-2 col-sm-2 col-xs-2">Remitente:</label>
+                <div class="input-group col-md-3 col-sm-3 col-xs-3" id="validar_remitente">
+                  <input id="nit_remitente_cor403" type="text" data-orden="1" maxlength="12"
+                    @keydown.f8="ventana_terceros" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    v-model="reg.remitente_w" />
+                </div>
+                <button type="button" class="btn btn-default f8-Btn col-md-1 col-sm-1 col-xs-1"
+                  @click="ventana_terceros">
+                  <i class="icon-magnifier"></i>
+                </button>
+                <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                  <input id="nombre_remitente_cor403" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+              <div class="inline-inputs">
+                <label class="col-md-3 col-sm-3 col-xs-3">
+                  Dpto Remit:
+                </label>
+                <div class="input-group col-md-3 col-sm-3 col-xs-3" id="validar_dpto_remit_cor403">
+                  <input id="depto_remit_cor403" type="number" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    data-orden="1" maxlength="5" v-model="reg.dptoremi_w" />
+                </div>
+                <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                  <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    id="descrip_depto_remit_cor403" />
+                </div>
+              </div>
+            </div>
+
+            <div class="salto-linea"></div>
+
+            <div class="col-md-6 col-sm-6 col-xs-6" id="validar_tipo_corr_cor403">
+              <div class="inline-inputs">
+                <label class="col-md-2 col-sm-2 col-xs-2">Tipo:</label>
+                <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                  <input id="tipo_corr_cor403" type="number" data-orden="1" maxlength="2"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" v-model="reg.tipo_corr_w" />
+                </div>
+                <button type="button" class="btn btn-default f8-Btn col-md-1 col-sm-1 col-xs-1"
+                  @click="ventana_tipos_correspondencia('1')">
+                  <i class="icon-magnifier"></i>
+                </button>
+                <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                  <input @keydown.f8="ventana_tipos_correspondencia('1')" id="descrip_tipo_corr_cor403" type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+              <div class="inline-inputs">
+                <label class="col-md-3 col-sm-3 col-xs-3">Aux Tip:</label>
+                <div class="input-group col-md-3 col-sm-3 col-xs-3" id="validar_aux_corr">
+                  <input id="aux_corr_cor403" type="number" data-orden="1" maxlength="3"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" v-model="reg.cod_auxcorr_w" />
+                </div>
+                <button type="button" class="btn btn-default f8-Btn col-md-1 col-sm-1 col-xs-1">
+                  <i class="icon-magnifier"></i>
+                </button>
+                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                  <input id="descrip_aux_corr_cor403" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-7 col-sm-7 col-xs-7" id="validar_descrip">
+              <div class="inline-inputs">
+                <label class="col-md-3 col-sm-3 col-xs-3">Descripción:</label>
+                <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                  <input type="text" data-orden="1" maxlength="45" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    v-model="reg.descrip_w" />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 col-sm-5 col-xs-5" style="padding-right: 0;">
+              <div class="inline-inputs">
+                <label class="col-md-3 col-sm-3 col-xs-3">Dpto:</label>
+                <div class="input-group col-md-2 col-sm-2 col-xs-2" id="validar_servicio">
+                  <input id="servicio_cor403" type="number" data-orden="1" maxlength="2"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" v-model="reg.serv_w" />
+                </div>
+                <button type="button" class="btn btn-default f8-Btn col-md-1 col-sm-1 col-xs-1">
+                  <i class="icon-magnifier"></i>
+                </button>
+                <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                  <input id="descrip_servicio_cor403" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="salto-linea"></div>
+        <div class="salto-linea"></div>
+        <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="inline-inputs">
+                <label class="col-md-5 col-sm-5 col-xs-5">
+                  Macro:
+                </label>
+                <div class="input-group col-md-3 col-sm-3 col-xs-3" id="validar_tipo_macro">
+                  <input id="tipo_macro_cor403" type="number" data-orden="1" maxlength="2"
+                    @keydown.f8="ventana_tipos_correspondencia('2')" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    v-model="reg.tipo_macro_w" />
+                </div>
+                <button type="button" class="btn btn-default f8-Btn col-md-1 col-sm-1 col-xs-1"
+                  @click="ventana_tipos_correspondencia('2')">
+                  <i class="icon-magnifier"></i>
+                </button>
+                <div class="input-group col-md-5 col-sm-5 col-xs-5" id="validar_cod_macro_cor403">
+                  <input @keydown.f8="ventana_macros_correspondencia" id="cod_macro_cor403" type="text"
+                    v-model="reg.cod_macro_w" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+                <button type="button" class="btn btn-default f8-Btn col-md-1 col-sm-1 col-xs-1"
+                  @click="ventana_macros_correspondencia">
+                  <i class="icon-magnifier"></i>
+                </button>
+                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                  <input id="descripcion_macro_cor403" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 " style="padding-right: 0;">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="padding-right: 0;">
+              <div class="inline-inputs">
+                <label class="col-md-5 col-sm-5 col-xs-5">Fecha res: </label>
+                <div class="input-group col-md-3 col-sm-3 col-xs-3" id="validar_anio_res">
+                  <input type="number" maxlength="2" data-orden="1" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    v-model="reg.ano_res_w" />
+                </div>
+
+                <div class="input-group col-md-3 col-sm-3 col-xs-3" id="validar_mes_res">
+                  <input type="number" maxlength="2" data-orden="1" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    v-model="reg.mes_res_w" />
+                </div>
+
+                <div class="input-group col-md-3 col-sm-3 col-xs-3" id="validar_dia_res">
+                  <input type="number" maxlength="2" data-orden="1" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    v-model="reg.dia_res_w" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="padding-right: 0;">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12  box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarConduc_CER101">
+              <div class="inline-inputs">
+                <label class="col-md-2 col-sm-2 col-xs-2">
+                  Asunto:
+                </label>
+                <div class="input-group col-md-10 col-sm-10 col-xs-10" id="validar_persona_entre_cor403">
+                  <input type="text" data-orden="1" maxlength="50" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    v-model="reg.persentre_w" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="col-md-12 col-sm-12 col-xs-12 head-box no-padding"
+                style="display: flex; justify-content: space-between;">
+                <label>Macro:</label>
+              </div>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validar_reng_macro">
+                <textarea data-orden="1" class="form-control" disabled="disabled" rows="6" maxlength="5700"
+                  style="resize: none; text-align: justify;" v-model="reg.reng_macro_w"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-12 col-sm-12 col-xs-12 no-padding"
+          style="display: flex;justify-content: space-around;">
+          <div class="col-md-12 col-sm-12 col-xs-12 box-center" style="margin-left: 0;">
+            <div class="inline-inputs">
+              <label class="col-md-3 col-sm-3 col-xs-3">
+                Firma:
+              </label>
+              <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                <input id="firma_cor403" v-model="reg.firma_w" type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12"></div>
+          <div class="col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="inline-inputs">
+              <label class="col-md-3 col-sm-3 col-xs-3">
+                Cargo:
+              </label>
+              <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                <input id="cargo_cor403" v-model="reg.cargo_w" type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding-right: 0;">
+              <div class="inline-inputs">
+                <label class="col-md-2 col-sm-2 col-xs-2">
+                  Estado de Correspondencia:
+                </label>
+                <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                  <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12" :value="format_estado_inpt" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="../../COR/scripts/COR403.js" type="text/javascript"></script>

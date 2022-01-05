@@ -1,0 +1,630 @@
+
+<div class="col-md-12" id="HC704">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <form class="form-horizontal" onsubmit="return false;">
+                <div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-xs-12 col-sm-12" style="text-align: left;">
+                            <label>Imprime Resultados rx</label>
+                        </div>
+                        <div class="salto-linea head-box"></div>
+
+                        <div class="col-md-3">
+
+                            <div class="col-md-4 no-padding">
+                                <label class="col-md-12">Año:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                    id="año_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.año_704" type="number"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="4"
+                                            data-orden="2" disabled="disabled" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 no-padding">
+                                <label class="col-md-12">Mes:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                    id="mes_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.mes_704" type="number"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="3" disabled="disabled" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 no-padding">
+                                <label class="col-md-12">Dia:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                    id="dia_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.dia_704" type="number"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="4" disabled="disabled" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="col-md-1">
+                            <label class="col-md-12" style="text-align: left;">Factura:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarFactura_704">
+                                <div class="inline-inputs">
+                                    <input v-model="form.factura_704" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase factura_HC704"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="col-md-12" style="text-align: left;">Entidad:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarEntidad_704">
+                                <div class="inline-inputs">
+                                    <input v-model="form.entidad_704" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase entidad_HC704"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1">
+                            <label class="col-md-12" style="text-align: left;">Sucursal:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarSucursal_704">
+                                <div class="inline-inputs">
+                                    <input v-model="form.sucursal_704" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase sucursal_HC704"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="col-md-12" style="text-align: left;">Tipo de Servicio:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarTipoServ_704">
+                        
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-3 col-sm-12 col-xs-12" id="codTipoServ_HC704">
+                                        <input v-model="form.codTipoServ_704" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase codTipoServ_704" maxlength="3"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                    <div class="input-group col-md-11 col-sm-12 col-xs-12">
+                                        <input v-model="form.descripTipoServ_704" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" disabled="disabled" maxlength="20"
+                                            data-orden="1">
+                                    </div>
+                                </div>
+                        
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="col-md-12" style="text-align: left;">Comprob:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarComprob_704">
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-10 col-sm-12 col-xs-12" id="codComprob_704">
+                                        <input @keyup.f8="_ventanaComprobantes_HC704" v-model="form.comprob_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase comprob_HC704" maxlength="10"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                    <button @click="_ventanaComprobantes_HC704" type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-3">
+                            <label class="col-md-12" style="text-align: left;">Paciente:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarPaciente_704">
+                                <div class="inline-inputs">
+                                    <input v-model="form.paciente_704" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase paciente_HC704"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="col-md-12" style="text-align: left;">Atiende:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarAtiende_704">
+                                <div class="inline-inputs">
+                                    <input v-model="form.atiende_704" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase atiende_HC704"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1">
+                            <label class="col-md-12" style="text-align: left;">Sexo:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarSexo_704">
+                                <div class="inline-inputs">
+                                    <input v-model="form.sexo_704" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase sexo_HC704"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1">
+                            <label class="col-md-12" style="text-align: left;">Edad:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarEdad_704">
+                                <div class="inline-inputs">
+                                    <input v-model="form.edad_704" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase edad_HC704"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="col-md-12" style="text-align: left;">Puerta Ing:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarPuertaIng_704">
+                                <div class="inline-inputs">
+                                    <input v-model="form.puertaIng_704" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase puertaIng_HC704"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="col-md-12" style="text-align: left;">Convenio:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarConvenio_704">
+                                <div class="inline-inputs">
+                                    <input v-model="form.convenio_704" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase convenio_HC704"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-8">
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarDescriImg_704">
+                                <div class="inline-inputs">
+                                    <input v-model="form.descripImg_704" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase descripImg_HC704"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarValorImg_704">
+                                <div class="inline-inputs">
+                                    <input v-model="form.valorImg_704" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase valorImg_HC704"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="col-md-12" style="text-align: left;">Total:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarTotalImg_704">
+                                <div class="inline-inputs">
+                                    <input v-model="form.totalImg_704" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase totalImg_HC704"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-4 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left; padding-bottom: 7px;">
+                            <label class="col-md-12" style="text-align: left;">Condicion del Paciente:</label>
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left; padding-bottom: 7px;">
+                    
+                                <div class="form-group">
+                                    <textarea class="form-control" id="condicionPaci_704" disabled="disabled" rows="7"
+                                        style="resize: none; text-align: justify"></textarea>
+                                </div>
+                    
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-8 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left; padding-bottom: 7px;">
+                    
+                            <div class="col-md-3">
+                                <label class="col-md-12" style="text-align: left;">Especialidad:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="especialidad_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.especialidad_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase especialidad_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: left;">Condicion Us:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="condicionUs_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.condicionUs_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase condicionUs_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: left;">Triage:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="triage_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.triage_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase triage_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-md-3">
+                                <label class="col-md-12" style="text-align: left;">Tipo Diagnos:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="diagnos_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.diagnos_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase diagnos_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: left;">Diagnos Princ:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="diagnosPrinc_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.diagnosPrinc_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase diagnosPrinc_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="salto-linea"></div>
+                    
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: left;">Diagnos Rel.1:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="diagnosRel1_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.diagnosRel1_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase diagnosRel1_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: left;">Diagnos Rel.2:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="diagnosRel2_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.diagnosRel2_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase diagnosRel2_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: left;">Causa Extern:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="causaExtern_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.causaExtern_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase causaExtern_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: left;">Espe. Remit:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="espeRemit_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.espeRemit_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase espeRemit_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: left;">Personal at.:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="personalAt_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.personalAt_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase personalAt_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: left;">Cons.Repet:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="consRepet_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.consRepet_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase consRepet_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="salto-linea"></div>
+                    
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: left;">Tipo Proced:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="tipoProced_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.tipoProced_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase tipoProced_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: left;">Dias Incap:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="diasIncap_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.diasIncap_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase diasIncap_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: left;">Clase Proced:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="claseProced_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.claseProced_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase claseProced_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: left;">Tipo Disc:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="tipoDisc_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.tipoDisc_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase tipoDisc_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: left;">Estado Salida:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="estadoSalida_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.estadoSalida_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase estadoSalida_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: left;">Causa Muer:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="causaMuer_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.causaMuer_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase causaMuer_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-12">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    
+                            <div class="col-md-2">
+                                <label class="col-md-12" style="text-align: left;">Finalidad de la consulta:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="finalidadConsul_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.finalidadConsul_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase finalidadConsul_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-md-1">
+                                <label class="col-md-12" style="text-align: left;">Primera vez?</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="primerVez_HC704">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.primerVez_704" type="text"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12 uppercase primerVez_704" maxlength="30"
+                                            disabled="disabled" data-orden="1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-9">
+                            
+                                <div class="col-md-5">
+                            
+                                    <label class="col-md-12">Ingreso:</label>
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;" id="fechaIngreso_HC704">
+                                        <div class="col-md-3 no-padding">
+                                            <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                                id="añoIngreso_HC704">
+                                                <div class="inline-inputs">
+                                                    <input v-model="form.añoIngreso_704" type="number"
+                                                        class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="4" data-orden="2"
+                                                        disabled="disabled" required="true" style="text-align: center;">
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                        <div class="col-md-3 no-padding">
+                                            <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                                id="mesIngreso_HC704">
+                                                <div class="inline-inputs">
+                                                    <input v-model="form.mesIngreso_704" type="number"
+                                                        class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                                        disabled="disabled" required="true" style="text-align: center;">
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                        <div class="col-md-3 no-padding">
+                                            <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                                id="diaIngreso_HC704">
+                                                <div class="inline-inputs">
+                                                    <input v-model="form.diaIngreso_704" type="number"
+                                                        class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="2" data-orden="4"
+                                                        disabled="disabled" required="true" style="text-align: center;">
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                        <div class="col-md-3 no-padding">
+                                            <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                                id="horaIngreso_HC704">
+                                                <div class="inline-inputs">
+                                                    <input v-model="form.horaIngreso_704" type="time"
+                                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5" data-orden="5"
+                                                        disabled="disabled" required="true" style="text-align: center; height: 34px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                                </div>
+
+                                <div class="col-md-1">
+
+                                </div>
+                            
+                                <div class="col-md-5">
+                            
+                                    <label class="col-md-12">Salida:</label>
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;" id="fechaSalida_HC704">
+                                        <div class="col-md-3 no-padding">
+                                            <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;" id="añoSalida_HC704">
+                                                <div class="inline-inputs">
+                                                    <input v-model="form.añoSalida_704" type="number"
+                                                        class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="4" data-orden="2"
+                                                        disabled="disabled" required="true" style="text-align: center;">
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                        <div class="col-md-3 no-padding">
+                                            <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;" id="mesSalida_HC704">
+                                                <div class="inline-inputs">
+                                                    <input v-model="form.mesSalida_704" type="number"
+                                                        class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                                        disabled="disabled" required="true" style="text-align: center;">
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                        <div class="col-md-3 no-padding">
+                                            <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;" id="diaSalida_HC704">
+                                                <div class="inline-inputs">
+                                                    <input v-model="form.diaSalida_704" type="number"
+                                                        class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="2" data-orden="4"
+                                                        disabled="disabled" required="true" style="text-align: center;">
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                        <div class="col-md-3 no-padding">
+                                            <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                                id="horaSalida_HC704">
+                                                <div class="inline-inputs">
+                                                    <input v-model="form.horaSalida_704" type="time"
+                                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5" data-orden="5"
+                                                        disabled="disabled" required="true" style="text-align: center; height: 34px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                                </div>
+                            
+                            </div>
+                    
+                        </div>
+                    </div>
+
+                    <div class="salto-linea">
+                        <div class="col-md-12">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                                <div class="col-md-6">
+                                    <label class="col-md-12" style="text-align: left;">Destalle fact:</label>
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12" id="detalleFact_HC704">
+                                        <div class="inline-inputs">
+                                            <input v-model="form.detalleFact_704" type="text"
+                                                class="form-control col-md-2 col-sm-12 col-xs-12 uppercase detalleFact_704" maxlength="30"
+                                                disabled="disabled" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="col-md-12" style="text-align: left;">Solicitante:</label>
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12" id="solicitante_HC704">
+                                        <div class="inline-inputs">
+                                            <input v-model="form.solicitante_704" type="text"
+                                                class="form-control col-md-2 col-sm-12 col-xs-12 uppercase solicitante_704" maxlength="30"
+                                                disabled="disabled" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    </div>
+
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- <script src="../../frameworks/pdf/hiclin/HCI01.formato.js" type="text/javascript"></script> -->
+<script src="../../HICLIN/scripts/HC704.js" disabled='disabled' type="text/javascript"></script>
+<!-- <script src="../../HICLIN/scripts/HCI02.js" disabled='disabled' type="text/javascript"></script> -->
+<!-- <script src="../../frameworks/pdf/hiclin/HCI02.formato.js" disabled='disabled' type="text/javascript"></script> -->

@@ -1,0 +1,1033 @@
+<style>
+    .form-horizontal .form-group {
+        float: left;
+    }
+
+    .box-center {
+        padding: 5px;
+        margin-bottom: 9px !important;
+    }
+
+    #TABLA_401 td {
+        /* text-align: center; */
+        text-align: left;
+    }
+
+    .salto-linea {
+        margin: 3px 0;
+    }
+
+    #body_main {
+        margin: 0px 0px;
+    }
+
+    #body_main {
+        text-align: left !important;
+    }
+
+    .ui-datepicker .ui-datepicker-header {
+        background: #476fad;
+        border: 1px solid #476fad;
+    }
+
+    .modal-mask {
+        position: fixed;
+        z-index: 9998;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        display: table;
+        transition: opacity .3s ease;
+    }
+
+    .modal-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
+</style>
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SAL401">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+
+            <div v-if="ESTADO_VENTANA_COMPROBANTES">
+                <ventana_datos_doble @callback_esc="salirventanadoble_esc" @cambiofocotabla="cambiofocoventanadoble" @callback="salirventanadoble">
+
+                    <template style="font-size: 17px" slot="titulo">Listado de comprobantes del paciente {{ paciente_ser825 }}</template>
+
+                    <template slot="EncabezadoTablaIzquierda">
+                        <tr>
+                            <th style="text-align: center" class="col-md-2">Llave</th>
+                            <th style="text-align: center" class="col-md-1">Suc</th>
+                            <th style="text-align: center" class="col-md-2">Clase</th>
+                            <th style="text-align: center" class="col-md-2">Nro fact</th>
+                            <th style="text-align: center" class="col-md-2">Cuenta</th>
+                            <th style="text-align: center" class="col-md-3">Fecha</th>
+                        </tr>
+                    </template>
+
+                    <template slot="ContenidoTablaIzquierda">
+                        <tr v-for="(fila, index) in facturas_ser825" :key="index">
+                            <td style="text-align: center" class="col-md-2">{{ fila.LLAVE }}</td>
+                            <td style="text-align: center" class="col-md-1">{{ fila.SUC }}</td>
+                            <td style="text-align: center" class="col-md-2">{{ fila.CLASE }}</td>
+                            <td style="text-align: center" class="col-md-2">{{ fila.NRO_FACT }}</td>
+                            <td style="text-align: center" class="col-md-2">{{ fila.CUENTA }}</td>
+                            <td style="text-align: center" class="col-md-3">{{ fila.FECHA }}</td>
+                        </tr>
+                    </template>
+
+                    <template slot="EncabezadoTablaDerecha">
+                        <tr>
+                            <th style="text-align: center" class="col-md-2">Artículo</th>
+                            <th style="text-align: left" class="col-md-5">Descripción</th>
+                            <th style="text-align: left" class="col-md-2">Cantidad</th>
+                            <th style="text-align: left" class="col-md-3">Valor</th>
+                        </tr>
+                    </template>
+
+                    <template slot="ContenidoTablaDerecha">
+                        <tr v-for="(fila, index) in facturas_derecha_ser825" :key="index">
+                            <td style="text-align: center" class="col-md-3">{{ fila.CODIGO }}
+                            </td>
+                            <td style="text-align: left" class="col-md-5">{{ fila.DESCRIPCION }}</td>
+                            <td style="text-align: left" class="col-md-2">{{ fila.CANTIDAD }}</td>
+                            <td style="text-align: left" class="col-md-3">{{ fila.VALOR }}</td>
+                        </tr>
+                    </template>
+
+                </ventana_datos_doble>
+            </div>
+
+            <div v-if="ESTADO_VENTANA_DISPENSACION">
+                <ventana_datos_doble @callback_esc="salirventanadispensacion_SAL401" @cambiofocotabla="cambiofocoventanadispensacion" @callback="_moverdispensacion_SAL401">
+
+                    <template style="font-size: 17px" slot="titulo">Ventana dispensación</template>
+
+                    <template slot="EncabezadoTablaIzquierda">
+                        <tr>
+                            <th style="text-align: center" class="col-md-2">Codigo</th>
+                            <th style="text-align: center" class="col-md-2">Nombre Paciente</th>
+                            <th style="text-align: center" class="col-md-2">Unidad</th>
+                            <th style="text-align: center" class="col-md-2">Medico</th>
+                        </tr>
+                    </template>
+
+                    <template slot="ContenidoTablaIzquierda">
+                        <tr v-for="(fila, index) in dispensacion_SAL401" :key="index">
+                            <td style="text-align: center" class="col-md-2">{{ fila.LLAVE2 }}</td>
+                            <td style="text-align: center" class="col-md-2">{{ fila.NOMBRE_PACIENTE }}</td>
+                            <td style="text-align: center" class="col-md-2">{{ fila.UNIDAD }}</td>
+                            <td style="text-align: center" class="col-md-2">{{ fila.MEDICO }}</td>
+                        </tr>
+                    </template>
+
+                    <template slot="EncabezadoTablaDerecha">
+                        <tr>
+                            <th style="text-align: center" class="col-md-3">Artículo</th>
+                            <th style="text-align: left" class="col-md-3">Cantidad</th>
+                        </tr>
+                    </template>
+
+                    <template slot="ContenidoTablaDerecha">
+                        <tr v-for="(fila, index) in tabla_dispensacion_SAL401" :key="index">
+                            <td style="text-align: center" class="col-md-2">{{ fila.GRUPO }}
+                            </td>
+                            <td style="text-align: center" class="col-md-2">{{ fila.ARTICULO }}
+                            </td>
+                            <td style="text-align: center" class="col-md-2">{{ fila.DESCRIPCION }}
+                            </td>
+                            <td style="text-align: left" class="col-md-1">{{ fila.CANTIDAD }}</td>
+                        </tr>
+                    </template>
+
+                </ventana_datos_doble>
+            </div>
+
+            <div v-if="ESTADO_VENTANA_PAQUETES">
+                <ventana_datos_doble @callback_esc="salirventanapaquetes_SAL401" @cambiofocotabla="cambiofocoventanapaquetes" @callback="seleccionpaqueteintegral_SAL401">
+
+                    <template style="font-size: 17px" slot="titulo">Paquete Integral</template>
+
+                    <template slot="EncabezadoTablaIzquierda">
+                        <tr>
+                            <th style="text-align: center" class="col-md-2">Llave</th>
+                            <th style="text-align: center" class="col-md-4">Observacion</th>
+                            <th style="text-align: center" class="col-md-2">Valor</th>
+                        </tr>
+                    </template>
+
+                    <template slot="ContenidoTablaIzquierda">
+                        <tr v-for="(fila, index) in paquetes_integrales_SAL401" :key="index">
+                            <td style="text-align: center" class="col-md-2">{{ fila.LLAVE }}</td>
+                            <td style="text-align: center" class="col-md-4">{{ fila.OBSERVACION }}</td>
+                            <td style="text-align: center" class="col-md-2">{{ fila.VALOR }}</td>
+                        </tr>
+                    </template>
+
+                    <template slot="EncabezadoTablaDerecha">
+                        <tr>
+                            <th style="text-align: center" class="col-md-3">Artículo</th>
+                            <th style="text-align: left" class="col-md-3">Cantidad</th>
+                        </tr>
+                    </template>
+
+                    <template slot="ContenidoTablaDerecha">
+                        <tr v-for="(fila, index) in tabla_paquetes_integrales_SAL401" :key="index">
+                            <td style="text-align: center" class="col-md-2">{{ fila.ARTICULO }}
+                            </td>
+                            <td style="text-align: center" class="col-md-3">{{ fila.DESCRIPARTICULO }}
+                            </td>
+                            <td style="text-align: left" class="col-md-1">{{ fila.CANTIDAD }}</td>
+                        </tr>
+                    </template>
+
+                </ventana_datos_doble>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-1 col-sm-1 col-xs-12" id="VALIDAR1_SAL401">
+                        <label>Sucursal:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.sucursal_SAL401" type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="2">
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="VALIDAR2_SAL401">
+                        <label>Clase servicio:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-2 col-sm-2 col-xs-12">
+                                <input id="clasedeservicio_SAL401" type="text" @Keyup.F8='_ventanaclases_SAL401'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1">
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                                @click='_ventanaclases_SAL401'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-12">
+                                <input v-model="form.clasedeserviciod_SAL401" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" id="VALIDAR3_SAL401">
+                        <label>Comprobante:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                <input id="comprobante_SAL401" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                    @Keydown.119='_ventanacomprobantes_SAL401'>
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2"
+                                @click='_ventanacomprobantes_SAL401'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12" id="VALIDAR4_SAL401">
+                        <label>Fecha:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="fecha_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                maxlength="12">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <label>Factura:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="VALIDAR5_SAL401">
+                                <input id="prefijofactura_SAL401" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="1"
+                                    @Keyup.F8='_ventanaformasdepago_SAL401'>
+                            </div>
+                            <button type="button" id="facturaBtn_SAL401" class="btn f8-Btn col-md-2 col-sm-2 col-xs-1"
+                                @click='_ventanaformasdepago_SAL401'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" id="VALIDAR6_SAL401">
+                                <input id="numerofactura_SAL401" data-orden="1" maxlength="6"
+                                    @Keyup.F8='_ventananumerodefactura_SAL401'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <label>Puerta de ingreso:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.puertaingreso_SAL401"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <label>Cliente (Entidad):</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="VALIDAR7_SAL401">
+                                <input id="cliente_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="12" @Keyup.F8='_ventanaclientes_SAL401'>
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                                @click='_ventanaclientes_SAL401'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                <input v-model="form.cliented_SAL401"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12">
+                        <label>Paciente:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12" id="VALIDAR8_SAL401">
+                                <input id="paciente_SAL401" type="text" @Keyup.F8='_ventanapacientes_SAL401'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="15">
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                                @click='_ventanapacientes_SAL401'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-12">
+                                <input v-model="form.paciented_SAL401"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-6">
+                        <label>Sexo:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.sexo_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-6">
+                        <label>Edad:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.edad_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-6 hidden" id="IMPRIME_SAL401">
+                        <label>Impresion:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.imprime_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="elementos-tabla">
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="primer-elemento">
+                        <label>Cod.Servicio:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4" id="VALIDAR9_SAL401">
+                                <input v-model="form.codigodeservicio_SAL401" type="text"
+                                    @Keyup.F8='_ventanatabladetarifas_SAL401'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 codigodeservicio_SAL401"
+                                    data-orden="1" maxlength="18">
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                                @click='_ventanatabladetarifas_SAL401'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                                <input v-model="form.codigodeserviciod_SAL401" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 codigodeserviciod_SAL401">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-1 col-xs-12 hidden" id="CLASEARTICULO_SAL401">
+                        <label>Clase Art:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.clasearticulo_SAL401" @Keyup.F8='_ventanaClasesmedicamentos_SAL401'
+                                class="clasearticulo_SAL401 form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="2">
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-1 col-sm-1 col-xs-12">
+                        <label>Almac:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-10 col-sm-10 col-xs-10" id="VALIDAR10_SAL401">
+                                <input v-model="form.almacen_SAL401" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 almacen_SAL401" data-orden="1"
+                                    @Keyup.F8='_ventanaalmacenes_SAL401'>
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2"
+                                @click='_ventanaalmacenes_SAL401'>
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12" id="VALIDAR11_SAL401">
+                        <label>Cant:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="cantidad_SAL401" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="15">
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12">
+                        <label>Und:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.unidad_SAL401" type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-12">
+                        <label>Vlr Unit:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDAR12_SAL401">
+                                <input id="vlrunit_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="15">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="salto-linea" style="margin: 5px 0;"></div> -->
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <label>Vlr Total:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VLRTOTAL_41">
+                                <input id="vlrtotal_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="11">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-1 col-xs-12 hidden" id="CODMACRO_SAL401">
+                        <label>Macro:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="MACRO_SAL401">
+                                <input v-model="form.macro_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-1 col-xs-12 hidden" id="PAQUETE_SAL401">
+                        <label>Paquete integral:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.paquete_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-1 col-xs-12 hidden" id="CODIGOPAQUETE_SAL401">
+                        <label>Codigo paquete:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.paqueteint_SAL401"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12 hidden" id="CRONICO_SAL401">
+                        <label>Patol. cronica:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12" id="CRONICO_41">
+                                <input v-model="form.cronico_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="3">
+                            </div>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input v-model="form.cronicod_SAL401"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                    </div>
+
+                    <div class="col-md-1 col-sm-1 col-xs-12 hidden" id="CODLOTEFACT_SAL401">
+                        <label>Lote farmaceutico:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-11 col-sm-11 col-xs-11" id="LOTE_SAL401">
+                                <input v-model="form.codlotefarmaceutico_SAL401"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 codlotefarmaceutico_SAL401"
+                                    data-orden="1" maxlength="4" @Keyup.F8='_ventanasaldoslote_SAL401'>
+                            </div>
+                            <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-sm-1 col-xs-12 hidden" id="DIASTRATAMIENTO_SAL401">
+                        <label>Dias tratamiento:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-11 col-sm-11 col-xs-11" id="TRATAMIENTO_SAL401">
+                                <input id="diastratamiento_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="3">
+                            </div>
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                    </div>
+
+                    <div id="EVALUARCIRUGIA_SAL401" class="hidden">
+                        <div class="col-md-4 col-sm-4 col-xs-12 hidden" id="MEDICOCIRUGIA_SAL401">
+                            <label>MEDICO CIRUGIA:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                    <input id="nitmedicocirugia_SAL401"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="12"
+                                        @Keyup.F8='_ventanaprofesionalescirugia_SAL401'>
+                                </div>
+                                <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                                    @click='_ventanaprofesionalescirugia_SAL401'>
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                                <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                    <input v-model="form.nitmedicocirugiad_SAL401"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="PRECIOCIRUGIA_SAL401">
+                            <label>VALOR:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="vlrcirugia_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        data-orden="1" maxlength="15">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 hidden" id="AYUDANTE_SAL401">
+                            <label>AYUDANTE:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                    <input id="ayudantia_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        data-orden="1" maxlength="12" @Keyup.F8='_ventanaprofesionalesayudante_SAL401'>
+                                </div>
+                                <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                                    @click='_ventanaprofesionalesayudante_SAL401'>
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                                <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                    <input v-model="form.ayudantiad_SAL401"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-12 hidden" id="PRECIOAYUDANTE_SAL401">
+                            <label>VALOR:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="vlrayudante_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        data-orden="1" maxlength="15">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 hidden" id="ANESTESIOLOGO_SAL401">
+                            <label>ANESTESIOLOGO:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                    <input id="anestesia_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        data-orden="1" maxlength="12"
+                                        @Keyup.F8='_ventanaprofesionalesanestesiologo_SAL401'>
+                                </div>
+                                <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                                    @click='_ventanaprofesionalesanestesiologo_SAL401'>
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                                <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                                    <input v-model="form.anestesiad_SAL401"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-12 hidden" id="PRECIOANESTESIOLOGO_SAL401">
+                            <label>VALOR:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input id="vlranestesia_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        data-orden="1" maxlength="15">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="MATQUIRURG_SAL401">
+                            <label>MAT.QUIRURG.:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="matquirurgico_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="12" @Keyup.F8='_ventanaprofesionalescirugia_SAL401'>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="DERECHSALA_SAL401">
+                            <label>DERECH.SALA:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input id="derechosala_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="12" @Keyup.F8='_ventanaprofesionalescirugia_SAL401'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <table class="table table-light table-striped" style="width: 99%;">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;">#</th>
+                            <th style="width: 10%;">Cod.servicio</th>
+                            <th style="width: 30%;">Detalle</th>
+                            <th style="width: 10%;">Almac</th>
+                            <th style="width: 10%;">Cant</th>
+                            <th style="width: 10%;">Und</th>
+                            <th style="width: 10%;">Valor Unit</th>
+                            <th style="width: 15%;">Valor Total</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div style="width: 100%; max-height: 350px; overflow-y: auto;">
+                    <table id="TABLA_401" class="table table-light table-striped">
+                        <tbody>
+                            <tr v-for="(row, index) in FACTURACION">
+                                <td style="width: 5%;">
+                                    {{index}}
+                                </td>
+                                <td style="width: 10%;">
+                                    {{row.ARTICULO}}
+                                </td>
+                                <td style="width: 30%;">
+                                    {{row.DESCRIPCIONART}}
+                                </td>
+                                <td style="width: 10%;">
+                                    {{row.ALMACEN}}
+                                </td>
+                                <td style="width: 10%;">
+                                    {{row.CANTIDAD}}
+                                </td>
+                                <td style="width: 10%;">
+                                    {{row.UNIDAD}}
+                                </td>
+                                <td style="width: 10%;">
+                                    {{row.VALORUNIT}}
+                                </td>
+                                <td style="width: 10%;">
+                                    {{row.VALORTOTAL}}
+                                </td>
+                                <td style="width: 15%;" v-if="disabledBtnTabla401">
+                                    <button 
+                                        type="button" class="btn  btn-default col-md-5 col-sm-5 col-xs-5"
+                                        @click='_evaluarbotoneditar_SAL401(index)'
+                                        style="display: inline-flex;"
+                                    >
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                    </button>
+                                    <button 
+                                        type="button" class="btn  btn-default col-md-5 col-sm-5 col-xs-5"
+                                        @click='_evaluarbotoneliminar_SAL401(index)'
+                                        style="display: inline-flex;"
+                                    >
+                                        <i class="glyphicon glyphicon-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label></label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input id="valortotalcomprobante_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-1 col-xs-12">
+                    <label>Valor Iva:</label>
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input id="valoriva_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12">
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-1 col-xs-12">
+                    <label>% Copago:</label>
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDAR13_SAL401">
+                        <input id="porcentcopago_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                            data-orden="1" maxlength="4">
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label>Copago:</label>
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12" id="VALIDAR14_SAL401">
+                        <input id="copagoestimfact_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                            data-orden="1">
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label>Neto Factura:</label>
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input id="netofact_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12">
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="FORMACOPAGO_SAL401">
+                    <label>F. de copago:</label>
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input v-model="form.tipocopago_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12">
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="TIPOCOPAGO_SAL401">
+                    <label>T. de copago:</label>
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input v-model="form.tipopago_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12">
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="VALOR_SAL401">
+                
+            </div> -->
+
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="ADICIONALES_SAL401">
+                <div class="col-md-4 col-sm-4 col-xs-12" id="VALIDAR15_SAL401">
+                    <label>Especialidad:</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                            <input v-model="form.especialidad_SAL401"
+                                class="form-control col-md-12 col-sm-12 col-xs-12 especialidad_SAL401" data-orden="1"
+                                maxlength="3" @Keyup.F8='_ventanaespecialidades_SAL401'>
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                            @click='_ventanaespecialidades_SAL401'>
+                            <i class="icon-magnifier"></i></button>
+                        <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                            <input v-model="form.especialidadd_SAL401"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-8 col-xs-12">
+                    <label>Centro de costos:</label>
+                    <div class="inline-inputs" id="VALIDAR16_SAL401">
+                        <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                            <input v-model="form.centrocostos_SAL401"
+                                class="form-control col-md-12 col-sm-12 col-xs-12 centrocostos_SAL401" data-orden="1"
+                                maxlength="4" @Keyup.F8='_ventanacostos_SAL401'>
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                            @click='_ventanacostos_SAL401'>
+                            <i class="icon-magnifier"></i></button>
+                        <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                            <input v-model="form.centroccostosd_SAL401" type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                    <label>Convenio:</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.convenio_SAL401" type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-1 col-xs-12">
+                    <label>Estrato:</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.estrato_SAL401" type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-sm-1 col-xs-12">
+                    <label>Ciudad</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.ciudad_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12" id="VALIDAR17_SAL401">
+                    <label>Atendido por:</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                            <input id="atendido_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="1" maxlength="13" @Keyup.F8='_ventanaprofesionales_SAL401'>
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                            @click='_ventanaprofesionales_SAL401'>
+                            <i class="icon-magnifier"></i></button>
+                        <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                            <input v-model="form.atendidod_SAL401" type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <label>Solicitante:</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-4 col-sm-4 col-xs-4" id="VALIDAR18_SAL401">
+                            <input id="solic_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                maxlength="13" @Keyup.F8='_ventanaprofesionalesremite_SAL401'>
+                        </div>
+                        <button type="button" class="btn f8-Btn col-md-1 col-sm-1 col-xs-1"
+                            @click='_ventanaprofesionalesremite_SAL401'>
+                            <i class="icon-magnifier"></i></button>
+                        <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                            <input v-model="form.solicd_SAL401" type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label>Tipo Afiliacion</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.tipoafiliacion_SAL401"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <label>Divis. fact.</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12" id="CAP_SAL401">
+                            <input v-model="form.cap_SAL401" type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4 col-xs-4 hidden" id="CLASSERV_450">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-6 col-xs-6">Clase serv</label>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                            <input id="claseserv_SAL450" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-3 col-sm-3 col-xs-12 hidden" id="CODIGODIAG_SAL401">
+                    <label>Codigo Diag:</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-4 col-sm-4 col-xs-12" id="DIAGTIPO_41">
+                            <input id="diagtipo_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                data-orden="1">
+                        </div>
+                        <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                            <input id="diagtipod_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-12 hidden" id="ESPECIALIDADREMITE_SAL401">
+                    <label>Especialidad que remite:</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-4 col-sm-4 col-xs-12" id="ESPECREMITE_41">
+                            <input id="especremite_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                maxlength="3" data-orden="1">
+                        </div>
+                        <div class="input-group col-md-8 col-sm-8 col-xs-12">
+                            <input id="especremited_SAL401" class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="INGRESO_SAL401">
+                    <div class="inline-inputs">
+                        <label class="col-md-12 col-sm-12 col-xs-12" id="ingreso_SAL401"></label>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="CLASEPROCE_SAL401">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                v-model="form.claseprocedimiento_SAL401"></input>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="OPERCREA_SAL401">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                v-model="form.opercrea_SAL401"></input>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="OPERMOD_SAL401">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                v-model="form.opermod_SAL401"></input>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="EMBARAZO_SAL401">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                v-model="form.embarestado_SAL401"></input>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="TIPOPROCEDIMIENTO_SAL401">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                v-model="form.tipoprocedimiento_SAL401"></input>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-2 col-xs-12 hidden" id="MOTIVOANUL_SAL401">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-8 col-xs-12">Motivo anulación:</label>
+                        <div class="input-group col-md-10 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                v-model="form.motivoanulacion_SAL401"></input>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                v-model="form.unidaddeservicio_SAL401"></input>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="FINALIDADESTADO_SAL401">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                v-model="form.finalidadestado_SAL401"></input>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="INGRESO_SAL401">
+                    <label>Ingreso:</label>
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                v-model="form.ingreso_SAL401"></input>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12 hidden" id="FACTURADO_SAL401">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                v-model="form.facturado_SAL401"></input>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                :value="descripTipoFact"></input>
+                        </div>
+                    </div>
+                </div>
+                <div id="CIRUGIA_SAL401" class="hidden">
+                    <div class="salto-linea"></div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <label>VIA:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    v-model="form.viaacceso_SAL401"></input>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <label>CRUENTA:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    v-model="form.cruenta_SAL401"></input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <transition v-if="mostrarpacientes">
+        <div class="overlay_prosoft">
+            <div class="modal_prosoft" style="width: 90%">
+                <div class="container_prosoft">
+                    <div class="col-md-12 no-padding">
+                        <ventanapacientes :data="datos_pacientes" :params="params_pacientes"
+                            @callback_esc="validarEsc_pacientes" @callback="validarCallback_pacientes">
+                        </ventanapacientes>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+    <transition v-if="mostrarapertura">
+        <div class="overlay_prosoft">
+            <div class="modal_prosoft" style="width: 90%">
+                <div class="container_prosoft">
+                    <div class="col-md-12 no-padding">
+                        <ventanaapertura :data="datos_apertura" :params="params_apertura"
+                            @callback_esc="validarEsc_apertura" @callback="validarCallback_apertura">
+                        </ventanaapertura>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+    <transition v-if="mostrarnacimientos">
+        <div class="overlay_prosoft">
+            <div class="modal_prosoft" style="width: 90%">
+                <div class="container_prosoft">
+                    <div class="col-md-12 no-padding">
+                        <ventananacimiento :data="datos_naci" :params="params_naci"
+                            @callback_esc="validarEsc_naci" @callback="validarCallback_naci">
+                        </ventananacimiento>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+</div>
+<script src="../../frameworks/scripts/ventanaDatosDoble.vue.js" type="text/javascript"></script>
+<script src="../../SALUD/scripts/SAL401.js" type="text/javascript"></script>

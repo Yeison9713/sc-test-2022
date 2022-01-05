@@ -1,0 +1,444 @@
+<div class="col-md-12" id="SER110">
+    <div class="portlet light">
+        <div class="portlet-body">
+            <form class="form-horizontal">
+                <div class="form-group col-md-3 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="prefijoalistar_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Digite el prefijo a listar:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.prefijo_SER110' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                    data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                        <label>Listar desde</label>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                        <label>hasta</label>
+                    </div>
+                    <div id="fechalistarInicial_110">
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                                <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.anolistarini_SER110'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.meslistarini_SER110'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.dialistarini_SER110'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fechalistarFinal_110">
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                                <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.anolistarfin_SER110'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.meslistarfin_SER110'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.dialistarfin_SER110'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                </div>
+                <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>abonos hasta</label>
+                    </div>
+                    <div id="fechaabonoInicial_110">
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                                <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.anoabonoini_SER110'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.mesabonoini_SER110'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.diaabonoini_SER110'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                </div>
+                <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-4 col-sm-12 col-xs-12" id="validarrecalcular_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-8 col-xs-12">Recalcular cargos de cartera? :</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                <input v-model='form.recalcular_SER110' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                    data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12" id="validarfechabase_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-8 col-xs-12">Fecha base:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                <input v-model='form.fechabase_SER110' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                    data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12" id="validarordenar_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-8 col-xs-12">Ordenar por:</label>
+                            <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                <input v-model='form.ordenar_SER110' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="10"
+                                    data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-6" id="validarterceros_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Nit a listar:</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-6">
+                                <input type="text" @Keyup.F8='_f8terceros_SER110' v-model='form.tercero_SER110'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 terceros_SER110" maxlength="10"
+                                    data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8terceros_SER110'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" v-model='form.decripter_SER110'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-4 col-sm-4 col-xs-6" id="validarmovimiento_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-9 col-sm-8 col-xs-12">Asumir solo el movimiento del mes?:</label>
+                            <div class="input-group col-md-3 col-sm-4 col-xs-6">
+                                <input type="text" v-model='form.movimiento_SER110'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                    data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-6" id="validarhabitacion_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-8 col-xs-12">Numero habitación:</label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-6">
+                                <input type="text" v-model='form.nrohabitacion_SER110'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="4"
+                                    data-orden="1" placeholder="****">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-6" id="validarcopago_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-8 col-xs-12">Ver copago estim:</label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-6">
+                                <input type="text" v-model='form.copagoestim_SER110'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                    data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-4 col-xs-6" id="validarcostos_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Centro de costos:</label>
+                            <div class="input-group col-md-3 col-sm-4 col-xs-6">
+                                <input @Keyup.F8='_f8costos_SER110' type="text" v-model='form.costos_SER110'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 costos_SER110" maxlength="4"
+                                    data-orden="1" placeholder="****">
+                            </div>
+                            <button type="button" @click='_f8costos_SER110'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" v-model='form.descripcostos_SER110'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6" id="validarservhosp_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Serv. Hospitalar:</label>
+                            <div class="input-group col-md-3 col-sm-4 col-xs-6">
+                                <input type="text" v-model='form.servhosp_SER110'@Keyup.F8='_f8servhospitalarios_SER110'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 servhosp_SER110" maxlength="2"
+                                    data-orden="1" placeholder="**">
+                            </div>
+                            <button type="button" @click='_f8servhospitalarios_SER110'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input type="text" v-model='form.descripservhosp_SER110'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-4 col-sm-6 col-xs-6" id="validarsinsaldo_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-12 col-sm-8 col-xs-12">Ver fac sin saldo?:</label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-6">
+                                <input type="text" v-model='form.facsinsaldo_SER110'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                    data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-12 col-xs-12" id="validartipolistado_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-8 col-xs-12">Tipo listado:</label>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model='form.listado_SER110' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                </div>
+                <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Nro de envios</label>
+                    </div>
+                    <div id="envios_110">
+                        <div class="col-md-4 col-sm-6 col-xs-6" id="validarenvio1_110">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-8 col-xs-12">Envio 1:</label>
+                                <div class="input-group col-md-12 col-sm-4 col-xs-6">
+                                    <input type="text" v-model='form.envio1_SER110' @Keyup.F8='_f8envios_SER110'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 envios1_ser110" maxlength="6"
+                                        data-orden="1" placeholder="999999">
+                                </div>
+                                <button type="button" @click='_f8envios_SER110'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-6" id="validarenvio2_110">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-8 col-xs-12">Envio 2:</label>
+                                <div class="input-group col-md-12 col-sm-4 col-xs-6">
+                                    <input type="text" v-model='form.envio2_SER110' @Keyup.F8='_f8envios2_SER110'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 envios2_ser110" maxlength="1"
+                                        data-orden="1">
+                                </div>
+                                <button type="button" @click='_f8envios2_SER110'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-6" id="validarenvio3_110">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-8 col-xs-12">Envio 3:</label>
+                                <div class="input-group col-md-12 col-sm-4 col-xs-6">
+                                    <input type="text" v-model='form.envio3_SER110' @Keyup.F8='_f8envios3_SER110'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 envios3_ser110" maxlength="1"
+                                        data-orden="1">
+                                </div>
+                                <button type="button" @click='_f8envios3_SER110'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </div>
+                        </div>
+                        <div class="salto-linea"></div>
+                        <div class="col-md-6 col-sm-6 col-xs-6" id="validarenvio4_110">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-8 col-xs-12">Envio 4:</label>
+                                <div class="input-group col-md-12 col-sm-4 col-xs-6">
+                                    <input type="text" v-model='form.envio4_SER110' @Keyup.F8='_f8envios4_SER110'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 envios4_ser110" maxlength="1"
+                                        data-orden="1">
+                                </div>
+                                <button type="button" @click='_f8envios4_SER110'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6" id="validarenvio5_110">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-8 col-xs-12">Envio 5:</label>
+                                <div class="input-group col-md-12 col-sm-4 col-xs-6">
+                                    <input type="text" v-model='form.envio5_SER110' @Keyup.F8='_f8envios5_SER110'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 envios5_ser110" maxlength="1"
+                                        data-orden="1">
+                                </div>
+                                <button type="button" @click='_f8envios5_SER110'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-4 col-sm-12 col-xs-12" id="validarfactcartera_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-8 col-xs-12">Solo facturas de cartera :</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                <input v-model='form.factcartera_SER110' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                    data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12" id="validaroperador_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Operador bloquea:</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12">
+                                <input v-model='form.operador_SER110' type="text" @Keyup.F8='_f8operador_SER110' 
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 operador_SER110" maxlength="4"
+                                    data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8operador_SER110'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12" id="validarplan_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Plan beneficios:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.plan_SER110' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-4 col-sm-12 col-xs-12" id="validarcodnit_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-8 col-xs-12">Reemplazar codigos por NIT?:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                <input v-model='form.codnit_SER110' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                    data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12" id="validarcapitacion_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Fact. capitación:</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-12">
+                                <input v-model='form.capitacion_SER110' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                    data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12" id="validarciudad_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-8 col-xs-12">Ciudad:</label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-12">
+                                <input v-model='form.ciudad_SER110' type="text" @Keyup.F8='_f8ciudad_SER110'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 ciudad_SER110" maxlength="5"
+                                    data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8ciudad_SER110'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model='form.descripciudad_SER110' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 hidden" id="validarcodnit_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-8 col-xs-12">Informe resumido?:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.infresumido_SER110' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                    data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 hidden" id="validarcapitacion_110">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Filtrar operador:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input v-model='form.operador_SER110' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                    data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <loader_modal :estado="estado_loader" :progreso="progreso" :loader="loader" :label="label_loader"></loader_modal> 
+</div>
+<script src="../../SALUD/scripts/SER110.js" type="text/javascript"></script>

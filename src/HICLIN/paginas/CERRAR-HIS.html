@@ -1,0 +1,223 @@
+<style>
+  #cerrar_his .row-light {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .float_salir_cerrar_his {
+    z-index: 2;
+    position: fixed;
+    width: 65px;
+    height: 60px;
+    bottom: 16px;
+    background-color: #476fad;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 1px 1px 1px #999;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .float_salir_cerrar_his:hover {
+    box-shadow: 2px 2px 2px #999;
+    transition: padding 0.5s ease, background-position 0.5s ease,
+      transform 0.8s ease;
+    text-decoration: none;
+    color: #fff;
+  }
+</style>
+
+<div class="col-md-12" id="cerrar_his">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div
+          class="form-group col-md-7 col-sm-10 no-padding"
+          style="float: none; margin: 0 auto;"
+        >
+          <div
+            class="portlet light box-center box-title"
+            style="margin: 0 auto;"
+          >
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">
+                  Cierre de historias clinicas abiertas.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col-md-7 col-sm-10 no-padding"
+          style="float: none; margin: 0 auto;"
+        >
+          <div class="form-group box-center">
+            <div class="col-md-12 row-light no-padding" id="fase_sucursal">
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <label class="float-right">Sucursal:</label>
+              </div>
+
+              <div class="col-md-3 col-sm-2">
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      type="text"
+                      v-model="form.id_sucursal"
+                      data-orden="1"
+                      maxlength="2"
+                      ref="id_sucursal"
+                      v-on:keyup.119="_ventanaSucursales"
+                      placeholder="** - Todos"
+                      required
+                    />
+                  </div>
+                  <button
+                    id=""
+                    type="button"
+                    class="btn col-md-5 col-sm-5 col-xs-4 f8-Btn"
+                    @click="_ventanaSucursales"
+                  >
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  v-model="descrpcion.sucursal"
+                  style="text-overflow: ellipsis;"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-12 row-light no-padding" id="fase_unidad">
+              <div class="col-md-3 col-sm-3 col-xs-3">
+                <label class="float-right">Unid. Serv:</label>
+              </div>
+
+              <div class="col-md-3 col-sm-3" id="faseUnserv">
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      type="text"
+                      v-model="form.unserv"
+                      data-orden="1"
+                      maxlength="2"
+                      ref="unserv"
+                      v-on:keyup.119="_ventanaUnidades"
+                      placeholder="99 - Todos"
+                      required
+                    />
+                  </div>
+                  <button
+                    id=""
+                    type="button"
+                    class="btn col-md-5 col-sm-5 col-xs-4 f8-Btn"
+                    @click="_ventanaUnidades"
+                  >
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  v-model="descrpcion.unserv"
+                  style="text-overflow: ellipsis;"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-12 row-light no-padding">
+              <div class="col-md-3 col-sm-3">
+                <label class="float-right">Tipo cierre:</label>
+              </div>
+              <div class="col-md-3 col-sm-3">
+                <input
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  v-model="descrpcion.tipo"
+                  style="text-overflow: ellipsis;"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col-md-7 col-sm-10 no-padding"
+          style="float: none; margin: 0 auto;"
+        >
+          <div class="form-group box-center" id="faseFechaIni">
+            <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+              <label>Fecha limite.</label>
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+              <label class="float-left">Año:</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input
+                  type="number"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  maxlength="4"
+                  v-model="form.fecha_limite.anio"
+                  required
+                  data-orden="1"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+              <label class="float-left">Mes:</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input
+                  type="number"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  maxlength="2"
+                  v-model="form.fecha_limite.mes"
+                  required
+                  data-orden="2"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4">
+              <label class="float-left">Dia:</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input
+                  type="number"
+                  class="form-control col-md-12 col-sm-12 col-xs-12"
+                  maxlength="2"
+                  v-model="form.fecha_limite.dia"
+                  required
+                  data-orden="3"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a
+    class="float_salir_cerrar_his"
+    style="left: 21px; background-color: #da2c2c; border-color: #da2c2c;"
+    @click="_salir_cerrar_his"
+  >
+    <span>Salir</span>
+  </a>
+</div>
+
+<script src="../../HICLIN/scripts/CERRAR-HIS.js"></script>

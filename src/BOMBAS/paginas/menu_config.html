@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Estacion de servicio - Prosoft</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <!--link href="//fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css" /-->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
+              type="text/css" />
+        <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/global/css/components-rounded.min.css" rel="stylesheet" id="style_components"
+              type="text/css" />
+        <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/layouts/layout6/css/layout.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/layouts/layout6/css/custom.min.css" rel="stylesheet" type="text/css" />
+        <link href="../style/style_v2.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="favicon.ico" />
+    </head>
+
+    <body class="">
+        <div class="container-fluid">
+            <div class="page-content page-content-popup">
+                <div class="page-fixed-main-content" style="margin-left: 0">
+                    <header class="header-v2">
+                        <div class="nom-modulo">
+                            <!--Módulo de H.C-->
+                        </div>
+                        <div class="logo">
+                            <img src="http://192.168.0.100:8050/imagenes/login.png" />
+                        </div>
+                    </header>
+                    <div class="page-content-fixed-header" style="background: #476fad; color: #fff !important;">
+                        <ul class="page-breadcrumb">
+                            <li style="padding: 17px 0px!important;">
+                                <a href="#" style="color: #fff">CONFIGURACION PROSOFT.</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="portlet light no-padding">
+                                <div class="portlet-body">
+                                    <form class="form-horizontal" onsubmit="return false;">
+                                        <div class="form-group col-md-10 col-sm-10 col-xs-12 box-center">
+                                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                <div class="col-md-5 col-sm-6 col-xs-12">
+                                                    <div class="inline-inputs">
+                                                        <label class="col-md-3 col-sm-6 col-xs-12" for="empr_conf">Empresa:</label>
+                                                        <div class="input-group col-md-9 col-sm-6 col-xs-12">
+                                                            <input id="empr_conf" type="text" class="form-control  font-small "  />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 col-sm-6 col-xs-12">
+                                                    <div class="inline-inputs">
+                                                        <label class="col-md-3 col-sm-6 col-xs-6" for="nit_conf">Nit:</label>
+                                                        <div class="input-group col-md-9 col-sm-12 col-xs-12">
+                                                            <input id="nit_conf" type="text" class="form-control  font-small "  />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5 col-sm-6 col-xs-12">
+                                                    <div class="inline-inputs">
+                                                        <label class="col-md-6 col-sm-6 col-xs-6" id="">Direccion:</label>
+                                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                                            <input id="dir_conf" type="text" class="form-control  font-small "  />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-10 col-sm-10 col-xs-12 box-center">
+                                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                <div class="col-md-5 col-sm-6 col-xs-12">
+                                                    <div class="inline-inputs">
+                                                        <label class="col-md-3 col-sm-4 col-xs-6" id="">E-mail:</label>
+                                                        <div class="input-group col-md-9 col-sm-8 col-xs-12">
+                                                            <input id="email_conf" type="text" class="form-control  font-small "  />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                                    <div class="inline-inputs">
+                                                        <label class="col-md-6 col-sm-6 col-xs-6" for="serv_email_conf">Servicio E-mail:</label>
+                                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                                            <input id="serv_email_conf" type="text" class="form-control  font-small "  />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                                    <div class="inline-inputs">
+                                                        <label class="col-md-6 col-sm-6 col-xs-6" for="contr_conf">Contraseña:</label>
+                                                        <div class="input-group col-md-6 col-sm-12 col-xs-12">
+                                                            <input id="contr_conf" type="text" class="form-control  font-small "  />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-10 col-sm-10 col-xs-12 box-center">
+                                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                <div class="col-md-2 col-sm-6 col-xs-12">
+                                                    <div class="inline-inputs">
+                                                        <label class="col-md-6 col-sm-6 col-xs-6" for="puerto_conf">Puerto:</label>
+                                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                                            <input id="puerto_conf" type="text" class="form-control  font-small "  />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 col-sm-6 col-xs-12">
+                                                    <div class="inline-inputs">
+                                                        <label class="col-md-6 col-sm-6 col-xs-6" for="ssl_conf">SSL:</label>
+                                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                                            <input id="ssl_conf" type="text" class="form-control  font-small "  />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                                    <div class="inline-inputs">
+                                                        <label class="col-md-6 col-sm-6 col-xs-6" for="ip_datos_conf">Ip datos:</label>
+                                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                                            <input id="ip_datos_conf" type="text" class="form-control  font-small "  />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                                    <div class="inline-inputs">
+                                                        <label class="col-md-6 col-sm-6 col-xs-6" for="ip_desc_conf">Ip descargas:</label>
+                                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                                            <input id="ip_desc_conf" type="text" class="form-control  font-small "  />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-8 col-xs-12 box-center">
+                                            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                                <div class="col-md-7 col-sm-6 col-xs-12">
+                                                    <div class="form-group">
+                                                        <div class="inline-inputs">
+                                                            <label class="col-md-6 col-sm-6 col-xs-12" for="dir_cont_conf">Contabilidades:</label>
+                                                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                                                <input id="dir_cont_conf" type="text" class="form-control  font-small "  maxlength="30"/>
+                                                                <a id="add_contab_conf" class="input-group-addon">
+                                                                    <i class="fa fa-plus-square font-dark"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5 col-sm-6 col-xs-12">
+                                                    <div class="inline-inputs">
+                                                        <label class="col-md-6 col-sm-6 col-xs-12" for="timer_conf">Tiempo sesion:</label>
+                                                        <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                                            <input id="timer_conf" type="text" class="form-control  font-small "  />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-8 col-xs-12 box-center">
+                                            <table class="col-md-12 col-sm-12 col-xs-12 table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Item</th>
+                                                        <th>Contabilidad</th>
+                                                        <th>Opc.</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                            <div class="form-group col-md-12 col-sm-12 col-xs-12" style="margin-top: 10px; text-align: right;">
+                                                <button id="guardar_conf" type="button" class="btn green btn-lg">Guardar </button>
+                                                <button id="salir_conf" type="button" class="btn red btn-lg">Salir</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ip_descarga"></div>
+                </div>
+            </div>
+            <a href="javascript:;" class="page-quick-sidebar-toggler">
+                <i class="icon-login"></i>
+            </a>
+        </div>
+        <style>
+            .table-bordered {
+                max-height: 25em;
+                height: auto;
+                border: none !important;
+            }
+            table {
+                display: flex;
+                flex-flow: column;
+                height: 100%;
+                width: 100%;
+            }
+            table thead {
+                flex: 0 0 auto;
+                width: calc(100% - 0.9em);
+            }
+
+            table th{
+                padding: 12px;
+                text-align: center;
+                background-color: #476fad;
+                color: white;
+            }
+
+            table tbody {
+                flex: 1 1 auto;
+                display: block;
+                overflow-y: scroll;
+            }
+
+            table tbody tr {
+                width: 100%;
+            }
+            table thead, table tbody tr {
+                display: table;
+                table-layout: fixed;
+            }
+
+            table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: center;
+            }
+
+        </style>
+
+        <script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+        <script src="../scripts/js/ajax.js" type="text/javascript"></script>
+        <script src="../scripts/js/config.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/moment.js"></script>
+        <script src="../scripts/js/_alerts_prosoft.js" type="text/javascript"></script>
+        <!--script src="../scripts/global.js" type="text/javascript"></script-->
+    </body>
+
+</html>

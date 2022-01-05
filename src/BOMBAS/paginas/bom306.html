@@ -1,0 +1,123 @@
+<style>
+    div[class^="col-md-"] {
+        text-align: left;
+    }
+</style>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="portlet light box-center box-title">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject bold">3-6 - Informe de vales facturados</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="bom306" class="col-md-12 col-sm-12 col-xs-12">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <div class="form-horizontal">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12 box-center">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Cliente a procesar:</label>
+                            <div class="inline-inputs" id="fase_tercero">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        v-model="id_tercero" maxlength="10" v-on:keyup.119="ventana_terceros"
+                                        ref="id_tercero" data-orden="1">
+                                </div>
+                                <button type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn"
+                                    @click="ventana_terceros">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 col-sm-6 col-xs-12" style="padding-right: 0;">
+                            <label> Descripcion</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 colsm-12 col-xs-12">
+                                    <input type="text" class="form-control " v-model="descrip_tercero">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group col-md-6 col-sm-12 col-xs-12 box-center" id="fase_fecha_ini">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label>Fecha inicial</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <label>Año:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="number" class="form-control col-md-12" v-model="fecha_ini.anio"
+                                        maxlength="4" data-orden="1" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <label>Mes:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="number" class="form-control col-md-12" v-model="fecha_ini.mes"
+                                        maxlength="2" data-orden="2" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="padding-right: 0;">
+                            <label>Dia:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="number" class="form-control col-md-12" v-model="fecha_ini.dia"
+                                        maxlength="2" data-orden="3" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-12 col-xs-12 box-center" id="fase_fecha_fin">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label>Fecha final</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <label>Año:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="number" class="form-control col-md-12" v-model="fecha_fin.anio"
+                                        maxlength="2" data-orden="1" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <label>Mes:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="number" class="form-control col-md-12" v-model="fecha_fin.mes"
+                                        maxlength="2" data-orden="2" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4" style="padding-right: 0;">
+                            <label>Dia:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="number" class="form-control col-md-12" v-model="fecha_fin.dia"
+                                        maxlength="2" data-orden="3" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../../BOMBAS/scripts/bom306.js"></script>

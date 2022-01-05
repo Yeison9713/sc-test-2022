@@ -1,0 +1,1189 @@
+<div class="col-md-12" id="LAB107">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <form class="form-horizontal">
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-2 col-sm-2 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-7 col-sm-7 col-xs-7">Sucursal:</label>
+                                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                    <input v-model="global_lab107.SUC" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-8">Tipo de servicio:</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                                    <input v-model="global_lab107.CL" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-6" id="validarComprob_lab107">
+                            <div class="inline-inputs">
+                                <label class="col-md-7 col-sm-7 col-xs-7">Comprobante:</label>
+                                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                    <input v-model="global_lab107.COMPROB" type="text" data-orden="1" maxlength="6"
+                                        required="true" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-5">Codigo Cup:</label>
+                                <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                    <input v-model="global_lab107.CUP" type="text" data-orden="1" maxlength="12"
+                                        required="true" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-5">Fecha:</label>
+                                <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                    <input v-model="global_lab107.FECHA" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <label>Descrip Cup</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.DESCRIP_CUP"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <label>Paciente</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.ID_HISTORIA" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 col-sm-8 col-xs-12 no-padding">
+                            <label>Nombre Paciente</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.DESCRIP_PACI"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <label>Factura</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.CTA"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <label>Entidad</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.ID_ENTIDAD"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <label></label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="global_lab107.NOM_ENTIDAD"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-3" id="validarMedico_lab107">
+                            <label>Médico</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                    <input id="medico_lab107" v-model="global_lab107.ID_MEDICO" required="true"
+                                        maxlength="10" data-orden="1" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        @keydown.119="ventanaMedico">
+                                </div>
+                                <button @click="ventanaMedico" type="button"
+                                    class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <label></label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="global_lab107.REG_MEDICO"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <label></label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="global_lab107.NOMBRE_MEDICO"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12 no-padding">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <label>Edad</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="global_lab107.EDAD" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-4 col-xs-12" id="validarPeso_lab107">
+                            <label>Peso</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="global_lab107.PESO" maxlength="4" data-orden="1" required="true"
+                                    placeholder="KG" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-4 col-xs-12" id="validarTalla_lab107">
+                            <label>Talla</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.TALLA" type="text" maxlength="3" data-orden="1"
+                                        placeholder="CM" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
+                            <label>Finalidad de la prueba</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="DESCRIP_FINALIDAD" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: center;">
+                            <label>Factores de riesgo cardiovascular</label>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Hipertension</label>
+                            <div class="inline-inputs" id="validarHipertension_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.HIPERTENSION" type="text" maxlength="1"
+                                        placeholder="N" data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Diabetes</label>
+                            <div class="inline-inputs" id="validarDiabetes_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.DIABETES" type="text" maxlength="1" placeholder="N"
+                                        data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Enfermedad coronaria previa</label>
+                            <div class="inline-inputs" id="validarEnferCoronaria_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.ENFER_CORONARIA" type="text" maxlength="1"
+                                        placeholder="N" data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Dislipidemia</label>
+                            <div class="inline-inputs" id="validarDislipidemia_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.DISLIPIDEMIA" type="text" maxlength="1"
+                                        placeholder="N" data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Fumador</label>
+                            <div class="inline-inputs" id="validarFumador_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.FUMADOR" type="text" maxlength="1" placeholder="N"
+                                        data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Sedentarismo</label>
+                            <div class="inline-inputs" id="validarSedentarismo_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.SEDENTARISMO" type="text" maxlength="1"
+                                        placeholder="N" data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Stress</label>
+                            <div class="inline-inputs" id="validarStress_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.STRESS" type="text" maxlength="1" placeholder="N"
+                                        data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Obesidad</label>
+                            <div class="inline-inputs" id="validarObesidad_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.OBESIDAD" type="text" maxlength="1" placeholder="N"
+                                        data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Familiares</label>
+                            <div class="inline-inputs" id="validarFamiliares_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.FAMILIARES" type="text" maxlength="1" placeholder="N"
+                                        data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Otros</label>
+                            <div class="inline-inputs" id="validarOtros_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.OTROS" type="text" maxlength="1" placeholder="N"
+                                        data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 col-sm-6 col-xs-12" style="text-align: left;">
+                            <label>Cuál?</label>
+                            <div class="inline-inputs" id="validarCual_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.OTROS_TEXT" type="text" maxlength="80" data-orden="1"
+                                        style="text-align: left" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12" style="padding-right: 0">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarMedicamentos_lab107">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                            style="display: flex; justify-content:space-between">
+                            <label>Medicamentos :</label>
+                            <label>(450 caracteres maximo)</label>
+                        </div>
+                        <textarea v-model="global_lab107.MEDICAMENTOS" class="form-control" disabled="disabled" rows="4"
+                            maxlength="450" data-orden="1" style="resize: none; text-align: justify"></textarea>
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarDatosClinicos_lab107">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                            style="display: flex; justify-content:space-between">
+                            <label>Datos clinicos :</label>
+                            <label>(120 caracteres maximo)</label>
+                        </div>
+                        <textarea v-model="global_lab107.DATOS_CLINICOS" class="form-control" disabled="disabled"
+                            rows="2" maxlength="120" data-orden="1"
+                            style="resize: none; text-align: justify"></textarea>
+                    </div>
+
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="padding-bottom: 7px;">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: center;">
+                            <label>Parámetros basales</label>
+                        </div>
+
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <label>TA</label>
+                            <div class="inline-inputs" id="validarTA_lab107">
+                                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                    <input @input="calcularDP" v-model="global_lab107.TA_SISTOLE" type="text"
+                                        maxlength="3" data-orden="1" required="true" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                    <input v-model="global_lab107.TA_DIASTOLE" type="text" maxlength="3" data-orden="2"
+                                        required="true" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <label>FC</label>
+                            <div class="inline-inputs" id="validarFC_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input @input="calcularDP" v-model="global_lab107.FC" type="text" maxlength="3"
+                                        data-orden="1" required="true" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <label>Doble producto</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="calculos.DOBLE_PRODUCTO" type="text" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12 no-padding">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarEcocarBasal_lab107">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                            style="display: flex; justify-content:space-between">
+                            <label>Electrocardiograma basal :</label>
+                            <label>(450 caracteres maximo)</label>
+                        </div>
+                        <textarea v-model="global_lab107.ELECTROCAR_BASAL" class="form-control" disabled="disabled"
+                            rows="4" maxlength="450" data-orden="1"
+                            style="resize: none; text-align: justify"></textarea>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12" style="padding-right: 0">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarEcocarDurante_lab107">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                            style="display: flex; justify-content:space-between">
+                            <label>Electrocardiograma durante el esfuerzo :</label>
+                            <label>(270 caracteres maximo)</label>
+                        </div>
+                        <textarea v-model="global_lab107.ELECTROCAR_DURA" class="form-control" disabled="disabled"
+                            rows="4" maxlength="270" data-orden="1"
+                            style="resize: none; text-align: justify"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <table style="margin-bottom: 0px; width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center;position: relative;top: 16px;" class="col-md-1">
+                                        Estadio</th>
+                                    <th style="text-align: center" class="col-md-1">Velocidad</th>
+                                    <th style="text-align: center" class="col-md-1">Pendiente</th>
+                                    <th style="text-align: center" class="col-md-1">Tiempo</th>
+                                    <th style="text-align: center" class="col-md-1">VO2</th>
+                                    <th style="text-align: center;position: relative;top: 16px;" class="col-md-1">Mets
+                                    </th>
+                                    <th style="text-align: center" class="col-md-1">TA</th>
+                                    <th style="text-align: center;position: relative;top: 16px;" class="col-md-1">FC
+                                    </th>
+                                    <th style="text-align: center" class="col-md-1">Tiempo</th>
+                                    <th style="text-align: center;position: relative;top: 16px;" class="col-md-1">Ritmo
+                                    </th>
+                                    <th style="text-align: center;position: relative;top: 16px;" class="col-md-2">
+                                        Sintomas</th>
+                                </tr>
+
+                            </thead>
+                        </table>
+                        <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: center" class="col-md-1"></th>
+                                    <th style="text-align: center" class="col-md-1">Millas/H</th>
+                                    <th style="text-align: center" class="col-md-1">%</th>
+                                    <th style="text-align: center" class="col-md-1">Min</th>
+                                    <th style="text-align: center" class="col-md-1">Ml/Kg/Min</th>
+                                    <th style="text-align: center" class="col-md-1"></th>
+                                    <th style="text-align: center" class="col-md-1">Sistole/Diastole</th>
+                                    <th style="text-align: center" class="col-md-1"></th>
+                                    <th style="text-align: center" class="col-md-1">Min</th>
+                                    <th style="text-align: center" class="col-md-1"></th>
+                                    <th style="text-align: center" class="col-md-2"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr v-for="fila in global_lab107.TABLA_PROTOCOLO">
+
+                                    <td class="col-md-1">
+                                        <label> {{fila.ESTADIO}} </label>
+                                    </td>
+
+                                    <td class="col-md-1">
+                                        <div v-bind:id="fila.ID_VEL">
+                                            <input type="text" v-model="fila.VELOCIDAD" data-orden="1" maxlength="4"
+                                                class="  form-control" />
+                                        </div>
+                                    </td>
+
+                                    <td class="col-md-1">
+                                        <div v-bind:id="fila.ID_PEND">
+                                            <input type="text" v-model="fila.PENDIENTE" data-orden="1" maxlength="2"
+                                                class="  form-control" />
+                                        </div>
+                                    </td>
+
+                                    <td class="col-md-1">
+                                        <div v-bind:id="fila.ID_TIME">
+                                            <input type="text" v-model="fila.TIEMPO" data-orden="1" maxlength="2"
+                                                class="  form-control" />
+                                        </div>
+                                    </td>
+
+                                    <td class="col-md-1">
+                                        <div v-bind:id="fila.ID_VO2">
+                                            <input type="text" v-model="fila.VO2" data-orden="1" maxlength="4"
+                                                class="  form-control" />
+                                        </div>
+                                    </td>
+
+                                    <td class="col-md-1">
+                                        <div v-bind:id="fila.ID_METS">
+                                            <input type="text" v-model="fila.METS" data-orden="1" maxlength="2"
+                                                class="  form-control" />
+                                        </div>
+                                    </td>
+
+                                    <td class="col-md-1" style="display: flex;;width: 100%;">
+                                        <div v-bind:id="fila.ID_TASISTOLE">
+                                            <input type="text" v-model="fila.TA_SISTOLE" data-orden="1" maxlength="3"
+                                                style="padding: 6px 6px 8px 0px" class="form-control" />
+                                        </div>
+                                        <div v-bind:id="fila.ID_TADIASTOLE">
+                                            <input type="text" v-model="fila.TA_DIASTOLE" data-orden="1" maxlength="3"
+                                                style="padding: 6px 6px 8px 0px" class="form-control" />
+                                        </div>
+                                    </td>
+
+                                    <td class="col-md-1">
+                                        <div v-bind:id="fila.ID_FC">
+                                            <input type="text" v-model="fila.FC" data-orden="1" maxlength="3"
+                                                class="  form-control" />
+                                        </div>
+                                    </td>
+
+                                    <td class="col-md-1">
+                                        <div v-bind:id="fila.ID_TIME_2">
+                                            <input type="text" v-model="fila.TIEMPO_2" data-orden="1" maxlength="2"
+                                                class="  form-control" />
+                                        </div>
+                                    </td>
+
+                                    <td class="col-md-1">
+                                        <div v-bind:id="fila.ID_RITMO">
+                                            <input type="text" v-model="fila.RITMO" data-orden="1" maxlength="2"
+                                                class="  form-control" />
+                                        </div>
+                                    </td>
+
+                                    <td class="col-md-1">
+                                        <div v-bind:id="fila.ID_SINTOM">
+                                            <input type="text" v-model="fila.SINTOMAS" data-orden="1" maxlength="20"
+                                                class="  form-control" />
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12" style="padding-left: 0; padding-bottom: 0;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <canvas id="tablaProtocolo"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12" style="padding-right: 0; padding-bottom: 0;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <canvas id="tablaFrecuenciaCardiaca"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+
+                    <div class="col-md-6" style="padding-left: 0; padding-bottom: 0;">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: center;">
+                                <label>Post ejercicio</label>
+                            </div>
+
+                            <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center" class="col-md-2">Tiempo</th>
+                                        <th style="text-align: center" class="col-md-3">TA</th>
+                                        <th style="text-align: center" class="col-md-2">FC</th>
+                                        <th style="text-align: center" class="col-md-2">Ritmo</th>
+                                        <th style="text-align: center" class="col-md-3">Sintomas</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr v-for="fila in global_lab107.TABLA_PROTOCOLO_POST">
+
+                                        <td class="col-md-2">
+                                            <label> {{fila.MINUTOSPOST}} </label>
+                                        </td>
+
+                                        <td class="col-md-3" style="display: flex;;width: 100%;">
+                                            <div v-bind:id="fila.ID_TASISTOLE">
+                                                <input type="text" v-model="fila.TA_SISTOLE" data-orden="1"
+                                                    maxlength="3" class="  form-control" />
+                                            </div>
+                                            <div v-bind:id="fila.ID_TADIASTOLE">
+                                                <input type="text" v-model="fila.TA_DIASTOLE" data-orden="1"
+                                                    maxlength="3" class="  form-control" />
+                                            </div>
+                                        </td>
+
+                                        <td class="col-md-2">
+                                            <div v-bind:id="fila.ID_FC">
+                                                <input type="text" v-model="fila.FC" data-orden="1" maxlength="3"
+                                                    class="  form-control" />
+                                            </div>
+                                        </td>
+
+                                        <!-- <td class="col-md-1">
+                                        <div v-bind:id="fila.TIME">
+                                            <input type="text" v-model="fila.TIEMPO" data-orden="1" maxlength="2"
+                                                class="  form-control" />
+                                        </div>
+                                    </td> -->
+
+                                        <td class="col-md-2">
+                                            <div v-bind:id="fila.ID_RITMO">
+                                                <input type="text" v-model="fila.RITMO" data-orden="1" maxlength="2"
+                                                    class="  form-control" />
+                                            </div>
+                                        </td>
+
+                                        <td class="col-md-3">
+                                            <div v-bind:id="fila.ID_SINTOM">
+                                                <input type="text" v-model="fila.SINTOMAS" data-orden="1" maxlength="20"
+                                                    class="  form-control" />
+                                            </div>
+                                        </td>
+
+                                    </tr>
+
+                            </table>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="col-md-3" style="padding-right: 0">
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                    <label>Inmediato</label>
+                                </div>
+                                <canvas id="tablaPie_1"></canvas>
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                    <label>6 Min</label>
+                                </div>
+                                <canvas id="tablaPie_3"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3" style="padding-right: 0">
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                    <label>3 Min</label>
+                                </div>
+                                <canvas id="tablaPie_2"></canvas>
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                    <label>9 Min</label>
+                                </div>
+                                <canvas id="tablaPie_4"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12 no-padding">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarEcocarPost_lab107">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                            style="display: flex; justify-content:space-between">
+                            <label>Electrocardiograma poststress :</label>
+                            <label>(270 caracteres maximo)</label>
+                        </div>
+                        <textarea v-model="global_lab107.ELECTROCAR_POST" class="form-control" disabled="disabled"
+                            rows="3" maxlength="270" data-orden="1"
+                            style="resize: none; text-align: justify;"></textarea>
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: center;">
+                            <label>Tipo de prueba cinta rodante</label>
+                        </div>
+
+                        <div class="col-md-2 col-sm-3 col-xs-12">
+                            <label>FC máxima</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="calculos.FC_MAXIMA " type="text" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <label>FC submax</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="calculos.FC_SUBMAXIMA " type="text" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <label>TA final</label>
+                            <div class="inline-inputs" id="validarTAFinal_lab107">
+                                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                    <input @input="calculaDpFinal" v-model="global_lab107.TA_FINAL_SISTOLE" type="text"
+                                        maxlength="3" data-orden="1" style="text-align: center" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                    <input v-model="global_lab107.TA_FINAL_DIASTOLE" type="text" maxlength="3"
+                                        data-orden="2" style="text-align: center" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <label>FC final</label>
+                            <div class="inline-inputs" id="validarFCFinal_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input @input="calculaDpFinal" v-model="global_lab107.FC_FINAL" type="text"
+                                        style="text-align: center" required="true" maxlength="3" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <label>DP final</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="calculos.DP_FINAL" type="text" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <label>Duracion</label>
+                            <div class="inline-inputs" id="validarDuracion_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.DURACION" type="text" style="text-align: center"
+                                        maxlength="2" data-orden="1" placeholder="min"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-4 col-xs-12">
+                            <label>FC alcanzada</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.FC_FINAL" type="text" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <label>Mets</label>
+                            <div class="inline-inputs" id="validarMets_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input @input="calculaConsO2CF" v-model="global_lab107.METS" type="text"
+                                        style="text-align: center" maxlength="2" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-4 col-xs-12">
+                            <label>CF</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="text" v-model="calculos.CF" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-xs-12">
+                            <label>Cons o²</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="calculos.CONSO2" type="text" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12" style="padding-right: 0">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="padding-bottom: 6px;">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: center;">
+                            <label>Motivo de suspensión</label>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Dolor precordial</label>
+                            <div class="inline-inputs" id="validarDolorPrecor_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.DOLOR_PRECORDIAL" type="text" maxlength="1"
+                                        placeholder="N" data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Mareo</label>
+                            <div class="inline-inputs" id="validarMareo_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.MAREO" type="text" maxlength="1" placeholder="N"
+                                        data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Anomalias TA</label>
+                            <div class="inline-inputs" id="validarAnomaliasTa_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.ANOMALIAS_TA" type="text" maxlength="1"
+                                        placeholder="N" data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Disnea</label>
+                            <div class="inline-inputs" id="validarDisnea_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.DISNEA" type="text" maxlength="1" placeholder="N"
+                                        data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Sincope</label>
+                            <div class="inline-inputs" id="validarSincope_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.SINCOPE" type="text" maxlength="1" placeholder="N"
+                                        data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Motivos técnicos</label>
+                            <div class="inline-inputs" id="validarMotivosTec_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.MOTIVOS_TECNICOS" type="text" maxlength="1"
+                                        placeholder="N" data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Fatiga general</label>
+                            <div class="inline-inputs" id="validarFatigaGeneral_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.FATIGA_GENERAL" type="text" maxlength="1"
+                                        placeholder="N" data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Alteración simpática</label>
+                            <div class="inline-inputs" id="validarAlterSimp_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.ALTERACION_SIMP" type="text" maxlength="1"
+                                        placeholder="N" data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Falta colaboración</label>
+                            <div class="inline-inputs" id="validarFaltaColabor_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.FALTA_COLABORACION" type="text" maxlength="1"
+                                        placeholder="N" data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Claudicación</label>
+                            <div class="inline-inputs" id="validarClaudicacion_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.CLAUDICACION" type="text" maxlength="1"
+                                        placeholder="N" data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Arritmias</label>
+                            <div class="inline-inputs" id="validarArritmias_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.ARRITMIAS" type="text" maxlength="1" data-orden="1"
+                                        placeholder="N" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <label>Alcanzo FC max</label>
+                            <div class="inline-inputs" id="validarAlcanzoFCMAX_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.ALCANZO_FC" type="text" maxlength="1" placeholder="N"
+                                        data-orden="1" style="text-align: center"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12 no-padding">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: center;">
+                            <label>Hallazgos clínicos post ejercicio</label>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12" style="text-align: left">
+                            <label>Respuesta presora</label>
+                            <div class="inline-inputs" id="validarRespPresora_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.RESP_PRESORA" type="text" maxlength="50"
+                                        style="text-align: left" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12" style="text-align: left">
+                            <label>Respuesta cronotropica</label>
+                            <div class="inline-inputs" id="validarRespCronotropica_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.RESP_CRONOTROPICA" type="text" maxlength="50"
+                                        style="text-align: left" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12" style="text-align: left">
+                            <label>Respuesta funcional</label>
+                            <div class="inline-inputs" id="validarRespFuncional_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.RESP_FUNCIONAL" type="text" maxlength="50"
+                                        style="text-align: left" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12" style="text-align: left">
+                            <label>Arritmias</label>
+                            <div class="inline-inputs" id="validarHallazArritmias_lab107">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab107.HALLAZ_ARRITMIA" type="text" maxlength="80"
+                                        style="text-align: left" data-orden="1"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left;">
+                        <label>Sugerencias</label>
+                        <div class="inline-inputs" id="validarSugerencias_lab107">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="global_lab107.SUGERENCIAS" type="text" maxlength="100"
+                                    style="text-align: left" data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarPlan_lab107"
+                        style="padding-bottom: 5px;">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                            style="display: flex; justify-content:space-between">
+                            <label>Plan :</label>
+                            <label>(200 caracteres maximo)</label>
+                        </div>
+                        <textarea v-model="global_lab107.PLAN" class="form-control" disabled="disabled" rows="2"
+                            maxlength="200" data-orden="1" style="resize: none; text-align: justify"></textarea>
+                    </div> -->
+
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12" style="padding-right: 0;">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarConclusiones_lab107">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                            style="display: flex; justify-content:space-between">
+                            <label>Conclusiones:</label>
+                            <label>(2800 caracteres maximo)</label>
+                        </div>
+                        <textarea v-model="global_lab107.CONCLUSIONES" class="form-control" disabled="disabled" rows="9"
+                            maxlength="2800" data-orden="1" style="resize: none; text-align: justify"></textarea>
+                    </div>
+
+                </div>
+
+                <div v-show="CONSULTA" class="col-md-6 col-sm-12 col-xs-12" style="padding-left: 0;padding-right: 0">
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="display: flex;justify-content: left">
+                            <label>Archivos adjuntos :</label>
+
+                        </div>
+
+                        <div v-for="item in global_lab107.ADJUNTOS">
+                            <a @click="aperturaAdjunto_lab107(item)">{{ item }}</a><br>
+                        </div>
+                    </div>
+                </div>
+                
+                <div v-show="CONSULTA" class="col-md-6 col-sm-12 col-xs-12" style="padding-right: 0;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left;">
+
+                        <label>Creación</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                                <input v-model="global_lab107.ADMI_CREA" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                            </div>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                <input v-model="global_lab107.HORA_CREA"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                            </div>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                <input v-model="global_lab107.FECHA_CREA"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left;">
+
+                        <label>Modificación</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                                <input v-model="global_lab107.ADMI_MODIF" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                            </div>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                <input v-model="global_lab107.HORA_MODIF"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                            </div>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                <input v-model="global_lab107.FECHA_MODIF"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <a v-show="CONSULTA" class="float_lab107 btn_imprimir" v-on:click="_envioImpresion"
+                    style="right: 21px;">
+                    <i class="glyphicon glyphicon-print my-float-lab105"></i>
+                </a>
+
+                <a v-show="CONSULTA" @click="salir_lab107" class="float_lab107"
+                    style="left: 21px; background-color: #da2c2c; border-color: #da2c2c">
+                    <span>Salir </span>
+                </a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .float_lab107 {
+        z-index: 2;
+        position: fixed;
+        width: 65px;
+        height: 60px;
+        bottom: 16px;
+        background-color: #476fad;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 1px 1px 1px #999;
+        overflow: hidden;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .float_lab107:hover {
+        box-shadow: 2px 2px 2px #999;
+        transition: padding .5s ease, background-position .5s ease, transform .8s ease;
+        text-decoration: none;
+        color: #FFF;
+    }
+
+    tbody input {
+        height: 32px
+    }
+
+    input {
+        text-align: center
+    }
+</style>
+
+<script src="../../LAB/scripts/_impresionesLab.js" type="text/javascript"></script>
+<script src="../../LAB/scripts/LAB107.js" type="text/javascript"></script>

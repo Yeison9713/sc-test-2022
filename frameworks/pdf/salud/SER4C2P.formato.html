@@ -1,0 +1,2661 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+
+<body>
+    <a style="font-weight: bolder; font-size: 8px; display: flex; width: 100%; justify-content: center;">REPUBILCA DE
+        COLOMBIA</a>
+    <a style="font-weight: bolder; font-size: 8px; display: flex; width: 100%; justify-content: center;">MINISTERIO DE
+        LA PROTECCION SOCIAL</a>
+    <a style="font-weight: bolder; font-size: 8px; display: flex; width: 100%; justify-content: center;">FORMULARIO
+        UNICO DE RECLAMACION DE LAS INSTITUCIONES PRESTADOS DE SERVICIOS DE SALUD POR SERVICIOS PRESTADOS A
+        VICTIMAS DE EVENTOS CATASTOFRICOS Y ACCIDENTES DE TRANSITO</a>
+    <a style="font-weight: bolder; font-size: 8px; display: flex; width: 100%; justify-content: center;">PERSONAS
+        JURIDICAS - FURIPS</a>
+    <div class="primerapag_SER4C2P">
+        <div class="salto-linea"></div>
+        <a style="display: inline-flex; width: 20%;">Fecha Radicacion</a>
+        <div style="display: inline-flex; width: 45%;">
+            <a class="fecharadicado1_SER4C2P">D</a>
+            <a class="fecharadicado2_SER4C2P">D</a>
+            <a class="fecharadicado3_SER4C2P">M</a>
+            <a class="fecharadicado4_SER4C2P">M</a>
+            <a class="fecharadicado5_SER4C2P">A</a>
+            <a class="fecharadicado6_SER4C2P">A</a>
+            <a class="fecharadicado7_SER4C2P">A</a>
+            <a class="fecharadicado8_SER4C2P">A</a>
+        </div>
+        <a class="anunciado_SER4C2P">No.Radicado</a>
+        <div style="display: inline-flex; width: 18%;">
+            <div style="display: inline-flex; width: 80%; border: black solid 0.1px;">
+                <a class="nroradicado_SER4C2P">R1R2R3R4R5R6R7R</a>
+            </div>
+        </div>
+        <a style="display: inline-flex; width: 20%; font-weight: bolder;">No. Radicado Anterior</a>
+        <div style="display: inline-flex; width: 39%;">
+            <div
+                style="display: table; border-top: black solid 0.1px; border-left: black solid 0.1px; border-right: black solid 0.1px; width: 80%; height: 17px;">
+                <a class="nroradicadoanterior1_SER4C2P"> </a>
+            </div>
+        </div>
+        <a style="display: inline-flex; width: 2%;">RG</a>
+        <div style="display: inline-flex; width: 24%;">
+            <div class="nroradicadoanterior_SER4C2P"></div>
+        </div>
+        <a style="font-size: 10px; font-weight: bolder; display: inline-flex; width: 20%;">(Respuesta a glosa, Mascar X
+            en RG)</a>
+        <div style="display: inline-flex; width: 39%;">
+            <div
+                style="display: flex; border-bottom: black solid 0.1px; border-left: black solid 0.1px; border-right: black solid 0.1px; width: 80%; height: 17px;">
+                <a class="respuestaglosa_SER4C2P">r2r2r2r2r2r2r</a>
+            </div>
+        </div>
+        <a style="font-weight: bolder; display: inline-flex; width: 22%;">No. Factura/ Cuenta de Cobro</a>
+        <div style="display: inline-flex; width: 17%;">
+            <div style="display: flex; width: 80%; border: black solid 0.1px;">
+                <a class="nofacturacuenta_SER42CP">x1 F1F2F3</a>
+            </div>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a style="display: flex; width: 100%; background: #7A7A7A; border: black solid 0.1px;">I. DATOS DE LA
+            INSTITUCION PRESTADORA DE SERVICIO DE
+            SALUD</a>
+        <div class="espaciosentrelineas"></div>
+        <a class="anunciado_SER4C2P">Razon social</a>
+        <div style="display: inline-flex; width: 84%;">
+            <div style="display: flex; width: 80%; border: black solid 0.1px;">
+                <a class="razonsocial_SER4C2P">R1R2R3R4R5R6R7R8R9R0R1R2R3R4R5</a>
+            </div>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a class="anunciado_SER4C2P">Codigo Habilitacion</a>
+        <div style="display: inline-flex; width: 30%;">
+            <table class="tablacodigohabilitacion_SER4C2P">
+                <td>C</td>
+                <td>1</td>
+                <td>C</td>
+                <td>1</td>
+                <td>C</td>
+                <td>1</td>
+                <td>C</td>
+                <td>1</td>
+                <td>C</td>
+                <td>1</td>
+                <td>C</td>
+                <td>1</td>
+            </table>
+        </div>
+        <a style="display: inline-flex; width: 5%;">Nit</a>
+        <div style="display: inline-flex; width: 45%;">
+            <div class="caja">
+                <a class="nit1_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nit2_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nit3_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nit4_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nit5_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nit6_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nit7_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nit8_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nit9_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nit10_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nit11_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nit12_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nit13_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nit14_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nit15_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nit16_SER4C2P"></a>
+            </div>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a style="display: inline-flex; width: 100%; background: #7A7A7A; border: black solid 0.1px;">II. DATOS DE LA
+            VICTIMA DEL EVENTO
+            CATRASTOFICO O
+            ACCIDENTE DE TRANSITO</a>
+        <div class="espaciosentrelineas"></div>
+        <div style="display: inline-flex; width: 50%;">
+            <div class="cajamitadlinea">
+                <a class="1erapellido_SER4C2P">A1A1A1A1A1A1A1A</a>
+            </div>
+        </div>
+        <div style="display: inline-flex; width: 49%;">
+            <div class="cajamitadlinea">
+                <a class="2doapellido_SER4C2P">A2A2A2A2A2A2A2A</a>
+            </div>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <div style="display: inline-flex; width: 50%;">
+            <div class="cajamitadlinea">
+                <a class="1ernombre_SER4C2P">N1N1N1N1N1N1N1N</a>
+            </div>
+        </div>
+        <div style="display: inline-flex; width: 49%;">
+            <div class="cajamitadlinea">
+                <a class="2donombre_SER4C2P">N2N2N2N2N2N2N2N</a>
+            </div>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a style="display: inline-flex; width: 15%;">Tipo de Documento</a>
+        <div style="display: inline-flex; width: 30%;">
+            <div>
+                <div class="caja">
+                    <a>CC</a>
+                </div>
+                <div class="caja">
+                    <a>CE</a>
+                </div>
+                <div class="caja">
+                    <a>PA</a>
+                </div>
+                <div class="caja">
+                    <a>TI</a>
+                </div>
+                <div class="caja">
+                    <a>RC</a>
+                </div>
+                <div class="caja">
+                    <a>AS</a>
+                </div>
+                <div class="caja">
+                    <a>MS</a>
+                </div>
+            </div>
+        </div>
+        <a style="display: inline-flex; width: 10%;">No.Documento</a>
+        <div style="display: inline-flex; width: 34%;">
+            <div class="caja">
+                <a class="nodocumento1_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento2_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento3_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento4_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento5_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento6_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento7_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento8_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento9_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento10_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento11_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento12_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento13_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento14_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento15_SER4C2P"></a>
+            </div>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a class="anunciado_SER4C2P"> Fecha de Nacimiento</a>
+        <div style="display: inline-flex; width: 25%;">
+            <table class="fechanacimiento_SER4C2P">
+                <td>D</td>
+                <td>D</td>
+                <td>M</td>
+                <td>M</td>
+                <td>A</td>
+                <td>A</td>
+                <td>A</td>
+                <td>A</td>
+            </table>
+        </div>
+        <a style="display: inline-flex; width: 10%;">Sexo</a>
+        <div style="display: inline-flex; width: 45%;">
+            <div class="caja">
+                <a>F</a>
+            </div>
+            <div class="caja">
+                <a>M</a>
+            </div>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a class="anunciado_SER4C2P">Direccion Residencia</a>
+        <div style="display: inline-flex; width: 79%;">
+            <table class="direccionresidencia_SER4C2P">
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+            </table>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a class="anunciado_SER4C2P">Departamento</a>
+        <div style="display: inline-flex; width: 30%;">
+            <table class="tabladepartamento_SER4C2P">
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+            </table>
+        </div>
+        <a style="display: inline-flex; width: 4%;">Cod</a>
+        <div style="display: inline-flex; width: 10%;">
+            <table class="coddepartamento_SER4C2P">
+                <td>C</td>
+                <td>C</td>
+            </table>
+        </div>
+        <a style="display: inline-flex; width: 10%;">Telefono</a>
+        <div style="display: inline-flex; width: 27%;">
+            <table class="tablatelefono_SER4C2P">
+                <td>T</td>
+                <td>1</td>
+                <td>T</td>
+                <td>1</td>
+                <td>T</td>
+                <td>1</td>
+                <td>T</td>
+                <td>1</td>
+                <td>T</td>
+                <td>1</td>
+            </table>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a class="anunciado_SER4C2P">Municipio</a>
+        <div style="display: inline-flex; width: 40%;">
+            <table class="tablamunicipio_SER4C2P">
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+            </table>
+        </div>
+        <a style="display: inline-flex; width: 4%;">Cod</a>
+        <div style="display: inline-flex; width: 39%;">
+            <table class="tablacodmunicipio_SER4C2P">
+                <td>C</td>
+                <td>M</td>
+                <td>C</td>
+            </table>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a style="display: inline-flex; width: 20%;">Condicion del Accidentado</a>
+        <div style="display: inline-flex; width: 5%;">
+            <div class="caja">
+                <a class="conductor_SER4C2P">a1</a>
+            </div>
+        </div>
+        <a style="display: inline-flex; width: 10%;">Conductor</a>
+        <div style="display:inline-flex; width:5%">
+            <div class="caja">
+                <a class="peaton_SER4C2P">a2</a>
+            </div>
+        </div>
+        <a style="display: inline-flex; width: 10%;">Peaton</a>
+        <div style="display: inline-flex; width: 5%;">
+            <div class="caja">
+                <a class="ocupante_SER4C2P">a3</a>
+            </div>
+        </div>
+        <a style="display: inline-flex; width: 10%;">Ocupante</a>
+        <div style="display: inline-flex; width: 5%;">
+            <div class="caja">
+                <a class="ciclista_SER4C2P">a4</a>
+            </div>
+        </div>
+        <a style="display: inline-flex; width: 10%;">Ciclista</a>
+        <div class="espaciosentrelineas"></div>
+        <a style="display: inline-flex; width: 100%; background: #7A7A7A; border: black solid 0.1px;">III. DATOS DEL
+            SITIO DONDE OCURRIO EL EVENTO
+            CATASTROFICO EL ACCIDENTE TRANSITO</a>
+        <div class="espaciosentrelineas"></div>
+        <a style="display: inline-flex; width: 100%;"">Naturaleza del Evento</a>
+        <div class=" espaciosentrelineas">
+    </div>
+    <a style=" padding-left: 5%; display: inline-flex; width: 20%;">Accidente de Transito</a>
+    <div style="display: inline-flex; width: 74%;">
+        <div class="caja">
+            <a class="accidentedetransito_SER4C2P">X</a>
+        </div>
+    </div>
+    <div class="espaciosentrelineas"></div>
+    <a style="display: inline-flex; width: 15%;">Naturales:</a>
+    <a style="display: inline-flex; width: 10%;">Sismo</a>
+    <div style="display: inline-flex; width: 5%;">
+        <div class="caja">
+            <a class="sismo_SER4C2P"></a>
+        </div>
+    </div>
+    <a style="display: inline-flex; width: 10%;">Maremoto</a>
+    <div style="display: inline-flex; width: 5%;">
+        <div class="caja">
+            <a class="maremoto_SER4C2P"></a>
+        </div>
+    </div>
+    <a style="display: inline-flex; width: 20%;">Erupciones Volcanicas</a>
+    <div style="display: inline-flex; width: 5%;">
+        <div class="caja">
+            <a class="erupciones_SER4C2P"></a>
+        </div>
+    </div>
+    <a style="display: inline-flex; width: 10%;">Huracan</a>
+    <div style="display: inline-flex; width: 15%;">
+        <div class="caja">
+            <a class="huracan_SER4C2P"></a>
+        </div>
+    </div>
+    <div class="espaciosentrelineas"></div>
+    <a style="padding-left: 15%; display: inline-flex; width: 10%;">Inundaciones</a>
+    <div style="display: inline-flex; width: 5%;">
+        <div class="caja">
+            <a class="inundaciones_SER4C2P"></a>
+        </div>
+    </div>
+    <a style="display: inline-flex; width: 10%;">Avalancha</a>
+    <div style="display: inline-flex; width: 5%;">
+        <div class="caja">
+            <a class="avalancha_SER4C2P"></a>
+        </div>
+    </div>
+    <a style="display: inline-flex; width: 20%;">Deslizamiento de Tierra</a>
+    <div style="display: inline-flex; width: 5%;">
+        <div class="caja">
+            <a class="deslizamientodetierra_SER4C2P"></a>
+        </div>
+    </div>
+    <a style="display: inline-flex; width: 15%;">Incendio Natural</a>
+    <div style="display: inline-flex; width: 10%;">
+        <div class="caja">
+            <a class="incendionatural_SER4C2P"></a>
+        </div>
+    </div>
+    <div class="espaciosentrelineas"></div>
+    <a style="display: inline-flex; width: 15%;">Terroristas:</a>
+    <a style="display: inline-flex; width: 10%;">Explosion</a>
+    <div style="display: inline-flex; width: 5%;">
+        <div class="caja">
+            <a class="explosion_SER4C2P"></a>
+        </div>
+    </div>
+    <a style="display: inline-flex; width: 10%;">Masacre</a>
+    <div style="display: inline-flex; width: 5%;">
+        <div class="caja">
+            <a class="masacre_SER4C2P"></a>
+        </div>
+    </div>
+    <a class="anunciado_SER4C2P">Mina Antipersonal</a>
+    <div style="display: inline-flex; width: 5%;">
+        <div class="caja">
+            <a class="minaantipersonal_SER4C2P"></a>
+        </div>
+    </div>
+    <a style="display: inline-flex; width: 10%;">Combate</a>
+    <div style="display: inline-flex; width: 19%;">
+        <div class="caja">
+            <a class="combate_SER4C2P"></a>
+        </div>
+    </div>
+    <div class="espaciosentrelineas"></div>
+    <a style="padding-left:15%;display: inline-flex; width: 10%;">Incendio</a>
+    <div style="display: inline-flex; width: 5%;">
+        <div class="caja">
+            <a class="incendio_SER4C2P"></a>
+        </div>
+    </div>
+    <a class="anunciado_SER4C2P">Ataques a Municipios</a>
+    <div style="display: inline-flex; width: 50%;">
+        <div class="caja">
+            <a class="ataquesamunicipios_SER4C2P"></a>
+        </div>
+    </div>
+    <div class="espaciosentrelineas"></div>
+    <a class="anunciado_SER4C2P">Otros</a>
+    <div style="display: inline-flex; width: 5%;">
+        <div class="caja">
+            <a class="minaantipersonal_SER4C2P"></a>
+        </div>
+    </div>
+    <a style="display: inline-flex; width: 5%;">Cual?</a>
+    <div style="display: inline-flex; width: 60%;">
+        <table class="otroincidente_SER4C2P">
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+        </table>
+    </div>
+    <div class="espaciosentrelineas"></div>
+    <a style="display: inline-flex; width: 20%;">Direccion de la ocurrencia</a>
+    <div style="display: inline-flex; width: 79%;">
+        <table class="otroincidente_SER4C2P">
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+            <td>D</td>
+        </table>
+    </div>
+    <div class="espaciosentrelineas"></div>
+    <a style="display: inline-flex; width: 20%;">Fecha Evento/Accidente</a>
+    <div style="display: inline-flex; width: 45%;">
+        <table class="tablafechaeventoaccidente_SER4C2P">
+            <td>D</td>
+            <td>D</td>
+            <td>M</td>
+            <td>M</td>
+            <td>A</td>
+            <td>A</td>
+            <td>A</td>
+            <td>A</td>
+        </table>
+    </div>
+    <a style="display: inline-flex; width: 5%;"">Hora</a>
+        <div style=" display: inline-flex; width: 28%;">
+        <table class="tablahoraeventoaccidente_SER4C2P">
+            <td>D</td>
+            <td>D</td>
+            <td>M</td>
+            <td>M</td>
+            <td>A</td>
+            <td>A</td>
+            <td>A</td>
+            <td>A</td>
+        </table>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a class="anunciado_SER4C2P">Departamento</a>
+        <div style="display: inline-flex; width: 30%;">
+            <table class="tabladepartamento2_SER4C2P">
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+            </table>
+        </div>
+        <a>Cod</a>
+        <div style="display: inline-flex; width: 49%;">
+            <table class="tablacoddepartamento2_SER4C2P">
+                <td>C</td>
+                <td>C</td>
+            </table>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a class="anunciado_SER4C2P">Municipio</a>
+        <div style="display: inline-flex; width: 40%;">
+            <table class="tablamunicipio2_SER4C2P">
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+            </table>
+        </div>
+        <a style="display: inline-flex;width: 4%;">Cod</a>
+        <div style="display: inline-flex; width: 5%;">
+            <table class="tablacodmunicipio2_SER4C2P">
+                <td>C</td>
+                <td>M</td>
+                <td>C</td>
+            </table>
+        </div>
+        <a class="display: inline-flex; width: 4%">ZONA</a>
+        <div style="display: inline-flex; width: 4%;">
+            <div class="caja">WI</div>
+        </div>
+        <div style="display: inline-flex; width: 25%;">
+            <div class="caja">R1</div>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a style="display: inline-flex; width: 100%;"> Descripcion Berve del Evento Catastrófico o Accidente de
+            Transito</a>
+        <div class="espaciosentrelineas"></div>
+        <a style="display: inline-flex; width: 100%;"> Enuncie las principales caracteristicas del evento/accidente</a>
+        <div class="espaciosentrelineas"></div>
+        <a style="display: inline-flex; width: 80%;">eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</a>
+        <div class="espaciosentrelineas"></div>
+        <a style="display: inline-flex; width: 100%; background: #7A7A7A; border: black solid 0.1px;">IV. DATOS DEL
+            VEHICULO
+            DEL ACCIDENTE DE
+            TRANSITO</a>
+        <div class="espaciosentrelineas"></div>
+        <a style="display: inline-flex; width: 100%;">Estado de Aseguramiento:</a>
+        <div class="espaciosentrelineas"></div>
+        <a style="padding-left: 5%; width: 10%; display: inline-flex;">Asegurado</a>
+        <div style="display: inline-flex; width: 5%;">
+            <div class="caja">
+                <a class="asegurado_SER4C2P"></a>
+            </div>
+        </div>
+        <a style="width: 10%; display: inline-flex;">No Asegurado</a>
+        <div style="display: inline-flex; width: 5%">
+            <div class="caja">
+                <a class="noasegurado_SER4C2P"></a>
+            </div>
+        </div>
+        <a style="width: 20%; display: inline-flex;">Vehiculo fantasma</a>
+        <div style="display: inline-flex; width: 5%">
+            <div class="caja">
+                <a class="vehiculofantasma_SER4C2P"></a>
+            </div>
+        </div>
+        <a style="width: 10%; display: inline-flex;">Poliza Falsa</a>
+        <div style="display: inline-flex; width: 5%">
+            <div class="caja">
+                <a class="polizafalsa_SER4C2P"></a>
+            </div>
+        </div>
+        <a style="width: 16%; display: inline-flex;">Vehiculo en fuga</a>
+        <div style="display: inline-flex; width: 5%">
+            <div class="caja">
+                <a class="vehiculoenfuga_SER4C2P"></a>
+            </div>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a class="anunciado_SER4C2P">Marca</a>
+        <div style="display: inline-flex; width: 40%;">
+            <div style="border:black solid 0.1px">
+                <a class="marca_SER4C2P">MMMMMMMMMMMMMM</a>
+            </div>
+        </div>
+        <a class="anunciado_SER4C2P">Placa</a>
+        <div style="display: inline-flex; width: 25%;">
+            <table class="placa_SER4C2P">
+                <td>P</td>
+                <td>P</td>
+                <td>P</td>
+                <td>P</td>
+                <td>P</td>
+                <td>P</td>
+            </table>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a style="display: inline-flex; width: 13%;">Tipo de Servicio</a>
+        <a style="display: inline-flex; width: 7%;">Particular</a>
+        <div style="display: inline-flex;width: 5%;">
+            <div class="caja">
+                <a class="particular_SER4C2P"></a>
+            </div>
+        </div>
+        <a style="display: inline-flex; width: 5%;">Publico</a>
+        <div style="display: inline-flex;width: 5%;">
+            <div class="caja">
+                <a class="publico_SER42CP"></a>
+            </div>
+        </div>
+        <a style="display: inline-flex; width: 5%;">Oficial</a>
+        <div style="display: inline-flex; width: 5%;">
+            <div class="caja">
+                <a class="oficial_SER4C2P"></a>
+            </div>
+        </div>
+        <a style="display: inline-flex; width: 20%;">Vehiculo de emergencia</a>
+        <div style="display: inline-flex; width: 5%;">
+            <div class="caja">
+                <a class="vehiculoemergencia_SER4C2P"></a>
+            </div>
+        </div>
+        <a class="anunciado_SER4C2P">Vehiculo de servicio</a>
+        <div style="display: inline-flex; width: 5%;">
+            <div class="caja">
+                <a class="vehiculodeservicio_SER4C2P"></a>
+            </div>
+        </div>
+        <a style="display: inline-flex; width: 20%;">Vehiculo de transporte masivo</a>
+        <div style="display: inline-flex; width: 5%;">
+            <div class="caja">
+                <a class="vehiculotransportemasivo_SER4C2P"></a>
+            </div>
+        </div>
+        <a class="anunciado_SER4C2P">Vehiculo Escolar</a>
+        <div style="display: inline-flex; width: 58%;">
+            <div style="display: inline-flex; width: 5%;">
+                <div class="caja">
+                    <a class="oficial_SER4C2P"></a>
+                </div>
+            </div>
+        </div>
+        <a style="display: inline-flex; width: 20%;">Codigo de la Aseguradora</a>
+        <div style="display:inline-flex; width: 79%;">
+            <table class="tablacodigoaseguradora_SER4C2P">
+                <td>A</td>
+                <td>A</td>
+                <td>A</td>
+                <td>A</td>
+                <td>A</td>
+                <td>A</td>
+            </table>
+        </div>
+        <a class="anunciado_SER4C2P">No. de la Poliza</a>
+        <div style="display: inline-flex; width: 35%;">
+            <table class="tablanopoliza_SER4C2P">
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+                <td>N</td>
+            </table>
+        </div>
+        <a style="display: inline-flex; width: 20%;">Intervencion de autoridad</a>
+        <div style="display: inline-flex; width: 28%;">
+            <a class="anunciado_SER4C2P">SI</a>
+            <div class="caja"><a class="intervencionautoridadsi_SER4C2P"></a></div>
+            <a class="anunciado_SER4C2P">NO</a>
+            <div class="caja"><a class="intervencionautoridadno_SER4C2P"></a></div>
+        </div>
+        <a class="anunciado_SER4C2P">Vigencia Desde</a>
+        <div style="display: inline-flex; width: 20%;">
+            <table class="tablavigencia_SER4C2P">
+                <td>D</td>
+                <td>D</td>
+                <td>M</td>
+                <td>M</td>
+                <td>A</td>
+                <td>A</td>
+                <td>A</td>
+                <td>A</td>
+            </table>
+        </div>
+        <a style="display: inline-flex; width: 5%;"> Hasta</a>
+        <div style="display: inline-flex; width: 20%;">
+            <table class="tablahasta_SER4C2P">
+                <td>D</td>
+                <td>D</td>
+                <td>M</td>
+                <td>M</td>
+                <td>A</td>
+                <td>A</td>
+                <td>A</td>
+                <td>A</td>
+            </table>
+        </div>
+        <a style="display: inline-flex; width: 20%;">Cobro Excedente Póliza</a>
+        <div style="display: inline-flex; width: 17%;">
+            <a class="anunciado_SER4C2P">SI</a>
+            <div class="caja"><a class="intervencionautoridadsi_SER4C2P"></a></div>
+            <a class="anunciado_SER4C2P">NO</a>
+            <div class="caja"><a class="intervencionautoridadno_SER4C2P"></a></div>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a style="display: inline-flex; width: 100%; background: #7A7A7A; border: black solid 0.1px;">V. DATOS DEL
+            PROPIETARIO DEL VEHICULO</a>
+        <div class="espaciosentrelineas"></div>
+        <div style="display: inline-flex; width: 50%;">
+            <div class="cajamitadlinea">
+                <a class="1erapellidopropietario_SER4C2P">A1A1A1A1A1A1A1A</a>
+            </div>
+        </div>
+        <div style="display: inline-flex; width: 49%;">
+            <div class="cajamitadlinea">
+                <a class="2doapellidopropietario_SER4C2P">A2A2A2A2A2A2A2A</a>
+            </div>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <div style="display: inline-flex; width: 50%;">
+            <div class="cajamitadlinea">
+                <a class="1ernombrepropietario_SER4C2P">N1N1N1N1N1N1N1N</a>
+            </div>
+        </div>
+        <div style="display: inline-flex; width: 49%;">
+            <div class="cajamitadlinea">
+                <a class="2donombrepropietario_SER4C2P">N2N2N2N2N2N2N2N</a>
+            </div>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a style="display: inline-flex; width: 15%;">Tipo de Documento</a>
+        <div style="display: inline-flex; width: 30%;">
+            <div>
+                <div class="caja">
+                    <a>CC</a>
+                </div>
+                <div class="caja">
+                    <a>CE</a>
+                </div>
+                <div class="caja">
+                    <a>PA</a>
+                </div>
+                <div class="caja">
+                    <a>TI</a>
+                </div>
+                <div class="caja">
+                    <a>RC</a>
+                </div>
+                <div class="caja">
+                    <a>AS</a>
+                </div>
+                <div class="caja">
+                    <a>MS</a>
+                </div>
+            </div>
+        </div>
+        <a style="display: inline-flex; width: 10%;">No.Documento</a>
+        <div style="display: inline-flex; width: 39%;">
+            <div class="caja">
+                <a class="nodocumento1propietario_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento2propietario_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento3propietario_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento4propietario_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento5propietario_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento6propietario_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento7propietario_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento8propietario_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento9propietario_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento10propietario_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento11propietario_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento12propietario_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento13propietario_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento14propietario_SER4C2P"></a>
+            </div>
+            <div class="caja">
+                <a class="nodocumento15propietario_SER4C2P"></a>
+            </div>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a style="display: inline-flex; width: 10%;"> Fecha de Nacimiento</a>
+        <div style="display: inline-flex; width: 25%;">
+            <a class="fechanacimiento1propietario_SER4C2P">D</a>
+            <a class="fechanacimiento2propietario_SER4C2P">D</a>
+            <a class="fechanacimiento3propietario_SER4C2P">M</a>
+            <a class="fechanacimiento4propietario_SER4C2P">M</a>
+            <a class="fechanacimiento5propietario_SER4C2P">A</a>
+            <a class="fechanacimiento6propietario_SER4C2P">A</a>
+            <a class="fechanacimiento7propietario_SER4C2P">A</a>
+            <a class="fechanacimiento8propietario_SER4C2P">A</a>
+        </div>
+        <a style="display: inline-flex; width: 10%;">Sexo</a>
+        <div style="display: inline-flex; width: 45%;">
+            <div class="caja">
+                <a>F</a>
+            </div>
+            <div class="caja">
+                <a>M</a>
+            </div>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a class="anunciado_SER4C2P">Direccion Residencia</a>
+        <div style="display: inline-flex; width: 79%;">
+            <table class="direccionresidenciapropietario_SER4C2P">
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+                <td>R</td>
+                <td>1</td>
+            </table>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a class="anunciado_SER4C2P">Departamento</a>
+        <div style="display: inline-flex; width: 30%;">
+            <table class="tabladepartamentopropietario_SER4C2P">
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+                <td>E</td>
+                <td>1</td>
+            </table>
+        </div>
+        <a style="display: inline-flex; width: 4%;">Cod</a>
+        <div style="display: inline-flex; width: 10%;">
+            <table class="coddepartamentopropietario_SER4C2P">
+                <td>C</td>
+                <td>C</td>
+            </table>
+        </div>
+        <a style="display: inline-flex; width: 10%;">Telefono</a>
+        <div style="display: inline-flex; width: 27%;">
+            <table class="tablatelefonopropietario_SER4C2P">
+                <td>T</td>
+                <td>1</td>
+                <td>T</td>
+                <td>1</td>
+                <td>T</td>
+                <td>1</td>
+                <td>T</td>
+                <td>1</td>
+                <td>T</td>
+                <td>1</td>
+            </table>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        <a class="anunciado_SER4C2P">Municipio</a>
+        <div style="display: inline-flex; width: 40%;">
+            <table class="tablamunicipiopropietario_SER4C2P">
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+                <td>M</td>
+                <td>1</td>
+            </table>
+        </div>
+        <a style="display: inline-flex; width: 4%;">Cod</a>
+        <div style="display: inline-flex; width: 39%;">
+            <table class="tablacodmunicipiopropietario_SER4C2P">
+                <td>C</td>
+                <td>M</td>
+                <td>C</td>
+            </table>
+        </div>
+        <div class="espaciosentrelineas"></div>
+        </div>
+        <div class="segudnapag_SER4C2P">
+            <a style="display: inline-flex; width: 100%; background: #7A7A7A; border: black solid 0.1px;">VI. DATOS DEL
+                CONDUCTOR DEL VEHICULO
+                INVOLUCRADO
+                EN EL
+                ACCIDENTE DE TRANSITO</a>
+            <div class="espaciosentrelineas"></div>
+            <div style="display: inline-flex; width: 50%;">
+                <div class="cajamitadlinea">
+                    <a class="1erapellidoinvolucrado_SER4C2P">A1A1A1A1A1A1A1A</a>
+                </div>
+            </div>
+            <div style="display: inline-flex; width: 49%;">
+                <div class="cajamitadlinea">
+                    <a class="2doapellidoinvolucrado_SER4C2P">A2A2A2A2A2A2A2A</a>
+                </div>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <div style="display: inline-flex; width: 50%;">
+                <div class="cajamitadlinea">
+                    <a class="1ernombreinvolucrado_SER4C2P">N1N1N1N1N1N1N1N</a>
+                </div>
+            </div>
+            <div style="display: inline-flex; width: 49%;">
+                <div class="cajamitadlinea">
+                    <a class="2donombreinvolucrado_SER4C2P">N2N2N2N2N2N2N2N</a>
+                </div>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: inline-flex; width: 15%;">Tipo de Documento</a>
+            <div style="display: inline-flex; width: 30%;">
+                <div>
+                    <div class="caja">
+                        <a>CC</a>
+                    </div>
+                    <div class="caja">
+                        <a>CE</a>
+                    </div>
+                    <div class="caja">
+                        <a>PA</a>
+                    </div>
+                    <div class="caja">
+                        <a>TI</a>
+                    </div>
+                    <div class="caja">
+                        <a>RC</a>
+                    </div>
+                    <div class="caja">
+                        <a>AS</a>
+                    </div>
+                    <div class="caja">
+                        <a>MS</a>
+                    </div>
+                </div>
+            </div>
+            <a style="display: inline-flex; width: 10%;">No.Documento</a>
+            <div style="display: inline-flex; width: 39%;">
+                <div class="caja">
+                    <a class="nodocumento1involucrado_SER4C2P"></a>
+                </div>
+                <div class="caja">
+                    <a class="nodocumento2involucrado_SER4C2P"></a>
+                </div>
+                <div class="caja">
+                    <a class="nodocumento3involucrado_SER4C2P"></a>
+                </div>
+                <div class="caja">
+                    <a class="nodocumento4involucrado_SER4C2P"></a>
+                </div>
+                <div class="caja">
+                    <a class="nodocumento5involucrado_SER4C2P"></a>
+                </div>
+                <div class="caja">
+                    <a class="nodocumento6involucrado_SER4C2P"></a>
+                </div>
+                <div class="caja">
+                    <a class="nodocumento7involucrado_SER4C2P"></a>
+                </div>
+                <div class="caja">
+                    <a class="nodocumento8involucrado_SER4C2P"></a>
+                </div>
+                <div class="caja">
+                    <a class="nodocumento9involucrado_SER4C2P"></a>
+                </div>
+                <div class="caja">
+                    <a class="nodocumento10involucrado_SER4C2P"></a>
+                </div>
+                <div class="caja">
+                    <a class="nodocumento11involucrado_SER4C2P"></a>
+                </div>
+                <div class="caja">
+                    <a class="nodocumento12involucrado_SER4C2P"></a>
+                </div>
+                <div class="caja">
+                    <a class="nodocumento13involucrado_SER4C2P"></a>
+                </div>
+                <div class="caja">
+                    <a class="nodocumento14involucrado_SER4C2P"></a>
+                </div>
+                <div class="caja">
+                    <a class="nodocumento15involucrado_SER4C2P"></a>
+                </div>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: inline-flex; width: 10%;"> Fecha de Nacimiento</a>
+            <div style="display: inline-flex; width: 25%;">
+                <a class="fechanacimiento1involucrado_SER4C2P">D</a>
+                <a class="fechanacimiento2involucrado_SER4C2P">D</a>
+                <a class="fechanacimiento3involucrado_SER4C2P">M</a>
+                <a class="fechanacimiento4involucrado_SER4C2P">M</a>
+                <a class="fechanacimiento5involucrado_SER4C2P">A</a>
+                <a class="fechanacimiento6involucrado_SER4C2P">A</a>
+                <a class="fechanacimiento7involucrado_SER4C2P">A</a>
+                <a class="fechanacimiento8involucrado_SER4C2P">A</a>
+            </div>
+            <a style="display: inline-flex; width: 10%;">Sexo</a>
+            <div style="display: inline-flex; width: 45%;">
+                <div class="caja">
+                    <a>F</a>
+                </div>
+                <div class="caja">
+                    <a>M</a>
+                </div>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: inline-flex; width: 10%;">Direccion Residencia</a>
+            <div style="display: inline-flex; width: 89%;">
+                <table class="direccionresidenciainvolucrado_SER4C2P">
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                    <td>R</td>
+                    <td>1</td>
+                </table>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a class="anunciado_SER4C2P">Departamento</a>
+            <div style="display: inline-flex; width: 30%;">
+                <table class="tabladepartamentoinvolucrado_SER4C2P">
+                    <td>E</td>
+                    <td>1</td>
+                    <td>E</td>
+                    <td>1</td>
+                    <td>E</td>
+                    <td>1</td>
+                    <td>E</td>
+                    <td>1</td>
+                    <td>E</td>
+                    <td>1</td>
+                    <td>E</td>
+                    <td>1</td>
+                    <td>E</td>
+                    <td>1</td>
+                    <td>E</td>
+                    <td>1</td>
+                    <td>E</td>
+                    <td>1</td>
+                    <td>E</td>
+                    <td>1</td>
+                </table>
+            </div>
+            <a style="display: inline-flex; width: 4%;">Cod</a>
+            <div style="display: inline-flex; width: 10%;">
+                <table class="coddepartamentoinvolucrado_SER4C2P">
+                    <td>C</td>
+                    <td>C</td>
+                </table>
+            </div>
+            <a class="anunciado_SER4C2P">Telefono</a>
+            <div style="display: inline-flex; width: 27%;">
+                <table class="tablatelefonoinvolucrado_SER4C2P">
+                    <td>T</td>
+                    <td>1</td>
+                    <td>T</td>
+                    <td>1</td>
+                    <td>T</td>
+                    <td>1</td>
+                    <td>T</td>
+                    <td>1</td>
+                    <td>T</td>
+                    <td>1</td>
+                </table>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a class="anunciado_SER4C2P">Municipio</a>
+            <div style="display: inline-flex; width: 40%;">
+                <table class="tablamunicipioinvolucrado_SER4C2P">
+                    <td>M</td>
+                    <td>1</td>
+                    <td>M</td>
+                    <td>1</td>
+                    <td>M</td>
+                    <td>1</td>
+                    <td>M</td>
+                    <td>1</td>
+                    <td>M</td>
+                    <td>1</td>
+                    <td>M</td>
+                    <td>1</td>
+                    <td>M</td>
+                    <td>1</td>
+                    <td>M</td>
+                    <td>1</td>
+                    <td>M</td>
+                    <td>1</td>
+                    <td>M</td>
+                    <td>1</td>
+                    <td>M</td>
+                    <td>1</td>
+                    <td>M</td>
+                    <td>1</td>
+                </table>
+            </div>
+            <a style="display: inline-flex; width: 4%;">Cod</a>
+            <div style="display: inline-flex; width: 39%;">
+                <table class="tablacodmunicipioinvolucrado_SER4C2P">
+                    <td>C</td>
+                    <td>M</td>
+                    <td>C</td>
+                </table>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: inline-flex; width: 100%; background: #7A7A7A">VII. DATOS DE REMISION</a>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: inline-flex; width: 15%;">Tipo de referencia</a>
+            <a class="anunciado_SER4C2P">Remision</a>
+            <div style="display: inline-flex; width: 15%;">
+                <div class="caja">
+                    <a class="remision_SER4C2P">R1</a>
+                </div>
+            </div>
+            <a class="anunciado_SER4C2P">Orden de Servicio</a>
+            <div style="display: inline-flex; width: 30%;">
+                <div class="caja">
+                    <a class="remision_SER4C2P">R1</a>
+                </div>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a class="anunciado_SER4C2P"> Fecha de Remision</a>
+            <div style="display: inline-flex; width: 12%;">
+                <table class="tablafecharemision_SER4C2P">
+                    <td>D</td>
+                    <td>D</td>
+                    <td>M</td>
+                    <td>M</td>
+                    <td>A</td>
+                    <td>A</td>
+                    <td>A</td>
+                    <td>A</td>
+                </table>
+            </div>
+            <a style="display: inline-flex; width: 10%;">a las</a>
+            <div style="display: inline-flex; width: 54%;">
+                <table class="tablafecharemisionhora_SER4C2P">
+                    <td>H</td>
+                    <td>H</td>
+                    <td>M</td>
+                    <td>M</td>
+                </table>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a class="anunciado_SER4C2P">Prestador que remite</a>
+            <div style="display: inline-flex; width: 84%;">
+                <div style="border: black solid 0.1px; width: 80%;">
+                    <a class="prestadorremite_SER4C2P">RRRRRRRRRRRRRRRRRRRRRRRRR</a>
+                </div>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a class="anunciado_SER4C2P">codigo de Inscripcion</a>
+            <div style="display: inline-flex; width: 84%;">
+                <table class="tablacodigoinscripcion_SER4C2P">
+                    <td>l</td>
+                    <td>l</td>
+                    <td>l</td>
+                    <td>l</td>
+                    <td>l</td>
+                    <td>l</td>
+                    <td>l</td>
+                    <td>l</td>
+                    <td>l</td>
+                    <td>l</td>
+                    <td>l</td>
+                    <td>l</td>
+                    <td>l</td>
+                    <td>l</td>
+                </table>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a class="anunciado_SER4C2P">Profesional que Remite</a>
+            <div style="display: inline-flex; width: 35%;">
+                <div style="border: black solid 0.1px; width: 90%;">
+                    <a class="profesionalremite_SER4C2P">eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</a>
+                </div>
+            </div>
+            <a style="display: inline-flex; width: 10%;">Cargo</a>
+            <div style="display: inline-flex; width: 35%;">
+                <div style="border: black solid 0.1px; width: 90%;">
+                    <a class="cargoremite_SER4C2P">cccccccccccccccccccccccccccc</a>
+                </div>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: flex; width: 100%; background: #7A7A7A">VIII. AMPARO DE TRANSPORTE Y MOVILIZACION DE LA
+                VICTIMA</a>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: inline-flex; width: 100%;">Diligencias únicamente para el transporte desde el sitio del
+                evento hasta la primera IPS (Transporte
+                Primario) y cuando se realiza en ambulancias de la misma IPS</a>
+            <div class="espaciosentrelineas"></div>
+            <a class="anunciado_SER4C2P"> Datos de Vehiculo</a>
+            <a class="anunciado_SER4C2P" style="justify-content: end;"> Placa No</a>
+            <div style="display: inline-flex; width: 69%;">
+                <table class="tablaplacamovilizacion_SER4C2P">
+                    <td>P</td>
+                    <td>P</td>
+                    <td>P</td>
+                    <td>P</td>
+                    <td>P</td>
+                    <td>P</td>
+                </table>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a class="anunciado_SER4C2P">Transporto la Victima desde</a>
+            <div style="display: inline-flex; width: 30%;">
+                <div style="border: black solid 0.1px; width: 70%;">
+                    <a class="transportovictima_SER4C2P">eeeeeeeeeeeeeeeeeeeeeeeee</a>
+                </div>
+            </div>
+            <a style="display: inline-flex; width: 10%;">Hasta</a>
+            <div style="display: inline-flex; width: 39%;">
+                <div style="border: black sollid 0.1px; width: 90%;">
+                    <a class="hastavictima_SER4C2P">CCCCCCCCCCCCCCCC</a>
+                </div>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a class="anunciado_SER4C2P">Tipo de transporte:</a>
+            <a class="anunciado_SER4C2P" style="font-weight: bolder;">Ambulacia Basica</a>
+            <div style="display: inline-flex; width: 5%;">
+                <div class="caja">
+                    <a class="ambulanciabasica_SER4C2P">B1</a>
+                </div>
+            </div>
+            <a style="font-weight: bolder; display: inline-flex; width: 13%;">Ambulacia Medicada</a>
+            <div style="display: inline-flex; width: 5%;">
+                <div class="caja">
+                    <a class="ambulanciabasica_SER4C2P">M2</a>
+                </div>
+            </div>
+            <a style="font-weight: bolder; display: inline-flex; width: 15%;">Lugar donde recoge la Victima</a>
+            <a style="display: inline-flex; width: 10%;">ZONA</a>
+            <div style="display: inline-flex; width: 5%;">
+                <div class="caja">
+                    <a class="zona1_SER4C2P">W1</a>
+                </div>
+            </div>
+            <div style="display: inline-flex; width: 5%;">
+                <div class="caja">
+                    <a class="zona2_SER4C2P">R1</a>
+                </div>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: inline-flex; width: 100%; background: #7A7A7A; border: black solid 0.1px;">IX.
+                CERTIFICACION DE LA ATENCION MEDICA DE LA VICTIMA COMO PRUEBA DEL ACCIDENTE O EVENTO</a>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: inline-flex; width: 10%;"> Fecha de Ingreso</a>
+            <div style="display: inline-flex; width: 12%;">
+                <table class="tablafechaingreso_SER4C2P">
+                    <td>D</td>
+                    <td>D</td>
+                    <td>M</td>
+                    <td>M</td>
+                    <td>A</td>
+                    <td>A</td>
+                    <td>A</td>
+                    <td>A</td>
+                </table>
+            </div>
+            <a style="display: inline-flex; width: 10%;"> a las</a>
+            <div style="display: inline-flex; width: 12%;">
+                <table class="tablafecharemisionhora_SER4C2P">
+                    <td>H</td>
+                    <td>H</td>
+                    <td>M</td>
+                    <td>M</td>
+                </table>
+            </div>
+            <a style="display: inline-flex; width: 10%;"> Fecha de Egreso</a>
+            <div style="display: inline-flex; width: 12%;">
+                <table class="tablafechaegreso_SER4C2P">
+                    <td>D</td>
+                    <td>D</td>
+                    <td>M</td>
+                    <td>M</td>
+                    <td>A</td>
+                    <td>A</td>
+                    <td>A</td>
+                    <td>A</td>
+                </table>
+            </div>
+            <a style="display: inline-flex; width: 10%;"> a las</a>
+            <div style="display: inline-flex; width: 12%;">
+                <table class="tablafechaegresohora_SER4C2P">
+                    <td>H</td>
+                    <td>H</td>
+                    <td>M</td>
+                    <td>M</td>
+                </table>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: inline-flex; width: 35%;"> Codigo Diagnostico de Ingreso</a>
+            <div style="display: inline-flex; width: 10%;">
+                <table class="tabladiagingreso1principal_SER4C2P">
+                    <td>T</td>
+                    <td>T</td>
+                    <td>T</td>
+                    <td>T</td>
+                </table>
+            </div>
+            <a style="display: inline-flex; width: 35%;"> Codigo Diagnostico de Egreso</a>
+            <div style="display: inline-flex; width: 10%;">
+                <table class="tabladiagegreso1principal_SER4C2P">
+                    <td>T</td>
+                    <td>T</td>
+                    <td>T</td>
+                    <td>T</td>
+                </table>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: inline-flex; width: 35%;"> Otro código Diagnóstico de ingreso</a>
+            <div style="display: inline-flex; width: 10%;">
+                <table class="tabladiagingreso2principal_SER4C2P">
+                    <td>T</td>
+                    <td>T</td>
+                    <td>T</td>
+                    <td>T</td>
+                </table>
+            </div>
+            <a style="display: inline-flex; width: 35%;"> Otro código Diagnóstico principal de egreso</a>
+            <div style="display: inline-flex; width: 10%;">
+                <table class="tabladiagegreso2principal_SER4C2P">
+                    <td>T</td>
+                    <td>T</td>
+                    <td>T</td>
+                    <td>T</td>
+                </table>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: inline-flex; width: 35%;"> Otro código Diagnóstico de ingreso</a>
+            <div style="display: inline-flex; width: 10%;">
+                <table class="tabladiagingreso3principal_SER4C2P">
+                    <td>T</td>
+                    <td>T</td>
+                    <td>T</td>
+                    <td>T</td>
+                </table>
+            </div>
+            <a style="display: inline-flex; width: 35%;"> Otro código Diagnóstico principal de egreso</a>
+            <div style="display: inline-flex; width: 10%;">
+                <table class="tabladiagegreso3principal_SER4C2P">
+                    <td>T</td>
+                    <td>T</td>
+                    <td>T</td>
+                    <td>T</td>
+                </table>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <div style="display: inline-flex; width: 50%;">
+                <div class="cajamitadlinea">
+                    <a class="1erapellidoprofesional_SER4C2P">A1A1A1A1A1A1A1A</a>
+                </div>
+            </div>
+            <div style="display: inline-flex; width: 49%;">
+                <div class="cajamitadlinea">
+                    <a class="2doapellidoprofesional_SER4C2P">A2A2A2A2A2A2A2A</a>
+                </div>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <div style="display: inline-flex; width: 50%;">
+                <div class="cajamitadlinea">
+                    <a class="1ernombreprofesional_SER4C2P">N1N1N1N1N1N1N1N</a>
+                </div>
+            </div>
+            <div style="display: inline-flex; width: 49%;">
+                <div class="cajamitadlinea">
+                    <a class="2donombreprofesional_SER4C2P">N2N2N2N2N2N2N2N</a>
+                </div>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: inline-flex; width: 15%;">Tipo de Documento</a>
+            <div style="display: inline-flex; width: 30%;">
+                <div>
+                    <div class="caja">
+                        <a>CC</a>
+                    </div>
+                    <div class="caja">
+                        <a>CE</a>
+                    </div>
+                    <div class="caja">
+                        <a>PA</a>
+                    </div>
+                </div>
+            </div>
+            <a style="display: inline-flex; width: 10%;">No.Documento</a>
+            <div style="display: inline-flex; width: 30%;">
+                <table class="tablanrodocumentoprofesional_SER4C2P">
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </table>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: inline-flex; width: 45%; justify-content: end;">Numero de Registro Medico</a>
+            <div style="display: inline-flex; width: 30%;">
+                <table class="tablanroregistroprofesional_SER4C2P">
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </table>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: inline-flex; width: 100%; background: #7A7A7A; border: black solid 0.1px;">X. AMPAROS QUE
+                RECLAMA</a>
+            <div class="espaciosentrelineas"></div>
+            <div style="display: inline-flex; width: 100%;">
+                <table class="tablavalores_SER4C2P">
+                    <thead>
+                        <th>' '</th>
+                        <th>VALOR TOTAL FACTURADO</th>
+                        <th>VALOR RECLAMADO AL FOSYGA</th>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: flex; width: 100%;">El total facturado y reclamado descrito en este numeral se debe
+                detallar y hacer descripcion de las actividades, procedimientos, medicamentos, insumos, suministros y
+                materiales, dentro del anexo tecnico numero 2.</a>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: inline-flex; width: 100%; background: #7A7A7A; border: black solid 0.1px;">XI.
+                DECLARACIONES DE LA INSTITUCION PRESTADORA DE SERVICIOS DE SALUD</a>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: flex; width: 100%;">Como respresentante legal o Gerente de la Institución Prestadora de
+                Servicios de Salud, declaró bajo la gravedad de juramento que toda la información constante en este
+                formulario es cierta y podria ser verificada por la Dirección General de Financiamineto del Ministerio
+                Protección Social, por el Administrador Fiduciario del Fondo de Solidaridad y Garantia Fosyga, por la
+                Superintendencia Nacional de la Salud o la COntraloria General de la Republica con la IPS y las
+                aseguradoras de no ser asi, acepto todas las consecuencias legales que produzca esta situación.</a>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: flex; width: 100%;">G1G2G3G4G5G6G7G8G9G0G1G2G3G4G5</a>
+            <div class="espaciosentrelineas"></div>
+            <a style="display: inline-flex; width: 49%;">________________________________________</a>
+            <a style="display: inline-flex; width: 48%;">________________________________________</a>
+            <a style="display: inline-flex; width: 49%;">N1N2N3N4N5N6N7N8N9N0N1N2N3N4N5N6</a>
+            <a style="display: inline-flex; width: 48%;">FIRMA DEL REPRESANTE LEGAL, GERENTE O SU DELEGADO</a>
+        </div>
+</body>
+
+<style>
+    @media print {
+        body {
+            -webkit-print-color-adjust: exact;
+        }
+    }
+
+    body {
+        font-family: Tahoma;
+        font-size: 10px;
+    }
+
+    .primerapag_SER4C2P {
+        border: black solid 0.1px;
+        width: 100%;
+        height: 96%;
+    }
+
+    .segudnapag_SER4C2P {
+        border: black solid 0.1px;
+        width: 100%;
+        height: 99%;
+    }
+
+    .fecharadicado1_SER4C2P,
+    .fecharadicado2_SER4C2P,
+    .fecharadicado3_SER4C2P,
+    .fecharadicado4_SER4C2P,
+    .fecharadicado5_SER4C2P,
+    .fecharadicado6_SER4C2P,
+    .fecharadicado7_SER4C2P,
+    .fecharadicado8_SER4C2P {
+        border: black solid 0.1px;
+    }
+
+    .salto-linea {
+        padding-top: 20px;
+    }
+
+    .espaciosentrelineas {
+        padding-top: 5px;
+    }
+
+    .nroradicadoanterior_SER4C2P {
+        display: inline-flex;
+        border: black solid 0.1px;
+        width: 19px;
+        height: 17px;
+    }
+
+    .caja {
+        display: inline-flex;
+        width: 19px;
+        height: 17px;
+        border: black solid 0.1px;
+        font-size: 12px;
+    }
+
+    .cajamitadlinea {
+        display: flex;
+        justify-content: center;
+        width: 80%;
+        border: black solid 0.1px;
+    }
+
+    .anunciado_SER4C2P {
+        display: inline-flex;
+        width: 15%;
+    }
+
+    .tablacodmunicipio_SER4C2P,
+    .tabladepartamento2_SER4C2P,
+    .tablamunicipio2_SER4C2P,
+    .tablacoddepartamento2_SER4C2P,
+    .tablacodigohabilitacion_SER4C2P,
+    .tablamunicipio_SER4C2P,
+    .tablatelefono_SER4C2P,
+    .coddepartamento_SER4C2P,
+    .tabladepartamento_SER4C2P,
+    .direccionresidencia_SER4C2P,
+    .otroincidente_SER4C2P,
+    .tablafechaeventoaccidente_SER4C2P,
+    .tablacoddepartamento2_SER4C2P,
+    .tablamunicipio2_SER4C2P,
+    .tablacodmunicipio2_SER4C2P,
+    .tablacodigoaseguradora_SER4C2P,
+    .tablanopoliza_SER4C2P,
+    .direccionresidenciapropietario_SER4C2P,
+    .tabladepartamentopropietario_SER4C2P,
+    .coddepartamentopropietario_SER4C2P,
+    .tablatelefonopropietario_SER4C2P,
+    .tablamunicipiopropietario_SER4C2P,
+    .tablacodmunicipiopropietario_SER4C2P,
+    .direccionresidenciainvolucrado_SER4C2P,
+    .tabladepartamentoinvolucrado_SER4C2P,
+    .coddepartamentoinvolucrado_SER4C2P,
+    .tablatelefonoinvolucrado_SER4C2P,
+    .tablamunicipioinvolucrado_SER4C2P,
+    .tablacodmunicipioinvolucrado_SER4C2P,
+    .tablaplacamovilizacion_SER4C2P,
+    .tablafecharemision_SER4C2P,
+    .tablafecharemisionhora_SER4C2P,
+    .tablacodigoinscripcion_SER4C2P,
+    .tablafechaingreso_SER4C2P,
+    .tablafecharemisionhora_SER4C2P,
+    .tablafechaegreso_SER4C2P,
+    .tablafechaegresohora_SER4C2P,
+    .tabladiagingreso1principal_SER4C2P,
+    .tabladiagegreso1principal_SER4C2P,
+    .tabladiagingreso2principal_SER4C2P,
+    .tabladiagegreso2principal_SER4C2P,
+    .tabladiagingreso3principal_SER4C2P,
+    .tabladiagegreso3principal_SER4C2P,
+    .tablanrodocumentoprofesional_SER4C2P,
+    .tablanroregistroprofesional_SER4C2P,
+    .tablavalores_SER4C2P,
+    .placa_SER4C2P {
+        border-collapse: collapse;
+    }
+
+    .tablacodmunicipio_SER4C2P tbody tr td,
+    .tabladepartamento2_SER4C2P tbody tr td,
+    .tablamunicipio2_SER4C2P tbody tr td,
+    .tablacoddepartamento2_SER4C2P tbody tr td,
+    .tablacodigohabilitacion_SER4C2P tbody tr td,
+    .tablamunicipio_SER4C2P tbody tr td,
+    .tablatelefono_SER4C2P tbody tr td,
+    .coddepartamento_SER4C2P tbody tr td,
+    .tabladepartamento_SER4C2P tbody tr td,
+    .direccionresidencia_SER4C2P tbody tr td,
+    .tablafechaeventoaccidente_SER4C2P tbody tr td,
+    .tablacoddepartamento2_SER4C2P tbody tr td,
+    .tablamunicipio2_SER4C2P tbody tr td,
+    .tablacodmunicipio2_SER4C2P tbody tr td,
+    .otroincidente_SER4C2P tbody tr td,
+    .tablacodigoaseguradora_SER4C2P tbody tr td,
+    .tablanopoliza_SER4C2P tbody tr td,
+    .direccionresidenciapropietario_SER4C2P tbody tr td,
+    .tabladepartamentopropietario_SER4C2P tbody tr td,
+    .coddepartamentopropietario_SER4C2P tbody tr td,
+    .tablatelefonopropietario_SER4C2P tbody tr td,
+    .tablamunicipiopropietario_SER4C2P tbody tr td,
+    .tablacodmunicipiopropietario_SER4C2P tbody tr td,
+    .direccionresidenciainvolucrado_SER4C2P tbody tr td,
+    .tabladepartamentoinvolucrado_SER4C2P tbody tr td,
+    .coddepartamentoinvolucrado_SER4C2P tbody tr td,
+    .tablatelefonoinvolucrado_SER4C2P tbody tr td,
+    .tablamunicipioinvolucrado_SER4C2P tbody tr td,
+    .tablacodmunicipioinvolucrado_SER4C2P tbody tr td,
+    .tablaplacamovilizacion_SER4C2P tbody tr td,
+    .tablafecharemision_SER4C2P tbody tr td,
+    .tablafecharemisionhora_SER4C2P tbody tr td,
+    .tablacodigoinscripcion_SER4C2P tbody tr td,
+    .tablafechaingreso_SER4C2P tbody tr td,
+    .tablafecharemisionhora_SER4C2P tbody tr td,
+    .tablafechaegreso_SER4C2P tbody tr td,
+    .tablafechaegresohora_SER4C2P tbody tr td,
+    .tabladiagingreso1principal_SER4C2P tbody tr td,
+    .tabladiagegreso1principal_SER4C2P tbody tr td,
+    .tabladiagingreso2principal_SER4C2P tbody tr td,
+    .tabladiagegreso2principal_SER4C2P tbody tr td,
+    .tabladiagingreso3principal_SER4C2P tbody tr td,
+    .tabladiagegreso3principal_SER4C2P tbody tr td,
+    .tablanrodocumentoprofesional_SER4C2P tbody tr td,
+    .tablanroregistroprofesional_SER4C2P tbody tr td,
+    .tablavalores_SER4C2P tbody tr td,
+    .placa_SER4C2P tbody tr td {
+        border: black solid 0.1px;
+        border-spacing: 0;
+        font-size: 8px;
+    }
+
+
+    .fechaevento1_SER4C2P,
+    .fechaevento2_SER4C2P,
+    .fechaevento3_SER4C2P,
+    .fechaevento4_SER4C2P,
+    .fechaevento5_SER4C2P,
+    .fechaevento6_SER4C2P,
+    .fechaevento7_SER4C2P,
+    .fechaevento8_SER4C2P {
+        border: black solid 0.1px;
+    }
+
+    .titulos_SER4C2P {
+        display: inline-flex;
+        width: 100%;
+        background: #7A7A7A;
+    }
+</style>
+<script>
+    var SER4C2P = [];
+    ipcRenderer.on('ping', (e, data) => {
+        SER4C2P = data.datos;
+        $('.fecharadicado5_SER4C2P').text(SER4C2P.FECHAACTW.substring(0, 1));
+        $('.fecharadicado6_SER4C2P').text(SER4C2P.FECHAACTW.substring(1, 2));
+        $('.fecharadicado7_SER4C2P').text(SER4C2P.FECHAACTW.substring(2, 3));
+        $('.fecharadicado8_SER4C2P').text(SER4C2P.FECHAACTW.substring(3, 4));
+        $('.fecharadicado3_SER4C2P').text(SER4C2P.FECHAACTW.substring(4, 5));
+        $('.fecharadicado4_SER4C2P').text(SER4C2P.FECHAACTW.substring(5, 6));
+        $('.fecharadicado1_SER4C2P').text(SER4C2P.FECHAACTW.substring(6, 7));
+        $('.fecharadicado2_SER4C2P').text(SER4C2P.FECHAACTW.substring(7, 8));
+        $('.nroradicado_SER4C2P').text(SER4C2P.NRORADFUR);
+        $('.respuestaglosa_SER4C2P').text(SER4C2P.NRORADANTFUR);
+        $('.nofacturacuenta_SER42CP').text(SER4C2P.PREFIJOFUR + ' ' + SER4C2P.NROFUR);
+        $('.razonsocial_SER4C2P').text(SER4C2P.NOMBREUSU);
+        $('.tablacodigohabilitacion_SER4C2P').append(
+            '<tr>' +
+            '<td>' + SER4C2P.CODCIUUSU.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.CODCIUUSU.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.CODCIUUSU.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.CODCIUUSU.substring(3, 4) + '</td>' +
+            '<td>' + SER4C2P.CODCIUUSU.substring(4, 5) + '</td>' +
+            '<td>' + SER4C2P.NUIRUSU.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.NUIRUSU.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.NUIRUSU.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.NUIRUSU.substring(3, 4) + '</td>' +
+            '<td>' + SER4C2P.NUIRUSU.substring(4, 5) + '</td>' +
+            '<td>' + SER4C2P.SUCW.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.SUCW.substring(1, 2) + '</td>' +
+            '</tr>'
+        );
+        $('.nit1_SER4C2P').text(SER4C2P.NITUSU.substring(0, 1));
+        $('.nit2_SER4C2P').text(SER4C2P.NITUSU.substring(1, 2));
+        $('.nit3_SER4C2P').text(SER4C2P.NITUSU.substring(2, 3));
+        $('.nit4_SER4C2P').text(SER4C2P.NITUSU.substring(3, 4));
+        $('.nit5_SER4C2P').text(SER4C2P.NITUSU.substring(4, 5));
+        $('.nit6_SER4C2P').text(SER4C2P.NITUSU.substring(5, 6));
+        $('.nit7_SER4C2P').text(SER4C2P.NITUSU.substring(6, 7));
+        $('.nit8_SER4C2P').text(SER4C2P.NITUSU.substring(7, 8));
+        $('.nit9_SER4C2P').text(SER4C2P.NITUSU.substring(9, 10));
+        $('.nit10_SER4C2P').text(SER4C2P.NITUSU.substring(10, 11));
+        $('.nit11_SER4C2P').text(' ');
+        $('.nit12_SER4C2P').text(SER4C2P.DV);
+        $('.1erapellido_SER4C2P').text(SER4C2P.PRIMERAPELLIDO);
+        $('.2doapellido_SER4C2P').text(SER4C2P.SEGUNDOAPELLIDO);
+        $('.1ernombre_SER4C2P').text(SER4C2P.PRIMERNOMBRE);
+        $('.2donombre_SER4C2P').text(SER4C2P.SEGUNDONOMBRE);
+        // X PARA TIPO DE DOCUMENTO
+        $('.nodocumento1_SER4C2P').text(SER4C2P.CODPACI.substring(0, 1))
+        $('.nodocumento2_SER4C2P').text(SER4C2P.CODPACI.substring(1, 2))
+        $('.nodocumento3_SER4C2P').text(SER4C2P.CODPACI.substring(2, 3))
+        $('.nodocumento4_SER4C2P').text(SER4C2P.CODPACI.substring(3, 4))
+        $('.nodocumento5_SER4C2P').text(SER4C2P.CODPACI.substring(4, 5))
+        $('.nodocumento6_SER4C2P').text(SER4C2P.CODPACI.substring(5, 6))
+        $('.nodocumento7_SER4C2P').text(SER4C2P.CODPACI.substring(6, 7))
+        $('.nodocumento8_SER4C2P').text(SER4C2P.CODPACI.substring(7, 8))
+        $('.nodocumento9_SER4C2P').text(SER4C2P.CODPACI.substring(8, 9))
+        $('.nodocumento10_SER4C2P').text(SER4C2P.CODPACI.substring(9, 10));
+        //  X PARA SEXO PACIENTE
+        $('.fechanacimiento_SER4C2P').append(
+            '<tr>' +
+            '<td>' + SER4C2P.FECHAPACI.substring(6,7) + '</td>' +
+            '<td>' + SER4C2P.FECHAPACI.substring(7,8) + '</td>' +
+            '<td>' + SER4C2P.FECHAPACI.substring(4,5) + '</td>' +
+            '<td>' + SER4C2P.FECHAPACI.substring(5,6) + '</td>' +
+            '<td>' + SER4C2P.FECHAPACI.substring(0,1) + '</td>' +
+            '<td>' + SER4C2P.FECHAPACI.substring(1,2) + '</td>' +
+            '<td>' + SER4C2P.FECHAPACI.substring(2,3) + '</td>' +
+            '<td>' + SER4C2P.FECHAPACI.substring(3,4) + '</td>' +
+            '</tr>'
+        )
+
+        $('.direccionresidencia_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(3, 4) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(4, 5) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(5, 6) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(6, 7) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(7, 8) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(8, 9) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(9, 10) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(10, 11) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(11, 12) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(12, 13) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(13, 14) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(14, 15) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(15, 16) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(17, 18) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(18, 19) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(19, 20) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(20, 21) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(21, 22) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(22, 23) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(23, 24) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(24, 25) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(25, 26) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(26, 27) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(27, 28) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(28, 29) + '</td>' +
+            '<td>' + SER4C2P.DIRECPACI.substring(29, 30) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        $('.tabladepartamento_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(3, 4) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(4, 5) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(5, 6) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(6, 7) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(7, 8) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(8, 9) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(9, 10) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(10, 11) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(11, 12) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(12, 13) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(13, 14) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(14, 15) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(15, 16) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(16, 17) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(17, 18) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(18, 19) + '</td>' +
+            '<td>' + SER4C2P.NOMBREDEPARTAMENTO.substring(19, 20) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        $('.coddepartamento_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.CODDPTO.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.CODDPTO.substring(1, 2) + '</td>' +
+            '</tr>'
+        )
+
+        $('.tablatelefono_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.TELEFONOPACI.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.TELEFONOPACI.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.TELEFONOPACI.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.TELEFONOPACI.substring(3, 4) + '</td>' +
+            '<td>' + SER4C2P.TELEFONOPACI.substring(4, 5) + '</td>' +
+            '<td>' + SER4C2P.TELEFONOPACI.substring(5, 6) + '</td>' +
+            '<td>' + SER4C2P.TELEFONOPACI.substring(6, 7) + '</td>' +
+            '<td>' + SER4C2P.TELEFONOPACI.substring(7, 8) + '</td>' +
+            '<td>' + SER4C2P.TELEFONOPACI.substring(8, 9) + '</td>' +
+            '<td>' + SER4C2P.TELEFONOPACI.substring(9, 10) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        $('.tablamunicipio_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(3, 4) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(4, 5) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(5, 6) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(6, 7) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(7, 8) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(8, 9) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(9, 10) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(10, 11) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(11, 12) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(12, 13) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(13, 14) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(14, 15) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(15, 16) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(17, 18) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(18, 19) + '</td>' +
+            '<td>' + SER4C2P.NOMBREMUNICIPIO.substring(19, 20) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        $('.tablacodmunicipio_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.CIUDPACI.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.CIUDPACI.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.CIUDPACI.substring(2, 3) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        switch (SER4C2P.CONDICFUR) {
+            case '1':
+                $('.conductor_SER4C2P').text('X');
+                break;
+            case '2':
+                $('.peaton_SER4C2P').text('X');
+                break;
+            case '3':
+                $('.ocupante_SER4C2P').text('X');
+                break;
+            case '4':
+                $('.ciclista_SER4C2P').text('X');
+                break;
+        }
+
+        switch (SER4C2P.TIPOEVENTFUR) {
+            case '01':
+                $('.accidentedetransito_SER4C2P').text('X')
+                break;
+            case '02':
+                $('.sismo_SER4C2P').text('X')
+                break;
+            case '03':
+                $('.maremoto_SER4C2P').text('X')
+                break;
+            case '04':
+                $('.erupciones_SER4C2P').text('X')
+                break;
+            case '05':
+                $('.deslizamientodetierra_SER4C2P').text('X')
+                break;
+            case '06':
+                $('.inundaciones_SER4C2P').text('X')
+                break;
+            case '07':
+                $('.avalancha_SER4C2P').text('X')
+                break;
+            case '08':
+                $('.incendionatural_SER4C2P').text('X')
+                break;
+            case '09':
+                $('.explosion_SER4C2P').text('X')
+                break;
+            case '10':
+                $('.incendio_SER4C2P').text('X')
+                break;
+            case '11':
+                $('.combate_SER4C2P').text('X')
+                break;
+            case '12':
+                $('.ataquesamunicipios_SER4C2P').text('X')
+                break;
+            case '13':
+                $('.masacre_SER4C2P').text('X')
+                break;
+                // case '14':
+                //     $('.').text('X')
+                //     break;
+            case '15':
+                $('.otrosx_SER4C2P').text('X')
+                break;
+            case '16':
+                $('.huracan_SER4C2P').text('X')
+                break;
+            case '18':
+                $('.minaantipersonal_SER4C2P').text('X')
+                break;
+        }
+
+        $('.otroincidente_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(3, 4) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(4, 5) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(5, 6) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(6, 7) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(7, 8) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(8, 9) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(9, 10) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(10, 11) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(11, 12) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(12, 13) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(13, 14) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(14, 15) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(15, 16) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(17, 18) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(18, 19) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(19, 20) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(20, 21) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(21, 22) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(22, 23) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(23, 24) + '</td>' +
+            '<td>' + SER4C2P.OTREVENTFUR.substring(24, 25) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        $('.tabladireccionocurrencia_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(3, 4) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(4, 5) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(5, 6) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(6, 7) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(7, 8) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(8, 9) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(9, 10) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(10, 11) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(11, 12) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(12, 13) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(13, 14) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(14, 15) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(15, 16) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(17, 18) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(18, 19) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(19, 20) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(20, 21) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(21, 22) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(22, 23) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(23, 24) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(24, 25) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(25, 26) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(26, 27) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(27, 28) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(28, 29) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(29, 30) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(30, 31) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(31, 32) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(32, 33) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(33, 34) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(34, 35) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(35, 36) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(36, 37) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(37, 38) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(38, 39) + '</td>' +
+            '<td>' + SER4C2P.DIROCURFUR.substring(39, 40) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        $('.tablafechaeventoaccidente_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.FECHAOCURFUR.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.FECHAOCURFUR.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.FECHAOCURFUR.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.FECHAOCURFUR.substring(3, 4) + '</td>' +
+            '<td>' + SER4C2P.FECHAOCURFUR.substring(4, 5) + '</td>' +
+            '<td>' + SER4C2P.FECHAOCURFUR.substring(5, 6) + '</td>' +
+            '<td>' + SER4C2P.FECHAOCURFUR.substring(6, 7) + '</td>' +
+            '<td>' + SER4C2P.FECHAOCURFUR.substring(7, 8) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        $('.tablahoraeventoaccidente_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.HORAOCURFUR.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.HORAOCURFUR.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.HORAOCURFUR.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.HORAOCURFUR.substring(3, 4) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        $('.tabladepartamento2_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(3, 4) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(4, 5) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(5, 6) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(6, 7) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(7, 8) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(8, 9) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(9, 10) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(10, 11) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(11, 12) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(12, 13) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(13, 14) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(14, 15) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(15, 16) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(17, 18) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(18, 19) + '</td>' +
+            '<td>' + SER4C2P.DEPARTAMENTOOCURFUR.substring(19, 20) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        $('.tablacoddepartamento2_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.CODDPTOOCURFUR.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.CODDPTOOCURFUR.substring(1, 2) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        $('.tablamunicipio2_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(3, 4) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(4, 5) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(5, 6) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(6, 7) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(7, 8) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(8, 9) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(9, 10) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(10, 11) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(11, 12) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(12, 13) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(13, 14) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(14, 15) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(15, 16) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(17, 18) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(18, 19) + '</td>' +
+            '<td>' + SER4C2P.MUNICIPIOOCURFUR.substring(19, 20) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        $('.tablacodmunicipio2_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.CODDCIUOCURFUR.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.CODDCIUOCURFUR.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.CODDCIUOCURFUR.substring(2, 3) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        switch(SER4C2P.ASEGVEHFUR){
+            case '1':
+                $('.asegurado_SER4C2P').text('X')
+                break;
+                case '2':
+                $('.noasegurado_SER4C2P').text('X')
+                break;
+                case '3':
+                $('.vehiculofantasma_SER4C2P').text('X')
+                break;
+                case '4':
+                $('.polizafalsa_SER4C2P').text('X')
+                break;
+                case '5':
+                $('.vehiculoenfuga_SER4C2P').text('X')
+                break;
+        }
+
+        //  FALTA CUADRAR PARA QUE LAS 3 LAS DESCRIPCIONES SALGAN EN DISTINTOS RENGLONES
+        $('.descripocurfur_SER4C2P ').text(SER4C2P.DESCRIPOCUR1FUR);
+        $('.marca_SER4C2P').text(SER4C2P.MARCACAR);
+        
+        $('.placa_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.PLACACAR.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.PLACACAR.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.PLACACAR.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.PLACACAR.substring(3, 4) + '</td>' +
+            '<td>' + SER4C2P.PLACACAR.substring(4, 5) + '</td>' +
+            '<td>' + SER4C2P.PLACACAR.substring(5, 6) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        switch(SER4C2P.SERVCAR){
+            case '1':
+                $('.particular_SER4C2P').text('X')
+                break;
+                case '2':
+                $('.publico_SER42CP').text('X')
+                break;
+                case '3':
+                $('.oficial_SER4C2P').text('X')
+                break;
+                case '4':
+                $('.vehiculoemergencia_SER4C2P').text('X')
+                break;
+                case '5':
+                $('.vehiculodeservicio_SER4C2P').text('X')
+                break;
+                case '6':
+                $('.vehiculotransportemasivo_SER4C2P').text('X')
+                break;
+                case '7':
+                $('.oficial_SER4C2P').text('X')
+                break;
+        }
+
+        $('.tablacodigoaseguradora_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.CODPOL.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.CODPOL.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.CODPOL.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.CODPOL.substring(3, 4) + '</td>' +
+            '<td>' + SER4C2P.CODPOL.substring(4, 5) + '</td>' +
+            '<td>' + SER4C2P.CODPOL.substring(5, 6) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        $('.tablanopoliza_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.NUMPOL.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.NUMPOL.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.NUMPOL.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.NUMPOL.substring(3, 4) + '</td>' +
+            '<td>' + SER4C2P.NUMPOL.substring(4, 5) + '</td>' +
+            '<td>' + SER4C2P.NUMPOL.substring(5, 6) + '</td>' +
+            '<td>' + SER4C2P.NUMPOL.substring(6, 7) + '</td>' +
+            '<td>' + SER4C2P.NUMPOL.substring(7, 8) + '</td>' +
+            '<td>' + SER4C2P.NUMPOL.substring(8, 9) + '</td>' +
+            '<td>' + SER4C2P.NUMPOL.substring(9, 10) + '</td>' +
+            '<td>' + SER4C2P.NUMPOL.substring(10, 11) + '</td>' +
+            '<td>' + SER4C2P.NUMPOL.substring(11, 12) + '</td>' +
+            '<td>' + SER4C2P.NUMPOL.substring(12, 13) + '</td>' +
+            '<td>' + SER4C2P.NUMPOL.substring(13, 14) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        switch(SER4C2P.INTERVAUTFUR){
+            case 'S':
+                $('.intervencionautoridadsi_SER4C2P').text('X');
+            break;
+            case 'N':
+                $('.intervencionautoridadno_SER4C2P').text('X');
+            break;
+        }
+
+        switch(SER4C2P.COBEXCEDFUR){
+            case 'S':
+                $('.cobroexcedentesi_SER4C2P').text('X');
+            break;
+            case 'N':
+                $('.cobroexcedenteno_SER4C2P').text('X');
+            break;
+        }
+
+        $('.tablavigencia_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.FECHAINIPOL.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.FECHAINIPOL.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.FECHAINIPOL.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.FECHAINIPOL.substring(3, 4) + '</td>' +
+            '<td>' + SER4C2P.FECHAINIPOL.substring(4, 5) + '</td>' +
+            '<td>' + SER4C2P.FECHAINIPOL.substring(5, 6) + '</td>' +
+            '<td>' + SER4C2P.FECHAINIPOL.substring(6, 7) + '</td>' +
+            '<td>' + SER4C2P.FECHAINIPOL.substring(7, 8) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        $('.tablavigencia_SER4C2P').append(
+            '<tbody>' +
+            '<tr>' +
+            '<td>' + SER4C2P.FECHAFINPOL.substring(0, 1) + '</td>' +
+            '<td>' + SER4C2P.FECHAFINPOL.substring(1, 2) + '</td>' +
+            '<td>' + SER4C2P.FECHAFINPOL.substring(2, 3) + '</td>' +
+            '<td>' + SER4C2P.FECHAFINPOL.substring(3, 4) + '</td>' +
+            '<td>' + SER4C2P.FECHAFINPOL.substring(4, 5) + '</td>' +
+            '<td>' + SER4C2P.FECHAFINPOL.substring(5, 6) + '</td>' +
+            '<td>' + SER4C2P.FECHAFINPOL.substring(6, 7) + '</td>' +
+            '<td>' + SER4C2P.FECHAFINPOL.substring(7, 8) + '</td>' +
+            '</tr>' +
+            '</tbody>'
+        )
+
+        $('.1erapellidopropietario_SER4C2P').text(SER4C2P.PROPIETARIOPRIMERAPELLIDO);
+        $('.2doapellidopropietario_SER4C2P').text(SER4C2P.PROPIETARIOSEGUNDOAPELLIDO);
+        $('.1ernombrepropietario_SER4C2P').text(SER4C2P.PROPIETARIOPRIMERNOMBRE);
+        $('.2donombrepropietario_SER4C2P').text(SER4C2P.PROPIETARIOSEGUNDONOMBRE);
+
+        //  X DEL TIPO DE DOCUMENTO FALTA
+        // FALTA VALIDACION PARA TI
+
+        $('.nodocumento1propietario_SER4C2P').text(SER4C2P.PROPIETARIONRODOCUMENTO.substring(0,1))
+        $('.nodocumento2propietario_SER4C2P').text(SER4C2P.PROPIETARIONRODOCUMENTO.substring(1,2))
+        $('.nodocumento3propietario_SER4C2P').text(SER4C2P.PROPIETARIONRODOCUMENTO.substring(2,3))
+        $('.nodocumento4propietario_SER4C2P').text(SER4C2P.PROPIETARIONRODOCUMENTO.substring(3,4))
+        $('.nodocumento5propietario_SER4C2P').text(SER4C2P.PROPIETARIONRODOCUMENTO.substring(4,5))
+        $('.nodocumento6propietario_SER4C2P').text(SER4C2P.PROPIETARIONRODOCUMENTO.substring(5,6))
+        $('.nodocumento7propietario_SER4C2P').text(SER4C2P.PROPIETARIONRODOCUMENTO.substring(6,7))
+        $('.nodocumento8propietario_SER4C2P').text(SER4C2P.PROPIETARIONRODOCUMENTO.substring(7,8))
+        $('.nodocumento9propietario_SER4C2P').text(SER4C2P.PROPIETARIONRODOCUMENTO.substring(8,9))
+        $('.nodocumento10propietario_SER4C2P').text(SER4C2P.PROPIETARIONRODOCUMENTO.substring(9,10))
+
+        var nit = SER4C2P.NIT;
+        var url = path.join(`P:\\PROG\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('.logo')
+        });
+    })
+</script>

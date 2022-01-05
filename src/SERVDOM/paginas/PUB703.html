@@ -1,0 +1,87 @@
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+  
+  <div class="col-md-12" id="PUB703">
+    <div class="portlet light no-padding">
+      <div class="portlet-body no-padding">
+        <div class="form-horizontal">
+          <div class="col-md-12 no-padding">
+            <div class="col-md-2" style="padding-left: 0">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 head-box">
+                  <label>Novedad</label>
+                </div>
+                <div class="col-md-12" style="padding-top: 7px; padding-bottom: 6px; padding-right: 0">{{ novedad }}</div>
+              </div>
+            </div>
+  
+            <div class="col-md-4" style="padding-left: 0">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 no-padding">
+                  <div class="col-md-12 head-box">
+                    <label class="col-md-2" style="text-align: center">Código</label>
+                    <label class="col-md-10" style="text-align: center">Descripción dependencia</label>
+                  </div>
+                  <div class="inline-inputs col-md-12 no-padding">
+                    <div class="input-group col-md-2" id="cod">
+                      <input
+                        v-model="reg_dep.cod"
+                        type="text"
+                        class="form-control cod"
+                        style="text-align: center"
+                        data-orden="1"
+                        @keydown.f8="_ventanaDependencias"
+                        maxlength="3"
+                        required="true"
+                      />
+                    </div>
+                    <button @click="_ventanaDependencias" type="button" class="btn col-md-1 f8-Btn">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <div class="input-group col-md-9" id="descrip">
+                      <input
+                        v-model="reg_dep.descrip"
+                        type="text"
+                        maxlength="20"
+                        class="form-control text-left descrip"
+                        data-orden="1"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-md-4 no-padding">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 no-padding">
+                  <div class="col-md-12 head-box">
+                    <label class="col-md-12" style="text-align: center">Responsable dependencia</label>
+                  </div>
+                  <div class="inline-inputs col-md-12 no-padding">
+                    <div class="input-group col-md-12" id="responsable">
+                      <input
+                        v-model="reg_dep.responsable"
+                        type="text"
+                        maxlength="30"
+                        class="form-control text-left responsable"
+                        data-orden="1"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="../../SERVDOM/scripts/PUB703.js" type="text/javascript"></script>
+  

@@ -1,0 +1,56 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id='SAL211A'>
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <form class="form-horizontal">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="float: none; margin: 0 auto;">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Traslado de codigo M - B</label>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-xs-3" >
+                        <div class="inline-inputs">
+                            <label class="col-md-9 col-sm-5 col-xs-5">Codigo M:</label>
+                            <div class="input-group col-md-8 col-sm-5 col-xs-5" id="ART1_SAL211A">
+                                <input type="text" v-model="form.articulo1_SAL211A" @Keyup.F8='_f8articulos1_SAL211A'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12  numeroart1_SAL211A" data-orden="1"
+                                    maxlength="15" placeholder="CODIGO">
+                            </div>
+                            <button type="button" @click='_f8articulos1_SAL211A'
+                                class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-3 col-xs-3" id="ART2_SAL211A">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-5 col-xs-5">Codigo B:</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                <input type="text" v-model="form.articulo2_SAL211A" @Keyup.F8='_f8articulos2_SAL211A'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 numeroart2_SAL211A" data-orden="1"
+                                    maxlength="17">
+                            </div>
+                            <button type="button" @click='_f8articulos2_SAL211A'
+                                class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                <input type="text" v-model="form.descriparticulo2_SAL211A"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-3" >
+                        <div class="inline-inputs">
+                            <label class="col-md-9 col-sm-5 col-xs-5">Mes proceso:</label>
+                            <div class="input-group col-md-8 col-sm-5 col-xs-5" id="MES1_SAL211A">
+                                <input type="text" v-model="form.mesproceso_SAL211A" 
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                    maxlength="2" placeholder="01">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SAL211A.js" type="text/javascript"></script>

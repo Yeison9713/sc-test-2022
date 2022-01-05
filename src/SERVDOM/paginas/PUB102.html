@@ -1,0 +1,954 @@
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<div class="col-md-12" id="PUB102">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="col-md-12 no-padding">
+          <div class="col-md-12 no-padding">
+            <div class="col-md-1" style="padding-left: 0">
+              <div class="form-group col-md-12 box-center">
+                <div
+                  class="col-md-12 head-box no-padding"
+                  style="padding-top: 7px !important; padding-bottom: 14px !important"
+                >
+                  <label>Novedad</label>
+                </div>
+                <div class="col-md-12 no-padding" style="padding-top: 7px !important; padding-bottom: 8px !important">
+                  {{ novedad }}
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-11 no-padding">
+              <div class="col-md-12 no-padding">
+                <div class="col-md-2" style="padding-left: 0">
+                  <div class="form-group inline-inputs col-md-12 box-center">
+                    <label class="col-md-7 lbl">Periodo (año)</label>
+                    <div class="input-group col-md-5" id="ano">
+                      <input
+                        v-model="reg_tarifa.ano"
+                        type="number"
+                        class="form-control ano text-center"
+                        data-orden="1"
+                        maxlength="4"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-3" style="padding-left: 0">
+                  <div class="form-group inline-inputs col-md-12 box-center">
+                    <label class="col-md-3 lbl">Servicio</label>
+                    <div class="input-group col-md-2" id="serv">
+                      <input
+                        v-model="reg_tarifa.serv"
+                        type="number"
+                        class="form-control serv text-center"
+                        data-orden="1"
+                        maxlength="1"
+                        required="true"
+                        @keydown.f8="_ventanaServicios"
+                      />
+                    </div>
+                    <button @click="_ventanaServicios" type="button" class="btn col-md-1 f8-Btn">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <div class="input-group col-md-6">
+                      <input v-model="descrip_serv" type="text" class="form-control text-left" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4" style="padding-left: 0">
+                  <div class="form-group inline-inputs col-md-12 box-center">
+                    <label class="col-md-3 lbl">Cod. Tarifa</label>
+                    <label class="col-md-2 lbl">Estrato</label>
+                    <div class="input-group col-md-2" id="estrato">
+                      <input
+                        v-model="reg_tarifa.estrato"
+                        type="number"
+                        class="form-control estrato text-center"
+                        data-orden="1"
+                        maxlength="1"
+                        required="true"
+                        @keydown.f8="_ventanaEstratos"
+                      />
+                    </div>
+                    <button @click="_ventanaEstratos" type="button" class="btn col-md-1 f8-Btn">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <label class="col-md-2 lbl" style="padding-left: 12px">Uso</label>
+                    <div class="input-group col-md-2" id="tarifa">
+                      <input
+                        v-model="reg_tarifa.tarifa"
+                        type="text"
+                        class="form-control tarifa text-center"
+                        data-orden="1"
+                        maxlength="1"
+                        required="true"
+                        @keydown.f8="_ventanaUsosTarif"
+                      />
+                    </div>
+                    <button @click="_ventanaUsosTarif" type="button" class="btn col-md-1 f8-Btn">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-3 no-padding">
+                  <div class="form-group inline-inputs col-md-12 box-center">
+                    <label class="col-md-4 lbl">Descripción</label>
+                    <div class="input-group col-md-8" id="descrip">
+                      <input
+                        v-model="reg_tarifa.descrip"
+                        class="form-control text-left"
+                        data-orden="1"
+                        maxlength="20"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-12 no-padding" style="margin-top: -10px">
+                <div class="col-md-4" style="padding-left: 0">
+                  <div class="form-group inline-inputs col-md-12 box-center">
+                    <label class="col-md-2 lbl">Zona</label>
+                    <div class="input-group col-md-2" id="ubicacion">
+                      <input
+                        v-model="reg_tarifa.ubicacion"
+                        type="number"
+                        class="form-control ubicacion text-center"
+                        data-orden="1"
+                        maxlength="1"
+                        required="true"
+                      />
+                    </div>
+                    <button type="button" class="btn col-md-1 f8-Btn">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <div class="input-group col-md-7">
+                      <input v-model="descrip_ubicacion" type="text" class="form-control text-left" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4" style="padding-left: 0">
+                  <div class="form-group inline-inputs col-md-12 box-center">
+                    <label class="col-md-2 lbl">Prod</label>
+                    <div class="input-group col-md-2" id="prod">
+                      <input
+                        v-model="reg_tarifa.prod"
+                        type="number"
+                        class="form-control prod text-center"
+                        data-orden="1"
+                        maxlength="1"
+                        required="true"
+                      />
+                    </div>
+                    <button type="button" class="btn col-md-1 f8-Btn">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <div class="input-group col-md-7">
+                      <input v-model="descrip_prod" type="text" class="form-control text-left" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 no-padding">
+                  <div class="form-group inline-inputs col-md-12 box-center">
+                    <label class="col-md-3 lbl">Clase de uso</label>
+                    <div class="input-group col-md-2" id="clase">
+                      <input
+                        v-model="reg_tarifa.clase"
+                        type="number"
+                        class="form-control clase text-center"
+                        data-orden="1"
+                        maxlength="2"
+                        required="true"
+                      />
+                    </div>
+                    <button type="button" class="btn col-md-1 f8-Btn">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <div class="input-group col-md-6">
+                      <input v-model="descrip_clase" type="text" class="form-control text-left" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 no-padding" style="margin-top: -5px">
+            <div class="col-md-12 no-padding">
+              <div class="col-md-2" style="padding-left: 0">
+                <div class="form-group inline-inputs col-md-12 box-center">
+                  <label class="col-md-7 lbl">Con medición?</label>
+                  <div class="input-group col-md-5" id="medic">
+                    <input
+                      v-model="reg_tarifa.medic"
+                      type="text"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="1"
+                      placeholder="N"
+                      required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2" style="padding-left: 0">
+                <div class="form-group inline-inputs col-md-12 box-center">
+                  <label class="col-md-7 lbl">Periodico?</label>
+                  <div class="input-group col-md-5" id="period">
+                    <input
+                      v-model="reg_tarifa.period"
+                      type="text"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="1"
+                      placeholder="N"
+                      required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2" style="padding-left: 0">
+                <div class="form-group inline-inputs col-md-12 box-center">
+                  <label class="col-md-7 lbl">Cant basico</label>
+                  <div class="input-group col-md-5" id="cant_basi">
+                    <input
+                      v-model="reg_tarifa.cant_basi"
+                      type="number"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="4"
+                      required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2" style="padding-left: 0">
+                <div class="form-group inline-inputs col-md-12 box-center">
+                  <label class="col-md-7 lbl">Cant complem.</label>
+                  <div class="input-group col-md-5" id="cant_comp">
+                    <input
+                      v-model="reg_tarifa.cant_comp"
+                      type="number"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="4"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2" style="padding-left: 0">
+                <div class="form-group inline-inputs col-md-12 box-center">
+                  <label class="col-md-7 lbl">Cant suntuar</label>
+                  <div class="input-group col-md-5" id="cant_sunt">
+                    <input
+                      v-model="reg_tarifa.cant_sunt"
+                      type="number"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="4"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2 no-padding">
+                <div class="form-group inline-inputs col-md-12 box-center">
+                  <label class="col-md-7 lbl">Contabilizar?</label>
+                  <div class="input-group col-md-5" id="interfaz">
+                    <input
+                      v-model="reg_tarifa.contab.interfaz"
+                      type="text"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="1"
+                      required="true"
+                      placeholder="N"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-12 no-padding" style="margin-top: -10px">
+                <div class="col-md-4" style="padding-left: 0">
+                  <div class="form-group inline-inputs col-md-12 box-center">
+                    <label class="col-md-4 lbl">Centro costos</label>
+                    <div class="input-group col-md-2" id="c_costo">
+                      <input
+                        v-model="reg_tarifa.contab.c_costo"
+                        type="number"
+                        class="form-control c_costo text-center"
+                        data-orden="1"
+                        maxlength="4"
+                        required="true"
+                        @keydown.f8="_ventanaCentroCostos"
+                      />
+                    </div>
+                    <button @click="_ventanaCentroCostos" type="button" class="btn col-md-1 f8-Btn">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <div class="input-group col-md-5">
+                      <input v-model="descrip_c_costo" type="text" class="form-control text-left" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-8 no-padding">
+                  <div class="form-group inline-inputs col-md-12 box-center">
+                    <label class="col-md-3 lbl">Cod. contable interes</label>
+                    <div class="input-group col-md-2" id="cod_inter">
+                      <input
+                        v-model="reg_tarifa.contab.cod_inter"
+                        type="text"
+                        class="form-control cod_inter text-center"
+                        data-orden="1"
+                        maxlength="11"
+                        required="true"
+                        @keydown.f8="_ventanaCuentas('cod_inter')"
+                      />
+                    </div>
+                    <button
+                      @click="_ventanaCuentas('cod_inter')"
+                      type="button"
+                      class="btn col-md-1 f8-Btn"
+                      style="width: 4%"
+                    >
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <div class="input-group col-md-6" style="width: 55%">
+                      <input v-model="descrip_cod_inter" type="text" class="form-control text-left" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 no-padding" style="margin-top: -5px">
+            <div class="col-md-12 form-group box-center no-padding">
+              <table class="table table-light table-striped" style="margin-bottom: 0px; width: 100%">
+                <thead>
+                  <tr>
+                    <th class="text-center" style="width: 9%; height: 20px !important">Mes</th>
+                    <th class="text-center" style="width: 13%; height: 20px !important">Cargo Fijo</th>
+                    <th class="text-center" style="width: 13%; height: 20px !important">Cons. Basico</th>
+                    <th class="text-center" style="width: 13%; height: 20px !important">Cons. Comple</th>
+                    <th class="text-center" style="width: 13%; height: 20px !important">Cons. Suntuar</th>
+                    <th class="text-center" style="width: 13%; height: 20px !important">% Subs o Contrib</th>
+                    <th class="text-center" style="width: 13%; height: 20px !important">Otros cargos</th>
+                    <th class="text-center" style="width: 13%; height: 20px !important">Neto a pagar</th>
+                  </tr>
+                </thead>
+              </table>
+              <div style="max-height: 1000px; display: inline-block; width: 100%">
+                <table id="tabla_tarifas" class="table table-light table-striped" style="margin-bottom: 0px">
+                  <tbody>
+                    <tr v-for="(registro, index) in reg_tarifa.tabla">
+                      <td class="text-center" style="width: 9%">
+                        <div>
+                          <button
+                            @click="callbackBtn_mes(index)"
+                            @keydown.esc="callbackEscBtn_mes(index)"
+                            class="btn btn-primary"
+                            :id="`btn_${index}`"
+                            :disabled="!reg_tarifa.contab.interfaz"
+                            @keydown.38="flecha_arriba"
+                            @keydown.40="flecha_abajo"
+                            @keydown.f3="datoCodFijo"
+                            style="width: 60%; height: 20px !important; line-height: 0.44 !important"
+                          >
+                            {{ registro.mes }}
+                          </button>
+                        </div>
+                      </td>
+                      <td class="text-center" style="width: 13%">
+                        <div class="input-group col-md-12" :id="`car_fijo_${index}`">
+                          <input
+                            v-model="registro.car_fijo"
+                            type="text"
+                            class="form-control text-left"
+                            maxlength="9"
+                            data-orden="1"
+                            @keydown.38="flecha_arriba"
+                            @keydown.40="flecha_abajo"
+                            style="height: 20px !important"
+                          />
+                        </div>
+                      </td>
+                      <td class="text-center" style="width: 13%">
+                        <div class="input-group col-md-12" :id="`con_basi_${index}`">
+                          <input
+                            v-model="registro.con_basi"
+                            type="text"
+                            class="form-control text-left"
+                            maxlength="9"
+                            data-orden="1"
+                            @keydown.38="flecha_arriba"
+                            @keydown.40="flecha_abajo"
+                            style="height: 20px !important"
+                          />
+                        </div>
+                      </td>
+                      <td class="text-center" style="width: 13%">
+                        <div class="input-group col-md-12" :id="`con_comp_${index}`">
+                          <input
+                            v-model="registro.con_comp"
+                            type="text"
+                            class="form-control text-left"
+                            maxlength="9"
+                            data-orden="1"
+                            @keydown.38="flecha_arriba"
+                            @keydown.40="flecha_abajo"
+                            style="height: 20px !important"
+                          />
+                        </div>
+                      </td>
+                      <td class="text-center" style="width: 13%">
+                        <div class="input-group col-md-12" :id="`con_sunt_${index}`">
+                          <input
+                            v-model="registro.con_sunt"
+                            type="text"
+                            class="form-control text-left"
+                            maxlength="9"
+                            data-orden="1"
+                            @keydown.38="flecha_arriba"
+                            @keydown.40="flecha_abajo"
+                            style="height: 20px !important"
+                          />
+                        </div>
+                      </td>
+                      <td class="text-center" style="width: 13%">
+                        <div class="input-group col-md-12" :id="`subsid_${index}`">
+                          <input
+                            v-model="registro.subsid"
+                            type="text"
+                            class="form-control text-left"
+                            maxlength="9"
+                            data-orden="1"
+                            @keydown.38="flecha_arriba"
+                            @keydown.40="flecha_abajo"
+                            style="height: 20px !important"
+                          />
+                        </div>
+                      </td>
+                      <td class="text-center" style="width: 13%">
+                        <div class="input-group col-md-12" :id="`otro_${index}`">
+                          <input
+                            v-model="registro.otro"
+                            type="text"
+                            class="form-control text-left"
+                            maxlength="9"
+                            data-orden="1"
+                            @keydown.38="flecha_arriba"
+                            @keydown.40="flecha_abajo"
+                            style="height: 20px !important"
+                          />
+                        </div>
+                      </td>
+                      <td class="text-center" style="width: 13%">
+                        <div class="input-group col-md-12" :id="`neto_${index}`">
+                          <input
+                            v-model="registro.neto"
+                            type="text"
+                            class="form-control text-left"
+                            maxlength="11"
+                            data-orden="1"
+                            @keydown.38="flecha_arriba"
+                            @keydown.40="flecha_abajo"
+                            style="height: 20px !important"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="col-md-12 form-group box-center no-padding" style="margin-top: -8px !important">
+              <div style="max-height: 532px; display: inline-block; width: 100%">
+                <table class="table table-light table-striped" style="margin-bottom: 0px">
+                  <tbody>
+                    <tr>
+                      <td class="text-center" style="width: 9%; height: 20px !important; padding: 3px;">
+                        <label> Codigo </label>
+                      </td>
+                      <td class="text-center" style="width: 13%; padding: 3px">
+                        <div class="input-group col-md-12" id="cod_fijo">
+                          <input
+                            v-model="reg_tarifa.contab.cod_fijo"
+                            type="text"
+                            class="form-control cod_fijo text-left"
+                            maxlength="11"
+                            data-orden="1"
+                            @keydown.f8="_ventanaCuentas('cod_fijo')"
+                            style="height: 20px !important"
+                          />
+                        </div>
+                      </td>
+                      <td class="text-center" style="width: 13%; padding: 3px">
+                        <div class="input-group col-md-12" id="cod_basi">
+                          <input
+                            v-model="reg_tarifa.contab.cod_basi"
+                            type="text"
+                            class="form-control cod_basi text-left"
+                            maxlength="11"
+                            data-orden="1"
+                            @keydown.f8="_ventanaCuentas('cod_basi')"
+                            style="height: 20px !important"
+                          />
+                        </div>
+                      </td>
+                      <td class="text-center" style="width: 13%; padding: 3px">
+                        <div class="input-group col-md-12" id="cod_comp">
+                          <input
+                            v-model="reg_tarifa.contab.cod_comp"
+                            type="text"
+                            class="form-control cod_comp text-left"
+                            maxlength="11"
+                            data-orden="1"
+                            @keydown.f8="_ventanaCuentas('cod_comp')"
+                            style="height: 20px !important"
+                          />
+                        </div>
+                      </td>
+                      <td class="text-center" style="width: 13%; padding: 3px">
+                        <div class="input-group col-md-12" id="cod_sunt">
+                          <input
+                            v-model="reg_tarifa.contab.cod_sunt"
+                            type="text"
+                            class="form-control cod_sunt text-left"
+                            maxlength="11"
+                            data-orden="1"
+                            @keydown.f8="_ventanaCuentas('cod_sunt')"
+                            style="height: 20px !important"
+                          />
+                        </div>
+                      </td>
+                      <td class="text-center" style="width: 13%; padding: 3px">
+                        <div class="input-group col-md-12" id="cod_subs">
+                          <input
+                            v-model="reg_tarifa.contab.cod_subs"
+                            type="text"
+                            class="form-control cod_subs text-left"
+                            maxlength="11"
+                            data-orden="1"
+                            @keydown.f8="_ventanaCuentas('cod_subs')"
+                            style="height: 20px !important"
+                          />
+                        </div>
+                      </td>
+                      <td class="text-center" style="width: 13%; padding: 3px">
+                        <div class="input-group col-md-12" id="cod_otr">
+                          <input
+                            v-model="reg_tarifa.contab.cod_otr"
+                            type="text"
+                            class="form-control cod_otr text-left"
+                            maxlength="11"
+                            data-orden="1"
+                            @keydown.f8="_ventanaCuentas('cod_otr')"
+                            style="height: 20px !important"
+                          />
+                        </div>
+                      </td>
+                      <td class="text-center" style="width: 13%; padding: 3px">
+                        <div class="input-group col-md-12" id="cod_neto">
+                          <input
+                            v-model="reg_tarifa.contab.cod_neto"
+                            type="text"
+                            class="form-control cod_neto text-left"
+                            maxlength="11"
+                            data-orden="1"
+                            @keydown.f8="_ventanaCuentas('cod_neto')"
+                            style="height: 20px !important"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center" style="width: 9%; height: 20px !important; padding: 0;">
+                        <label> Descripción </label>
+                      </td>
+                      <td class="text-center" style="width: 13%; height: 20px !important;">{{ descrip_cod_fijo }}</td>
+                      <td class="text-center" style="width: 13%; height: 20px !important;">{{ descrip_cod_basi }}</td>
+                      <td class="text-center" style="width: 13%; height: 20px !important;">{{ descrip_cod_comp }}</td>
+                      <td class="text-center" style="width: 13%; height: 20px !important;">{{ descrip_cod_sunt }}</td>
+                      <td class="text-center" style="width: 13%; height: 20px !important;">{{ descrip_cod_subs }}</td>
+                      <td class="text-center" style="width: 13%; height: 20px !important;">{{ descrip_cod_otr }}</td>
+                      <td class="text-center" style="width: 13%; height: 20px !important;">{{ descrip_cod_neto }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 no-padding" style="margin-top: -8px">
+            <div class="col-md-12 no-padding">
+              <div class="col-md-2" style="padding-left: 0">
+                <div class="form-group inline-inputs col-md-12 box-center" style="height: 20px !important">
+                  <label class="col-md-7 lbl">Tasa de interes</label>
+                  <div class="input-group col-md-5" id="tasa_int">
+                    <input
+                      v-model="reg_tarifa.tasa_int"
+                      type="number"
+                      class="form-control text-center"
+                      data-orden="1"
+                      maxlength="5"
+                      style="height: 20px !important"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-10 no-padding">
+                <div class="form-group inline-inputs col-md-12 box-center" style="height: 20px !important">
+                  <label class="col-md-12 lbl" style="color: #476fad; text-align: center"
+                    >El subsidio va con signo menos. F9 repite datos del mes anterior</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div v-if="mostrar_comp_AcueAlc">
+    <transition>
+      <div class="modal-mask">
+        <div class="modal-wrapper">
+          <div
+            class="col-md-4 no-padding form-group box-center"
+            style="padding: 15px !important; padding-bottom: 4px !important; padding-top: 4px !important"
+          >
+            <h4 style="font-weight: 600">
+              {{ reg_tarifa.serv == 1 ? "SERVICIO DE ACUEDUCTO " + mes : "SERVICIO DE ALCANTARILLADO " + mes }}
+            </h4>
+
+            <div class="col-md-12 inline-inputs" style="padding: 4px">
+              <label class="col-md-7 lbl">Costo medio opera. CMO</label>
+              <div class="input-group col-md-5" id="CMO">
+                <input
+                  v-model="componente.comp2"
+                  type="text"
+                  class="form-control text-center"
+                  data-orden="1"
+                  maxlength="9"
+                />
+              </div>
+            </div>
+            <div class="col-md-12 inline-inputs" style="padding: 4px">
+              <label class="col-md-7 lbl">Costo medio invers. CMI</label>
+              <div class="input-group col-md-5" id="CMI">
+                <input
+                  v-model="componente.comp3"
+                  type="text"
+                  class="form-control text-center"
+                  data-orden="1"
+                  maxlength="9"
+                />
+              </div>
+            </div>
+            <div class="col-md-12 inline-inputs" style="padding: 4px">
+              <label class="col-md-7 lbl">Tasa med ambiental. CMT</label>
+              <div class="input-group col-md-5" id="CMT">
+                <input
+                  v-model="componente.comp4"
+                  type="text"
+                  class="form-control cmt text-center"
+                  data-orden="1"
+                  maxlength="9"
+                />
+              </div>
+            </div>
+            <div class="col-md-12 inline-inputs" style="padding: 4px">
+              <label class="col-md-7 lbl">Total Componentes</label>
+              <div class="input-group col-md-5">
+                <input v-model="total_comp_AcueAlc" type="text" class="form-control text-center" data-orden="1" />
+              </div>
+            </div>
+            <div class="col-md-12 inline-inputs" style="padding: 4px">
+              <div class="col-md-12 no-padding">
+                <input
+                  @click="callbackComp_AcueAlc"
+                  @keydown.esc="datoComp3_AcueAlc"
+                  value="Continuar"
+                  type="button"
+                  class="btn btn-primary"
+                  style="float: right"
+                  id="btn_AcueAlc"
+                  ref="btn_AcueAlc"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </div>
+
+  <div v-if="mostrar_comp_Aseo">
+    <transition>
+      <div class="modal-mask">
+        <div class="modal-wrapper">
+          <div
+            class="col-md-7 no-padding form-group box-center"
+            style="padding: 15px !important; padding-bottom: 4px !important; padding-top: 4px !important"
+          >
+            <h4 style="font-weight: 600">{{ "SERVICIO DE ASEO " + mes }}</h4>
+
+            <div class="col-md-6 no-padding">
+              <div class="col-md-12 inline-inputs" style="padding: 4px">
+                <label class="col-md-7 lbl" style="color: #476fad">F9 - Trae datos mes anterior</label>
+                <label class="col-md-5 lbl" style="text-align: center">Veces x semana</label>
+              </div>
+
+              <div class="col-md-12 inline-inputs" style="padding: 4px">
+                <label class="col-md-8 lbl">Frecuencia de recolección</label>
+                <div class="input-group col-md-3" id="frec_rec">
+                  <input
+                    v-model="reg_tarifa.frec_rec"
+                    type="number"
+                    class="form-control text-center"
+                    data-orden="1"
+                    maxlength="1"
+                    required="true"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-12 inline-inputs" style="padding: 4px">
+                <label class="col-md-8 lbl">Frecuencia de barrido</label>
+                <div class="input-group col-md-3" id="frec_bar">
+                  <input
+                    v-model="reg_tarifa.frec_bar"
+                    type="number"
+                    class="form-control text-center"
+                    data-orden="1"
+                    maxlength="1"
+                    required="true"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 no-padding">
+              <div class="col-md-12 inline-inputs" style="padding: 4px">
+                <label class="lbl" style="color: #476fad">&nbsp;</label>
+              </div>
+              <div class="col-md-12 inline-inputs" style="padding: 4px">
+                <label class="col-md-4 lbl">Aforo</label>
+                <div class="input-group col-md-2" id="aforo">
+                  <input
+                    v-model="reg_tarifa.aforo"
+                    type="text"
+                    class="form-control text-center"
+                    data-orden="1"
+                    maxlength="1"
+                    required="true"
+                  />
+                </div>
+                <div class="input-group col-md-6">
+                  <input v-model="descrip_aforo" type="text" class="form-control text-center" />
+                </div>
+              </div>
+
+              <div class="col-md-12 inline-inputs" style="padding: 4px">
+                <label class="col-md-9 lbl">Recolección puerta a puerta?</label>
+                <div class="input-group col-md-3" id="puerta">
+                  <input
+                    v-model="reg_tarifa.puerta"
+                    type="text"
+                    class="form-control text-center"
+                    data-orden="1"
+                    maxlength="1"
+                    required="true"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="salto-linea" style="border: 1px solid; border-bottom: 0; margin-top: 12px"></div>
+
+            <div class="col-md-6 no-padding">
+              <div class="col-md-12 inline-inputs" style="padding: 4px">
+                <label class="col-md-4 lbl"></label>
+                <label class="col-md-3 lbl">Sigla</label>
+                <label class="col-md-5 lbl" style="text-align: center">Valor</label>
+              </div>
+
+              <div v-for="n in 9" class="col-md-12 inline-inputs" style="padding: 4px">
+                <label class="col-md-4 lbl">{{"Componente " + n }}</label>
+                <label class="col-md-3 lbl">{{ reg_tarifa.tabla_compon[n - 1].sigla_comp }}</label>
+                <div class="input-group col-md-5" :id="`comp${n}_Aseo`">
+                  <input
+                    v-model="componente[`comp${n}`]"
+                    type="text"
+                    class="form-control text-center"
+                    data-orden="1"
+                    maxlength="9"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-12 inline-inputs" style="padding: 4px">
+                <label class="col-md-7 lbl">Tot. Componente</label>
+                <div class="input-group col-md-5" id="total_comp_Aseo">
+                  <input v-model="total_comp_Aseo" type="text" class="form-control text-center" data-orden="1" />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 no-padding">
+              <div class="col-md-12 inline-inputs" style="padding: 4px">
+                <label class="col-md-7 lbl"></label>
+                <label class="col-md-5 lbl" style="text-align: center">Cant x 1000</label>
+              </div>
+
+              <div class="col-md-12 inline-inputs" style="padding: 4px">
+                <label class="col-md-7 lbl">TN resid limpio</label>
+                <div class="input-group col-md-5" id="tn_resi_limp">
+                  <input
+                    v-model="componente.tn_resi_limp"
+                    type="text"
+                    class="form-control text-center"
+                    data-orden="1"
+                    maxlength="9"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-12 inline-inputs" style="padding: 4px">
+                <label class="col-md-7 lbl">TN resid barrido</label>
+                <div class="input-group col-md-5" id="tn_resi_barr">
+                  <input
+                    v-model="componente.tn_resi_barr"
+                    type="text"
+                    class="form-control text-center"
+                    data-orden="1"
+                    maxlength="9"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-12 inline-inputs" style="padding: 4px">
+                <label class="col-md-7 lbl">TN resid no aprov.</label>
+                <div class="input-group col-md-5" id="tn_resi_noap">
+                  <input
+                    v-model="componente.tn_resi_noap"
+                    type="text"
+                    class="form-control text-center"
+                    data-orden="1"
+                    maxlength="9"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-12 inline-inputs" style="padding: 4px">
+                <label class="col-md-7 lbl">TN resid aprovec.</label>
+                <div class="input-group col-md-5" id="tn_resi_apro">
+                  <input
+                    v-model="reg_tarifa.tn_resi_apro"
+                    type="text"
+                    class="form-control text-center"
+                    data-orden="1"
+                    maxlength="9"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-12 inline-inputs" style="padding: 4px">
+                <label class="col-md-7 lbl">TN resid rechazo</label>
+                <div class="input-group col-md-5" id="tn_resi_rech">
+                  <input
+                    v-model="reg_tarifa.tn_resi_rech"
+                    type="text"
+                    class="form-control text-center"
+                    data-orden="1"
+                    maxlength="9"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-12 inline-inputs" style="padding: 4px; margin-top: 35px">
+                <label class="col-md-7 lbl">Base VBA</label>
+                <div class="input-group col-md-5" id="base_vba">
+                  <input
+                    v-model="reg_tarifa.base_vba"
+                    type="text"
+                    class="form-control text-center"
+                    data-orden="1"
+                    maxlength="11"
+                    required="true"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 inline-inputs" style="padding: 4px">
+              <div class="col-md-12 no-padding">
+                <label class="lbl" style="color: #476fad; float: left"
+                  >El componente 1(TC) esta ligado con el componente (9) CCS recicladores</label
+                >
+                <input
+                  @click="callbackComp_Aseo"
+                  @keydown.esc="datoVba_Aseo"
+                  value="Continuar"
+                  type="button"
+                  class="btn btn-primary"
+                  style="float: right"
+                  id="btn_Aseo"
+                  ref="btn_Aseo"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </div>
+
+  <div class="col-md-12 no-padding" v-if="mostrar_CLAVE">
+    <clave :params="params_CLAVE" @callback="callback_clave" @callback_esc="esc_clave"> </clave>
+  </div>
+</div>
+<script src="../../SERVDOM/scripts/PUB102.js" type="text/javascript"></script>
+
+<style>
+  .lbl {
+    background: 0 !important;
+    text-align: left !important;
+    padding-left: 4px !important;
+  }
+
+  #tabla_tarifas tbody tr td {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+</style>

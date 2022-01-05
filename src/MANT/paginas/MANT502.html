@@ -1,0 +1,458 @@
+<div class="col-md-12" id="MANT502">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <form class="form-horizontal">
+        <div class="col-md-1 col-sm-1 col-xs-1 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <label>Novedad :</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="global_mant502.NOVEDAD" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 col-sm-5 col-xs-6" style="padding-right: 0">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-4 col-sm-4 col-xs-6" style="text-align: left;">
+              <label>Division :</label>
+              <div id="validardivision" class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="global_mant502.DIVISION" @keydown.119="ventanaDivisiones_mant502"
+                    onkeyup="this.value = this.value.toUpperCase();" id="division" maxlength="2"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" type="text" disabled="disabled" data-orden="1" />
+                </div>
+                <button type="button" id="divisionBtn" disabled="disabled" v-on:click="ventanaDivisiones_mant502"
+                  class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                  <i class="icon-magnifier"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <label>Comprobante :</label>
+              <div id="validarNro" class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input @keydown.119="ventanaProduccion_mant502()"
+                  v-model="global_mant502.COMPROBANTE" type="text" data-orden="1" maxlength="6" max="999999"
+                    id="comprobante" disabled="disabled" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align:center">
+                </div>
+                <button type="button" id="grupo_productoBtn" disabled="disabled"
+                v-on:click="ventanaProduccion_mant502()" class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                <i class="icon-magnifier"></i>
+              </button>
+              </div>
+            </div>
+            <div class=" col-md-5 col-sm-5 col-xs-6" style="text-align: left;padding-left: 0px;padding-right: 0px;">
+              <span style="text-align: left !important;display: flex;justify-content: space-between">
+                <label>Fecha</label>
+                <label>(AAAA/MM/DD)</label>
+              </span>
+
+              <div class="inline-inputs" style="display: flex;justify-content: left;">
+
+                <div id="validarFecha_1" class="input-group col-md-3 col-sm-3 col-xs-3 ">
+                  <input class="form-control col-md-12 col-sm-12 col-xs-12" required="required" maxlength="4"
+                    data-orden="1" v-model="global_mant502.FECHA[0]" disabled="disabled">
+
+                </div>
+
+                <div class="input-group col-md-1 col-sm-1 col-xs-2 ">
+                  <input disabled="disabled" value="/" class="separador form-control col-md-4 col-sm-4 col-xs-4"
+                    style="padding-left: 0px;text-align: center;">
+                </div>
+
+                <div id="validarFecha_2" class="input-group col-md-3 col-sm-3 col-xs-3">
+                  <input v-model="global_mant502.FECHA[1]" data-orden="1" maxlength="2" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" style="padding-left: 1px;text-align: center;"
+                    required="required">
+                </div>
+
+                <div class="input-group col-md-1 col-sm-1 col-xs-2 ">
+                  <input disabled="disabled" value="/" class="separador form-control col-md-4 col-sm-4 col-xs-4"
+                    style="padding-left: 0px;text-align: center;">
+                </div>
+
+                <div id="validarFecha_3" class="input-group col-md-3 col-sm-3 col-xs-3">
+                  <input v-model="global_mant502.FECHA[2]" data-orden="1" maxlength="2" required="required"
+                    disabled="disabled" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="padding-left: 1px;text-align: center;">
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-4 col-sm-4 col-xs-4">
+              <label>Grupo Equipo :</label>
+              <div id="validargrEquipo" class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input @keydown.119="ventanaGrupos_mant502('grEquipo')" v-model="global_mant502.GRUPO_EQUIPO"
+                    type="text" id="grEquipo" data-orden="1" maxlength="2" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" onkeyup="this.value = this.value.toUpperCase();">
+                </div>
+                <button type="button" id="grEquipoBtn" disabled="disabled"
+                  v-on:click="ventanaGrupos_mant502('grEquipo')" class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                  <i class="icon-magnifier"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <label>Numero Equipo :</label>
+              <div id="validarnroEquipo" class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input @keydown.119="ventanaHojas_vida_mant502" id="nroEquipo" v-model="global_mant502.NRO_EQUIPO"
+                    type="text" data-orden="1" maxlength="13" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                </div>
+                <button type="button" v-on:click="ventanaHojas_vida_mant502" id="nroEquipoBtn" disabled="disabled"
+                  class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                  <i class="icon-magnifier"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-5 col-sm-5 col-xs-6">
+              <label>Descripcion Equipo :</label>
+              <div id="validardescripEquipo" class="inline-inputs" style="padding-right: 0">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="global_mant502.DESC_EQUIPO" type="text" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3 no-padding ">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center ">
+            <div class="form-group col-md-6 col-sm-6 col-xs-6 no-padding">
+              <label>Operario :</label>
+              <div id="validaroper" class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input @keydown.119="ventanaTerceros_mant502" v-model="global_mant502.OPER_EQUIPO" type="text"
+                    data-orden="1" maxlength="10" disabled="disabled" id="oper_equipo"
+                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                </div>
+                <button type="button" v-on:click="ventanaTerceros_mant502" id="validaroperBtn" disabled="disabled"
+                  class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                  <i class="icon-magnifier"></i>
+                </button>
+              </div>
+            </div>
+            <div class="form-group col-md-6 col-sm-6 col-xs-6 ">
+              <label style="text-align: lef;">Descripcion :</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="global_mant502.DESC_OPER_EQUIPO" type="text" data-orden="1" maxlength="10"
+                    disabled="disabled" class="form-control col-md-12 col-sm-12 col-xs-12">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 col-sm-9 col-xs-9" style="padding-right:0px;">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center ">
+
+            <div class="col-md-1 col-sm-1 col-xs-6">
+              <label>Item :</label>
+              <div id="validaritem" class="inline-inputs" style="padding-right: 0px;">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="ITEM" id="item_producto" type="text" data-orden="1" maxlength="2" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-2">
+              <label>Grupo :</label>
+              <div id="validargrProducto" class="inline-inputs" style="padding-right: 0px;">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input @keydown.119="ventanaGrupos_mant502('grupo_producto')" id="grupo_producto"
+                    v-model="global_mant502.GRUPO_PRODUCTO" type="text" data-orden="1" maxlength="2" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                </div>
+                <button type="button" id="grupo_productoBtn" disabled="disabled"
+                  v-on:click="ventanaGrupos_mant502('grupo_producto')" class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                  <i class="icon-magnifier"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-6">
+              <label>Código :</label>
+              <div id="validarcodProducto" class="inline-inputs" style="padding-right: 0px;">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input id="cod_producto" v-model="global_mant502.COD_PRODUCTO"
+                    @keydown.119="ventanaArticulos_mant502()" type="text" data-orden="1" maxlength="13"
+                    disabled="disabled" class="form-control col-md-12 col-sm-12 col-xs-12">
+                </div>
+                <button type="button" id="cod_productoBtn" disabled="disabled" v-on:click="ventanaArticulos_mant502()"
+                  class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                  <i class="icon-magnifier"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-6">
+              <label>Descripción :</label>
+              <div class="inline-inputs" style="padding-right: 0px;">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input id="descrip_prod" v-model="global_mant502.DESC_PRODUCTO" type="text" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-6">
+              <label>M3 Producidos :</label>
+              <div class="inline-inputs" style="padding-right: 0px;" id="validarM3Producto">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input id="m3producidos" v-model="global_mant502.M3_PRODUCTO" type="number" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="14">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-1">
+              <label>V.Corto:</label>
+              <div class="inline-inputs" style="padding-right: 0px;" id="validarVcorto">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="global_mant502.VCORTO_PRODUCTO" type="text" disabled="disabled" maxlength="2"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-1">
+              <label>V.Largo:</label>
+              <div class="inline-inputs" style="padding-right: 0px;" id="validarVlargo">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="global_mant502.VLARGO_PRODUCTO" type="text" disabled="disabled" maxlength="2"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-6" style="padding-right: 0px;">
+              <label>Recorrido :</label>
+              <div class="inline-inputs" id="validarRecorrido">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input @keydown.119="ventanaDestinos_mant502()" id="recorrido" v-model="global_mant502.RECORRIDO"
+                    type="text" disabled="disabled" maxlength="8" class="form-control col-md-12 col-sm-12 col-xs-12"
+                    data-orden="1">
+                </div>
+                <button type="button" id="recorridoBtn" disabled="disabled" v-on:click="ventanaDestinos_mant502()"
+                  class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                  <i class="icon-magnifier"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarTabla"
+            style="max-height: 380px; overflow-y: scroll;">
+            <table id="tabla_productos" class="table table-light table-striped">
+              <thead>
+                <tr>
+                  <th style="text-align: center" class="col-md-1">Item</th>
+                  <th style="text-align: center" class="col-md-2">Cod Grupo</th>
+                  <th style="text-align: center" class="col-md-2">Cod Producto</th>
+                  <th style="text-align: center" class="col-md-2">Descripcion</th>
+                  <th style="text-align: center" class="col-md-2">M3 producidos</th>
+                  <th style="text-align: center" class="col-md-2">Viaje largo</th>
+                  <th style="text-align: center" class="col-md-2">Viaje corto</th>
+                  <th style="text-align: center" class="col-md-2">Recorrido</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(producto) in TABLA_PRODUCTOS" v-if="producto.ITEM<=50">
+                  <td style="text-align: center" class="col-md-1">{{producto.ITEM}}</td>
+                  <td style="text-align: center" class="col-md-2">{{ producto.GRUPO }}</td>
+                  <td style="text-align: center" class="col-md-2">{{ producto.CODIGO }}</td>
+                  <td style="text-align: center" class="col-md-2">{{ producto.DESCRIPCION }}</td>
+                  <td style="text-align: center" class="col-md-2">{{ producto.M3PRODUCIDOS }}</td>
+                  <td style="text-align: center" class="col-md-1">{{ producto.VLARGO }}</td>
+                  <td style="text-align: center" class="col-md-1">{{ producto.VCORTO }}</td>
+                  <td style="text-align: center" class="col-md-3">{{ producto.RECORRIDO}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+              style="text-align: left !important;display: flex;justify-content: space-between">
+              <label>Otros datos produccion </label>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-6">
+              <span class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                style="display: flex;justify-content: space-between;">
+                <label style="text-align:left;font-size:13px">
+                  Horometro / Tacometro
+                </label>
+                <label style="text-align:left;font-size:13px;padding-right: 28px;">
+                  Total: &nbsp;{{global_mant502.CANT_HR}}
+                </label>
+              </span>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-6 salto-linea"></div>
+            <div class="col-md-6 col-sm-6 col-xs-12 inline-inputs" id="validarhrkm_Inicial">
+              <div class="col-md-12 col-sm-12 col-xs-3 no-padding">
+                <div style="display: flex; justify-content: space-between;">
+                  <label class="col-md-12">Inicial :</label>
+                  <input v-model="global_mant502.HRKM_INI" type="text" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="10">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 inline-inputs" id="validarhrkm_Final">
+              <div class="col-md-12 col-sm-12 col-xs-3 no-padding">
+                <div style="display: flex; justify-content: space-between;padding-right: 14px;">
+                  <label class="col-md-12">Final :</label>
+                  <input v-model="global_mant502.HRKM_FIN" type="text" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" maxlength="10">
+                </div>
+              </div>
+            </div>
+            <div class="salto-linea"></div>
+            <div class="salto-linea"></div>
+            <div class="col-md-6 col-sm-6 col-xs-12 inline-inputs" id="validarHr_diurnas">
+              <div class="col-md-12 col-sm-12 col-xs-3 no-padding">
+                <div style="display: flex; justify-content: space-between;padding-right: 12px;">
+                  <label class="col-md-12"> HR Diurnas:</label>
+                  <input v-model="global_mant502.HORAS_DIU" type="text" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 inline-inputs">
+              <div class="col-md-12 col-sm-12 col-xs-3 no-padding">
+                <div style="display: flex; justify-content: space-between;padding-right: 12px;">
+                  <label class="col-md-12"> HR Nocturnas:</label>
+                  <input v-model="global_mant502.HORAS_NOC" type="text" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12" style="padding-right:0px">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+              style="text-align: left !important;display: flex;justify-content: space-between">
+              <label>Totales Tabla </label>
+            </div>
+            <div class="salto-linea"></div>
+            <div class="col-md-12 col-sm-12 col-xs-6">
+              <div class="col-md-6 col-sm-6 col-xs-6 inline-inputs">
+                <div class="col-md-12 col-sm-12 col-xs-6 no-padding">
+                  <div style="display: flex; justify-content: space-between; padding-right: 12px;">
+                    <label class="col-md-12"> M3 producidos:</label>
+                    <input type="text" disabled="disabled" v-model="global_mant502.TOTAL_M3"
+                      class="form-control col-md-12 col-sm-12 col-xs-12">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-6 inline-inputs">
+                <div class="col-md-12 col-sm-12 col-xs-6 no-padding">
+                  <div style="display: flex; justify-content: space-between; padding-right: 12px;">
+                    <label class="col-md-12"> Viaje largo:</label>
+                    <input type="text" disabled="disabled" v-model="global_mant502.TOTAL_VLARGO"
+                      class="form-control col-md-12 col-sm-12 col-xs-12">
+                  </div>
+                </div>
+              </div>
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+              <div class="col-md-6 col-sm-6 col-xs-6 inline-inputs">
+                <div class="col-md-12 col-sm-12 col-xs-6 no-padding">
+                  <div style="display: flex; justify-content: space-between; padding-right: 12px;">
+                    <label class="col-md-12"> Viaje corto:</label>
+                    <input type="text" disabled="disabled" v-model="global_mant502.TOTAL_VCORTO"
+                      class="form-control col-md-12 col-sm-12 col-xs-12">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-6 inline-inputs">
+                <div class="col-md-12 col-sm-12 col-xs-6 no-padding">
+                  <div style="display: flex; justify-content: space-between; padding-right: 12px;">
+                    <label class="col-md-12"> Recorrido:</label>
+                    <input type="text" disabled="disable" v-model="global_mant502.TOTAL_RECORRIDO"
+                      class="form-control col-md-12 col-sm-12 col-xs-12">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="validarObservaciones">
+            <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+              style="text-align: left !important;display: flex;justify-content: space-between;">
+              <label>Observaciones </label>
+            </div>
+            <textarea class="form-control col-md-12 col-sm-12" disabled="disabled" rows="4" v-model="TEXTOS.OBSER"
+              style="display: flex; justify-content:space-between;resize: none; text-align: justify;overflow-y: scroll;" data-orden="1">
+                        </textarea>
+          </div>
+        </div>
+
+        <div class="col-md-12 sol-sm-12 col-xs-12 box-center"
+          style="display: grid;grid-template-columns: 63% 74%; margin-left: 11%;">
+          <div class="input-group col-md-6 col-sm-6 col-xs-6 head-box" >
+            <label>Operador creación:</label>
+            <input v-model="OPER_MODI" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+              disabled="disabled">
+          </div>
+          <div class="input-group col-md-6 col-sm-6 col-xs-6 head-box">
+            <label>Fecha creación:</label>
+            <input v-model="FECHA_MODI" class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+  .float_mant502 {
+    position: fixed;
+    width: 65px;
+    height: 60px;
+    bottom: 16px;
+    background-color: #476fad;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 1px 1px 1px #999;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .float_mant502:hover {
+    box-shadow: 2px 2px 2px #999;
+    transition: padding .5s ease, background-position .5s ease, transform .8s ease;
+    text-decoration: none;
+    color: #FFF;
+  }
+
+  .my-float-mant502 {
+    margin-left: 5px;
+  }
+
+  input {
+    text-align: left;
+  }
+
+  input[type=text] {
+    text-transform: uppercase;
+  }
+</style>
+<script async src="../../MANT/scripts/mant502.js" type="text/javascript"></script>

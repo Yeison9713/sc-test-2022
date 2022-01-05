@@ -1,0 +1,228 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+<style>
+    html,
+    body,
+    #documento,
+    #pagina1 {
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: 'Roboto', sans-serif;
+        line-height: 2;
+        /* box-sizing: border-box; */
+    }
+
+    .encabezado {
+        width: 100%;
+        display: relative;
+        padding-top: 60px;
+    }
+
+    .logoempresa {
+        width: 20%;
+        height: 20%;
+        position: absolute;
+    }
+
+    #encabezado_fact {
+        /* margin-top: 5px; */
+        display: flex;
+        padding-left: 25%;
+        padding-right: 10px;
+        padding-top: 30px;
+        justify-content: space-between;
+    }
+
+    #cliente_fact {
+        /* margin-top: 5px; */
+        display: flex;
+        padding-left: 25%;
+        padding-right: 10px;
+        padding-bottom: 40px;
+        justify-content: space-between;
+    }
+
+    #datospac_fact {
+        margin: auto;
+        border: black 1px solid;
+        padding: 20px 20px 40px;
+    }
+
+    #masdatos_fact {
+        margin: auto;
+        border: black 1px solid;
+        padding: 20px 20px 40px;
+    }
+
+    #primera_linea {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #segunda_linea {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #tercera_linea,
+    #cuarta_linea {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #quinta_linea {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #firma_linea {
+        margin-top: 2px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #septima_linea {
+        margin-top: 2px;
+        display: flex;
+        justify-content: flex-end;
+    }
+</style>
+<div id="pagina1">
+    <div class="encabezado">
+        <div class="logoempresa">
+
+        </div>
+        <div id="encabezado_fact">
+            <div id="admision_fact">
+                <a style="font-size:18px; margin:0 auto;" class="admision_ser108p">HOJA DE ADMISION </a>
+            </div>
+            <div id="factura_fact">
+                <a style="font-size:18px; margin:0 auto;" class="facturatxt_ser108p">CUENTA NRO: </a>
+            </div>
+        </div>
+        <div id="cliente_fact">
+            <div id="descripnit_fact">
+                <a style="font-size:15px;" class="descripnittxt_ser108p"></a>
+            </div>
+            <div id="nit_fact">
+                <a style="font-size:15px; margin:0 auto;" class="nittxt_ser108p">NIT: </a>
+                <!-- <a style="font-size:14px;" class="nittxt_ser108p">NIT </a> -->
+            </div>
+        </div>
+    </div>
+    <div class="salto-linea"></div>
+    <div id="datospac_fact">
+        <div id="primera_linea">
+            <div id="paciente_fact">
+                <a style="font-size:14px; margin:0 auto;" class="pacientetxt_ser108p"> PACIENTE:</a>
+            </div>
+            <div id="id_fact">
+                <a style="font-size:16px; margin:0 auto;" class="nomtxt_ser108p"></a>
+            </div>
+        </div>
+        <div id="segunda_linea">
+            <div id="eps_fact">
+                <a style="font-size:14px; margin:0 auto;" class="epstxt_ser108p"> ENTIDAD: </a>
+            </div>
+            <div id="nomeps_fact">
+                <a style="font-size:14px; margin:0 auto;" class="nomepstxt_ser108p"></a>
+            </div>
+        </div>
+        <div id="tercera_linea">
+            <div id="ingreso_fact">
+                <a style="font-size:14px; margin:0 auto;" class="ingresotxt_ser108p"> FECHA INGRESO: </a>
+            </div>
+            <div id="hab_fact">
+                <a style="font-size:14px; margin:0 auto;" class="habtxt_ser108p"> HABITACION: </a>
+            </div>
+        </div>
+        <div id="cuarta_linea">
+            <div id="salida_fact">
+                <a style="font-size:14px; margin:0 auto;" class="salidtxt_ser108p"> FECHA SALIDA: </a>
+            </div>
+        </div>
+    </div>
+    <div class="salto-linea"></div>
+    <div id="masdatos_fact">
+        <div id="firma_linea">
+            <div id="nombreauto_fact">
+                <a style="font-size:14px; margin:0 auto;" class="firmatxt_ser108p">_________________________________</a>
+            </div>
+        </div>
+        <div id="quinta_linea">
+            <div id="cedulaauto_fact">
+                <a style="font-size:14px; margin:0 auto;" class="cedautotxt_ser108p">AUTORIZO: </a>
+            </div>
+            <div id="nombreauto_fact">
+                <a style="font-size:14px; margin:0 auto;" class="nombreautotxt_ser108p"></a>
+            </div>
+        </div>
+        <div id="sexta_linea">
+            <div id="observacion_fact">
+                <a style="font-size:14px; margin:0 auto;" class="obsertxt_ser108p"> OBSERVACION: </a>
+            </div>
+        </div>
+        <div id="septima_linea">
+            <div id="elaborado_fact">
+                <a style="font-size:9px; margin:0 auto;" class="elabtxt_ser108p"> ELABORADO:</a>
+            </div>
+            <div id="fechaela_fact">
+                <a style="font-size:9px; margin:0 auto;" class="fechaelatxt_ser108p"></a>
+            </div>
+            <div id="modificado_fact">
+                <a style="font-size:9px; margin:0 auto;" class="modtxt_ser108p"> MODIFICADO:</a>
+            </div>
+            <div id="fechamodif_fact">
+                <a style="font-size:9px; margin:0 auto;" class="fechamodiftxt_ser108p"></a>
+            </div>
+            <div id="bloq_fact">
+                <a style="font-size:9px; margin:0 auto;" class="bloqtxt_ser108p"> BLOQ: </a>
+            </div>
+            <!-- <div id="imprime_fact">
+                <a style="font-size:9px; margin:0 auto;" class="imprimetxt_ser108p"> IMPR: </a>
+            </div> -->
+        </div>
+        <div class="salto-linea"></div>
+    </div>
+</div>
+<script>
+    var SER6011B = [];
+    ipcRenderer.on('ping', (e, data) => {
+        console.log(data);
+        SER6011B = data.datos;
+        SER6011B.URL = data.url;
+        console.log(SER6011B, 'SER6011B');
+        imprimirCsv();
+    })
+
+    function imprimirCsv() {
+        _formatoCsv(SER6011B.join("\n"));
+    }
+
+    function _formatoCsv(csv) {
+        var urlCsv = SER6011B.URL + '.csv';
+        try {
+            fs.writeFile(urlCsv, csv, 'utf-8', function (e) {
+                if (e){
+                    alert(e);
+                }
+                var window = remote.getCurrentWindow();
+                window.close();
+            });
+        } catch (e) {
+            alert('Ha ocurrido un error escribiendo el archivo: ' + urlCsv);
+        }
+    }
+</script>

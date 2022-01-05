@@ -1,0 +1,298 @@
+<div class="col-md-12" id="COR304">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div
+          class="col-md-12 col-sm-12 col-xs-12 no-padding"
+          style="padding-right: 0;"
+        >
+          <div class="form-group col-md-7 col-sm-7 col-xs-7 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="inline-inputs">
+                <label class="col-md-6 col-sm-6 col-xs-6">
+                  Formato de impresión:
+                </label>
+                <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                  <input
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    :value="format_formato"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group col-md-9 col-sm-9 col-xs-9 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="inline-inputs">
+                <label class="col-md-3 col-sm-3 col-xs-3">Entidad:</label>
+                <div
+                  class="input-group col-md-3 col-sm-3 col-xs-3"
+                  id="validar_entidad_COR304"
+                >
+                  <input
+                    type="number"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    data-orden="1"
+                    required
+                    maxlength="10"
+                    id="nit_entidad_COR304"
+                    @keydown.f8="ventana_terceros"
+                    v-model="reg.nit_w"
+                  />
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-default f8-Btn col-md-1 col-sm-1 col-xs-1"
+                  @click="ventana_terceros"
+                >
+                  <i class="icon-magnifier"></i>
+                </button>
+                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                  <input
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    id="nombre_entidad_COR304"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-12 col-sm-12 col-xs-12"
+              style="padding-top: 10px; padding-right: 0;"
+            >
+              <div class="inline-inputs">
+                <label class="col-md-4 col-sm-4 col-xs-4">
+                  Dependencia tiene correspondencia:
+                </label>
+                <div
+                  class="input-group col-md-2 col-sm-2 col-xs-2"
+                  id="validar_dependencia_COR304"
+                >
+                  <input
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    type="text"
+                    maxlength="3"
+                    data-orden="1"
+                    v-model="reg.dep_w"
+                    @keydown.f8="ventana_dependencias"
+                    id="dependencia_COR304"
+                  />
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-default f8-Btn col-md-1 col-sm-1 col-xs-1"
+                  @click="ventana_dependencias"
+                >
+                  <i class="icon-magnifier"></i>
+                </button>
+                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                  <input
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    id="descripcion_dep_COR304"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-12 col-sm-12 col-xs-12"
+              style="padding-top: 10px; padding-right: 0;"
+            >
+              <div class="inline-inputs">
+                <label class="col-md-4 col-sm-4 col-xs-4">
+                  Tipo de correspondencia:
+                </label>
+                <div
+                  class="input-group col-md-2 col-sm-2 col-xs-2"
+                  id="validar_tipo_COR304"
+                >
+                  <input
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="2"
+                    data-orden="1"
+                    v-model="reg.tipo_corres_w"
+                    @keydown.f8="ventana_tipo"
+                    id="tipo_COR304"
+                  />
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-default f8-Btn col-md-1 col-sm-1 col-xs-1"
+                  @click="ventana_tipo"
+                >
+                  <i class="icon-magnifier"></i>
+                </button>
+                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                  <input
+                    type="text"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    id="descrip_tipo_COR304"
+                  />
+                </div>
+              </div>
+            </div>          
+            <div class="col-md-6 col-sm-6 col-xs-6" style="padding-top: 10px;">
+              <div class="inline-inputs">
+                <label class="col-md-3 col-sm-3 col-xs-3">Fecha inicial:</label>
+                <div
+                  class="input-group col-md-3 col-sm-3 col-xs-3"
+                  id="validar_anio_ini_COR304"
+                >
+                  <input
+                    type="number"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="4"
+                    data-orden="1"
+                    required
+                    v-model="reg.fecha_inicial.ano_w"
+                  />
+                </div>
+                <div
+                  class="input-group col-md-3 col-sm-3 col-xs-3"
+                  id="validar_mes_ini_COR304"
+                >
+                  <input
+                    type="number"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="2"
+                    data-orden="1"
+                    required
+                    v-model="reg.fecha_inicial.mes_w"
+                  />
+                </div>
+                <div
+                  class="input-group col-md-3 col-sm-3 col-xs-3"
+                  id="validar_dia_ini_COR304"
+                >
+                  <input
+                    type="number"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="2"
+                    data-orden="1"
+                    required
+                    v-model="reg.fecha_inicial.dia_w"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-6 col-sm-6 col-xs-6"
+              style="padding-top: 10px; padding-right: 0;"
+            >
+              <div class="inline-inputs">
+                <label class="col-md-3 col-sm-3 col-xs-3">Fecha final:</label>
+                <div
+                  class="input-group col-md-3 col-sm-3 col-xs-3"
+                  id="validar_anio_fin_COR304"
+                >
+                  <input
+                    type="number"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="4"
+                    data-orden="1"
+                    required
+                    v-model="reg.fecha_final.ano_w"
+                  />
+                </div>
+                <div
+                  class="input-group col-md-3 col-sm-3 col-xs-3"
+                  id="validar_mes_fin_COR304"
+                >
+                  <input
+                    type="number"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="2"
+                    data-orden="1"
+                    required
+                    v-model="reg.fecha_final.mes_w"
+                  />
+                </div>
+                <div
+                  class="input-group col-md-3 col-sm-3 col-xs-3"
+                  id="validar_dia_fin_COR304"
+                >
+                  <input
+                    type="number"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="2"
+                    data-orden="1"
+                    required
+                    v-model="reg.fecha_final.dia_w"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-12 col-sm-12 col-xs-12"
+              style="padding-top: 10px; padding-right: 0;"
+            >
+              <div class="col-md-9" style="margin: 0 auto; float: none;">
+                <div class="inline-inputs">
+                  <label class="col-md-4 col-sm-4 col-xs-4">
+                    Jornada:
+                  </label>
+                  <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                    <input
+                      type="text"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      :value="format_jornada"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-12 col-sm-12 col-xs-12"
+              style="padding-top: 10px; padding-right: 0;"
+            >
+              <div class="col-md-9" style="margin: 0 auto; float: none;">
+                <div class="inline-inputs">
+                  <label class="col-md-4 col-sm-4 col-xs-4">
+                    Procedencia:
+                  </label>
+                  <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                    <input
+                      type="text"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      :value="format_procedencia"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-12 col-sm-12 col-xs-12"
+              style="padding-top: 10px; padding-right: 0;"
+            >
+              <div class="col-md-9" style="margin: 0 auto; float: none;">
+                <div class="inline-inputs">
+                  <label class="col-md-4 col-sm-4 col-xs-4">
+                    Manejo:
+                  </label>
+                  <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                    <input
+                      type="text"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      :value="format_manejo"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../../COR/scripts/COR304.js" type="text/javascript"></script>

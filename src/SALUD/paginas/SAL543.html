@@ -1,0 +1,244 @@
+<div class="col-md-12" id="SAL543">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <form class="form-horizontal">
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label>Comparativo de facturas de contado y copagos</label>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-7 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-3">Entidad:</label>
+                            <div class="input-group col-md-3 col-sm-9 col-xs-9" id="VALIDAR1_SAL543">
+                                <input v-model="form.entidad_SAL543" type="text" @Keyup.F8='_f8entidad_SAL543'
+                                    data-orden="1" maxlength="10"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 entidad_SAL543">
+                            </div>
+                            <button type="button" @click='_f8entidad_SAL543'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-6 col-sm-9 col-xs-9">
+                                <input v-model="form.descripentid_SAL543" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-3 col-xs-3">Clase de comprobante:</label>
+                            <div class="input-group col-md-7 col-sm-9 col-xs-9" id="VALIDAR2_SAL543">
+                                <input v-model="form.clasecomp_SAL543" type="text" @Keyup.F8='_f8clasecomp_SAL543'
+                                    data-orden="1" maxlength="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 clase_SAL543">
+                            </div>
+                            <button type="button" @click='_f8clasecomp_SAL543'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-6 col-sm-9 col-xs-9">
+                                <input v-model="form.descripclase_SAL543" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-3 col-xs-12">Sucursal:</label>
+                            <div class="input-group col-md-6 col-sm-1 col-xs-12" id="VALIDAR3_SAL543">
+                                <input v-model="form.sucursal_SAL543" type="text" data-orden="1" maxlength="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-3 col-xs-12">Prefijo:</label>
+                            <div class="input-group col-md-6 col-sm-1 col-xs-12" id="VALIDAR4_SAL543">
+                                <input v-model="form.prefijo_SAL543" type="text" data-orden="1" maxlength="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-3 col-xs-12">Factura:</label>
+                            <div class="input-group col-md-6 col-sm-1 col-xs-12" id="VALIDAR5_SAL543">
+                                <input v-model="form.factura_SAL543" type="text" data-orden="1" maxlength="6"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-1 col-xs-12">
+                                <input v-model="form.descripfact_SAL543" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                        <label>Fecha inicio</label>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                        <label>Fecha Final</label>
+                    </div>
+                    <div id="fechaInicial_SAL543">
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                                <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.anoini_SAL543'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.mesini_SAL543'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.diaini_SAL543'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fechaFinal_SAL543">
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                                <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.anofin_SAL543'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.mesfin_SAL543'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.diafin_SAL543'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="1"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-3 col-xs-3">Operador que elabora factura:</label>
+                            <div class="input-group col-md-4 col-sm-9 col-xs-9" id="VALIDAR6_SAL543">
+                                <input v-model="form.operadorelab_SAL543" type="text" @Keyup.F8='_f8operadorelab_SAL543'
+                                    data-orden="1" maxlength="4"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 operadorelab_SAL543">
+                            </div>
+                            <button type="button" @click='_f8operadorelab_SAL543'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-6 col-sm-9 col-xs-9">
+                                <input v-model="form.descripoperelab_SAL543" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-3 col-xs-3">Operador que recauda:</label>
+                            <div class="input-group col-md-4 col-sm-9 col-xs-9" id="VALIDAR7_SAL543">
+                                <input v-model="form.operadorrecauda_SAL543" type="text" @Keyup.F8='_f8operadorrec_SAL543'
+                                    data-orden="1" maxlength="4"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 operadorrec_SAL543">
+                            </div>
+                            <button type="button" @click='_f8operadorrec_SAL543'
+                                class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-6 col-sm-9 col-xs-9">
+                                <input v-model="form.descripoperrec_SAL543" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-6 col-xs-6">Reportar diferencias en fecha como DESCUADRE?:</label>
+                            <div class="input-group col-md-2 col-sm-5 col-xs-5" id="VALIDAR8_SAL543">
+                                <input type="text" id='reportedesc_SAL543'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-6 col-xs-6">Incluir Autorizaciones red externa?:</label>
+                            <div class="input-group col-md-2 col-sm-5 col-xs-5" id="VALIDAR9_SAL543">
+                                <input type="text" id='incluiraut_SAL543'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-6 col-xs-6">Listar solo comprobantes con copago?:</label>
+                            <div class="input-group col-md-2 col-sm-5 col-xs-5" id="VALIDAR10_SAL543">
+                                <input type="text" id='listarcopago_SAL543'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-6 col-xs-6">Mostrar nombre del paciente?:</label>
+                            <div class="input-group col-md-2 col-sm-5 col-xs-5" id="VALIDAR11_SAL543">
+                                <input type="text" id='mostrarpac_SAL543'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-6 col-xs-6">Mostrar solo comprobantes descuadrados:</label>
+                            <div class="input-group col-md-2 col-sm-5 col-xs-5" id="VALIDAR12_SAL543">
+                                <input type="text" id='mostrarcomp_SAL543'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1" placeholder="S/N">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../../SALUD/scripts/SAL543.js" type="text/javascript"></script>

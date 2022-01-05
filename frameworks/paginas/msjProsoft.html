@@ -1,0 +1,47 @@
+<style>
+    .msj-content{
+        height: 60px;
+        padding: 0 10px 20px 2px;
+    }
+    .msj-mensaje{
+        padding-bottom: -10px;
+    }
+    .msj-logo{
+        float: left;
+    }
+    .msj-logo img {
+        width: 55px;
+        height: 55px;
+    }
+</style>
+<div id="content-div">
+    <a data-toggle="modal" id="btn_msjProsoft" href="#msjProsoft" hidden></a>
+    <div class="modal fade bs-modal-sm" id="msjProsoft" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
+        data-keyboard="false">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close hidden" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="msjProsoft_titulo"></h4>
+                    <h6 class="modal-title" id="msjProsoft_subtitulo"></h6>
+                </div>
+                <div class="modal-body">
+                    <div class="msj-content">
+                        <div class="msj-logo">
+                            <img id="msjProsoft_logo">
+                        </div>
+                        <div class="msj-mensaje">
+                            <p class="font-small" id="msjProsoft_mensaje"></p>
+                        </div>
+                        <div class="msj-mensaje">
+                            <p class="font-small" id="msjProsoft_mensaje2"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer noborder">
+                    <button class="" id="msjProsoft_boton" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

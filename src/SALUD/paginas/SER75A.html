@@ -1,0 +1,177 @@
+<div class="col-md-12">
+    <div class="portlet light">
+        <div class="portlet-body">
+            <form class="form-horizontal">
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-4">Formato de impresion: </label>
+                            <div class="col-md-8">
+                                <select id="formatoimpresion_75A" class="form-control select2 col-md-12">
+                                    <option value="0" selected>Seleccione</option>
+                                    <option value="1">En formato .PDF</option>
+                                    <option value="2">En formato .CSV</option>
+                                    <option value="3">Salir</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                        <label>Fecha inicial</label>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                        <label>Fecha Final</label>
+                    </div>
+                    <div id="fechaInicial_75A">
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                                <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                    <input id="añoInicial_75A" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input id="mesInicial_75A" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input id="diaInicial_75A" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fechaFinal_75A">
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                                <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                    <input id="añoFinal_75A" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden=""
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input id="mesFinal_75A" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input id="diaFinal_75A" type="number"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                </div>
+
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-6 col-sm-4 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-8 col-xs-12">Unidad de atención:</label>
+                            <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarUnidAten_75A">
+                                <input id="unidAten_SER75A" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="2"
+                                    data-orden="1">
+                            </div>
+                            <button id="unidAtenBtn_SER75A" type="button" class="btn col-md-1 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-6">
+                                <input id="descripUnidAten_SER75A" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="20"
+                                    data-orden="2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-4 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-8 col-xs-12">Medico:</label>
+                            <div class="input-group col-md-3 col-sm-4 col-xs-6" id="validarMedico_75A">
+                                <input id="medico_SER75A" type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="10"
+                                    data-orden="1">
+                            </div>
+                            <button id="medicoBtn_SER75A" type="button" class="btn col-md-1 col-sm-2 col-xs-2 f8-Btn">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-6">
+                                <input id="descripMedico_SER75A" type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="20"
+                                data-orden="2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                </div>
+
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-6 col-sm-4 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-8 col-xs-12">Listar las primeras</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-6" id="validarListarPrim_75A">
+                                <input id="listarPrim_SER75A" type="number"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="4"
+                                    data-orden="1">
+                            </div>
+                            <label class="col-md-5 col-sm-8 col-xs-12">causas de consultas</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-4 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-8 col-xs-12">Incluir controles, sintomas y signos mal
+                                definidos?</label>
+                            <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarIncluirContr_75A">
+                                <input id="incluirContr_SER75A" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                    data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-6 col-sm-4 col-xs-6">
+                        <div class="inline-inputs">
+                            <label class="col-md-10 col-sm-8 col-xs-12">Ordenar por numero de eventos?</label>
+                            <div class="input-group col-md-2 col-sm-4 col-xs-6" id="validarOrdenarEven_75A">
+                                <input id="ordenarEven_SER75A" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                    data-orden="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SER75A.js" type="text/javascript"></script>

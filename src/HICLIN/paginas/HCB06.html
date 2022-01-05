@@ -1,0 +1,365 @@
+<script src="../../frameworks/pdf/hiclin/HCBI06.formato.js" type="text/javascript"></script>
+
+<div class="col-md-12" id="HCB06">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <div class="form-horizontal">
+
+                <div class="col-md-12 no-padding">
+                    <div class="portlet light box-center box-title">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject bold">SOLICITANDO REFERENCIACIÓN</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-3 no-padding">
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="fecha_HCB06">
+                                <div class="col-md-4 col-sm-4 col-xs-4 text-center" style="padding-left: 0;">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Año</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="global_HCB06.año_HCB06" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 año_HCB06" maxlength="4"
+                                            data-orden="" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 text-center" style="padding-left: 0;">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Mes</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="global_HCB06.mes_HCB06" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 mes_HCB06" maxlength="2"
+                                            data-orden="2" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4 text-center" style="padding-left: 0;">
+                                    <label class="col-md-12 col-sm-12 col-xs-6">Dia</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="global_HCB06.dia_HCB06" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 dia_HCB06" maxlength="2"
+                                            data-orden="3" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 no-padding">
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="hora_HCB06">
+                                <div class="col-md-6 col-sm-4 col-xs-4 text-center" style="padding-left: 0;">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Hora</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="global_HCB06.hora_HCB06" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 hora_HCB06" maxlength="4"
+                                            data-orden="1" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-4 col-xs-4 text-center" style="padding-left: 0;">
+                                    <label class="col-md-12 col-sm-6 col-xs-6">Min:</label>
+                                    <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                                        <input v-model="global_HCB06.min_HCB06" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 min_HCB06" maxlength="2"
+                                            data-orden="2" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="col-md-12" style="text-align: center;">Operador</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-3 col-sm-12 col-xs-6" id="validarMedico_HCB06">
+                                        <input @keyup.f8="_ventanaMedico_HCB06" v-model="global_HCB06.medico_HCB06"
+                                            type="text"
+                                            class="form-control col-md-4 col-sm-12 col-xs-12 uppercase medico_HCB06"
+                                            maxlength="10" data-orden="1" style="text-align: center;">
+                                    </div>
+                                    <button @click="_ventanaMedico_HCB06" type="button"
+                                        class="btn col-md-1 col-sm-1 col-xs-1 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                    <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                                        <input v-model="global_HCB06.descripMedico_HCB06" type="text"
+                                            class="form-control col-md-4 col-sm-12 col-xs-12 uppercase descripMedico_HCB06"
+                                            maxlength="50" data-orden="1" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 no-padding">
+                            <label class="col-md-12">Unidad de servicio</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="global_HCB06.servIni_HCB06" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase servIni_HCB06"
+                                    maxlength="10" data-orden="1" style="text-align: center;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 no-padding">
+
+                    <div class="col-md-6 no-padding">
+
+                        <div class="col-md-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                                <div class="col-md-6 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                                    id="validarPrioridad_HCB06">
+                                    <label style="position: relative;top: 6px;">Tipo de prioridad</label>
+                                    <div class="col-md-7 no-padding inline-inputs" style="float: right;">
+                                        <input v-model="descripPrioridad" type="text" maxlength="1"
+                                            data-orden="1" disabled="disabled"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            style="text-align: center;">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                                    id="validarServSolic_HCB06" style="padding-right: 0;">
+                                    <label style="position: relative;top: 6px;">Servicio solicitado</label>
+                                    <div class="col-md-7 no-padding inline-inputs" style="float: right;">
+                                        <input v-model="descripServSolic" type="text" maxlength="1"
+                                            data-orden="1" disabled="disabled"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                                            style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 no-padding">
+
+                            <div class="form-group col-md-12 col-sm-4 col-xs-4 box-center">
+                                <label class="col-md-12" style="text-align: center;">Especialidades</label>
+
+                                <div class="col-md-12 no-padding" v-for="(fila,index) in global_HCB06.especialidades"
+                                    :key="index">
+
+                                    <div class="col-md-3 col-sm-6 col-xs-12" style="padding-left: 0;">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-3 col-sm-3 col-xs-3">{{ parseInt(fila.nro)
+                                                }}</label>
+                                            <div class="input-group col-md-6 col-sm-6 col-xs-6"
+                                                :id="`validarEspec_${index}_HCB06`">
+                                                <input @keydown.119="_ventanaEspecialidades_HCB06(index)"
+                                                    v-model="fila.cod" maxlength="3" :class="`espec_${index}_HCB06`"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    data-orden="1">
+                                            </div>
+                                            <button @click="_ventanaEspecialidades_HCB06(index)" type="button"
+                                                class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-9 no-padding">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input v-model="global_HCB06.especialidades[index].descrip"
+                                                style="text-align: left;"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+
+                                    <div v-if="index != 2" class="salto-linea"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" style="padding-right: 0;">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="padding-bottom: 6px;">
+
+                            <div class="col-md-3">
+                                <label style="text-align: center;">Cup</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-9" id="validarCup_HCB06">
+                                        <input @keydown.119="_ventanaCups_HCB06" v-model="global_HCB06.cup_HCB06"
+                                            type="text" data-orden="1" maxlength="12"
+                                            class="form-control col-md-4 col-sm-12 col-xs-12 uppercase cup_HCB06"
+                                            style="text-align: center;">
+                                    </div>
+                                    <button @click="_ventanaCups_HCB06" type="button"
+                                        class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-9 no-padding">
+                                <label class="col-md-12" style="text-align: left;">Descripción</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HCB06.descripCup_HCB06" type="text"
+                                        class="form-control col-md-4 col-sm-12 col-xs-12 uppercase descripCup_HCB06"
+                                        maxlength="70" style="text-align: center;">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-6">
+                                <label class="col-md-12" style="text-align: center;">Nombres y apellidos</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarPaciente_HCB06">
+                                    <input v-model="global_HCB06.paciente_HCB06" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 uppercase paciente_HCB06"
+                                        maxlength="54" data-orden="1" style="text-align: center;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 no-padding">
+                                <label class="col-md-12" style="text-align: center;">Aseguradora</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarAseguradora_HCB06">
+                                    <input v-model="global_HCB06.aseguradora_HCB06" type="text"
+                                        class="form-control col-md-4 col-sm-12 col-xs-12 uppercase aseguradora_HCB06"
+                                        maxlength="70" data-orden="1" style="text-align: center;">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-3">
+                                <label class="col-md-12" style="text-align: center;">Edad</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarEdad_HCB06">
+                                    <input v-model="global_HCB06.edad_HCB06" type="text"
+                                        class="form-control col-md-4 col-sm-12 col-xs-12 uppercase edad_HCB06"
+                                        style="text-align: center;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 no-padding">
+                                <label style="text-align: center;">Médico tratante</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-10 col-sm-10 col-xs-10"
+                                        id="validarMedTratante_HCB06">
+                                        <input @keydown.119="_ventanaMedico_HCB06"
+                                            v-model="global_HCB06.medicoTratante_HCB06" type="text"
+                                            class="form-control uppercase medicoTratante_HCB06"
+                                            maxlength="10" data-orden="1" style="text-align: center;">
+                                    </div>
+                                    <button @click="_ventanaMedico_HCB06" type="button"
+                                        class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6" style="padding-right: 0;">
+                                &nbsp;
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HCB06.descripMedicoTratante_HCB06" type="text"
+                                        class="form-control col-md-4 col-sm-12 col-xs-12 uppercase"
+                                        maxlength="70" style="text-align: center;">
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7 no-padding">
+                    <div class="col-md-12 col-sm-12 no-padding">
+                        <div class="portlet light box-center box-title">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">RESUMEN HISTORIA CLÍNICA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="padding-bottom: 4px;">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarResumen_HCB06">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Digite:</label>
+                                    <label>(4,000 caracteres máximo)</label>
+                                </div>
+                                <textarea class="form-control" v-model="global_HCB06.resumen_HCB06" disabled="disabled"
+                                    rows="15" maxlength="4000" data-orden="1" required="true"
+                                    style="resize: none; text-align: justify"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5" style="padding-right: 0;">
+                    <div class="portlet light box-center box-title">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject bold">DIAGNÓSTICOS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+
+                                <div class="col-md-12 no-padding" v-for="(fila,index) in global_HCB06.diagnosticos"
+                                    :key="index">
+
+                                    <div class="col-md-4 col-sm-6 col-xs-12" style="padding-left: 0;">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-3 col-sm-3 col-xs-3">{{ parseInt(fila.nro)
+                                                }}</label>
+                                            <div class="input-group col-md-6 col-sm-6 col-xs-6"
+                                                :id="`validarCod_diag_${index}_HCB06`">
+                                                <input @keydown.119="_ventanaDiagnosticos_HCB06(index)"
+                                                    v-model="fila.cod" maxlength="4" :class="`codDiag_${index}_HCB06`"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-center"
+                                                    data-orden="1">
+                                            </div>
+                                            <button @click="_ventanaDiagnosticos_HCB06(index)" type="button"
+                                                class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-8 no-padding">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input v-model="global_HCB06.diagnosticos[index].descrip"
+                                                style="text-align: left;"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" disabled="disabled">
+                                        </div>
+                                    </div>
+
+                                    <div v-if="index != 4" class="salto-linea"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarMotivo_HCB06">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Motivo de la revisión:</label>
+                                    <label>(80 caracteres máximo)</label>
+                                </div>
+                                <textarea class="form-control" v-model="global_HCB06.motivo_HCB06" disabled="disabled"
+                                    rows="3" maxlength="80" data-orden="1" required="true"
+                                    style="resize: none; text-align: justify"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../HICLIN/scripts/HCB06.js" type="text/javascript"></script>

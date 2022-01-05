@@ -1,0 +1,561 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+
+<body>
+
+    <div class="page-header">
+        <div class="encabezado_RXCONSEM">
+            <div class="imageusu_RXCONSEM">
+            </div>
+            <div class="informacionusu_RXCONSEM">
+                <a class="nombreusu_RXCONSEM">CONSENTIMIENTO INFORMADO DE IMAGENOLOGIA</a>
+                <a class="version_RXCONSEM"></a>
+                <a class="iba_RXCONSEM"></a>
+                <a class="pagina_RXCONSEM">Página 1 de 1</a>
+            </div>
+        </div>
+        <div class="salto-linea"></div>
+        <a class="titulo_RXCONSEM">CONSENTIMIENTO INFORMADO IMAGENOLOGIA</a>
+        <a
+            style="display: inline-flex; width: 35%; font-size: 12px; font-weight: bolder; justify-content: flex-end;">Fecha</a>
+        <a class="tablafechaconsntimiento_RXCONSEM"></a>
+    </div>
+
+    <table style="width: 100%;">
+
+        <thead>
+            <tr>
+                <td>
+                    <!--place holder for the fixed-position header-->
+                    <div class="page-header-space"></div>
+                </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <!--*** CONTENT GOES HERE ***-->
+                    <div class="page">
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <a class="descripcion1_RXCONSEM">XXXXXXXXXXXXXXXXXXXXXXXXXX</a>
+                        <div class="salto-linea"></div>
+                        <a class="descriptabla_RXCONSEM">El estudio que se va a realizar:</a>
+                        <a class="estudiorealizar_RXCONSEM">____________</a>
+                        <div class="salto-linea"></div>
+                        <table class="tabla_RXCONSEM" style="text-align: center; width: 99%;">
+                            <thead>
+                                <tr>
+                                    <th style="width: 3%;font-size:12px;text-align:center;">Descripción</th>
+                                    <th style="width: 3%;font-size:12px;text-align:center;">Riesgos</th>
+                                    <th style="width: 3%;font-size:12px;text-align:center;">Beneficios</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="salto-linea"></div>
+                        <a class="descripcion2_RXCONSEM">Yo,</a>
+                        <a class="nombrepaciente_RXCONSEM">____________</a>
+                        <a class="descripcion_RXCONSEM">mayor de edad, identificado con el número de cédula de</a>
+                        <a class="cedulapaciente_RXCONSEM" style="font-weight: bolder;">_____________</a>
+                        <a class="descripcion_RXCONSEM">en calidad de:</a>
+                        <a class="descripcion_RXCONSEM" style="font-weight: bolder;">Paciente</a>
+                        <a class="paciente_RXCONSEM">(_)</a>
+                        <a class="descripcion_RXCONSEM" style="font-weight: bolder;">ó Acompañante</a>
+                        <a class="acompañante_RXCONSEM">(_)</a>
+                        <a class="descripcionmenor_RXCONSEM" id="representacion_RXCONSEM">, en representacion de</a>
+                        <a class="nombredelmenor_RXCONSEM" style="font-weight: bolder;">_____________</a>
+                        <a class="descripcionmenor_RXCONSEM">Identificado con</a>
+                        <a class="tipodedocumentomenor_RXCONSEM" style="font-weight: bolder;">______</a>
+                        <a class="descripcionmenor_RXCONSEM">número</a>
+                        <a class="numeromenor_RXCONSEM" style="font-weight: bolder;">______</a>
+                        <a class="descripcion2_RXCONSEM">, he sido informado</a>
+                        <a class="descripcion_RXCONSEM">por el tecnólogo en imágenes diagnosticas del estudio al que voy a </a>
+                            <a class="descripcion_RXCONSEM">ser sometido, los beneficios y riesgos:</a>
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+                        <div style="width: 99%; border: black solid 0.1px;">
+                            <div class="bordes_RXCONSEM" style="text-align: justify;">
+                                <a class="descripcion_RXCONSEM">Por tanto, he decidido</a>
+                                <a class="descripcion2_RXCONSEM" style="text-decoration: underline;">APROBAR</a>
+                                <a class="aprobar_RXCONSEM">_</a>
+                                <a class="descripcion2_RXCONSEM" style="text-decoration: underline;">DISENTIR</a>
+                                <a class="disentir_RXCONSEM">_</a>
+                                <a class="descripcion_RXCONSEM">la realización del (los) procedimiento(s) o
+                                    intervención(es) que se
+                                    </a>
+                                <a class="descripcion_RXCONSEM">
+                                    me ha(n) propuesto y entiendo que puedo retirar este consentimiento cuando así lo
+                                    desee,
+                                    debiendo informar al equipo asistencial
+                                    tratante, del cambio de esta decisión. Adicionalmente la entidad en mención y el
+                                    equipo
+                                    tratante, quedan autorizados para tomar las
+                                    conductas o procedimientos asistenciales necesarios tendientes a resolver las
+                                    posibles c
+                                    omplicaciones derivadas del
+                                    procedimiento, atención o intervención solicitada que mediante este documento
+                                    autorizo.
+                                    He comprendido con claridad todo lo escrito
+                                    anteriormente,
+                                    he tenido la oportunidad de hacer preguntas que han sido resueltas y
+                                    acepto la realización del procedimiento, atención o intervención solicitada,
+                                    declarando
+                                    que la decisión que tomo es libre y voluntaria.</a>
+                                <div class="salto-linea"></div>
+                                <div class="autorizacion_RXCONSEM">
+                                    <a>HE DECIDO REVOCAR MI ANTERIOR AUTORIZACION</a>
+                                </div>
+                                <a class="firmas1_RXCONSEM">___________________________</a>
+                                <a class="firmas2_RXCONSEM">___________________________</a>
+                                <div class="salto-linea"></div>
+                                <a class="leyendafirma1_RXCONSEM"> Firma del paciente o representante</a>
+                                <a class="leyendafirma2_RXCONSEM"> Firma del paciente o representante</a>
+                                <div class="salto-linea"></div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>
+                    <div class="footer">
+                        <table class="tablafooter">
+                        </table>
+                    </div>
+                    <table>
+
+                    </table>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+<style>
+    .page-header,
+    .page-header-space {
+        height: 80px;
+    }
+
+    .page-header {
+        position: fixed;
+        top: 0mm;
+        width: 99%;
+    }
+
+    .page {
+        page-break-after: always;
+        width: 100%;
+    }
+
+    .footer {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+
+    @page {
+        margin: 20mm
+    }
+
+    .paginas_RXCONSEM::after {
+        counter-increment: page;
+        content: counter(page);
+    }
+
+    @media print {
+        thead {
+            display: table-header-group;
+        }
+
+        tfoot {
+            display: table-footer-group;
+        }
+
+        button {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+        }
+    }
+
+    .salto-linea {
+        padding-top: 10px;
+    }
+
+    .encabezado_RXCONSEM {
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-top: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+        display: flex;
+        width: 100%;
+        height: 90%;
+    }
+
+    .imageusu_RXCONSEM {
+        padding: 2%;
+        width: 10%;
+    }
+
+    .informacionusu_RXCONSEM {
+        width: 80%;
+        height: 100%;
+        display: flex;
+    }
+
+    .imageusu_RXCONSEM img {
+        width: 100%;
+    }
+
+    .descripcion1_RXCONSEM {
+        display: flex;
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .nombreusu_RXCONSEM {
+        width: 60%;
+        height: 100%;
+        display: inline-flex;
+        border-left: black solid 0.1px;
+        font-size: 16px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .version_RXCONSEM {
+        font-size: 10px;
+        width: 12%;
+        height: 100%;
+        display: inline-flex;
+        border-left: black solid 0.1px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .iba_RXCONSEM {
+        font-size: 10px;
+        width: 15%;
+        height: 100%;
+        display: inline-flex;
+        border-left: black solid 0.1px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pagina_RXCONSEM {
+        font-size: 10px;
+        width: 12%;
+        height: 100%;
+        display: inline-flex;
+        border-left: black solid 0.1px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tabla_RXCONSEM {
+        border-spacing: 0;
+        border: black solid 0.1px;
+    }
+
+    .descriptabla_RXCONSEM {
+        font-style: oblique;
+        font-size: 12px;
+        font-weight: bolder;
+    }
+
+    .estudiorealizar_RXCONSEM {
+        display: inline-flex;
+        font-size: 12px;
+        width: 100%;
+    }
+
+    .descripcion_RXCONSEM,
+    .nombrepaciente_RXCONSEM,
+    .cedulapaciente_RXCONSEM,
+    .descripcionacompañante_RXCONSEM,
+    .tipodedocumentomenor_RXCONSEM,
+    .numeromenor_RXCONSEM,
+    .descripcionmenor_RXCONSEM,
+    .nombredelmenor_RXCONSEM {
+        display: inline-flex;
+        font-size: 12px;
+    }
+
+    .descripcion2_RXCONSEM {
+        font-weight: bolder;
+        display: inline-flex;
+        font-size: 12px;
+    }
+
+    .bordes_RXCONSEM {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .aprobar_RXCONSEM,
+    .disentir_RXCONSEM {
+        display: inline-flex;
+        border: black solid 0.1px;
+        height: 14px;
+        width: 14px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .titulo_RXCONSEM {
+        display: inline-flex;
+        width: 50%;
+        font-size: 12px;
+        font-weight: bolder;
+    }
+
+    .fecha1_RXCONSEM,
+    .fecha2_RXCONSEM {
+        font-size: 10px;
+        width: 10%;
+        display: inline-flex;
+    }
+
+    .autorizacion_RXCONSEM {
+        display: flex;
+        width: 40%;
+        font-size: 12px;
+        font-weight: bolder;
+        padding-left: 49%;
+    }
+
+    .firmas1_RXCONSEM {
+        display: inline-flex;
+        width: 49%;
+        font-size: 12px;
+    }
+
+    .firmas2_RXCONSEM {
+        display: inline-flex;
+        width: 49%;
+        font-size: 12px;
+        padding-left: 49%;
+    }
+
+    .firmas1_RXCONSEM img,
+    .firmas2_RXCONSEM img {
+        width: 30%;
+        border-bottom: black solid 0.3px;
+    }
+
+    .leyendafirma1_RXCONSEM {
+        display: inline-flex;
+        width: 49%;
+        font-size: 12px;
+    }
+
+    .leyendafirma2_RXCONSEM {
+        display: inline-flex;
+        width: 49%;
+        font-size: 12px;
+        padding-left: 49%;
+    }
+
+    .fechapaciente1_RXCONSEM {
+        display: inline-flex;
+        font-size: 12px;
+        width: 39%;
+    }
+
+    .fechapaciente2_RXCONSEM {
+        display: inline-flex;
+        font-size: 12px;
+        width: 39%;
+    }
+
+    .tablafooter {
+        border-collapse: collapse;
+        width: 99%;
+        margin: 0 auto;
+    }
+
+    .tabla_RXCONSEM tr td {
+        padding: 8px;
+        vertical-align: top;
+    }
+
+    /* .tablafechaconsntimiento_RXCONSEM tr td {
+        font-size: 12px;
+    } */
+
+    .tablafooter tr td,
+    .tabla_RXCONSEM tr td {
+        border: black solid 0.1px;
+        font-size: 12px;
+    }
+
+    .tablafechaconsntimiento_RXCONSEM {
+        border-spacing: 0;
+        display: inline-flex;
+        justify-content: center;
+        width: 10%;
+        font-size: 12px;
+    }
+</style>
+<script>
+    var RXCONSEM = [];
+    ipcRenderer.on('ping', (e, data) => {
+        RXCONSEM = data.datos;
+        if (RXCONSEM.NIT == 900193162) {
+            $('.version_RXCONSEM').text('Version: 1');
+            $('.iba_RXCONSEM').text('IBA-TH-FIC-FTH-03');
+        }
+        if (RXCONSEM.TIPO_ID_PACI != 'TI') {
+            $('.titulo_RXCONSEM').text(RXCONSEM.TITULO);
+            $('.tablafechaconsntimiento_RXCONSEM').text(RXCONSEM.FECHA_CREA);
+            // $('.tablafechaconsntimiento_RXCONSEM').append(
+            //     '<tr>' +
+            //     '<td>' + RXCONSEM.FECHA_CREA.substring(0, 2) + '</td>' +
+            //     '<td>' + RXCONSEM.FECHA_CREA.substring(3, 5) + '</td>' +
+            //     '<td>' + RXCONSEM.FECHA_CREA.substring(6, 10) + '</td>' +
+            //     '</tr>'
+            // );
+            $('.descripcion1_RXCONSEM').text(RXCONSEM.ENCABEZADO);
+            $('.tabla_RXCONSEM').append(
+                '<tr>' +
+                '<td style="width: 3%;font-size:10px;text-align: justify;">' + RXCONSEM.DESCRIPCION + '</th>' +
+                '<td style="width: 3%;font-size:10px;text-align: justify;">' + RXCONSEM.RIESGOS + '</th>' +
+                '<td style="width: 3%;font-size:10px;text-align: justify;">' + RXCONSEM.BENEFICIOS + '</th>' +
+                '</tr>'
+            );
+
+            $('.estudiorealizar_RXCONSEM').text(RXCONSEM.ESTUDIO);
+            if (RXCONSEM.AUTORIZA == 'P') {
+                $('.paciente_RXCONSEM').text('(x)');
+                $('.nombrepaciente_RXCONSEM').text(RXCONSEM.NOMBRE_PACI);
+                $('.cedulapaciente_RXCONSEM').text(parseInt(RXCONSEM.ID_PACI));
+                $('.descripcionmenor_RXCONSEM').hide();
+                $('.nombredelmenor_RXCONSEM').hide();
+                $('.tipodedocumentomenor_RXCONSEM').hide();
+                $('.numeromenor_RXCONSEM').hide();
+            } else {
+                $('.acompañante_RXCONSEM').text('(x)');
+                $('.nombrepaciente_RXCONSEM').text(RXCONSEM.NOMBRE_ACOM);
+                $('.cedulapaciente_RXCONSEM').text(parseInt(RXCONSEM.ID_ACOM));
+                $('.nombredelmenor_RXCONSEM').text(RXCONSEM.NOMBRE_PACI);
+                $('.tipodedocumentomenor_RXCONSEM').text(RXCONSEM.TIPO_ID_PACI);
+                $('.numeromenor_RXCONSEM').text(parseInt(RXCONSEM.ID_PACI));
+                $('.nombredelmenor_RXCONSEM').text(RXCONSEM.NOMBRE_PACI);
+                $('.tipodedocumentomenor_RXCONSEM').text(RXCONSEM.TIPO_ID_PACI);
+                $('.numeromenor_RXCONSEM').text(parseInt(RXCONSEM.ID_PACI));
+            }
+        } else {
+            $('.titulo_RXCONSEM').text(RXCONSEM.TITULO);
+            $('.tablafechaconsntimiento_RXCONSEM').text(RXCONSEM.FECHA_CREA);
+            // $('.tablafechaconsntimiento_RXCONSEM').append(
+            //     '<tr>' +
+            //     '<td>' + RXCONSEM.FECHA_CREA.substring(0, 2) + '</td>' +
+            //     '<td>' + RXCONSEM.FECHA_CREA.substring(3, 5) + '</td>' +
+            //     '<td>' + RXCONSEM.FECHA_CREA.substring(6, 10) + '</td>' +
+            //     '</tr>'
+            // );
+            $('.descripcion1_RXCONSEM').text(RXCONSEM.ENCABEZADO);
+            alert(RXCONSEM.BENEFICIOS);
+            $('.tabla_RXCONSEM').append(
+                '<tr>' +
+                '<td style="width: 3%;font-size:10px;text-align: justify;">' + RXCONSEM.DESCRIPCION + '</th>' +
+                '<td style="width: 3%;font-size:10px;text-align: justify;">' + RXCONSEM.RIESGOS + '</th>' +
+                '<td style="width: 3%;font-size:10px;text-align: justify;">' + RXCONSEM.BENEFICIOS + '</th>' +
+                '</tr>'
+            );
+
+            $('.estudiorealizar_RXCONSEM').text(RXCONSEM.ESTUDIO);
+
+            $('#representacion_RXCONSEM').text(', en representacion del menor');
+            $('.nombrepaciente_RXCONSEM').text(RXCONSEM.NOMBRE_ACOM);
+            $('.cedulapaciente_RXCONSEM').text(RXCONSEM.ID_ACOM);
+            $('.nombredelmenor_RXCONSEM').text(RXCONSEM.NOMBRE_PACI);
+            $('.tipodedocumentomenor_RXCONSEM').text(RXCONSEM.TIPO_ID_PACI);
+            $('.numeromenor_RXCONSEM').text(RXCONSEM.ID_PACI);
+            $('.nombredelmenor_RXCONSEM').text(RXCONSEM.NOMBRE_PACI);
+            $('.tipodedocumentomenor_RXCONSEM').text(RXCONSEM.TIPO_ID_PACI);
+            $('.numeromenor_RXCONSEM').text(RXCONSEM.ID_PACI);
+        }
+
+        if (RXCONSEM.APROBO == 'S') $('.aprobar_RXCONSEM').text('x');
+        if (RXCONSEM.APROBO == 'N') $('.disentir_RXCONSEM').text('x');
+
+
+        if (RXCONSEM.AUTORIZA == 'A') {
+            var firma = parseInt(RXCONSEM.ID_ACOM).toString();
+            var url = path.join(`D:\\SC\\SC_WEB$\\IMAGEN\\FIRMAS_PACIENTES\\${firma}.bmp`);
+        } else {
+            var firma = parseInt(RXCONSEM.ID_PACI).toString();
+            var url = path.join(`D:\\SC\\SC_WEB$\\IMAGEN\\FIRMAS_PACIENTES\\${firma}.bmp`);
+        }
+
+
+        if (RXCONSEM.REVOCO == 'S') {
+            $('.firmas1_RXCONSEM').hide();
+            $('.leyendafirma1_RXCONSEM').hide();
+            $('.fechapaciente1_RXCONSEM').hide();
+
+            fs.readFile(url, function (err, data) {
+                if (err) throw err;
+                var dataImg1 = Buffer.from(data).toString('base64');
+                $('.firmas2_RXCONSEM').text('');
+                $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('.firmas2_RXCONSEM')
+            });
+        } else {
+            $('.autorizacion_RXCONSEM').hide();
+            $('.firmas2_RXCONSEM').hide();
+            $('.leyendafirma2_RXCONSEM').hide();
+            $('.fechapaciente2_RXCONSEM').hide();
+
+            fs.readFile(url, function (err, data) {
+                if (err) throw err;
+                var dataImg1 = Buffer.from(data).toString('base64');
+                $('.firmas1_RXCONSEM').text('');
+                $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('.firmas1_RXCONSEM')
+            });
+        }
+
+        $('.tablafooter').append(
+            '<tr>' +
+            '<td>Elaborado por: Calidad</td>' +
+            '<td>Revisado por: Coordinadora Administrativa</td>' +
+            '<td>Aporbado: Gerente</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td>' + 'Fecha de elaboración ' + ' 09/09/2020' + '</td>' +
+            '<td>' + 'Fecha de revisión ' + ' 09/09/2020' + '</td>' +
+            '<td>' + 'Fecha de aprobación ' + ' 09/09/2020' + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td colspan="3" align="center">COPIA CONTROLADA</td>' +
+            '</tr>'
+        )
+
+        var nit = RXCONSEM.NIT;
+        var url = path.join(`D:\\SC\\newcobol\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('.imageusu_RXCONSEM')
+        });
+
+
+    })
+</script>

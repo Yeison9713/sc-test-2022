@@ -1,0 +1,563 @@
+{
+  "Menu": [
+    {
+      "Id": "01",
+      "Descripcion": "Archivos maestros",
+      "Opc-segu": "S1",
+      "Sub": [
+        {
+          "Id": "011",
+          "Descripcion": "Datos de la empresa",
+          "Opc-segu": "S11",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB101.html"
+        },
+        {
+          "Id": "012",
+          "Descripcion": "Actualizar tarifas",
+          "Opc-segu": "S12",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB102.html"
+        },
+        {
+          "Id": "013",
+          "Descripcion": "Usuarios de servicios",
+          "Opc-segu": "S13",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB103.html"
+        },
+        {
+          "Id": "014",
+          "Descripcion": "Actualizar rutas",
+          "Opc-segu": "S14",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB104.html"
+        },
+        {
+          "Id": "015",
+          "Descripcion": "Actualizar servicios",
+          "Opc-segu": "S15",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB105.html"
+        },
+        {
+          "Id": "016",
+          "Descripcion": "Actualizar usos tarifas",
+          "Opc-segu": "S16",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB106.html"
+        },
+        {
+          "Id": "017",
+          "Descripcion": "Sistema de seguridad",
+          "Opc-segu": "C86",
+          "Tipo": "JS",
+          "JS": "../../frameworks/scripts/valMenus/VAL_DOM.js"
+        },
+        {
+          "Id": "018",
+          "Descripcion": "Configura puntos recaudo",
+          "Opc-segu": "S18",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB107.html"
+        },
+        {
+          "Id": "019",
+          "Descripcion": "Configurar impresoras",
+          "Opc-segu": "C1P",
+          "Tipo": "JS",
+          "JS": "../../frameworks/scripts/valMenus/VAL_DOM.js"
+        },
+        {
+          "Id": "01A",
+          "Descripcion": "Configura novedades lectura",
+          "Opc-segu": "S1B",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB111.html"
+        },
+        {
+          "Id": "01B",
+          "Descripcion": "Creación de archivos",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB112.html"
+        }
+      ]
+    },
+    {
+      "Id": "02",
+      "Descripcion": "Facturación",
+      "Opc-segu": "S2",
+      "Sub": [
+        {
+          "Id": "021",
+          "Descripcion": "Generar facturación",
+          "Opc-segu": "S21",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB201.html"
+        },
+        {
+          "Id": "022",
+          "Descripcion": "Listado validación facturas",
+          "Opc-segu": "S22",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB202.html"
+        },
+        {
+          "Id": "023",
+          "Descripcion": "Corrección facturas",
+          "Opc-segu": "S23",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB203.html"
+        },
+        {
+          "Id": "024",
+          "Descripcion": "Imprimir facturación",
+          "Opc-segu": "S24",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB204.html"
+        },
+        {
+          "Id": "025",
+          "Descripcion": "Re-imprimir facturación",
+          "Opc-segu": "S25",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB203.html"
+        },
+        {
+          "Id": "026",
+          "Descripcion": "Formato de abono parcial",
+          "Opc-segu": "S26",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB206.html"
+        },
+        {
+          "Id": "027",
+          "Descripcion": "Captura de lecturas",
+          "Opc-segu": "S27",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB207.html"
+        },
+        {
+          "Id": "028",
+          "Descripcion": "Importa lectura archivo CSV",
+          "Opc-segu": "S28",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB208.html"
+        }
+      ]
+    },
+    {
+      "Id": "03",
+      "Descripcion": "Consultas",
+      "Opc-segu": "S3",
+      "Sub": [
+        {
+          "Id": "031",
+          "Descripcion": "Historial por usuario",
+          "Opc-segu": "S31",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB301.html"
+        }
+      ]
+    },
+    {
+      "Id": "04",
+      "Descripcion": "Catalogos",
+      "Opc-segu": "S4",
+      "Sub": [
+        {
+          "Id": "041",
+          "Descripcion": "Usuarios x codigo",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB401.html"
+        },
+        {
+          "Id": "042",
+          "Descripcion": "Usuarios x nombre",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB402.html"
+        },
+        {
+          "Id": "043",
+          "Descripcion": "Usuarios x dirección",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB403.html"
+        },
+        {
+          "Id": "044",
+          "Descripcion": "Usuarios x ruteo",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB404.html"
+        },
+        {
+          "Id": "045",
+          "Descripcion": "Usuarios x estrato",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB405.html"
+        },
+        {
+          "Id": "046",
+          "Descripcion": "Resumen x estratificación",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB406.html"
+        },
+        {
+          "Id": "047",
+          "Descripcion": "Listado para lectura medic",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB407.html"
+        }
+      ]
+    },
+    {
+      "Id": "05",
+      "Descripcion": "Listados",
+      "Opc-segu": "S5",
+      "Sub": [
+        {
+          "Id": "051",
+          "Descripcion": "Facturación por estrato",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB501.html"
+        },
+        {
+          "Id": "052",
+          "Descripcion": "Listado de fact. x codigo",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB502.html"
+        },
+        {
+          "Id": "053",
+          "Descripcion": "Listado para corte",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB503.html"
+        },
+        {
+          "Id": "054",
+          "Descripcion": "Informe de recaudos",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB504.html"
+        },
+        {
+          "Id": "055",
+          "Descripcion": "Resumen para contabilidad",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB505.html"
+        },
+        {
+          "Id": "056",
+          "Descripcion": "Listado refinanciaciones",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB506.html"
+        },
+        {
+          "Id": "057",
+          "Descripcion": "Listado Subidio",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB507.html"
+        },
+        {
+          "Id": "058",
+          "Descripcion": "Facturación por estrato, pago",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB508.html"
+        },
+        {
+          "Id": "059",
+          "Descripcion": "Resumen recaudos x concepto",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB509.html"
+        },
+        {
+          "Id": "05A",
+          "Descripcion": "Catalogo de tarifas",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB510.html"
+        },
+        {
+          "Id": "05B",
+          "Descripcion": "Resumen de cartera por edad",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB511.html"
+        },
+        {
+          "Id": "05C",
+          "Descripcion": "Resumen de recaudos aplicad",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB512.html"
+        },
+        {
+          "Id": "05D",
+          "Descripcion": "Listado de consumos",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB515.html"
+        }
+      ]
+    },
+    {
+      "Id": "06",
+      "Descripcion": "Ayudas del programa",
+      "Opc-segu": "S6",
+      "Sub": [
+        {
+          "Id": "061",
+          "Descripcion": "Recibos de pago en bancos",
+          "Opc-segu": "S61",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB601.html"
+        },
+        {
+          "Id": "062",
+          "Descripcion": "Anular facturación generada",
+          "Opc-segu": "S62",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB602.html"
+        },
+        {
+          "Id": "063",
+          "Descripcion": "Re-imprimir recibos bancos",
+          "Opc-segu": "S63",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB603.html"
+        },
+        {
+          "Id": "064",
+          "Descripcion": "Corrección pago en bancos",
+          "Opc-segu": "S64",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB604.html"
+        },
+        {
+          "Id": "065",
+          "Descripcion": "Validación de saldo anter.",
+          "Opc-segu": "S65",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB605.html"
+        },
+        {
+          "Id": "066",
+          "Descripcion": "Control de facturación",
+          "Opc-segu": "S66",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB201X.html"
+        },
+        {
+          "Id": "067",
+          "Descripcion": "Buscar facturas en recaudos",
+          "Opc-segu": "S67",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB607.html"
+        },
+        {
+          "Id": "068",
+          "Descripcion": "Relación de recaudos x comp",
+          "Opc-segu": "S68",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB608.html"
+        },
+        {
+          "Id": "069",
+          "Descripcion": "Asigna campo lect us.nuevo",
+          "Opc-segu": "S69",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB609.html"
+        },
+        {
+          "Id": "06A",
+          "Descripcion": "Recalculo de abonos cartera",
+          "Opc-segu": "S6A",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB610.html"
+        },
+        {
+          "Id": "06B",
+          "Descripcion": "Sub-menu red multicolor",
+          "Opc-segu": "S6B",
+          "Sub": [
+            {
+              "Id": "06B1",
+              "Descripcion": "Generar archivo facturación",
+              "Opc-segu": "S6B1",
+              "Tipo": "HTML",
+              "Href": "../../SERVDOM/paginas/PUB6B1.html"
+            },
+            {
+              "Id": "06B2",
+              "Descripcion": "Procesar recaudos",
+              "Opc-segu": "S6B2",
+              "Tipo": "HTML",
+              "Href": "../../SERVDOM/paginas/PUB6B2.html"
+            }
+          ]
+        },
+        {
+          "Id": "06C",
+          "Descripcion": "Auditoria de correcciones",
+          "Opc-segu": "S6C",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB612.html"
+        },
+        {
+          "Id": "06D",
+          "Descripcion": "Listado recaudos del dia",
+          "Opc-segu": "S6D",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB613.html"
+        },
+        {
+          "Id": "06E",
+          "Descripcion": "Reconsolidar recaudos mes",
+          "Opc-segu": "S6E",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB614.html"
+        }
+      ]
+    },
+    {
+      "Id": "07",
+      "Descripcion": "P.Q.R.",
+      "Opc-segu": "S7",
+      "Sub": [
+        {
+          "Id": "071",
+          "Descripcion": "Actualizar servicios",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB105.html"
+        },
+        {
+          "Id": "072",
+          "Descripcion": "Actualizar motivos",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB702.html"
+        },
+        {
+          "Id": "073",
+          "Descripcion": "Actualizar funcionarios",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB703.html"
+        },
+        {
+          "Id": "074",
+          "Descripcion": "Entrada de datos P.Q.R.",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB704.html"
+        },
+        {
+          "Id": "075",
+          "Descripcion": "Listado de pendientes",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB705.html"
+        },
+        {
+          "Id": "076",
+          "Descripcion": "Estadistica P.Q.R.",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB706.html"
+        },
+        {
+          "Id": "077",
+          "Descripcion": "Socilicitud de servicios",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB707.html"
+        },
+        {
+          "Id": "078",
+          "Descripcion": "Codificación motivos SSP",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/PUB702S.html"
+        }
+      ]
+    },
+    {
+      "Id": "08",
+      "Descripcion": "S.U.I.",
+      "Opc-segu": "S8",
+      "Sub": [
+        {
+          "Id": "081",
+          "Descripcion": "Facturación acueducto",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/SUI001.html"
+        },
+        {
+          "Id": "082",
+          "Descripcion": "Facturación alcantarillado",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/SUI002.html"
+        },
+        {
+          "Id": "083",
+          "Descripcion": "Facturación aseo",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/SUI003.html"
+        },
+        {
+          "Id": "084",
+          "Descripcion": "Tarifas acued. y alcantar.",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/SUI004.html"
+        },
+        {
+          "Id": "085",
+          "Descripcion": "Reporte de P.Q.R.",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/SUI005.html"
+        },
+        {
+          "Id": "086",
+          "Descripcion": "Información energia",
+          "Sub": [
+            {
+              "Id": "0861",
+              "Descripcion": "Usuarios (formato b3)",
+              "Tipo": "HTML",
+              "Href": "../../SERVDOM/paginas/SUI851.html"
+            },
+            {
+              "Id": "0862",
+              "Descripcion": "Información de recaudo",
+              "Tipo": "HTML",
+              "Href": "../../SERVDOM/paginas/SUI852.html"
+            },
+            {
+              "Id": "0863",
+              "Descripcion": "Inf. comercial resid. ZNIC1",
+              "Tipo": "HTML",
+              "Href": "../../SERVDOM/paginas/SUI853.html"
+            },
+            {
+              "Id": "0864",
+              "Descripcion": "Inf. comercial no resid C2",
+              "Tipo": "HTML",
+              "Href": "../../SERVDOM/paginas/SUI854.html"
+            }
+          ]
+        },
+        {
+          "Id": "087",
+          "Descripcion": "Facturación de gas",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/SUI007.html"
+        },
+        {
+          "Id": "088",
+          "Descripcion": "Fact acueduc 5000 Usuarios",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/SUI001-5000.html"
+        },
+        {
+          "Id": "089",
+          "Descripcion": "Fact alcant 5000 Usuarios",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/SUI002-5000.html"
+        },
+        {
+          "Id": "08A",
+          "Descripcion": "Fact aseo 5000 Usuarios",
+          "Tipo": "HTML",
+          "Href": "../../SERVDOM/paginas/SUI003-5000.html"
+        }
+      ]
+    }
+  ]
+}

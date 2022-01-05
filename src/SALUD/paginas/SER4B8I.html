@@ -1,0 +1,148 @@
+<div class="portlet light no-padding" id="SER4B8I">
+  <div class="portlet-body no-padding">
+    <div class="form-horizontal no-padding">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding form-group sc-flex-container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="no-padding box-center sc-flex-container">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> Paciente </label>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex no-padding inline-inputs">
+                      <div class="input-group" style="flex: 1 1 35%" id="paci">
+                        <input
+                          v-model="reg_solau.paci"
+                          type="text"
+                          maxlength="15"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control center"
+                          @keydown.f8="_ventanaPaci"
+                        />
+                      </div>
+                      <button type="button" class="btn f8-Btn btn-paci">
+                        <i class="icon-magnifier"></i>
+                      </button>
+                      <div class="input-group" style="flex: 1 1 65%; padding-left: 0.3rem">
+                        <input
+                          :value="reg_paci.descrip"
+                          type="text"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control center"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> Fecha Inicial </label>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex no-padding">
+                      <div class="input-group" style="flex: 1 1 40%" id="ano_ini">
+                        <input
+                          type="number"
+                          v-model="ano_ini"
+                          maxlength="4"
+                          placeholder="AAAA"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                      <div
+                        class="input-group"
+                        style="flex: 1 1 30%; padding-right: 0.2rem; padding-left: 0.2rem"
+                        id="mes_ini"
+                      >
+                        <input
+                          type="number"
+                          v-model="mes_ini"
+                          maxlength="2"
+                          placeholder="MM"
+                          disabled="disabled"
+                          data-orden="1"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                      <div class="input-group" style="flex: 1 1 30%" id="dia_ini">
+                        <input
+                          type="number"
+                          v-model="dia_ini"
+                          maxlength="2"
+                          placeholder="DD"
+                          disabled="disabled"
+                          data-orden="1"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 no-padding">
+                  <div class="sc-flex-inputs">
+                    <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> Fecha Final </label>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex no-padding">
+                      <div class="input-group" style="flex: 1 1 40%" id="ano_fin">
+                        <input
+                          type="number"
+                          v-model="ano_fin"
+                          maxlength="4"
+                          placeholder="AAAA"
+                          disabled="disabled"
+                          data-orden="1"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                      <div
+                        class="input-group"
+                        style="flex: 1 1 30%; padding-right: 0.2rem; padding-left: 0.2rem"
+                        id="mes_fin"
+                      >
+                        <input
+                          type="number"
+                          v-model="mes_fin"
+                          maxlength="2"
+                          placeholder="MM"
+                          disabled="disabled"
+                          data-orden="1"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                      <div class="input-group" style="flex: 1 1 30%" id="dia_fin">
+                        <input
+                          type="number"
+                          v-model="dia_fin"
+                          maxlength="2"
+                          placeholder="DD"
+                          disabled="disabled"
+                          data-orden="1"
+                          class="form-control text-center no-spin-button"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div v-if="ventanaPaci">
+    <ser810 @callback="successVentanaPaci" @callback_esc="escVentanaPaci"></ser810>
+  </div>
+</div>
+
+<script src="../../SALUD/scripts/SER4B8I.js"></script>
+
+<style>
+  .box-center {
+    margin-bottom: 0 !important;
+  }
+</style>

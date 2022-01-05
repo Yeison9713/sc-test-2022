@@ -1,0 +1,125 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+<style>
+    html,
+    body,
+    #documento,
+    #impresion {
+        margin: 0 auto;
+        padding: 0;
+        width: 150%;
+        height: 50%;
+        font-family: 'Roboto', sans-serif;
+        box-sizing: border-box;
+    }
+
+    .encabezado_RX505 {
+        border-bottom: black solid 0.1px;
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-top: black solid 0.1px;
+    }
+
+    .primera_linea_RX505 {
+        padding-left: 3%;
+        display: flex;
+    }
+
+    .nombreusu_RX505 {
+        font-size: xx-large;
+        font-weight: bolder;
+    }
+
+    .pagina_RX505 {
+        padding-left: 30%;
+    }
+
+    .informe_RX505 {
+        padding-left: 3%;
+        font-size: xx-large;
+        font-weight: bolder;
+    }
+
+    .fecha_RX505{
+        width: 100%;
+    }
+    .fechaimpresion_RX505{
+        padding-left: 6%;
+    }
+    .theadtabla_RX505{
+        width: 100%;
+    }
+    .tabla_RX505{
+        width: 100%;
+    }
+</style>
+<div class="encabezado_RX505">
+    <div class="primera_linea_RX505">
+        <a class="nombreusu_RX505">NOMBRE USUARIO</a>
+        <a class="pagina_RX505">Pag.</a>
+    </div>
+    <a class="informe_RX505">INFORME ENVIO LECTURAS POR EMAIL</a>
+    <div class="fecha_RX505">
+        <a class="fechaimpresion_RX505">Fecha de Impresion: 25/11/2019</a>
+    </div>
+</div>
+<div class="theadtabla_RX505">
+    <table class="tableheader_RX505 table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th style="width: 2%;">ID</th>
+                <th style="width: 2%;">COMPROBANTE</th>
+                <th style="width: 3%;">CEDULA</th>
+                <th style="width: 12%;">PACIENTE</th>
+                <th style="width: 12%;">CORREO DESTINO</th>
+                <th style="width: 2%;">FECHA ENVIO</th>
+                <th style="width: 2%;">HORA ENVIO</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<table class="tabla_RX505 table table-bordered table-hover">
+    <tbody>
+        <tr>
+            <th style="width: 2%;">001121911607</th>
+            <th style="width: 2%;">067898</th>
+            <th style="width: 3%;">001121911607</th>
+            <th style="width: 12%;">CAMILO ANDRES FRANCO ORTIZ</th>
+            <th style="width: 12%;">camiloes93@hotmail.com</th>
+            <th style="width: 2%;">25/11/2019</th>
+            <th style="width: 2%;">08:39</th>
+        </tr>
+    </tbody>
+</table>
+<script>
+    var RX505 = [];
+    ipcRenderer.on('ping', (e, data) => {
+        RX505 = data.datos;
+
+        $('.estudiotxt_rxi02a').text(RXI02A.DESCRIP1_CUPRX);
+
+        var nit = RXI02A.NIT;
+        var url = path.join(`P:\\PROG\\LOGOS\\${nit}.bmp`);
+
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('.logo')
+        });
+
+        var nitprofe = parseInt(RXI02A.IDRADIOLOGO_RX);
+        var urlprofe = path.join(`P:\\PROG\\DATOS\\17329215.bmp`);
+        fs.readFile(urlprofe, function (err, data) {
+            if (err) throw err;
+            var dataImg2 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg2}`).appendTo('.firmaprofe')
+        });
+
+    })
+</script>

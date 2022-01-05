@@ -1,0 +1,158 @@
+
+<div class="col-md-12" id="SER508">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <form class="form-horizontal" onsubmit="return false;">
+                <div class="col-md-8 no-padding box-center">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <!-- <div class="col-md-4">
+                            <label class="col-md-12 head-box" style="margin-bottom: 5px;">Formato de impresion: </label>
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="margin-left: 5px;">
+                                <div class="col-md-10 box-center" id="div">
+                                    <v-select v-model="selected" :options="formatos" placeholder="Seleccione"
+                                        label="text" ref="select"></v-select>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>FECHA INICIAL:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="fechaIni_508" style="margin-top: 4px;">
+                                <div class="inline-inputs">
+                                    <label class="col-md-8 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-11 col-sm-5 col-xs-5">
+                                        <input v-model="form.añoIni_508" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                            data-orden="1" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                        <input v-model="form.mesIni_508" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="2" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-8 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                        <input v-model="form.diaIni_508" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="3" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>FECHA FINAL:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="fechaFin_508" style="margin-top: 4px;">
+                                <div class="inline-inputs">
+                                    <label class="col-md-8 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-11 col-sm-5 col-xs-5">
+                                        <input v-model="form.añoFin_508" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                            data-orden="1" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                        <input v-model="form.mesFin_508" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="2" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-8 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                        <input v-model="form.diaFin_508" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="3" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-8 col-sm-12 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-7 col-sm-8 col-xs-12">Actividad a listar:</label>
+                                    <div class="input-group col-md-3 col-sm-5 col-xs-5" id="actividad_SER508">
+                                        <input @keyup.f8="_ventanaActividadesSER508" v-model="form.actividad_508" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase actividad_508" maxlength="2" data-orden="1">
+                                    </div>
+                                    <button @click="_ventanaActividadesSER508" type="button" class="btn col-md-2 col-sm-4 col-xs-4 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="input-group col-md-4 col-sm-12 col-xs-12">
+                                <input v-model="form.descripActividad_SER508" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 " maxlength="20">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-7 col-sm-8 col-xs-12">Solo incluir fact. Radica:</label>
+                                    <div class="input-group col-md-3 col-sm-5 col-xs-5" id="radica_SER508">
+                                        <input v-model="form.radica_508" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-8">
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-7 col-sm-8 col-xs-12">Nit del cliente a listar:</label>
+                                    <div class="input-group col-md-3 col-sm-5 col-xs-5" id="tercero_SER508">
+                                        <input @keyup.f8="_ventanaTercerosSER508" v-model="form.tercero_508" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12 uppercase tercero_508" maxlength="2" data-orden="1">
+                                    </div>
+                                    <button @click="_ventanaTercerosSER508" type="button" class="btn col-md-2 col-sm-4 col-xs-4 f8-Btn">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="input-group col-md-6 col-sm-12 col-xs-12">
+                                <input v-model="form.descripTercero_SER508" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 " maxlength="20">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-7 col-sm-8 col-xs-12">Desea listar fact. canceladas?</label>
+                                    <div class="input-group col-md-3 col-sm-5 col-xs-5" id="cancel_SER508">
+                                        <input v-model="form.cancel_508" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-7 col-sm-8 col-xs-12">Listar solo total x cliente?</label>
+                                    <div class="input-group col-md-3 col-sm-5 col-xs-5" id="cliente_SER508">
+                                        <input v-model="form.cliente_508" type="text" class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                            data-orden="1" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="../../SALUD/scripts/SER508.js" type="text/javascript"></script>

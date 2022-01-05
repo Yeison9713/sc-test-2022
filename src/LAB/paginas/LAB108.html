@@ -1,0 +1,367 @@
+<div class="col-md-12" id="LAB108">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <div class="form-horizontal">
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-2 col-sm-2 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-7 col-sm-7 col-xs-7">Sucursal:</label>
+                                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                    <input v-model="global_lab108.SUC" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-8">Tipo de servicio:</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                                    <input v-model="global_lab108.CL" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-2 col-xs-6" id="validarComprob_lab108">
+                            <div class="inline-inputs">
+                                <label class="col-md-7 col-sm-7 col-xs-7">Comprobante:</label>
+                                <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                    <input v-model="global_lab108.COMPROB" type="text" data-orden="1" maxlength="6"
+                                        required="true" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-5">Codigo Cup:</label>
+                                <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                    <input v-model="global_lab108.CUP" type="text" data-orden="1" maxlength="12"
+                                        required="true" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-5 col-sm-5 col-xs-5">Fecha:</label>
+                                <div class="input-group col-md-7 col-sm-7 col-xs-7">
+                                    <input v-model="global_lab108.FECHA" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <label>Descrip Cup</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab108.DESCRIP_CUP"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <label>Paciente</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab108.ID_HISTORIA" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 col-sm-8 col-xs-12 no-padding">
+                            <label>Nombre Paciente</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab108.DESCRIP_PACI"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <label>Factura</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab108.CTA"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <label>Entidad</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab108.ID_ENTIDAD"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <label></label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="global_lab108.NOM_ENTIDAD"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-3" id="validarMedico_lab108">
+                            <label>Médico</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                    <input id="medico_lab108" v-model="global_lab108.ID_MEDICO" required="true"
+                                        maxlength="10" data-orden="1" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        @keydown.119="ventanaMedico">
+                                </div>
+                                <button type="button" @click="ventanaMedico"
+                                    class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-3">
+                            <label></label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="global_lab108.REG_MEDICO"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <label></label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="global_lab108.NOMBRE_MEDICO"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 no-padding">
+
+                    <div class="col-md-5 col-sm-12 col-xs-12 no-padding">
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <div class="col-md-4 col-sm-5 col-xs-12" id="validarReferido_lab108">
+                                <label>Referido por:</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                        <input id="referidoPor_lab108" v-model="global_lab108.REFERIDO" type="text"
+                                        @keydown.119="ventanaEspecialidades" maxlength="3" data-orden="1" required="true"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                    <button @click="ventanaEspecialidades" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8 col-sm-8 col-xs-8 no-padding">
+                                <label></label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_lab108.DESCRIP_REFERIDO" style="text-align: left"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarMotivo_lab108">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Motivo :</label>
+                                    <label>(200 caracteres maximo)</label>
+                                </div>
+                                <textarea v-model="global_lab108.MOTIVO" class="form-control" disabled="disabled"
+                                    rows="2" maxlength="300" data-orden="1"
+                                    style="resize: none; text-align: justify"></textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarMedicamento_lab108">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Medicamento :</label>
+                                    <label>(300 caracteres maximo)</label>
+                                </div>
+                                <textarea v-model="global_lab108.MEDICAMENTO" class="form-control" disabled="disabled"
+                                    rows="3" maxlength="300" data-orden="1"
+                                    style="resize: none; text-align: justify"></textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <label>FC Máx</label>
+                                <div class="inline-inputs" id="validarFCMax_lab108">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input @input="calcularFCmedia" v-model="global_lab108.FC_MAX" type="number"
+                                            maxlength="3" data-orden="1" required="true" style="text-align: center"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <label>FC Min</label>
+                                <div class="inline-inputs" id="validarFCMin_lab108">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input @input="calcularFCmedia" v-model="global_lab108.FC_MIN" type="number"
+                                            maxlength="3" data-orden="1" required="true" style="text-align: center"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
+                                <label>FC Media</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input v-model="textos.FC_MEDIA" type="number" style="text-align: center"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                    <div class="col-md-7 col-sm-12 col-xs-12" style="padding-right: 0;">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarContenido_lab108">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Contenido</label>
+                                    <label>(5,000 caracteres máximo)</label>
+                                </div>
+                                <textarea v-model="global_lab108.CONTENIDO" class="form-control" disabled="disabled"
+                                    rows="16" maxlength="5000" data-orden="1" required="true"
+                                    style="resize: none; text-align: justify"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div v-show="CONSULTA"  class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-6 col-sm-12 col-xs-12 box-center" style="text-align: left;">
+
+                        <label>Creación:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                                <input v-model="global_lab108.ADMI_CREA" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                            </div>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                <input v-model="global_lab108.HORA_CREA"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                            </div>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                <input v-model="global_lab108.FECHA_CREA"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div v-show="CONSULTA" class="col-md-12 col-sm-12 col-xs-12 no-padding">
+
+                    <div class="form-group col-md-6 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="display: flex;justify-content: left">
+                            <label>Archivos adjuntos :</label>
+
+                        </div>
+
+                        <div v-for="item in global_lab108.ADJUNTOS">
+                            <a a @click="aperturaAdjunto_lab108(item)">{{ item }}</a><br>
+                        </div>
+                    </div>
+                </div>
+
+                <a v-show="CONSULTA" class="float_lab108 btn_imprimir" v-on:click="_envioImpresion"
+                style="right: 21px;">
+                <i class="glyphicon glyphicon-print my-float-lab105"></i>
+            </a>
+
+            <a v-show="CONSULTA" @click="salir_lab108" class="float_lab108"
+                style="left: 21px; background-color: #da2c2c; border-color: #da2c2c">
+                <span>Salir </span>
+            </a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+    .float_lab108 {
+        z-index: 2;
+        position: fixed;
+        width: 65px;
+        height: 60px;
+        bottom: 16px;
+        background-color: #476fad;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 1px 1px 1px #999;
+        overflow: hidden;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .float_lab108:hover {
+        box-shadow: 2px 2px 2px #999;
+        transition: padding .5s ease, background-position .5s ease, transform .8s ease;
+        text-decoration: none;
+        color: #FFF;
+    }
+
+    input {
+        text-align: center
+    }
+</style>
+<script src="../../LAB/scripts/LAB108.js" type="text/javascript"></script>
+<script src="../../LAB/scripts/_impresionesLab.js" type="text/javascript"></script>

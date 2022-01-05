@@ -1,0 +1,133 @@
+<div class="col-md-12" id="HC905A">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <form class="form-horizontal" onsubmit="return false;">
+                <div>
+
+                    <div class="form-group col-md-8 col-sm-8 col-xs-8 box-center">
+
+                        <div class="inline-inputs col-md-4 col-sm-4 col-xs-4">
+                            <label class="col-md-6 col-sm-6 col-xs-6" style="text-align: center">Unidad de
+                                servicio</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4" id="unidServ_HC905A">
+                                <input v-model="form.undServ" type="text" @keydown.f8="_ventanaUnidServ"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-left undServ" data-orden="1"
+                                    maxlength="2" required="true" />
+                            </div>
+                            <button @click="_ventanaUnidServ" type="button"
+                                class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+
+                        <div class="inline-inputs col-md-4 col-sm-4 col-xs-4 no-padding">
+                            <div class="input-group col-md-12">
+                                <input v-model="form.descripUnidServ" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" />
+                            </div>
+                        </div>
+
+                        <div class="inline-inputs col-md-4 col-sm-4 col-xs-4">
+                            <label class="col-md-12 col-sm-12 col-xs-12" style="text-align: center">** buscar todos los
+                                hospitalizados</label>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="inline-inputs col-md-9 col-sm-9 col-xs-9">
+                            <label class="col-md-3 col-sm-3 col-xs-3" style="text-align: center">Personal
+                                que atiende</label>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-3" id="personalAtiende_HC905A">
+                                <input v-model="form.atiende" type="text" @keydown.f8="_ventanaProfesionales"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-left atiende" data-orden="1"
+                                    maxlength="10" required="true" />
+                            </div>
+                            <button @click="_ventanaProfesionales" type="button"
+                                class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="inline-inputs col-md-5 col-sm-5 col-xs-5 no-padding">
+                                <div class="input-group col-md-12">
+                                    <input v-model="form.descripAtiende" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="inline-inputs col-md-3 col-sm-3 col-xs-3">
+                            <label class="col-md-12 col-sm-12 col-xs-12" style="text-align: center">99 todos los
+                                medicos</label>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="inline-inputs col-md-6">
+                            <label class="col-md-4" style="text-align: center">Fecha inicial:</label>
+                            <div class="input-group col-md-4" id="anoInicial">
+                                <input v-model="form.ano_inicial" type="number" placeholder="AAAA"
+                                    class="form-control col-md-12 text-center" required="true" data-orden="1"
+                                    maxlength="4" />
+                            </div>
+                            <div class="input-group col-md-4" id="mesInicial">
+                                <input v-model="form.mes_inicial" type="number" placeholder="MM"
+                                    class="form-control col-md-12 text-center" required="true" data-orden="1"
+                                    maxlength="2" />
+                            </div>
+                            <div class="input-group col-md-4" id="diaInicial">
+                                <input v-model="form.dia_inicial" type="number" placeholder="DD"
+                                    class="form-control col-md-12 text-center" required="true" data-orden="1"
+                                    maxlength="2" />
+                            </div>
+                        </div>
+
+                        <div class="inline-inputs col-md-6">
+                            <label class="col-md-4" style="text-align: center">Fecha final:</label>
+                            <div class="input-group col-md-4" id="anoFinal">
+                                <input v-model="form.ano_final" type="number" placeholder="AAAA"
+                                    class="form-control col-md-12 text-center" required="true" data-orden="1"
+                                    maxlength="4" />
+                            </div>
+                            <div class="input-group col-md-4" id="mesFinal">
+                                <input v-model="form.mes_final" type="number" placeholder="MM"
+                                    class="form-control col-md-12 text-center" required="true" data-orden="1"
+                                    maxlength="2" />
+                            </div>
+                            <div class="input-group col-md-4" id="diaFinal">
+                                <input v-model="form.dia_final" type="number" placeholder="DD"
+                                    class="form-control col-md-12 text-center" required="true" data-orden="1"
+                                    maxlength="2" />
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="inline-inputs col-md-6 col-sm-6 col-xs-6">
+                            <label class="col-md-8 col-sm-8 col-xs-8" style="text-align: center">Desea ver mayor a 72 horas</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4" id="may72Hor_HC905A">
+                                <input v-model="form.may72Hor" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-left may72Hor"
+                                    data-orden="1" maxlength="1" />
+                            </div>
+                        </div>
+
+                        <div class="inline-inputs col-md-6 col-sm-6 col-xs-6">
+                            <label class="col-md-8 col-sm-8 col-xs-8" style="text-align: center">Incluir medicina general</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-4" id="medicinaGen_HC905A">
+                                <input v-model="form.medicinaGen" type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 text-left medicinaGen"
+                                    data-orden="1" maxlength="1" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <loader_modal :estado="estado_loader" :progreso="progreso" :loader="loader" :label="label_loader"></loader_modal>
+</div>
+
+<script src="../../HICLIN/scripts/HC905A.js" disabled='disabled' type="text/javascript"></script>

@@ -1,0 +1,42 @@
+{
+    "Menu": [
+        {
+            "Id": "01",
+            "Descripcion": "Archivos maestros",
+            "Sub": [
+                {
+                    "Id": "011",
+                    "Descripcion": "Datos del municipio",
+                    "Tipo": "HTML",
+                    "Href": "../../PRY/paginas/PRY001.html"
+                },
+                {
+                    "Id": "022",
+                    "Descripcion": "Plan de desarrollo",
+                    "Tipo": "HTML",
+                    "Href": "../../PRY/paginas/PRY_002.html"
+                }
+            ]
+        },
+        {
+            "Id": "02",
+            "Descripcion": "Impresiones masivas",
+            "Sub": [
+                {
+                    "Id": "021",
+                    "Descripcion": "Impresion masiva de estudios",
+                    "Opc-segu": "ISR3",
+                    "Tipo": "HTML",
+                    "Href": "../../RX/paginas/RX-424.html"
+                },
+                {
+                    "Id": "022",
+                    "Descripcion": "Impresion masiva por entidad",
+                    "Opc-segu": "ISR4",
+                    "Tipo": "HTML",
+                    "Href": "../../RX/paginas/RX-425.html"
+                }
+            ]
+        }
+    ]
+}

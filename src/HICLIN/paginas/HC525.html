@@ -1,0 +1,796 @@
+<!-- @format -->
+
+<style>
+  #controles > thead > tr > th {
+    font-size: 12px !important;
+    text-align: center;
+    text-transform: uppercase;
+    text-align: center;
+    padding-left: 2px !important;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  #controles > thead input {
+    font-size: 11.5px !important;
+  }
+  #controles > thead td {
+    font-size: 11.5px !important;
+  }
+
+  .float_salir {
+    z-index: 2;
+    position: fixed;
+    width: 65px;
+    height: 60px;
+    bottom: 16px;
+    background-color: #476fad;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 1px 1px 1px #999;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .float_salir:hover {
+    box-shadow: 2px 2px 2px #999;
+    transition: padding 0.5s ease, background-position 0.5s ease, transform 0.8s ease;
+    text-decoration: none;
+    color: #fff;
+  }
+  .float_imprimir {
+    z-index: 2;
+    position: fixed;
+    width: 65px;
+    height: 60px;
+    bottom: 16px;
+    background-color: #476fad;
+    color: #fff;
+    border-radius: 70px;
+    text-align: center;
+    box-shadow: 1px 1px 1px #999;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .float_imprimir:hover {
+    box-shadow: 2px 2px 2px #999;
+    transition: padding 0.5s ease, background-position 0.5s ease, transform 0.8s ease;
+    text-decoration: none;
+    color: #fff;
+  }
+  /* Para pantallas pequeñas */
+  @media only screen and (max-width: 1172px) and (min-width: 800px) {
+    .sub-encabezado label {
+      font-size: 11px !important;
+    }
+
+    .datos-encabezado label {
+      font-size: 13px !important;
+    }
+
+    .datos-encabezado input {
+      font-size: 11.3px !important;
+    }
+    #controles > thead > tr > th {
+      font-size: 10px !important;
+    }
+    #inputs-tabla {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+    #controles > thead input:not(.glasg) {
+      font-size: 10px !important;
+      width: auto !important;
+      text-align: center !important;
+      max-width: 36px !important;
+      min-width: 20px !important;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+    #controles > tbody td {
+      font-size: 10px !important;
+      text-align: center !important;
+    }
+    .glasg {
+      font-size: 10px !important;
+      width: auto !important;
+      text-align: center !important;
+      max-width: 45px !important;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+  }
+</style>
+<div class="col-md-12" id="HC525">
+  <div
+    class="portlet light no-padding"
+    style="background-color: transparent !important; box-shadow: none !important"
+  >
+    <div class="portlet-body">
+      <form class="form-horizontal" onsubmit="return false;">
+        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+          <div
+            class="col-md-2 no-padding sub-encabezado"
+            style="padding-right: 5px !important; padding-left: 5px !important"
+          >
+            <label class="col-md-12 head-box" style="margin-top: 3px; text-align: center"
+              >PROCESOS DE ENFERMERÍA</label
+            >
+            <label class="col-md-12" style="margin-top: 6px; text-align: center"
+              >CONTROL NEUROLÓGICO</label
+            >
+          </div>
+          <div class="no-padding datos-encabezado">
+            <div class="col-md-6">
+              <label class="col-md-5" style="text-align: center"></label>
+              <label class="col-md-4" style="text-align: left">Médico</label>
+              <label class="col-md-3" style="text-align: left">Especialidad</label>
+              <div
+                id="dato_codmedico"
+                class="input-group inline-inputs col-md-12 col-sm-12 col-xs-12"
+              >
+                <input
+                  v-model="medico.cod"
+                  type="text"
+                  maxlength="10"
+                  data-orden="1"
+                  disabled="disabled"
+                  class="form-control col-md-4 col-sm-12 col-xs-12 uppercase"
+                  style="text-align: center; width: 60%; border-radius: 0px !important"
+                />
+                <input
+                  v-model="medico.descripcion"
+                  type="text"
+                  maxlength="50"
+                  disabled="disabled"
+                  class="form-control col-md-6 col-sm-12 col-xs-12 uppercase"
+                  style="
+                    text-align: center;
+                    margin-left: 0px !important;
+                    border-radius: 0px !important;
+                  "
+                />
+                <input
+                  v-model="medico.especialidad"
+                  type="text"
+                  maxlength="50"
+                  disabled="disabled"
+                  class="form-control col-md-8 col-sm-12 col-xs-12 uppercase"
+                  style="text-align: center; border-radius: 0px !important"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label class="col-md-12">Consultando</label>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input
+                  v-model="unserv"
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                  maxlength="10"
+                  data-orden="1"
+                  style="text-align: center; border-radius: 0px !important"
+                  disabled="disabled"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-1" style="padding-right: 4px">
+              <label class="col-md-12">Folio</label>
+              <div
+                class="input-group col-md-12 col-sm-12 col-xs-12"
+                style="border-radius: 0px !important"
+              >
+                <input
+                  v-model="folio"
+                  type="text"
+                  class="form-control col-md-12 col-sm-12 col-xs-12 uppercase"
+                  maxlength="10"
+                  data-orden="1"
+                  style="text-align: center"
+                  disabled="disabled"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div id="divTabla" class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div name="tabla_controles" class="col-md-12 no-padding">
+              <table
+                id="controles"
+                data-orden="1"
+                class="table col-md-12 table-light table-striped"
+                style="padding-right: 0px; margin-bottom: 0px !important; padding-left: 1px"
+              >
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Año</th>
+                    <th>Mes</th>
+                    <th>Dia</th>
+                    <th>Hora</th>
+                    <th>Min</th>
+                    <th>Temp</th>
+                    <th>F.C.</th>
+                    <th>F.R</th>
+                    <th>T. Art.</th>
+                    <th>PVC</th>
+                    <th>OD</th>
+                    <th>OI</th>
+                    <th>MSD</th>
+                    <th>MSI</th>
+                    <th>MII</th>
+                    <th>MID</th>
+                    <th>Glasgow</th>
+                  </tr>
+                  <tr id="inputs-tabla">
+                    <td style="width: 30px">
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="indice"
+                          type="number"
+                          maxlength="3"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center; padding-left: 0px; padding-right: 0px"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 97px; padding-right: 1px; padding-left: 0px">
+                      <div id="dato_anio_control" class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="control.anio"
+                          type="number"
+                          maxlength="4"
+                          data-orden="1"
+                          required="required"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 70px">
+                      <div id="dato_mes_control" class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="control.mes"
+                          type="number"
+                          maxlength="2"
+                          data-orden="1"
+                          required="required"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 70px">
+                      <div id="dato_dia_control" class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="control.dia"
+                          type="number"
+                          maxlength="2"
+                          min="0"
+                          data-orden="1"
+                          required="required"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 70px">
+                      <div id="dato_hora_control" class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="control.hora"
+                          type="number"
+                          maxlength="2"
+                          min="0"
+                          data-orden="1"
+                          required="required"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 70px">
+                      <div
+                        id="dato_minutos_control"
+                        class="input-group col-md-12 col-sm-5 col-xs-5"
+                      >
+                        <input
+                          v-model="control.minutos"
+                          type="number"
+                          maxlength="2"
+                          min="0"
+                          data-orden="1"
+                          required="required"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 80px">
+                      <div id="dato_temp_control" class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="control.temp"
+                          type="text"
+                          maxlength="4"
+                          min="0"
+                          step="any"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center; padding-left: 0px; padding-right: 0px"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 85px">
+                      <div id="dato_fcard_control" class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="control.fcard"
+                          type="number"
+                          maxlength="3"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 80px">
+                      <div id="dato_fresp_control" class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="control.fresp"
+                          type="number"
+                          maxlength="3"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 137px">
+                      <div
+                        id="dato_tens_control"
+                        class="input-group inline-inputs col-md-12 col-sm-5 col-xs-5"
+                      >
+                        <div id="dato_tens1_control">
+                          <input
+                            v-model="control.tens1"
+                            type="number"
+                            maxlength="3"
+                            data-orden="1"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center; border-radius: 0px !important"
+                            disabled="disabled"
+                          />
+                        </div>
+                        <div id="dato_tens2_control">
+                          <input
+                            v-model="control.tens2"
+                            type="number"
+                            maxlength="3"
+                            data-orden="1"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center; border-radius: 0px !important"
+                            disabled="disabled"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td style="width: 74px">
+                      <div id="dato_pvc_control" class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="control.pvc"
+                          type="number"
+                          maxlength="2"
+                          data-orden="1"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                        />
+                      </div>
+                    </td>
+
+                    <td style="width: 135px; padding-top: 0px; padding-left: 0px">
+                      <div id="dato_od_control" class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <label
+                          style="
+                            font-size: 7px;
+                            text-align: center;
+                            font-weight: bold;
+                            color: #476fad;
+                          "
+                          class="col-md-7"
+                          >T</label
+                        >
+                        <label
+                          style="font-size: 7px; text-align: center; color: #476fad"
+                          class="col-md-3"
+                          >&nbsp;R</label
+                        >
+                        <div
+                          class="col-md-12 inline-inputs"
+                          style="padding-left: 2%; padding-right: 0"
+                        >
+                          <div id="dato_odt_control">
+                            <input
+                              v-model="control.odt"
+                              class="form-control col-md-12 col-sm-12 col-xs-12"
+                              style="text-align: center; border-radius: 0px !important"
+                              disabled="disabled"
+                            />
+                          </div>
+                          <div id="dato_odr_control">
+                            <input
+                              v-model="control.odr"
+                              class="form-control col-md-12 col-sm-12 col-xs-12"
+                              style="text-align: center; border-radius: 0px !important"
+                              disabled="disabled"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="width: 137px; padding-top: 0px; padding-left: 0px">
+                      <div id="dato_oi_control" class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <label
+                          style="
+                            font-size: 7px;
+                            text-align: center;
+                            font-weight: bold;
+                            color: #476fad;
+                          "
+                          class="col-md-7"
+                          >T</label
+                        >
+                        <label
+                          style="font-size: 7px; text-align: center; color: #476fad"
+                          class="col-md-3"
+                          >&nbsp;R</label
+                        >
+                        <div
+                          class="col-md-12 inline-inputs"
+                          style="padding-left: 2%; padding-right: 0"
+                        >
+                          <div id="dato_oit_control">
+                            <input
+                              v-model="control.oit"
+                              class="form-control col-md-12 col-sm-12 col-xs-12"
+                              style="text-align: center; border-radius: 0px !important"
+                              disabled="disabled"
+                            />
+                          </div>
+                          <div id="dato_oir_control">
+                            <input
+                              v-model="control.oir"
+                              class="form-control col-md-12 col-sm-12 col-xs-12"
+                              style="text-align: center; border-radius: 0px !important"
+                              disabled="disabled"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td style="width: 80px">
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="control.msd"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 80px">
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="control.msi"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 80px">
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="control.mii"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 80px">
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="control.mid"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                        />
+                      </div>
+                    </td>
+                    <td style="width: 80px">
+                      <div class="input-group col-md-12 col-sm-5 col-xs-5">
+                        <input
+                          v-model="control.glasgow_total"
+                          disabled="disabled"
+                          class="form-control col-md-12 col-sm-12 col-xs-12 glasg"
+                          style="text-align: center; padding-right: 0px; padding-left: 0px"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="item in controles">
+                    <td>{{item.item}}</td>
+                    <td>{{item.anio}}</td>
+                    <td>{{item.mes}}</td>
+                    <td>{{item.dia}}</td>
+                    <td>{{item.hora}}</td>
+                    <td>{{item.min}}</td>
+                    <td>{{item.temp}}</td>
+                    <td>{{item.fcard}}</td>
+                    <td>{{item.fresp}}</td>
+                    <td>{{item.tens}}</td>
+                    <td>{{item.pvc}}</td>
+                    <td>{{item.odt+"/"}}{{item.odr}}</td>
+                    <td>{{item.oit+"/"}}{{item.oir}}</td>
+                    <td>{{item.msd}}</td>
+                    <td>{{item.msi}}</td>
+                    <td>{{item.mii}}</td>
+                    <td>{{item.mid}}</td>
+                    <td>{{item.glasgow_total}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <transition name="modal_prosoft" v-if="sw_fin">
+          <div class="overlay_prosoft">
+            <div class="modal_prosoft">
+              <div class="container_prosoft">
+                <div class="header_prosoft">
+                  <p style="padding: 9px 25px; margin: 0px auto">Observaciones</p>
+                </div>
+                <div class="body_prosoft">
+                  <div class="col-md-12">
+                    <div class="portlet light no-padding">
+                      <div class="portlet-body">
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                          <div
+                            id="dato_observaciones"
+                            class="input-group col-md-12 col-sm-5 col-xs-5"
+                            style="padding-bottom: 10px"
+                          >
+                            <textarea
+                              v-model="control.observaciones"
+                              rows="2"
+                              maxlength="95"
+                              data-orden="1"
+                              class="form-control"
+                              disabled="disabled"
+                              style="resize: none; text-align: justify; padding-bottom: 4px"
+                            ></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+        <transition name="modal_prosoft" v-if="sw_prn">
+          <div class="overlay_prosoft">
+            <div class="modal_prosoft">
+              <div class="container_prosoft">
+                <div class="header_prosoft">
+                  <p style="padding: 9px 25px; margin: 0px auto">
+                    IMPRESIÓN CONTROLES NEUROLÓGICOS
+                  </p>
+                </div>
+                <div class="body_prosoft">
+                  <div class="col-md-12">
+                    <div class="portlet light no-padding">
+                      <div class="portlet-body">
+                        <div id="IMP" class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                          <div
+                            class="col-md-12 col-sm-12 col-xs-12 no-padding"
+                            style="margin: 0 auto"
+                          >
+                            <label class="col-md-12 col-sm-12 col-xs-12 text-center"
+                              >Fecha Inicial:</label
+                            >
+                            <div class="col-md-12 no-padding">
+                              <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                  <label class="col-md-12 col-sm-6 col-xs-6 text-center"
+                                    >Año:</label
+                                  >
+                                  <div
+                                    id="dato_anio_ini"
+                                    class="input-group col-md-12 col-sm-5 col-xs-5"
+                                  >
+                                    <input
+                                      id="anoIni"
+                                      type="number"
+                                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                                      maxlength="4"
+                                      disabled="disabled"
+                                      data-orden="1"
+                                      required="true"
+                                      v-model="anoIni"
+                                      style="text-align: center"
+                                    />
+                                  </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                  <label class="col-md-12 col-sm-6 col-xs-6 text-center"
+                                    >Mes:</label
+                                  >
+                                  <div
+                                    id="dato_mes_ini"
+                                    class="input-group col-md-12 col-sm-5 col-xs-5"
+                                  >
+                                    <input
+                                      id="mesIni"
+                                      type="number"
+                                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                                      maxlength="2"
+                                      v-model="mesIni"
+                                      disabled="disabled"
+                                      data-orden="1"
+                                      required="true"
+                                      style="text-align: center"
+                                    />
+                                  </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                  <label class="col-md-12 col-sm-12 col-xs-6 text-center"
+                                    >Dia:</label
+                                  >
+                                  <div
+                                    id="dato_dia_ini"
+                                    class="input-group col-md-12 col-sm-5 col-xs-5"
+                                  >
+                                    <input
+                                      id="diaIni"
+                                      type="number"
+                                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                                      maxlength="2"
+                                      v-model="diaIni"
+                                      disabled="disabled"
+                                      data-orden="1"
+                                      required="true"
+                                      style="text-align: center"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 no-padding" id="divFechaFin">
+                            <div class="salto-linea"></div>
+                            <label class="col-md-12 col-sm-12 col-xs-12 text-center"
+                              >Fecha Final:</label
+                            >
+                            <div class="col-md-12 no-padding">
+                              <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                  <label class="col-md-12 col-sm-6 col-xs-6 text-center"
+                                    >Año:</label
+                                  >
+                                  <div
+                                    id="dato_anio_fin"
+                                    class="input-group col-md-12 col-sm-5 col-xs-5"
+                                  >
+                                    <input
+                                      id="anoFin"
+                                      type="number"
+                                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                                      maxlength="4"
+                                      v-model="anoFin"
+                                      disabled="disabled"
+                                      data-orden="1"
+                                      style="text-align: center"
+                                    />
+                                  </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                  <label class="col-md-12 col-sm-6 col-xs-6 text-center"
+                                    >Mes:</label
+                                  >
+                                  <div
+                                    id="dato_mes_fin"
+                                    class="input-group col-md-12 col-sm-5 col-xs-5"
+                                  >
+                                    <input
+                                      id="mesFin"
+                                      type="number"
+                                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                                      maxlength="2"
+                                      v-model="mesFin"
+                                      disabled="disabled"
+                                      data-orden="1"
+                                      style="text-align: center"
+                                    />
+                                  </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                  <label class="col-md-12 col-sm-12 col-xs-6 text-center"
+                                    >Dia:</label
+                                  >
+                                  <div
+                                    id="dato_dia_fin"
+                                    class="input-group col-md-12 col-sm-5 col-xs-5"
+                                  >
+                                    <input
+                                      id="diaFin"
+                                      type="number"
+                                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                                      maxlength="2"
+                                      v-model="diaFin"
+                                      disabled="disabled"
+                                      data-orden="1"
+                                      style="text-align: center"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="salto-linea"></div>
+                              <div class="salto-linea"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="clear: both"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </form>
+    </div>
+  </div>
+  <a
+    class="float_salir"
+    style="left: 21px; background-color: #da2c2c; border-color: #da2c2c"
+    @click="terminarEjecucion"
+  >
+    <span>Salir </span>
+  </a>
+  <a
+    class="float_imprimir"
+    style="right: 21px; background-color: #1b489b; border-color: #1b489b"
+    @click="ventanaOpcionesImp"
+  >
+    <span>Imprimir </span>
+  </a>
+</div>
+
+<script src="../../HICLIN/scripts/HC525.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI525.formato.js" type="text/javascript"></script>

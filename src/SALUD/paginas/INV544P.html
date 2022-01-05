@@ -1,0 +1,295 @@
+<style>
+  .grid-2 {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .grid-field {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr))
+  }
+</style>
+
+<div class="col-md-12" id="INV544P">
+
+  <div class= "portlet light no-padding">
+
+    <div class="portlet-body">
+
+      <div class="form-horizontal">
+
+        <div class="form-group col-md-8 col-sm-8 col-xs-8 box-center">
+        
+           <div div class="col-md-6 col-sm-6 col-xs-6">
+               <div class="inline-inputs">
+                   <label class="col-md-4 col-sm-4 col-xs-4" style="text-align: left; background: 0;">Tipo de factura:</label>
+                   <div class="input-group col-md-9 col-sm-9 col-xs-9" id="tipoFact">
+                   <input :value="descrip_tipo_fact" type="text" class="form-control col-md-10 col-sm-10 col-xs-10 text-center" 
+                         disabled="disabled"/>
+                   </div>
+               </div>
+           </div>
+
+          <div class="col-md-2 col-sm-2 col-xs-2">
+            <div class="inline-inputs">
+              <label class="col-md-7 col-sm-7 col-xs-7" style="text-align: left; background: 0;">Prefijo:</label>
+                <div class="input-group col-md-5 col-sm-5 col-xs-5" id="prefijo">
+                  <input v-model='form.prefijo' type="text" class="form-control col-md-2 col-sm-2 col-xs-2 text-center uppercase" 
+                  data-orden="1" maxlength="1" disabled="disabled" />
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-4 col-xs-4" id="validar_unidad">
+            <div class="inline-inputs">
+                <label class="col-md-10 col-sm-10 col-xs-10" style="text-align: left;background: 0;">Discrimina unid. de servicios?</label>
+                <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                    <input v-model='form.unidad' type="text" disabled="disabled"
+                        class="form-control col-md-8 col-sm-8 col-xs-8 text-center" maxlength="1" data-orden="1"
+                        placeholder="S/N" disabled="disabled">
+                </div>
+            </div>
+          </div>
+
+          <div class="salto-linea"></div> 
+
+          <div class="col-md-3 col-sm-3 col-xs-3" id="validar_paciente">
+            <div class="inline-inputs">
+                <label class="col-md-8 col-sm-8 col-xs-8" style="text-align: left;background: 0;">Discrimina paciente?</label>
+                <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                    <input v-model='form.paciente' type="text" disabled="disabled"
+                        class="form-control col-md-8 col-sm-8 col-xs-8 text-center" maxlength="1" data-orden="1"
+                        placeholder="S/N" disabled="disabled">
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-3 col-xs-3" id="validar_ciudad">
+            <div class="inline-inputs">
+                <label class="col-md-8 col-sm-8 col-xs-8" style="text-align: left;background: 0;">Discrimina ciudad?</label>
+                <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                    <input v-model='form.ciudad' type="text" disabled="disabled"
+                        class="form-control col-md-8 col-sm-8 col-xs-8 text-center" maxlength="1" data-orden="1"
+                        placeholder="S/N" disabled="disabled">
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-3 col-xs-3 no-padding" id="validar_factura">
+            <div class="inline-inputs">
+                <label class="col-md-8 col-sm-8 col-xs-8" style="text-align: left;background: 0;">Discrimina factura?</label>
+                <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                    <input v-model='form.factura' type="text" disabled="disabled"
+                        class="form-control col-md-8 col-sm-8 col-xs-8 text-center" maxlength="1" data-orden="1"
+                        placeholder="S/N" disabled="disabled">
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-3 col-xs-3" id="validar_especialidad" >
+            <div class="inline-inputs">
+                <label class="col-md-9 col-sm-9 col-xs-9" style="text-align: left;background: 0;">Discrimina especialid?</label>
+                <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                    <input v-model='form.especialidad' type="text" disabled="disabled"
+                        class="form-control col-md-8 col-sm-8 col-xs-8 text-center" maxlength="1" data-orden="1"
+                        placeholder="S/N" disabled="disabled">
+                </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-group col-md-8 col-sm-8 col-xs-8 box-center">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <label>Fecha inicial</label>
+            <div class="grid-field">
+              <div class="input-group col-md-12 col-sm-12 col-xs-12" id="ano_inicial">
+                <input v-model="form.ano_ini" type="number" required="true"
+                    placeholder="AAAA" class="form-control" maxlength="4" disabled="disabled"
+                    data-orden="1">
+              </div>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12" id="mes_inicial">
+                <input v-model="form.mes_ini" type="number" required="true"
+                    placeholder="MM" class="form-control" maxlength="2" disabled="disabled" data-orden="1">
+              </div>
+            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="dia_inicial">
+              <input v-model="form.dia_ini" type="number" required="true"
+                  placeholder="DD" class="form-control" maxlength="2" disabled="disabled" data-orden="1">
+            </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+            <label>Fecha final</label>
+            <div class="grid-field">
+              <div class="input-group col-md-12 col-sm-12 col-xs-12" id="ano_final">
+                <input v-model="form.ano_fin" type="number" required="true"
+                    placeholder="AAAA" class="form-control" maxlength="4" disabled="disabled"
+                    data-orden="1">
+              </div>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12" id="mes_final">
+                <input v-model="form.mes_fin" type="number" required="true"
+                    placeholder="MM" class="form-control" maxlength="2" disabled="disabled" data-orden="1">
+              </div>
+              <div class="input-group col-md-12 col-sm-12 col-xs-12" style="padding-right: 15px;" id="dia_final">
+                <input v-model="form.dia_fin" type="number" required="true"
+                    placeholder="DD" class="form-control" maxlength="2" disabled="disabled" data-orden="1">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-group col-md-8 col-sm-8 col-xs-8 box-center">
+
+          <div class="inline-inputs col-md-6 col-sm-6 col-xs-6" style="padding-left: 0;" >
+            <label class="col-md-2 col-sm-2 col-xs-2" style="text-align: left; background: 0;">Grupo:</label>
+                <div class="input-group col-md-2 col-sm-2 col-xs-2" id="validar_grupo">
+                  <input v-model='form.grupo' type="text" @keydown.f8="_validarVentanaGrupos"
+                  class="form-control col-md-2 col-sm-2 col-xs-2 text-center grupo" 
+                  data-orden="1" maxlength="2" disabled="disabled" />
+                </div>
+            <button @click="_validarVentanaGrupos" type="button"
+                class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                <i class="icon-magnifier"></i>
+            </button>
+            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input type="text" disabled="disabled" ref="descrip_grupo"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" />
+            </div>
+          </div>
+
+          <div class="inline-inputs col-md-6 col-sm-6 col-xs-6" style="padding-left: 0;">
+            <label class="col-md-2 col-sm-2 col-xs-2" style="text-align: left; background: 0;">Articulo:</label>
+                <div class="input-group col-md-3 col-sm-3 col-xs-3" id="validar_articulo">
+                  <input v-model='form.articulo' type="text" @keydown.f8="_ventanaArt"
+                  class="form-control col-md-2 col-sm-2 col-xs-2 text-center articulo" 
+                  data-orden="1" maxlength="2" disabled="disabled" required="true" />
+                </div>
+
+            <button @click="_ventanaArt" type="button"
+                class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                <i class="icon-magnifier"></i>
+            </button>
+            <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                <input type="text" disabled="disabled" ref="descrip_art"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" />
+            </div>
+          </div>
+
+          <div class="salto-linea"></div>
+
+          <div class="col-md-4 col-sm-4 col-xs-4" id="validar_codigo">
+            <div class="inline-inputs">
+                <label class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; background: 0;">Discrimina codigo?</label>
+                <div class="input-group col-md-6 col-sm-6 col-xs-6" >
+                    <input v-model='form.codigo' type="text" disabled="disabled"
+                        class="form-control col-md-8 col-sm-8 col-xs-8 text-center" maxlength="1" data-orden="1"
+                        placeholder="S/N" disabled="disabled">
+                </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-sm-4 col-xs-4" id="validar_primera_vez">
+            <div class="inline-inputs">
+                <label class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; background: 0;">Solo primera vez?</label>
+                <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                    <input v-model='form.primera_vez' type="text" disabled="disabled"
+                        class="form-control col-md-8 col-sm-8 col-xs-8 text-center" maxlength="1" data-orden="1" 
+                        placeholder="S/N" disabled="disabled">
+                </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-sm-4 col-xs-4" id="validar_mayor15">
+            <div class="inline-inputs">
+                <label class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; background: 0;">Solo mayores de 15?</label>
+                <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                    <input v-model='form.mayor15' type="text" disabled="disabled"
+                        class="form-control col-md-8 col-sm-8 col-xs-8 text-center" maxlength="1" data-orden="1" 
+                        placeholder="S/N" disabled="disabled">
+                </div>
+            </div>
+          </div>
+
+          <div class="salto-linea"></div>
+
+          <div class="inline-inputs col-md-6 col-sm-6 col-xs-6" style="padding-left: 0;">
+            <label class="col-md-9 col-sm-9 col-xs-9" style="text-align: left; background: 0;">Entidad a procesar :</label>
+            <div class="input-group col-md-4 col-sm-4 col-xs-4" id="validar_nit">
+                <input v-model="form.nit" type="number" @keydown.f8="_ventanaNit" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12 text-left nit" data-orden="1"
+                    maxlength="10" />
+            </div>
+            <button @click="_ventanaNit" type="button"
+                class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                <i class="icon-magnifier"></i>
+            </button>
+            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+              <input v-model="form.descrip_nit" type="text" disabled="disabled"
+                  class="form-control col-md-12 col-sm-12 col-xs-12" />
+            </div>
+          </div>
+
+          <div class="inline-inputs col-md-6 col-sm-6 col-xs-6" style="padding-left: 0;">
+            <label class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; background: 0;">Especialidad :</label>
+            <div class="input-group col-md-4 col-sm-4 col-xs-4" id="validar_espec">
+                <input v-model="form.espec" type="text" @keydown.f8="_ventanaEspec" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12 text-left especialidad" data-orden="1" 
+                    maxlength="3" />
+            </div>
+            <button @click="_ventanaEspec" type="button"
+                class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                <i class="icon-magnifier"></i>
+            </button>
+            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input v-model="form.descrip_espec" type="text" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" />
+            </div>
+          </div>
+
+          <div class="salto-linea"></div>
+
+          <div class="col-md-6 col-sm-6 col-xs-6" id="validar_med">
+            <div class="inline-inputs">
+                <label class="col-md-4 col-sm-4 col-xs-4" style="text-align: left; background: 0;">Distrib med x form?</label>
+                <div class="input-group col-md-2 col-sm-2 col-xs-2" >
+                    <input v-model='form.med' type="text" disabled="disabled"
+                        class="form-control col-md-8 col-sm-8 col-xs-8 text-center" maxlength="1" data-orden="1"
+                        placeholder="S/N" disabled="disabled">
+                </div>
+            </div>
+          </div>
+
+          <div class="inline-inputs col-md-6 col-sm-6 col-xs-6" style="padding-left: 0;">
+            <label class="col-md-6 col-sm-6 col-xs-6" style="text-align: left; background: 0;">Centro costos :</label>
+            <div class="input-group col-md-4 col-sm-4 col-xs-8" id="validar_costos">
+                <input v-model="form.costos" type="text" @keydown.f8="_ventanaCostos" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12 text-left costos" data-orden="1" 
+                    maxlength="2" />
+            </div>
+            <button @click="_ventanaCostos" type="button"
+                class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                <i class="icon-magnifier"></i>
+            </button>
+            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                <input v-model="form.descrip_costos" type="text" disabled="disabled"
+                    class="form-control col-md-12 col-sm-12 col-xs-12" />
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <loader_modal :estado="estado_loader" :progreso="progreso" :loader="loader" :label="label_loader"></loader_modal>
+</div>
+
+
+<script src="../../SALUD/scripts/INV544P.js" type="text/javascript" ></script>

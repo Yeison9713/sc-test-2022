@@ -1,0 +1,585 @@
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+</style>
+
+<div class="col-md-12" id="PUB704">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="col-md-12 no-padding">
+          <div class="col-md-2 no-padding">
+            <div class="col-md-12" style="padding-left: 0">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 no-padding inline-inputs" style="text-align: left">
+                  <label class="col-md-7 lbl_left">Novedad</label>
+                  <label class="col-md-5">{{ novedad }}</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12" style="padding-left: 0; margin-top: -7px">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 no-padding inline-inputs" style="text-align: left">
+                  <label class="col-md-7 lbl_left">Número</label>
+                  <div class="col-md-5 no-padding" id="llave">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="reg_pqr.llave"
+                        type="number"
+                        class="form-control text-center llave"
+                        maxlength="6"
+                        data-orden="1"
+                        required="true"
+                        @keydown.f8="_ventanaPQR"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center" style="margin-bottom: 13px !important">
+              <div class="col-md-12 head-box no-padding">
+                <label>Fecha</label>
+              </div>
+              <div class="col-md-12 no-padding" id="fecha">
+                <div class="col-md-4">
+                  <label class="col-md-12">Año</label>
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="fecha.ano_w"
+                      type="number"
+                      class="form-control text-center"
+                      maxlength="4"
+                      data-orden="1"
+                      required="true"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label class="col-md-12">Mes</label>
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="fecha.mes_w"
+                      type="number"
+                      class="form-control text-center"
+                      maxlength="2"
+                      data-orden="2"
+                      required="true"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label class="col-md-12">Dia</label>
+                  <div class="input-group col-md-12">
+                    <input
+                      v-model="fecha.dia_w"
+                      type="number"
+                      class="form-control text-center"
+                      maxlength="2"
+                      data-orden="3"
+                      required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 no-padding">
+            <div class="col-md-12" style="padding-left: 0">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 no-padding inline-inputs" style="text-align: left">
+                  <label class="col-md-7 lbl_left">Medio</label>
+                  <label class="col-md-5">{{ medio_edit }}</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12" style="padding-left: 0; margin-top: -7px">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 no-padding inline-inputs" style="text-align: left">
+                  <label class="col-md-7 lbl_left">Solicitante</label>
+                  <label class="col-md-5">{{ tipo_solic_edit }}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 no-padding">
+            <div class="col-md-12" style="padding-left: 0">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 no-padding" style="text-align: left">
+                  <div class="col-md-12 head-box no-padding">
+                    <label class="col-md-12 text-center" style="padding-top: 8px; padding-bottom: 12px"
+                      >Cod. Usuario</label
+                    >
+                  </div>
+                  <div class="col-md-12 no-padding" id="usu">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="reg_pqr.usu"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="15"
+                        data-orden="1"
+                        required="true"
+                        @keydown.f8="_ventanaUsuarSer"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 no-padding">
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 no-padding inline-inputs" style="text-align: left">
+                  <label class="col-md-5 lbl_left">Telefono</label>
+                  <div class="col-md-7 no-padding" id="tel">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="reg_pqr.tel"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="10"
+                        data-orden="1"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding" style="padding-left: 0; margin-top: -7px">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 no-padding inline-inputs" style="text-align: left">
+                  <label class="col-md-5 lbl_left">Factura</label>
+                  <div class="col-md-7 no-padding" id="fact">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="reg_pqr.fact"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="8"
+                        data-orden="1"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="col-md-5" style="padding-left: 0">
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 no-padding inline-inputs" style="text-align: left">
+                  <label class="col-md-3 lbl_left">Nombre</label>
+                  <div class="col-md-9 no-padding" id="nom">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="reg_pqr.nom"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="30"
+                        data-orden="1"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 no-padding inline-inputs" style="text-align: left">
+                  <label class="col-md-3 lbl_left">Dirección</label>
+                  <div class="col-md-9 no-padding" id="dir">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="reg_pqr.dir"
+                        type="text"
+                        class="form-control text-center"
+                        maxlength="30"
+                        data-orden="1"
+                        required="true"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 inline-inputs no-padding">
+              <div class="col-md-7" style="padding-left: 0">
+                <div class="form-group col-md-12 box-center inline-inputs">
+                  <label class="col-md-3 lbl_left">Servicio</label>
+                  <div class="input-group col-md-2" id="ser">
+                    <input
+                      v-model="reg_pqr.ser"
+                      type="text"
+                      class="form-control ser"
+                      style="text-align: center"
+                      data-orden="1"
+                      @keydown.f8="_ventanaServicios"
+                      maxlength="1"
+                      required="true"
+                    />
+                  </div>
+                  <button
+                    @click="_ventanaServicios"
+                    type="button"
+                    class="btn col-md-1 f8-Btn"
+                    style="width: 14% !important"
+                  >
+                    <i class="icon-magnifier"></i>
+                  </button>
+                  <label class="col-md-6 lbl_left" style="padding-left: 10px !important"> {{ descrip_serv }}</label>
+                </div>
+              </div>
+
+              <div class="col-md-5 no-padding">
+                <div class="form-group col-md-12 box-center">
+                  <div class="col-md-12 no-padding inline-inputs" style="text-align: left">
+                    <label class="col-md-5 lbl_left">Tramite</label>
+                    <label class="col-md-7">{{ tramite_edit }}</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 no-padding">
+                  <div class="col-md-12 head-box">
+                    <label class="col-md-12" style="text-align: center">Motivo</label>
+                  </div>
+                  <div class="inline-inputs col-md-12 no-padding">
+                    <div class="input-group col-md-2" id="mot">
+                      <input
+                        v-model="reg_pqr.mot"
+                        type="text"
+                        class="form-control mot"
+                        style="text-align: center"
+                        data-orden="1"
+                        @keydown.f8="_ventanaMotivos"
+                        maxlength="3"
+                        required="true"
+                      />
+                    </div>
+                    <button @click="_ventanaMotivos" type="button" class="btn col-md-1 f8-Btn">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <label class="col-md-9 lbl_left" style="padding-left: 10px !important"> {{ descrip_mot }}</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 box-center">
+                <div class="col-md-12 no-padding">
+                  <div class="col-md-12 head-box">
+                    <label class="col-md-12" style="text-align: center">Dependencia responsable</label>
+                  </div>
+                  <div class="inline-inputs col-md-12 no-padding">
+                    <div class="input-group col-md-2" id="dep">
+                      <input
+                        v-model="reg_pqr.dep"
+                        type="text"
+                        class="form-control dep"
+                        style="text-align: center"
+                        data-orden="1"
+                        @keydown.f8="_ventanaDependencias"
+                        maxlength="3"
+                        required="true"
+                      />
+                    </div>
+                    <button @click="_ventanaDependencias" type="button" class="btn col-md-1 f8-Btn">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <label class="col-md-9 lbl_left" style="padding-left: 10px !important"> {{ descrip_dep }}</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-7 no-padding">
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 no-padding">
+                <div class="col-md-12 box-center" style="padding-left: 15px; padding-right: 10px" id="descrip">
+                  <div class="col-md-12 head-box" style="display: flex; justify-content: space-between">
+                    <label>P.Q.R.</label>
+                    <div>
+                      <div class="tooltip-proft bottom-text" style="margin-left: 5px">
+                        <span class="icon-proft icon-info"></span>
+                        <span class="tiptext">
+                          <div>Con F3 pasa de un campo a otro.</div>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <textarea
+                    v-model="reg_pqr.descrip"
+                    class="form-control"
+                    rows="5"
+                    maxlength="5400"
+                    data-orden="1"
+                    style="resize: none; text-align: justify"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 no-padding">
+              <div class="form-group col-md-12 no-padding">
+                <div
+                  class="col-md-12 box-center"
+                  style="padding-left: 15px; padding-right: 10px; padding-bottom: 9px"
+                  id="concep"
+                >
+                  <div class="col-md-12 head-box" style="display: flex; justify-content: space-between">
+                    <label>Concepto del funcionario</label>
+                    <div>
+                      <div class="tooltip-proft bottom-text" style="margin-left: 5px">
+                        <span class="icon-proft icon-info"></span>
+                        <span class="tiptext">
+                          <div>Con F3 pasa de un campo a otro.</div>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <textarea
+                    v-model="reg_pqr.concep"
+                    class="form-control"
+                    rows="5"
+                    maxlength="270"
+                    data-orden="1"
+                    style="resize: none; text-align: justify"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="col-md-3" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center">
+              <div class="col-md-12 no-padding inline-inputs" style="text-align: left">
+                <label class="col-md-5 lbl_left">Estado</label>
+                <label class="col-md-7">{{ estado_edit }}</label>
+              </div>
+            </div>
+
+            <div class="salto-linea"></div>
+
+            <div class="form-group col-md-12 box-center">
+              <div class="col-md-12 no-padding" style="text-align: left">
+                <div class="col-md-12 head-box no-padding">
+                  <label class="col-md-12 text-center" style="padding-top: 8px; padding-bottom: 12px"
+                    >Tipo Respuesta</label
+                  >
+                </div>
+                <label class="col-md-12 text-center" style="padding-top: 12px; padding-bottom: 12px"
+                  >{{ respuesta_edit }}</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3" style="padding-left: 0">
+            <div class="form-group col-md-12 box-center">
+              <div class="col-md-12 no-padding" style="text-align: center">
+                <div class="col-md-12 no-padding">
+                  <div class="col-md-5 head-box" style="text-align: left; padding-left: 0">
+                    <label></label>
+                  </div>
+                  <div class="col-md-3 head-box">
+                    <label class="no-padding">Año</label>
+                  </div>
+                  <div class="col-md-2 head-box">
+                    <label class="no-padding">Mes</label>
+                  </div>
+                  <div class="col-md-2 head-box">
+                    <label class="no-padding">Dia</label>
+                  </div>
+                </div>
+                <div class="col-md-12 no-padding inline-inputs" id="fecha_sol">
+                  <label class="col-md-5 lbl_left">Fecha Respuesta</label>
+                  <div class="col-md-3 no-padding">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="fecha_sol.ano_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="4"
+                        data-orden="1"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-2 no-padding" style="padding-left: 2px !important">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="fecha_sol.mes_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="2"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-2 no-padding" style="padding-left: 2px !important">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="fecha_sol.dia_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="3"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12 no-padding inline-inputs" id="fecha_not">
+                  <label class="col-md-5 lbl_left">Fecha notificación</label>
+                  <div class="col-md-3 no-padding">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="fecha_not.ano_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="4"
+                        data-orden="1"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-2 no-padding" style="padding-left: 2px !important">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="fecha_not.mes_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="2"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-2 no-padding" style="padding-left: 2px !important">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="fecha_not.dia_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="3"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12 no-padding inline-inputs" id="fecha_ssp">
+                  <label class="col-md-5 lbl_left">Traslado S.S.P</label>
+                  <div class="col-md-3 no-padding">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="fecha_ssp.ano_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="4"
+                        data-orden="1"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-2 no-padding" style="padding-left: 2px !important">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="fecha_ssp.mes_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="2"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-2 no-padding" style="padding-left: 2px !important">
+                    <div class="input-group col-md-12">
+                      <input
+                        v-model="fecha_ssp.dia_w"
+                        type="number"
+                        class="form-control text-center"
+                        maxlength="2"
+                        data-orden="3"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a v-show="mostrar_btn_imp" class="float_PUB704 btn_imprimir" v-on:click="imprimir" style="right: 21px">
+          <i class="glyphicon glyphicon-print"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../../SERVDOM/scripts/PUB704.js" type="text/javascript"></script>
+
+<style>
+  label {
+    background: 0 !important;
+  }
+
+  .lbl_left {
+    text-align: left !important;
+    padding-left: 5px !important;
+  }
+
+  .float_PUB704 {
+    z-index: 2;
+    position: fixed;
+    width: 65px;
+    height: 60px;
+    bottom: 16px;
+    background-color: #476fad;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 1px 1px 1px #999;
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .float_PUB704:hover {
+    box-shadow: 2px 2px 2px #999;
+    transition: padding 0.5s ease, background-position 0.5s ease, transform 0.8s ease;
+    text-decoration: none;
+    color: #fff;
+  }
+</style>

@@ -1,0 +1,88 @@
+
+<div class="col-md-12" id="INV408">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <form class="form-horizontal" onsubmit="return false;">
+                <div class="col-md-8 no-padding box-center">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">                        
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>FECHA:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" id="fecha_inv408" style="margin-top: 4px;">
+                                <div class="inline-inputs">
+                                    <label class="col-md-8 col-sm-6 col-xs-6">Año:</label>
+                                    <div class="input-group col-md-11 col-sm-5 col-xs-5">
+                                        <input v-model="form.ano_inv408" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                            data-orden="1" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                    <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                        <input v-model="form.mes_inv408" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="2" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-8 col-xs-6">Dia:</label>
+                                    <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                        <input v-model="form.dia_inv408" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="3" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="padding-bottom: 0 !important">
+                                <label>HORARIO:</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12"  style="margin-top: 4px;">
+                                <div id="horaIni_inv408" class="inline-inputs">
+                                    <label class="col-md-8 col-sm-6 col-xs-6">Hora Desde:</label>
+                                    <div class="input-group col-md-11 col-sm-5 col-xs-5">
+                                        <input v-model="form.hora1_inv408" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="1" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Minuto:</label>
+                                    <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                        <input v-model="form.min1_inv408" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="2" required="true">
+                                    </div>                                    
+                                </div>
+                                <div id="horaFin_inv408"class="inline-inputs">
+                                    <label class="col-md-8 col-sm-6 col-xs-6">Hora Hasta:</label>
+                                    <div class="input-group col-md-11 col-sm-5 col-xs-5">
+                                        <input v-model="form.hora2_inv408" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="1" required="true">
+                                    </div>
+                                    <label class="col-md-6 col-sm-6 col-xs-6">Minuto:</label>
+                                    <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                        <input v-model="form.min2_inv408" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="2" required="true">
+                                    </div>                                    
+                                </div>
+                                <div id="oper_inv408"class="inline-inputs">
+                                    <label class="col-md-8 col-sm-6 col-xs-6">Operador:</label>
+                                    <div class="input-group col-md-11 col-sm-5 col-xs-5">
+                                        <input v-model="form.oper_inv408" type="text"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4"
+                                            data-orden="1" required="true">
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="../../BAR/scripts/INV408.js" type="text/javascript"></script>

@@ -1,0 +1,155 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER405">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="form-group col-md-10 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-5 col-sm-6 col-xs-6" id="validaratencion_SER405">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-8 col-xs-12">F8 consulta atencion medica: </label>
+                        <div class="input-group col-md-4 col-sm-4 col-xs-6">
+                            <input type="text" @Keyup.F8='_f8atencion_SER405' v-model='form.atencimedica_SER405'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 consulta_SER405" maxlength="6"
+                                data-orden="1">
+                        </div>
+                        <button type="button" @click='_f8atencion_SER405'
+                            class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-6 col-xs-6" id="validarpaciente_SER405">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-8 col-xs-12">Paciente: </label>
+                        <div class="input-group col-md-8 col-sm-4 col-xs-6">
+                            <input type="text" v-model='form.paciente_SER405'
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15" data-orden="1">
+                        </div>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input type="text" v-model='form.descrippaciente_SER405'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 ">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-12 col-sm-6 col-xs-6" id="validaratendido_SER405">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-8 col-xs-12">Atendido: </label>
+                        <div class="input-group col-md-8 col-sm-4 col-xs-6">
+                            <input type="text" v-model='form.atendido_SER405'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 " maxlength="6" data-orden="1">
+                        </div>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input type="text" v-model='form.descrippaten_SER405'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 ">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-3 col-sm-6 col-xs-6" id="validarfecha_SER405">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-8 col-xs-12">Fecha: </label>
+                        <div class="input-group col-md-8 col-sm-4 col-xs-6">
+                            <input type="text" v-model='form.fecha_SER405'
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-6" id="validarhora_SER405">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-8 col-xs-12">Hora: </label>
+                        <div class="input-group col-md-8 col-sm-4 col-xs-6">
+                            <input type="text" v-model='form.hora_SER405'
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-6" id="validarfolio_SER405">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-8 col-xs-12">Folio: </label>
+                        <div class="input-group col-md-8 col-sm-4 col-xs-6">
+                            <input type="text" v-model='form.folio_SER405'
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-6" id="validartipo_SER405">
+                    <div class="inline-inputs">
+                        <label class="col-md-4 col-sm-8 col-xs-12">Tipo: </label>
+                        <div class="input-group col-md-8 col-sm-4 col-xs-6">
+                            <input type="text" v-model='form.tipo_SER405'
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-8 col-sm-4 col-xs-6">
+                            <input type="text" v-model='form.Descriphc_SER405'
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="inline-inputs">
+                        <div class="input-group col-md-8 col-sm-4 col-xs-6">
+                            <input type="text" v-model='form.unserv_SER405'
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6" data-orden="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-4 col-sm-6 col-xs-6" id="VALIDACAPITA_SER405">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-8 col-xs-12">Usuario capita: </label>
+                        <div class="input-group col-md-4 col-sm-4 col-xs-6">
+                            <input type="text" v-model='form.faccapita_SER405'
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6" id="VALIDAINGRESO_SER405">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-8 col-xs-12">Ingrese No. factura: </label>
+                        <div class="input-group col-md-4 col-sm-4 col-xs-6">
+                            <input type="text" v-model='form.ingreseprefijo_SER405'
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                        <div class="input-group col-md-4 col-sm-4 col-xs-6">
+                            <input type="text" v-model='form.ingresenumero_SER405' @Keyup.F8='_f8capita_SER405'
+                                class="form-control col-md-12 col-sm-12 col-xs-12 factura_SER405" maxlength="6" data-orden="1">
+                        </div>
+                        <button type="button" @click='_f8capita_SER405'
+                            class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6" id="VALIDAFACT_SER405">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-8 col-xs-12">Desea crearle factura: </label>
+                        <div class="input-group col-md-4 col-sm-4 col-xs-6">
+                            <input type="text" v-model='form.factura_SER405'
+                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1" data-orden="1"
+                                placeholder="S/N">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <transition v-if="mostrarapertura">
+        <div class="overlay_prosoft">
+            <div class="modal_prosoft" style="width: 90%">
+                <div class="container_prosoft">
+                    <div class="col-md-12 no-padding">
+                        <ventanaapertura :data="datos_apertura" :params="params_apertura"
+                            @callback_esc="validarEsc_apertura" @callback="validarCallback_apertura">
+                        </ventanaapertura>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+</div>
+<script src="../../SALUD/scripts/SER405.js" type="text/javascript"></script>

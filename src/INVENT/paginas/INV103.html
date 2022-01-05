@@ -1,0 +1,968 @@
+<!-- <div class="col-md-12"> -->
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="INV103">
+    <div class="portlet-body" style="padding-top: 0px">
+        <div class="tabbable-line">
+            <ul class="nav nav-tabs" style="background:#476fad!important; ">
+                <li class="active">
+                    <a href="#tab_15_1" id="tab1" data-toggle="tab" style="color: #FFFFFF"> DATOS BASICOS </a>
+                </li>
+                <li class="hidden" id='HABILITAREXTENDI'>
+                    <a href="#tab_15_2" id="tab2" data-toggle="tab" style="color: #FFFFFF"> DATOS EXTENDIDOS </a>
+                </li>
+                <li class="hidden" id='HABILITARDECLARAR'>
+                    <a href="#tab_15_3" id="tab3" data-toggle="tab" style="color: #FFFFFF"> DECLARACION </a>
+                </li>
+                <!-- <li>
+                    <a href="#tab_15_4" id="tab4" data-toggle="tab" style="color: #FFFFFF"> DATOS SALUD </a>
+                </li> -->
+                <li class="hidden" id='HABILITARPRODUCCION'>
+                    <a href="#tab_15_5" id="tab5" data-toggle="tab" style="color: #FFFFFF"> PRODUCCION </a>
+                </li>
+
+            </ul>
+            <div class="tab-content no-padding">
+                <div class="tab-pane active" id="tab_15_1">
+                    <form class="form-horizontal">
+                        <div class="col-md-3 col-sm-3 col-xs-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-12 col-sm-12 col-xs-12">Novedad:</label>
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input v-model="form.novedad_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-12" style="padding-right: 0; padding-left: 10px;">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-4 col-sm-3 col-xs-12">Tipo</label>
+                                        <div class="input-group col-md-10 col-sm-9 col-xs-12">
+                                            <input v-model="form.tipo_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-5 col-xs-12">Grupo</label>
+                                        <div class="input-group col-md-3 col-sm-3 col-xs-3" id="GRUPO_INV103">
+                                            <input v-model="form.grupo_INV103" type="text"
+                                                @Keyup.F8='_f8grupoart_INV103'
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 grupo_INV103"
+                                                maxlength="2" data-orden="1">
+                                        </div>
+                                        <button type="button" @click='_f8grupoart_INV103'
+                                            class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-8 col-sm-6 col-xs-6">
+                                            <input v-model="form.grupod_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-3 col-sm-6 col-xs-6">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-4 col-sm-6 col-xs-12">Codigo</label>
+                                        <div class="input-group col-md-6 col-sm-4 col-xs-12" id="NUMERO_INV103">
+                                            <input v-model="form.codigo_INV103" type="text"
+                                                @Keyup.F8='_f8codigoart_INV103'
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 codigoart_INV103" maxlength="11"
+                                                data-orden="1">
+                                        </div>
+                                        <button type="button" @click='_f8codigoart_INV103'
+                                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-6">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-3 col-sm-3 col-xs-3">Clase</label>
+                                        <div class="input-group col-md-2 col-sm-4 col-xs-12" id="CLASE_INV103">
+                                            <input v-model="form.clase_INV103" type="text"
+                                                @Keyup.F8='_f8claseart_INV103'
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 claseart_INV103" maxlength="2"
+                                                data-orden="1">
+                                        </div>
+                                        <button type="button" @click='_f8claseart_INV103'
+                                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                            <input v-model="form.clased_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-sm-5 col-xs-6">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-3 col-sm-8 col-xs-12">Descripcion</label>
+                                        <div class="input-group col-md-9 col-sm-4 col-xs-12" id="DESCRIPCION_INV103">
+                                            <input v-model="form.descripcion_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                                maxlength="50">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="form-horizontal">
+                        <div class="col-md-6 col-sm-3 col-xs-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-12 col-sm-7 col-xs-7">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-4 col-sm-4 col-xs-4">Uso</label>
+                                        <div class="input-group col-md-3 col-sm-3 col-xs-3" id="USO_INV103">
+                                            <input v-model="form.uso_INV103" type="text" @Keyup.F8='_f8usoart_INV103'
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 uso_INV103" maxlength="2"
+                                                data-orden="1">
+                                        </div>
+                                        <button type="button" @click='_f8usoart_INV103'
+                                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-7 col-sm-7 col-xs-8">
+                                            <input v-model="form.usod_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-9 col-xs-12" style="padding-right: 0; padding-left: 10px;">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-12 col-sm-4 col-xs-6">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-8 col-xs-12">Cod.Barras</label>
+                                        <div class="input-group col-md-8 col-sm-4 col-xs-12" id="CODBARRAS_INV103">
+                                            <input v-model="form.codbarras_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="form-horizontal">
+                        <div class="col-md-12 col-sm-5 col-xs-5 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-12 col-sm-7 col-xs-7" id="OTROS_INV103">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-3 col-sm-3 col-xs-3">Otros</label>
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input v-model="form.otros_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                                maxlength="50">
+                                        </div>
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input v-model="form.otros2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="2"
+                                                maxlength="50">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="salto-linea"></div>
+                                <div class="col-md-12 col-sm-7 col-xs-7 hidden" id="OTROS3A_INV103">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-3 col-sm-3 col-xs-3">Nombre comercial</label>
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input v-model="form.otros3_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-7 col-xs-7 hidden" id="OTROS3B_INV103">
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input v-model="form.otros3_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="salto-linea"></div>
+
+                                <div class="col-md-6 col-sm-4 col-xs-4" id="OTROS41_INV103">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-3 col-xs-3">farmacos</label>
+                                        <div class="input-group col-md-7 col-sm-12 col-xs-12">
+                                            <input v-model="form.saldomed_INV103" type="text"
+                                                @Keyup.F8='_f8saldomedicoart_INV103'
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 saldomed_INV103" data-orden="1">
+                                        </div>
+                                        <button type="button" @click='_f8saldomedicoart_INV103'
+                                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input v-model="form.saldomedd_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-4 col-xs-4 hidden " id="OTROS42_INV103">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-3 col-xs-3">Almacen alterno</label>
+                                        <div class="input-group col-md-7 col-sm-12 col-xs-12">
+                                            <input v-model="form.almalterno_INV103" type="text"
+                                                @Keyup.F8='_f8almacenart_INV103'
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 almalterno_INV103" data-orden="1">
+                                        </div>
+                                        <button type="button" @click='_f8almacenart_INV103'
+                                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input v-model="form.almalternod_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-4 col-xs-4 hidden " id="OTROS42A_INV103">
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input v-model="form.almalterno_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 almalterno_INV103" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="salto-linea"></div>
+                                <div class="col-md-6 col-sm-6 col-xs-8">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-4 col-sm-10 col-xs-12">Marca</label>
+                                        <div class="input-group col-md-8 col-sm-4 col-xs-12" id="MARCA_INV103">
+                                            <input v-model="form.marca_INV103" type="text"
+                                                @Keyup.F8='_f8marcaart_INV103'
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 marca_INV103" maxlength="2"
+                                                data-orden="1">
+                                        </div>
+                                        <button type="button" @click='_f8marcaart_INV103'
+                                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                            <input v-model="form.marcad_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-2 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-4 col-sm-6 col-xs-12">Atc</label>
+                                        <div class="input-group col-md-8 col-sm-6 col-xs-12" id="ATC_INV103">
+                                            <input v-model="form.atc_INV103" type="text" @Keyup.F8='_f8atcart_INV103'
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 atc_INV103" maxlength="11"
+                                                data-orden="1">
+                                        </div>
+                                        <button type="button" click='_f8atcart_INV103'
+                                            class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-12 col-sm-6 col-xs-12">
+                                            <input v-model="form.descripatc_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="salto-linea"></div>
+                                <div class="col-md-6 col-sm-5 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-6 col-xs-12">Presentacion</label>
+                                        <div class="input-group col-md-6 col-sm-6 col-xs-12" id="PRESENTACION_INV103">
+                                            <input v-model="form.presentacion_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-5 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-6 col-xs-12">Unid Medida</label>
+                                        <div class="input-group col-md-6 col-sm-6 col-xs-12" id="UNIDADME_INV103">
+                                            <input v-model="form.unidadme_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+
+
+                    <form class="form-horizontal">
+                        <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-6 col-sm-2 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-6 col-xs-12">Concentrado</label>
+                                        <div class="input-group col-md-7 col-sm-6 col-xs-12" id="CONCENTRADO_INV103">
+                                            <input v-model="form.concentrado_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-4 col-xs-4">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-5 col-xs-5">Estado</label>
+                                        <div class="input-group col-md-8 col-sm-8 col-xs-8" id="ESTADO_INV103">
+                                            <input v-model="form.estado_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="salto-linea"></div>
+                                <div class="col-md-6 col-sm-6 col-xs-4">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-8 col-xs-12">% Dcto Gen.</label>
+                                        <div class="input-group col-md-7 col-sm-4 col-xs-12" id="DATOSPROD_INV103">
+                                            <input id="dcto_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-8 col-xs-12">% Autoret</label>
+                                        <div class="input-group col-md-7 col-sm-4 col-xs-12" id="DATOSPROD_INV103">
+                                            <input id="autoret_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6"
+                                                data-orden="2">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-8 col-xs-12">No.Paquetes</label>
+                                        <div class="input-group col-md-7 col-sm-4 col-xs-12" id="DATOSPROD_INV103">
+                                            <input id="paquetes_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                                data-orden="3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-8 col-xs-12">Un.Medida Ant</label>
+                                        <div class="input-group col-md-7 col-sm-4 col-xs-12" id="DATOSPROD_INV103">
+                                            <input v-model="form.unimedida_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5"
+                                                data-orden="4" onkeyup="this.value = this.value.toUpperCase();">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-8 col-xs-12">Repo. Interna</label>
+                                        <div class="input-group col-md-7 col-sm-4 col-xs-12" id="DATOSPROD_INV103">
+                                            <input id="reposicion_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6"
+                                                data-orden="5">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-8 col-xs-12">Und. Conver</label>
+                                        <div class="input-group col-md-7 col-sm-4 col-xs-12" id="DATOSPROD_INV103">
+                                            <input id="uniconversion_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5"
+                                                data-orden="6">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0; padding-left: 10px;">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-8 col-xs-12">Stock Min</label>
+                                        <div class="input-group col-md-8 col-sm-4 col-xs-12" id="STOCKALMAC_INV103">
+                                            <input id="smin_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="7"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-8 col-xs-12">Stock Max</label>
+                                        <div class="input-group col-md-8 col-sm-4 col-xs-12" id="STOCKALMAC_INV103">
+                                            <input id="smax_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="7"
+                                                data-orden="2">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-8 col-xs-12">Stock Almac </label>
+                                        <div class="input-group col-md-8 col-sm-4 col-xs-12" id="STOCKALMAC_INV103">
+                                            <input id="stockalm_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="6"
+                                                data-orden="3">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-8 col-sm-10 col-xs-12">Pol Ventas</label>
+                                        <div class="input-group col-md-3 col-sm-4 col-xs-12" id="POLITICA_INV103">
+                                            <input v-model="form.politica_INV103" type="text"
+                                                @Keyup.F8='_f8politicaart_INV103'
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 politica_INV103" maxlength="2"
+                                                data-orden="1">
+                                        </div>
+                                        <button type="button" click='_f8politicaart_INV103'
+                                            class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-7 col-sm-4 col-xs-12">
+                                            <input v-model="form.politicad_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="salto-linea"></div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-8 col-xs-12">Precio venta</label>
+                                        <div class="input-group col-md-8 col-sm-4 col-xs-12" id="PRECIOVENTA_INV103">
+                                            <input id="preciosventa_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="14"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-8 col-xs-12">Tabla Iva</label>
+                                        <div class="input-group col-md-3 col-sm-4 col-xs-12" id="IVA_INV103">
+                                            <input v-model="form.iva_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                data-orden="1">
+                                        </div>
+                                        <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                            <input v-model="form.tabivap_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="salto-linea"></div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-8 col-xs-12">Total con iva</label>
+                                        <div class="input-group col-md-8 col-sm-4 col-xs-12">
+                                            <input v-model="form.totaliva_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-5 col-sm-8 col-xs-12">% incremento</label>
+                                        <div class="input-group col-md-8 col-sm-4 col-xs-12" id="INCREMENTO_INV103">
+                                            <input id="incremento_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="3"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </form>
+                    <form class="form-horizontal">
+                        <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-6 col-sm-3 col-xs-3">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-6 col-xs-6">Vlr Ultima Compra</label>
+                                        <div class="input-group col-md-6 col-sm-6 col-xs-6" id="ULTCOMPRA_INV103">
+                                            <input id="ultcompra_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="15"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-3 col-xs-3">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-6 col-xs-6">Fecha ultima compra</label>
+                                        <div class="input-group col-md-6 col-sm-6 col-xs-6" id="FECHA_INV103">
+                                            <input id="fechaultcompra_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                                maxlength="10" placeholder="AAAA-MM-DD">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="salto-linea"></div>
+                                <div class="col-md-6 col-sm-3 col-xs-3">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-10 col-xs-10">Vlr Lista Compra</label>
+                                        <div class="input-group col-md-6 col-sm-4 col-xs-12" id="VLRLISTA_INV103">
+                                            <input id="vlrlista_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="14"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-3 col-xs-3">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-10 col-xs-10">Lista Precios</label>
+                                        <div class="input-group col-md-6 col-sm-12 col-xs-12" id="LISTAPREC_INV103">
+                                            <input id="listaprec_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                                maxlength="10" placeholder="AAAA-MM-DD">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0; padding-left: 10px;">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-6 col-sm-5 col-xs-5">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-6 col-xs-6">Vlr Referencia</label>
+                                        <div class="input-group col-md-6 col-sm-6 col-xs-6" id="VLRREF_INV103">
+                                            <input id="vlrref_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="14"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-3 col-xs-3">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-10 col-xs-10">Ult.Actualiz</label>
+                                        <div class="input-group col-md-6 col-sm-4 col-xs-12" id="ULTACTUAL_INV103">
+                                            <input v-model="form.ultactu_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                                maxlength="8" placeholder="AA-MM-DD">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="salto-linea"></div>
+                                <div class="col-md-12 col-sm-7 col-xs-7">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-7 col-sm-7 col-xs-7">Centro Costo</label>
+                                        <div class="input-group col-md-4 col-sm-4 col-xs-4" id="CCOSTOS_INV103">
+                                            <input v-model="form.ccostos_INV103" type="text"
+                                                @Keyup.F8='_f8costosart_INV103'
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 ccostos_INV103" maxlength="4"
+                                                data-orden="1">
+                                        </div>
+                                        <button type="button" click='_f8costosart_INV103'
+                                            class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input v-model="form.ccostosd_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="form-horizontal">
+                        <div class="col-md-6 col-sm-6 col-xs-6 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-6 col-xs-6">Cod Contable </label>
+                                        <div class="input-group col-md-4 col-sm-4 col-xs-64" id="CONTABLE_INV103">
+                                            <input v-model="form.contable_INV103" type="text"
+                                                @Keyup.F8='_f8codcontableart_INV103'
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 contable_INV103" maxlength="20"
+                                                data-orden="1">
+                                        </div>
+                                        <button type="button" click='_f8codcontableart_INV103'
+                                            class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                                            <input v-model="form.contablep_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="salto-linea"></div>
+                                <div class="col-md-6 col-sm-3 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-6 col-xs-12">Excluir del sismed?</label>
+                                        <div class="input-group col-md-6 col-sm-6 col-xs-12 " id="EXCLUIR_INV103">
+                                            <input v-model="form.excluir_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                data-orden="1" placeholder="S/N">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-3 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Medicamento regulado</label>
+                                        <div class="input-group col-md-4 col-sm-4 col-xs-12" id="REGULADO_INV103">
+                                            <input v-model="form.regulado_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                data-orden="1" placeholder="S/N">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="salto-linea"></div>
+                                <div class="col-md-6 col-sm-3 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-6 col-xs-12">Sisdis</label>
+                                        <div class="input-group col-md-6 col-sm-6 col-xs-12" id="SISDIS_INV103">
+                                            <input v-model="form.sisdis_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                data-orden="1" placeholder="S/N">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0; padding-left: 10px;">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-6 col-sm-3 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-6 col-xs-12">Clase de riesgo?</label>
+                                        <div class="input-group col-md-6 col-sm-6 col-xs-12" id="CLASERIESGO_INV103">
+                                            <input v-model="form.riesgo_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-3 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-6 col-xs-12">Homologo? </label>
+                                        <div class="input-group col-md-6 col-sm-6 col-xs-12" id="HOMOLOGO_INV103">
+                                            <input v-model="form.homologo_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="1"
+                                                data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="salto-linea"></div>
+                                <div class="col-md-12 col-sm-6 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-6 col-xs-12">Codido homologo?</label>
+                                        <div class="input-group col-md-6 col-sm-6 col-xs-12" id="CODHOMOLOGO_INV103">
+                                            <input v-model="form.codhomologo_INV103" type="text"
+                                                @Keyup.F8='_f8homologoart_INV103'
+                                                class="form-control col-md-12 col-sm-12 col-xs-12 codhomologo_INV103" maxlength="18"
+                                                data-orden="1">
+                                        </div>
+                                        <button type="button" click='_f8homologoart_INV103'
+                                            class="btn f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                            <i class="icon-magnifier"></i>
+                                        </button>
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input v-model="form.codhomologod_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="salto-linea"></div>
+                                <div class="col-md-6 col-sm-3 col-xs-12">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-6 col-sm-6 col-xs-12">Cant convers</label>
+                                        <div class="input-group col-md-6 col-sm-6 col-xs-12" id="CONVERS_INV103">
+                                            <input v-model="form.convers_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-6 col-sm-4 col-xs-4">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-4 col-sm-4 col-xs-12">CREADO</label>
+                                        <div class="input-group col-md-3 col-sm-4 col-xs-12">
+                                            <input v-model="form.elab2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+                                        <div class="input-group col-md-5 col-sm-4 col-xs-12">
+                                            <input v-model="form.elabd2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-4 col-xs-4">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-4 col-sm-4 col-xs-12">MODIFICADO</label>
+                                        <div class="input-group col-md-3 col-sm-3 col-xs-12">
+                                            <input v-model="form.mod2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+                                        <div class="input-group col-md-5 col-sm-5 col-xs-12">
+                                            <input v-model="form.modd2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- ESTO ES COMERCIAL                 -->
+                <div class="tab-pane" id="tab_15_2">
+                    <form class="form-horizontal">
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-12 col-sm-12 col-xs-12" id="EXTENSION_INV103">
+                                    <textarea id="extension_INV103" rows="35" maxlength="200"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                        style="max-height: 197px"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-4 col-sm-4 col-xs-12">Creado</label>
+                                        <div class="input-group col-md-3 col-sm-4 col-xs-12">
+                                            <input v-model="form.elab2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                        <div class="input-group col-md-5 col-sm-4 col-xs-12">
+                                            <input v-model="form.elabd2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-4 col-sm-4 col-xs-12">Modificado</label>
+                                        <div class="input-group col-md-3 col-sm-3 col-xs-12">
+                                            <input v-model="form.mod2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                        <div class="input-group col-md-5 col-sm-5 col-xs-12">
+                                            <input v-model="form.modd2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="tab-pane" id="tab_15_3">
+                    <form class="form-horizontal">
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <label>ESTE VEHICULO FUE NACIONALIZADO SEGUN DECLARACION:</label>
+                                    <textarea id="declaracion_INV103" rows="35" maxlength="200"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1"
+                                        style="max-height: 197px"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-4 col-sm-4 col-xs-12">Creado</label>
+                                        <div class="input-group col-md-3 col-sm-4 col-xs-12">
+                                            <input v-model="form.elab2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                        <div class="input-group col-md-5 col-sm-4 col-xs-12">
+                                            <input v-model="form.elabd2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-4 col-sm-4 col-xs-12">Modificado</label>
+                                        <div class="input-group col-md-3 col-sm-3 col-xs-12">
+                                            <input v-model="form.mod2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                        <div class="input-group col-md-5 col-sm-5 col-xs-12">
+                                            <input v-model="form.modd2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="tab-pane" id="tab_15_5">
+                    <form class="form-horizontal">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                            <label>
+                                <h4>CONSUMIBLES UTILIZADOS EN PROCESO DE PRODUCCION</h4>
+                            </label>
+                        </div>
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="display: flex">
+                                <div class="col-md-12 col-sm-12 col-xs-12 inline-inputs">
+
+
+                                    <div class="col-md-4 col-sm-4 col-xs-4" id="validarAlmacen_INV103">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-5 col-sm-5 col-xs-5">Almacen</label>
+                                            <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                                <input id="almacen_INV103" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5"
+                                                    data-orden="1" required="true">
+                                            </div>
+                                            <button type="button"
+                                                class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-4 col-xs-4" id="validarcodigo_INV103">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-6 col-sm-6 col-xs-6">Codigoart</label>
+                                            <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                                                <input id="codigoart_INV103" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="18"
+                                                    data-orden="1" required="true">
+                                            </div>
+                                            <button type="button"
+                                                class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                                <i class="icon-magnifier"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4" id="validarcant_INV103">
+                                        <div class="inline-inputs">
+                                            <label class="col-md-6 col-sm-6 col-xs-6">Cantidad</label>
+                                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                                <input id="cantidad_INV103" type="text"
+                                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="7"
+                                                    data-orden="1" disabled="disabled">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                            <table id="tablaalmacen_INV103" class="table table-light table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Almacen</th>
+                                        <th>Codigo</th>
+                                        <th>Cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                            <label>
+                                <h4>MACRO DE PRODUCCION ASOCIADO</h4>
+                            </label>
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                            <table id="tablamacros_INV103" class="table table-light table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Codigo</th>
+                                        <th>Descripcion</th>
+                                        <th>Almacen</th>
+                                        <th>Cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-4 col-sm-4 col-xs-12">Creado</label>
+                                        <div class="input-group col-md-3 col-sm-4 col-xs-12">
+                                            <input v-model="form.elab2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                        <div class="input-group col-md-5 col-sm-4 col-xs-12">
+                                            <input v-model="form.elabd2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="inline-inputs">
+                                        <label class="col-md-4 col-sm-4 col-xs-12">Modificado</label>
+                                        <div class="input-group col-md-3 col-sm-3 col-xs-12">
+                                            <input v-model="form.mod2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                        <div class="input-group col-md-5 col-sm-5 col-xs-12">
+                                            <input v-model="form.modd2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="inline-inputs">
+                                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                            <input id="descripter2_INV103" type="text"
+                                                class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1">
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- HASTA ACA SE HABILITA ES COMERCIAL                 -->
+
+<script src="../../INVENT/scripts/INV103.js" type="text/javascript"></script>

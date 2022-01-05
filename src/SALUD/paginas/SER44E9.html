@@ -1,0 +1,107 @@
+<style>
+    input {
+        text-align: center;
+    }
+</style>
+<div class="col-md-12" id="SER44E9">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <form class="form-horizontal">
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-8 col-sm-10 col-xs-12 box-center" style="margin-top: 13% !important;">
+
+                        <div class="col-md-12 no-padding">
+                            <div class="col-md-3 col-sm-2 col-xs-2 no-padding" id="validarEnvio"
+                                style="text-align: left;">
+                                <label>Envio</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-9 col-sm-12 col-xs-12">
+                                        <input type="text" id="envio_ser44e9" maxlength="6" data-orden="1" v-model="ENVIO" @keydown.119="ventanaEnvios"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                    <button @click="ventanaEnvios" type="button" class="btn f8-Btn col-md-3 col-sm-2 col-xs-2">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-2 col-xs-2">
+                                <label>Fecha</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" v-model="FECHA"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-4 col-xs-4 no-padding" id="validarDiaPRE_lablis"
+                                style="text-align: left;">
+                                <label>Cliente</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" v-model="TERCERO"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-8 col-sm-10 col-xs-12 box-center">
+
+                        <div class="col-md-12" style="display: flex; justify-content: center">
+                            <div class="col-md-5 col-sm-3 col-xs-3">
+                                <label>Tipo comprobante</label>
+                                <div class="inline-inputs">
+                                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                        <input type="text" v-model="DESCRIPCION_TIPO" disabled="disabled"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="salto-linea"></div>
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-12">
+
+                            <div class="col-md-6 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                                id="validarCantDeci">
+                                <label style="position: relative;top: 6px;">Cambiar cantidad por diferencia en decimal
+                                    ?</label>
+                                <div class="col-md-2 no-padding inline-inputs" style="float: right;">
+                                    <input type="text" maxlength="1" placeholder="N" data-orden="1" disabled="disabled"
+                                        v-model="DECIMAL" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        style="text-align: center;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                                id="validarAbonoDesc">
+                                <label style="position: relative;top: 6px;">Asumir abonos como descuentos ?</label>
+                                <div class="col-md-2 no-padding inline-inputs" style="float: right;">
+                                    <input type="text" maxlength="1" placeholder="N" data-orden="1" disabled="disabled"
+                                        v-model="DESCUENTOS" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        style="text-align: center;">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../../SALUD/scripts/SER44E9.js" type="text/javascript"></script>

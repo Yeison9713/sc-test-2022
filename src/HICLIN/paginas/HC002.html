@@ -1,0 +1,3094 @@
+<div class="col-md-12" id="HC002">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal">
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-1 col-sm-4 col-xs-12" id="ValidarOperador_HC002">
+              <label>Operador</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    type="text"
+                    v-model="global_HC002.OPER_EVO"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    maxlength="4"
+                    data-orden="1"
+                    required="true"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-1 col-sm-3 col-xs-12" id="validarAno_hc002">
+              <label>Año</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    type="text"
+                    v-model="global_HC002.ANO_EVO"
+                    maxlength="4"
+                    data-orden="1"
+                    required="true"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-1 col-sm-3 col-xs-12" id="validarMes_hc002">
+              <label>Mes</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    type="text"
+                    v-model="global_HC002.MES_EVO"
+                    maxlength="2"
+                    data-orden="1"
+                    required="true"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-1 col-sm-3 col-xs-12" id="validarDia_hc002">
+              <label>Dia</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    type="text"
+                    v-model="global_HC002.DIA_EVO"
+                    maxlength="2"
+                    data-orden="1"
+                    required="true"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-1 col-sm-2 col-xs-12" id="validarHora_hc002">
+              <label>Hora</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    type="text"
+                    v-model="global_HC002.HORA_EVO"
+                    maxlength="4"
+                    data-orden="1"
+                    required="true"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12" style="text-align: left">
+              <label>Médico</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="global_HC002.NOM_MEDICO"
+                    type="text"
+                    style="text-align: left"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-4 col-xs-12" style="text-align: left">
+              <label></label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input v-model="textos.descrip_evol" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div v-show="nuevo_folio">
+          <div class="col-md-12 col-sm-12 no-padding">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Apertura abreviada</span>
+                </div>
+                <button
+                  v-show="flujo_bloques.apertura"
+                  id="btnFlujo_aper"
+                  type="button"
+                  style="left: 570px"
+                  @click="botonFlujo(1)"
+                  class="boton-flujo-hc002 btn f8-Btn btn-default"
+                >
+                  <i class="glyphicon glyphicon-pencil"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12 col-xs-12 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="padding-bottom: 10px">
+              <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarProcedencia" style="text-align: left">
+                <label>Procedencia</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      data-orden="1"
+                      maxlength="50"
+                      type="text"
+                      style="text-align: left"
+                      v-model="historia_clinica.proceden"
+                      required="true"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarMotivoConsulta">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 head-box"
+                  style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                >
+                  <label>Motivo consulta</label>
+                  <label>(350 caracteres máximo)</label>
+                </div>
+                <textarea
+                  v-model="historia_clinica.motivo"
+                  class="form-control"
+                  disabled="disabled"
+                  rows="5"
+                  maxlength="350"
+                  data-orden="1"
+                  required="true"
+                  style="resize: none; text-align: justify"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-12 col-xs-12" style="padding-right: 0">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarAntecedentes">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 head-box"
+                  style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                >
+                  <label>Antecedentes tóxico alérgicos</label>
+                  <label>(1000 caracteres máximo)</label>
+                </div>
+                <textarea
+                  v-model="DETALLE_HC.ANTECEDENTES_TOXICO"
+                  class="form-control"
+                  disabled="disabled"
+                  rows="9"
+                  maxlength="1000"
+                  data-orden="1"
+                  required="true"
+                  style="resize: none; text-align: justify"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Evolución</span>
+              </div>
+              <button
+                v-show="flujo_bloques.evolucion"
+                id="btnFlujo_evo"
+                type="button"
+                style="left: 590px"
+                @click="botonFlujo(2)"
+                class="boton-flujo-hc002 btn f8-Btn btn-default"
+              >
+                <i class="glyphicon glyphicon-pencil"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="col-md-5 col-sm-12 col-xs-12 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div class="col-md-12 col-sm-6 col-xs-12 no-padding" style="text-align: left">
+                <label>Unidad de servicio</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.unidad_servicio"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="margin-bottom: 13px !important">
+              <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                <label>Selección de macro</label>
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-12" style="text-align: left">
+                <label>Tipo de macro</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_tipo_macro"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-12 no-padding" id="validarMacro_hc002" style="text-align: left">
+                <label>Macro a utilizar</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                    <input
+                      id="codigoMacro_hc002"
+                      v-model="global_HC002.MACRO.CODIGO"
+                      data-orden="1"
+                      maxlength="6"
+                      @keydown.119="ventanaMacros"
+                      type="number"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    @click="ventanaMacros"
+                    class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2"
+                  >
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="text-align: left">
+                <label>Detalle</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="macro_escogida.DETALLE"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+
+              <div class="col-md-4 col-sm-6 col-xs-12" v-show="global_HC002.MACRO.VIA != ''">
+                <label>Vía de acceso</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="global_HC002.MACRO.VIA"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-8 col-sm-6 col-xs-12 no-padding" v-show="global_HC002.MACRO.VIA != ''">
+                <label>Descripción</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_via_macro"
+                      style="text-align: left"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-7 col-sm-12 col-xs-12" style="padding-right: 0">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarContenido_HC002">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 head-box"
+                  style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                >
+                  <label>Contenido</label>
+                  <label>(15,000 caracteres máximo)</label>
+                </div>
+                <textarea
+                  v-model="DETALLE_EVO.CONTENIDO"
+                  class="form-control"
+                  disabled="disabled"
+                  rows="21"
+                  maxlength="15000"
+                  data-orden="1"
+                  required="true"
+                  style="resize: none; text-align: justify"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding" v-show="global_HC002.MACRO.CLASE == '1' || global_HC002.MACRO.CLASE == '2'">
+          <div class="col-md-12 col-sm-12 no-padding">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Procedimientos y cirugias</span>
+                </div>
+                <button
+                  v-show="flujo_bloques.procedimientos_cirugias"
+                  id="btnFlujo_proce"
+                  type="button"
+                  style="left: 538px"
+                  @click="botonFlujo(3)"
+                  class="boton-flujo-hc002 btn f8-Btn btn-default"
+                >
+                  <i class="glyphicon glyphicon-pencil"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: center">
+                <label>CUPS, Código del procedimiento</label>
+              </div>
+
+              <div class="col-md-6" style="border-right: 1.5px solid #ececec">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="inline-inputs">
+                    <label class="col-md-3 col-sm-3 col-xs-3">1.</label>
+                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCups_1_HC002">
+                      <input
+                        id="cod_cups_1"
+                        @keydown.119="ventanaCups('1')"
+                        v-model="global_HC002.TABLA_CUPS[0]"
+                        maxlength="6"
+                        data-orden="1"
+                        required="true"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                    <button @click="ventanaCups('1')" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-8 no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_cups[0]"
+                      style="text-align: left"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="inline-inputs">
+                    <label class="col-md-3 col-sm-3 col-xs-3">2.</label>
+                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCups_2_HC002">
+                      <input
+                        id="cod_cups_2"
+                        @keydown.119="ventanaCups('2')"
+                        v-model="global_HC002.TABLA_CUPS[1]"
+                        maxlength="6"
+                        data-orden="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                    <button @click="ventanaCups('2')" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-8 no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_cups[1]"
+                      style="text-align: left"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="inline-inputs">
+                    <label class="col-md-3 col-sm-3 col-xs-3">3.</label>
+                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCups_3_HC002">
+                      <input
+                        id="cod_cups_3"
+                        @keydown.119="ventanaCups('3')"
+                        v-model="global_HC002.TABLA_CUPS[2]"
+                        maxlength="6"
+                        data-orden="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                    <button @click="ventanaCups('3')" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-8 no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_cups[2]"
+                      style="text-align: left"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="inline-inputs">
+                    <label class="col-md-3 col-sm-3 col-xs-3">4.</label>
+                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCups_4_HC002">
+                      <input
+                        id="cod_cups_4"
+                        @keydown.119="ventanaCups('4')"
+                        v-model="global_HC002.TABLA_CUPS[3]"
+                        maxlength="6"
+                        data-orden="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                    <button @click="ventanaCups('4')" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-8 no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_cups[3]"
+                      style="text-align: left"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="inline-inputs">
+                    <label class="col-md-3 col-sm-3 col-xs-3">5.</label>
+                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCups_5_HC002">
+                      <input
+                        id="cod_cups_5"
+                        @keydown.119="ventanaCups('5')"
+                        v-model="global_HC002.TABLA_CUPS[4]"
+                        maxlength="6"
+                        data-orden="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                    <button @click="ventanaCups('5')" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-8 no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_cups[4]"
+                      style="text-align: left"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="inline-inputs">
+                    <label class="col-md-3 col-sm-3 col-xs-3">6.</label>
+                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCups_6_HC002">
+                      <input
+                        id="cod_cups_6"
+                        @keydown.119="ventanaCups('6')"
+                        v-model="global_HC002.TABLA_CUPS[5]"
+                        maxlength="6"
+                        data-orden="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                    <button @click="ventanaCups('6')" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-8 no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_cups[5]"
+                      style="text-align: left"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="inline-inputs">
+                    <label class="col-md-3 col-sm-3 col-xs-3">7.</label>
+                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCups_7_HC002">
+                      <input
+                        id="cod_cups_7"
+                        @keydown.119="ventanaCups('7')"
+                        v-model="global_HC002.TABLA_CUPS[6]"
+                        maxlength="6"
+                        data-orden="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                    <button @click="ventanaCups('7')" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-8 no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_cups[6]"
+                      style="text-align: left"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="inline-inputs">
+                    <label class="col-md-3 col-sm-3 col-xs-3">8.</label>
+                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCups_8_HC002">
+                      <input
+                        id="cod_cups_8"
+                        @keydown.119="ventanaCups('8')"
+                        v-model="global_HC002.TABLA_CUPS[7]"
+                        maxlength="6"
+                        data-orden="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                    <button @click="ventanaCups('8')" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-8 no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_cups[7]"
+                      style="text-align: left"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="inline-inputs">
+                    <label class="col-md-3 col-sm-3 col-xs-3">9.</label>
+                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCups_9_HC002">
+                      <input
+                        id="cod_cups_9"
+                        @keydown.119="ventanaCups('9')"
+                        v-model="global_HC002.TABLA_CUPS[8]"
+                        maxlength="6"
+                        data-orden="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                    <button @click="ventanaCups('9')" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-8 no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_cups[8]"
+                      style="text-align: left"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="inline-inputs">
+                    <label class="col-md-3 col-sm-3 col-xs-3">10.</label>
+                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCups_10_HC002">
+                      <input
+                        id="cod_cups_10"
+                        @keydown.119="ventanaCups('10')"
+                        v-model="global_HC002.TABLA_CUPS[9]"
+                        maxlength="6"
+                        data-orden="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                    <button @click="ventanaCups('10')" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-8 no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_cups[9]"
+                      style="text-align: left"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="inline-inputs">
+                    <label class="col-md-3 col-sm-3 col-xs-3">11.</label>
+                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCups_11_HC002">
+                      <input
+                        id="cod_cups_11"
+                        @keydown.119="ventanaCups('11')"
+                        v-model="global_HC002.TABLA_CUPS[10]"
+                        maxlength="6"
+                        data-orden="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                    <button @click="ventanaCups('11')" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-8 no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_cups[10]"
+                      style="text-align: left"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="inline-inputs">
+                    <label class="col-md-3 col-sm-3 col-xs-3">12.</label>
+                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCups_12_HC002">
+                      <input
+                        id="cod_cups_12"
+                        @keydown.119="ventanaCups('12')"
+                        v-model="global_HC002.TABLA_CUPS[11]"
+                        maxlength="6"
+                        data-orden="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                    <button @click="ventanaCups('12')" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-8 no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_cups[11]"
+                      style="text-align: left"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="inline-inputs">
+                    <label class="col-md-3 col-sm-3 col-xs-3">13.</label>
+                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCups_13_HC002">
+                      <input
+                        id="cod_cups_13"
+                        @keydown.119="ventanaCups('13')"
+                        v-model="global_HC002.TABLA_CUPS[12]"
+                        maxlength="6"
+                        data-orden="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                    <button @click="ventanaCups('13')" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-8 no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_cups[12]"
+                      style="text-align: left"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="inline-inputs">
+                    <label class="col-md-3 col-sm-3 col-xs-3">14.</label>
+                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCups_14_HC002">
+                      <input
+                        id="cod_cups_14"
+                        @keydown.119="ventanaCups('14')"
+                        v-model="global_HC002.TABLA_CUPS[13]"
+                        maxlength="6"
+                        data-orden="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        disabled="disabled"
+                      />
+                    </div>
+                    <button @click="ventanaCups('14')" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-8 no-padding">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_cups[13]"
+                      style="text-align: left"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div class="col-md-2 col-sm-6 col-xs-12" style="text-align: left">
+                <label>Tipo anestesia</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.anestesia"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2 col-sm-6 col-xs-12" style="text-align: left" id="validar_tiempoProce">
+                <label>Duración procedimiento</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="global_HC002.PROCEDIMIENTOS.TIEMPO_PROC"
+                      data-orden="1"
+                      maxlength="3"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      required="true"
+                      placeholder="Min"
+                      style="text-align: center"
+                      disabled="disabled"
+                      type="number"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2 col-sm-6 col-xs-12" style="text-align: left" id="validar_tiempoSala">
+                <label>Tiempo uso sala</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="global_HC002.PROCEDIMIENTOS.TIEMPO_SALA"
+                      data-orden="1"
+                      maxlength="3"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      required="true"
+                      placeholder="Min"
+                      style="text-align: center"
+                      disabled="disabled"
+                      type="number"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2 col-sm-6 col-xs-12" style="text-align: left" id="validar_SalaCirugia">
+                <label>Número sala cirugía</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                    <input
+                      @keydown.119="ventanaSalaCirugias"
+                      v-model="global_HC002.PROCEDIMIENTOS.SALA_CIRU"
+                      data-orden="1"
+                      maxlength="2"
+                      required="true"
+                      id="sala_cirugia"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center"
+                      disabled="disabled"
+                      type="number"
+                    />
+                  </div>
+                  <button @click="ventanaSalaCirugias" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-2 col-sm-6 col-xs-12" style="text-align: left">
+                <label></label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.descrip_sala_cirugia"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: left"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2 col-sm-6 col-xs-12" id="validarProce_programado" style="text-align: left">
+                <label>Proc. programado? :</label>
+                <div class="inline-inputs">
+                  <input
+                    v-model="global_HC002.PROCEDIMIENTOS.PROC_PROGRAMADO"
+                    type="text"
+                    maxlength="1"
+                    placeholder="N"
+                    data-orden="1"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-2 col-sm-6 col-xs-12" id="validarProce_ambulatorio" style="text-align: left">
+                <label>Proc. ambulatorio? :</label>
+                <div class="inline-inputs">
+                  <input
+                    v-model="global_HC002.PROCEDIMIENTOS.PROC_AMBULA"
+                    type="text"
+                    maxlength="1"
+                    placeholder="N"
+                    data-orden="1"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6 col-xs-12" style="text-align: left">
+                <label>Evento adverso</label>
+                <div class="inline-inputs">
+                  <input
+                    v-model="textos.evento_adverso"
+                    type="text"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6 col-xs-12" style="text-align: left">
+                <label>Tipo cirugía</label>
+                <div class="inline-inputs">
+                  <input
+                    v-model="textos.tipo_cirugia"
+                    type="text"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-2 col-sm-6 col-xs-12" style="text-align: left">
+                <label>Estado salida</label>
+                <div class="inline-inputs">
+                  <input
+                    v-model="textos.estado_salida"
+                    type="text"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-2 col-sm-6 col-xs-12" id="validarSolicitud_patologia" style="text-align: left">
+                <label>Solicitud de patología? :</label>
+                <div class="inline-inputs">
+                  <input
+                    v-model="solicitud_patologia"
+                    type="text"
+                    maxlength="1"
+                    placeholder="N"
+                    data-orden="1"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+
+              <div v-show="solicitud_patologia == 'S'">
+                <div class="salto-linea"></div>
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12" id="validar_pieza_quirur" style="padding-left: 0">
+                    <div
+                      class="col-md-12 col-sm-12 col-xs-12 head-box"
+                      style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                    >
+                      <label>Pieza quirúrgica remitida:</label>
+                      <label>(95 caracteres máximo)</label>
+                    </div>
+                    <textarea
+                      class="form-control"
+                      disabled="disabled"
+                      rows="2"
+                      maxlength="95"
+                      data-orden="1"
+                      required="true"
+                      v-model="global_HC002.PATOLOGIA.PIEZA_QUIR"
+                      style="resize: none; text-align: justify"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div class="col-md-6 no-padding">
+                  <div class="col-md-12 col-sm-12 col-xs-12" id="validar_datos_clinicos">
+                    <div
+                      class="col-md-12 col-sm-12 col-xs-12 head-box"
+                      style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                    >
+                      <label>Datos clínicos:</label>
+                      <label>(300 caracteres máximo)</label>
+                    </div>
+                    <textarea
+                      class="form-control"
+                      disabled="disabled"
+                      rows="3"
+                      maxlength="300"
+                      data-orden="1"
+                      required="true"
+                      v-model="global_HC002.PATOLOGIA.DATOS_CLINICOS"
+                      style="resize: none; text-align: justify"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col-md-12 col-sm-12 no-padding"
+          v-show="global_HC002.UNSERV == '01' || global_HC002.UNSERV == '02' || global_HC002.UNSERV == '08' || global_HC002.UNSERV == '09' || global_HC002.UNSERV == '63'"
+        >
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Preguntas COVID 19</span>
+              </div>
+              <button
+                v-show="flujo_bloques.covid"
+                id="btnFlujo_covid"
+                type="button"
+                style="left: 556px"
+                @click="botonFlujo(4)"
+                class="boton-flujo-hc002 btn f8-Btn btn-default"
+              >
+                <i class="glyphicon glyphicon-pencil"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col-md-12 col-sm-12 col-xs-12 no-padding"
+          v-show="global_HC002.UNSERV == '01' || global_HC002.UNSERV == '02' || global_HC002.UNSERV == '08' || global_HC002.UNSERV == '09' || global_HC002.UNSERV == '63'"
+        >
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-3 no-padding" style="text-align: left; border-right: 1.5px solid #ececec">
+              <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarFiebre_COVID">
+                <label style="position: relative; top: 5px">Fiebre ?</label>
+                <div class="col-md-4 inline-inputs" style="float: right">
+                  <input
+                    v-model="global_HC002.COVID.FIEBRE"
+                    type="text"
+                    maxlength="1"
+                    placeholder="N"
+                    data-orden="1"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarTos_COVID">
+                <label style="position: relative; top: 5px">Tos ?</label>
+                <div class="col-md-4 inline-inputs" style="float: right">
+                  <input
+                    v-model="global_HC002.COVID.TOS"
+                    type="text"
+                    maxlength="1"
+                    placeholder="N"
+                    data-orden="1"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarDisnea_COVID">
+                <label style="position: relative; top: 5px">Disnea ?</label>
+                <div class="col-md-4 inline-inputs" style="float: right">
+                  <input
+                    v-model="global_HC002.COVID.DISNEA"
+                    type="text"
+                    maxlength="1"
+                    placeholder="N"
+                    data-orden="1"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarMalestar_COVID">
+                <label style="position: relative; top: 5px">Malestar general ?</label>
+                <div class="col-md-4 inline-inputs" style="float: right">
+                  <input
+                    v-model="global_HC002.COVID.MALESTAR"
+                    type="text"
+                    maxlength="1"
+                    placeholder="N"
+                    data-orden="1"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarRinorrea_COVID">
+                <label style="position: relative; top: 5px">Rinorrea ?</label>
+                <div class="col-md-4 inline-inputs" style="float: right">
+                  <input
+                    v-model="global_HC002.COVID.RINORREA"
+                    type="text"
+                    maxlength="1"
+                    placeholder="N"
+                    data-orden="1"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarOdinofagia_COVID">
+                <label style="position: relative; top: 5px">Odinofagia ?</label>
+                <div class="col-md-4 inline-inputs" style="float: right">
+                  <input
+                    v-model="global_HC002.COVID.ODINOFAGIA"
+                    type="text"
+                    maxlength="1"
+                    placeholder="N"
+                    data-orden="1"
+                    style="text-align: center"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-9" style="text-align: left; padding-left: 15px">
+              <div class="salto-linea"></div>
+              <div class="salto-linea"></div>
+
+              <div class="col-md-12 no-padding">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarViaje_COVID">
+                  <label style="position: relative; top: 5px"
+                    >Transitó o viajó en los últimos 14 días por un país o región con circulación viral confirmada de
+                    COVID 19 ?
+                  </label>
+                  <div class="col-md-1 no-padding inline-inputs" style="float: right">
+                    <input
+                      v-model="global_HC002.COVID.VIAJE"
+                      type="text"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      style="text-align: center"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarContacto_COVID">
+                  <label style="position: relative; top: 5px"
+                    >En los últimos 14 días ha estado en contacto con alguna persona que haya sido diagnosticada con
+                    COVID 19 ?</label
+                  >
+                  <div class="col-md-1 no-padding inline-inputs" style="float: right">
+                    <input
+                      v-model="global_HC002.COVID.CONTACTO"
+                      type="text"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      style="text-align: center"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                  id="validarPersonalSalud_COVID"
+                >
+                  <label style="position: relative; top: 5px"
+                    >Es personal de la salud u otro ambito hospitalario con contacto estrecho de caso confirmado o
+                    probable para COVID 19 ?</label
+                  >
+                  <div class="col-md-1 no-padding inline-inputs" style="float: right">
+                    <input
+                      v-model="global_HC002.COVID.PERSONAL_SALUD"
+                      type="text"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      style="text-align: center"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+                <div class="salto-linea"></div>
+              </div>
+
+              <div class="col-md-12 no-padding" style="border-top: 1.5px solid rgb(236, 236, 236)">
+                <div class="salto-linea"></div>
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarViajeDentro_COVID">
+                  <label style="position: relative; top: 5px"
+                    >Ha viajado dentro del país en los últimos 14 días ?
+                  </label>
+                  <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                    <input
+                      type="text"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      v-model="global_HC002.COVID.VIAJE_DENTRO"
+                      style="text-align: center"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="col-md-4 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                  v-show="global_HC002.COVID.VIAJE_DENTRO == 'S'"
+                >
+                  <label style="position: relative; top: 5px">A donde ?</label>
+                  <div class="col-md-8 no-padding inline-inputs" style="float: right">
+                    <input
+                      v-model="textos.ciudad_dentro"
+                      type="text"
+                      style="text-align: center"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="col-md-2 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                  id="validarTiempoViajeDentro_COVID"
+                  v-show="global_HC002.COVID.VIAJE_DENTRO == 'S'"
+                >
+                  <label style="position: relative; top: 5px">Dias ?</label>
+                  <div class="col-md-5 no-padding inline-inputs" style="float: right">
+                    <input
+                      v-model="global_HC002.COVID.TIEMPO_VIAJE_DENTRO"
+                      type="number"
+                      maxlength="3"
+                      data-orden="1"
+                      style="text-align: center"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      required="true"
+                    />
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarViajeFuera_COVID">
+                  <label style="position: relative; top: 5px">Ha viajado fuera del país en los últimos 14 días ?</label>
+                  <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                    <input
+                      type="text"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      v-model="global_HC002.COVID.VIAJE_FUERA"
+                      style="text-align: center"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="col-md-4 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                  v-show="global_HC002.COVID.VIAJE_FUERA == 'S'"
+                >
+                  <label style="position: relative; top: 5px">A donde ?</label>
+                  <div class="col-md-8 no-padding inline-inputs" style="float: right">
+                    <input
+                      v-model="textos.pais_fuera"
+                      type="text"
+                      style="text-align: center"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="col-md-2 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                  id="validarTiempoViajeFuera_COVID"
+                  v-show="global_HC002.COVID.VIAJE_FUERA == 'S'"
+                >
+                  <label style="position: relative; top: 5px">Dias ?</label>
+                  <div class="col-md-5 no-padding inline-inputs" style="float: right">
+                    <input
+                      v-model="global_HC002.COVID.TIEMPO_VIAJE_FUERA"
+                      type="number"
+                      maxlength="3"
+                      data-orden="1"
+                      style="text-align: center"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="col-md-4 no-padding">
+            <div class="col-md-12 col-sm-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Sintomático</span>
+                  </div>
+                  <button
+                    v-show="flujo_bloques.sintomaticos"
+                    id="btnFlujo_sintom"
+                    type="button"
+                    style="left: 150px"
+                    @click="botonFlujo(5)"
+                    class="boton-flujo-hc002 btn f8-Btn btn-default"
+                  >
+                    <i class="glyphicon glyphicon-pencil"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+                <div class="col-md-12" style="padding-right: 0">
+                  <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="text-align: center">
+                    <label>Opciones de respuesta: S (si), N (no), X (no valorado)*</label>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div
+                    class="col-md-8 col-sm-12 col-xs-12 form-group form-md-checkboxes"
+                    id="validarSintomas_respiratorio"
+                  >
+                    <label style="position: relative; top: 5px">Sintomático respiratorio ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        v-model="global_HC002.SINTOM_RESPI"
+                        style="text-align: center"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 col-sm-12 col-xs-12 form-group form-md-checkboxes">
+                    <div class="col-md-12 no-padding" style="float: right">
+                      <label v-if="global_HC002.SINTOM_RESPI == 'S'" style="position: relative; top: 5px">Si</label>
+                      <label v-else-if="global_HC002.SINTOM_RESPI == 'N'" style="position: relative; top: 5px"
+                        >No</label
+                      >
+                      <label v-else-if="global_HC002.SINTOM_RESPI == 'X'" style="position: relative; top: 5px"
+                        >No valorado</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-8 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarSintomas_piel">
+                    <label style="position: relative; top: 5px">Sintomático piel ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        v-model="global_HC002.SINTOM_PIEL"
+                        style="text-align: center"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 col-sm-12 col-xs-12 form-group form-md-checkboxes">
+                    <div class="col-md-12 no-padding" style="float: right">
+                      <label v-if="global_HC002.SINTOM_PIEL == 'S'" style="position: relative; top: 5px">Si</label>
+                      <label v-else-if="global_HC002.SINTOM_PIEL == 'N'" style="position: relative; top: 5px">No</label>
+                      <label v-else-if="global_HC002.SINTOM_PIEL == 'X'" style="position: relative; top: 5px"
+                        >No valorado</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-8 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarContacto_lepra">
+                    <label style="position: relative; top: 5px">Contacto pacientes con lepra ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        v-model="global_HC002.CONTACTO_LEPRA"
+                        style="text-align: center"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 col-sm-12 col-xs-12 form-group form-md-checkboxes">
+                    <div class="col-md-12 no-padding" style="float: right">
+                      <label v-if="global_HC002.CONTACTO_LEPRA == 'S'" style="position: relative; top: 5px">Si</label>
+                      <label v-else-if="global_HC002.CONTACTO_LEPRA == 'N'" style="position: relative; top: 5px"
+                        >No</label
+                      >
+                      <label v-else-if="global_HC002.CONTACTO_LEPRA == 'X'" style="position: relative; top: 5px"
+                        >No valorado</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-8 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarVictima_maltrato">
+                    <label style="position: relative; top: 5px">Víctima de maltrato ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        v-model="global_HC002.VICTI_MALTRATO"
+                        style="text-align: center"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 col-sm-12 col-xs-12 form-group form-md-checkboxes">
+                    <div class="col-md-12 no-padding" style="float: right">
+                      <label v-if="global_HC002.VICTI_MALTRATO == 'S'" style="position: relative; top: 5px">Si</label>
+                      <label v-else-if="global_HC002.VICTI_MALTRATO == 'N'" style="position: relative; top: 5px"
+                        >No</label
+                      >
+                      <label v-else-if="global_HC002.VICTI_MALTRATO == 'X'" style="position: relative; top: 5px"
+                        >No valorado</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-8 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarVictima_violencia">
+                    <label style="position: relative; top: 5px">Víctima de violencia ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        v-model="global_HC002.VICTI_VIOLENCIA"
+                        style="text-align: center"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 col-sm-12 col-xs-12 form-group form-md-checkboxes">
+                    <div class="col-md-12 no-padding" style="float: right">
+                      <label v-if="global_HC002.VICTI_VIOLENCIA == 'S'" style="position: relative; top: 5px">Si</label>
+                      <label v-else-if="global_HC002.VICTI_VIOLENCIA == 'N'" style="position: relative; top: 5px"
+                        >No</label
+                      >
+                      <label v-else-if="global_HC002.VICTI_VIOLENCIA == 'X'" style="position: relative; top: 5px"
+                        >No valorado</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-8 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarEnfermedad_mental">
+                    <label style="position: relative; top: 5px">Enfermedad mental ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        v-model="global_HC002.ENFER_MENTAL"
+                        style="text-align: center"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 col-sm-12 col-xs-12 form-group form-md-checkboxes">
+                    <div class="col-md-12 no-padding" style="float: right">
+                      <label v-if="global_HC002.ENFER_MENTAL == 'S'" style="position: relative; top: 5px">Si</label>
+                      <label v-else-if="global_HC002.ENFER_MENTAL == 'N'" style="position: relative; top: 5px"
+                        >No</label
+                      >
+                      <label v-else-if="global_HC002.ENFER_MENTAL == 'X'" style="position: relative; top: 5px"
+                        >No valorado</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+
+                  <div class="col-md-8 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarITS">
+                    <label style="position: relative; top: 5px">Ha tenido o tiene ITS ?</label>
+                    <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                      <input
+                        type="text"
+                        maxlength="1"
+                        placeholder="N"
+                        data-orden="1"
+                        v-model="global_HC002.ENFER_ITS"
+                        style="text-align: center"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 col-sm-12 col-xs-12 form-group form-md-checkboxes">
+                    <div class="col-md-12 no-padding" style="float: right">
+                      <label v-if="global_HC002.ENFER_ITS == 'S'" style="position: relative; top: 5px">Si</label>
+                      <label v-else-if="global_HC002.ENFER_ITS == 'N'" style="position: relative; top: 5px">No</label>
+                      <label v-else-if="global_HC002.ENFER_ITS == 'X'" style="position: relative; top: 5px"
+                        >No valorado</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="no-padding" v-show="global_HC002.ENFER_ITS == 'S'">
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-8 col-sm-12 col-xs-12" style="text-align: left" id="validarCual_ITS">
+                      <label>Cuál ITS ?</label>
+                      <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                          <input
+                            v-model="global_HC002.CUAL_ITS"
+                            maxlength="30"
+                            data-orden="1"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            required="true"
+                            style="text-align: left"
+                            disabled="disabled"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-8 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarTratamiento_ITS">
+                      <label style="position: relative; top: 5px">Recibió tratamiento ?</label>
+                      <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                        <input
+                          type="text"
+                          maxlength="1"
+                          placeholder="N"
+                          data-orden="1"
+                          v-model="global_HC002.TRATA_ITS"
+                          style="text-align: center"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12 col-xs-12 form-group form-md-checkboxes">
+                      <div class="col-md-12 no-padding" style="float: right">
+                        <label v-if="global_HC002.TRATA_ITS == 'S'" style="position: relative; top: 5px">Si</label>
+                        <label v-else-if="global_HC002.TRATA_ITS == 'N'" style="position: relative; top: 5px">No</label>
+                        <label v-else-if="global_HC002.TRATA_ITS == 'X'" style="position: relative; top: 5px"
+                          >No valorado</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="no-padding" v-show="datos_paciente.SEXO == 'F'">
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-8 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarCancer_seno">
+                      <label style="position: relative; top: 5px">Cáncer de seno ?</label>
+                      <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                        <input
+                          type="text"
+                          maxlength="1"
+                          placeholder="N"
+                          data-orden="1"
+                          v-model="global_HC002.CANCER_SENO"
+                          style="text-align: center"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12 col-xs-12 form-group form-md-checkboxes">
+                      <div class="col-md-12 no-padding" style="float: right">
+                        <label v-if="global_HC002.CANCER_SENO == 'S'" style="position: relative; top: 5px">Si</label>
+                        <label v-else-if="global_HC002.CANCER_SENO == 'N'" style="position: relative; top: 5px"
+                          >No</label
+                        >
+                        <label v-else-if="global_HC002.CANCER_SENO == 'X'" style="position: relative; top: 5px"
+                          >No valorado</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-8 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarCancer_cervix">
+                      <label style="position: relative; top: 5px">Cáncer de cervix ?</label>
+                      <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                        <input
+                          type="text"
+                          maxlength="1"
+                          placeholder="N"
+                          data-orden="1"
+                          v-model="global_HC002.CANCER_CERVIS"
+                          style="text-align: center"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12 col-xs-12 form-group form-md-checkboxes">
+                      <div class="col-md-12 no-padding" style="float: right">
+                        <label v-if="global_HC002.CANCER_CERVIS == 'S'" style="position: relative; top: 5px">Si</label>
+                        <label v-else-if="global_HC002.CANCER_CERVIS == 'N'" style="position: relative; top: 5px"
+                          >No</label
+                        >
+                        <label v-else-if="global_HC002.CANCER_CERVIS == 'X'" style="position: relative; top: 5px"
+                          >No valorado</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-8 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarAutoexa_seno">
+                      <label style="position: relative; top: 5px">Educa en autoexamen seno ?</label>
+                      <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                        <input
+                          type="text"
+                          maxlength="1"
+                          placeholder="N"
+                          data-orden="1"
+                          v-model="global_HC002.EDU_AUTOEXA_SENO"
+                          style="text-align: center"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12 col-xs-12 form-group form-md-checkboxes">
+                      <div class="col-md-12 no-padding" style="float: right">
+                        <label v-if="global_HC002.EDU_AUTOEXA_SENO == 'S'" style="position: relative; top: 5px"
+                          >Si</label
+                        >
+                        <label v-else-if="global_HC002.EDU_AUTOEXA_SENO == 'N'" style="position: relative; top: 5px"
+                          >No</label
+                        >
+                        <label v-else-if="global_HC002.EDU_AUTOEXA_SENO == 'X'" style="position: relative; top: 5px"
+                          >No valorado</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-8 col-sm-12 col-xs-12 form-group form-md-checkboxes" id="validarCitologia">
+                      <label style="position: relative; top: 5px">Se ha realizado citología ? </label>
+                      <div class="col-md-2 no-padding inline-inputs" style="float: right">
+                        <input
+                          type="text"
+                          maxlength="1"
+                          placeholder="N"
+                          data-orden="1"
+                          v-model="global_HC002.CITOLOGIA_PREVIA"
+                          style="text-align: center"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12 col-xs-12 form-group form-md-checkboxes">
+                      <div class="col-md-12 no-padding" style="float: right">
+                        <label v-if="global_HC002.CITOLOGIA_PREVIA == 'S'" style="position: relative; top: 5px"
+                          >Si</label
+                        >
+                        <label v-else-if="global_HC002.CITOLOGIA_PREVIA == 'N'" style="position: relative; top: 5px"
+                          >No</label
+                        >
+                        <label v-else-if="global_HC002.CITOLOGIA_PREVIA == 'X'" style="position: relative; top: 5px"
+                          >No valorado</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="no-padding" v-show="global_HC002.CITOLOGIA_PREVIA == 'S'">
+                      <div class="salto-linea"></div>
+
+                      <div class="col-md-6 col-sm-12 col-xs-12" style="text-align: left" id="validarFecha_Citologia">
+                        <label>Cuando ?</label>
+                        <div class="inline-inputs">
+                          <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input
+                              id="fecha_citologia_hc002"
+                              maxlength="10"
+                              data-orden="1"
+                              class="form-control col-md-12 col-sm-12 col-xs-12"
+                              placeholder="AAAA/MM/DD"
+                              required="true"
+                              style="text-align: center"
+                              disabled="disabled"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6 col-sm-12 col-xs-12" style="text-align: left">
+                        <label>Resultado citologia</label>
+                        <div class="inline-inputs">
+                          <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input
+                              v-model="textos.resultado_citologia"
+                              class="form-control col-md-12 col-sm-12 col-xs-12"
+                              style="text-align: center"
+                              disabled="disabled"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left" id="validarFecha_mamografia">
+                      <label>Última mamografía ?</label>
+                      <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                          <input
+                            id="fecha_mamografia_hc002"
+                            maxlength="10"
+                            data-orden="1"
+                            placeholder="AAAA/MM/DD"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div v-show="global_HC002.UNSERV == '08'" class="col-md-8" style="padding-right: 0">
+            <div class="col-md-12 col-sm-12 no-padding">
+              <div class="portlet light box-center box-title">
+                <div class="portlet-title">
+                  <div class="caption">
+                    <span class="caption-subject bold">Signos vitales</span>
+                  </div>
+                  <button
+                    v-show="flujo_bloques.signos_vitales"
+                    id="btnFlujo_signos"
+                    type="button"
+                    style="left: 352px"
+                    @click="botonFlujo(6)"
+                    class="boton-flujo-hc002 btn f8-Btn btn-default"
+                  >
+                    <i class="glyphicon glyphicon-pencil"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+              <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="text-align: left">
+                <div class="col-md-12" style="padding-top: 9px; padding-right: 0; border-bottom: 1.5px solid #ececec">
+                  <div class="col-md-7 no-padding">
+                    <div class="col-md-12 no-padding" style="display: flex; justify-content: center">
+                      <div class="col-md-4 col-sm-12 col-xs-12" style="text-align: left" id="validarPeso">
+                        <label>Peso {{ unidad_peso }}</label>
+                        <div class="inline-inputs">
+                          <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input
+                              @input="calcularIMCySUP"
+                              v-model="global_HC002.PESO_NEW"
+                              maxlength="7"
+                              data-orden="1"
+                              type="number"
+                              class="form-control col-md-12 col-sm-12 col-xs-12"
+                              style="text-align: center"
+                              disabled="disabled"
+                              required="true"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-8 col-sm-12 col-xs-12" style="text-align: left; padding-top: 18px">
+                        <label style="position: relative; top: 5px">IMC :</label>
+
+                        <div class="col-md-8 no-padding inline-inputs" style="float: right">
+                          <input
+                            v-model="global_HC002.SIGNOS_VITALES.IMC_CORP"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-12 no-padding" style="display: flex; justify-content: center">
+                      <div class="col-md-4 col-sm-12 col-xs-12" style="text-align: left" id="validartalla">
+                        <label>Estatura</label>
+                        <div class="inline-inputs">
+                          <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input
+                              @input="calcularIMCySUP"
+                              v-model="global_HC002.SIGNOS_VITALES.TALLA"
+                              maxlength="3"
+                              data-orden="1"
+                              placeholder="Cm"
+                              type="number"
+                              class="form-control col-md-12 col-sm-12 col-xs-12"
+                              required="true"
+                              style="text-align: center"
+                              disabled="disabled"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-8 col-sm-12 col-xs-12" style="text-align: left; padding-top: 18px">
+                        <label style="position: relative; top: 5px">Sup C. :</label>
+
+                        <div class="col-md-8 no-padding inline-inputs" style="float: right">
+                          <input
+                            v-model="operaciones.sup"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-4 col-sm-12 col-xs-12" style="text-align: left" id="validarTemperatura">
+                      <label>Temperatura</label>
+                      <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                          <input
+                            v-model="global_HC002.SIGNOS_VITALES.TEMP"
+                            maxlength="5"
+                            data-orden="1"
+                            required="true"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12 col-xs-12" style="text-align: left" id="validar_FC">
+                      <label>FC</label>
+                      <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                          <input
+                            v-model="global_HC002.SIGNOS_VITALES.F_CARD"
+                            maxlength="3"
+                            data-orden="1"
+                            required="true"
+                            type="number"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12 col-xs-12" style="text-align: left" id="validar_FR">
+                      <label>FR</label>
+                      <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                          <input
+                            v-model="global_HC002.SIGNOS_VITALES.F_RESP"
+                            maxlength="3"
+                            data-orden="1"
+                            required="true"
+                            type="number"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-8 col-sm-12 col-xs-12" style="text-align: center">
+                      <label>Tensión arterial</label>
+                      <div class="inline-inputs">
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6" id="validar_TA_1">
+                          <input
+                            @input="calcularTA_media"
+                            v-model="global_HC002.SIGNOS_VITALES.TENS_1"
+                            maxlength="3"
+                            data-orden="1"
+                            required="true"
+                            type="number"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                          />
+                        </div>
+                        <div class="input-group col-md-6 col-sm-6 col-xs-6" id="validar_TA_2">
+                          <input
+                            @input="calcularTA_media"
+                            v-model="global_HC002.SIGNOS_VITALES.TENS_2"
+                            maxlength="3"
+                            data-orden="1"
+                            required="true"
+                            type="number"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12 col-xs-12" style="text-align: left">
+                      <label>TA media</label>
+                      <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                          <input
+                            v-model="global_HC002.SIGNOS_VITALES.TENS_MEDIA"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+                    <div class="salto-linea"></div>
+                  </div>
+
+                  <div class="col-md-5 no-pading" style="border-left: 1.5px solid #ececec">
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left">
+                      <label>Resp ocular</label>
+                      <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                          <input
+                            v-model="textos.ocular"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left">
+                      <label>Resp verbal</label>
+                      <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                          <input
+                            v-model="textos.verbal"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: left">
+                      <label>Resp motora</label>
+                      <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                          <input
+                            v-model="textos.motora"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="text-align: center">
+                      <label>Vlr Glasgow</label>
+                      <div class="inline-inputs">
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                          <input
+                            v-model="textos.glasgow"
+                            class="form-control col-md-12 col-sm-12 col-xs-12"
+                            style="text-align: center"
+                            disabled="disabled"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="salto-linea"></div>
+                  <div class="salto-linea"></div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12" style="padding-top: 9px; display: flex; justify-content: space-around">
+                  <div class="col-md-2 col-sm-12 col-xs-12" style="text-align: left" id="validar_PVC">
+                    <label>PVC</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="global_HC002.SIGNOS_VITALES.PVC"
+                          maxlength="2"
+                          data-orden="1"
+                          type="number"
+                          required="true"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-12 col-xs-12" style="text-align: left" id="validar_PERTOR">
+                    <label>P. Tor</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="global_HC002.SIGNOS_VITALES.PER_TORA"
+                          maxlength="5"
+                          data-orden="1"
+                          type="text"
+                          required="true"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-12 col-xs-12" style="text-align: left" id="validar_PERABDO">
+                    <label>P. Abdo</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="global_HC002.SIGNOS_VITALES.PER_ABDO"
+                          maxlength="5"
+                          data-orden="1"
+                          type="text"
+                          required="true"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-12 col-xs-12" style="text-align: left" id="validar_G_URIN">
+                    <label>G.urin</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="global_HC002.SIGNOS_VITALES.G_URIN"
+                          maxlength="4"
+                          data-orden="1"
+                          type="text"
+                          required="true"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-12 col-xs-12" style="text-align: left" id="validarOximetria">
+                    <label>Oximetria</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="global_HC002.SIGNOS_VITALES.OXIMETRIA"
+                          maxlength="3"
+                          data-orden="1"
+                          type="number"
+                          required="true"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-2 col-sm-12 col-xs-12" style="text-align: left" id="validarGlucometria">
+                    <label>Glucometria</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="global_HC002.SIGNOS_VITALES.GLUCOMETRIA"
+                          maxlength="3"
+                          data-orden="1"
+                          type="number"
+                          required="true"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5 no-padding">
+          <div class="col-md-12 col-sm-12 no-padding">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Codificación diagnósticos</span>
+                </div>
+                <button
+                  v-show="flujo_bloques.codificacion_diagnosticos"
+                  id="btnFlujo_diagnosticos"
+                  type="button"
+                  style="left: 158px"
+                  @click="botonFlujo(7)"
+                  class="boton-flujo-hc002 btn f8-Btn btn-default"
+                >
+                  <i class="glyphicon glyphicon-pencil"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div
+              class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+              style="text-align: left; padding-bottom: 9px"
+            >
+              <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="text-align: center; margin-bottom: 11px">
+                <label>Solo en caso de cambio</label>
+              </div>
+
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="inline-inputs">
+                  <label class="col-md-3 col-sm-3 col-xs-3">1.</label>
+                  <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCod_diag_0_HC002">
+                    <input
+                      id="cod_diag_0"
+                      @keydown.119="ventanaCod_diag(0)"
+                      v-model="global_HC002.TABLA_DIAGNOSTICOS[0]"
+                      maxlength="4"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                      required="true"
+                    />
+                  </div>
+                  <button @click="ventanaCod_diag(0)" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-8 no-padding">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="textos.descrip_diagnosticos[0]"
+                    style="text-align: left"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="inline-inputs">
+                  <label class="col-md-3 col-sm-3 col-xs-3">2.</label>
+                  <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCod_diag_1_HC002">
+                    <input
+                      id="cod_diag_1"
+                      @keydown.119="ventanaCod_diag(1)"
+                      v-model="global_HC002.TABLA_DIAGNOSTICOS[1]"
+                      maxlength="4"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                  <button @click="ventanaCod_diag(1)" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-8 no-padding">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="textos.descrip_diagnosticos[1]"
+                    style="text-align: left"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="inline-inputs">
+                  <label class="col-md-3 col-sm-3 col-xs-3">3.</label>
+                  <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCod_diag_2_HC002">
+                    <input
+                      id="cod_diag_2"
+                      @keydown.119="ventanaCod_diag(2)"
+                      v-model="global_HC002.TABLA_DIAGNOSTICOS[2]"
+                      maxlength="4"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                  <button @click="ventanaCod_diag(2)" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-8 no-padding">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="textos.descrip_diagnosticos[2]"
+                    style="text-align: left"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="inline-inputs">
+                  <label class="col-md-3 col-sm-3 col-xs-3">4.</label>
+                  <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCod_diag_3_HC002">
+                    <input
+                      id="cod_diag_3"
+                      @keydown.119="ventanaCod_diag(3)"
+                      v-model="global_HC002.TABLA_DIAGNOSTICOS[3]"
+                      maxlength="4"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                  <button @click="ventanaCod_diag(3)" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-8 no-padding">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="textos.descrip_diagnosticos[3]"
+                    style="text-align: left"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="inline-inputs">
+                  <label class="col-md-3 col-sm-3 col-xs-3">5.</label>
+                  <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCod_diag_4_HC002">
+                    <input
+                      id="cod_diag_4"
+                      @keydown.119="ventanaCod_diag(4)"
+                      v-model="global_HC002.TABLA_DIAGNOSTICOS[4]"
+                      maxlength="4"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                  <button @click="ventanaCod_diag(4)" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-8 no-padding">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="textos.descrip_diagnosticos[4]"
+                    style="text-align: left"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="inline-inputs">
+                  <label class="col-md-3 col-sm-3 col-xs-3">6.</label>
+                  <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCod_diag_5_HC002">
+                    <input
+                      id="cod_diag_5"
+                      @keydown.119="ventanaCod_diag(5)"
+                      v-model="global_HC002.TABLA_DIAGNOSTICOS[5]"
+                      maxlength="4"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                  <button @click="ventanaCod_diag(5)" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-8 no-padding">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="textos.descrip_diagnosticos[5]"
+                    style="text-align: left"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="inline-inputs">
+                  <label class="col-md-3 col-sm-3 col-xs-3">7.</label>
+                  <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCod_diag_6_HC002">
+                    <input
+                      id="cod_diag_6"
+                      @keydown.119="ventanaCod_diag(6)"
+                      v-model="global_HC002.TABLA_DIAGNOSTICOS[6]"
+                      maxlength="4"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                  <button @click="ventanaCod_diag(6)" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-8 no-padding">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="textos.descrip_diagnosticos[6]"
+                    style="text-align: left"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="inline-inputs">
+                  <label class="col-md-3 col-sm-3 col-xs-3">8.</label>
+                  <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCod_diag_7_HC002">
+                    <input
+                      id="cod_diag_7"
+                      @keydown.119="ventanaCod_diag(7)"
+                      v-model="global_HC002.TABLA_DIAGNOSTICOS[7]"
+                      maxlength="4"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                  <button @click="ventanaCod_diag(7)" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-8 no-padding">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="textos.descrip_diagnosticos[7]"
+                    style="text-align: left"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="inline-inputs">
+                  <label class="col-md-3 col-sm-3 col-xs-3">9.</label>
+                  <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCod_diag_8_HC002">
+                    <input
+                      id="cod_diag_8"
+                      @keydown.119="ventanaCod_diag(8)"
+                      v-model="global_HC002.TABLA_DIAGNOSTICOS[8]"
+                      maxlength="4"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                  <button @click="ventanaCod_diag(8)" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-8 no-padding">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="textos.descrip_diagnosticos[8]"
+                    style="text-align: left"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="inline-inputs">
+                  <label class="col-md-3 col-sm-3 col-xs-3">10.</label>
+                  <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarCod_diag_9_HC002">
+                    <input
+                      id="cod_diag_9"
+                      @keydown.119="ventanaCod_diag(9)"
+                      v-model="global_HC002.TABLA_DIAGNOSTICOS[9]"
+                      maxlength="4"
+                      data-orden="1"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      disabled="disabled"
+                    />
+                  </div>
+                  <button @click="ventanaCod_diag(9)" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                    <i class="icon-magnifier"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-8 no-padding">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="textos.descrip_diagnosticos[9]"
+                    style="text-align: left"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-7" style="padding-right: 0">
+          <div class="col-md-12 col-sm-12 no-padding">
+            <div class="portlet light box-center box-title">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject bold">Análisis y Plan</span>
+                </div>
+                <button
+                  v-show="flujo_bloques.analisis"
+                  id="btnFlujo_analisis"
+                  type="button"
+                  style="left: 313px"
+                  @click="botonFlujo(8)"
+                  class="boton-flujo-hc002 btn f8-Btn btn-default"
+                >
+                  <i class="glyphicon glyphicon-pencil"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validar_Analisis">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 head-box"
+                  style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                >
+                  <label>Análisis:</label>
+                  <label>(15,000 caracteres máximo)</label>
+                </div>
+                <textarea
+                  class="form-control"
+                  v-model="DETALLE_EVO.ANALISIS"
+                  disabled="disabled"
+                  rows="9"
+                  maxlength="15000"
+                  data-orden="1"
+                  required="true"
+                  style="resize: none; text-align: justify"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validar_PLAN">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 head-box"
+                  style="display: flex; justify-content: space-between; padding-right: 0; padding-left: 0"
+                >
+                  <label>Plan:</label>
+                  <label>(15,000 caracteres máximo)</label>
+                </div>
+                <textarea
+                  class="form-control"
+                  v-model="DETALLE_EVO.PLAN"
+                  disabled="disabled"
+                  rows="7"
+                  maxlength="15000"
+                  data-orden="1"
+                  required="true"
+                  style="resize: none; text-align: justify; padding-bottom: 19px"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 no-padding">
+          <div class="portlet light box-center box-title">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject bold">Actualización de RIPS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="tarjeta_rips_foco">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-3 col-sm-4 col-xs-12" style="text-align: left">
+              <label>Personal que atiende</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="textos.personal_atiende"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: center"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-4 col-xs-12" style="text-align: left">
+              <label>Estado gravidez</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="textos.estado_gravidez"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: center"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-4 col-xs-12" style="text-align: left">
+              <label>Causa externa</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="textos.causa_externa"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: center"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12" style="text-align: left">
+              <label>Tipo diagnóstico</label>
+              <div class="inline-inputs">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                  <input
+                    v-model="textos.tipo_diagnostico"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    style="text-align: center"
+                    disabled="disabled"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="salto-linea"></div>
+
+            <div
+              v-show="(global_HC002.UNSERV == '08' && historia_clinica.novedad == '8') || historia_clinica.novedad == '7'"
+            >
+              <div>
+                <div class="col-md-3 col-sm-6 col-xs-12" style="text-align: left; padding-left: 0">
+                  <label>Finalidad consulta</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        v-model="textos.finalidad_consulta"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  v-if="global_HC002.RIPS.FINALID != '00' && global_HC002.RIPS.FINALID != '10'"
+                  class="col-md-1 col-sm-4 col-xs-12"
+                  style="text-align: left; padding-left: 0"
+                  id="validarPrimeraVez"
+                >
+                  <label>Primera vez ?</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        v-model="global_HC002.PRIMERA_VEZ"
+                        maxlength="1"
+                        placeholder="N"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                        disabled="disabled"
+                        data-orden="1"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  v-if="global_HC002.RIPS.FINALID == '06' && global_HC002.PRIMERA_VEZ == 'N'"
+                  class="col-md-4 col-sm-6 col-xs-12"
+                  style="text-align: left; padding-left: 0"
+                  id="validarNroControles"
+                >
+                  <label>Nro de controles que ha asistido: (incluyendo este)</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        v-model="global_HC002.EMBAR.NRO_CONTR"
+                        maxlength="2"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        type="number"
+                        style="text-align: center"
+                        disabled="disabled"
+                        data-orden="1"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  v-if="global_HC002.RIPS.FINALID == '11'"
+                  class="col-md-2 col-sm-6 col-xs-12"
+                  style="text-align: left; padding-left: 0"
+                  id="validarPatologiaCronica"
+                >
+                  <label>Patología crónica</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                      <input
+                        @keydown.119="ventanaPatologias"
+                        id="codPatologia_hc002"
+                        v-model="global_HC002.CRONICO"
+                        maxlength="3"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                        disabled="disabled"
+                        data-orden="1"
+                      />
+                    </div>
+                    <button @click="ventanaPatologias" type="button" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  v-if="global_HC002.RIPS.FINALID == '11'"
+                  class="col-md-6 col-sm-6 col-xs-12"
+                  style="text-align: left; padding-left: 0"
+                >
+                  <label></label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        v-model="textos.descrip_pato_cronica"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: left"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  v-if="global_HC002.RIPS.FINALID == '03'"
+                  class="col-md-3 col-sm-6 col-xs-12"
+                  style="text-align: left; padding-left: 0"
+                >
+                  <label>Método planificación</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        v-model="textos.metodo_planificacion"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="salto-linea"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding" v-if="global_HC002.RIPS.FINALID == '05'">
+          <div class="col-md-8 no-padding">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div class="col-md-12 no-padding">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 head-box"
+                  style="display: flex; justify-content: center; padding-right: 0; padding-left: 0"
+                >
+                  <label v-if="datos_paciente.SEXO == 'F'" style="position: relative; top: 5px"
+                    >Vello pubiano femenino</label
+                  >
+                  <label v-else-if="datos_paciente.SEXO == 'M'" style="position: relative; top: 5px"
+                    >Vello pubiano masculino</label
+                  >
+                </div>
+
+                <img
+                  v-if="datos_paciente.SEXO == 'F'"
+                  src="../../frameworks/imagenes/hiclin/tanner_pubico_fem.png"
+                  alt="Tanner mamario"
+                  style="max-width: 100%"
+                />
+                <img
+                  v-else-if="datos_paciente.SEXO == 'M'"
+                  src="../../frameworks/imagenes/hiclin/tanner_pubico_mas.png"
+                  alt="Tanner genital"
+                  style="max-width: 100%"
+                />
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12 no-padding" style="display: flex; justify-content: center">
+                  <div
+                    class="col-md-2 col-sm-6 col-xs-12"
+                    style="text-align: center; padding-left: 0"
+                    id="validarVelloPubico"
+                  >
+                    <label>Estadio</label>
+                    <div class="inline-inputs">
+                      <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          v-model="global_HC002.SIGNOS_VITALES.TANNER_PUBICO"
+                          maxlength="1"
+                          class="form-control col-md-12 col-sm-12 col-xs-12"
+                          style="text-align: center"
+                          disabled="disabled"
+                          data-orden="1"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salto-linea"></div>
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <label style="color: #476fad" class="col-md-12 col-sm-12 col-xs-12">
+                      Opciones de respuesta: Del 1 al 5
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" style="padding-right: 0">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+              <div class="col-md-12 no-padding">
+                <div
+                  class="col-md-12 col-sm-12 col-xs-12 head-box"
+                  style="display: flex; justify-content: center; padding-right: 0; padding-left: 0"
+                >
+                  <label v-if="datos_paciente.SEXO == 'F'" style="position: relative; top: 5px">Estadio mamario</label>
+                  <label v-else-if="datos_paciente.SEXO == 'M'" style="position: relative; top: 5px"
+                    >Estadio genital</label
+                  >
+                </div>
+
+                <img
+                  v-if="datos_paciente.SEXO == 'F'"
+                  src="../../frameworks/imagenes/hiclin/tanner_mamario.png"
+                  alt="Tanner mamario"
+                />
+                <img
+                  v-else-if="datos_paciente.SEXO == 'M'"
+                  src="../../frameworks/imagenes/hiclin/tanner_genital.png"
+                  alt="Tanner mamario"
+                />
+
+                <div
+                  class="col-md-3 col-sm-6 col-xs-12"
+                  style="text-align: center; padding-left: 0; position: relative; top: 111px; left: 60px"
+                  id="validarGenitales"
+                >
+                  <label>Estadio</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        v-model="global_HC002.SIGNOS_VITALES.TANNER_GENIT"
+                        maxlength="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                        disabled="disabled"
+                        data-orden="1"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="salto-linea"></div>
+
+                <div class="col-md-12 no-padding" style="text-align: center">
+                  <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <label style="color: #476fad" class="col-md-12 col-sm-12 col-xs-12">
+                      Opciones de respuesta: Del 1 al 5
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 no-padding">
+          <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+            <div class="col-md-12 no-padding" style="display: flex; justify-content: center">
+              <div class="col-md-3 col-sm-6 col-xs-12" style="text-align: left; padding-left: 0">
+                <label>Estado salida</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="textos.estado_salida_rips"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: center"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-9" style="padding-right: 0" v-if="global_HC002.RIPS.ESTADO_SAL == '2'">
+                <div
+                  class="col-md-3 col-sm-6 col-xs-12"
+                  style="text-align: left; padding-left: 0"
+                  id="validarDiagMuerte"
+                >
+                  <label>Diagnóstico muerte</label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                      <input
+                        @keydown.119="ventanaDiagnos_rips"
+                        v-model="global_HC002.RIPS.DIAG_MUER"
+                        id="diagnosMuerte_hc002"
+                        maxlength="4"
+                        data-orden="1"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: center"
+                        disabled="disabled"
+                      />
+                    </div>
+                    <button type="button" @click="ventanaDiagnos_rips" class="btn f8-Btn col-md-2 col-sm-2 col-xs-2">
+                      <i class="icon-magnifier"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-md-9 col-sm-12 col-xs-12" style="text-align: left; padding-left: 0">
+                  <label></label>
+                  <div class="inline-inputs">
+                    <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                      <input
+                        v-model="textos.descrip_tipo_diag_rips"
+                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                        style="text-align: left"
+                        disabled="disabled"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                v-else-if="global_HC002.RIPS.ESTADO_SAL == '3'"
+                class="col-md-3 col-sm-6 col-xs-12"
+                style="text-align: left"
+                id="validarRemitido"
+              >
+                <label>Remitido a</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      v-model="global_HC002.RIPS.REMITIDO"
+                      maxlength="20"
+                      data-orden="1"
+                      required="true"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                      style="text-align: left"
+                      disabled="disabled"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div v-if="mostrarEnfermedades">
+    <ser851 @callback="successVentanaEnfermedades" @callback_esc="escVentanaEnfermedades"></ser851>
+  </div>
+  <div class="col-12" v-if="params_vacunacion_covid.modal">
+    <vacunacion_covid
+      :params="params_vacunacion_covid"
+      @callback="validarSalirVacunacion_covid"
+      @callback_esc="validarSalirVacunacion_covid"
+    >
+    </vacunacion_covid>
+  </div>
+</div>
+<style>
+  input {
+    text-align: center;
+  }
+
+  .boton-flujo-hc002 {
+    background-color: #476fad;
+    color: #fff;
+    position: relative;
+    top: 2px;
+  }
+</style>
+<script src="../../HICLIN/scripts/HC002B.js" type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HC002B.formato.js"></script>
+<script src="../../HICLIN/scripts/HC002.js" type="text/javascript"></script>

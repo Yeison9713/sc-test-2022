@@ -1,0 +1,254 @@
+<div class="col-md-12" id="SER766">
+    <div class="portlet light">
+        <div class="portlet-body">
+            <form class="form-horizontal">
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                        <label>Fecha inicio</label>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                        <label>Fecha Final</label>
+                    </div>
+                    <div id="fechaInicial_SER766">
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                                <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.anoini_SER766'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.mesini_SER766'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.diaini_SER766'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fechaFinal_SER766">
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                                <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.anofin_SER766'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.mesfin_SER766'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <div class="inline-inputs">
+                                <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                                <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                    <input type="number" v-model='form.diafin_SER766'
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="validarservicio_SER766">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-8 col-xs-12">Tipo servicio:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input @Keyup.F8='_f8servicio_SER766' v-model='form.tiposerv_SER766' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 servicios_SER766" maxlength="2"
+                                    data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8servicio_SER766'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model='form.descripserv_SER766' type="text" class="form-control col-md-12 col-sm-12 col-xs-12 ">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="validarentidad_SER766">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-8 col-xs-12">Cod Entidad:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input @Keyup.F8='_f8entidad_SER766' v-model='form.codentidad_SER766' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 entidades_SER766" maxlength="6"
+                                    data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8entidad_SER766' 
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input  v-model='form.descripentidad_SER766' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 ">
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="form-group col-md-8 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                        <label>Si asigna centro de costos, solo buscara citas facturadas</label>
+                    </div>
+                    <div class="col-md-8 col-sm-12 col-xs-12" id="validarcosto_SER766">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-8 col-xs-12">Centro costo:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-12">
+                                <input @Keyup.F8='_f8costos_SER766' v-model='form.codcosto_SER766' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 costo_SER766" maxlength="4"
+                                    data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8costos_SER766' 
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model='form.descripcosto_SER766' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 "
+                                    >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-6" id="validardiscriminar_SER766">
+                        <div class="inline-inputs">
+                            <label class="col-md-8 col-sm-8 col-xs-12">Discriminar por cups:</label>
+                            <div class="input-group col-md-4 col-sm-4 col-xs-6">
+                                <input type="text" v-model='form.discrimcups_SER766'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                    data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-6" id="validargrupos_SER766">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-8 col-xs-12">Grupo a procesar:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-6">
+                                <input type="text" @Keyup.F8='_f8grupos_SER766' v-model='form.grupo_SER766'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 grupo_SER766" maxlength="2"
+                                    data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8grupos_SER766' 
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model='form.descripgrupo_SER766' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 ">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-6 col-xs-6" id="validararticulo_SER766">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-8 col-xs-12">cod art o serv:</label>
+                            <div class="input-group col-md-6 col-sm-4 col-xs-6">
+                                <input type="text"  v-model='form.codart_SER766'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 articulo_SER766" maxlength="15"
+                                    data-orden="1">
+                            </div>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model='form.descripartic_SER766' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 ">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-4 col-sm-4 col-xs-6" id="validardiscripac_SER766">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Discriminar paciente
+                                :</label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-6">
+                                <input type="text" v-model='form.discrimpac_SER766'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 uppercase" maxlength="1"
+                                    data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-6 col-xs-6" id="validarmedico_SER766">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-8 col-xs-12">Medico:</label>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-6">
+                                <input type="text" @Keyup.F8='_f8profesionales_SER766' v-model='form.medico_SER766'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 medico_SER766" maxlength="10"
+                                    data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8profesionales_SER766' 
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model='form.descripmedi_SER766' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 ">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-6" id="validaroperador_SER766">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-8 col-xs-12">Operador del sistema:</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-6">
+                                <input type="text" v-model='form.operador_SER766' @Keyup.F8='_f8operador_SER766'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 operador_SER766" maxlength="4"
+                                    data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8operador_SER766' 
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                                <input v-model='form.descripoperador_SER766' type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 ">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6" id="validarfinalidad_SER766">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-8 col-xs-12">Finalidad:</label>
+                            <div class="input-group col-md-7 col-sm-4 col-xs-6">
+                                <input type="text" v-model='form.finalidad_SER766' @Keyup.F8='_f8finalidad_SER766'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12 finalidad_SER766" maxlength="2"
+                                    data-orden="1">
+                            </div>
+                            <button type="button" @click='_f8finalidad_SER766' 
+                            class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-12 col-sm-4 col-xs-12">
+                            <input v-model='form.descripfinalidad_SER766' type="text"
+                                class="form-control col-md-12 col-sm-12 col-xs-12 ">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SER766.js" type="text/javascript"></script>

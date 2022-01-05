@@ -1,0 +1,70 @@
+<script>
+    $(document).ready(function () {
+        loader('hide');
+        abrirTerceroPower()
+    })
+
+    function abrirTerceroPower() {
+        var nombre_bat = "C:\\PROSOFT\\TEMP\\MENU-" + localStorage.Sesion.trim() + ".BAT",
+            contab = localStorage.Contab,
+            mes = evaluarMes_min(localStorage.CarpetaTrabajo),
+            usuario = espaciosDer(localStorage.User, 4),
+            clave = espaciosDer(localStorage.Clave, 8),
+            formulario = "INV402",
+            dll = "INVENT\\INV402.dll",
+            idOpcion = "942",
+            descripcionOpcion = "Reimprimir facturas";
+
+        var params = usuario
+            + "-" + clave
+            + "-" + formulario
+            + "-" + dll
+            + "-" + '1'
+            + "-" + '  '
+            + "-" + '  '
+            + "-"
+
+        console.log(params)
+        var titulo = contab + "\\"
+            + mes
+            + "     "
+            + idOpcion.substring(1, idOpcion.length).split('').join(',') + " "
+            + descripcionOpcion
+            + "     "
+            + usuario;
+
+        var batch = "ECHO OFF\r\n"
+            + "P:\r\n"
+            + "CD\\" + contab + "\\" + mes + "\r\n"
+            + "START C:\\PWCOBOL\\MAIN.EXE " + params + titulo + "\r\n";
+
+        fs.writeFile(nombre_bat, batch, function (err) {
+            if (err) console.error('Error escribiendo bat: \n\n' + err);
+            else {
+                jAlert({
+                    mensaje: `<div style="text-align: center;">`
+                        + `Debe cerrar el siguiente programa: <br>`
+                        + `<b>${idOpcion.substring(1, idOpcion.length).split('').join('-')} - ${descripcionOpcion}</b>`
+                        + `</div>`,
+                    titulo: 'Esperando power',
+                    autoclose: false,
+                    btnCancel: false,
+                    footer: false
+                }, function () { });
+
+                exe(nombre_bat, function (err, data) {
+                    if (err) console.error('Error ejecutando bat: \n\n' + err);
+                    else {
+                        fs.unlink(nombre_bat, function (err) {
+                            if (err) console.error('Error eliminando bat: \n\n' + err);
+                            else {
+                                _toggleNav()
+                                jAlert_close();
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    }
+</script>

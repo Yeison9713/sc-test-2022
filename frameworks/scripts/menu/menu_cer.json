@@ -1,0 +1,708 @@
+{
+  "Menu": [
+    {
+      "Id": "01",
+      "Descripcion": "Act maestros molineria",
+      "Opc-segu": "I71",
+      "Sub": [
+        {
+          "Id": "011",
+          "Descripcion": "Actualizar placas carros",
+          "Opc-segu": "I711",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER101",
+              "dll": "CEREALES\\CER101.dll"
+            }
+          ]
+        },
+        {
+          "Id": "012",
+          "Descripcion": "Configurar descuentos liqu.",
+          "Opc-segu": "I712",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER102",
+              "dll": "CEREALES\\CER102.dll"
+            }
+          ]
+        },
+        {
+          "Id": "013",
+          "Descripcion": "Consulta tabla doble descto",
+          "Opc-segu": "I713",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER103",
+              "dll": "CEREALES\\CER103.dll"
+            }
+          ]
+        },
+        {
+          "Id": "014",
+          "Descripcion": "Actualizar proyeccion ventas",
+          "Tipo": "ERROR",
+          "Cod": "DESHAB"
+        }
+      ]
+    },
+    {
+      "Id": "02",
+      "Descripcion": "Notas de entrada y salida",
+      "Opc-segu": "I72",
+      "Sub": [
+        {
+          "Id": "021",
+          "Descripcion": "Tiquetes de bascula",
+          "Opc-segu": "I721",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER201",
+              "dll": "CEREALES\\CER201.dll"
+            }
+          ]
+        },
+        {
+          "Id": "022",
+          "Descripcion": "Actualizar nota entrada",
+          "Opc-segu": "I722",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER202",
+              "dll": "CEREALES\\CER202.dll"
+            }
+          ]
+        },
+        {
+          "Id": "023",
+          "Descripcion": "Reimprimir tiquete bascula",
+          "Opc-segu": "I723",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER203",
+              "dll": "CEREALES\\CER203.dll"
+            }
+          ]
+        },
+        {
+          "Id": "024",
+          "Descripcion": "Notas de despacho",
+          "Opc-segu": "I724",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER204",
+              "dll": "CEREALES\\CER204.dll"
+            }
+          ]
+        },
+        {
+          "Id": "025",
+          "Descripcion": "Impresion de notas despacho",
+          "Opc-segu": "I725",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER205",
+              "dll": "CEREALES\\CER205.dll"
+            }
+          ]
+        },
+        {
+          "Id": "026",
+          "Descripcion": "Reimprimir nota descargue",
+          "Opc-segu": "I726",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER201Q",
+              "dll": "CEREALES\\CER201Q.dll"
+            }
+          ]
+        },
+        {
+          "Id": "027",
+          "Descripcion": "Actualizar laboratorio",
+          "Opc-segu": "I727",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER202L",
+              "dll": "CEREALES\\CER202L.dll"
+            }
+          ]
+        },
+        {
+          "Id": "028",
+          "Descripcion": "Pre despachos",
+          "Opc-segu": "I728",
+          "Sub": [
+            {
+              "Id": "0281",
+              "Descripcion": "Elaborar pre despacho",
+              "Opc-segu": "I728",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "CER208",
+                  "dll": "CEREALES\\CER208.dll"
+                }
+              ]
+            },
+            {
+              "Id": "0282",
+              "Descripcion": "Reimprimir pre despacho",
+              "Opc-segu": "I728",
+              "Tipo": "POWER",
+              "Params": [
+                {
+                  "formulario": "CER208I",
+                  "dll": "CEREALES\\CER208I.dll"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "029",
+          "Descripcion": "Programacion de despachos",
+          "Opc-segu": "I729",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER209",
+              "dll": "CEREALES\\CER209.dll"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "03",
+      "Descripcion": "Informes entradas y liquid",
+      "Opc-segu": "I73",
+      "Sub": [
+        {
+          "Id": "031",
+          "Descripcion": "Informe prod. liquidaciones",
+          "Opc-segu": "I731",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER301",
+              "dll": "CEREALES\\CER301.dll"
+            }
+          ]
+        },
+        {
+          "Id": "032",
+          "Descripcion": "Informe tiquetes bascula",
+          "Opc-segu": "I732",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER302",
+              "dll": "CEREALES\\CER302.dll"
+            }
+          ]
+        },
+        {
+          "Id": "033",
+          "Descripcion": "Informe tiquetes X NIT",
+          "Opc-segu": "I733",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER303",
+              "dll": "CEREALES\\CER303.dll"
+            }
+          ]
+        },
+        {
+          "Id": "034",
+          "Descripcion": "Informe entradas X producto",
+          "Opc-segu": "I734",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER304",
+              "dll": "CEREALES\\CER304.dll"
+            }
+          ]
+        },
+        {
+          "Id": "035",
+          "Descripcion": "Informe proveed. X liquid.",
+          "Opc-segu": "I735",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER305",
+              "dll": "CEREALES\\CER305.dll"
+            }
+          ]
+        },
+        {
+          "Id": "036",
+          "Descripcion": "Relacion de liquidaciones",
+          "Opc-segu": "I736",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER306",
+              "dll": "CEREALES\\CER306.dll"
+            }
+          ]
+        },
+        {
+          "Id": "037",
+          "Descripcion": "Informe de endosos",
+          "Opc-segu": "I737",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER307",
+              "dll": "CEREALES\\CER307.dll"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "04",
+      "Descripcion": "Liquidaciones",
+      "Opc-segu": "I74",
+      "Sub": [
+        {
+          "Id": "041",
+          "Descripcion": "Liquidaciones temporales",
+          "Opc-segu": "I741",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER401",
+              "dll": "CEREALES\\CER401.dll"
+            }
+          ]
+        },
+        {
+          "Id": "042",
+          "Descripcion": "Correcion de liquidaciones",
+          "Opc-segu": "I742",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER402",
+              "dll": "CEREALES\\CER402.dll"
+            }
+          ]
+        },
+        {
+          "Id": "043",
+          "Descripcion": "Impresion de liquidaciones",
+          "Opc-segu": "I743",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER403",
+              "dll": "CEREALES\\CER403.dll"
+            }
+          ]
+        },
+        {
+          "Id": "044",
+          "Descripcion": "Liquidaciones definitivas",
+          "Opc-segu": "I744",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER404",
+              "dll": "CEREALES\\CER404.dll"
+            }
+          ]
+        },
+        {
+          "Id": "045",
+          "Descripcion": "Impresion liquid. definitiv",
+          "Opc-segu": "I745",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER405",
+              "dll": "CEREALES\\CER405.dll"
+            }
+          ]
+        },
+        {
+          "Id": "046",
+          "Descripcion": "Contabilizar liquidaciones",
+          "Opc-segu": "I746",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER406",
+              "dll": "CEREALES\\CER406.dll"
+            }
+          ]
+        },
+        {
+          "Id": "047",
+          "Descripcion": "Proyecto de liquid. temporal",
+          "Opc-segu": "I747",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER407A",
+              "dll": "CEREALES\\CER407A.dll"
+            }
+          ]
+        },
+        {
+          "Id": "048",
+          "Descripcion": "Validacion liquid/tiquetes",
+          "Opc-segu": "I748",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER408",
+              "dll": "CEREALES\\CER408.dll"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "05",
+      "Descripcion": "Proceso de trilla y semilla",
+      "Opc-segu": "I75",
+      "Sub": [
+        {
+          "Id": "051",
+          "Descripcion": "Proceso de secamiento",
+          "Opc-segu": "I751",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER501",
+              "dll": "CEREALES\\CER501.dll"
+            }
+          ]
+        },
+        {
+          "Id": "052",
+          "Descripcion": "Proceso de trilla",
+          "Opc-segu": "I752",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER502",
+              "dll": "CEREALES\\CER502.dll"
+            }
+          ]
+        },
+        {
+          "Id": "053",
+          "Descripcion": "Proceso de semilla",
+          "Opc-segu": "I753",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER503",
+              "dll": "CEREALES\\CER503.dll"
+            }
+          ]
+        },
+        {
+          "Id": "054",
+          "Descripcion": "Reimpresion de documentos",
+          "Opc-segu": "I754",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER504",
+              "dll": "CEREALES\\CER504.dll"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "06",
+      "Descripcion": "Plantillas para terceros",
+      "Opc-segu": "I76",
+      "Sub": [
+        {
+          "Id": "061",
+          "Descripcion": "Listado bolsa nal. agropec",
+          "Opc-segu": "I761",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER601",
+              "dll": "CEREALES\\CER601.dll"
+            }
+          ]
+        },
+        {
+          "Id": "062",
+          "Descripcion": "Listado fomento arrocero",
+          "Opc-segu": "I762",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER602",
+              "dll": "CEREALES\\CER602.dll"
+            }
+          ]
+        },
+        {
+          "Id": "063",
+          "Descripcion": "Informe de liquid. temporal",
+          "Opc-segu": "I763",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER603",
+              "dll": "CEREALES\\CER603.dll"
+            }
+          ]
+        },
+        {
+          "Id": "064",
+          "Descripcion": "Listado bolsa seg. facturas",
+          "Opc-segu": "I764",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER604",
+              "dll": "CEREALES\\CER604.dll"
+            }
+          ]
+        },
+        {
+          "Id": "065",
+          "Descripcion": "Informe proveed. seg. liquid",
+          "Opc-segu": "I765",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER605",
+              "dll": "CEREALES\\CER605.dll"
+            }
+          ]
+        },
+        {
+          "Id": "066",
+          "Descripcion": "Informe para aseguradora",
+          "Opc-segu": "I766",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER606",
+              "dll": "CEREALES\\CER606.dll"
+            }
+          ]
+        },
+        {
+          "Id": "067",
+          "Descripcion": "Informe notas de despacho",
+          "Opc-segu": "I767",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER607",
+              "dll": "CEREALES\\CER607.dll"
+            }
+          ]
+        },
+        {
+          "Id": "068",
+          "Descripcion": "Informe placas de carro",
+          "Opc-segu": "I768",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER608",
+              "dll": "CEREALES\\CER608.dll"
+            }
+          ]
+        },
+        {
+          "Id": "069",
+          "Descripcion": "Planilla de despachos",
+          "Opc-segu": "I769",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER609",
+              "dll": "CEREALES\\CER609.dll"
+            }
+          ]
+        },
+        {
+          "Id": "06A",
+          "Descripcion": "Relacion de despachos",
+          "Opc-segu": "I76A",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER610",
+              "dll": "CEREALES\\CER610.dll"
+            }
+          ]
+        },
+        {
+          "Id": "06B",
+          "Descripcion": "Informe detallado t.bascula",
+          "Opc-segu": "I76B",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER611",
+              "dll": "CEREALES\\CER611.dll"
+            }
+          ]
+        },
+        {
+          "Id": "06C",
+          "Descripcion": "Informe cascarilla",
+          "Opc-segu": "I76C",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER612",
+              "dll": "CEREALES\\CER612.dll"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "07",
+      "Descripcion": "Ayudas programa molineria",
+      "Opc-segu": "I77",
+      "Sub": [
+        {
+          "Id": "071",
+          "Descripcion": "Borrar placas en transito",
+          "Opc-segu": "I771",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER701",
+              "dll": "CEREALES\\CER701.dll"
+            }
+          ]
+        },
+        {
+          "Id": "072",
+          "Descripcion": "Correccion tiq. bascula",
+          "Opc-segu": "I772",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER702",
+              "dll": "CEREALES\\CER702.dll"
+            }
+          ]
+        },
+        {
+          "Id": "073",
+          "Descripcion": "Anular notas de despacho",
+          "Opc-segu": "I773",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER703",
+              "dll": "CEREALES\\CER703.dll"
+            }
+          ]
+        },
+        {
+          "Id": "074",
+          "Descripcion": "Correccion proceso trilla",
+          "Opc-segu": "I774",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER704",
+              "dll": "CEREALES\\CER704.dll"
+            }
+          ]
+        },
+        {
+          "Id": "075",
+          "Descripcion": "Correccion proceso semilla",
+          "Opc-segu": "I775",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER705",
+              "dll": "CEREALES\\CER705.dll"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "08",
+      "Descripcion": "Informes gerenciales molino",
+      "Opc-segu": "I78",
+      "Sub": [
+        {
+          "Id": "081",
+          "Descripcion": "Informe gerencial molineria",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER681",
+              "dll": "CEREALES\\CER681.dll"
+            }
+          ]
+        },
+        {
+          "Id": "082",
+          "Descripcion": "Informe rentabilidad vended",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER682",
+              "dll": "CEREALES\\CER682.dll"
+            }
+          ]
+        },
+        {
+          "Id": "083",
+          "Descripcion": "Informe produccion diaria",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER684",
+              "dll": "CEREALES\\CER684.dll"
+            }
+          ]
+        },
+        {
+          "Id": "084",
+          "Descripcion": "Informe detallado trillas",
+          "Tipo": "POWER",
+          "Params": [
+            {
+              "formulario": "CER685",
+              "dll": "CEREALES\\CER685.dll"
+            }
+          ]
+        }
+
+      ]
+    }
+
+
+  ]
+}

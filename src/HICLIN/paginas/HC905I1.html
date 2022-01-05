@@ -1,0 +1,178 @@
+<div class="col-md-12" id="HC905I1" style="padding-top: 1rem;">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <div class="form-horizontal no-padding">
+        <div class="col-md-12 no-padding">
+          <div class="col-md-12 wrapper-grid no-padding">
+            <div
+              class="col-xs-12 col-sm-12 col-md-8 col-lg-10 no-padding flex-container d-flex flex-wrap"
+            >
+              <div class="col-xs-12 col-sm-8 col-md-9 col-lg-6">
+                <div class="form-group box-center flex-inputs">
+                  <label class="col-xs-12 col-sm-4 col-md-3">
+                    Unidad de servicio
+                  </label>
+                  <div
+                    class="inline-inputs col-xs-12 col-sm-8 col-md-9 no-padding"
+                  >
+                    <div
+                      id="datoUnidad"
+                      class="input-group col-xs-2 col-sm-3 col-md-2"
+                    >
+                      <input
+                        v-model="unserv"
+                        id="unserv"
+                        ref="unserv"
+                        @keyup.119="popupUnserv"
+                        type="text"
+                        maxlength="2"
+                        disabled
+                        data-orden="1"
+                        class="form-control text-center"
+                      />
+                    </div>
+                    <button
+                      type="button"
+                      @click="popupUnserv"
+                      class="btn f8-Btn btn-default col-xs-2 col-sm-2 col-md-2"
+                    >
+                      <i class="icon-magnifier"></i>
+                    </button>
+                    <div class="input-group col-xs-8 col-sm-7 col-md-8">
+                      <input
+                        :value="descripUnserv"
+                        type="text"
+                        class="form-control"
+                        disabled
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                <div class="form-group box-center flex-inputs">
+                  <label class="col-xs-12 col-sm-4 col-md-3">
+                    Fecha inicial
+                  </label>
+                  <div
+                    class="inline-inputs col-xs-12 col-sm-8 col-md-9 no-padding"
+                  >
+                    <div id="datoAnioIni">
+                      <input
+                        v-model="fecha_ini.anio"
+                        type="number"
+                        class="form-control no-spin-button center text-center"
+                        data-orden="1"
+                        maxlength="4"
+                        disabled
+                        placeholder="AAAA"
+                      />
+                    </div>
+                    <div id="datoMesIni">
+                      <input
+                        v-model="fecha_ini.mes"
+                        type="number"
+                        class="form-control no-spin-button center text-center"
+                        data-orden="1"
+                        maxlength="2"
+                        disabled
+                        placeholder="MM"
+                      />
+                    </div>
+                    <div id="datoDiaIni">
+                      <input
+                        v-model="fecha_ini.dia"
+                        type="number"
+                        class="form-control no-spin-button center text-center"
+                        data-orden="1"
+                        maxlength="2"
+                        disabled
+                        placeholder="DD"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                <div class="form-group box-center flex-inputs">
+                  <label class="col-xs-12 col-sm-4 col-md-3">
+                    Fecha final
+                  </label>
+                  <div
+                    class="inline-inputs col-xs-12 col-sm-8 col-md-9 no-padding"
+                  >
+                    <div id="datoAnioFin">
+                      <input
+                        v-model="fecha_fin.anio"
+                        type="number"
+                        class="form-control no-spin-button center text-center"
+                        data-orden="1"
+                        maxlength="4"
+                        disabled
+                        placeholder="AAAA"
+                      />
+                    </div>
+                    <div id="datoMesFin">
+                      <input
+                        v-model="fecha_fin.mes"
+                        type="number"
+                        class="form-control no-spin-button center text-center"
+                        data-orden="1"
+                        maxlength="2"
+                        disabled
+                        placeholder="MM"
+                      />
+                    </div>
+                    <div id="datoDiaFin">
+                      <input
+                        v-model="fecha_fin.dia"
+                        type="number"
+                        class="form-control no-spin-button center text-center"
+                        data-orden="1"
+                        maxlength="2"
+                        disabled
+                        placeholder="DD"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <loader_modal
+    :estado="estado_loader"
+    :progreso="progreso"
+    :loader="loader"
+    :label="label_loader"
+  ></loader_modal>
+</div>
+
+<script src="../../HICLIN/scripts/HC905I1.js"></script>
+
+<style>
+  .wrapper-grid {
+    display: grid;
+    grid-gap: 1rem;
+    justify-items: center;
+  }
+  .flex-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: start;
+    padding: 1rem;
+  }
+
+  .flex-container {
+    justify-content: center;
+  }
+
+  .flex-container > div {
+    padding: 0 0.5rem !important;
+  }
+</style>

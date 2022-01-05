@@ -1,0 +1,547 @@
+<style>
+    .ui-datepicker .ui-datepicker-header {
+        background: #476fad;
+        border: 1px solid #476fad;
+    }
+</style>
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 0">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="col-md-7 col-sm-6 col-xs-6 no-padding">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Agendamiento de citas</label>
+                    </div>
+                    <div
+                        class="col-md-12 col-sm-12 col-xs-12"
+                        style="display: flex; justify-content: center"
+                    >
+                        <div class="col-md-4">
+                            <label>Novedad:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input
+                                        id="novedad_97C11"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        style="text-align: center"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-3 col-sm-4 col-xs-12" id="NUMERO_97C11">
+                        <label>Paciente:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                <input
+                                    id="numero_97C11"
+                                    maxlength="15"
+                                    data-orden="1"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                />
+                            </div>
+                            <button
+                                type="button"
+                                id="numeroBtn_97C11"
+                                class="btn f8-Btn btn-default col-md-2 col-sm-2 col-xs-2"
+                            >
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-7 col-sm-7 col-xs-12">
+                        <label>Nombre Paciente:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="nombrepacid_97C11"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-2 col-xs-12 no-padding">
+                        <label>Edad:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="edad_97C11"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-12" id="EPS_97C11">
+                        <label>EPS:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                <input
+                                    id="eps_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="6"
+                                    data-orden="1"
+                                />
+                            </div>
+                            <button
+                                type="button"
+                                id="epsBtn_97C11"
+                                class="btn f8-Btn btn-default col-md-3 col-sm-3 col-xs-3"
+                            >
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-7 col-xs-12">
+                        <label></label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="epsd_97C11"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-2 col-xs-12 no-padding">
+                        <label>Sucursal:</label>
+                        <div class="inline-inputs">
+                            <div
+                                class="input-group col-md-12 col-sm-12 col-xs-12"
+                                id="SUCURSAL_97C11"
+                            >
+                                <input
+                                    id="sucursal_97C11"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1"
+                                    maxlength="2"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 col-sm-5 col-xs-12 no-padding">
+                        <label>Tipo profesión:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="tipoprofesion_97C11"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-3 col-xs-3" id="MEDICO_97C11">
+                        <label>Medico:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                <input
+                                    id="medico_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1"
+                                    maxlength="15"
+                                />
+                            </div>
+                            <button
+                                type="button"
+                                id="medicoBtn_97C11"
+                                class="btn f8-Btn col-md-2 col-sm-2 col-xs-2"
+                            >
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12 no-padding">
+                        <label></label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="medicod_97C11"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <label>Min:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="tiempmedico_97C11"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1"
+                                    style="text-align: center"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="CLASE_97C11">
+                        <label>Clase:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="clase_97C11"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="1"
+                                    data-orden="1"
+                                    style="text-align: left"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="PROCEDIMIENTO_97C11">
+                        <label>Procedimiento:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                <input
+                                    id="procedimiento_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="6"
+                                    data-orden="1"
+                                />
+                            </div>
+                            <button
+                                type="button"
+                                id="_ventanatablatarifasBtn_SAL97C11"
+                                class="btn f8-Btn col-md-2 col-sm-2 col-xs-2"
+                            >
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 col-sm-9 col-xs-12 no-padding">
+                        <label></label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="procedid_97C11"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-12" id="CONTRATO_97C11">
+                        <label>Contrato:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                <input
+                                    id="contrato_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="6"
+                                    data-orden="1"
+                                />
+                            </div>
+                            <button
+                                type="button"
+                                id="contratoBtn_97C11"
+                                class="btn f8-Btn col-md-3 col-sm-3 col-xs-3"
+                            >
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <label></label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="contratod_97C11"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="CONVENIO_97C11">
+                        <label>Convenio:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="convenio_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="10"
+                                    data-orden="1"
+                                />
+                            </div>
+                            <button
+                                type="button"
+                                id="convenioBtn_97C11"
+                                class="btn f8-Btn col-md-2 col-sm-2 col-xs-2"
+                            >
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12 no-padding">
+                        <label></label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="conveniod_97C11"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-2 col-sm-3 col-xs-12" id="FECHADESEA_97C11">
+                        <label>Fecha desea cita:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="fechadesea_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="10"
+                                    data-orden="1"
+                                    placeholder="AAAA-MM-DD"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-12" id="FECHACITA_97C11">
+                        <label>Fecha cita:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="fechacita_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="10"
+                                    data-orden="1"
+                                    placeholder="AAAA-MM-DD"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-12" id="HORA_97C11">
+                        <label>Hora:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="hora_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="5"
+                                    data-orden="1"
+                                    placeholder="HH:mm"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="TELEFONOUNO_97C11">
+                        <label>Telefono 1:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="telefonouno_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="10"
+                                    data-orden="1"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="TELEFONODOS_97C11">
+                        <label>Telefono 2:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="telefonodos_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="10"
+                                    data-orden="1"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="FINALIDAD_97C11">
+                        <label>Finalid:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="finalidad_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="10"
+                                    data-orden="1"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 col-sm-9 col-xs-9" id="OBSERVACION_97C11">
+                        <label>Observacion:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="observacion_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="30"
+                                    data-orden="1"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="salto-linea"></div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="ESTADOCITA_97C11">
+                        <label>Estado cita:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="estadocita_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="15"
+                                    data-orden="1"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 col-sm-9 col-xs-12" id="CAUSACANCE_97C11">
+                        <label>Causa cancelación:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="causacance_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="40"
+                                    data-orden="1"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                    style="display: flex; justify-content: space-around"
+                    id="ELEMENTOSADICIONALES_SAL97C11"
+                >
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="CITADOBLE_97C11">
+                        <label>Cita doble:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="citadoble_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="2"
+                                    data-orden="1"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="EMBARAZO_97C11">
+                        <label>Embarazada?:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="embarazo_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="2"
+                                    data-orden="1"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12" id="MEDFAC_97C11">
+                        <label>Medico familiar:</label>
+                        <div class="inline-inputs">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input
+                                    id="medfac_97C11"
+                                    type="text"
+                                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="20"
+                                    data-orden="1"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 col-sm-6 col-xs-6" style="padding-right: 0">
+                <div
+                    class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                    style="
+                        max-height: 578px;
+                        overflow-y: scroll;
+                        display: inline-block;
+                        width: 100%;
+                    "
+                >
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>Citas agendadas para el medico consultado</label>
+                    </div>
+                    <table
+                        class="table table-light table-striped"
+                        style="margin-bottom: 0px; width: 99%; font-size: 11px"
+                        id="TABLACITAS_SAL97C11"
+                    >
+                        <thead>
+                            <tr>
+                                <th style="text-align: center" class="col-md-1">HORA</th>
+                                <th style="text-align: center" class="col-md-1">FECHA</th>
+                                <th style="text-align: center" class="col-md-1">SUCURSAL</th>
+                                <!-- <th style="text-align: left" class="col-md-3">MEDICO</th> -->
+                                <th style="text-align: center" class="col-md-3">PACIENTE</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- <script src="../../SALUD/scripts/SER810B.js" type="text/javascript"></script> -->
+<script src="../../SALUD/scripts/SAL7C11.js" type="text/javascript"></script>
+<!-- <script src="../../FRAMEWORKS/scripts/ventanas.js"></script> -->

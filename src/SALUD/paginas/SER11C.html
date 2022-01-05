@@ -1,0 +1,178 @@
+<!-- <div class="col-md-12 col-sm-12" style="float: none; margin: 0 auto;">
+    <div class="portlet light box-center box-title" style="margin: 0 auto;">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject bold">9,7,1,C -Actualizacion Divisiones Facturacion</span>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="col-md-12">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+            <form class="form-horizontal">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Novedad:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-6">
+                                <input id="novSer71C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div class="inline-inputs" id="dato">
+                            <label class="col-md-5 col-sm-5 col-xs-5">Codigo:</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-5">
+                                <input id="codigo_71C" maxlength="2" data-orden="1" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                            <button type="button" id="codigoBtn_71C" class="btn btn-default col-md-2 col-sm-2 col-xs-2">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6" id="detalle">
+                        <div class="inline-inputs">
+                            <label class="col-md-3 col-sm-3 col-xs-3">Descripcion:</label>
+                            <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                <input id="descripGrcp71C" type="text" data-orden="1" maxlength="25" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12" onkeyup="this.value = this.value.toUpperCase();">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+
+            <form class="form-horizontal">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12"></div>
+                        <label>
+                            <h4>APLICA PARA COMPROB. CLASE:</h4>
+                        </label>
+                    </div>
+                </div>
+            </form>
+
+
+            <form class="form-horizontal">
+                <div class="col-md-3 col-sm-3 col-xs-3  no-padding" id="procedm">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">1.Proced. Quirurgico</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                    <input id="proced71C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3"  style="padding-right: 0; padding-left: 10px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="laborat">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">2.Laborat. Clinico</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                    <input id="laborat71C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3" style="padding-right: 0; padding-left: 10px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="imagenol">
+                        <div class="col-md-12 col-sm-12 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">3.Imagenologia</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                    <input id="imagen71C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3" style="padding-right: 0; padding-left: 10px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="servic">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">4.Otros Servicios</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                    <input id="otroServ71C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+            <form class="form-horizontal">
+                <div class="col-md-3 col-sm-3 col-xs-3  no-padding" id="consulta">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" >
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">5.Consul. y Terapias</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                    <input id="consulta71C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3" id="patologia" style="padding-right: 0; padding-left: 10px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" >
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">6.Patolg. y Citolog</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                    <input id="patolog71C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3" id="promyprev" style="padding-right: 0; padding-left: 10px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" >
+                        <div class="col-md-12 col-sm-12 col-xs-6">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">7.Prom. y Preven.</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                    <input id="promyprev71C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3" id="medicamn" style="padding-right: 0; padding-left: 10px;">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" >
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="inline-inputs">
+                                <label class="col-md-8 col-sm-8 col-xs-12">8.Medicamentos</label>
+                                <div class="input-group col-md-4 col-sm-4 col-xs-12">
+                                    <input id="medicam71C" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="1" data-orden="1" placeholder="S/N" onkeyup="this.value = this.value.toUpperCase();">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="../../SALUD/scripts/SER11C.js" type="text/javascript"></script>

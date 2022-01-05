@@ -1,0 +1,243 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER449">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="form-group col-md-10 col-sm-12 col-xs-12 box-center" style="float: none; margin: 0 auto;">
+                <div class="col-md-6 col-sm-4 col-xs-12" id="VALIDARNUIR_SER449">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-5 col-xs-12">Usar NUIR 10 Digitos:</label>
+                        <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                            <input v-model="form.nuir_SER449" data-orden="1" maxlength="1" placeholder="S/N"
+                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-4 col-xs-12" id="VALIDARNIT_SER449">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-5 col-xs-12">Nit entidad:</label>
+                        <div class="input-group col-md-6 col-sm-7 col-xs-12">
+                            <input v-model="form.codentidad_SER449" @Keyup.F8='_f8entidad_SER449' data-orden="1" maxlength="10"
+                                class="form-control col-md-12 col-sm-12 col-xs-12 entidad_SER449">
+                        </div>
+                        <button type="button" @click='_f8entidad_SER449'
+                            class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-6 col-sm-7 col-xs-12">
+                            <input v-model="form.descripentidad_SER449" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12 entidad_SER449">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-10 col-sm-12 col-xs-12 box-center">
+                <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                    <label>Fecha inicio</label>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 head-box">
+                    <label>Fecha Final</label>
+                </div>
+                <div id="fechaInicial_SER449">
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                            <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.anoini_SER449'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                            <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.mesini_SER449'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                            <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.diaini_SER449'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="fechaFinal_SER449">
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-4 col-sm-6 col-xs-6">Año:</label>
+                            <div class="input-group col-md-8 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.anofin_SER449'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Mes:</label>
+                            <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.mesfin_SER449'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-4">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-6">Dia:</label>
+                            <div class="input-group col-md-6 col-sm-5 col-xs-5">
+                                <input type="number" v-model='form.diafin_SER449'
+                                    class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2" data-orden="3"
+                                    required="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-10 col-sm-12 col-xs-12 box-center" style="float: none; margin: 0 auto;">
+                <div class="col-md-3 col-sm-4 col-xs-12" id="VALIDARPYP_SER449">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-5 col-xs-12">Leer solo PYP? :</label>
+                        <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                            <input v-model="form.pyp_SER449" data-orden="1" maxlength="1" placeholder="S/N"
+                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-12" id="VALIDARTIPOUSU_SER449">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-5 col-xs-12">Tipo usuario:</label>
+                        <div class="input-group col-md-6 col-sm-7 col-xs-12">
+                            <input v-model="form.tipousuario_SER449" data-orden="1" maxlength="1" 
+                            class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-4 col-xs-12" id="VALIDARCODSUC_SER449">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-5 col-xs-12">Sucursal:</label>
+                        <div class="input-group col-md-6 col-sm-7 col-xs-12">
+                            <input v-model="form.codsucursal_SER449" @Keyup.F8='_f8sucursal_SER449' data-orden="1" maxlength="4"
+                                class="form-control col-md-12 col-sm-12 col-xs-12 sucursal_SER449">
+                        </div>
+                        <button type="button" @click='_f8sucursal_SER449'
+                            class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                        <div class="input-group col-md-6 col-sm-7 col-xs-12">
+                            <input v-model="form.descripsuc_SER449" 
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-4 col-sm-4 col-xs-12" id="VALIDARUNIDAD_SER449">
+                    <div class="inline-inputs">
+                        <label class="col-md-6 col-sm-5 col-xs-12">Unidad de servic:</label>
+                        <div class="input-group col-md-6 col-sm-7 col-xs-12">
+                            <input v-model="form.unidadserv_SER449" @Keyup.F8='_f8unidadserv_SER449' data-orden="1" maxlength="2"
+                                class="form-control col-md-12 col-sm-12 col-xs-12 unidadservicio_SER449">
+                        </div>
+                        <button type="button" @click='_f8unidadserv_SER449'
+                            class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                            <i class="icon-magnifier"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12" id="VALIDARCAPITA_SER449">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-5 col-xs-12">En la capita, usar solo nro maestra?:</label>
+                        <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                            <input v-model="form.capita_SER449" data-orden="1" maxlength="1" placeholder="S/N"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12" id="VALIDAREXTRAJERO_SER449">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-5 col-xs-12">Solo pacientes extrajeros?:</label>
+                        <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                            <input v-model="form.extrajero_SER449" data-orden="1" maxlength="1" placeholder="S/N"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-4 col-sm-4 col-xs-12" id="VALIDARRIPS_SER449">
+                    <div class="inline-inputs">
+                        <label class="col-md-10 col-sm-5 col-xs-12">Rips extrajeros? :</label>
+                        <div class="input-group col-md-2 col-sm-7 col-xs-12" id="VALIDARRIPS_SER449">
+                            <input v-model="form.ripsextrajero_SER449" data-orden="1" maxlength="1" placeholder="S/N"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12" id="VALIDARDROGA_SER449">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-5 col-xs-12">Generar droga codigo:</label>
+                        <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                            <input v-model="form.droga_SER449" data-orden="1" maxlength="1"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12" id="VALIDARCOMPROBANTE_SER449">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-5 col-xs-12">Traer comprobantes con valor cero? :</label>
+                        <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                            <input v-model="form.comprobantes_SER449" data-orden="1" maxlength="1" placeholder="S/N"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-4 col-sm-4 col-xs-12" id="VALIDARFACTURAS_SER449">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-5 col-xs-12">Solo facturas con prefijo? :</label>
+                        <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                            <input v-model="form.factura_SER449" data-orden="1" maxlength="1"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12" id="VALIDARSALDO_SER449">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-5 col-xs-12">Solo facturas con saldo? :</label>
+                        <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                            <input v-model="form.saldo_SER449" data-orden="1" maxlength="1" placeholder="S/N"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12" id="VALIDARDIAGIRA_SER449">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-5 col-xs-12">Solo paciente Diag IRA? :</label>
+                        <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                            <input v-model="form.diagnosticoIRA_SER449" data-orden="1" maxlength="1" placeholder="S/N"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+                <div class="salto-linea"></div>
+                <div class="col-md-4 col-sm-4 col-xs-12" id="_evaluarDiscFechaAten">
+                    <div class="inline-inputs">
+                        <label class="col-md-8 col-sm-5 col-xs-12">Discriminar X fecha atención? :</label>
+                        <div class="input-group col-md-4 col-sm-7 col-xs-12">
+                            <input v-model="form.discFechaAten_SER449" data-orden="1" maxlength="1" placeholder="S/N"
+                                class="form-control col-md-12 col-sm-12 col-xs-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SER449.js" type="text/javascript"></script>

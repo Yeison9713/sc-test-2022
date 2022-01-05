@@ -1,0 +1,192 @@
+<script>
+    const { ipcRenderer } = require('electron'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        path = require('path'),
+        remote = require('electron').remote;
+    window.$ = window.jQuery = require('jquery');
+</script>
+
+<body>
+    <div class="page-header">
+        <div class="encabezado_TAX904">
+            <div class="imageusu_TAX904">
+            </div>
+            <div class="informacionusu_TAX904">
+                <a class="nombreusu_TAX904" style="font-size:18px;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</a>
+                <a class="pagina_TAX904" style="font-size:10px;">PAG.</a>
+                <a class="paginas_TAX904" style="font-size:10px;"></a>
+            </div>
+        </div>
+        <div class="headertabla_TAX904">
+            <table class="tablaheader_TX904">
+                <thead>
+                    <tr>
+                        <th style="width: 2%;font-size:12px;">PROPIETARIO</th>
+                        <th style="width: 8%;font-size:12px;">NOMBRE PROPIETARO</th>
+                        <th style="width: 3%;font-size:12px;">INTE</th>
+                        <th style="width: 3%;font-size:12px;">Md</th>
+                        <th style="width: 3%;font-size:12px;">T.Operac</th>
+                        <th style="width: 3%;font-size:12px;">op</th>
+                        <th style="width: 3%;font-size:12px;">Marca</th>
+                        <th style="width: 3%;font-size:12px;">Numero Motor</th>
+                        <th style="width: 3%;font-size:12px;">Numero Chasis</th>
+                        <th style="width: 3%;font-size:12px;">COMBUSTIBLES</th>
+                        <th style="width: 3%;font-size:12px;">MTO REP</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <td>
+                    <!--place holder for the fixed-position header-->
+                    <div class="page-header-space"></div>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <!--*** CONTENT GOES HERE ***-->
+                    <div class="page">
+                        <table class="tablamodalidades_TAX904" style="text-align: center;">
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+<style>
+    .page-header,
+    .page-header-space {
+        height: 90px;
+    }
+
+    .page-header {
+        position: fixed;
+        top: 0mm;
+        width: 99%;
+    }
+
+    .page {
+        page-break-after: always;
+        width: 100%;
+    }
+
+    .paginas_TAX904::after {
+        counter-increment: page;
+        content: counter(page);
+    }
+
+    @page {
+        margin: 20mm;
+        size: A4 landscape;
+    }
+
+    @media print {
+        thead {
+            display: table-header-group;
+        }
+
+        tfoot {
+            display: table-footer-group;
+        }
+
+        button {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+        }
+    }
+
+    .salto-linea {
+        padding-top: 10px;
+    }
+
+    .encabezado_TAX904 {
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-top: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+        display: flex;
+    }
+
+    .headertabla_TAX904{
+        border-left: black solid 0.1px;
+        border-right: black solid 0.1px;
+        border-bottom: black solid 0.1px;
+    }
+
+    .informacionusu_TAX904{
+        width: 80%;
+        padding-top: 20px;
+    }
+
+    .nombreusu_TAX904 {
+        width: 80%;
+        display: inline-flex;
+    }
+
+    .pagina_TAX904 {
+        width: 4%;
+        display: inline-flex;
+    }
+
+    .paginas_TAX904 {
+        width: 4%;
+        display: inline-flex;
+    }
+
+    .imageusu_TAX904 {
+        width: 20%;
+    }
+
+    .imageusu_TAX904 img{
+        width: 80%;
+    }
+
+    .tablamodalidades_TAX904{
+        border-spacing: 0;
+    }
+</style>
+
+<script>
+    ipcRenderer.on('ping', (e, data) => {
+        TAX904IMPRESION = data.datos;
+        $('.nombreusu_TAX904').text(TAX904IMPRESION.NOMBREUSU);
+        var nit = TAX904IMPRESION.NIT;
+        var url = path.join(`P:\\PROG\\LOGOS\\${nit}.bmp`);
+        fs.readFile(url, function (err, data) {
+            if (err) throw err;
+            var dataImg1 = Buffer.from(data).toString('base64');
+            $('<img/>').attr('src', `data:image/jpeg;base64,${dataImg1}`).appendTo('.imageusu_TAX904')
+        });
+        for (var i in TAX904IMPRESION.TABLA) {
+            $('.tablamodalidades_TAX904 tbody').append(
+                '<tr>' +
+                '<td style="width: 2%;font-size:12px;">' + TAX904IMPRESION.TABLA[i].PROPIETARIO + '</th>' +
+                '<td style="width: 8%;font-size:12px;">' + TAX904IMPRESION.TABLA[i].DESCRIP + '</td>' +
+                '<td style="width: 3%;font-size:12px;">' + TAX904IMPRESION.TABLA[i].INTERNO + '</td>' +
+                '<td style="width: 3%;font-size:12px;">' + TAX904IMPRESION.TABLA[i].MODELO + '</td>' +
+                '<td style="width: 3%;font-size:12px;">' + TAX904IMPRESION.TABLA[i]['T-OPERAC'] + '</td>' +
+                '<td style="width: 3%;font-size:12px;">' + TAX904IMPRESION.TABLA[i].PASAJEROS + '</td>' +
+                '<td style="width: 3%;font-size:12px;">' + TAX904IMPRESION.TABLA[i].MARCA + '</td>' +
+                '<td style="width: 3%;font-size:12px;">' + TAX904IMPRESION.TABLA[i].MOTOR + '</td>' +
+                '<td style="width: 3%;font-size:12px;">' + TAX904IMPRESION.TABLA[i].CHASIS + '</td>' +
+                '<td style="width: 3%;font-size:12px;">' + TAX904IMPRESION.TABLA[i].COMBUSTIBLE + '</td>' +
+                '<td style="width: 3%;font-size:12px;">' + TAX904IMPRESION.TABLA[i].FONDO + '   ' +  TAX904IMPRESION.TABLA[i]['FONDO-R'] + '</td>' +
+                '</tr>'
+            )
+        }
+    })
+</script>

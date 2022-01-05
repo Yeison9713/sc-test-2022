@@ -1,0 +1,871 @@
+<div class="col-md-12" id="HC000">
+    <div class="portlet light no-padding">
+        <div class="portlet-body no-padding">
+
+            <div class="form-horizontal">
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-1 col-sm-1 col-xs-1 no-padding">
+                            <label>Fecha</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="text" v-model="datosIni.fecha_HC000"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="4" data-orden="1"
+                                        required="true">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1 col-sm-2 col-xs-12">
+                            <label>Hora</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input type="text" v-model="datosIni.hora_HC000" maxlength="4" data-orden="1"
+                                        required="true" class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-12" style="text-align: left;">
+                            <label>Médico</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                                    <input v-model="global_HC000.MEDICO_TRIA" type="text" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                                    <input v-model="global_HC000.DESCRIP_PROF" type="text" style="text-align: left;"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-3 col-xs-12" style="text-align: left;">
+                            <label>Entidad</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-3 col-sm-3 col-xs-3" id="validarEntidad_HC000">
+                                    <input v-model="global_HC000.EPS_TRIA" type="text" @keydown.119="_ventanaEntidades"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 ENTIDAD_HC000" data-orden="1"
+                                        maxlength="6">
+                                </div>
+                                <button @click="_ventanaEntidades" type="button"
+                                    class="btn f8-Btn col-md-1 col-sm-1 col-xs-1">
+                                    <i class="icon-magnifier"></i>
+                                </button>
+                                <div class="input-group col-md-8 col-sm-8 col-xs-8">
+                                    <input v-model="global_HC000.NOMBRE_ENT" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-3 col-xs-12" style="text-align: left;">
+                            <label>Ciudad</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input v-model="global_HC000.NOMBRE_CIU" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 col-sm-3 col-xs-12" style="text-align: left;">
+                            <label>Ingreso por:</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                                    <input v-model="global_HC000.PUERTA_ING_TRIA" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                                <div class="input-group col-md-9 col-sm-9 col-xs-9">
+                                    <input v-model="auxiliares.DESCRIP_INGRESO" type="text"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 col-sm-12 no-padding">
+                    <div class="portlet light box-center box-title">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject bold">TRIAGE</span>
+                            </div>
+                            <button v-show="flujo_bloques.triage" id="btnFlujo_triage" type="button"
+                                style="float: right;" @click="botonFlujo(1)"
+                                class="boton-flujo-hc000 btn f8-Btn btn-default">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12 no-padding">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="padding-bottom: 10px;">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarProcedencia_HC000"
+                            style="text-align: left">
+                            <label>Procedencia</label>
+                            <div class="inline-inputs">
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                    <input data-orden="1" maxlength="95" type="text" style="text-align: left;"
+                                        v-model="global_HC000.PROCED_TRIA" required="true"
+                                        class="form-control col-md-12 col-sm-12 col-xs-12 proced" disabled="disabled">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarMotivo_HC000">
+                            <div class="head-textarea">
+                                <label for="title-textarea">Motivo consulta</label>
+                                <div>
+                                    <label>(95 caracteres máximo)</label>
+                                    <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                        <span class="icon-proft icon-info"></span>
+                                        <span class="tiptext">
+                                            <div>Con F3 pasa de un campo a otro.</div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <textarea v-model="global_HC000.MOTIV_TRIA" class="form-control motiv" disabled="disabled"
+                                rows="2" maxlength="95" data-orden="1" required="true"
+                                style="resize: none; text-align: justify"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="padding-bottom: 17px;">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarAntecFam_HC000">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                <label>Antecedentes Familiares</label>
+                                <div>
+                                    <label>(190 caracteres máximo)</label>
+                                    <button type="button" class="btn f8-Btn btn-default"
+                                        @click='_HC828(datoAntecedFam_HC000, "ANTECED_FAMIL_TRIA")'>
+                                        F8
+                                    </button>
+                                    <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                        <span class="icon-proft icon-info"></span>
+                                        <span class="tiptext">
+                                            <div>Con F3 pasa de un campo a otro. - Con F8 ventana de ayudas (En cada
+                                                uno de los campos)</div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <textarea v-model="global_HC000.ANTECED_FAMIL_TRIA"
+                                class="form-control antecFam ANTECED_FAMIL_TRIA" disabled="disabled" rows="3"
+                                maxlength="190" data-orden="1"
+                                @keydown.f8='_HC828(datoAntecedFam_HC000, "ANTECED_FAMIL_TRIA")'
+                                style="resize: none; text-align: justify"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12" style="padding-right: 0">
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarAntecPat_HC000">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                <label>Antecedentes Patológicos</label>
+                                <div>
+                                    <label>(190 caracteres máximo)</label>
+                                    <button type="button" class="btn f8-Btn btn-default"
+                                        @click='_HC828(datoAntecedPat_HC000, "ANTECED_PATOL_TRIA")'>
+                                        F8
+                                    </button>
+                                    <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                        <span class="icon-proft icon-info"></span>
+                                        <span class="tiptext">
+                                            <div>Con F3 pasa de un campo a otro. - Con F8 ventana de ayudas (En cada
+                                                uno de los campos)</div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <textarea v-model="global_HC000.ANTECED_PATOL_TRIA" class="form-control ANTECED_PATOL_TRIA"
+                                disabled="disabled" rows="2" maxlength="190" data-orden="1"
+                                @keydown.f8='_HC828(datoAntecedPat_HC000, "ANTECED_PATOL_TRIA")'
+                                style="resize: none; text-align: justify"></textarea>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarAntecQui_HC000">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                <label>Antecedentes Quirúrgicos</label>
+                                <div>
+                                    <label>(190 caracteres máximo)</label>
+                                    <button type="button" class="btn f8-Btn btn-default"
+                                        @click='_HC828(datoAntecedQui_HC000, "ANTECED_QUIRUR_TRIA")'>
+                                        F8
+                                    </button>
+                                    <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                        <span class="icon-proft icon-info"></span>
+                                        <span class="tiptext">
+                                            <div>Con F3 pasa de un campo a otro. - Con F8 ventana de ayudas (En cada
+                                                uno de los campos)</div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <textarea v-model="global_HC000.ANTECED_QUIRUR_TRIA"
+                                class="form-control ANTECED_QUIRUR_TRIA"
+                                @keydown.f8='_HC828(datoAntecedQui_HC000, "ANTECED_QUIRUR_TRIA")' disabled="disabled"
+                                rows="2" maxlength="190" data-orden="1"
+                                style="resize: none; text-align: justify"></textarea>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarAntecAle_HC000">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                <label>Antecedentes Alérgicos</label>
+                                <div>
+                                    <label>(190 caracteres máximo)</label>
+                                    <button type="button" class="btn f8-Btn btn-default"
+                                        @click='_HC828(datoAntecedAle_HC000, "ANTECED_ALERGICOS_TRIA")'>
+                                        F8
+                                    </button>
+                                    <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                        <span class="icon-proft icon-info"></span>
+                                        <span class="tiptext">
+                                            <div>Con F3 pasa de un campo a otro. - Con F8 ventana de ayudas (En cada
+                                                uno de los campos)</div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <textarea v-model="global_HC000.ANTECED_ALERGICOS_TRIA"
+                                class="form-control ANTECED_ALERGICOS_TRIA"
+                                @keydown.f8='_HC828(datoAntecedAle_HC000, "ANTECED_ALERGICOS_TRIA")' disabled="disabled"
+                                rows="2" maxlength="190" data-orden="1"
+                                style="resize: none; text-align: justify"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="salto-linea"></div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12 no-padding">
+                    <div class="col-md-12 col-sm-12 no-padding">
+                        <div class="portlet light box-center box-title">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">EXAMEN FISICO</span>
+                                </div>
+                                <button v-show="flujo_bloques.examen_fisico" id="btnFlujo_examen_fisico" type="button"
+                                    style="float: right;" @click="botonFlujo(2)"
+                                    class="boton-flujo-hc000 btn f8-Btn btn-default">
+                                    <i class="glyphicon glyphicon-pencil"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                            style="text-align: left; padding-bottom: 9px;">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Cabeza y cuello:</label>
+                                    <div>
+                                        <label>(410 caracteres máximo)</label>
+                                        <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                            <span class="icon-proft icon-info"></span>
+                                            <span class="tiptext">
+                                                <div>S - Alterado, N - No alterado, X - No valorado.</div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline-inputs col-md-12 no-padding">
+                                    <div class="input-group col-md-1 col-sm-2 col-xs-2" id="validarExamen0_HC000">
+                                        <label class="col-md-12"
+                                            style="background-color: white; margin-top: -32px; margin-bottom: 10px; text-align: left;">Alterado</label>
+                                        <input v-model="global_HC000.EXAMEN_FISICO_TRIA[0].ALTERADO_EXA_TRIA" placeholder="N"
+                                            type="text" class="form-control  font-small " maxlength="1" data-orden="1"
+                                            style="margin-top: -15px;" />
+                                    </div>
+                                    <div class="col-md-11 col-sm-10 col-xs-10" id="validarDescripExamen0_HC000"
+                                        style="padding-right: 0;">
+                                        <textarea v-model="global_HC000.EXAMEN_FISICO_TRIA[0].EXA_FISICO_TRIA"
+                                            class="col-md-11 form-control" disabled="disabled" rows="3" maxlength="410"
+                                            data-orden="1" required="true"
+                                            style="resize: none; text-align: justify"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Tórax:</label>
+                                    <div>
+                                        <label>(410 caracteres máximo)</label>
+                                        <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                            <span class="icon-proft icon-info"></span>
+                                            <span class="tiptext">
+                                                <div>S - Alterado, N - No alterado, X - No valorado.</div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline-inputs col-md-12 no-padding">
+                                    <div class="input-group col-md-1 col-sm-2 col-xs-2" id="validarExamen1_HC000">
+                                        <label class="col-md-12"
+                                            style="background-color: white; margin-top: -32px; margin-bottom: 10px; text-align: left;">Alterado</label>
+                                        <input v-model="global_HC000.EXAMEN_FISICO_TRIA[1].ALTERADO_EXA_TRIA" placeholder="N"
+                                            type="text" class="form-control  font-small " maxlength="1" data-orden="1"
+                                            style="margin-top: -15px;" />
+                                    </div>
+                                    <div class="col-md-11 col-sm-10 col-xs-10" id="validarDescripExamen1_HC000"
+                                        style="padding-right: 0;">
+                                        <textarea v-model="global_HC000.EXAMEN_FISICO_TRIA[1].EXA_FISICO_TRIA"
+                                            class="col-md-11 form-control" disabled="disabled" rows="3" maxlength="410"
+                                            data-orden="1" required="true"
+                                            style="resize: none; text-align: justify"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Cardiopulmonar:</label>
+                                    <div>
+                                        <label>(410 caracteres máximo)</label>
+                                        <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                            <span class="icon-proft icon-info"></span>
+                                            <span class="tiptext">
+                                                <div>S - Alterado, N - No alterado, X - No valorado.</div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline-inputs col-md-12 no-padding">
+                                    <div class="input-group col-md-1 col-sm-2 col-xs-2" id="validarExamen2_HC000">
+                                        <label class="col-md-12"
+                                            style="background-color: white; margin-top: -32px; margin-bottom: 10px; text-align: left;">Alterado</label>
+                                        <input v-model="global_HC000.EXAMEN_FISICO_TRIA[2].ALTERADO_EXA_TRIA" placeholder="N"
+                                            type="text" class="form-control  font-small " maxlength="1" data-orden="1"
+                                            style="margin-top: -15px;" />
+                                    </div>
+                                    <div class="col-md-11 col-sm-10 col-xs-10" id="validarDescripExamen2_HC000"
+                                        style="padding-right: 0;">
+                                        <textarea v-model="global_HC000.EXAMEN_FISICO_TRIA[2].EXA_FISICO_TRIA"
+                                            class="col-md-11 form-control" disabled="disabled" rows="3" maxlength="410"
+                                            data-orden="1" required="true"
+                                            style="resize: none; text-align: justify"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Abdomen:</label>
+                                    <div>
+                                        <label>(410 caracteres máximo)</label>
+                                        <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                            <span class="icon-proft icon-info"></span>
+                                            <span class="tiptext">
+                                                <div>S - Alterado, N - No alterado, X - No valorado.</div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline-inputs col-md-12 no-padding">
+                                    <div class="input-group col-md-1 col-sm-2 col-xs-2" id="validarExamen3_HC000">
+                                        <label class="col-md-12"
+                                            style="background-color: white; margin-top: -32px; margin-bottom: 10px; text-align: left;">Alterado</label>
+                                        <input v-model="global_HC000.EXAMEN_FISICO_TRIA[3].ALTERADO_EXA_TRIA" placeholder="N"
+                                            type="text" class="form-control  font-small " maxlength="1" data-orden="1"
+                                            style="margin-top: -15px;" />
+                                    </div>
+                                    <div class="col-md-11 col-sm-10 col-xs-10" id="validarDescripExamen3_HC000"
+                                        style="padding-right: 0;">
+                                        <textarea v-model="global_HC000.EXAMEN_FISICO_TRIA[3].EXA_FISICO_TRIA"
+                                            class="col-md-11 form-control" disabled="disabled" rows="3" maxlength="410"
+                                            data-orden="1" required="true"
+                                            style="resize: none; text-align: justify"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Columna:</label>
+                                    <div>
+                                        <label>(410 caracteres máximo)</label>
+                                        <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                            <span class="icon-proft icon-info"></span>
+                                            <span class="tiptext">
+                                                <div>S - Alterado, N - No alterado, X - No valorado.</div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline-inputs col-md-12 no-padding">
+                                    <div class="input-group col-md-1 col-sm-2 col-xs-2" id="validarExamen4_HC000">
+                                        <label class="col-md-12"
+                                            style="background-color: white; margin-top: -32px; margin-bottom: 10px; text-align: left;">Alterado</label>
+                                        <input v-model="global_HC000.EXAMEN_FISICO_TRIA[4].ALTERADO_EXA_TRIA" placeholder="N"
+                                            type="text" class="form-control  font-small " maxlength="1" data-orden="1"
+                                            style="margin-top: -15px;" />
+                                    </div>
+                                    <div class="col-md-11 col-sm-10 col-xs-10" id="validarDescripExamen4_HC000"
+                                        style="padding-right: 0;">
+                                        <textarea v-model="global_HC000.EXAMEN_FISICO_TRIA[4].EXA_FISICO_TRIA"
+                                            class="col-md-11 form-control" disabled="disabled" rows="3" maxlength="410"
+                                            data-orden="1" required="true"
+                                            style="resize: none; text-align: justify"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Genito/Urinario:</label>
+                                    <div>
+                                        <label>(410 caracteres máximo)</label>
+                                        <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                            <span class="icon-proft icon-info"></span>
+                                            <span class="tiptext">
+                                                <div>S - Alterado, N - No alterado, X - No valorado.</div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline-inputs col-md-12 no-padding">
+                                    <div class="input-group col-md-1 col-sm-2 col-xs-2" id="validarExamen5_HC000">
+                                        <label class="col-md-12"
+                                            style="background-color: white; margin-top: -32px; margin-bottom: 10px; text-align: left;">Alterado</label>
+                                        <input v-model="global_HC000.EXAMEN_FISICO_TRIA[5].ALTERADO_EXA_TRIA" placeholder="N"
+                                            type="text" class="form-control  font-small " maxlength="1" data-orden="1"
+                                            style="margin-top: -15px;" />
+                                    </div>
+                                    <div class="col-md-11 col-sm-10 col-xs-10" id="validarDescripExamen5_HC000"
+                                        style="padding-right: 0;">
+                                        <textarea v-model="global_HC000.EXAMEN_FISICO_TRIA[5].EXA_FISICO_TRIA"
+                                            class="col-md-11 form-control" disabled="disabled" rows="3" maxlength="410"
+                                            data-orden="1" required="true"
+                                            style="resize: none; text-align: justify"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Extremidades:</label>
+                                    <div>
+                                        <label>(410 caracteres máximo)</label>
+                                        <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                            <span class="icon-proft icon-info"></span>
+                                            <span class="tiptext">
+                                                <div>S - Alterado, N - No alterado, X - No valorado.</div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline-inputs col-md-12 no-padding">
+                                    <div class="input-group col-md-1 col-sm-2 col-xs-2" id="validarExamen6_HC000">
+                                        <label class="col-md-12"
+                                            style="background-color: white; margin-top: -32px; margin-bottom: 10px; text-align: left;">Alterado</label>
+                                        <input v-model="global_HC000.EXAMEN_FISICO_TRIA[6].ALTERADO_EXA_TRIA" placeholder="N"
+                                            type="text" class="form-control  font-small " maxlength="1" data-orden="1"
+                                            style="margin-top: -15px;" />
+                                    </div>
+                                    <div class="col-md-11 col-sm-10 col-xs-10" id="validarDescripExamen6_HC000"
+                                        style="padding-right: 0;">
+                                        <textarea v-model="global_HC000.EXAMEN_FISICO_TRIA[6].EXA_FISICO_TRIA"
+                                            class="col-md-11 form-control" disabled="disabled" rows="3" maxlength="410"
+                                            data-orden="1" required="true"
+                                            style="resize: none; text-align: justify"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Neurologico:</label>
+                                    <div>
+                                        <label>(410 caracteres máximo)</label>
+                                        <div class="tooltip-proft bottom-text" style="margin-left: 5px;">
+                                            <span class="icon-proft icon-info"></span>
+                                            <span class="tiptext">
+                                                <div>S - Alterado, N - No alterado, X - No valorado.</div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inline-inputs col-md-12 no-padding">
+                                    <div class="input-group col-md-1 col-sm-2 col-xs-2" id="validarExamen7_HC000">
+                                        <label class="col-md-12"
+                                            style="background-color: white; margin-top: -32px; margin-bottom: 10px; text-align: left;">Alterado</label>
+                                        <input v-model="global_HC000.EXAMEN_FISICO_TRIA[7].ALTERADO_EXA_TRIA" placeholder="N"
+                                            type="text" class="form-control  font-small " maxlength="1" data-orden="1"
+                                            style="margin-top: -15px;" />
+                                    </div>
+                                    <div class="col-md-11 col-sm-11 col-xs-11" id="validarDescripExamen7_HC000"
+                                        style="padding-right: 0;">
+                                        <textarea v-model="global_HC000.EXAMEN_FISICO_TRIA[7].EXA_FISICO_TRIA"
+                                            class="col-md-11 form-control" disabled="disabled" rows="3" maxlength="410"
+                                            data-orden="1" required="true"
+                                            style="resize: none; text-align: justify"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-sm-12 col-xs-12" style="padding-right: 0;">
+
+                    <div class="portlet light box-center box-title">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject bold">SIGNOS VITALES</span>
+                            </div>
+                            <button v-show="flujo_bloques.signos_vitales" id="btnFlujo_signos_vitales" type="button"
+                                style="float: right;" @click="botonFlujo(3)"
+                                class="boton-flujo-hc000 btn f8-Btn btn-default">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" style="padding-bottom: 11px">
+                        <div class="col-md-3 col-sm-4 col-xs-4">
+                            <label class="col-md-12 col-sm-6 col-xs-6">Peso: </label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarPeso_HC000">
+                                <div v-if="global_HC000.UND_PESO_TRIA == 2" class="inline-inputs">
+                                    <input v-model="global_HC000.PESO_GRAMOS_TRIA" type="number" class="form-control  font-small peso"
+                                        data-orden="1" maxlength="5" />
+                                    <input v-model="auxiliares.peso_text" type="text" class="form-control  font-small "
+                                        data-orden="" />
+                                </div>
+                                <div v-else class="inline-inputs">
+                                    <input v-model="global_HC000.PESO_TRIA" type="number" class="form-control  font-small peso_tria"
+                                        data-orden="1" maxlength="5" />
+                                    <input v-model="auxiliares.peso_text" type="text" class="form-control  font-small "
+                                        data-orden="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-4">
+                            <label class="col-md-12 col-sm-6 col-xs-6">Talla: </label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarTalla_HC000">
+                                <div class="inline-inputs">
+                                    <input v-model="global_HC000.TALLA_TRIA" type="number" class="form-control  font-small talla"
+                                        maxlength="3" data-orden="1" />
+                                    <input value="Cm" type="text" class="form-control  font-small " data-orden="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-4">
+                            <label class="col-md-12 col-sm-6 col-xs-6">Temp: </label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarTemp_HC000">
+                                <div class="inline-inputs">
+                                    <input v-model="global_HC000.TEMP_TRIA" type="number"
+                                        class="form-control  font-small temp" maxlength="5" data-orden="1" min="0" required="true"/>
+                                    <input value="°" type="text" class="form-control  font-small " data-orden="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-4">
+                            <label class="col-md-12 col-sm-6 col-xs-6">Frec.Card: </label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarFCard_HC000">
+                                <div class="inline-inputs">
+                                    <input v-model="global_HC000.FCARD_TRIA" type="number" class="form-control  font-small fcard"
+                                        maxlength="3" data-orden="1" />
+                                    <input value="lxmin" type="text" class="form-control  font-small " data-orden="" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="salto-linea"></div>
+
+                        <div class="col-md-3 col-sm-4 col-xs-4">
+                            <label class="col-md-12 col-sm-6 col-xs-6">Frec.Resp: </label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarFResp_HC000">
+                                <div class="inline-inputs">
+                                    <input v-model="global_HC000.FRESP_TRIA" type="number" class="form-control  font-small fresp"
+                                        maxlength="3" data-orden="1" />
+                                    <input value="rxmin" type="text" class="form-control  font-small " data-orden="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <label class="col-md-12 col-sm-6 col-xs-6">T.Arterial: </label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12 text-center">
+                                <div class="inline-inputs">
+                                    <div id="validarTens1_HC000" class="no-padding">
+                                        <input v-model="global_HC000.TENS1_TRIA" type="number"
+                                            class="form-control  font-small tens1"
+                                            maxlength="3" data-orden="1" />
+                                    </div>
+                                    <div id="validarTens2_HC000" class="no-padding">
+                                        <input v-model="global_HC000.TENS2_TRIA" type="number"
+                                            class="form-control  font-small tens2"
+                                            maxlength="3" data-orden="1" />
+                                    </div>
+                                    <div class="col-md-11 no-padding">
+                                        <input type="text" value="mmhg" class="form-control  font-small " maxlength="3"
+                                            data-orden="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-4">
+                            <label class="col-md-12 col-sm-6 col-xs-6">SvO2: </label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarOxi_HC000">
+                                <div class="inline-inputs">
+                                    <input v-model="global_HC000.OXIMETRIA_TRIA" type="number"
+                                        class="form-control  font-small oxi" maxlength="3"
+                                        data-orden="1" />
+                                    <input value="%" type="text" class="form-control  font-small " data-orden="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+                            <label class="col-md-12 col-sm-6 col-xs-6">Glasgow: </label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarGlasg_HC000">
+                                <input v-model="global_HC000.GLASG_EDIT_TRIA" type="text"
+                                    class="form-control  font-small " />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0;">
+                    <div class="portlet light box-center box-title">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject bold">SINTOMAS</span>
+                            </div>
+                            <button v-show="flujo_bloques.sintomas" id="btnFlujo_sintomas" type="button"
+                                style="float: right;" @click="botonFlujo(4)"
+                                class="boton-flujo-hc000 btn f8-Btn btn-default">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                        style="text-align: left; padding-bottom: 7px;">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarOtrosSintomas_HC000">
+                            <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                <label>Digite:</label>
+                                <label>(950 caracteres máximo)</label>
+                            </div>
+                            <textarea v-model="global_HC000.OBSER_TRIA" class="form-control otros" disabled="disabled"
+                                rows="13" maxlength="950" data-orden="1"
+                                style="resize: none; text-align: justify"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12" style="padding-right: 0;">
+
+                    <div class="portlet light box-center box-title">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject bold">ANÁLISIS</span>
+                            </div>
+                            <button v-show="flujo_bloques.analisis" id="btnFlujo_analisis" type="button"
+                                style="float: right;" @click="botonFlujo(5)"
+                                class="boton-flujo-hc000 btn f8-Btn btn-default">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                            style="text-align: left; padding-bottom: 7px;">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 no-padding" id="validarAnalisis_HC000">
+                                <div class="col-md-12 col-sm-12 col-xs-12 head-box"
+                                    style="display: flex; justify-content:space-between; padding-right: 0; padding-left: 0;">
+                                    <label>Digite:</label>
+                                    <label>(950 caracteres máximo)</label>
+                                </div>
+                                <textarea v-model="global_HC000.ANALISIS_TRIA" class="form-control analisis" rows="12"
+                                    maxlength="950" data-orden="1"
+                                    style="resize: none; text-align: justify"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                    <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                        <div class="portlet light box-center box-title">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold">RIPS</span>
+                                </div>
+                                <button v-show="flujo_bloques.rips" id="btnFlujo_rips" type="button"
+                                    style="float: right;" @click="botonFlujo(6)"
+                                    class="boton-flujo-hc000 btn f8-Btn btn-default">
+                                    <i class="glyphicon glyphicon-pencil"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                            style="text-align: left; padding-bottom: 13px;">
+
+                            <div class="col-md-3 col-sm-3 col-xs-3 text-center">
+                                <label class="col-md-12 col-sm-12 col-xs-12">Embarazo: </label>
+                                <div class="inline-inputs col-md-12 no-padding">
+                                    <div class="input-group col-md-2 col-sm-2 col-xs-2" id="validarEmbarazo_HC000">
+                                        <input v-model="global_HC000.EMBAR_TRIA" type="text"
+                                            class="form-control  font-small " maxlength="3" data-orden="1" />
+                                    </div>
+                                    <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                        <input v-model="global_HC000.DESCRIP_EMBAR_TRIA" type="text"
+                                            class="form-control  font-small " maxlength="3" data-orden="1" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-3 text-center">
+                                <label class="col-md-12 col-sm-6 col-xs-6">Causa externa: </label>
+                                <div class="inline-inputs col-md-12 no-padding">
+                                    <div class="input-group col-md-2 col-sm-2 col-xs-2" id="validarCausa_HC000">
+                                        <input v-model="global_HC000.CAUSA_TRIA" type="text"
+                                            class="form-control  font-small " maxlength="3" data-orden="1" />
+                                    </div>
+                                    <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                        <input v-model="global_HC000.DESCRIP_CAUSA_TRIA" type="text"
+                                            class="form-control  font-small " maxlength="3" data-orden="1" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                                <label class="col-md-12 col-sm-6 col-xs-6">Prioridad: </label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarPrioridad_HC000">
+                                    <input v-model="global_HC000.PRIORIDAD_TRIA" type="number"
+                                        class="form-control  font-small " maxlength="1" data-orden="1" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                                <label class="col-md-12 col-sm-6 col-xs-6">P Y P? </label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarPyp_HC000">
+                                    <input v-model="global_HC000.PYP_TRIA" type="text" class="form-control  font-small "
+                                        maxlength="1" data-orden="1" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-3 col-xs-3 text-center">
+                                <label class="col-md-12 col-sm-6 col-xs-6">Finalidad consulta: </label>
+                                <div class="inline-inputs col-md-12 no-padding">
+                                    <div class="input-group col-md-2 col-sm-2 col-xs-2" id="validarFinalidad_HC000">
+                                        <input v-model="global_HC000.FINALID_TRIA" type="text"
+                                            class="form-control  font-small " maxlength="1" data-orden="1" />
+                                    </div>
+                                    <div class="input-group col-md-10 col-sm-10 col-xs-10">
+                                        <input v-model="global_HC000.DESCRIP_FINALID_TRIA" type="text"
+                                            class="form-control  font-small " maxlength="20" data-orden="1" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="salto-linea"></div>
+
+                            <div class="col-md-4 col-sm-2 col-xs-2 text-center">
+                                <label class="col-md-12 col-sm-6 col-xs-6">Conducta: </label>
+                                <div class="inline-inputs col-md-12 no-padding">
+                                    <div class="input-group col-md-1 col-sm-1 col-xs-1" id="validarConducta_HC000">
+                                        <input v-model="global_HC000.CONDUCTA_TRIA" type="text"
+                                            class="form-control  font-small " maxlength="1" data-orden="1" />
+                                    </div>
+                                    <div class="input-group col-md-4 col-sm-4 col-xs-4">
+                                        <input v-model="global_HC000.DESCRIP_CONDUCTA_TRIA" type="text"
+                                            class="form-control  font-small " maxlength="20" data-orden="1" />
+                                    </div>
+                                    <div class="input-group col-md-7 col-sm-7 col-xs-7" id="validarRemitido_HC000">
+                                        <input v-model="global_HC000.REMITIDO_TRIA" type="text"
+                                            class="form-control  font-small " maxlength="20" data-orden="1" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-2 col-sm-2 col-xs-2 text-center">
+                                <label class="col-md-12 col-sm-6 col-xs-6">Chikunguña o dengue? </label>
+                                <div class="col-md-4"></div>
+                                <div class="input-group col-md-4 col-sm-5 col-xs-5" id="validarDengue_HC000">
+                                    <input v-model="global_HC000.CHIKUN_TRIA" type="text"
+                                        class="form-control  font-small " maxlength="1" data-orden="1" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 col-sm-4 col-xs-4 text-center">
+                                <label class="col-md-12 col-sm-6 col-xs-6">Folio consulta urgencias:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarFolio_HC000">
+                                    <input v-model="global_HC000.FOLIO_CONSUL_TRIA" type="text"
+                                        class="form-control  font-small " maxlength="3" data-orden="1" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-1 col-sm-4 col-xs-4 text-center">
+                                <label class="col-md-12 col-sm-6 col-xs-6">Operador:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarOperador_HC000">
+                                    <input v-model="global_HC000.OPER_ELAB_TRIA" type="text"
+                                        class="form-control  font-small " maxlength="3" data-orden="1" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    input {
+        text-align: center
+    }
+
+    .boton-flujo-hc000 {
+        background-color: #476fad;
+        color: #fff;
+        position: relative;
+        top: 2px;
+    }
+</style>
+<script src="../../frameworks/pdf/hiclin/HCI00.formato.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HC000.js" type="text/javascript"></script>

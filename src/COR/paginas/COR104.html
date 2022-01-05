@@ -1,0 +1,62 @@
+<div class="col-md-12" id="COR104">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <form class="form-horizontal">
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-7 col-sm-7 col-xs-12 box-center">
+            <div class="col-md-5 col-sm-5 col-xs-12">
+              <div class="inline-inputs">
+                <label class="col-md-6 col-sm-6 col-xs-12">Novedad:</label>
+                <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                  <input v-model="form.novedad" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7 col-sm-7 col-xs-12" style="padding-right: 0;">
+              <div class="inline-inputs">
+                <label class="col-md-5 col-sm-5 col-xs-12">Codigo:</label>
+                <div class="input-group col-md-7 col-sm-7 col-xs-12" id="codigo_cor104">
+                  <input v-model="form.codigo" type="text" maxlength="02" data-orden="1" id="input_codigo_cor104"
+                    class="form-control col-md-12 col-sm-12 col-xs-12"
+                    @keydown.119="ventana_dependencias_correspondencia()" />
+                </div>
+                <button type="button" disabled="disabled" v-on:click="ventana_dependencias_correspondencia()"
+                  class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                  <i class="icon-magnifier"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Seccion-2 -->
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding" style="margin-top: 0.5px;">
+          <div class="form-group col-md-8 col-sm-8 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding-right: 0;">
+              <div class="inline-inputs">
+                <label class="col-md-5 col-sm-5 col-xs-12">Descripcion tipo correspondencia:</label>
+                <div class="input-group col-md-7 col-sm-7 col-xs-12" id="cod_serco_cor104">
+                  <input v-model="form.cod_serco" type="text" maxlength="2" data-orden="1" id="input_codser_cor104"
+                    @keydown.119="ventana_tipo_correspondencia" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+                <button type="button" disabled="disabled" v-on:click="ventana_tipo_correspondencia"
+                  class="btn f8-Btn col-md-3 col-sm-3 col-xs-3">
+                  <i class="icon-magnifier"></i>
+                </button>
+              </div>
+            </div>
+            <div class="salto-linea"></div>
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding-right: 0;">
+              <div class="inline-inputs">
+                <label class="col-md-5 col-sm-5 col-xs-12">Descrpcion aux correspondendia:</label>
+                <div class="input-group col-md-7 col-sm-7 col-xs-12" id="descripcion_cor104">
+                  <input v-model="form.descripcion" type="text" maxlength="30" data-orden="1"
+                    id="input_descripcion_cor104" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<script src="../../COR/scripts/COR104.js"></script>

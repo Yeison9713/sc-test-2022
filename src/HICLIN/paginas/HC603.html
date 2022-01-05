@@ -1,0 +1,160 @@
+<div class="col-md-12" id="HC603">
+    <div class="portlet light no-padding">
+        <div class="portlet-body">
+            <form class="form-horizontal">
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-12 col-xs-12 col-sm-12" style="padding: 10px 0 5px 18px; text-align: left;">
+                            <label>Reimpresión Pedidos Farmacia</label>
+                        </div>
+                        <div class="salto-linea head-box"></div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <label>Pedido:</label>
+                        <div class="inline-inputs" id="nroPedido_HC603">
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                                <input v-model="form.numero_ctl" type="text" id="pedido"
+                                    @keyup.f8="_ventanaPedidos" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    maxlength="6" data-orden="1" disabled />
+                            </div>
+                            <button type="button" class="btn col-md-2 col-sm-2 col-xs-2 f8-Btn"
+                                v-on:click="_ventanaPedidos">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="col-md-3 no-padding">
+                            <label class="col-md-12">Año:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                id="año_HC603">
+                                <div class="inline-inputs">
+                                    <input v-model="form.ano" type="number"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="4" data-orden="2"
+                                        disabled required="true" style="text-align: center;" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 no-padding">
+                            <label class="col-md-12">Mes:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                id="mes_HC603">
+                                <div class="inline-inputs">
+                                    <input v-model="form.mes" type="number"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                        disabled required="true" style="text-align: center;" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 no-padding">
+                            <label class="col-md-12">Dia:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                id="dia_HC603">
+                                <div class="inline-inputs">
+                                    <input v-model="form.dia" type="number"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="2" data-orden="2"
+                                        disabled required="true" style="text-align: center;" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 no-padding">
+                            <div class="col-md-6 no-padding">
+                                <label class="col-md-12">Hr:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                    id="hora_HC603">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.hora" type="number"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="2" disabled required="true"
+                                            style="text-align: center; height: 34px;" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 no-padding">
+                                <label class="col-md-12">Mn:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                    id="minutos_HC603">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.minutos" type="number"
+                                            class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="2" disabled required="true"
+                                            style="text-align: center; height: 34px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <label>&nbsp;</label>
+                        <label>Unidad de servicio:</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.unser" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="2" disabled />
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <label>&nbsp;</label>
+                        <label>Folio :</label>
+                        <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                            <input v-model="form.folio" type="text" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                data-orden="2" disabled />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <table class="table table-light table-striped" id="tabla_HC603">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Item
+                                    </th>
+                                    <th>
+                                        Grupo
+                                    </th>
+                                    <th>
+                                        Código
+                                    </th>
+                                    <th>
+                                        Descripción
+                                    </th>
+                                    <th>
+                                        Cantidad
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="item in listado_formulacion">
+                                    <td style="text-align: left">
+                                        {{ item.item }}
+                                    </td>
+                                    <td style="text-align: left">
+                                        {{ item.grupo }}
+                                    </td style="text-align: left">
+                                    <td style="text-align: left">
+                                        {{ item.codigo }}
+                                    </td>
+                                    <td style="text-align: left">
+                                        {{ item.descripcion }}
+                                    </td>
+                                    <td style="text-align: left">
+                                        {{ item.cantidad }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../../HICLIN/scripts/HC603.js" disabled="disabled" type="text/javascript"></script>

@@ -1,0 +1,153 @@
+<div class="col-md-9 col-sm-12" style="float: none; margin: 0 auto;">
+    <div class="portlet light box-center box-title" style="margin: 0 auto;">
+        <div class="portlet-title">
+            <div class="caption">
+                <span class="caption-subject bold">4-3 - Medicion de tanques</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12" id="bomb03">
+    <div class="portlet light">
+        <div class="portlet-body">
+            <form class="form-horizontal">
+                <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center" id="consulta">
+                    <div class="col-md-2 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-8 col-xs-12">Tanque:</label>
+                            <div class="input-group col-md-5 col-sm-4 col-xs-12">
+                                <input min="0" type="number" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                        maxlength="2" data-orden="1" v-model="form.cod">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-6 col-xs-12">Descripcion:</label>
+                            <div class="input-group col-md-7 col-sm-6 col-xs-12">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.descripcion">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-5 col-sm-6 col-xs-12">Articulo:</label>
+                            <div class="input-group col-md-7 col-sm-6 col-xs-12">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.articulo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-12 col-xs-12 no-padding"  style="margin: 0 auto; float: none;">
+                    <div  class="col-md-6 col-sm-6 col-xs-4 no-padding">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                            <div class="col-md-6 col-sm-6 col-xs-12" id="faseMedida">
+                                <div class="inline-inputs">
+                                    <label class="col-md-5 col-sm-6 col-xs-12">Medida:</label>
+                                    <div class="input-group col-md-7 col-sm-6 col-xs-12">
+                                        <input id="medid_03" type="text" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" v-model="form.cm_lect">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12" id="fase2">
+                                <div class="inline-inputs">
+                                    <label class="col-md-5 col-sm-6 col-xs-12">Galon:</label>
+                                    <div class="input-group col-md-7 col-sm-6 col-xs-12">
+                                        <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" v-model="form.galon_lect">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-4" style="padding-right: 0;">
+                        <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center" id="fase3">
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-5 col-sm-6 col-xs-12">Año:</label>
+                                    <div class="input-group col-md-7 col-sm-6 col-xs-12">
+                                        <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" v-model="form.fecha.año">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-5 col-sm-6 col-xs-12">Mes:</label>
+                                    <div class="input-group col-md-7 col-sm-6 col-xs-12">
+                                        <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="2" v-model="form.fecha.mes">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="inline-inputs">
+                                    <label class="col-md-5 col-sm-6 col-xs-12">Dia:</label>
+                                    <div class="input-group col-md-7 col-sm-6 col-xs-12">
+                                        <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="3" v-model="form.fecha.dia">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+                <div class="form-group col-md-5 col-sm-12 col-xs-12 box-center" id="fase4">
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Hora:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="1" v-model="form.hora.hra">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-6 col-xs-12">Minutos:</label>
+                            <div class="input-group col-md-5 col-sm-6 col-xs-12">
+                                <input type="number" class="form-control col-md-12 col-sm-12 col-xs-12" data-orden="2" v-model="form.hora.min">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-6 col-sm-6 col-xs-12">Oper:</label>
+                            <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" class="form-control col-md-12 col-sm-12 col-xs-12" v-model="form.oper">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-9 col-sm-12 col-xs-12 box-center">
+                    <div class="table-scrollable">
+                        <table id="tabla_cl_tanq_03" class="table table-light table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Tanque</th>
+                                    <th>Descripcion tanque</th>
+                                    <th>Articulo</th>
+                                    <th>Medida</th>
+                                    <th>Galon</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Oper</th>
+                                </tr>
+                            </thead>
+                            <tbody style="text-align: left;">
+                                <tr v-for="item in tanques">
+                                    <td>{{ item.COD }}</td>
+                                    <td>{{ item.DESCRIP }}</td>
+                                    <td>{{ item.ART }}</td>
+                                    <td>{{ item.MED }}</td>
+                                    <td>{{ item.GAL }}</td>
+                                    <td>{{ item.FECHA }}</td>
+                                    <td>{{ item.HRA }} </td>
+                                    <td>{{ item.OPER }} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../../BOMBAS/scripts/bomb03.js" type="text/javascript"></script>

@@ -1,0 +1,70 @@
+<div class="portlet light col-md-12 col-sm-12 col-xs-12" id="SER7C8">
+    <div class="portlet-body">
+        <form class="form-horizontal">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                <div class="form-group col-md-8 col-sm-8 col-xs-12 box-center" style="float: none; margin: 0 auto;">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                            <label>ORIGEN</label>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-7 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-2 col-sm-2 col-xs-12">ID:</label>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-12" id="VALIDAR1_SER7C8">
+                                <input v-model="form.idorigen_SER7C8" @Keyup.F8='_f8profesional_SER7C8' 
+                                class="form-control col-md-12 col-sm-12 col-xs-12 idorigen_SER7C8" data-orden="1" maxlength="10">
+                            </div>
+                            <button type="button" @click='_f8profesional_SER7C8'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                <input v-model="form.descripcionidorigen_SER7C8" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">Cambiar desde la fecha:</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="VALIDAR2_SER7C8">
+                                <input id= "fechadesde_SER7C8" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="10">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="salto-linea"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 head-box">
+                        <label>DESTINO</label>
+                    </div>
+                    <div class="col-md-7 col-sm-7 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-2 col-sm-2 col-xs-12">ID:</label>
+                            <div class="input-group col-md-3 col-sm-3 col-xs-12" id="VALIDAR3_SER7C8">
+                                <input v-model="form.iddestino_SER7C8" @Keyup.F8='_f8profesional2_SER7C8' 
+                                class="form-control col-md-12 col-sm-12 col-xs-12 iddestino_SER7C8" data-orden="1" maxlength="10">
+                            </div>
+                            <button type="button" @click='_f8profesional2_SER7C8'
+                                class="btn  f8-Btn btn-default col-md-1 col-sm-1 col-xs-1">
+                                <i class="icon-magnifier"></i>
+                            </button>
+                            <div class="input-group col-md-7 col-sm-7 col-xs-12">
+                                <input v-model="form.descripcioniddestino_SER7C8" class="form-control col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="inline-inputs">
+                            <label class="col-md-7 col-sm-7 col-xs-12">Cambiar hasta la fecha:</label>
+                            <div class="input-group col-md-5 col-sm-5 col-xs-12" id="VALIDAR4_SER7C8">
+                                <input id="fechahasta_SER7C8" class="form-control col-md-12 col-sm-12 col-xs-12"
+                                    data-orden="1" maxlength="10">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../SALUD/scripts/SER7C8.js" type="text/javascript"></script>

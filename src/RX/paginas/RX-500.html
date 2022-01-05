@@ -1,0 +1,167 @@
+<style>
+  input {
+    text-align: center;
+  }
+</style>
+<div class="col-md-12" id="RX_500">
+  <div class="portlet light no-padding">
+    <div class="portlet-body no-padding">
+      <form class="form-horizontal">
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-6 col-sm-10 col-xs-12 box-center" style="margin-top: 13% !important">
+            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="display: flex; justify-content: left">
+              <label>Fecha inicio de listado</label>
+            </div>
+
+            <div class="col-md-12" style="display: flex; justify-content: center">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <label>Año</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" v-model="anoListado" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2 col-sm-2 col-xs-2" id="validarMesPRE_rxlis">
+                <label>Mes</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      type="text"
+                      maxlength="2"
+                      v-model="mesPREListado"
+                      data-orden="1"
+                      required="true"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2 col-sm-2 col-xs-2" id="validarDiaPRE_rxlis">
+                <label>Dia</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      type="text"
+                      maxlength="2"
+                      v-model="diaPREListado"
+                      data-orden="1"
+                      required="true"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-6 col-sm-10 col-xs-12 box-center">
+            <div class="col-md-12 col-sm-12 col-xs-12 head-box" style="display: flex; justify-content: left">
+              <label>Fecha final de listado</label>
+            </div>
+
+            <div class="col-md-12" style="display: flex; justify-content: center">
+              <div class="col-md-2 col-sm-2 col-xs-2">
+                <label>Año</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" v-model="anoListado" class="form-control col-md-12 col-sm-12 col-xs-12" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2 col-sm-2 col-xs-2" id="validarMesPOS_rxlis">
+                <label>Mes</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      type="text"
+                      maxlength="2"
+                      v-model="mesPOSListado"
+                      data-orden="1"
+                      required="true"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2 col-sm-2 col-xs-2" id="validarDiaPOS_rxlis">
+                <label>Dia</label>
+                <div class="inline-inputs">
+                  <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input
+                      type="text"
+                      maxlength="2"
+                      v-model="diaPOSListado"
+                      data-orden="1"
+                      required="true"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+          <div class="form-group col-md-6 col-sm-10 col-xs-12 box-center">
+            <div class="col-md-12 no-padding" style="display: flex; justify-content: center">
+              <div class="col-md-8 flexRow" id="validarContenido_rxlis">
+                <div class="col-md-10 col-sm-10 col-xs-10 no-padding">
+                  <label class="col-md-12 col-sm-12 col-xs-12 flexIzq"
+                    >Desea incluir el contenido de cada estudio ?</label
+                  >
+                </div>
+                <div class="col-md-2 no-padding flexRow">
+                  <div class="col-md-12 col-sm-4 col-xs-4 no-padding">
+                    <input
+                      type="text"
+                      v-model="mostrarContenido"
+                      maxlength="1"
+                      placeholder="N"
+                      data-orden="1"
+                      disabled="disabled"
+                      class="form-control col-md-12 col-sm-12 col-xs-12"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div v-if="mostrarContenido == 'S'">
+              <div class="salto-linea"></div>
+              <div class="col-md-12 no-padding" style="text-align: center">
+                <div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+                  <label style="color: #476fad" class="col-md-12 col-sm-12 col-xs-12">
+                    El tiempo de carga del listado aumentará considerablemente*
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+  .flexRow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .flexIzq {
+    text-align: left;
+    padding-left: 9px;
+  }
+</style>
+
+<script src="../../RX/scripts/RX-500.js" type="text/javascript"></script>

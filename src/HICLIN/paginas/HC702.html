@@ -1,0 +1,161 @@
+
+<div class="col-md-12" id="HC702">
+    <div class="portlet light no-padding"
+        style="background-color: transparent !important; box-shadow: none !important;">
+        <div class="portlet-body">
+            <form class="form-horizontal" onsubmit="return false;">
+                <div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center">
+                        <div class="col-md-12 col-xs-12 col-sm-12" style="text-align: left;">
+                            <label>Imprime Epicrisis, remision</label>
+                        </div>
+                        <div class="salto-linea head-box"></div>
+
+                        <div class="col-md-3">
+                            <label class="col-md-12" style="text-align: left;">Medico:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarMedico_702">
+                                <div class="inline-inputs">
+                                    <input v-model="form.descripMedico_702" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase descripMedico_HC702"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="salto-linea"></div>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarCargo_702">
+                                <div class="inline-inputs">
+                                    <input v-model="form.cargo_702" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase cargo_HC702"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="col-md-12" style="text-align: left;">Und Servicio:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarUnserv_702">
+                                <div class="inline-inputs">
+                                    <input v-model="form.unser_702" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase unser_HC702"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1">
+                            <label class="col-md-12" style="text-align: left;">Folio:</label>
+                            <div class="input-group col-md-12 col-sm-12 col-xs-12" id="validarFolio_702">
+                                <div class="inline-inputs">
+                                    <input v-model="form.folio_702" type="text"
+                                        class="form-control col-md-2 col-sm-12 col-xs-12 uppercase folio_HC702"
+                                        maxlength="10" disabled="disabled" data-orden="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="col-md-3 no-padding">
+                                <label class="col-md-12">Año:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                    id="año_HC702">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.año_702" type="number"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="4"
+                                            data-orden="2" disabled="disabled" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 no-padding">
+                                <label class="col-md-12">Mes:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                    id="mes_HC702">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.mes_702" type="number"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="3" disabled="disabled" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 no-padding">
+                                <label class="col-md-12">Dia:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;"
+                                    id="dia_HC702">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.dia_702" type="number"
+                                            class="form-control col-md-2 col-sm-12 col-xs-12" maxlength="2"
+                                            data-orden="4" disabled="disabled" required="true" style="text-align: center;">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 no-padding">
+                                <label class="col-md-12">Hora:</label>
+                                <div class="input-group col-md-12 col-sm-12 col-xs-12" style="text-align: center;" id="hora_HC702">
+                                    <div class="inline-inputs">
+                                        <input v-model="form.hora_702" type="time" class="form-control col-md-12 col-sm-12 col-xs-12" maxlength="5"
+                                            data-orden="5" disabled="disabled" required="true" style="text-align: center; height: 34px;">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-6 col-xs-6 box-left">
+
+                        <div class="col-md-12 no-padding">
+
+                            <div class="form-group col-md-12 col-sm-12 col-xs-12 box-center"
+                                style="text-align: left; padding-bottom: 7px;">
+        
+                                <div class="form-group">
+                                    <textarea class="form-control" id="procedencia_702" disabled="disabled" rows="1"
+                                    style="resize: none; text-align: justify"></textarea>
+                                </div>
+        
+                                <div class="form-group">
+                                    <textarea class="form-control" id="motivo_702" disabled="disabled" rows="3"
+                                    style="resize: none; text-align: justify"></textarea>
+                                </div>
+        
+                                <div class="form-group">
+                                    <textarea class="form-control" id="motivo2_702" disabled="disabled" rows="7"
+                                    style="resize: none; text-align: justify"></textarea>
+                                </div>
+        
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="../../frameworks/pdf/hiclin/HCI01.formato.js" type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HC702.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HC702A.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI02.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI02.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HC702R.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI107.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HC702R.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/HCI107.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/AIEPI010.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/AIEPI010.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../frameworks/pdf/hiclin/AIEPI020.formato.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/AIEPI020.js" disabled='disabled' type="text/javascript"></script>
+<script src="../../HICLIN/scripts/HCI01C.js" type="text/javascript"></script>
